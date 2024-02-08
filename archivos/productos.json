@@ -1,0 +1,41 @@
+[
+  {
+    "title": "Remera térmica infantil",
+    "price": 12000,
+    "code": "WsT017",
+    "stock": 1,
+    "description": "Remera fabricada en tela bamboo, ideal como primera piel para usarse debajo del neoprene",
+    "status": true,
+    "thumb": "/imagenes/thumbnails/WsT017.jpg",
+    "id": 13
+  },
+  {
+    "title": "Calza térmica infantil",
+    "price": 12600,
+    "code": "WsT018",
+    "stock": 5,
+    "description": "Calza larga fabricada en tela bamboo, ideal como primera piel para usarse debajo del neoprene",
+    "status": true,
+    "thumb": "/imagenes/thumbnails/WsT018.jpg",
+    "id": 14
+  },
+  {
+    "title": "Long John neoprene Zhik",
+    "price": 280000,
+    "code": "ljZK",
+    "stock": 5,
+    "description": "Entero de neoprene tipo musculosa. Espesor 1mm, con cubierta interior de thermal fleece",
+    "status": true,
+    "id": 16
+  },
+  {
+    "title": "Long John spandex Zhik",
+    "price": 200000,
+    "code": "lj-sp-ZK",
+    "stock": 100,
+    "description": "Entero en tela spandex tipo musculosa. Reforzado en rodillas, muslos y cola",
+    "status": true,
+    "thumb": "/imagenes/thumbnails/lj-sp-ZK.jpg",
+    "id": 17
+  }
+]

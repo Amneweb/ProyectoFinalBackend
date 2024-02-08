@@ -1,11 +1,12 @@
 import fs from "fs";
 class Producto {
-  constructor(title, price, code, stock, description, thumb) {
+  constructor(title, price, code, stock, description, status, thumb) {
     this.title = title;
     this.price = price;
     this.code = code;
     this.stock = stock;
     this.description = description;
+    this.status = status;
     this.thumb = thumb;
   }
 }
@@ -46,11 +47,18 @@ class ProductManager {
    *
    *
    */
-  addProduct = async (title, price, code, stock, description, thumb) => {
-    if (!title || !price || !code || !stock || !description || !thumb) {
-      return console.log(
-        `Al producto con nombre ${title} le faltan uno o más datos y no será agregado \n`
-      );
+  addProduct = async (
+    title,
+    price,
+    code,
+    stock,
+    description,
+    status,
+    thumb
+  ) => {
+    if (!title || !price || !code || !stock || !description || !status) {
+      let msj = `Al producto con nombre ${title} le faltan uno o más datos y no será agregado \n`;
+      return msj;
     }
 
     let productoNuevo = new Producto(
@@ -59,14 +67,16 @@ class ProductManager {
       code,
       stock,
       description,
+      status,
       thumb
     );
 
     try {
-      await this.getProducts();
-
+      const existentes = await this.getProducts();
+      console.log(existentes);
+      console.log(this.#productos);
       if (
-        this.#productos.find(
+        existentes.find(
           (cadaproducto) => cadaproducto.code === productoNuevo.code
         )
       ) {
@@ -75,8 +85,8 @@ class ProductManager {
       } else {
         let maxID = 0;
 
-        if (this.#productos.length > 0) {
-          const arrayDeID = this.#productos.map((producto) => producto.id);
+        if (existentes.length > 0) {
+          const arrayDeID = existentes.map((producto) => producto.id);
           maxID =
             arrayDeID.length > 1
               ? arrayDeID.reduce((a, b) => Math.max(a, b))
@@ -91,9 +101,8 @@ class ProductManager {
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
         );
-        console.log(
-          `El producto con código ${productoNuevo.code} fue agregado con éxito\n\n`
-        );
+        let msj = `El producto con código ${productoNuevo.code} fue agregado con éxito\n\n`;
+        return msj;
       }
     } catch (error) {
       console.error(
@@ -101,7 +110,7 @@ class ProductManager {
           productoNuevo
         )}, detalle del error: ${error}`
       );
-      throw Error(
+      throw new Error(
         `Error creando producto nuevo: ${JSON.stringify(
           productoNuevo
         )}, detalle del error: ${error}`
@@ -119,15 +128,11 @@ class ProductManager {
         this.#productosRutaArchivo,
         "utf-8"
       );
-
-      return JSON.parse(productosLeidos);
+      this.#productos = JSON.parse(productosLeidos);
+      return this.#productos;
     } catch (error) {
-      console.error(
-        `Dentro de getProducts: Error leyendo los productos, detalle del error: ${error}`
-      );
-      throw Error(
-        `Dentro de getProducts: Error leyendo los productos, detalle del error: ${error}`
-      );
+      console.error(`Error leyendo los productos, detalle del error: ${error}`);
+      throw Error(`Error leyendo los productos, detalle del error: ${error}`);
     }
   };
   /* Método getProductByID: Leer archivo y ver si existe producto con determinado id
@@ -144,15 +149,10 @@ class ProductManager {
       if (productoEncontrado) {
         return productoEncontrado;
       } else {
-        return `No existe ningún producto con id = ${id}`;
+        throw `No existe ningún producto con id = ${id}`;
       }
     } catch (error) {
-      console.error(
-        `Error leyendo los productos en get product by id, detalle del error: ${error}`
-      );
-      throw Error(
-        `Error leyendo los productos en get product by id, detalle del error: ${error}`
-      );
+      return `Error leyendo los productos en get product by id, detalle del error: ${error}`;
     }
   };
 
@@ -164,19 +164,20 @@ class ProductManager {
     try {
       const productoAborrar = await this.getProductByID(id);
       if (productoAborrar) {
+        console.log(productoAborrar);
         this.#productos.splice(this.#productos.indexOf(productoAborrar), 1);
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
         );
-        console.log(`El producto con id ${id} fue borrado con éxito\n\n`);
+
+        let msj = `El producto con id ${id} fue borrado con éxito\n\n`;
+        return msj;
       } else {
-        console.log("no existe el id indicado");
+        throw "No existe el producto con el id indicado";
       }
     } catch (error) {
-      console.log(
-        `error al tratar de borrar el producto, detalle del error: ${error}`
-      );
+      return `error al tratar de borrar el producto, detalle del error: ${error}`;
     }
   };
 
@@ -195,14 +196,13 @@ class ProductManager {
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
         );
-        console.log(`El producto con id ${id} fue modificado con éxito\n\n`);
+        let msj = `El producto con id ${id} fue modificado con éxito\n\n`;
+        return msj;
       } else {
-        console.log("no existe el id indicado");
+        throw "No existe un producto con el id indicado";
       }
     } catch (error) {
-      console.log(
-        `error al tratar de modificar el producto, detalle del error: ${error}`
-      );
+      return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
     }
   };
 }
