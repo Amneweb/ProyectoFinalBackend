@@ -37,5 +37,15 @@
     "status": true,
     "thumb": "/imagenes/thumbnails/lj-sp-ZK.jpg",
     "id": 17
+  },
+  {
+    "title": "Calza microfleece de Zhik",
+    "price": 198000,
+    "code": "PNT-400",
+    "stock": 6,
+    "description": "Calza de neoprene de 1mm. Reforzado en rodillas, muslos y cola",
+    "status": true,
+    "thumb": "/imagenes/thumbnails/PNT-400.jpg",
+    "id": 18
   }
 ]

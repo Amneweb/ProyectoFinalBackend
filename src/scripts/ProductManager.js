@@ -19,7 +19,7 @@ class ProductManager {
 
   constructor() {
     this.#productos = [];
-    this.#productosRutaDirectorio = "archivos";
+    this.#productosRutaDirectorio = "src/files";
     this.#productosRutaArchivo =
       this.#productosRutaDirectorio + "/productos.json";
     this.#fs = fs;
@@ -149,7 +149,7 @@ class ProductManager {
       if (productoEncontrado) {
         return productoEncontrado;
       } else {
-        throw `No existe ningún producto con id = ${id}`;
+        return `No existe ningún producto con id = ${id}`;
       }
     } catch (error) {
       return `Error leyendo los productos en get product by id, detalle del error: ${error}`;
