@@ -18,9 +18,10 @@ router.get("/:id", async (req, res) => {
   res.send(await productManager.getProductByID(parseInt(req.params.id)));
 });
 
-router.post("/", async (req, res) => {
-  const { title, price, code, stock, description, status, category, thumb } =
-    req.body;
+router.post("/", uploader.single("thumb"), async (req, res) => {
+  const { title, price, code, stock, description, status, category } = req.body;
+  let thumb = new Array();
+  thumb.push(req.file.path.replaceAll(" ", "%20"));
   console.log(title, price, code, stock, description, status, category, thumb);
 
   res.send(
