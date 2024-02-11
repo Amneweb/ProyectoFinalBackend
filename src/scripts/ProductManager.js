@@ -1,12 +1,13 @@
 import fs from "fs";
 class Producto {
-  constructor(title, price, code, stock, description, status, thumb) {
+  constructor(title, price, code, stock, description, status, category, thumb) {
     this.title = title;
     this.price = price;
     this.code = code;
     this.stock = stock;
     this.description = description;
     this.status = status;
+    this.category = category;
     this.thumb = thumb;
   }
 }
@@ -24,10 +25,7 @@ class ProductManager {
       this.#productosRutaDirectorio + "/productos.json";
     this.#fs = fs;
   }
-  /* Método Crear directorio y verificar existencia de archivo
-   *
-   *
-   */
+
   createDir = async () => {
     try {
       await this.#fs.promises.mkdir(this.#productosRutaDirectorio, {
@@ -39,14 +37,9 @@ class ProductManager {
     } catch (error) {
       console.log("error creando directorio y archivo", error);
       throw ("error creando directorio y archivo", error);
-    } finally {
     }
   };
 
-  /* Método Add Products: agrega productos al archivo
-   *
-   *
-   */
   addProduct = async (
     title,
     price,
@@ -54,11 +47,16 @@ class ProductManager {
     stock,
     description,
     status,
+    category,
     thumb
   ) => {
     if (!title || !price || !code || !stock || !description || !status) {
       let msj = `Al producto con nombre ${title} le faltan uno o más datos y no será agregado \n`;
       return msj;
+    }
+    console.log("category ", category);
+    if (category === null) {
+      category = "general";
     }
 
     let productoNuevo = new Producto(
@@ -68,9 +66,10 @@ class ProductManager {
       stock,
       description,
       status,
+      category,
       thumb
     );
-
+    console.log("producto nuevo ", productoNuevo);
     try {
       const existentes = await this.getProducts();
       console.log(existentes);
@@ -205,6 +204,33 @@ class ProductManager {
       return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
     }
   };
-}
 
+  /* Método updateProductByID: Modificar producto con un id determinado
+   *
+   *
+   */
+  uploadThumbByID = async (id, file) => {
+    try {
+      const productoAmodificar = await this.getProductByID(id);
+      console.log(
+        "producto cuya imagen se está agregando ",
+        productoAmodificar
+      );
+      if (productoAmodificar) {
+        const indice = this.#productos.indexOf(productoAmodificar);
+        this.#productos[indice].thumb.push(file);
+        await this.#fs.promises.writeFile(
+          this.#productosRutaArchivo,
+          JSON.stringify(this.#productos, null, 2, "\t")
+        );
+        let msj = `El producto con id ${id} fue modificado con éxito\n\n`;
+        return msj;
+      } else {
+        throw "No existe un producto con el id indicado";
+      }
+    } catch (error) {
+      return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
+    }
+  };
+}
 export default ProductManager;

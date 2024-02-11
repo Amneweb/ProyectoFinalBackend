@@ -2,31 +2,14 @@
   {
     "products": [
       {
-        "productID": 13,
-        "qty": 1
-      },
-      {
-        "productID": 17,
-        "qty": 2
-      },
-      {
-        "productID": 18,
-        "qty": 3
-      }
-    ],
-    "id": 1
-  },
-  {
-    "products": [
-      {
         "productID": 15,
         "qty": 5
       },
       {
-        "productID": 17,
+        "productID": 1,
         "qty": 2
       }
     ],
-    "id": 2
+    "id": 1
   }
 ]

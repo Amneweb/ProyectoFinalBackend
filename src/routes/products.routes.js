@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { uploader } from "../../utils.js";
 import ProductManager from "../scripts/ProductManager.js";
 const router = Router();
 
@@ -18,8 +19,9 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  const { title, price, code, stock, description, status, thumb } = req.body;
-  console.log(title, price, code, stock, description, status, thumb);
+  const { title, price, code, stock, description, status, category, thumb } =
+    req.body;
+  console.log(title, price, code, stock, description, status, category, thumb);
 
   res.send(
     await productManager.addProduct(
@@ -29,6 +31,7 @@ router.post("/", async (req, res) => {
       stock,
       description,
       status,
+      category,
       thumb
     )
   );
@@ -48,5 +51,22 @@ router.put("/:id", async (req, res) => {
       valor
     )
   );
+});
+
+router.post("/imagenes/:id", uploader.single("file"), async (req, res) => {
+  if (!req.file) {
+    return res
+      .status(400)
+      .send({ status: "error", mensaje: "No se adjunto archivo." });
+  }
+
+  res
+    .status(200)
+    .send(
+      await productManager.uploadThumbByID(
+        parseInt(req.params.id),
+        req.file.path
+      )
+    );
 });
 export default router;
