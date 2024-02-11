@@ -55,7 +55,7 @@ class ProductManager {
       return msj;
     }
     console.log("category ", category);
-    if (category === null) {
+    if (category === "") {
       category = "general";
     }
 

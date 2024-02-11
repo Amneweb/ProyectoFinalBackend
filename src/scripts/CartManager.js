@@ -35,14 +35,9 @@ class CartManager {
    *
    *
    */
-  addCart = async (products) => {
-    if (!products) {
-      let msj = `El carrito que se intenta generar está vacío y no será creado \n`;
-      return msj;
-    }
-
+  addCart = async () => {
     let newCarrito = {
-      products: products,
+      products: [],
     };
 
     try {
@@ -179,7 +174,7 @@ class CartManager {
     }
   };
 
-  /* Método deleteProductByID: Borrar producto con un id determinado
+  /* Método deleteFullCartByID: Borrar carrito con un id determinado
    *
    *
    */

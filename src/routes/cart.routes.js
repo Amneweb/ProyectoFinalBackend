@@ -8,10 +8,12 @@ router.get("/:cid", async (req, res) => {
   const productosEnCarrito = await cartManager.getProductsByCartID(cid);
   res.send(productosEnCarrito);
 });
+router.get("/", async (req, res) => {
+  res.send(await cartManager.getCarts());
+});
 
 router.post("/", async (req, res) => {
-  const products = req.body;
-  res.send(cartManager.addCart(products));
+  res.send(cartManager.addCart());
 });
 
 router.post("/:cid/product/:pid", async (req, res) => {

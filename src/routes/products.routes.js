@@ -19,7 +19,9 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", uploader.single("thumb"), async (req, res) => {
-  const { title, price, code, stock, description, status, category } = req.body;
+  console.log(req.body);
+  const { title, price, code, stock, description, category } = req.body;
+  const status = JSON.parse(req.body.status);
   let thumb = new Array();
   thumb.push(req.file.path.replaceAll(" ", "%20"));
   console.log(title, price, code, stock, description, status, category, thumb);
