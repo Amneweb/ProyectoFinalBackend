@@ -18,3 +18,24 @@
 **PROBLEMA CON RUTA DE IMAGENES** 🤔
 Configuré multer, y funciona bien, pero cuando quiero ver la imagen haciendo click en el detalle del producto (desde el endpoint de get products), la ruta la pone detrás de localhost. En cambio si copio y pego la ruta en el browser, SI llego hasta la imagen, porque la ruta queda detrás de file://.
 Por otro lado, mi computadora tiene directorios con espacios en blanco así que tuve que reemplazar los espacios con %20. ( file.path.replaceAll(' ','%20') )
+
+## CARPETAS
+
+```
+📂 PUBLIC
+    |__ 📂 IMG
+    |__ index.html (está vacío)
+📂 SRC
+    |__ 📂 FILES
+    |       |__ carritos.json
+    |       |__ productos.json
+    |__ 📂 ROUTES
+    |       |__ cart.routes.js
+    |       |__ products.routes.js
+    |__ 📂 SCRIPTS
+    |       |__ CartManager.js
+    |       |__ ProductManager.js
+    |__ app.js
+    |__ utils.js
+    |__ packages, README, etc
+```
