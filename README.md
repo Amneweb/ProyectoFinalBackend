@@ -4,8 +4,9 @@
 
 ### CARRITOS
 
-1. Antes de permitir el agregado de un producto a un carrito, en CartManager agregué una pequeña verificación para comprobar que el producto a agregar exista en el array de productos. (importando ProductManager y aplicando el método getProductByID)
-2. Hay varias rutas que no se piden en la consigna, pero las creé para mi propio control. (porque cuando probaba con postman no sabía cuántos carritos ya había creado, o qué productos tenían; y era más fácil agregar un request en postman que tener que abrir el json generado cada vez que cambiaba algo)
+1. **POST - agregando productos al carrito:** Antes de permitir el agregado de un producto a un carrito, en CartManager agregué una pequeña verificación para comprobar que el producto a agregar exista en el array de productos. (importando ProductManager y aplicando el método getProductByID)
+2. **RUTAS:** Hay varias rutas que no se piden en la consigna, pero las creé para mi propio control. (porque cuando probaba con postman no sabía cuántos carritos ya había creado, o qué productos tenían; y era más fácil agregar un request en postman que tener que abrir el json generado cada vez que cambiaba algo)
+3. **POST - propiedad quantity:** Según la consigna, los productos se agregan a un determinado carrito de uno en uno, por lo tanto en el endpoint de agregado de producto, la información enviada al CartManager no incluye el campo quantity. (Si el producto no existe en el carrito, sólo se agrega una unidad. Si el producto ya existe en el carrito, se suma una unidad)
 
 ### PRODUCTOS
 
