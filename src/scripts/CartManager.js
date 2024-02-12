@@ -1,5 +1,6 @@
 import fs from "fs";
-
+import ProductManager from "./ProductManager.js";
+let productManager = new ProductManager();
 class CartManager {
   #carritos;
   #carritosRutaDirectorio;
@@ -117,6 +118,11 @@ class CartManager {
 =  Agregar prod. a carrito con ID específico  =
 =============================================*/
   addProductToCartID = async (id, productID) => {
+    try {
+      await productManager.getProductByID(productID);
+    } catch (e) {
+      return e.message;
+    }
     try {
       const carritoBuscado = await this.getCartByID(id);
 

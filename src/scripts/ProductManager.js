@@ -205,7 +205,7 @@ class ProductManager {
       );
       if (productoAmodificar) {
         const indice = this.#productos.indexOf(productoAmodificar);
-        this.#productos[indice].thumb.push(file);
+        this.#productos[indice].thumb.push(file.replaceAll(" ", "%20"));
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")

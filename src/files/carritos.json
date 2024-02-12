@@ -13,6 +13,10 @@
       {
         "productID": 2,
         "qty": 1
+      },
+      {
+        "productID": 1,
+        "qty": 1
       }
     ],
     "id": 2
