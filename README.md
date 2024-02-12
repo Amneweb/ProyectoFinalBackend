@@ -22,20 +22,21 @@ Por otro lado, mi computadora tiene directorios con espacios en blanco así que 
 ## CARPETAS
 
 ```
-📂 PUBLIC
-    |__ 📂 IMG
-    |__ index.html (está vacío)
-📂 SRC
-    |__ 📂 FILES
-    |       |__ carritos.json
-    |       |__ productos.json
-    |__ 📂 ROUTES
-    |       |__ cart.routes.js
-    |       |__ products.routes.js
-    |__ 📂 SCRIPTS
-    |       |__ CartManager.js
-    |       |__ ProductManager.js
-    |__ app.js
-    |__ utils.js
-    |__ packages, README, etc
+📂 ROOT
+|__ 📂 PUBLIC
+|        |__ 📂 IMG
+|        |__ index.html (está vacío)
+|__ 📂 SRC
+|        |__ 📂 FILES
+|        |       |__ carritos.json
+|        |       |__ productos.json
+|        |__ 📂 ROUTES
+|        |       |__ cart.routes.js
+|        |       |__ products.routes.js
+|        |__ 📂 SCRIPTS
+|        |       |__ CartManager.js
+|        |       |__ ProductManager.js
+|        |__ app.js
+|__ utils.js
+|__ packages, README, .gitignore, etc
 ```
