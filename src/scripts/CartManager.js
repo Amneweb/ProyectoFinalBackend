@@ -12,10 +12,9 @@ class CartManager {
     this.#carritosRutaArchivo = this.#carritosRutaDirectorio + "/carritos.json";
     this.#fs = fs;
   }
-  /* Método Crear directorio y verificar existencia de archivo
-   *
-   *
-   */
+  /*=============================================
+=             Crear directorio                =
+=============================================*/
   createDir = async () => {
     try {
       await this.#fs.promises.mkdir(this.#carritosRutaDirectorio, {
@@ -25,16 +24,13 @@ class CartManager {
         await this.#fs.promises.writeFile(this.#carritosRutaArchivo, "[]");
       }
     } catch (error) {
-      console.log("error creando directorio y archivo", error);
       throw ("error creando directorio y archivo", error);
-    } finally {
     }
   };
 
-  /* Método New Cart: genera un nuevo carrito
-   *
-   *
-   */
+  /*=============================================
+=           Crear un carrito vacío            =
+=============================================*/
   addCart = async () => {
     let newCarrito = {
       products: [],
@@ -52,6 +48,7 @@ class CartManager {
             ? arrayDeID.reduce((a, b) => Math.max(a, b))
             : arrayDeID[0];
       }
+
       this.#carritos.push({
         ...newCarrito,
         id: maxID + 1,
@@ -72,14 +69,13 @@ class CartManager {
       throw new Error(
         `Error creando carrito nuevo: ${JSON.stringify(
           carritoNuevo
-        )}, detalle del error: ${error}`
+        )}, detalle del ${error}`
       );
     }
   };
-  /* Método getCarts: Leer archivo y obtener carritos
-   *
-   *
-   */
+  /*=============================================
+=       Mostrar todos los  carritos           =
+=============================================*/
   getCarts = async () => {
     try {
       await this.createDir();
@@ -90,94 +86,75 @@ class CartManager {
       this.#carritos = JSON.parse(carritosLeidos);
       return this.#carritos;
     } catch (error) {
-      console.error(`Error leyendo los carritos, detalle del error: ${error}`);
-      throw Error(`Error leyendo los productos, detalle del error: ${error}`);
+      console.error(`Error leyendo los productos, detalle del error: ${error}`);
+      throw new Error(`Error leyendo los productos, detalle del ${error}`);
     }
   };
-  /* Método getCartByID: Leer archivo y ver si existe carrito con determinado id
-   *
-   *
-   */
+  /*=============================================
+=            Mostrar carrito por ID           =
+=============================================*/
   getCartByID = async (id) => {
     try {
-      const carritosObtenidos = await this.getCarts();
-
-      const carritoEncontrado = await carritosObtenidos.find(
+      const carritos = await this.getCarts();
+      if (!carritos) {
+        throw "error al leer los carritos";
+      }
+      const carritoEncontrado = carritos.find(
         (cadacarrito) => cadacarrito.id === id
       );
+      console.log("carrito encontrado ", carritoEncontrado);
       if (carritoEncontrado) {
         return carritoEncontrado;
       } else {
         throw `No existe ningún carrito con id = ${id}`;
       }
     } catch (error) {
-      return `Error leyendo cart by id, detalle del error: ${error}`;
+      console.error(`Error leyendo cart by id, detalle: ${error}`);
+      throw new Error(`Error leyendo cart by id, detalle: ${error}`);
     }
   };
-
-  /* Método getProductsByCartID: Leer archivo y ver si existe producto con determinado id
-   *
-   *
-   */
-  getProductsByCartID = async (id) => {
-    try {
-      const carritoEncontrado = await this.getCartByID(id);
-
-      if (carritoEncontrado) {
-        return carritoEncontrado.products;
-      } else {
-        throw `No existe ningún carrito con id = ${id}`;
-      }
-    } catch (error) {
-      return `Error leyendo cart by id, detalle del error: ${error}`;
-    }
-  };
-
-  /* Método getProductsByCartID: Leer archivo y ver si existe producto con determinado id
-   *
-   *
-   */
+  /*=============================================
+=  Agregar prod. a carrito con ID específico  =
+=============================================*/
   addProductToCartID = async (id, productID) => {
     try {
-      const carritoEncontrado = await this.getCartByID(id);
+      const carritoBuscado = await this.getCartByID(id);
 
-      if (carritoEncontrado) {
-        const productoEncontrado = carritoEncontrado.products.find(
-          (cadaProducto) => cadaProducto.productID === productID
-        );
-        const indice = this.#carritos.indexOf(carritoEncontrado);
-        if (productoEncontrado) {
-          const indiceProd =
-            carritoEncontrado.products.indexOf(productoEncontrado);
+      const indice = this.#carritos.indexOf(carritoBuscado);
+      const productos = carritoBuscado.products;
+      const verificarProducto = productos.find(
+        (cadaproducto) => cadaproducto.productID === productID
+      );
+      if (verificarProducto) {
+        const indiceProd = productos.indexOf(verificarProducto);
+        const newQuantity = carritoBuscado.products[indiceProd].qty + 1;
+        this.#carritos[indice].products[indiceProd].qty = newQuantity;
+      } else {
+        let productoNuevo = {
+          productID: productID,
+          qty: 1,
+        };
+        carritoBuscado.products.push(productoNuevo);
 
-          const newQuantity = carritoEncontrado.products[indiceProd].qty + 1;
+        this.#carritos[indice].products = carritoBuscado.products;
 
-          this.#carritos[indice].products[indiceProd].qty = newQuantity;
-        } else {
-          let productoNuevo = {
-            productID: productID,
-            qty: 1,
-          };
-          carritoEncontrado.products.push(productoNuevo);
-
-          this.#carritos[indice].products = carritoEncontrado.products;
-        }
         await this.#fs.promises.writeFile(
           this.#carritosRutaArchivo,
           JSON.stringify(this.#carritos, null, 2, "\t")
         );
-      } else {
-        throw `No existe ningún carrito con id = ${id}`;
       }
+      let msj = `El producto con id = ${productID} se ha agregado con éxito al carrito con id = ${id}`;
+      return msj;
     } catch (error) {
-      return `Error leyendo cart by id, detalle del error: ${error}`;
+      console.error(
+        `Error leyendo en método "add product to cart", detalle: ${error}`
+      );
+      return error.message;
     }
   };
-
-  /* Método deleteFullCartByID: Borrar carrito con un id determinado
-   *
-   *
-   */
+  /*=============================================
+=        Borrar un carrito completo           =
+=============================================*/
   deleteFullCartByID = async (id) => {
     try {
       const carritoAborrar = await this.getCartByID(id);
@@ -194,7 +171,12 @@ class CartManager {
         throw "No existe el carrito con el id indicado";
       }
     } catch (error) {
-      return `error al tratar de borrar el carrito, detalle del error: ${error}`;
+      console.error(
+        `error al tratar de borrar el carrito, detalle del error: ${error}`
+      );
+      throw new Error(
+        `error al tratar de borrar el carrito, detalle del ${error}`
+      );
     }
   };
 }

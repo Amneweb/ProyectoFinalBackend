@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Chaleco Salvavidas Zhik",
+    "price": "120000",
+    "code": "PFD20",
+    "stock": 100,
+    "description": "Chaleco con espuma de celda cerrada, forrado con neoprene. Ajuste ergonómico, con cierre lateral para fácil colocación",
+    "status": true,
+    "category": "general",
+    "thumb": [
+      "/Users/amneriscalle/Documents/McBook%20PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/img/1707677783706-optis-en-parqueo.jpg"
+    ],
+    "id": 1
+  },
+  {
+    "title": "Calza térmica infantil",
+    "price": "27000",
+    "code": "WST017",
+    "stock": 2,
+    "description": "Calza larga fabricada en tela bamboo, ideal como primera piel para usarse debajo del neoprene",
+    "status": true,
+    "category": "general",
+    "thumb": [
+      "/Users/amneriscalle/Documents/McBook%20PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/img/1707684067188-calza_larga_dryskin_thermoskin_imagen1.jpg"
+    ],
+    "id": 2
+  },
+  {
+    "title": "Chaqueta náutica respirable Thermoskin",
+    "price": "96000",
+    "code": "Ws4019",
+    "stock": 20,
+    "description": "Chaqueta fabricada en tela impermeable y respirable, con puños y cintura de neoprene",
+    "status": true,
+    "category": "chaquetas",
+    "thumb": [],
+    "id": 3
+  }
+]

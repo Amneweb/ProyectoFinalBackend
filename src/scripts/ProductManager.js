@@ -25,7 +25,9 @@ class ProductManager {
       this.#productosRutaDirectorio + "/productos.json";
     this.#fs = fs;
   }
-
+  /*=============================================
+=             Crear directorio                =
+=============================================*/
   createDir = async () => {
     try {
       await this.#fs.promises.mkdir(this.#productosRutaDirectorio, {
@@ -39,7 +41,9 @@ class ProductManager {
       throw ("error creando directorio y archivo", error);
     }
   };
-
+  /*=============================================
+=     Crear un producto (con imagen)          =
+=============================================*/
   addProduct = async (
     title,
     price,
@@ -50,11 +54,6 @@ class ProductManager {
     category,
     thumb
   ) => {
-    if (!title || !price || !code || !stock || !description || !status) {
-      let msj = `Al producto con nombre ${title} le faltan uno o más datos y no será agregado \n`;
-      return msj;
-    }
-    console.log("category ", category);
     if (category === "") {
       category = "general";
     }
@@ -69,18 +68,18 @@ class ProductManager {
       category,
       thumb
     );
-    console.log("producto nuevo ", productoNuevo);
+
     try {
       const existentes = await this.getProducts();
-      console.log(existentes);
-      console.log(this.#productos);
+
       if (
         existentes.find(
           (cadaproducto) => cadaproducto.code === productoNuevo.code
         )
       ) {
-        let msj = `El producto con código ${productoNuevo.code} ya está en el archivo y no será agregado\n`;
-        return msj;
+        throw new Error(
+          `El producto con código ${productoNuevo.code} ya está en el archivo y no será agregado\n`
+        );
       } else {
         let maxID = 0;
 
@@ -100,26 +99,22 @@ class ProductManager {
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
         );
-        let msj = `El producto con código ${productoNuevo.code} fue agregado con éxito\n\n`;
+        let msj = `El producto fue agregado con éxito con id = ${
+          maxID + 1
+        } \n\n`;
         return msj;
       }
     } catch (error) {
-      console.error(
-        `Error creando el producto nuevo: ${JSON.stringify(
-          productoNuevo
-        )}, detalle del error: ${error}`
-      );
       throw new Error(
         `Error creando producto nuevo: ${JSON.stringify(
           productoNuevo
-        )}, detalle del error: ${error}`
+        )}, detalle del ${error}`
       );
     }
   };
-  /* Método getProducts: Leer archivo y obtener productos
-   *
-   *
-   */
+  /*=============================================
+=             Obtener productos               =
+=============================================*/
   getProducts = async () => {
     try {
       await this.createDir();
@@ -130,35 +125,29 @@ class ProductManager {
       this.#productos = JSON.parse(productosLeidos);
       return this.#productos;
     } catch (error) {
-      console.error(`Error leyendo los productos, detalle del error: ${error}`);
-      throw Error(`Error leyendo los productos, detalle del error: ${error}`);
-    }
-  };
-  /* Método getProductByID: Leer archivo y ver si existe producto con determinado id
-   *
-   *
-   */
-  getProductByID = async (id) => {
-    try {
-      const productosObtenidos = await this.getProducts();
-
-      const productoEncontrado = await productosObtenidos.find(
-        (cadaproducto) => cadaproducto.id === id
+      throw new Error(
+        `Error leyendo los productos, detalle del error: ${error}`
       );
-      if (productoEncontrado) {
-        return productoEncontrado;
-      } else {
-        return `No existe ningún producto con id = ${id}`;
-      }
-    } catch (error) {
-      return `Error leyendo los productos en get product by id, detalle del error: ${error}`;
     }
   };
+  /*=============================================
+=          Obtener 1 producto según ID        =
+=============================================*/
+  getProductByID = async (id) => {
+    const productosObtenidos = await this.getProducts();
 
-  /* Método deleteProductByID: Borrar producto con un id determinado
-   *
-   *
-   */
+    const productoEncontrado = await productosObtenidos.find(
+      (cadaproducto) => cadaproducto.id === id
+    );
+    if (productoEncontrado) {
+      return productoEncontrado;
+    } else {
+      throw new Error(`No existe ningún producto con id = ${id}`);
+    }
+  };
+  /*=============================================
+=         Borrar producto según ID            =
+=============================================*/
   deleteProductByID = async (id) => {
     try {
       const productoAborrar = await this.getProductByID(id);
@@ -176,14 +165,14 @@ class ProductManager {
         throw "No existe el producto con el id indicado";
       }
     } catch (error) {
-      return `error al tratar de borrar el producto, detalle del error: ${error}`;
+      throw new Error(
+        `error al tratar de borrar el producto, detalle del ${error}`
+      );
     }
   };
-
-  /* Método updateProductByID: Modificar producto con un id determinado
-   *
-   *
-   */
+  /*=============================================
+=        Modificar producto por ID            =
+=============================================*/
   updateProductByID = async (id, propiedad, nuevoValor) => {
     try {
       const productoAmodificar = await this.getProductByID(id);
@@ -204,11 +193,9 @@ class ProductManager {
       return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
     }
   };
-
-  /* Método updateProductByID: Modificar producto con un id determinado
-   *
-   *
-   */
+  /*=============================================
+=       Agregar 1 imagen a producto           =
+=============================================*/
   uploadThumbByID = async (id, file) => {
     try {
       const productoAmodificar = await this.getProductByID(id);
