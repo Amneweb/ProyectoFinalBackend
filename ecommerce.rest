@@ -1,0 +1,35 @@
+### obtener todos los productos de la db
+GET http://localhost:8080/api/products/
+
+### obtener una cantidad determinada de productos
+GET http://localhost:8080/api/products/?limite=2&cantidad=1
+
+### crear producto en la db
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+    "title": "Batería Edna FW90 baja",
+    "price": 80000,
+    "code": "FW90B",
+    "description": "12x75 Tipo Edna 600",
+    "status": true,
+    "category": [
+      "EDNA",
+      "Auto"
+    ],
+    "stock": 20,
+    "thumb":""
+  }
+
+### obtenemos producto con id determinado
+GET  http://localhost:8080/api/products/65ec914390323f58a06c2364
+
+### borramos un producto
+DELETE http://localhost:8080/api/products/65ecbf2f4a5dc3bb60692925
+
+### modificamos un producto
+PUT http://localhost:8080/api/products/65ec3e99d6b85ff3a8a88aa3
+Content-Type: application/json
+
+{"price":72000}

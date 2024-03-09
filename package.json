@@ -5,13 +5,20 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "--watch src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
-    "multer": "^1.4.5-lts.1"
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.2.1",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.0",
+    "picocolors": "1.0.0",
+    "zod": "^3.22.4"
   }
 }
