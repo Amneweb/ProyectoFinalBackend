@@ -2,51 +2,6 @@
 
 ## Entrega intermedia
 
-> [!WARNING]
-> Problema cuando quiero crear un producto desde un formulario
-
-No puedo hacer que los datos que envía el formulario lleguen a req.body con el tipo de valor que está establecido en el formulario. Por ejemplo, en el formulario tengo lo siguiente:
-
-```html
-<form
-  id="agregar"
-  action="/api/products"
-  enctype="multipart/form-data"
-  method="post"
->
-  <label for="title">Title</label>
-  <input type="text" id="title" name="title" value="" />
-  <label for="price">Price</label>
-  <input type="number" id="price" name="price" value="" />
-  <label for="category">Category</label>
-  <input type="text" name="category" value="" id="category" />
-  <label for="code">Code</label>
-  <input type="text" id="code" name="code" value="" />
-  <label for="description">Descripcion</label>
-  <input type="text" id="description" value="" name="description" />
-  <label for="stock">Stock</label>
-  <input type="number" id="stock" value="" name="stock" />
-  <label for="status">Status</label>
-  <input type="text" value="true" />
-  <input type="submit" value="enviar" />
-</form>
-```
-
-Ahí se ve que stock y price son números. Sin embargo, cuando quiero validar el req.body, la info del formulario llega como sigue:
-
-```javascript
-[Object: null prototype] {
-  title: 'Batería JAOS CC65',
-  price: '87000',
-  category: 'Auto',
-  code: 'CC65',
-  description: 'Sin mantenimiento',
-  stock: '5'
-}
-```
-
-Los números dejan de ser números. Probé con un middleware pero me pasa lo mismo, el req.body llega al middleware con la data en otro formato.
-
 ## Consideraciones para la primer entrega
 
 ### CARRITOS

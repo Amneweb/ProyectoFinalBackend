@@ -35,7 +35,20 @@ export const uploader = multer({
 export const validateFormData = (req, res, next) => {
   console.log(pc.bgRed("body del formulario en middleware"));
   console.log(req.body);
-  validatePartialProduct(req.body);
+  let categoria = [];
+  categoria.push(req.body.category);
+  const datosConvertidos = {
+    ...req.body,
+    price: parseInt(req.body.price),
+    stock: parseInt(req.body.stock),
+    category: categoria,
+  };
+  console.log(datosConvertidos);
+  const result = validatePartialProduct(datosConvertidos);
+
+  console.log(pc.bgRed("en middleware después de validar"));
+  console.log(result);
+  req.validatedData = result;
 
   next();
 };
