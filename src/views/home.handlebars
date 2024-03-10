@@ -4,7 +4,7 @@
   <ul class="principal">
     <li>
       <ul class="interna encabezado">
-        <li>ID</li><li>Nombre producto</li><li>Precio</li><li>Descripción</li><li>SKU</li> <li>Stock</li>
+        <li>ID</li><li>Nombre producto</li><li>Precio</li><li>Descripción</li><li>SKU</li> <li>Stock</li><li>IMG</li>
       </ul>
     </li>
   
@@ -17,6 +17,7 @@
          <li>{{this.description}} </li>
          <li>{{this.code}}</li>
           <li>{{this.stock}}</li>
+          <li>{{this.thumb}}</li>
       </ul>
     </li>
     {{/each}}
@@ -41,6 +42,8 @@
         <input type="number" id="stock" value="" name="stock">
         <label for="status">Status</label>
         <input type="text" value="true">
+        <label for="thumb">Imagen principal</label>
+        <input type="file" name="imagen" id="imagen">
         <input type="submit" value="enviar">
       </form>
 </div>

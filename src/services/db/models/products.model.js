@@ -16,7 +16,7 @@ const productSchema = new mongoose.Schema({
   description: typeStringRequired,
   st: { type: Boolean, required: true, default: true },
   category: Array,
-  thumb: String,
+  thumb: Array,
 });
 const productModel = mongoose.model(PRODUCTS_COLLECTION, productSchema);
 

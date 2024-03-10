@@ -26,7 +26,7 @@ Content-Type: application/json
 GET  http://localhost:8080/api/products/65ec914390323f58a06c2364
 
 ### borramos un producto
-DELETE http://localhost:8080/api/products/65ecbf2f4a5dc3bb60692925
+DELETE http://localhost:8080/api/products/65edcd94716a035c64244777
 
 ### modificamos un producto
 PUT http://localhost:8080/api/products/65ec3e99d6b85ff3a8a88aa3

@@ -34,21 +34,30 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-//router.post("/", uploader.single("thumb"), async (req, res) => {
-//let thumb = new Array();
-//req.file && thumb.push(req.file.path.replaceAll(" ", "%20"));
-router.post("/", uploader.none(), validateFormData, async (req, res) => {
-  if (req.validatedData.error) {
-    return res
-      .status(400)
-      .json({ error: JSON.parse(validatedData.error.message) });
+router.post(
+  "/",
+  uploader.single("imagen"),
+  validateFormData,
+  async (req, res) => {
+    if (req.validatedData.error) {
+      return res
+        .status(400)
+        .json({ error: JSON.parse(req.validatedData.error.message) });
+    }
+    try {
+      let imagen = [];
+      req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
+      res.send(
+        await productManager.addProduct({
+          ...req.validatedData.data,
+          thumb: imagen,
+        })
+      );
+    } catch (e) {
+      res.status(500).send(e.message);
+    }
   }
-  try {
-    res.send(await productManager.addProduct(req.validatedData.data));
-  } catch (e) {
-    res.status(500).send(e.message);
-  }
-});
+);
 
 router.delete("/:id", async (req, res) => {
   try {
