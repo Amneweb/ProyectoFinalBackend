@@ -1,6 +1,8 @@
 import { fileURLToPath } from "url";
 import { dirname } from "path";
 import multer from "multer";
+import { validatePartialProduct } from "./src/services/product.validator.js";
+import pc from "picocolors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -29,3 +31,11 @@ export const uploader = multer({
     next();
   },
 });
+
+export const validateFormData = (req, res, next) => {
+  console.log(pc.bgRed("body del formulario en middleware"));
+  console.log(req.body);
+  validatePartialProduct(req.body);
+
+  next();
+};

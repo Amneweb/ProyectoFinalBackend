@@ -1,5 +1,6 @@
 import z from "zod";
 import pc from "picocolors";
+
 const productValidatorSchema = z.object({
   title: z.string({
     invalid_type_error: "El nombre debe ser texto",
@@ -39,6 +40,7 @@ const productValidatorSchema = z.object({
     .default(true),
   thumb: z.string().default(""),
 });
+
 export function validateProduct(object) {
   const resultadoValidacion = productValidatorSchema.safeParse(object);
 

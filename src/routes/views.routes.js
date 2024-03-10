@@ -1,16 +1,11 @@
 import { Router } from "express";
-import { uploader } from "../../utils.js";
-import { validateFormData } from "../../utils.js";
 import ProductManager from "../services/db/products.db.service.js";
 import pc from "picocolors";
-import {
-  validateProduct,
-  validatePartialProduct,
-} from "../services/product.validator.js";
+
 const router = Router();
-//router.use(validateFormData);
+
 let productManager = new ProductManager();
-router.get("/", async (req, res) => {
+router.get("/home", async (req, res) => {
   let limite = parseInt(req.query.limite);
   limite = limite < 0 || isNaN(limite) ? false : limite;
 
@@ -18,35 +13,14 @@ router.get("/", async (req, res) => {
     const productosObtenidos = await productManager.getProducts();
 
     if (limite) {
-      return res.send(productosObtenidos.slice(0, limite));
+      res.render("home", productosObtenidos.slice(0, limite));
     } else {
-      return res.send(productosObtenidos);
+      console.log(pc.bgYellow("para renderizar todos los productos"));
+      res.render("home", { productosObtenidos, style: "general.css" });
     }
   } catch (e) {
     res.status(500).send(e.message);
   }
-});
-router.get("/:id", async (req, res) => {
-  try {
-    res.send(await productManager.getProductByID(req.params.id));
-  } catch (e) {
-    res.status(400).send(e.message);
-  }
-});
-
-//router.post("/", uploader.single("thumb"), async (req, res) => {
-//let thumb = new Array();
-//req.file && thumb.push(req.file.path.replaceAll(" ", "%20"));
-router.post("/", async (req, res) => {
-  const result = validateProduct(req.body);
-  if (result.error) {
-    return res.status(400).json({ error: JSON.parse(result.error.message) });
-  } else
-    try {
-      res.send(await productManager.addProduct(result.data));
-    } catch (e) {
-      res.status(500).send(e.message);
-    }
 });
 
 router.delete("/:id", async (req, res) => {
@@ -69,7 +43,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-router.post("/imagenes/:id", uploader.single("file"), async (req, res) => {
+/*router.post("/imagenes/:id", uploader.single("file"), async (req, res) => {
   if (!req.file) {
     return res
       .status(400)
@@ -86,5 +60,5 @@ router.post("/imagenes/:id", uploader.single("file"), async (req, res) => {
   } catch (e) {
     res.status(500).send(e.message);
   }
-});
+});*/
 export default router;

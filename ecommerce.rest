@@ -2,7 +2,7 @@
 GET http://localhost:8080/api/products/
 
 ### obtener una cantidad determinada de productos
-GET http://localhost:8080/api/products/?limite=2&cantidad=1
+GET http://localhost:8080/api/products/?limite=3
 
 ### crear producto en la db
 POST http://localhost:8080/api/products
@@ -32,4 +32,4 @@ DELETE http://localhost:8080/api/products/65ecbf2f4a5dc3bb60692925
 PUT http://localhost:8080/api/products/65ec3e99d6b85ff3a8a88aa3
 Content-Type: application/json
 
-{"price":72000}
+{"price":125000}

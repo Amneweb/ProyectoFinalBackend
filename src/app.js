@@ -2,16 +2,31 @@ import express from "express";
 import __dirname from "../utils.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import handlebars from "express-handlebars";
 
 dotenv.config();
 import productRoutes from "./routes/products.routes.js";
 //import cartRoutes from "./routes/cart.routes.js";
+import viewsRouter from "./routes/views.routes.js";
 const app = express();
+
+app.engine("handlebars", handlebars.engine());
+app.set("views", __dirname + "/src/views");
+console.log("Ruta hasta views");
+console.log(__dirname + "/src/views");
+app.set("view engine", "handlebars");
+
+//---verificar si esto va o no
+//app.use("/js", express.static(__dirname + "/public/js"));
+//app.use("/css", express.static(__dirname + "/public/css"));
+
 app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = 8080;
+
+app.use("/", viewsRouter);
 app.use("/api/products", productRoutes);
 //app.use("/api/carts", cartRoutes);
 app.listen(PORT, () => {
