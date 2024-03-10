@@ -2,7 +2,8 @@
 
 ## Entrega intermedia
 
-### Problema cuando quiero usar un formulario para crear un producto y subir la imagen
+> [!WARNING]
+> Problema cuando quiero crear un producto desde un formulario
 
 No puedo hacer que los datos que envía el formulario lleguen a req.body con el tipo de valor que está establecido en el formulario. Por ejemplo, en el formulario tengo lo siguiente:
 
@@ -39,7 +40,7 @@ Ahí se ve que stock y price son números. Sin embargo, cuando quiero validar el
 }
 ```
 
-Los números dejan de ser números
+Los números dejan de ser números. Probé con un middleware pero me pasa lo mismo, el req.body llega al middleware con la data en otro formato.
 
 ## Consideraciones para la primer entrega
 
