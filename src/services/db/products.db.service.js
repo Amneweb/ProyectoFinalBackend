@@ -23,6 +23,11 @@ export default class ProductManager {
   };
   updateProduct = async (id, nuevo) => {
     let result = await productModel.updateOne({ _id: id }, nuevo);
-    return result;
+    if (result.modifiedCount > 0) {
+      const modificado = await productModel.findOne({ _id: id });
+      return { modificado };
+    } else {
+      return result;
+    }
   };
 }

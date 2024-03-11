@@ -6,7 +6,7 @@ import handlebars from "express-handlebars";
 
 dotenv.config();
 import productRoutes from "./routes/products.routes.js";
-//import cartRoutes from "./routes/cart.routes.js";
+import cartRoutes from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
 const app = express();
 
@@ -28,7 +28,7 @@ const PORT = 8080;
 
 app.use("/", viewsRouter);
 app.use("/api/products", productRoutes);
-//app.use("/api/carts", cartRoutes);
+app.use("/api/carts", cartRoutes);
 app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });

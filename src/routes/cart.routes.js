@@ -1,15 +1,13 @@
 import { Router } from "express";
-import CartManager from "../scripts/CartManager.js";
+import CartManager from "../services/db/carts.db.service.js";
 const router = Router();
 
 let cartManager = new CartManager();
 router.get("/:cid", async (req, res) => {
-  const cid = parseInt(req.params.cid);
   try {
-    const carritoBuscado = await cartManager.getCartByID(cid);
-    res.send(carritoBuscado.products);
+    res.send(await cartManager.getCartByID(req.params.cid));
   } catch (e) {
-    res.send(e.message);
+    res.status(404).send(e.message);
   }
 });
 router.get("/", async (req, res) => {
@@ -21,8 +19,8 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/:cid/product/:pid", async (req, res) => {
-  const cartID = parseInt(req.params.cid);
-  const prodID = parseInt(req.params.pid);
+  const cartID = req.params.cid;
+  const prodID = req.params.pid;
   try {
     res.send(await cartManager.addProductToCartID(cartID, prodID));
   } catch (e) {
@@ -31,7 +29,7 @@ router.post("/:cid/product/:pid", async (req, res) => {
 });
 
 router.delete("/:id", async (req, res) => {
-  res.send(await cartManager.deleteProductByID(parseInt(req.params.id)));
+  res.send(await cartManager.deleteFullCartByID(req.params.id));
 });
 
 export default router;

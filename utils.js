@@ -42,7 +42,9 @@ export const validateFormData = (req, res, next) => {
   console.log(pc.bgRed("body del formulario en middleware"));
   console.log(req.body);
   const ruta = req.file && req.file.path.replaceAll(" ", "%20");
-  const thumb = "/img/" + path.basename(ruta);
+  const thumb = req.file
+    ? "/img/" + path.basename(req.file.path.replaceAll(" ", "%20"))
+    : "";
   let categoria = [];
   categoria.push(req.body.category);
   const datosConvertidos = {

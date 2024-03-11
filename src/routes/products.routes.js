@@ -2,13 +2,8 @@ import { Router } from "express";
 import { uploader } from "../../utils.js";
 import { validateFormData } from "../../utils.js";
 import ProductManager from "../services/db/products.db.service.js";
-import pc from "picocolors";
-import {
-  validateProduct,
-  validatePartialProduct,
-} from "../services/product.validator.js";
+import { validatePartialProduct } from "../services/product.validator.js";
 const router = Router();
-//router.use(validateFormData);
 let productManager = new ProductManager();
 router.get("/", async (req, res) => {
   let limite = parseInt(req.query.limite);

@@ -4,20 +4,17 @@ GET http://localhost:8080/api/products/
 ### obtener una cantidad determinada de productos
 GET http://localhost:8080/api/products/?limite=3
 
-### crear producto en la db
+### crear producto en la db - (para crear con una imagen se puede usar el formulario en views /home)
 POST http://localhost:8080/api/products
 Content-Type: application/json
 
 {
     "title": "Batería Edna FW90 baja",
     "price": 80000,
-    "code": "FW90B",
+    "code": "FW110",
     "description": "12x75 Tipo Edna 600",
     "status": true,
-    "category": [
-      "EDNA",
-      "Auto"
-    ],
+    "category": "EDNA",
     "stock": 20,
     "thumb":""
   }
@@ -29,7 +26,24 @@ GET  http://localhost:8080/api/products/65ec914390323f58a06c2364
 DELETE http://localhost:8080/api/products/65edcd94716a035c64244777
 
 ### modificamos un producto
-PUT http://localhost:8080/api/products/65ec3e99d6b85ff3a8a88aa3
+PUT http://localhost:8080/api/products/65edce4840922c7a40fb3378
 Content-Type: application/json
 
-{"price":125000}
+{"price":159999}
+
+
+### vemos los carritos
+GET http://localhost:8080/api/carts/
+
+### vemos un carrito específico
+GET http://localhost:8080/api/carts/65edff6d5c11886e5297583c
+
+### creamos un carrito vacio
+POST http://localhost:8080/api/carts
+
+
+### agregamos un producto a un carrito determinado
+POST http://localhost:8080/api/carts/65ee498a6350cf4da720e896/product/65ec437503fd3c53d7acc900
+
+### borramos un carrito
+DELETE http://localhost:8080/api/carts/65edff6d5c11886e5297583c
