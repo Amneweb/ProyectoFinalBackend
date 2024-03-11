@@ -1,5 +1,5 @@
 import { cartModel } from "./models/carts.model.js";
-import pc from "picocolors";
+
 import productModel from "./models/products.model.js";
 
 class CartManager {
@@ -9,8 +9,9 @@ class CartManager {
       products: [],
     };
 
-    await cartModel.create(newCarrito);
-    return newCarrito;
+    const carrito = await cartModel.create(newCarrito);
+
+    return carrito;
   };
   //obtener carritos
   getCarts = async () => {
@@ -20,7 +21,10 @@ class CartManager {
   //obtener carrito con id determinado
   getCartByID = async (id) => {
     const carrito = await cartModel.findOne({ _id: id });
-    return carrito;
+    const result = carrito
+      ? carrito
+      : { success: false, message: "no se encontró ningún carrito con ese id" };
+    return result;
   };
   //agregar producto a un carrito específico
   addProductToCartID = async (id, productID) => {
@@ -31,19 +35,16 @@ class CartManager {
       const existe = carritoBuscado.cart.find(
         (cadaProducto) => cadaProducto.product === productID
       );
-      console.log(pc.bgYellow("existe el producto??"));
-      existe ? console.log("si") : console.log("no");
+
       let update;
       let filter;
       if (existe) {
-        //const idProductoEncontrado = existe._id.toString();
         const newQty = existe.qty + 1;
-        console.log("new qty ", newQty);
+
         const ubicacion = carritoBuscado.cart.indexOf(existe);
-        console.log(pc.blue("ubicacion del producto a borrrar"));
+
         carritoBuscado.cart.splice(ubicacion, 1);
-        console.log(pc.bgRed("carrito ya sin producto a modificar"));
-        console.log(carritoBuscado);
+
         carritoBuscado.cart.push({ product: productID, qty: newQty });
         update = { $set: { cart: carritoBuscado.cart } };
       } else {
@@ -57,12 +58,8 @@ class CartManager {
       carritoBuscado = await cartModel.findOneAndUpdate(filter, update, {
         new: true,
       });
-      //carritoBuscado = await cartModel.findOneAndUpdate(filter, update, {
-      // new: true,
-      // });
-      //carritoBuscado = await cartModel.findOne(filter);
-      console.log(carritoBuscado);
     }
+    return carritoBuscado;
   };
 
   //borrar carrito

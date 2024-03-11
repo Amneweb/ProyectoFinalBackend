@@ -12,13 +12,8 @@ const app = express();
 
 app.engine("handlebars", handlebars.engine());
 app.set("views", __dirname + "/src/views");
-console.log("Ruta hasta views");
-console.log(__dirname + "/src/views");
-app.set("view engine", "handlebars");
 
-//---verificar si esto va o no
-//app.use("/js", express.static(__dirname + "/public/js"));
-//app.use("/css", express.static(__dirname + "/public/css"));
+app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public"));
 
