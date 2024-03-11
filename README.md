@@ -2,6 +2,9 @@
 
 ## Entrega intermedia
 
+> [!WARNING]
+> Esta entrega está en la rama 'vmc' del repositorio
+
 1. La carga de un producto nuevo se puede hacer desde el archivo con las peticiones "ecommerce.rest", en la raiz del directorio, o desde la ruta /home (en este caso se puede cargar un archivo de imagen)
 1. Cuando creamos un producto desde el formulario http, los valores en cada input se devuelven como strings, por lo que si el req.body lo envío directo al verificador, me da error. Entonces generé un middleware que hace parseInt y parseFloat a los elemmentos que tienen que ser números. El middleware está en utils, en la raiz del directorio.
 1. Las validaciones se hacen con zod y el schema se encuentra en el archivo services/product.validator.js
