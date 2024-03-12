@@ -14,6 +14,7 @@
 1. Las validaciones se hacen con zod y el schema se encuentra en el archivo services/product.validator.js
 1. En el caso de los carritos, primero se crean vacíos y luego se agregan productos, de a uno por vez.
 1. Si el producto no existe en el carrito, se **AGREGA** uno. Si el producto ya existe, se **SUMA** uno.
+1. El chat está en la ruta /chat. Es igual al de la clase pero con mongoDB.
 
 ---
 
