@@ -3,11 +3,13 @@ import __dirname from "../utils.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import handlebars from "express-handlebars";
+import { Server } from "socket.io";
 
 dotenv.config();
 import productRoutes from "./routes/products.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
+import messageModel from "./services/db/models/messages.model.js";
 const app = express();
 
 app.engine("handlebars", handlebars.engine());
@@ -24,7 +26,7 @@ const PORT = 8080;
 app.use("/", viewsRouter);
 app.use("/api/products", productRoutes);
 app.use("/api/carts", cartRoutes);
-app.listen(PORT, () => {
+const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
 
@@ -46,3 +48,30 @@ const connectMongoDB = async () => {
   }
 };
 connectMongoDB();
+
+const socketServer = new Server(httpServer);
+
+socketServer.on("connection", async (socket) => {
+  let messages = await messageModel.find();
+
+  socketServer.emit("messageLogs", messages);
+
+  socket.on("message", async (data) => {
+    try {
+      const newMessage = await messageModel.create(data);
+      messages = await messageModel.find();
+
+      socketServer.emit("messageLogs", messages);
+    } catch (error) {
+      console.error("Error guardando en la base de datos:", error);
+    }
+  });
+
+  socket.on("userConnected", (data) => {
+    socket.broadcast.emit("userConnected", data.user);
+  });
+
+  socket.on("closeChat", (data) => {
+    if (data.close === "close") socket.disconnect();
+  });
+});

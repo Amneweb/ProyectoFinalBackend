@@ -26,4 +26,12 @@ router.get("/admin", async (req, res) => {
   }
 });
 
+//router.get('/chat', (req, res) => {
+//  res.render('index', {})
+//})
+
+router.get("/chat", (req, res) => {
+  res.render("messages", { style: "general.css" });
+});
+
 export default router;
