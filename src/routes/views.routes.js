@@ -26,12 +26,21 @@ router.get("/admin", async (req, res) => {
   }
 });
 
-//router.get('/chat', (req, res) => {
-//  res.render('index', {})
-//})
-
 router.get("/chat", (req, res) => {
   res.render("messages", { style: "general.css" });
+});
+
+router.get("/home/:id", async (req, res) => {
+  try {
+    id = req.params.id;
+    const producto = await productManager.getProductByID(id);
+    res.render("product", {
+      producto,
+      style: "general.css",
+    });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
 });
 
 export default router;

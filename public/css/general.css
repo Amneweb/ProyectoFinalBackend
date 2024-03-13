@@ -103,3 +103,11 @@ form {
 .interna li img {
     max-width:100%;
 }
+.navigation {
+    display:flex;
+    justify-content: center;
+    gap:20px;
+}
+.navigation li {
+    display: inline-block;
+}
