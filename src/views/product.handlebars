@@ -1,58 +1,22 @@
-<div>
-
-    <h2>Windward Batery Store</h2>
-    <h1>{{title}}</h1>
-    <ul class="navigation">
-    <li><a  href="/admin">>> Admin panel</a></li>
-    <li><a href="/home">>> Product Catalogue</a></li>
-  <li><a href="/chat">>> Customer Support</a></li>
+<nav>
+  <ul class="navigation">
+    <li><a href="/admin">>> Admin panel</a></li>
+    <li><a href="/catalogo">>> Product Catalogue</a></li>
+    <li><a href="/chat">>> Customer Support</a></li>
   </ul>
-  <ul class="principal">
-    <li>
-      <ul class="interna encabezado">
-        <li>Nombre producto</li><li>Precio</li><li>Descripción</li><li>SKU</li> <li>Stock</li><li>IMG</li>
-      </ul>
-    </li>
-  
-  
-    <li>
-      <ul class="interna">
-         
-        
-         <li> {{price}}</li>
-         <li>{{description}} </li>
-         <li>{{code}}</li>
-          <li>{{stock}}</li>
-          <li>{{#if thumb}} <img src={{thumb}}    >{{/if}} </li>
-      </ul>
-    </li>
-  
-   
+</nav>
+<section class="encabezado"><h2>Windward Batery Store</h2>
+  <h1>{{producto.title}}</h1></section>
+<section>
+  <div class="card-detalle">
 
-</ul>
-</div>
-<div>
-  <h2>Agregar productos</h2>
-     <form id="agregar" action="/api/products" enctype="multipart/form-data" method="post">
-        <label for="title">Title</label>
-        <input type="text" id="title" name="title" value="">
-        <label for="price">Price</label>
-        <input type="number" id="price" name="price" value="">
-        <label for="category">Category</label>
-        <input type="text" name="category" value="" id="category">
-        <label for="code">Code</label>
-        <input type="text" id="code" name="code" value="">
-        <label for="description">Descripcion</label>
-        <input type="text" id="description" value="" name="description">
-        <label for="stock">Stock</label>
-        <input type="number" id="stock" value="" name="stock">
-        <label for="status">Status</label>
-        <input type="text" value="true">
-        <label for="thumb">Imagen principal</label>
-        <input type="file" name="imagen" id="imagen">
-        <input type="submit" value="enviar">
-      </form>
-</div>
-<div class="errores" id="errorAgregar"></div>
+    <div> {{producto.price}}</div>
+    <div>{{producto.description}} </div>
+    <div>{{producto.code}}</div>
+    <div>{{producto.stock}}</div>
+    <div>{{#if producto.thumb}} <img src={{producto.thumb}} />{{/if}} </div>
+  </div>
+
+</section>
 
 <script src="/js/helpers.js"></script>

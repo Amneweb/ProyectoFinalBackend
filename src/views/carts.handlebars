@@ -1,35 +1,32 @@
 <div>
-    <h1>Hola, bienvenidos a la administración de tu tienda online</h1>
+  <h1>Hola, bienvenidos a la administración de tu tienda online</h1>
   <h2>Listado de carritos de compra</h2>
-  <p><a  href="/home">>> Ver catálogo</a></p>
+  <p><a href="/catalogo">>> Ver catálogo</a></p>
   <ul class="principal">
-   
-  
-    {{#each carritosObtenidos}}
-    <li>
-      <ul class="interna-carts encabezado">
-        <li>ID carrito</li> <li>{{this._id}}</li> 
-         </ul>
-         </li>
-            <li>
-         <ul class="interna-carts sub-encabezado">
-        <li>Cantidad</li><li>Nombre producto</li>
-      </ul></li>
-         {{#each this.cart}}
-      
-         <li>
-           <ul class="interna-carts">
-            <li> {{this.qty}}</li>
-           <li>{{this.product.title}}</li>
-           
-                 </ul>
-         </li>
-      {{/each}}
-     
-    
-    
-    {{/each}}
-   
 
-</ul>
+    {{#each carritosObtenidos}}
+      <li>
+        <ul class="interna-carts encabezado">
+          <li>ID carrito</li>
+          <li>{{this._id}}</li>
+        </ul>
+      </li>
+      <li>
+        <ul class="interna-carts sub-encabezado">
+          <li>Cantidad</li><li>Nombre producto</li>
+        </ul></li>
+      {{#each this.cart}}
+
+        <li>
+          <ul class="interna-carts">
+            <li> {{this.qty}}</li>
+            <li>{{this.product.title}}</li>
+
+          </ul>
+        </li>
+      {{/each}}
+
+    {{/each}}
+
+  </ul>
 </div>

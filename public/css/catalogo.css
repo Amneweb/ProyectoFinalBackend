@@ -1,0 +1,87 @@
+p, body, html, h1,h2,h3,h4,h5,h6,li,ul {
+    padding:0;
+    margin:0;
+}
+body,html {
+    font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  background-color:#F5F5F5;
+}
+a {
+    text-decoration:none;
+}
+section {
+    padding:0 100px;
+}
+.encabezado {
+    margin-top: 40px;
+}
+
+.container {
+    padding:10px 100px;
+    display:grid;
+    position:relative;
+    justify-content: space-between;
+    gap:10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.card {
+    display:flex;
+    background-color: white;
+    flex-direction: column;
+    border:solid 1px #E5E4E2;
+    border-radius:10px;
+    box-shadow: #C0C0C0;
+    padding:10px;
+    gap:10px;
+    justify-content: start;
+    align-items: center;
+}
+.card img {
+    max-width:100%;
+}
+.card-detalle {
+ display:flex;
+ width:100%;
+ background-color:white;
+ border:solid 1px #E5E4E2;
+    border-radius:10px;
+    justify-content:stretch;
+}
+.navigation {
+    display: flex;
+    justify-content: space-evenly;
+    row-gap:20px;
+    list-style-type: none;
+    background-color: #91A3B0;
+}
+nav {
+    background-color: #91A3B0;
+    width:100%;
+}
+
+
+.navigation li a {
+    display: block;
+    padding:10px;
+    background-color: #91A3B0;
+    color:white;
+} 
+.navigation li a:hover {
+    color:black;
+}
+.small {
+    font-size:0.8em;
+}
+
+.card a {
+   color: #696969;
+   font-weight:bold;
+
+}
+.card a:hover {
+    color:black;
+}

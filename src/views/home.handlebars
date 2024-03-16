@@ -13,12 +13,12 @@
     <li>
       <ul class="interna">
          
-         <li>{{this.title}}</li> 
+         <li><a href="../{{this._id}}">{{this.title}}</a></li> 
          <li> {{this.price}}</li>
          <li>{{this.description}} </li>
          <li>{{this.code}}</li>
           <li>{{this.stock}}</li>
-          <li>{{#if this.thumb}} <img src={{this.thumb}}    >{{/if}} </li>
+          <li>{{#if this.thumb}} <img src="{{this.thumb}}" alt="{{this.title}}"    >{{/if}} </li>
       </ul>
     </li>
     {{/each}}

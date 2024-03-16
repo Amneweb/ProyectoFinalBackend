@@ -17,6 +17,16 @@ app.set("views", __dirname + "/src/views");
 
 app.set("view engine", "handlebars");
 
+const handlebarsCreate = handlebars.create({});
+
+handlebarsCreate.handlebars.registerHelper("formatear", function (amount) {
+  const formateado = new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+  }).format(amount);
+  return formateado;
+});
+
 app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());

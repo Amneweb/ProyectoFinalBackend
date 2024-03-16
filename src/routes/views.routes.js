@@ -5,17 +5,31 @@ import CartManager from "../services/db/carts.db.service.js";
 const router = Router();
 
 let productManager = new ProductManager();
-router.get("/home", async (req, res) => {
+let cartManager = new CartManager();
+
+router.get("/catalogo", async (req, res) => {
   try {
     const productosObtenidos = await productManager.getProducts();
 
-    res.render("home", { productosObtenidos, style: "general.css" });
+    res.render("catalogo", { productosObtenidos, style: "catalogo.css" });
   } catch (e) {
     res.status(500).send(e.message);
   }
 });
 
-let cartManager = new CartManager();
+router.get("/catalogo/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    const producto = await productManager.getProductByID(id);
+    res.render("product", {
+      producto,
+      style: "catalogo.css",
+    });
+  } catch (error) {
+    res.status(500).send(error.message);
+  }
+});
+
 router.get("/admin", async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
@@ -28,19 +42,6 @@ router.get("/admin", async (req, res) => {
 
 router.get("/chat", (req, res) => {
   res.render("messages", { style: "general.css" });
-});
-
-router.get("/home/:id", async (req, res) => {
-  try {
-    id = req.params.id;
-    const producto = await productManager.getProductByID(id);
-    res.render("product", {
-      producto,
-      style: "general.css",
-    });
-  } catch (error) {
-    res.status(500).send(error.message);
-  }
 });
 
 export default router;

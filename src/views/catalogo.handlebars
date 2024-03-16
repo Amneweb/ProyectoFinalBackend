@@ -1,0 +1,28 @@
+<nav>
+  <ul class="navigation">
+    <li><a href="/admin">>> Admin panel</a></li>
+    <li><a href="/catalogo">>> Product Catalogue</a></li>
+    <li><a href="/chat">>> Customer Support</a></li>
+  </ul>
+</nav>
+
+<section class="encabezado">
+  <h1>Hola, bienvenidos a Windward Car &amp; Truck - Batery Store</h1>
+  <h2>Listado de productos en stock</h2>
+</section>
+<section class="container">
+  {{#each productosObtenidos}}
+    <div class="card">
+      <div>{{#if this.thumb}}
+          <img src="{{this.thumb}}" alt="{{this.title}}" />{{/if}}
+      </div>
+      <div><a href="catalogo/{{this._id}}">{{this.title}}</a></div>
+      <div><span class="small">Precio:</span> {{formatear this.price}}</div>
+      <div><span class="small">SKU:</span> {{this.code}}</div>
+      <div><span class="small">Cantidad en stock:</span> {{this.stock}}</div>
+
+    </div>
+  {{/each}}
+</section>
+
+<script src="/js/helpers.js"></script>
