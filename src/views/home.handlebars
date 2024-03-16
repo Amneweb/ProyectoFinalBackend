@@ -1,8 +1,8 @@
 <div>
-    <h1>Hola, bienvenidos a Windward Car &amp; Truck - Batery Store</h1>
-    <p><a  href="/admin">>> Admin panel</a></p>
+    <h1>Hola, bienvenidos al panel de administración de Windward Car &amp; Truck - Batery Store</h1>
+
   <h2>Listado de productos en stock</h2>
-  <ul class="principal">
+ <!-- <ul class="principal">
     <li>
       <ul class="interna encabezado">
         <li>Nombre producto</li><li>Precio</li><li>Descripción</li><li>SKU</li> <li>Stock</li><li>IMG</li>
@@ -24,7 +24,7 @@
     {{/each}}
    
 
-</ul>
+</ul> -->
 </div>
 <div>
   <h2>Agregar productos</h2>
@@ -49,5 +49,37 @@
       </form>
 </div>
 <div class="errores" id="errorAgregar"></div>
+
+ <h2>Borrar productos</h2>
+  <form id="borrar" action="">
+  <label for="IDproducto">Ingresar ID de producto a borrar</label>
+  <input type="text" id="IDproducto" value="">
+  <input type="submit">
+</form></div>
+<div class="errores" id="errorBorrar"></div>
+<div>
+  <h2>Modificar productos</h2>
+<label for="IDproductoModificar">Ingresar ID de producto a modificar</label>
+  <input type="text" id="IDproductoModificar" name="IDproductoModificar" value="">
+  <form id="modificar" action=""  enctype="multipart/form-data">
+  
+  <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" value="">
+        <label for="category">Category</label>
+        <input type="text" name="category" value="" id="category">
+        <label for="code">Code</label>
+        <input type="text" id="code" name="code" value="">
+        <label for="description">Descripcion</label>
+        <input type="text" id="description" value="" name="description">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" value="" name="stock">
+        <label for="status">Status</label>
+        <input type="text" value="true">
+
+  <input type="submit">
+</form></div>
+<div class="errores" id="errorModificar"></div>
 
 <script src="/js/helpers.js"></script>

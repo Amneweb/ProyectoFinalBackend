@@ -52,3 +52,30 @@ export const validateFormData = (req, res, next) => {
 
   next();
 };
+
+export const validateModifiedData = (req, res, next) => {
+  let datosConvertidos = { ...req.body };
+  if (req.file) {
+    const thumb = "/img/" + path.basename(req.file.path.replaceAll(" ", "%20"));
+    datosConvertidos["thumb"] = thumb;
+  }
+
+  console.log("req.file", req.file);
+  if (req.body.category) {
+    let categoria = [];
+    categoria.push(req.body.category);
+    datosConvertidos["category"] = categoria;
+  }
+  if (req.body.price) {
+    datosConvertidos["price"] = parseFloat(req.body.price);
+  }
+  if (req.body.stock) {
+    datosConvertidos["stock"] = parseInt(req.body.stock);
+  }
+  console.log("datos convertidos ", datosConvertidos);
+  const result = validatePartialProduct(datosConvertidos);
+
+  req.validatedData = result;
+
+  next();
+};

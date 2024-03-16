@@ -1,8 +1,7 @@
 import { Router } from "express";
-import { uploader } from "../../utils.js";
+import { uploader, validateModifiedData } from "../../utils.js";
 import { validateFormData } from "../../utils.js";
 import ProductManager from "../services/db/products.db.service.js";
-import { validatePartialProduct } from "../services/product.validator.js";
 const router = Router();
 let productManager = new ProductManager();
 router.get("/", async (req, res) => {
@@ -62,8 +61,9 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
-  const nuevo = validatePartialProduct(req.body);
+router.put("/:id", validateModifiedData, async (req, res) => {
+  const nuevo = req.validatedData;
+
   if (nuevo.error) {
     return res.status(400).json({ error: JSON.parse(nuevo.error.message) });
   } else

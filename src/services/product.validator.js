@@ -51,6 +51,7 @@ export function validateProduct(object) {
   return resultadoValidacion;
 }
 export function validatePartialProduct(object) {
+  console.log("lo que llega al validator ", object);
   const resultadoValidacionParcial = productValidatorSchema
     .partial()
     .safeParse(object);
