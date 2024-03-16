@@ -49,7 +49,7 @@ section {
  background-color:white;
  border:solid 1px #E5E4E2;
     border-radius:10px;
-    justify-content:stretch;
+    justify-content: space-evenly;
 }
 .navigation {
     display: flex;

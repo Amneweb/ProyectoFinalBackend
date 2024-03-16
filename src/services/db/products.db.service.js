@@ -30,4 +30,32 @@ export default class ProductManager {
       return result;
     }
   };
+
+  /*=============================================
+=       Agregar 1 imagen a producto           =
+=============================================*/
+uploadThumbByID = async (id, file) => {
+  try {
+    const productoAmodificar = await this.getProductByID(id);
+    console.log(
+      "producto cuya imagen se está agregando ",
+      productoAmodificar
+    );
+    if (productoAmodificar) {
+      const indice = this.#productos.indexOf(productoAmodificar);
+      this.#productos[indice].thumb.push(file.replaceAll(" ", "%20"));
+      await this.#fs.promises.writeFile(
+        this.#productosRutaArchivo,
+        JSON.stringify(this.#productos, null, 2, "\t")
+      );
+      let msj = `El producto con id ${id} fue modificado con éxito\n\n`;
+      return msj;
+    } else {
+      throw "No existe un producto con el id indicado";
+    }
+  } catch (error) {
+    return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
+  }
+};
+}
 }
