@@ -74,22 +74,25 @@ router.put("/:id", validateModifiedData, async (req, res) => {
     }
 });
 
-router.post("/imagenes/:id", uploader.single("file"), async (req, res) => {
-  if (!req.file) {
-    return res
-      .status(400)
-      .send({ status: "error", mensaje: "No se adjunto archivo." });
-  }
+router.post(
+  "/imagenes/",
+  uploader.single("imagen"),
+  validateModifiedData,
+  async (req, res) => {
+    const id = req.body.IDproducto;
+    if (!req.file) {
+      return res
+        .status(400)
+        .send({ status: "error", mensaje: "No se adjunto archivo." });
+    }
 
-  try {
-    res.send(
-      await productManager.uploadThumbByID(
-        parseInt(req.params.id),
-        req.file.path
-      )
-    );
-  } catch (e) {
-    res.status(500).send(e.message);
+    try {
+      let imagen = [];
+      req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
+      res.send(await productManager.updateProduct(id, { thumb: imagen }));
+    } catch (e) {
+      res.status(500).send(e.message);
+    }
   }
-});
+);
 export default router;

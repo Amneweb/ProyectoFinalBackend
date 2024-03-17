@@ -60,7 +60,6 @@ export const validateModifiedData = (req, res, next) => {
     datosConvertidos["thumb"] = thumb;
   }
 
-  console.log("req.file", req.file);
   if (req.body.category) {
     let categoria = [];
     categoria.push(req.body.category);
@@ -72,7 +71,7 @@ export const validateModifiedData = (req, res, next) => {
   if (req.body.stock) {
     datosConvertidos["stock"] = parseInt(req.body.stock);
   }
-  console.log("datos convertidos ", datosConvertidos);
+
   const result = validatePartialProduct(datosConvertidos);
 
   req.validatedData = result;

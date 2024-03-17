@@ -1,0 +1,111 @@
+
+<div class="editar" id="editar">
+  <div>
+    <h2 id="nombre-producto"></h2>
+    <form action="">
+      <label for="IDproductoModificar">ID producto</label>
+      <input type="text" id="IDproductoModificar" name="IDproductoModificar" class="IDproductoModificar" value="">
+    </form>
+    <form id="modificar" action=""  enctype="multipart/form-data">
+      <label for="title">Nombre</label>
+      <input type="text" id="title" name="title" value="">
+      <label for="price">Price</label>
+      <input type="number" id="price" name="price" value="">
+      <label for="category">Category</label>
+      <input type="text" name="category" value="" id="category">
+      <label for="code">Code</label>
+      <input type="text" id="code" name="code" value="">
+      <label for="description">Descripcion</label>
+      <input type="text" id="description" value="" name="description">
+      <label for="stock">Stock</label>
+      <input type="number" id="stock" value="" name="stock">
+      <label for="status">Status</label>
+      <input type="text" value="true">
+      <input type="submit">
+    </form>
+    <div class="errores" id="errorModificar"></div>
+  </div>
+  
+  
+  <div>
+    <h2>Subir imagen de producto</h2>
+    <form id="subirImagen" action="/api/products/imagenes/" method="POST" enctype="multipart/form-data">
+      <label for="IDproductoImagen">ID del producto a modificar</label>
+      <input type="text" id="IDproducto" name="IDproducto" class="IDproductoModificar" value="">
+      <label for="thumb">Seleccionar archivo</label>
+      <input type="file" name="imagen" id="imagen">
+      <input type="submit" value="enviar">
+    </form>
+    <div class="errores" id="errorImagen"></div>
+  </div>
+  <button class="cerrar-editar" id="cerrar-editar">Cerrar</button>
+</div>
+
+<nav>
+  <ul class="navigation">
+    <li><a href="/admin">>> Admin Carritos</a></li>
+    <li><a href="/home">>> Admin Productos</a></li>
+    <li><a href="/catalogo">>> Catálogo público</a></li>
+    <li><a href="/chat">>> Customer Support</a></li>
+  </ul>
+</nav>
+        <section class="main">
+    <h1>Hola, bienvenidos al panel de administración de Windward Car &amp; Truck - Batery Store</h1>
+
+  <h2>Listado de productos en stock</h2>
+<ul class="principal">
+    <li>
+      <ul class="interna encabezado">
+        <li>Nombre producto</li><li>ID</li><li>Precio</li><li>Descripción</li><li>SKU</li> <li>Stock</li><li>IMG</li><li>Borrar</li>
+      </ul>
+    </li>
+  
+    {{#each productosObtenidos}}
+    <li>
+      <ul class="interna">
+         
+         <li><button id="{{this._id}}" class="boton-nombre" name="{{this.title}}">{{this.title}}</button></li> 
+         <li> {{this._id}}</li>
+         <li> {{formatear this.price}}</li>
+         <li>{{this.description}} </li>
+         <li>{{this.code}}</li>
+          <li>{{this.stock}}</li>
+          <li>{{#if this.thumb}} <img src="{{this.thumb}}" alt="{{this.title}}"    >{{/if}} </li><li><button id="{{this._id}}" class="borrarProducto">🗑️</button></li>
+      </ul>
+    </li>
+    {{/each}}
+   
+
+</ul>
+</section>
+<div>
+  <h2>Agregar productos</h2>
+     <form id="agregar" action="/api/products" enctype="multipart/form-data" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" value="">
+        <label for="category">Category</label>
+        <input type="text" name="category" value="" id="category">
+        <label for="code">Code</label>
+        <input type="text" id="code" name="code" value="">
+        <label for="description">Descripcion</label>
+        <input type="text" id="description" value="" name="description">
+        <label for="stock">Stock</label>
+        <input type="number" id="stock" value="" name="stock">
+        <label for="status">Status</label>
+        <input type="text" value="true">
+        <label for="thumb">Imagen principal</label>
+        <input type="file" name="imagen" id="imagen">
+        <input type="submit" value="enviar">
+      </form>
+</div>
+<div class="errores" id="errorAgregar"></div>
+
+
+
+
+
+</section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/helpers.js"></script>

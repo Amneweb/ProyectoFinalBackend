@@ -6,16 +6,16 @@ export default class ProductManager {
     console.log(pc.blue("Dentro de la clase product manager"));
   }
   getProducts = async () => {
-    const products = await productModel.find();
-    return products.map((product) => product.toObject());
+    const products = await productModel.find().lean();
+    return products;
   };
   addProduct = async (product) => {
     let productoNuevo = await productModel.create(product);
     return productoNuevo;
   };
   getProductByID = async (id) => {
-    const product = await productModel.findOne({ _id: id });
-    return product.toObject();
+    const product = await productModel.findOne({ _id: id }).lean();
+    return product;
   };
   deleteProduct = async (id) => {
     let result = await productModel.deleteOne({ _id: id });

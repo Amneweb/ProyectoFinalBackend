@@ -29,36 +29,26 @@ class CartManager {
   //agregar producto a un carrito específico
   addProductToCartID = async (id, productID) => {
     let carritoBuscado = await cartModel.findById(id);
-    await productModel.findById(productID); //para verificar que exista un producto con ese id
-
-    if (carritoBuscado) {
-      const existe = carritoBuscado.cart.find(
-        (cadaProducto) => cadaProducto.product === productID
-      );
-
-      let update;
-      let filter;
-      if (existe) {
-        const newQty = existe.qty + 1;
-
-        const ubicacion = carritoBuscado.cart.indexOf(existe);
-
-        carritoBuscado.cart.splice(ubicacion, 1);
-
-        carritoBuscado.cart.push({ product: productID, qty: newQty });
-        update = { $set: { cart: carritoBuscado.cart } };
-      } else {
-        update = {
-          $push: {
-            cart: { product: productID, qty: 1 },
-          },
-        };
-      }
-      filter = { _id: { $eq: id } };
-      carritoBuscado = await cartModel.findOneAndUpdate(filter, update, {
-        new: true,
-      });
+    if (!carritoBuscado) {
+      throw newError("Carrito no encontrado");
     }
+    const producto = await productModel.findById(productID); //para verificar que exista un producto con ese id
+    if (!producto) {
+      throw new Error("producto no encontrado");
+    }
+
+    const productIndex = carritoBuscado.cart.findIndex(
+      (productItem) => productItem.product.toString() === productID
+    );
+
+    if (productIndex === -1) {
+      carritoBuscado.cart.push({ product: productID, qty: 1 });
+    } else {
+      carritoBuscado.cart[productIndex].qty++;
+    }
+
+    await carritoBuscado.save();
+
     return carritoBuscado;
   };
 
@@ -66,6 +56,28 @@ class CartManager {
   deleteFullCartByID = async (id) => {
     const result = await cartModel.deleteOne({ _id: id });
     return result;
+  };
+
+  //borrar producto de un carrito específico
+  deleteProductFromCart = async (id, productID) => {
+    let carritoBuscado = await cartModel.findById(id);
+
+    if (!carritoBuscado) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    const productIndex = carritoBuscado.cart.findIndex(
+      (productItem) => productItem.product.toString() === productID
+    );
+    if (productIndex === -1) {
+      throw new Error("el producto indicado no existe en el carrito");
+    } else {
+      carritoBuscado.cart.splice(productIndex, 1);
+    }
+
+    await carritoBuscado.save();
+
+    return carritoBuscado;
   };
 }
 

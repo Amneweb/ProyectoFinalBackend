@@ -48,7 +48,7 @@ router.get("/home", async (req, res) => {
   try {
     const productosObtenidos = await productManager.getProducts();
 
-    res.render("home", { productosObtenidos, style: "general.css" });
+    res.render("adminProducts", { productosObtenidos, style: "general.css" });
   } catch (e) {
     res.status(500).send(e.message);
   }

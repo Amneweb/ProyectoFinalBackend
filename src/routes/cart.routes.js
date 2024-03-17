@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
 router.post("/:cid/product/:pid", async (req, res) => {
   const cartID = req.params.cid;
   const prodID = req.params.pid;
+
   try {
     res.send(await cartManager.addProductToCartID(cartID, prodID));
   } catch (e) {
@@ -30,6 +31,18 @@ router.post("/:cid/product/:pid", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   res.send(await cartManager.deleteFullCartByID(req.params.id));
+});
+
+//borrar producto de carrito
+router.delete("/:cid/product/:pid", async (req, res) => {
+  const cartID = req.params.cid;
+  const prodID = req.params.pid;
+
+  try {
+    res.send(await cartManager.deleteProductFromCart(cartID, prodID));
+  } catch (e) {
+    throw e;
+  }
 });
 
 export default router;

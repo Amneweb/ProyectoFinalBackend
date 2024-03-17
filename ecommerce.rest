@@ -10,8 +10,8 @@ Content-Type: application/json
 
 {
     "title": "Batería Edna FW90 baja",
-    "price": 80000,
-    "code": "FW110",
+    "price": 280000,
+    "code": "FW180",
     "description": "12x75 Tipo Edna 600",
     "status": true,
     "category": "EDNA",
@@ -26,11 +26,13 @@ GET  http://localhost:8080/api/products/65ec914390323f58a06c2364
 DELETE http://localhost:8080/api/products/65edcd94716a035c64244777
 
 ### modificamos un producto
-PUT http://localhost:8080/api/products/65edce4840922c7a40fb3378
+PUT http://localhost:8080/api/products/65edd56d96f4bb28bba426df
 Content-Type: application/json
 
 {"price":159999}
 
+### subimos una foto
+POST http://localhost:8080/api/imagenes/65edd56d96f4bb28bba426df
 
 ### vemos los carritos
 GET http://localhost:8080/api/carts/
