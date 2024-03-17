@@ -8,14 +8,19 @@
 </nav>
 
 <section class="encabezado">
-  <h1>Hola, bienvenidos a Windward Car &amp; Truck - Batery Store</h1>
+  <h1>Hola, bienvenidos a Windward Car &amp; Truck - Battery Store</h1>
   <h2>Listado de productos en stock</h2>
 </section>
 <section class="container">
   {{#each productosObtenidos}}
     <div class="card">
       <div>{{#if this.thumb}}
-          <img src="{{this.thumb}}" alt="{{this.title}}" />{{/if}}
+          <a href="catalogo/{{this._id}}">
+            <img src="{{this.thumb}}" alt="{{this.title}}" /></a>{{else}}<a
+            href="catalogo/{{this._id}}"
+          >
+            <img src="/img/sinfoto.jpg" alt="Producto sin foto" /></a>
+        {{/if}}
       </div>
       <div><a href="catalogo/{{this._id}}">{{this.title}}</a></div>
       <div><span class="small">Precio:</span> {{formatear this.price}}</div>

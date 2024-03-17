@@ -41,12 +41,11 @@ router.post(
     try {
       let imagen = [];
       req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
-      res.send(
-        await productManager.addProduct({
-          ...req.validatedData.data,
-          thumb: imagen,
-        })
-      );
+      await productManager.addProduct({
+        ...req.validatedData.data,
+        thumb: imagen,
+      });
+      res.redirect("/home/");
     } catch (e) {
       res.status(500).send(e.message);
     }

@@ -24,7 +24,7 @@ botonesBorrarProducto.forEach((boton) => {
     e.preventDefault();
     const cartID = e.target.name;
     const productID = e.target.id;
-    console.log(cartID, productID);
+
     const borrar = await fetch(`/api/carts/${cartID}/product/${productID}`, {
       method: "DELETE",
       headers: { "Content-type": "application/json" },

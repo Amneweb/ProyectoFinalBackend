@@ -54,4 +54,17 @@ router.get("/home", async (req, res) => {
   }
 });
 
+//para ver el carrito del usuario
+router.get("/carrito/:cid", async (req, res) => {
+  try {
+    const carrito = await cartManager.getCartByID(req.params.cid);
+    res.render("usercart", {
+      carrito,
+      style: "general.css",
+    });
+  } catch (e) {
+    res.status(404).send(e.message);
+  }
+});
+
 export default router;

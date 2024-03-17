@@ -12,7 +12,7 @@ botonesAgregar.forEach((boton) => {
     console.log("se agregó el producto", agregar);
     Swal.fire({
       title: "👌",
-      text: "El producto se agregó con éxito",
+      text: "El producto se agregó con éxito al carrito",
     });
   });
 });

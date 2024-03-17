@@ -38,14 +38,14 @@ POST http://localhost:8080/api/imagenes/65edd56d96f4bb28bba426df
 GET http://localhost:8080/api/carts/
 
 ### vemos un carrito específico
-GET http://localhost:8080/api/carts/65edff6d5c11886e5297583c
+GET http://localhost:8080/api/carts/65f6fb713ab69c3f6d9698a4
 
 ### creamos un carrito vacio
 POST http://localhost:8080/api/carts
 
 
 ### agregamos un producto a un carrito determinado
-POST http://localhost:8080/api/carts/65ee663dd1608b1b7c7d795f/product/65edd56d96f4bb28bba426df
+POST http://localhost:8080/api/carts/65ee498a6350cf4da720e896/product/65ee79f09befe239e7aefb49
 
 ### borramos un carrito
 DELETE http://localhost:8080/api/carts/65ee8867378ab40a726148c0
