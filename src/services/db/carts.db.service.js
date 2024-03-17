@@ -10,7 +10,7 @@ class CartManager {
     };
 
     const carrito = await cartModel.create(newCarrito);
-
+    console.log("carrito vacio en controlador", carrito);
     return carrito;
   };
   //obtener carritos
@@ -38,7 +38,7 @@ class CartManager {
     }
 
     const productIndex = carritoBuscado.cart.findIndex(
-      (productItem) => productItem.product.toString() === productID
+      (productItem) => productItem.product._id.toString() === productID
     );
 
     if (productIndex === -1) {
@@ -67,7 +67,7 @@ class CartManager {
     }
     console.log("lo que llega al controlador", id, productID);
     const productIndex = carritoBuscado.cart.findIndex(
-      (productItem) => productItem.product.toString() === productID
+      (productItem) => productItem.product._id.toString() === productID
     );
     console.log(productIndex);
     if (productIndex === -1) {

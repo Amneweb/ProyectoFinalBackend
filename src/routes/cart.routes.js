@@ -15,7 +15,9 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-  res.send(cartManager.addCart());
+  const carritoCreado = await cartManager.addCart();
+  console.log("carrito Creado ", carritoCreado);
+  res.send(carritoCreado);
 });
 
 router.post("/:cid/product/:pid", async (req, res) => {

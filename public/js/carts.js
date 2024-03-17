@@ -9,6 +9,10 @@ botonesBorrarCarrito.forEach((boton) => {
       headers: { "Content-type": "application/json" },
     });
     console.log("se borró el carrito", borrar);
+    const storage = localStorage.getItem("windward");
+    if (cartID === storage) {
+      localStorage.removeItem("windward");
+    }
     Swal.fire({
       title: "👍",
       text: "El carrito se borró con éxito",

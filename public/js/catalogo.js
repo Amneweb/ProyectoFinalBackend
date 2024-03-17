@@ -1,8 +1,27 @@
+const storage =
+  localStorage.getItem("windward") && localStorage.getItem("windward");
+const CARRITO = document.querySelector("#carritoEnCatalogo");
+CARRITO.innerHTML = storage
+  ? `Hay un carrito abierto con ID ${storage} <a href="/carrito/${storage}">👉</a>`
+  : "";
 const botonesAgregar = document.querySelectorAll(".agregar");
 botonesAgregar.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
-    const cid = "65ee498a6350cf4da720e896";
+    let cid;
+    if (!storage) {
+      const newCart = await fetch("/api/carts", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+      });
+      const data = await newCart.json();
+      console.log("data", data);
+      cid = data._id;
+      localStorage.setItem("windward", cid);
+    } else {
+      cid = storage;
+    }
+
     productID = e.target.id;
 
     const agregar = await fetch(`/api/carts/${cid}/product/${productID}`, {
@@ -13,6 +32,8 @@ botonesAgregar.forEach((boton) => {
     Swal.fire({
       title: "👌",
       text: "El producto se agregó con éxito al carrito",
+    }).then((result) => {
+      location.reload(true);
     });
   });
 });

@@ -85,3 +85,6 @@ nav {
 .card a:hover {
     color:black;
 }
+#carritoEnCatalogo {
+    text-align:right;
+}
