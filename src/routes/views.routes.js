@@ -8,8 +8,9 @@ let productManager = new ProductManager();
 let cartManager = new CartManager();
 
 router.get("/catalogo", async (req, res) => {
-  let page = parseInt(req.query.page);
-  if (!page) page = 1;
+  let page = parseInt(req.query.page) || 1;
+  let limit = parseInt(req.query.limit) || 100;
+
   try {
     const productosObtenidos = await productManager.getPagination(page);
     console.log(productosObtenidos);

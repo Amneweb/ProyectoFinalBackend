@@ -10,7 +10,7 @@ export default class ProductManager {
     return products;
   };
 
-  getPagination = async (page) => {
+  getPagination = async (page, limit) => {
     const products = await productModel.paginate(
       {},
       {
