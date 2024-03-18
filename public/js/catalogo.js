@@ -4,6 +4,7 @@ const CARRITO = document.querySelector("#carritoEnCatalogo");
 CARRITO.innerHTML = storage
   ? `Hay un carrito abierto con ID ${storage} <a href="/carrito/${storage}">👉</a>`
   : "";
+
 const botonesAgregar = document.querySelectorAll(".agregar");
 botonesAgregar.forEach((boton) => {
   boton.addEventListener("click", async (e) => {

@@ -13,7 +13,7 @@
   <p id="carritoEnCatalogo"></p>
 </section>
 <section class="container">
-  {{#each productosObtenidos}}
+  {{#each productosObtenidos.docs}}
     <div class="card">
       <div>{{#if this.thumb}}
           <a href="catalogo/{{this._id}}">
@@ -31,5 +31,19 @@
     </div>
   {{/each}}
 </section>
+<div class="paginacion">
+  <div class="cursores">
+    <div class="atras">{{#if productosObtenidos.hasPrevPage}}<a
+          href="/catalogo/?page={{productosObtenidos.prevPage}}"
+        >⬅️ </a>{{/if}}
+    </div>
+    <div class="pagina">{{productosObtenidos.page}} </div>
+    <div class="adelante">{{#if productosObtenidos.hasNextPage}}<a
+          href="/catalogo/?page={{productosObtenidos.nextPage}}"
+        > ➡️ </a>{{/if}}
+    </div>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/catalogo.js"></script>

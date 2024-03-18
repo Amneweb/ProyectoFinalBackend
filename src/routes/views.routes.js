@@ -8,8 +8,15 @@ let productManager = new ProductManager();
 let cartManager = new CartManager();
 
 router.get("/catalogo", async (req, res) => {
+  let page = parseInt(req.query.page);
+  if (!page) page = 1;
   try {
-    const productosObtenidos = await productManager.getProducts();
+    const productosObtenidos = await productManager.getPagination(page);
+    console.log(productosObtenidos);
+
+    productosObtenidos.isValid = !(
+      page < 1 || page > productosObtenidos.totalPages
+    );
 
     res.render("catalogo", { productosObtenidos, style: "catalogo.css" });
   } catch (e) {

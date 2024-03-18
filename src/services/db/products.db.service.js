@@ -9,6 +9,22 @@ export default class ProductManager {
     const products = await productModel.find().lean();
     return products;
   };
+
+  getPagination = async (page) => {
+    const products = await productModel.paginate(
+      {},
+      {
+        page,
+        limit: 4,
+        sort: {
+          stock: -1,
+        },
+        lean: true,
+      }
+    );
+    return products;
+  };
+
   addProduct = async (product) => {
     let productoNuevo = await productModel.create(product);
     return productoNuevo;

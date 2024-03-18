@@ -88,3 +88,22 @@ nav {
 #carritoEnCatalogo {
     text-align:right;
 }
+.paginacion {
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+}
+.cursores {
+    display:flex;
+    width:150px;
+    border:#696969 1px solid;
+    border-radius: 5px;
+gap:10px;
+justify-content: space-evenly;
+align-items: center;
+}
+.atras, .adelante, .pagina {
+    text-align:center;
+    width:33%;
+    padding:10px
+}
