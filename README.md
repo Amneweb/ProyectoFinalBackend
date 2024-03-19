@@ -1,5 +1,43 @@
 # ProyectoFinalBackend
 
+## Segunda entrega
+
+Para esta entrega ya se puede probar todo desde las vistas de front end. También se pueden hacer las peticiones a través del archivo .rest, pero la ventaja del front end es que se pueden agregar imágenes y borrar carritos sin tener que escribir el id cada vez.
+
+### Navegación
+
+Hay 4 vistas principales:
+
+- **Catálogo** que sería para el público en general
+- **Lista de productos** para el administrador
+- **Lista de carritos** para el administrador
+- **Custommer support** con el chat de usuarios
+
+Y otras dos vistas:
+
+- **Carrito del usuario**
+- **Detalle del producto**
+
+### CARRITO
+
+Carga de productos al carrito: se puede hacer desde el catálogo. Si no hay ningún carrito generado, cuando el usuario hace click en el botón "comprar" de un producto, primero se arma un carrito vacío y luego se agrega el producto.
+Una vez que se genera un carrito, el ID se guarda en el local storage y a partir de ahí todos los productos que se compran se agregan al carrito guardado en storage. Para acceder al carrito, se puede usar el link en la parte superior derecha de la página.
+Cuando se borra el carrito, se elimina del storage.
+
+### PRODUCTOS
+
+Se pueden agregar productos desde el formulario al final del listado de productos del administrador. Para modificarlos, se hace click en el nombre del producto y se abre una ventana modal.
+La carga de un producto se hace enviando el formulario html con el método post del mismo formulario. (lo hice así porque no pude enviar el formulario con datos y archivos -multipart form- usando fetch) Para volver a la vista de front end desde el endpoint hice una redirección. No creo que sea la forma más elegante de resolverlo, pero es lo único que pude hacer funcionar.
+La modificación de los productos se hace con fetch. Se pueden modificar los datos por un lado, o subir las imágenes. Se hacen por separado.
+
+### PAGINACION, ORDENAMIENTO, ETC
+
+Por ahora sólo programé la paginación, con una cantidad de productos por página fija y se ordena por cantidad de stock.
+Tengo que pensar un poco más cómo hacer que la cantidad de productos pueda ser elegida por el usuario, porque con la paginación, al ir a la segunda página el límite que se cargaba como req.query la primera vez, ya no queda en la url. (tengo que ver si lo puedo agregar desde handlebars con un if, pero todavía no lo pude pensar bien)
+
+> [!NOTE]
+> El chat está igual que para la entrega anterior
+
 ## Entrega intermedia
 
 > [!WARNING]
