@@ -13,7 +13,7 @@ Hay 4 vistas principales:
 - **Lista de carritos** para el administrador
 - **Custommer support** con el chat de usuarios
 
-Y otras dos vistas:
+Y otras dos vistas secundarias:
 
 - **Carrito del usuario**
 - **Detalle del producto**
@@ -37,6 +37,11 @@ Tengo que pensar un poco más cómo hacer que la cantidad de productos pueda ser
 
 > [!NOTE]
 > El chat está igual que para la entrega anterior
+
+> [!WARNING]
+> Las rutas a las vistas y los archivos que las renderizan tienen nombres un poco confusos y mezclados. Me falta corregirlos.
+
+---
 
 ## Entrega intermedia
 
