@@ -41,6 +41,9 @@ Tengo que pensar un poco más cómo hacer que la cantidad de productos pueda ser
 > [!WARNING]
 > Las rutas a las vistas y los archivos que las renderizan tienen nombres un poco confusos y mezclados. Me falta corregirlos.
 
+> [!NOTE]
+> 19/3 -> Para las próximas entregas: la idea es poder tener varias fotos por producto, y cada producto podrá pertenecer a diferentes categorías. Para eso tengo que corregir la manera de cargar los thumbs y categories en la base de datos. Actualmente, cuando subo una nueva imagen se borra la anterior. Lo mismo con las categorías. Teniendo varias categorías podré hacer reportes filtrando por las mismas.
+
 ---
 
 ## Entrega intermedia
