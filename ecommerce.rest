@@ -38,7 +38,7 @@ POST http://localhost:8080/api/imagenes/65edd56d96f4bb28bba426df
 GET http://localhost:8080/api/carts/
 
 ### vemos un carrito específico
-GET http://localhost:8080/api/carts/65f6fb713ab69c3f6d9698a4
+GET http://localhost:8080/api/carts/65f7976cf0591b658c609635
 
 ### creamos un carrito vacio
 POST http://localhost:8080/api/carts
