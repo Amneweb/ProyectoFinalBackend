@@ -16,7 +16,7 @@ botonesAgregar.forEach((boton) => {
         headers: { "Content-type": "application/json" },
       });
       const data = await newCart.json();
-      console.log("data", data);
+
       cid = data._id;
       localStorage.setItem("windward", cid);
     } else {
@@ -37,4 +37,16 @@ botonesAgregar.forEach((boton) => {
       location.reload(true);
     });
   });
+});
+
+const visualizacion = document.querySelector("#visualizacion");
+visualizacion.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const criterio = visualizacion.criterio.value || "nombre";
+  const cantidad = visualizacion.cantidad.value || 100;
+  const sentido = visualizacion.sentido.value || -1;
+  const ruta = `/catalogo/?limit=${cantidad}&criterio=${criterio}&sentido=${sentido}`;
+
+  window.location.replace(ruta);
 });

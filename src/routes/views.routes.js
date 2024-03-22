@@ -8,12 +8,28 @@ let productManager = new ProductManager();
 let cartManager = new CartManager();
 
 router.get("/catalogo", async (req, res) => {
-  let page = parseInt(req.query.page) || 1;
-  let limit = parseInt(req.query.limit) || 100;
-
+  const page = parseInt(req.query.page) || 1;
+  const limit = parseInt(req.query.limit) || 300;
+  const criterio = req.query.criterio || "title";
+  const sentido = parseInt(req.query.sentido) || 1;
+  let sort = {};
+  sort[criterio] = sentido;
+  console.log("objeto sort", sort);
   try {
-    const productosObtenidos = await productManager.getPagination(page);
-    console.log(productosObtenidos);
+    const productosObtenidos = await productManager.getPagination(
+      page,
+      limit,
+      sort
+    );
+    productosObtenidos.paginacion =
+      limit >= productosObtenidos.totalDocs ? false : true;
+
+    productosObtenidos.prevLink = productosObtenidos.hasPrevPage
+      ? `/catalogo/?page=${productosObtenidos.prevPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
+      : "";
+    productosObtenidos.nextLink = productosObtenidos.hasNextPage
+      ? `/catalogo/?page=${productosObtenidos.nextPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
+      : "";
 
     productosObtenidos.isValid = !(
       page < 1 || page > productosObtenidos.totalPages
