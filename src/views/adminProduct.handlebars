@@ -33,13 +33,31 @@
         name="price"
         value={{productosObtenidos.price}}
       />
-      <label for="category">Category</label>
-      <input
-        type="text"
-        name="category"
-        value="{{productosObtenidos.category}}"
-        id="category"
-      />
+      <label for="category">Asignar categoría</label>
+      <select name="category" id="category">
+        <option value="">Elegir categoría</option>
+        {{#each categoriasExistentes}}
+          <option value={{this.category}}>{{this.category}} </option>
+        {{/each}}
+      </select>
+      <small></small><small>Si querés agregar una nueva opción de categoría,
+        utilizá el
+        <strong>Administrador de Categorías</strong>
+        de más abajo.</small>
+      <small>Categorías ya asignadas</small><small>{{#each
+          productosObtenidos.category
+        }}
+
+          <button
+            class="badge borrarCate"
+            name="{{../productosObtenidos._id}}"
+            id="{{this}}"
+          >{{this}} ❌</button>
+
+        {{/each}}
+      </small>
+      <small></small>
+      <small>Hacer click en la cruz roja para borrar una categoría asignada</small>
       <label for="code">Código (SKU)</label>
       <input
         type="text"
@@ -90,7 +108,6 @@
     </form>
     <div class="errores" id="errorImagen"></div>
   </div>
-  <button class="cerrar-editar" id="cerrar-editar">Cerrar</button>
 
   <!-- hasta aca el formulario -->
 

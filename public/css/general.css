@@ -33,6 +33,7 @@ a {
     border-radius: 5px;
     text-decoration:none;
 }
+
 div {
     margin: 1em;
 }
@@ -213,5 +214,14 @@ section {
     padding:0 100px;
 }
 .titulo {
-    color: #808000;
+    color: #91A3B0;
+}
+.badge {
+    background-color:#91A3B0;
+    padding:2px 6px;
+    border-radius:3px;
+    border:none;
+    color:white;
+    margin:0 5px;
+
 }

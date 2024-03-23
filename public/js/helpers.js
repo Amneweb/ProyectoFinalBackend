@@ -33,6 +33,9 @@ modificarProducto.addEventListener("submit", async (e) => {
   Swal.fire({
     title: "👍",
     text: "El producto se modificó con éxito",
+    position: "top-end",
+    timer: 1500,
+    showConfirmButton: false,
   }).then((result) => {
     location.reload(true);
   });
@@ -51,37 +54,39 @@ borrarProducto.forEach((boton) => {
     Swal.fire({
       title: "👍",
       text: "El producto se borró con éxito",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
     }).then((result) => {
       location.reload(true);
     });
   });
 });
 
-/* const editarProducto = document.querySelectorAll(".boton-nombre");
+const borrarCategoria = document.querySelectorAll(".borrarCate");
 
-editarProducto.forEach((boton) => {
-  boton.addEventListener("click", (e) => {
+borrarCategoria.forEach((boton) => {
+  boton.addEventListener("click", async (e) => {
     e.preventDefault();
-    const productID = e.target.id;
-    const productName = e.target.name;
-    const modal = document.querySelector(".editar");
-    document.querySelectorAll(".IDproductoModificar").forEach((contenedor) => {
-      contenedor.value = productID;
+    const productID = e.target.name;
+    const categoria = e.target.id;
+    await fetch(`/api/products/${productID}/categoria/${categoria}`, {
+      method: "PUT",
+      headers: { "Content-type": "application/json" },
     });
-    document.querySelector(
-      "#nombre-producto"
-    ).innerHTML = `<span class="small">Modificar producto </span>${productName}`;
 
-    modal.classList.add("active");
+    Swal.fire({
+      title: "👍",
+      text: "La categoría se borró con éxito",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    }).then((result) => {
+      location.reload(true);
+    });
   });
 });
-const cerrarEditar = document.querySelector("#cerrar-editar");
-cerrarEditar.addEventListener("click", (e) => {
-  e.preventDefault();
-  const modal = document.querySelector(".editar");
-  modal.classList.remove("active");
-});
-*/
+
 const agregarCategoria = document.querySelector("#agregarCategorias");
 agregarCategoria.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -97,6 +102,9 @@ agregarCategoria.addEventListener("submit", async (e) => {
   Swal.fire({
     title: "👍",
     text: "La categoría se agregó con éxito",
+    position: "top-end",
+    timer: 1500,
+    showConfirmButton: false,
   }).then((result) => {
     location.reload(true);
   });

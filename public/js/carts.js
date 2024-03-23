@@ -8,7 +8,7 @@ botonesBorrarCarrito.forEach((boton) => {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     });
-    console.log("se borró el carrito", borrar);
+
     const storage = localStorage.getItem("windward");
     if (cartID === storage) {
       localStorage.removeItem("windward");
@@ -28,12 +28,12 @@ botonesBorrarProducto.forEach((boton) => {
     e.preventDefault();
     const cartID = e.target.name;
     const productID = e.target.id;
-    console.log(cartID, productID);
+
     const borrar = await fetch(`/api/carts/${cartID}/product/${productID}`, {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     });
-    console.log("se borró el producto", borrar);
+
     Swal.fire({
       title: "👍",
       text: "El producto se borró con éxito",

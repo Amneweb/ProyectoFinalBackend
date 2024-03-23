@@ -104,7 +104,7 @@ class CartManager {
       const carritoEncontrado = carritos.find(
         (cadacarrito) => cadacarrito.id === id
       );
-      console.log("carrito encontrado ", carritoEncontrado);
+
       if (carritoEncontrado) {
         return carritoEncontrado;
       } else {

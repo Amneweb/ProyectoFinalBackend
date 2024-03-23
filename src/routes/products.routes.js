@@ -73,6 +73,16 @@ router.put("/:id", validateModifiedData, async (req, res) => {
     }
 });
 
+router.put("/:id/categoria/:cate", async (req, res) => {
+  try {
+    res.send(
+      await productManager.deleteProductCategory(req.params.id, req.params.cate)
+    );
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
+});
+
 router.post(
   "/imagenes/",
   uploader.single("imagen"),

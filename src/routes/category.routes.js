@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const nuevaCate = req.body.cate;
-  console.log("nuevaCate en router", nuevaCate);
+
   try {
     await categoryManager.addCategory(nuevaCate);
     res.send("<p>La categoría se agregó con éxito</p>");

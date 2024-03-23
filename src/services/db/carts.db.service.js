@@ -35,7 +35,7 @@ class CartManager {
     if (!producto) {
       throw new Error("producto no encontrado");
     }
-    console.log(carritoBuscado);
+
     const productIndex = carritoBuscado.cart.findIndex(
       (productItem) => productItem.product._id.toString() === productID
     );
@@ -60,7 +60,7 @@ class CartManager {
   //borrar producto de un carrito específico
   deleteProductFromCart = async (id, productID) => {
     let carritoBuscado = await cartModel.findById(id);
-    console.log(carritoBuscado);
+
     if (!carritoBuscado) {
       throw new Error("Carrito no encontrado");
     }
@@ -68,13 +68,13 @@ class CartManager {
     const productIndex = carritoBuscado.cart.findIndex(
       (productItem) => productItem.product._id.toString() === productID
     );
-    console.log(productIndex);
+
     if (productIndex === -1) {
       throw new Error("el producto indicado no existe en el carrito");
     } else {
       carritoBuscado.cart.splice(productIndex, 1);
     }
-    console.log("carrito buscado a guardar ", carritoBuscado);
+
     await carritoBuscado.save();
 
     return carritoBuscado;

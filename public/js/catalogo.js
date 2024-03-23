@@ -29,7 +29,7 @@ botonesAgregar.forEach((boton) => {
       method: "POST",
       headers: { "Content-type": "application/json" },
     });
-    console.log("se agregó el producto", agregar);
+
     Swal.fire({
       title: "👌",
       text: "El producto se agregó con éxito al carrito",

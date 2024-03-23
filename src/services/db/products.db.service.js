@@ -41,7 +41,7 @@ export default class ProductManager {
     let result = await productModel.updateOne(
       { _id: id },
       {
-        $push: {
+        $addToSet: {
           category: nuevo.category[0],
         },
         $set: {
@@ -50,6 +50,22 @@ export default class ProductManager {
       }
     );
 
+    if (result.modifiedCount > 0) {
+      const modificado = await productModel.findOne({ _id: id });
+      return { modificado };
+    } else {
+      return result;
+    }
+  };
+  deleteProductCategory = async (id, cate) => {
+    let result = await productModel.updateOne(
+      { _id: id },
+      {
+        $pull: {
+          category: cate,
+        },
+      }
+    );
     if (result.modifiedCount > 0) {
       const modificado = await productModel.findOne({ _id: id });
       return { modificado };

@@ -11,9 +11,8 @@ export default class CategoryManager {
   };
 
   addCategory = async (category) => {
-    console.log("dentro del manager ", category);
     let categoriaNueva = await categoriesModel.create({ category });
-    console.log("dentro del manager después del await", categoriaNueva);
+
     return categoriaNueva;
   };
 

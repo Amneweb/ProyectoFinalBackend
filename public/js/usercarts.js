@@ -8,7 +8,7 @@ botonesBorrarCarrito.forEach((boton) => {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     });
-    console.log("se borró el carrito", borrar);
+
     Swal.fire({
       title: "👍",
       text: "El carrito se borró con éxito",
@@ -29,7 +29,7 @@ botonesBorrarProducto.forEach((boton) => {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
     });
-    console.log("se borró el producto", borrar);
+
     Swal.fire({
       title: "👍",
       text: "El producto se borró con éxito",

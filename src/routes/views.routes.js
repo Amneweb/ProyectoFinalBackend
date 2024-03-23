@@ -16,7 +16,7 @@ router.get("/catalogo", async (req, res) => {
   const sentido = parseInt(req.query.sentido) || 1;
   let sort = {};
   sort[criterio] = sentido;
-  console.log("objeto sort", sort);
+
   try {
     const productosObtenidos = await productManager.getPagination(
       page,
@@ -108,10 +108,6 @@ router.get("/adminProduct/:pid", async (req, res) => {
     let categoriasExistentes = categoryManager.getCategories();
     await Promise.all([productosObtenidos, categoriasExistentes]).then(
       ([productosObtenidos, categoriasExistentes]) => {
-        console.log(
-          "después de promise all en producto by id",
-          productosObtenidos
-        );
         res.render("adminProduct", {
           productosObtenidos,
           categoriasExistentes,

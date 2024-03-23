@@ -152,7 +152,6 @@ class ProductManager {
     try {
       const productoAborrar = await this.getProductByID(id);
       if (productoAborrar) {
-        console.log(productoAborrar);
         this.#productos.splice(this.#productos.indexOf(productoAborrar), 1);
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
