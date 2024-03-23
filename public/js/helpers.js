@@ -14,7 +14,9 @@ const deshabilitarVacios = (form) => {
 const modificarProducto = document.querySelector("#modificar");
 modificarProducto.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const id = document.querySelector('input[name="IDproductoModificar"]').value;
+  const id = document.querySelector("#idproducto").innerHTML;
+
+  console.log("id sale del span del h3", id);
 
   deshabilitarVacios(modificarProducto);
 
@@ -22,13 +24,18 @@ modificarProducto.addEventListener("submit", async (e) => {
 
   const valores = Object.fromEntries(bodyData.entries());
 
-  const respuesta = await fetch(`/api/products/${id}`, {
+  await fetch(`/api/products/${id}`, {
     method: "PUT",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(valores),
   });
 
-  console.log("respuesta del fetch", respuesta);
+  Swal.fire({
+    title: "👍",
+    text: "El producto se modificó con éxito",
+  }).then((result) => {
+    location.reload(true);
+  });
 });
 
 const borrarProducto = document.querySelectorAll(".borrarProducto");
@@ -50,7 +57,7 @@ borrarProducto.forEach((boton) => {
   });
 });
 
-const editarProducto = document.querySelectorAll(".boton-nombre");
+/* const editarProducto = document.querySelectorAll(".boton-nombre");
 
 editarProducto.forEach((boton) => {
   boton.addEventListener("click", (e) => {
@@ -74,7 +81,7 @@ cerrarEditar.addEventListener("click", (e) => {
   const modal = document.querySelector(".editar");
   modal.classList.remove("active");
 });
-
+*/
 const agregarCategoria = document.querySelector("#agregarCategorias");
 agregarCategoria.addEventListener("submit", async (e) => {
   e.preventDefault();

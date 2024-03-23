@@ -102,11 +102,16 @@ router.get("/carrito/:cid", async (req, res) => {
 });
 
 router.get("/adminProduct/:pid", async (req, res) => {
+  const id = req.params.pid;
   try {
-    let productosObtenidos = productManager.getProductByID();
+    let productosObtenidos = productManager.getProductByID(id);
     let categoriasExistentes = categoryManager.getCategories();
     await Promise.all([productosObtenidos, categoriasExistentes]).then(
       ([productosObtenidos, categoriasExistentes]) => {
+        console.log(
+          "después de promise all en producto by id",
+          productosObtenidos
+        );
         res.render("adminProduct", {
           productosObtenidos,
           categoriasExistentes,

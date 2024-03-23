@@ -9,94 +9,89 @@
 <section class="main">
   <h1>Hola, bienvenidos al panel de administración de Windward Car &amp; Truck -
     Battery Store</h1>
-  <h2>Modificar un producto</h2>
-  <div class="editar" id="editar">
-    <div>
-      <h2 id="nombre-producto"></h2>
-      <form action="">
-        <label for="IDproductoModificar">ID producto</label>
-        <input
-          type="text"
-          id="IDproductoModificar"
-          name="IDproductoModificar"
-          class="IDproductoModificar"
-          value=""
-        />
-      </form>
-      <form id="modificar" action="" enctype="multipart/form-data">
-        <label for="title">Nombre</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          value={{productosObtenidos.title}}
-        />
-        <label for="price">Precio</label>
-        <input
-          type="number"
-          id="price"
-          name="price"
-          value={{productosObtenidos.price}}
-        />
-        <label for="category">Category</label>
-        <input
-          type="text"
-          name="category"
-          value={{productosObtenidos.category}}
-          id="category"
-        />
-        <label for="code">Código (SKU)</label>
-        <input
-          type="text"
-          id="code"
-          name="code"
-          value={{productosObtenidos.code}}
-        />
-        <label for="description">Descripcion</label>
-        <input
-          type="text"
-          id="description"
-          value={{productosObtenidos.description}}
-          name="description"
-        />
-        <label for="stock">Stock</label>
-        <input
-          type="number"
-          id="stock"
-          value={{productosObtenidos.stock}}
-          name="stock"
-        />
-        <label for="status">Status</label>
-        <input type="text" value="true" />
-        <input type="submit" />
-      </form>
-      <div class="errores" id="errorModificar"></div>
-    </div>
+  <h2>Modificar producto:
+    <span class="titulo">{{productosObtenidos.title}}</span></h2>
 
-    <div>
-      <h2>Subir imagen de producto</h2>
-      <form
-        id="subirImagen"
-        action="/api/products/imagenes/"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <label for="IDproductoImagen">ID del producto a modificar</label>
-        <input
-          type="text"
-          id="IDproducto"
-          name="IDproducto"
-          class="IDproductoModificar"
-          value=""
-        />
-        <label for="thumb">Seleccionar archivo</label>
-        <input type="file" name="imagen" id="imagen" />
-        <input type="submit" value="enviar" />
-      </form>
-      <div class="errores" id="errorImagen"></div>
-    </div>
-    <button class="cerrar-editar" id="cerrar-editar">Cerrar</button>
+  <div>
+
+    <h3>ID del producto:
+      <span id="idproducto">{{productosObtenidos._id}}</span>
+    </h3>
+
+    <form id="modificar" action="" enctype="multipart/form-data">
+      <label for="title">Nombre</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        value="{{productosObtenidos.title}}"
+      />
+      <label for="price">Precio</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        value={{productosObtenidos.price}}
+      />
+      <label for="category">Category</label>
+      <input
+        type="text"
+        name="category"
+        value="{{productosObtenidos.category}}"
+        id="category"
+      />
+      <label for="code">Código (SKU)</label>
+      <input
+        type="text"
+        id="code"
+        name="code"
+        value={{productosObtenidos.code}}
+      />
+      <label for="description">Descripcion</label>
+      <input
+        type="text"
+        id="description"
+        value="{{productosObtenidos.description}}"
+        name="description"
+      />
+      <label for="stock">Stock</label>
+      <input
+        type="number"
+        id="stock"
+        value={{productosObtenidos.stock}}
+        name="stock"
+      />
+      <label for="status">Status</label>
+      <input type="text" value="true" />
+      <input type="submit" />
+    </form>
+    <div class="errores" id="errorModificar"></div>
   </div>
+
+  <div>
+    <h2>Subir imagen de producto</h2>
+    <form
+      id="subirImagen"
+      action="/api/products/imagenes/"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <label for="IDproductoImagen">ID del producto a modificar</label>
+      <input
+        type="text"
+        id="IDproducto"
+        name="IDproducto"
+        class="IDproductoModificar"
+        value=""
+      />
+      <label for="thumb">Seleccionar archivo</label>
+      <input type="file" name="imagen" id="imagen" />
+      <input type="submit" value="enviar" />
+    </form>
+    <div class="errores" id="errorImagen"></div>
+  </div>
+  <button class="cerrar-editar" id="cerrar-editar">Cerrar</button>
+
   <!-- hasta aca el formulario -->
 
   <h2>Administrar categorías</h2>

@@ -36,7 +36,20 @@ export default class ProductManager {
     return result;
   };
   updateProduct = async (id, nuevo) => {
-    let result = await productModel.updateOne({ _id: id }, nuevo);
+    const { category, ...sinCategoria } = nuevo;
+
+    let result = await productModel.updateOne(
+      { _id: id },
+      {
+        $push: {
+          category: nuevo.category[0],
+        },
+        $set: {
+          ...sinCategoria,
+        },
+      }
+    );
+
     if (result.modifiedCount > 0) {
       const modificado = await productModel.findOne({ _id: id });
       return { modificado };
