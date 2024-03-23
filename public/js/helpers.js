@@ -16,8 +16,6 @@ modificarProducto.addEventListener("submit", async (e) => {
   e.preventDefault();
   const id = document.querySelector("#idproducto").innerHTML;
 
-  console.log("id sale del span del h3", id);
-
   deshabilitarVacios(modificarProducto);
 
   const bodyData = new FormData(modificarProducto);
@@ -92,7 +90,6 @@ agregarCategoria.addEventListener("submit", async (e) => {
   e.preventDefault();
   const newCate = { cate: agregarCategoria.newcate.value };
 
-  console.log("newCate", newCate);
   await fetch(`/api/categories/`, {
     method: "POST",
     headers: { "Content-type": "application/json" },
