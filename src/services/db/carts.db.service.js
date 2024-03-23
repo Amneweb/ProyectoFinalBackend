@@ -10,7 +10,6 @@ class CartManager {
     };
 
     const carrito = await cartModel.create(newCarrito);
-    console.log("carrito vacio en controlador", carrito);
     return carrito;
   };
   //obtener carritos

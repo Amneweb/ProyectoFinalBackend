@@ -74,3 +74,23 @@ cerrarEditar.addEventListener("click", (e) => {
   const modal = document.querySelector(".editar");
   modal.classList.remove("active");
 });
+
+const agregarCategoria = document.querySelector("#agregarCategorias");
+agregarCategoria.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const newCate = { cate: agregarCategoria.newcate.value };
+
+  console.log("newCate", newCate);
+  await fetch(`/api/categories/`, {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(newCate),
+  });
+
+  Swal.fire({
+    title: "👍",
+    text: "La categoría se agregó con éxito",
+  }).then((result) => {
+    location.reload(true);
+  });
+});

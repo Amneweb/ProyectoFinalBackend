@@ -7,6 +7,7 @@ import { Server } from "socket.io";
 
 dotenv.config();
 import productRoutes from "./routes/products.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
 import messageModel from "./services/db/models/messages.model.js";
@@ -36,6 +37,7 @@ const PORT = 8080;
 app.use("/", viewsRouter);
 app.use("/api/products", productRoutes);
 app.use("/api/carts", cartRoutes);
+app.use("/api/categories", categoryRoutes);
 const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
