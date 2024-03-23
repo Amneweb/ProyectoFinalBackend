@@ -116,7 +116,14 @@
     <label for="price">Price</label>
     <input type="number" id="price" name="price" value="" />
     <label for="category">Category</label>
-    <input type="text" name="category" value="" id="category" />
+    <select name="category" id="category">
+      <option value="">Elegir categoría</option>
+      {{#each categoriasExistentes}}
+        <option value={{this.category}}>{{this.category}} </option>
+      {{/each}}
+    </select>
+    <small></small><small>Si querés agregar una nueva categoría, utilizá el
+      formulario de más abajo.</small>
     <label for="code">Code</label>
     <input type="text" id="code" name="code" value="" />
     <label for="description">Descripcion</label>
@@ -135,9 +142,9 @@
     <input type="submit" value="enviar" />
   </form>
   <div class="errores" id="errorAgregar"></div>
-  <h2>Modificar categorías</h2>
+  <h2>Administrar categorías</h2>
   <form action="" id="agregarCategorias">
-    <label for="newcate">Ingresá la nueva categoría
+    <label for="newcate">Ingresá una nueva categoría
       <input type="text" id="newcate" name="newcate" />
     </label>
     <button type="submit">Agregar</button>

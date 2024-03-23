@@ -1,11 +1,13 @@
 import { Router } from "express";
 import ProductManager from "../services/db/products.db.service.js";
+import CategoryManager from "../services/db/categories.db.service.js";
 import CartManager from "../services/db/carts.db.service.js";
 
 const router = Router();
 
 let productManager = new ProductManager();
 let cartManager = new CartManager();
+let categoryManager = new CategoryManager();
 
 router.get("/catalogo", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
@@ -70,9 +72,17 @@ router.get("/chat", (req, res) => {
 
 router.get("/home", async (req, res) => {
   try {
-    const productosObtenidos = await productManager.getProducts();
-
-    res.render("adminProducts", { productosObtenidos, style: "general.css" });
+    let productosObtenidos = productManager.getProducts();
+    let categoriasExistentes = categoryManager.getCategories();
+    await Promise.all([productosObtenidos, categoriasExistentes]).then(
+      ([productosObtenidos, categoriasExistentes]) => {
+        res.render("adminProducts", {
+          productosObtenidos,
+          categoriasExistentes,
+          style: "general.css",
+        });
+      }
+    );
   } catch (e) {
     res.status(500).send(e.message);
   }
@@ -88,6 +98,24 @@ router.get("/carrito/:cid", async (req, res) => {
     });
   } catch (e) {
     res.status(404).send(e.message);
+  }
+});
+
+router.get("/adminProduct/:pid", async (req, res) => {
+  try {
+    let productosObtenidos = productManager.getProductByID();
+    let categoriasExistentes = categoryManager.getCategories();
+    await Promise.all([productosObtenidos, categoriasExistentes]).then(
+      ([productosObtenidos, categoriasExistentes]) => {
+        res.render("adminProduct", {
+          productosObtenidos,
+          categoriasExistentes,
+          style: "general.css",
+        });
+      }
+    );
+  } catch (e) {
+    res.status(500).send(e.message);
   }
 });
 

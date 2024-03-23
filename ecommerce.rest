@@ -50,8 +50,11 @@ POST http://localhost:8080/api/carts/65ee498a6350cf4da720e896/product/65ee79f09b
 ### borramos un carrito
 DELETE http://localhost:8080/api/carts/65ee8867378ab40a726148c0
 
+### ver categorías
+GET http://localhost:8080/api/categories/
+
 ### agregar categoria
-POST http://localhost:8080/api/categories
+POST http://localhost:8080/api/categories/
 Content-Type: application/json
 
 {"cate":"Edna"}
