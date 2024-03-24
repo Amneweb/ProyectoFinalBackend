@@ -225,3 +225,34 @@ section {
     margin:0 5px;
 
 }
+.session_form {
+    display:flex;
+
+    padding:20px;
+    flex-direction:column;
+    border:#91A3B0 solid 1px;
+    background-color:#F5F5F5;
+border-radius:10px;
+    width:50%;
+margin:50px auto;
+    align-items: center;
+
+    
+}
+.session_form div {
+    display:flex;
+   width:100%;
+   align-items: center;
+justify-content: center;
+}
+.session_form label {
+    width:40%;
+}
+
+.session_form input {
+    width:55%;
+    border:#91A3B0 solid 1px;
+}
+.centered {
+    text-align: center;
+}

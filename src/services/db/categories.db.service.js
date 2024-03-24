@@ -2,9 +2,7 @@ import categoriesModel from "./models/categories.model.js";
 import pc from "picocolors";
 
 export default class CategoryManager {
-  constructor() {
-    console.log(pc.blue("Dentro del controlador de las categorías"));
-  }
+  constructor() {}
   getCategories = async () => {
     const categories = await categoriesModel.find().lean();
     return categories;

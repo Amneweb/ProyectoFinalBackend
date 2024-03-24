@@ -64,7 +64,7 @@ class CartManager {
     if (!carritoBuscado) {
       throw new Error("Carrito no encontrado");
     }
-    console.log("lo que llega al controlador", id, productID);
+
     const productIndex = carritoBuscado.cart.findIndex(
       (productItem) => productItem.product._id.toString() === productID
     );

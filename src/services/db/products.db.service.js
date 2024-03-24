@@ -2,9 +2,7 @@ import productModel from "./models/products.model.js";
 import pc from "picocolors";
 
 export default class ProductManager {
-  constructor() {
-    console.log(pc.blue("Dentro de la clase product manager"));
-  }
+  constructor() {}
   getProducts = async () => {
     const products = await productModel.find().lean();
     return products;

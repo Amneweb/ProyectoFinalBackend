@@ -37,7 +37,12 @@ router.get("/catalogo", async (req, res) => {
       page < 1 || page > productosObtenidos.totalPages
     );
 
-    res.render("catalogo", { productosObtenidos, style: "catalogo.css" });
+    res.render("catalogo", {
+      productosObtenidos,
+      user: req.session.user,
+      role: req.session.admin,
+      style: "catalogo.css",
+    });
   } catch (e) {
     res.status(500).send(e.message);
   }

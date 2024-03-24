@@ -2,6 +2,8 @@ import express from "express";
 import __dirname from "../utils.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 
@@ -10,6 +12,9 @@ import productRoutes from "./routes/products.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
+import sessionRoutes from "./routes/sessions.routes.js";
+import sessionViewsRoutes from "./routes/session.views.routes.js";
+import userRoutes from "./routes/user.views.routes.js";
 import messageModel from "./services/db/models/messages.model.js";
 const app = express();
 
@@ -34,10 +39,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const PORT = 8080;
 
-app.use("/", viewsRouter);
-app.use("/api/products", productRoutes);
-app.use("/api/carts", cartRoutes);
-app.use("/api/categories", categoryRoutes);
 const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
@@ -46,8 +47,28 @@ const username = process.env.DB_USER_NAME;
 const password = process.env.DB_PASS;
 const cluster = process.env.CLUSTER_NAME;
 const dbname = process.env.DB_NAME;
+const secret = process.env.SESSION_SECRET;
 
 let uri = `mongodb+srv://${username}:${password}@${cluster}.2encwlm.mongodb.net/${dbname}?retryWrites=true&w=majority&appName=ClusterCursoCoder`;
+
+app.use(
+  session({
+    store: MongoStore.create({
+      mongoUrl: uri,
+      ttl: 10 * 60,
+    }),
+    secret: secret,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+app.use("/api/sessions", sessionRoutes);
+app.use("/sessions", sessionViewsRoutes);
+app.use("/users", userRoutes);
+app.use("/", viewsRouter);
+app.use("/api/products", productRoutes);
+app.use("/api/carts", cartRoutes);
+app.use("/api/categories", categoryRoutes);
 
 const connectMongoDB = async () => {
   try {

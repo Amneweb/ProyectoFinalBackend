@@ -20,7 +20,7 @@ Content-Type: application/json
   }
 
 ### obtenemos producto con id determinado
-GET  http://localhost:8080/api/products/65ec914390323f58a06c2364
+GET  http://localhost:8080/api/products/65edce4840922c7a40fb3378
 
 ### borramos un producto
 DELETE http://localhost:8080/api/products/65edcd94716a035c64244777

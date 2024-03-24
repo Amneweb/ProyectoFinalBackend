@@ -119,3 +119,15 @@ align-items: center;
     width:33%;
     padding:10px
 }
+.nombre {
+    color:#91A3B0
+}
+.usuario {
+    position:absolute;
+    padding:20px;
+    top:50px;
+    right:10px;
+    border:#91A3B0 solid 1px;
+    border-radius: 5px;
+    background-color:white;
+}

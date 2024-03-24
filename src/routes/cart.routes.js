@@ -16,7 +16,6 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const carritoCreado = await cartManager.addCart();
-  console.log("carrito Creado ", carritoCreado);
   res.send(carritoCreado);
 });
 
@@ -39,7 +38,7 @@ router.delete("/:id", async (req, res) => {
 router.delete("/:cid/product/:pid", async (req, res) => {
   const cartID = req.params.cid;
   const prodID = req.params.pid;
-  console.log(cartID, prodID);
+
   try {
     res.send(await cartManager.deleteProductFromCart(cartID, prodID));
   } catch (e) {
