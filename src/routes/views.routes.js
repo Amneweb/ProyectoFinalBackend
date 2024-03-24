@@ -61,7 +61,22 @@ router.get("/catalogo/:id", async (req, res) => {
   }
 });
 
-router.get("/admin", async (req, res) => {
+//middleware para dejar pasar sólo a los administradores
+function auth(req, res, next) {
+  console.log("dentro de middle de auth", req.session.user);
+  if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
+    return next();
+  } else {
+    return res
+      .status(403)
+      .setHeader("Content-type", "text/html")
+      .send(
+        '<div><p>Lo sentimos, no estás autorizado para ingresar a este recurso</p><p>Hacé click <a href="/catalogo">aquí</a> para volver a la página de inicio</p></div>'
+      );
+  }
+}
+
+router.get("/admin", auth, async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
 
