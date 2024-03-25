@@ -9,7 +9,31 @@ let productManager = new ProductManager();
 let cartManager = new CartManager();
 let categoryManager = new CategoryManager();
 
-router.get("/catalogo", async (req, res) => {
+//middleware para dejar pasar sólo a los administradores
+function auth(req, res, next) {
+  console.log("dentro de middle de auth", req.session.user);
+  if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
+    return next();
+  } else {
+    return res
+      .status(403)
+      .setHeader("Content-type", "text/html")
+      .send(
+        '<div><p>Lo sentimos, no estás autorizado para ingresar a este recurso</p><p>Hacé click <a href="/catalogo">aquí</a> para volver a la página de inicio</p></div>'
+      );
+  }
+}
+
+//middleware para no permitir acceder a ninguna vista sin estar logueado
+function noauth(req, res, next) {
+  if (!req.session.user) {
+    return res.render("login", { style: "general.css" });
+  } else {
+    return next();
+  }
+}
+
+router.get("/catalogo", noauth, async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 300;
   const criterio = req.query.criterio || "title";
@@ -48,7 +72,8 @@ router.get("/catalogo", async (req, res) => {
   }
 });
 
-router.get("/catalogo/:id", async (req, res) => {
+router.get("/catalogo/:id", noauth, async (req, res) => {
+  if (!req.session.user) return res.render("login", { style: "general.css" });
   const id = req.params.id;
   try {
     const producto = await productManager.getProductByID(id);
@@ -61,22 +86,7 @@ router.get("/catalogo/:id", async (req, res) => {
   }
 });
 
-//middleware para dejar pasar sólo a los administradores
-function auth(req, res, next) {
-  console.log("dentro de middle de auth", req.session.user);
-  if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
-    return next();
-  } else {
-    return res
-      .status(403)
-      .setHeader("Content-type", "text/html")
-      .send(
-        '<div><p>Lo sentimos, no estás autorizado para ingresar a este recurso</p><p>Hacé click <a href="/catalogo">aquí</a> para volver a la página de inicio</p></div>'
-      );
-  }
-}
-
-router.get("/admin", auth, async (req, res) => {
+router.get("/admin", noauth, auth, async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
 
@@ -86,11 +96,11 @@ router.get("/admin", auth, async (req, res) => {
   }
 });
 
-router.get("/chat", (req, res) => {
+router.get("/chat", noauth, (req, res) => {
   res.render("messages", { style: "general.css" });
 });
 
-router.get("/home", async (req, res) => {
+router.get("/home", noauth, async (req, res) => {
   try {
     let productosObtenidos = productManager.getProducts();
     let categoriasExistentes = categoryManager.getCategories();
@@ -109,7 +119,7 @@ router.get("/home", async (req, res) => {
 });
 
 //para ver el carrito del usuario
-router.get("/carrito/:cid", async (req, res) => {
+router.get("/carrito/:cid", noauth, async (req, res) => {
   try {
     const carrito = await cartManager.getCartByID(req.params.cid);
     res.render("usercart", {
@@ -121,7 +131,7 @@ router.get("/carrito/:cid", async (req, res) => {
   }
 });
 
-router.get("/adminProduct/:pid", async (req, res) => {
+router.get("/adminProduct/:pid", noauth, async (req, res) => {
   const id = req.params.pid;
   try {
     let productosObtenidos = productManager.getProductByID(id);

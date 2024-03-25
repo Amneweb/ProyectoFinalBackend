@@ -1,5 +1,20 @@
 # ProyectoFinalBackend
 
+## Desafío Clase 19 - sesiones y login básico
+
+Para este desafío la página de inicio es http://localhost:8080/catalogo
+Al intentar acceder a dicha página sin haberse autenticado, el sistema lleva a la página de login / registro. Una vez logueado, un usuario común (con rol de usuario) puede acceder a todas las vistas menos la de "Admin carritos". Un usuario con rol de administrador puede acceder a todas las vistas.
+Para impedir el acceso sin estar logueado, usé un middleware que verifica si existe el req.session.user.
+Para impedir el acceso al recurso de administración de carritos, usé un midleware similar, pero que verifica qué rol tiene el usuario.
+
+### Mejoras a la carga y edición de los productos
+
+Las categorías de productos ahora se guardan de a una, y sólo se pueden asignar categorías existentes (antes había que escribir a mano el nombre de la categoría y si no existía, el programa la tomaba igual). Además, cada categoría agregada se suma al array de categorías, sin borrar las que ya estaban asignadas. Por otro lado, mediante el formulario de modificación de productos también se pueden borrar categorías.
+
+### Ordenamiento de productos en el catálogo
+
+## Ya se pueden elegir los criterios de ordenamiento y el límite máximo de productos por página.
+
 ## Segunda entrega
 
 Para esta entrega ya se puede probar todo desde las vistas de front end. También se pueden hacer las peticiones a través del archivo .rest, pero la ventaja del front end es que se pueden agregar imágenes y borrar carritos sin tener que escribir el id cada vez.
