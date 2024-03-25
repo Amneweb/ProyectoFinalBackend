@@ -13,7 +13,9 @@ Las categorías de productos ahora se guardan de a una, y sólo se pueden asigna
 
 ### Ordenamiento de productos en el catálogo
 
-## Ya se pueden elegir los criterios de ordenamiento y el límite máximo de productos por página.
+Ya se pueden elegir los criterios de ordenamiento y el límite máximo de productos por página.
+
+---
 
 ## Segunda entrega
 
