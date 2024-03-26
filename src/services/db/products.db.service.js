@@ -3,12 +3,13 @@ import pc from "picocolors";
 
 export default class ProductManager {
   constructor() {}
-  getProducts = async () => {
+  getProductsSinPaginar = async () => {
     const products = await productModel.find().lean();
     return products;
   };
 
-  getPagination = async (page, limit, sort) => {
+  getProducts = async (page, limit, sort) => {
+    console.log(page, limit, sort);
     const products = await productModel.paginate(
       {},
       {

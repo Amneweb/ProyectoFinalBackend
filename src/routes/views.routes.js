@@ -42,7 +42,7 @@ router.get("/catalogo", noauth, async (req, res) => {
   sort[criterio] = sentido;
 
   try {
-    const productosObtenidos = await productManager.getPagination(
+    const productosObtenidos = await productManager.getProducts(
       page,
       limit,
       sort
@@ -68,7 +68,9 @@ router.get("/catalogo", noauth, async (req, res) => {
       style: "catalogo.css",
     });
   } catch (e) {
-    res.status(500).send(e.message);
+    res
+      .status(500)
+      .render("errors", { mesage: e.message, style: "catalogo.css" });
   }
 });
 
@@ -78,7 +80,8 @@ router.get("/catalogo/:id", noauth, async (req, res) => {
   try {
     const producto = await productManager.getProductByID(id);
     if (!producto) {
-      const mensaje = `no se encontró ningún producto con el ID ${id}`;
+      const estado = 403;
+      const mensaje = `no se encontró ningún producto con el ID ${id}. Número de estado: ${estado}`;
       throw new Error(mensaje);
     }
     res.render("product", {
@@ -86,17 +89,24 @@ router.get("/catalogo/:id", noauth, async (req, res) => {
       style: "catalogo.css",
     });
   } catch (e) {
-    res.status(500).render("errors", { message: e.message });
+    res
+      .status(500)
+      .render("errors", { message: e.message, style: "catalogo.css" });
   }
 });
 
 router.get("/admin", noauth, auth, async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
-
+    if (!carritosObtenidos) {
+      const mensaje = `No se pudieron cargar los carritos`;
+      throw new Error(mensaje);
+    }
     res.render("carts", { carritosObtenidos, style: "general.css" });
   } catch (e) {
-    res.status(500).send(e.message);
+    res
+      .status(500)
+      .render("errors", { message: e.message, style: "catalogo.css" });
   }
 });
 
@@ -106,7 +116,7 @@ router.get("/chat", noauth, (req, res) => {
 
 router.get("/home", noauth, async (req, res) => {
   try {
-    let productosObtenidos = productManager.getProducts();
+    let productosObtenidos = productManager.getProducts(1, 300, { title: 1 });
     let categoriasExistentes = categoryManager.getCategories();
     await Promise.all([productosObtenidos, categoriasExistentes]).then(
       ([productosObtenidos, categoriasExistentes]) => {
@@ -118,7 +128,9 @@ router.get("/home", noauth, async (req, res) => {
       }
     );
   } catch (e) {
-    res.status(500).send(e.message);
+    res
+      .status(500)
+      .render("errors", { message: e.message, style: "catalogo.css" });
   }
 });
 
@@ -126,12 +138,18 @@ router.get("/home", noauth, async (req, res) => {
 router.get("/carrito/:cid", noauth, async (req, res) => {
   try {
     const carrito = await cartManager.getCartByID(req.params.cid);
+    console.log("carrito en router ", carrito);
+    if (!carrito.success) {
+      throw new Error(carrito.message);
+    }
     res.render("usercart", {
-      carrito,
+      carrito: carrito.data,
       style: "general.css",
     });
   } catch (e) {
-    res.status(404).send(e.message);
+    res
+      .status(404)
+      .render("errors", { message: e.message, style: "catalogo.css" });
   }
 });
 
@@ -150,7 +168,9 @@ router.get("/adminProduct/:pid", noauth, async (req, res) => {
       }
     );
   } catch (e) {
-    res.status(500).send(e.message);
+    res
+      .status(500)
+      .render("errors", { message: e.message, style: "catalogo.css" });
   }
 });
 

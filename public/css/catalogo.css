@@ -131,3 +131,19 @@ align-items: center;
     border-radius: 5px;
     background-color:white;
 }
+.error {
+    position:absolute;
+    top:50%;
+    
+    width:50%;
+    margin: auto;
+    left:50%;
+    transform:translateY(-50%) translateX(-50%);
+    background-color:white;
+    border:#91A3B0 solid 1px;
+    border-radius:10px;
+    padding: 30px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}

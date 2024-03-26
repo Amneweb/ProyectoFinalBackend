@@ -21,7 +21,7 @@ class CartManager {
   getCartByID = async (id) => {
     const carrito = await cartModel.findOne({ _id: id }).lean();
     const result = carrito
-      ? carrito
+      ? { success: true, data: { ...carrito } }
       : { success: false, message: "no se encontró ningún carrito con ese id" };
     return result;
   };
