@@ -3,10 +3,10 @@ import pc from "picocolors";
 
 export default class ProductManager {
   constructor() {}
-  getProductsSinPaginar = async () => {
+  /*getProductsSinPaginar = async () => {
     const products = await productModel.find().lean();
     return products;
-  };
+  };*/
 
   getProducts = async (page, limit, sort) => {
     console.log(page, limit, sort);
@@ -19,6 +19,7 @@ export default class ProductManager {
         lean: true,
       }
     );
+
     return products;
   };
 
