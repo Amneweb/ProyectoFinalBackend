@@ -77,12 +77,16 @@ router.get("/catalogo/:id", noauth, async (req, res) => {
   const id = req.params.id;
   try {
     const producto = await productManager.getProductByID(id);
+    if (!producto) {
+      const mensaje = `no se encontró ningún producto con el ID ${id}`;
+      throw new Error(mensaje);
+    }
     res.render("product", {
       producto,
       style: "catalogo.css",
     });
-  } catch (error) {
-    res.status(500).send(error.message);
+  } catch (e) {
+    res.status(500).render("errors", { message: e.message });
   }
 });
 

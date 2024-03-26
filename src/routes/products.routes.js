@@ -22,9 +22,14 @@ router.get("/", async (req, res) => {
 });
 router.get("/:id", async (req, res) => {
   try {
-    res.send(await productManager.getProductByID(req.params.id));
+    const result = await productManager.getProductByID(req.params.id);
+    if (!result) {
+      const mensaje = `no se encontró ningún producto con el ID ${req.params.id}`;
+      throw new Error(mensaje);
+    }
+    res.status(201).send(result);
   } catch (e) {
-    res.status(400).send(e.message);
+    res.status(422).send({ message: e.message });
   }
 });
 
