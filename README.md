@@ -2,10 +2,22 @@
 
 ## Desafío Clase 19 - sesiones y login básico
 
+> [!INFO]
+> Esta rama tiene mejoras respecto a la rama segundaentrega.
+
 Para este desafío la página de inicio es http://localhost:8080/catalogo
-Al intentar acceder a dicha página sin haberse autenticado, el sistema lleva a la página de login / registro. Una vez logueado, un usuario común (con rol de usuario) puede acceder a todas las vistas menos la de "Admin carritos". Un usuario con rol de administrador puede acceder a todas las vistas.
+Al intentar acceder a dicha página sin haberse autenticado, el sistema lleva a la página de login / registro. Una vez logueado, un usuario común (con rol de usuario) puede acceder a todas las vistas menos las de "Admin carritos" y "Admin productos". Un usuario con rol de administrador puede acceder a todas las vistas.
 Para impedir el acceso sin estar logueado, usé un middleware que verifica si existe el req.session.user.
 Para impedir el acceso al recurso de administración de carritos, usé un midleware similar, pero que verifica qué rol tiene el usuario.
+Las vistas desde la ruta /sessions ahora se renderizan con la vista sessions.handlebars (la realidad es que no sé en qué casos el usuario llegaría a ver esas vistas)
+
+### Variables de entorno
+
+Pasé la definición de las constantes basadas en variables de entorno al archivo config/config.js. Las variables son importadas a app.js. El archivo .env aun no esta agregado a gitignore, para que se pueda probar el código clonado desde este repo.
+
+### Manejo de errores
+
+Ya mejoré la captura de errores en las rutas products/:id y carts/:id, de manera que si el id no es el correcto se renderiza una vista con el mensaje de error. Falta hacer lo mismo con las rutas para borrar carritos, agregar productos, etc.
 
 ### Mejoras a la carga y edición de los productos
 
