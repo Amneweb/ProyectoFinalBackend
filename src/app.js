@@ -1,13 +1,13 @@
 import express from "express";
 import __dirname from "../utils.js";
-import dotenv from "dotenv";
+import claves from "./config/config.js";
+console.log(claves);
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 
-dotenv.config();
 import productRoutes from "./routes/products.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
 import cartRoutes from "./routes/cart.routes.js";
@@ -43,13 +43,7 @@ const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
 
-const username = process.env.DB_USER_NAME;
-const password = process.env.DB_PASS;
-const cluster = process.env.CLUSTER_NAME;
-const dbname = process.env.DB_NAME;
-const secret = process.env.SESSION_SECRET;
-
-let uri = `mongodb+srv://${username}:${password}@${cluster}.2encwlm.mongodb.net/${dbname}?retryWrites=true&w=majority&appName=ClusterCursoCoder`;
+let uri = `mongodb+srv://${claves.username}:${claves.password}@${claves.cluster}.2encwlm.mongodb.net/${claves.dbname}?retryWrites=true&w=majority&appName=ClusterCursoCoder`;
 
 app.use(
   session({
@@ -57,7 +51,7 @@ app.use(
       mongoUrl: uri,
       ttl: 10 * 60,
     }),
-    secret: secret,
+    secret: claves.secret,
     resave: false,
     saveUninitialized: true,
   })
