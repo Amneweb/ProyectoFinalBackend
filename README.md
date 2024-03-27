@@ -2,7 +2,7 @@
 
 ## Desafío Clase 19 - sesiones y login básico
 
-> [!INFO]
+> [!TIP]
 > Esta rama tiene mejoras respecto a la rama segundaentrega.
 
 Para este desafío la página de inicio es http://localhost:8080/catalogo
