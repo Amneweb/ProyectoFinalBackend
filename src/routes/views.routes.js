@@ -1,3 +1,6 @@
+/*======================================================
+RUTAS DESDE LA RAIZ DEL SITIO
+/*======================================================*/
 import { Router } from "express";
 import ProductManager from "../services/db/products.db.service.js";
 import CategoryManager from "../services/db/categories.db.service.js";
@@ -9,22 +12,25 @@ let productManager = new ProductManager();
 let cartManager = new CartManager();
 let categoryManager = new CategoryManager();
 
-//middleware para dejar pasar sólo a los administradores
+/*======================================================
+Middleware para dejar pasar sólo a los administradores
+=======================================================*/
 function auth(req, res, next) {
-  console.log("dentro de middle de auth", req.session.user);
   if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
     return next();
   } else {
-    return res
-      .status(403)
-      .setHeader("Content-type", "text/html")
-      .send(
-        '<div><p>Lo sentimos, no estás autorizado para ingresar a este recurso</p><p>Hacé click <a href="/catalogo">aquí</a> para volver a la página de inicio</p></div>'
-      );
+    return res.status(403).render("errors", {
+      message:
+        "No estás autorizado para ingresar a este recurso. Para hacerlo debés tener credenciales de administrador.",
+      style: "catalogo.css",
+    });
   }
 }
 
-//middleware para no permitir acceder a ninguna vista sin estar logueado
+/*======================================================
+Middleware para no permitir acceder a ninguna vista 
+sin estar logueado
+========================================================*/
 function noauth(req, res, next) {
   if (!req.session.user) {
     return res.render("login", { style: "general.css" });
@@ -33,6 +39,10 @@ function noauth(req, res, next) {
   }
 }
 
+/*======================================================
+Vista de todos los productos. Acceden todos los 
+usuarios logueados
+/*======================================================*/
 router.get("/catalogo", noauth, async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 300;
@@ -74,6 +84,10 @@ router.get("/catalogo", noauth, async (req, res) => {
   }
 });
 
+/*======================================================
+//Vista de un único producto. Acceden todos los 
+usuarios logueados
+======================================================*/
 router.get("/catalogo/:id", noauth, async (req, res) => {
   if (!req.session.user) return res.render("login", { style: "general.css" });
   const id = req.params.id;
@@ -95,6 +109,10 @@ router.get("/catalogo/:id", noauth, async (req, res) => {
   }
 });
 
+/*======================================================
+Vista de los carritos armados por los usuarios. 
+Acceso exclusivo para administradores
+======================================================*/
 router.get("/admin", noauth, auth, async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
@@ -110,11 +128,19 @@ router.get("/admin", noauth, auth, async (req, res) => {
   }
 });
 
+/*======================================================
+Vista del chat de sitio. Acceso para todos 
+los usuarios logueados
+========================================================*/
 router.get("/chat", noauth, (req, res) => {
   res.render("messages", { style: "general.css" });
 });
 
-router.get("/home", noauth, async (req, res) => {
+/*======================================================
+Vista de todos los productos a la venta en el ecommerce. 
+Acceso sólo para administradores.
+======================================================*/
+router.get("/home", noauth, auth, async (req, res) => {
   try {
     let productosObtenidos = productManager.getProducts(1, 300, { title: 1 });
     let categoriasExistentes = categoryManager.getCategories();
@@ -134,7 +160,10 @@ router.get("/home", noauth, async (req, res) => {
   }
 });
 
-//para ver el carrito del usuario
+/*======================================================
+Vista del carrito del usuario. 
+Acceso para el usuario logueado.
+======================================================*/
 router.get("/carrito/:cid", noauth, async (req, res) => {
   try {
     const carrito = await cartManager.getCartByID(req.params.cid);
@@ -153,7 +182,11 @@ router.get("/carrito/:cid", noauth, async (req, res) => {
   }
 });
 
-router.get("/adminProduct/:pid", noauth, async (req, res) => {
+/*======================================================
+Vista de datos de un producto. 
+Acceso exclusivo para administradores.
+/*======================================================*/
+router.get("/adminProduct/:pid", noauth, auth, async (req, res) => {
   const id = req.params.pid;
   try {
     let productosObtenidos = productManager.getProductByID(id);

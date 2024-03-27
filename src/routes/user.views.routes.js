@@ -1,4 +1,7 @@
-//vistas de formularios de logueo. Ruta base /
+/*======================================================
+        RUTAS DESDE /users
+/*======================================================*/
+
 import { Router } from "express";
 
 const router = Router();
@@ -14,7 +17,7 @@ router.get("/register", (req, res) => {
 router.get("/", (req, res) => {
   res.render("profile", {
     user: req.session.user,
-    style: "general.css",
+    style: "catalogo.css",
   });
 });
 

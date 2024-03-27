@@ -1,4 +1,6 @@
-//apis de manejo de sesión. La ruta base es /api/sessions/
+/*======================================================
+RUTAS DESDE /api/sessions
+/*======================================================*/
 
 import { Router } from "express";
 import userModel from "../services/db/models/users.model.js";

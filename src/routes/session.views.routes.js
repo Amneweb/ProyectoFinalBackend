@@ -1,14 +1,22 @@
-//vistas de manejo de sesión. La ruta base es /api/sessions/
+/*======================================================
+        RUTAS DESDE /sessions
+/*======================================================*/
 
 import { Router } from "express";
 const router = Router();
 router.get("/", (req, res) => {
   if (req.session.counter) {
     req.session.counter++;
-    res.send(`Se ha visitado este sitio ${req.session.counter} veces.`);
+    res.render("sessions", {
+      message: `Desde que iniciaste sesión, has visitado este sitio ${req.session.counter} veces.`,
+      style: "catalogo.css",
+    });
   } else {
     req.session.counter = 1;
-    res.send("Bienvenido!");
+    res.render("sessions", {
+      message: `Has iniciado sesión pero aun no te autenticaste. Para hacerlo, cliqueá en el botón de abajo`,
+      style: "catalogo.css",
+    });
   }
 });
 
@@ -17,7 +25,11 @@ router.get("/logout", (req, res) => {
     if (error) {
       res.json({ error: "error logout", mensaje: "Error al cerrar la sesion" });
     }
-    res.send("Sesion cerrada correctamente.");
+    res.render("sessions", {
+      message:
+        "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",
+      style: "catalogo.css",
+    });
   });
 });
 
