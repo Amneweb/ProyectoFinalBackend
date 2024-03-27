@@ -1,7 +1,6 @@
 import express from "express";
 import __dirname from "../utils.js";
 import claves from "./config/config.js";
-console.log(claves);
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";

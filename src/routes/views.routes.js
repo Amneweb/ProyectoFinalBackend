@@ -167,7 +167,7 @@ Acceso para el usuario logueado.
 router.get("/carrito/:cid", noauth, async (req, res) => {
   try {
     const carrito = await cartManager.getCartByID(req.params.cid);
-    console.log("carrito en router ", carrito);
+
     if (!carrito.success) {
       throw new Error(carrito.message);
     }

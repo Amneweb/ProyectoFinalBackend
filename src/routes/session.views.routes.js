@@ -8,13 +8,13 @@ router.get("/", (req, res) => {
   if (req.session.counter) {
     req.session.counter++;
     res.render("sessions", {
-      message: `Desde que iniciaste sesión, has visitado este sitio ${req.session.counter} veces.`,
+      message: `Desde que iniciaste sesión, has visitado este sitio ${req.session.counter} veces. Para loguearte o registrarte, usá los botones de abajo. Si ya estás logueado, usá el menú superior.`,
       style: "catalogo.css",
     });
   } else {
     req.session.counter = 1;
     res.render("sessions", {
-      message: `Has iniciado sesión pero aun no te autenticaste. Para hacerlo, cliqueá en el botón de abajo`,
+      message: `Bienvenido a esta nueva sesión. Si aun no te logueaste o registraste, hacelo con los botones de abajo. Si ya estás logueado, usá el menú superior.`,
       style: "catalogo.css",
     });
   }
