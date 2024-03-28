@@ -3,55 +3,60 @@ RUTAS DESDE /api/sessions
 /*======================================================*/
 
 import { Router } from "express";
-import userModel from "../services/db/models/users.model.js";
-
+import passport from "passport";
+import pc from "picocolors";
 const router = Router();
 
-router.post("/register", async (req, res) => {
-  const { userName, userLastName, userEmail, userAge, userPassword } = req.body;
-  console.log("Registrando Usuario");
+router.post(
+  "/register",
+  passport.authenticate("register", {
+    failureRedirect: "/api/sessions/failregister",
+  }),
+  async (req, res) => {
+    console.log("Registrando Usuario");
 
-  const exists = await userModel.findOne({ userEmail });
-  if (exists) {
-    return res
-      .status(402)
-      .send({ status: "error", message: "Usuario ya existe!!" });
+    res.status(201).send({
+      status: "success",
+      message: "Usuario creado con éxito con ID: ---------",
+    });
   }
-  const user = {
-    userName,
-    userLastName,
-    userEmail,
-    userAge,
-    userPassword,
-  };
-  const result = await userModel.create(user);
-  res.send({
-    status: "success",
-    message: "Usuario creado con éxito con ID: " + result.id,
-  });
+);
+
+router.post(
+  "/login",
+  passport.authenticate("login", {
+    failureRedirect: "/api/sessions/faillogin",
+  }),
+  async (req, res) => {
+    console.log(pc.bgRed("Usuario encontrado: "));
+    const user = req.user;
+    if (!user)
+      return res
+        .status(401)
+        .send({ status: "error", error: "Credenciales incorrectas" });
+    if (user.userEmail === "adminCoder@coder.com") {
+      req.session.admin = true;
+    }
+    req.session.user = {
+      name: `${user.userName} ${user.userLastName}`,
+      email: user.userEmail,
+      age: user.userAge,
+    };
+
+    res.send({
+      status: "success",
+      payload: { user: req.session.user, role: req.session.admin },
+      message: "Primer logueo existoso",
+    });
+  }
+);
+
+router.get("/failregister", (req, res) => {
+  res.status(401).send({ error: "Error de registro" });
 });
 
-router.post("/login", async (req, res) => {
-  const { userEmail, userPassword } = req.body;
-  const user = await userModel.findOne({ userEmail, userPassword });
-  if (!user)
-    return res
-      .status(401)
-      .send({ status: "error", error: "Credenciales incorrectas" });
-  if (userEmail === "adminCoder@coder.com") {
-    req.session.admin = true;
-  }
-  req.session.user = {
-    name: `${user.userName} ${user.userLastName}`,
-    email: user.userEmail,
-    age: user.userAge,
-  };
-
-  res.send({
-    status: "success",
-    payload: { user: req.session.user, role: req.session.admin },
-    message: "Primer logueo existoso",
-  });
+router.get("/faillogin", (req, res) => {
+  res.status(401).send({ error: "Error al loguearse" });
 });
 
 export default router;

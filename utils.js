@@ -3,6 +3,7 @@ import path from "path";
 import { dirname } from "path";
 import multer from "multer";
 import { validatePartialProduct } from "./src/services/product.validator.js";
+import bcrypt from "bcrypt";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -77,4 +78,14 @@ export const validateModifiedData = (req, res, next) => {
   req.validatedData = result;
 
   next();
+};
+
+export const createHash = (password) =>
+  bcrypt.hashSync(password, bcrypt.genSaltSync(10));
+
+export const isValidPassword = (plainTextPassword, hashedPassword) => {
+  console.log(
+    `Datos a validar: usuario: ${plainTextPassword}, password: ${hashedPassword}`
+  );
+  return bcrypt.compareSync(plainTextPassword, hashedPassword);
 };

@@ -1,11 +1,14 @@
 import express from "express";
 import __dirname from "../utils.js";
-import claves from "./config/config.js";
+import claves from "./config/environment.config.js";
 import mongoose from "mongoose";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
+
+import passport from "passport";
+import initializePassport from "./config/passport.config.js";
 
 import productRoutes from "./routes/products.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
@@ -55,6 +58,12 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+//Middlewares Passport
+initializePassport();
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use("/api/sessions", sessionRoutes);
 app.use("/sessions", sessionViewsRoutes);
 app.use("/users", userRoutes);
