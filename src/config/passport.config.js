@@ -1,16 +1,61 @@
 import passport from "passport";
 import local from "passport-local";
+import githubStrategy from "passport-github2";
+import claves from "./environment.config.js";
 import userModel from "../services/db/models/users.model.js";
 import { createHash, isValidPassword } from "../../utils.js";
 
-//Declaramos nuestra estrategia:
 const LocalStrategy = local.Strategy;
 
 const initializePassport = () => {
-  /*========================
-ESTRATEGIA LOCAL
-=========================*/
+  /*==================================
+  ESTRATEGIA GITHUB
+  ==================================*/
+  passport.use(
+    "github",
+    new githubStrategy(
+      {
+        clientID: claves.clientID,
+        clientSecret: claves.clientSecret,
+        callbackUrl: "http://localhost:8080/api/sessions/githubcallback",
+      },
+      async (accessToken, refreshToken, profile, done) => {
+        console.log("Profile obtenido del usuario:");
+        console.log(profile);
+        try {
+          const user = await userModel.findOne({
+            userEmail: profile._json.email,
+          });
+          console.log("Usuario encontrado para login:");
+          console.log(user);
 
+          if (!user) {
+            console.warn(
+              "No hay un usuario con la dirección de correo: " +
+                profile._json.email
+            );
+            let newUser = {
+              userName: profile._json.name,
+              userLastName: "",
+              userAge: 25,
+              userEmail: profile._json.email,
+              userPassword: "",
+              userLoggedBy: "GitHub",
+            };
+            const result = await userModel.create(newUser);
+            return done(null, result);
+          }
+        } catch (error) {
+          return done(error);
+        }
+      }
+    )
+  );
+
+  /*========================
+  ESTRATEGIA LOCAL
+  =========================*/
+  // REGISTRO----------------
   passport.use(
     "register",
     new LocalStrategy(
@@ -28,7 +73,6 @@ ESTRATEGIA LOCAL
             return done(null, false);
           }
 
-          //  Si el user no existe en la DB
           const user = {
             userName,
             userLastName,
@@ -48,7 +92,7 @@ ESTRATEGIA LOCAL
     )
   );
 
-  // Estrategia de login
+  // LOGIN ---------------------
   passport.use(
     "login",
     new LocalStrategy(
@@ -70,18 +114,12 @@ ESTRATEGIA LOCAL
             return done(null, false);
           }
 
-          // Validamos usando Bycrypt credenciales del usuario
           //user.userPassword es el password hasheado que viene de la bdd
           //userPassword es el que viene desde el formulario de login
           if (!isValidPassword(userPassword, user.userPassword)) {
             console.warn("Una de las credenciales es inválida: " + userEmail);
             return done(null, false);
           }
-          // req.session.user = {
-          //     name: `${user.first_name} ${user.last_name}`,
-          //     email: user.email,
-          //     age: user.age
-          // }
 
           return done(null, user);
         } catch (error) {

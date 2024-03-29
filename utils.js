@@ -85,7 +85,7 @@ export const createHash = (password) =>
 
 export const isValidPassword = (plainTextPassword, hashedPassword) => {
   console.log(
-    `Datos a validar: usuario: ${plainTextPassword}, password: ${hashedPassword}`
+    `Datos a validar: password de formulario: ${plainTextPassword}, password hasheado: ${hashedPassword}`
   );
   return bcrypt.compareSync(plainTextPassword, hashedPassword);
 };

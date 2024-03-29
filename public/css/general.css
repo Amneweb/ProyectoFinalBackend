@@ -256,3 +256,9 @@ justify-content: center;
 .centered {
     text-align: center;
 }
+.logo {
+    max-height:1.1em;
+    max-width:1.1em;
+    margin-right:0.5em;
+    
+}

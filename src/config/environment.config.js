@@ -7,6 +7,8 @@ const claves = {
   cluster: process.env.DB_CLUSTER_NAME,
   secret: process.env.SESSION_SECRET,
   dbname: process.env.DB_NAME,
+  clientID: process.env.GITHUB_CLIENT_ID,
+  clientSecret: process.env.GITHUB_CLIENT_SECRET,
 };
 
 export default claves;

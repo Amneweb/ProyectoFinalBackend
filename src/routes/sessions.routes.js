@@ -7,6 +7,36 @@ import passport from "passport";
 import pc from "picocolors";
 const router = Router();
 
+/*=============================
+RUTAS PARA ESTRATEGIA GITHUB
+==============================*/
+
+router.get(
+  "/github",
+  passport.authenticate("github", { scope: ["user:userEmail"] }),
+  async (req, res) => {}
+);
+
+router.get(
+  "/githubcallback",
+  passport.authenticate("github", { failureRedirect: "/github/error" }),
+  async (req, res) => {
+    const user = req.user;
+
+    req.session.user = {
+      name: `${user.userName} ${user.userLastName}`,
+      email: user.userEmail,
+      age: user.userAge,
+    };
+    if (req.session.user.email === "adminCoder@coder.com")
+      req.session.admin = true;
+    res.redirect("/users");
+  }
+);
+
+/*=============================
+RUTAS PARA ESTRATEGIA LOCAL
+==============================*/
 router.post(
   "/register",
   passport.authenticate("register", {
@@ -57,6 +87,13 @@ router.get("/failregister", (req, res) => {
 
 router.get("/faillogin", (req, res) => {
   res.status(401).send({ error: "Error al loguearse" });
+});
+
+router.get("/github/error", (req, res) => {
+  res.render("errors", {
+    message: "No se pudo atenticar usando github",
+    style: "catalogo.css",
+  });
 });
 
 export default router;
