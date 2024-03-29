@@ -1,5 +1,9 @@
 # ProyectoFinalBackend
 
+## Desafío Clase 21 - login con estrategia local o estrategia de terceros (GitHub)
+
+Para este desafío se implementaron las estrategias local y Github. Quien tiene cuenta de Github puede elegir logearse a través de ese servicio. En ambos casos la vista de login es la misma, pero el botón de github lleva directamente a la ruta de la api sessions que llama a la estrategia de GitHub (no usé una vista intermedia. En clase el profesor usó una vista intermedia, pero me pareció que no era necesario)
+
 ## Desafío Clase 19 - sesiones y login básico
 
 > [!TIP]
