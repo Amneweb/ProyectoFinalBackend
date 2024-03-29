@@ -1,3 +1,10 @@
+const verPassword = document.querySelector("#verPassword");
+const userPassword = document.querySelector("#userPassword");
+verPassword.addEventListener("click", (e) => {
+  e.preventDefault();
+  userPassword.type = userPassword.type === "password" ? "text" : "password";
+});
+
 const loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", (e) => {

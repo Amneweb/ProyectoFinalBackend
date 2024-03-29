@@ -17,6 +17,7 @@ const initializePassport = () => {
       {
         clientID: claves.clientID,
         clientSecret: claves.clientSecret,
+        scope: ["user:email"],
         callbackUrl: "http://localhost:8080/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
@@ -24,26 +25,28 @@ const initializePassport = () => {
         console.log(profile);
         try {
           const user = await userModel.findOne({
-            userEmail: profile._json.email,
+            userEmail: profile.emails[0].value,
           });
-          console.log("Usuario encontrado para login:");
-          console.log(user);
 
           if (!user) {
             console.warn(
               "No hay un usuario con la dirección de correo: " +
-                profile._json.email
+                profile.emails[0].value
             );
             let newUser = {
               userName: profile._json.name,
               userLastName: "",
               userAge: 25,
-              userEmail: profile._json.email,
+              userEmail: profile.emails[0].value,
               userPassword: "",
               userLoggedBy: "GitHub",
             };
             const result = await userModel.create(newUser);
             return done(null, result);
+          } else {
+            console.log("Usuario encontrado para login:");
+            console.log(user);
+            return done(null, user);
           }
         } catch (error) {
           return done(error);

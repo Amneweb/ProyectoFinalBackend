@@ -13,13 +13,15 @@ RUTAS PARA ESTRATEGIA GITHUB
 
 router.get(
   "/github",
-  passport.authenticate("github", { scope: ["user:userEmail"] }),
+  passport.authenticate("github", { scope: ["user:email"] }),
   async (req, res) => {}
 );
 
 router.get(
   "/githubcallback",
-  passport.authenticate("github", { failureRedirect: "/github/error" }),
+  passport.authenticate("github", {
+    failureRedirect: "/api/sessions/github/error",
+  }),
   async (req, res) => {
     const user = req.user;
 

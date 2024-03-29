@@ -1,13 +1,18 @@
 # ProyectoFinalBackend
 
-## Desafío Clase 21 - login con estrategia local o estrategia de terceros (GitHub)
+## Desafío Clase 21 - login con estrategia local y/o de terceros (GitHub)
 
 Para este desafío se implementaron las estrategias local y Github. Quien tiene cuenta de Github puede elegir logearse a través de ese servicio. En ambos casos la vista de login es la misma, pero el botón de github lleva directamente a la ruta de la api sessions que llama a la estrategia de GitHub (no usé una vista intermedia. En clase el profesor usó una vista intermedia, pero me pareció que no era necesario)
+
+> [!WARNING]
+> Siguiendo el procedimiento indicado en clase, no podía obtener el email desde el perfil de Github. Para obtener el email, en Account Permissions agregué el permiso para leer el email (Read-only), además del permiso para obtener el perfil.
+
+---
 
 ## Desafío Clase 19 - sesiones y login básico
 
 > [!TIP]
-> Esta rama tiene mejoras respecto a la rama segundaentrega.
+> Esta rama ("errores") tiene mejoras respecto a la rama segundaentrega.
 
 Para este desafío la página de inicio es http://localhost:8080/catalogo
 Al intentar acceder a dicha página sin haberse autenticado, el sistema lleva a la página de login / registro. Una vez logueado, un usuario común (con rol de usuario) puede acceder a todas las vistas menos las de "Admin carritos" y "Admin productos". Un usuario con rol de administrador puede acceder a todas las vistas.
