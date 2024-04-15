@@ -21,7 +21,7 @@ loginForm.addEventListener("submit", (e) => {
     },
   }).then((result) => {
     if (result.status === 200) {
-      window.location.replace("/catalogo");
+      window.location.replace("/users/");
     } else {
       Swal.fire({
         icon: "error",

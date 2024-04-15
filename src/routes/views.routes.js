@@ -207,4 +207,17 @@ router.get("/adminProduct/:pid", noauth, auth, async (req, res) => {
   }
 });
 
+router.get("/", noauth, async (req, res) => {
+  try {
+    res.render("profile", {
+      user: req.session.user,
+      style: "catalogo.css",
+    });
+  } catch (e) {
+    res
+      .status(500)
+      .render("errors", { mesage: e.message, style: "catalogo.css" });
+  }
+});
+
 export default router;

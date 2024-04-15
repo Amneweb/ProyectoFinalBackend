@@ -9,6 +9,15 @@ const userSchema = new mongoose.Schema({
   },
   userAge: Number,
   userPassword: String, //Se deja plano por el momento.
+  userRole: {
+    type: String,
+    enum: ["user", "admin"],
+    default: "user",
+  },
+  userCartID: {
+    type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carts" }],
+    default: [],
+  },
 });
 const userModel = mongoose.model(USERS_COLLECTION, userSchema);
 export default userModel;

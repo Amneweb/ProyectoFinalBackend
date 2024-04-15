@@ -66,13 +66,14 @@ router.post(
       return res
         .status(401)
         .send({ status: "error", error: "Credenciales incorrectas" });
-    if (user.userEmail === "adminCoder@coder.com") {
-      req.session.admin = true;
-    }
+
+    req.session.admin = user.userRole === "admin" && true;
     req.session.user = {
       name: `${user.userName} ${user.userLastName}`,
       email: user.userEmail,
       age: user.userAge,
+      cartID: user.userCartID,
+      role: user.userRole,
     };
 
     res.send({
