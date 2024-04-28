@@ -1,20 +1,11 @@
-<nav>
-  <ul class="navigation">
-    <li><a href="/admin">>> Admin Carritos</a></li>
-    <li><a href="/home">>> Admin Productos</a></li>
-    <li><a href="/catalogo">>> Catálogo público</a></li>
-    <li><a href="/chat">>> Customer Support</a></li>
-  </ul>
-</nav>
 <div class="error">
   <h1>Windward Car &amp; Truck Battery Store</h1>
   <h3>Tu perfil</h3>
   <p>Estos son los datos que tenemos sobre vos (sin datos sensibles)</p>
-  <p><strong>Nombre:</strong> {{user.name}}</p>
-  <p><strong>Email:</strong> {{user.email}}</p>
-  <p><strong>Edad:</strong> {{user.age}}</p>
-  <p><strong>Rol:</strong> {{user.role}}</p>
+  <div id="info"></div>
+
   <button id="logout">Desloguearme</button>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/profile.js"></script>

@@ -9,6 +9,7 @@ const claves = {
   dbname: process.env.DB_NAME,
   clientID: process.env.GITHUB_CLIENT_ID,
   clientSecret: process.env.GITHUB_CLIENT_SECRET,
+  privateKey: process.env.PRIVATE_KEY,
 };
 
 export default claves;

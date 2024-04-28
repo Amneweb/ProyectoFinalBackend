@@ -43,7 +43,7 @@ function noauth(req, res, next) {
 Vista de todos los productos. Acceden todos los 
 usuarios logueados
 /*======================================================*/
-router.get("/catalogo", noauth, async (req, res) => {
+router.get("/catalogo", async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 300;
   const criterio = req.query.criterio || "title";
@@ -73,8 +73,8 @@ router.get("/catalogo", noauth, async (req, res) => {
 
     res.render("catalogo", {
       productosObtenidos,
-      user: req.session.user,
-      role: req.session.admin,
+      user: req.user,
+      role: req.admin,
       style: "catalogo.css",
     });
   } catch (e) {
@@ -88,7 +88,7 @@ router.get("/catalogo", noauth, async (req, res) => {
 //Vista de un único producto. Acceden todos los 
 usuarios logueados
 ======================================================*/
-router.get("/catalogo/:id", noauth, async (req, res) => {
+router.get("/catalogo/:id", async (req, res) => {
   if (!req.session.user) return res.render("login", { style: "general.css" });
   const id = req.params.id;
   try {
@@ -113,7 +113,7 @@ router.get("/catalogo/:id", noauth, async (req, res) => {
 Vista de los carritos armados por los usuarios. 
 Acceso exclusivo para administradores
 ======================================================*/
-router.get("/admin", noauth, auth, async (req, res) => {
+router.get("/admin", async (req, res) => {
   try {
     const carritosObtenidos = await cartManager.getCarts();
     if (!carritosObtenidos) {
@@ -132,7 +132,7 @@ router.get("/admin", noauth, auth, async (req, res) => {
 Vista del chat de sitio. Acceso para todos 
 los usuarios logueados
 ========================================================*/
-router.get("/chat", noauth, (req, res) => {
+router.get("/chat", (req, res) => {
   res.render("messages", { style: "general.css" });
 });
 
@@ -140,7 +140,7 @@ router.get("/chat", noauth, (req, res) => {
 Vista de todos los productos a la venta en el ecommerce. 
 Acceso sólo para administradores.
 ======================================================*/
-router.get("/home", noauth, auth, async (req, res) => {
+router.get("/home", async (req, res) => {
   try {
     let productosObtenidos = productManager.getProducts(1, 300, { title: 1 });
     let categoriasExistentes = categoryManager.getCategories();
@@ -164,7 +164,7 @@ router.get("/home", noauth, auth, async (req, res) => {
 Vista del carrito del usuario. 
 Acceso para el usuario logueado.
 ======================================================*/
-router.get("/carrito/:cid", noauth, async (req, res) => {
+router.get("/carrito/:cid", async (req, res) => {
   try {
     const carrito = await cartManager.getCartByID(req.params.cid);
 
@@ -186,7 +186,7 @@ router.get("/carrito/:cid", noauth, async (req, res) => {
 Vista de datos de un producto. 
 Acceso exclusivo para administradores.
 /*======================================================*/
-router.get("/adminProduct/:pid", noauth, auth, async (req, res) => {
+router.get("/adminProduct/:pid", async (req, res) => {
   const id = req.params.pid;
   try {
     let productosObtenidos = productManager.getProductByID(id);
@@ -207,10 +207,9 @@ router.get("/adminProduct/:pid", noauth, auth, async (req, res) => {
   }
 });
 
-router.get("/", noauth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    res.render("profile", {
-      user: req.session.user,
+    res.render("index", {
       style: "catalogo.css",
     });
   } catch (e) {

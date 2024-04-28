@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
   userPassword: String, //Se deja plano por el momento.
   userRole: {
     type: String,
-    enum: ["user", "admin"],
+    enum: ["user", "admin", "premium"],
     default: "user",
   },
   userCartID: {

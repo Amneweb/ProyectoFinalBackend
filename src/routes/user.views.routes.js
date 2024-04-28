@@ -3,6 +3,7 @@
 /*======================================================*/
 
 import { Router } from "express";
+import { authToken } from "../../utils.js";
 
 const router = Router();
 
@@ -15,8 +16,9 @@ router.get("/register", (req, res) => {
 });
 
 router.get("/", (req, res) => {
+  console.log("info para mostrar en profile ", req.body);
   res.render("profile", {
-    user: req.session.user,
+    user: req.user,
     style: "catalogo.css",
   });
 });

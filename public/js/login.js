@@ -13,7 +13,7 @@ loginForm.addEventListener("submit", (e) => {
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
 
-  fetch("/api/sessions/login", {
+  fetch("/api/users/login", {
     method: "POST",
     body: JSON.stringify(obj),
     headers: {
@@ -21,13 +21,18 @@ loginForm.addEventListener("submit", (e) => {
     },
   }).then((result) => {
     if (result.status === 200) {
-      window.location.replace("/users/");
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Ups...",
-        text: "Uno o más datos son erróneos. Volvé a intentarlo",
+      result.json().then((json) => {
+        console.log("mostramos el usuario después del login", json);
+        localStorage.setItem("authToken", json.access_token);
+        localStorage.setItem("USER_ID", json.id);
+        alert(
+          "Login realizado con exito! De acá se va a /users, que debería mostrar los datos del usuario en base al token"
+        );
+        window.location.replace("/users");
       });
+    } else if (result.status === 401) {
+      console.log("resultado de un login invalido", result);
+      alert("Login invalido revisa tus credenciales!");
     }
   });
 });

@@ -2,21 +2,26 @@ import express from "express";
 import __dirname from "../utils.js";
 import claves from "./config/environment.config.js";
 import mongoose from "mongoose";
-import session from "express-session";
-import MongoStore from "connect-mongo";
+
+//import MongoStore from "connect-mongo";
+import cookieParser from "cookie-parser";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
 
-import productRoutes from "./routes/products.routes.js";
+//import productRoutes from "./routes/products.routes.js";
+import ProductsRouter from "./routes/products.routes.js";
 import categoryRoutes from "./routes/category.routes.js";
-import cartRoutes from "./routes/cart.routes.js";
+import CartsRouter from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
-import sessionRoutes from "./routes/sessions.routes.js";
-import sessionViewsRoutes from "./routes/session.views.routes.js";
-import userRoutes from "./routes/user.views.routes.js";
+import UsersRouter from "./routes/user.routes.js";
+//import sessionRoutes from "./routes/sessions.routes.js";
+//import sessionViewsRoutes from "./routes/session.views.routes.js";
+import usersViewsRouter from "./routes/user.views.routes.js";
+//import usersRouter from "./routes/users.router.js";
+//import jwtRouter from "./routes/jwt.router.js";
 import messageModel from "./services/db/models/messages.model.js";
 const app = express();
 
@@ -47,7 +52,7 @@ const httpServer = app.listen(PORT, () => {
 
 let uri = `mongodb+srv://${claves.username}:${claves.password}@${claves.cluster}.2encwlm.mongodb.net/${claves.dbname}?retryWrites=true&w=majority&appName=ClusterCursoCoder`;
 
-app.use(
+/*app.use(
   session({
     store: MongoStore.create({
       mongoUrl: uri,
@@ -57,20 +62,30 @@ app.use(
     resave: false,
     saveUninitialized: true,
   })
-);
+);*/
 
 //Middlewares Passport
 initializePassport();
 app.use(passport.initialize());
-app.use(passport.session());
+//app.use(passport.session());
 
-app.use("/api/sessions", sessionRoutes);
-app.use("/sessions", sessionViewsRoutes);
-app.use("/users", userRoutes);
+//app.use("/api/sessions", sessionRoutes);
+//app.use("/sessions", sessionViewsRoutes);
+//app.use("/users", userRoutes);
 app.use("/", viewsRouter);
-app.use("/api/products", productRoutes);
-app.use("/api/carts", cartRoutes);
+app.use("/users", usersViewsRouter);
+const productRouter = new ProductsRouter();
+app.use("/api/products", productRouter.getRouter());
+const cartsRouter = new CartsRouter();
+app.use("/api/carts", cartsRouter.getRouter());
 app.use("/api/categories", categoryRoutes);
+const usersRouter = new UsersRouter();
+app.use("/api/users", usersRouter.getRouter());
+
+//FIXME:
+app.get("*", (req, res) => {
+  res.status(400).send("Connot get that URL!!");
+});
 
 const connectMongoDB = async () => {
   try {

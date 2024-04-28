@@ -35,7 +35,7 @@ modificarProducto.addEventListener("submit", async (e) => {
     timer: 1500,
     showConfirmButton: false,
   }).then((result) => {
-    location.reload(true);
+    //location.reload(true);
   });
 });
 
