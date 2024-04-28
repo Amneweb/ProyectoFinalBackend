@@ -1,10 +1,7 @@
 import express from "express";
 import __dirname from "../utils.js";
-import claves from "./config/environment.config.js";
 import mongoose from "mongoose";
-
-//import MongoStore from "connect-mongo";
-import cookieParser from "cookie-parser";
+import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
 
@@ -44,13 +41,11 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const PORT = 8080;
+const PORT = environmentConfig.PORT;
 
 const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
-
-let uri = `mongodb+srv://${claves.username}:${claves.password}@${claves.cluster}.2encwlm.mongodb.net/${claves.dbname}?retryWrites=true&w=majority&appName=ClusterCursoCoder`;
 
 /*app.use(
   session({
@@ -67,11 +62,7 @@ let uri = `mongodb+srv://${claves.username}:${claves.password}@${claves.cluster}
 //Middlewares Passport
 initializePassport();
 app.use(passport.initialize());
-//app.use(passport.session());
 
-//app.use("/api/sessions", sessionRoutes);
-//app.use("/sessions", sessionViewsRoutes);
-//app.use("/users", userRoutes);
 app.use("/", viewsRouter);
 app.use("/users", usersViewsRouter);
 const productRouter = new ProductsRouter();
@@ -86,10 +77,12 @@ app.use("/api/users", usersRouter.getRouter());
 app.get("*", (req, res) => {
   res.status(400).send("Connot get that URL!!");
 });
+url = environmentConfig.DATABASE.MONGO.URL;
+db = environmentConfig.DATABASE.MONGO.DB_NAME;
 
 const connectMongoDB = async () => {
   try {
-    await mongoose.connect(uri);
+    await mongoose.connect(url, { dbName: db });
     //probando la conexión
     console.log("Conectado con éxito a la base de datos");
   } catch (error) {

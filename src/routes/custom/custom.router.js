@@ -1,6 +1,6 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
-import claves from "../../config/environment.config.js";
+import { environmentConfig } from "../../config/environment.config.js";
 
 export default class CustomRouter {
   constructor() {
@@ -72,23 +72,32 @@ export default class CustomRouter {
     const token = authHeader.split(" ")[1].trim(); //Se hace el split para retirar la palabra Bearer.
     console.log("token sin bearer ", token);
     //Validar token
-    jwt.verify(token, claves.privateKey, (error, credentials) => {
-      if (error)
-        return res.status(403).send({ error: "Token invalid, Unauthorized!" });
-      //Token OK
-      const user = credentials.user;
+    jwt.verify(
+      token,
+      environmentConfig.SERVER.JWT.SECRET,
+      (error, credentials) => {
+        if (error)
+          return res
+            .status(403)
+            .send({ error: "Token invalid, Unauthorized!" });
+        //Token OK
+        const user = credentials.user;
 
-      // Preguntamos si dentro del array policies se encuentra el user.role que me esta llegando con este usuario
-      if (!policies.includes(user.role.toUpperCase()))
-        return res.status(403).send({
-          error: "El usuario no tiene privilegios, revisa tus roles!",
-        });
+        // Preguntamos si dentro del array policies se encuentra el user.role que me esta llegando con este usuario
+        if (!policies.includes(user.role.toUpperCase()))
+          return res.status(403).send({
+            error: "El usuario no tiene privilegios, revisa tus roles!",
+          });
 
-      // si el user.role se encuentra dentro de policies, podes ingresar
-      req.user = user;
-      console.log("datos del usuario con privilegios para acceder ", req.user);
-      next();
-    });
+        // si el user.role se encuentra dentro de policies, podes ingresar
+        req.user = user;
+        console.log(
+          "datos del usuario con privilegios para acceder ",
+          req.user
+        );
+        next();
+      }
+    );
   };
 
   generateCustomResponses = (req, res, next) => {

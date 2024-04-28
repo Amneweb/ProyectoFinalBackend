@@ -4,7 +4,7 @@ import { dirname } from "path";
 import multer from "multer";
 import { validatePartialProduct } from "./src/services/product.validator.js";
 import bcrypt from "bcrypt";
-import claves from "./src/config/environment.config.js";
+import { environmentConfig } from "./src/config/environment.config.js";
 import jwt from "jsonwebtoken";
 import passport from "passport";
 
@@ -102,7 +102,9 @@ export const isValidPassword = (plainTextPassword, hashedPassword) => {
  * Tercer argumento: Tiempo de expiración del token.
  */
 export const generateJWToken = (user) => {
-  return jwt.sign({ user }, claves.privateKey, { expiresIn: "120s" });
+  return jwt.sign({ user }, environmentConfig.SERVER.JWT.SECRET, {
+    expiresIn: "120s",
+  });
 };
 /**
  * Metodo que autentica el token JWT para nuestros requests.
@@ -123,17 +125,21 @@ export const authToken = (req, res, next) => {
   }
   const token = authHeader.split(" ")[1].trim(); //Se hace el split para retirar la palabra Bearer.
   //Validar token
-  jwt.verify(token, claves.privateKey, (error, credentials) => {
-    if (error)
-      return res.status(403).send({ error: "Token invalid, Unauthorized!" });
-    //Token OK
-    req.user = credentials.user;
-    console.log(
-      "supuestamente tenemos el usuario que viene del header ",
-      req.user
-    );
-    next();
-  });
+  jwt.verify(
+    token,
+    environmentConfig.SERVER.JWT.SECRET,
+    (error, credentials) => {
+      if (error)
+        return res.status(403).send({ error: "Token invalid, Unauthorized!" });
+      //Token OK
+      req.user = credentials.user;
+      console.log(
+        "supuestamente tenemos el usuario que viene del header ",
+        req.user
+      );
+      next();
+    }
+  );
 };
 
 export const passportCall = (strategy) => {

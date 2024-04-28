@@ -2,7 +2,7 @@ import passport from "passport";
 import local from "passport-local";
 import jwtStrategy from "passport-jwt";
 import githubStrategy from "passport-github2";
-import claves from "./environment.config.js";
+import { environmentConfig } from "./environment.config.js";
 import userModel from "../services/daos/users/users.model.js";
 import { createHash, isValidPassword } from "../../utils.js";
 const JwtStrategy = jwtStrategy.Strategy;
@@ -143,7 +143,7 @@ ESTRATEGIA JWT
     new JwtStrategy(
       {
         jwtFromRequest: ExtractJWT.fromExtractors([cookieExtractor]),
-        secretOrKey: claves.privateKey,
+        secretOrKey: environmentConfig.SERVER.JWT.SECRET,
       },
       async (jwt_payload, done) => {
         console.log("Entrando a passport Strategy con JWT.");
