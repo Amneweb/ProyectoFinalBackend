@@ -2,9 +2,9 @@
 RUTAS DESDE LA RAIZ DEL SITIO
 /*======================================================*/
 import { Router } from "express";
-import ProductManager from "../services/db/products.db.service.js";
-import CategoryManager from "../services/db/categories.db.service.js";
-import CartManager from "../services/db/carts.db.service.js";
+import ProductManager from "../services/daos/products/products.service.js";
+import CategoryManager from "../services/daos/categories/categories.service.js";
+import CartManager from "../services/daos/carts/carts.service.js";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ let categoryManager = new CategoryManager();
 
 /*======================================================
 Middleware para dejar pasar sólo a los administradores
-=======================================================*/
+=======================================================
 function auth(req, res, next) {
   if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
     return next();
@@ -25,19 +25,19 @@ function auth(req, res, next) {
       style: "catalogo.css",
     });
   }
-}
+}*/
 
 /*======================================================
 Middleware para no permitir acceder a ninguna vista 
 sin estar logueado
-========================================================*/
+========================================================
 function noauth(req, res, next) {
   if (!req.session.user) {
     return res.render("login", { style: "general.css" });
   } else {
     return next();
   }
-}
+}*/
 
 /*======================================================
 Vista de todos los productos. Acceden todos los 

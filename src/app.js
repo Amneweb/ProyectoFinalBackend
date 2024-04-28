@@ -10,7 +10,7 @@ import initializePassport from "./config/passport.config.js";
 
 //import productRoutes from "./routes/products.routes.js";
 import ProductsRouter from "./routes/products.routes.js";
-import categoryRoutes from "./routes/category.routes.js";
+import CategoriesRouter from "./routes/category.routes.js";
 import CartsRouter from "./routes/cart.routes.js";
 import viewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
@@ -69,7 +69,8 @@ const productRouter = new ProductsRouter();
 app.use("/api/products", productRouter.getRouter());
 const cartsRouter = new CartsRouter();
 app.use("/api/carts", cartsRouter.getRouter());
-app.use("/api/categories", categoryRoutes);
+const categoriesRouter = new CategoriesRouter();
+app.use("/api/categories", categoriesRouter.getRouter());
 const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
 
