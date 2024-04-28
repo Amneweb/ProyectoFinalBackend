@@ -8,7 +8,6 @@ import { Server } from "socket.io";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
 
-//import productRoutes from "./routes/products.routes.js";
 import ProductsRouter from "./routes/products.routes.js";
 import CategoriesRouter from "./routes/category.routes.js";
 import CartsRouter from "./routes/cart.routes.js";
@@ -17,7 +16,7 @@ import UsersRouter from "./routes/user.routes.js";
 //import sessionRoutes from "./routes/sessions.routes.js";
 //import sessionViewsRoutes from "./routes/session.views.routes.js";
 import usersViewsRouter from "./routes/user.views.routes.js";
-//import usersRouter from "./routes/users.router.js";
+
 //import jwtRouter from "./routes/jwt.router.js";
 import messageModel from "./services/db/models/messages.model.js";
 const app = express();
