@@ -1,6 +1,6 @@
 import { cartModel } from "./carts.model.js";
 
-import productModel from "./products.model.js";
+import productModel from "../products/products.model.js";
 
 class CartManager {
   //carrito vacío
@@ -15,6 +15,7 @@ class CartManager {
   //obtener carritos
   getCarts = async () => {
     const carritos = await cartModel.find().lean();
+
     return carritos;
   };
   //obtener carrito con id determinado

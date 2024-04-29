@@ -13,7 +13,8 @@ export default class ProductManager {
         lean: true,
       }
     );
-
+    console.log("productos en servicio");
+    console.log(products);
     return products;
   };
 

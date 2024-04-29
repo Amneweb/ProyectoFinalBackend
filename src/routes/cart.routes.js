@@ -1,9 +1,9 @@
-import CartManager from "../services/daos/carts/carts.service.js";
+import CartController from "../controllers/carts.controller.js";
 import CustomRouter from "./custom/custom.router.js";
 export default class CartsRouter extends CustomRouter {
   init() {
     console.log("en clase cart routes");
-    const cartManager = new CartManager();
+    const cartController = new CartController();
     this.get("/:cid", ["USER", "ADMIN"], cartController.getOne);
     this.get("/", ["ADMIN"], async (req, res) => {
       res.send(await cartManager.getCarts());

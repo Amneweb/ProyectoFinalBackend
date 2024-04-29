@@ -11,14 +11,14 @@ import initializePassport from "./config/passport.config.js";
 import ProductsRouter from "./routes/products.routes.js";
 import CategoriesRouter from "./routes/category.routes.js";
 import CartsRouter from "./routes/cart.routes.js";
-import viewsRouter from "./routes/views.routes.js";
+import ViewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
 //import sessionRoutes from "./routes/sessions.routes.js";
 //import sessionViewsRoutes from "./routes/session.views.routes.js";
 import usersViewsRouter from "./routes/user.views.routes.js";
 
 //import jwtRouter from "./routes/jwt.router.js";
-import messageModel from "./services/db/models/messages.model.js";
+import messageModel from "./services/daos/mensajes/messages.model.js";
 const app = express();
 
 app.engine("handlebars", handlebars.engine());
@@ -40,7 +40,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const PORT = environmentConfig.PORT;
+const PORT = environmentConfig.SERVER.PORT;
 
 const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
@@ -61,8 +61,8 @@ const httpServer = app.listen(PORT, () => {
 //Middlewares Passport
 initializePassport();
 app.use(passport.initialize());
-
-app.use("/", viewsRouter);
+const viewsRouter = new ViewsRouter();
+app.use("/", viewsRouter.getRouter());
 app.use("/users", usersViewsRouter);
 const productRouter = new ProductsRouter();
 app.use("/api/products", productRouter.getRouter());
@@ -77,8 +77,8 @@ app.use("/api/users", usersRouter.getRouter());
 app.get("*", (req, res) => {
   res.status(400).send("Connot get that URL!!");
 });
-url = environmentConfig.DATABASE.MONGO.URL;
-db = environmentConfig.DATABASE.MONGO.DB_NAME;
+const url = environmentConfig.DATABASE.MONGO.URL;
+const db = environmentConfig.DATABASE.MONGO.DB_NAME;
 
 const connectMongoDB = async () => {
   try {

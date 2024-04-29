@@ -1,4 +1,4 @@
-import CategoryManager from "../services/db/categories.db.service.js";
+import CategoryManager from "../services/daos/categories/categories.service.js";
 import CustomRouter from "./custom/custom.router.js";
 export default class CategoriesRouter extends CustomRouter {
   init() {
