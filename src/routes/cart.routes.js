@@ -1,8 +1,9 @@
 import CartController from "../controllers/carts.controller.js";
 import CustomRouter from "./custom/custom.router.js";
+import pc from "picocolors";
 export default class CartsRouter extends CustomRouter {
   init() {
-    console.log("en clase cart routes");
+    console.log(pc.bgRed("CARTS"));
     const cartController = new CartController();
     this.get("/:cid", ["USER", "ADMIN"], cartController.getOne);
     this.get("/", ["ADMIN"], async (req, res) => {

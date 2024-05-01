@@ -1,5 +1,6 @@
 import express from "express";
 import __dirname from "../utils.js";
+import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";
@@ -13,8 +14,7 @@ import CategoriesRouter from "./routes/category.routes.js";
 import CartsRouter from "./routes/cart.routes.js";
 import ViewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
-//import sessionRoutes from "./routes/sessions.routes.js";
-//import sessionViewsRoutes from "./routes/session.views.routes.js";
+
 import usersViewsRouter from "./routes/user.views.routes.js";
 
 //import jwtRouter from "./routes/jwt.router.js";
@@ -40,6 +40,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 const PORT = environmentConfig.SERVER.PORT;
 
 const httpServer = app.listen(PORT, () => {

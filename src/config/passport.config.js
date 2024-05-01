@@ -14,6 +14,7 @@ const initializePassport = () => {
   /*==================================
   ESTRATEGIA GITHUB
   ==================================*/
+  //TODO: ver si funciona estrategia de github como opcional
   passport.use(
     "github",
     new githubStrategy(
@@ -57,7 +58,7 @@ const initializePassport = () => {
       }
     )
   );
-
+  //FIXME: la estrategia local se puede borrar
   /*========================
   ESTRATEGIA LOCAL
   =========================*/
@@ -134,7 +135,7 @@ const initializePassport = () => {
       }
     )
   );
-
+  //FIXME: verificar si la estoy usando y dónde.... 🤦‍♀️
   /*=============================
 ESTRATEGIA JWT
 ==============================*/
@@ -180,7 +181,7 @@ const cookieExtractor = (req) => {
     //Validamos que exista el request y las cookies.
     console.log("Cookies presentes: ");
     console.log(req.cookies);
-    token = req.cookies["jwtCookieToken"];
+    token = req.cookies["windwardCookie"];
     console.log("Token obtenido desde Cookie:");
     console.log(token);
   }

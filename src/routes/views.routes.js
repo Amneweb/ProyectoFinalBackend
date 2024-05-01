@@ -5,7 +5,7 @@ import CustomRouter from "./custom/custom.router.js";
 import ProductManager from "../services/daos/products/products.service.js";
 import CategoryManager from "../services/daos/categories/categories.service.js";
 import CartManager from "../services/daos/carts/carts.service.js";
-import { passportCall } from "../../utils.js";
+import pc from "picocolors";
 
 export default class ViewsRouter extends CustomRouter {
   init() {
@@ -13,38 +13,10 @@ export default class ViewsRouter extends CustomRouter {
     const cartManager = new CartManager();
     const categoryManager = new CategoryManager();
 
-    /*======================================================
-Middleware para dejar pasar sólo a los administradores
-=======================================================
-function auth(req, res, next) {
-  if (req.session.user.email === "adminCoder@coder.com" && req.session.admin) {
-    return next();
-  } else {
-    return res.status(403).render("errors", {
-      message:
-        "No estás autorizado para ingresar a este recurso. Para hacerlo debés tener credenciales de administrador.",
-      style: "catalogo.css",
-    });
-  }
-}*/
-
-    /*======================================================
-Middleware para no permitir acceder a ninguna vista 
-sin estar logueado
-========================================================
-function noauth(req, res, next) {
-  if (!req.session.user) {
-    return res.render("login", { style: "general.css" });
-  } else {
-    return next();
-  }
-}*/
-
-    /*======================================================
-Vista de todos los productos. Acceden todos los 
-usuarios logueados
-/*======================================================*/
+    console.log(pc.bgGreen("VISTAS"));
     this.get("/catalogo", ["PUBLIC"], async (req, res) => {
+      console.log(pc.bgCyan("usuario ya dentro del router de catalogo"));
+      console.log(pc.bgCyan(req.user));
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 300;
       const criterio = req.query.criterio || "title";
@@ -86,8 +58,7 @@ usuarios logueados
     });
 
     /*======================================================
-//Vista de un único producto. Acceden todos los 
-usuarios logueados
+//Vista de un único producto. Abierta a todo el público
 ======================================================*/
     this.get("/catalogo/:id", ["PUBLIC"], async (req, res) => {
       if (!req.session.user)

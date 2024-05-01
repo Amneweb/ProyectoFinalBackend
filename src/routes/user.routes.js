@@ -1,10 +1,11 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
+import pc from "picocolors";
 
 export default class UsersRouter extends CustomRouter {
   init() {
     // Todas las req/res van dentro de este init()
-
+    console.log(pc.bgBlue("USUARIOS"));
     // Se instancia el service UserService
     const usersController = new UsersController();
 

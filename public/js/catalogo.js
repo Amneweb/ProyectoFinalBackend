@@ -55,7 +55,7 @@ if (document.querySelector("#logout")) {
   const deslogueo = document.querySelector("#logout");
   deslogueo.addEventListener("click", (e) => {
     e.preventDefault();
-    fetch("/sessions/logout", {
+    fetch("api/users/logout", {
       method: "GET",
       headers: { "Content-type": "application/json" },
     });

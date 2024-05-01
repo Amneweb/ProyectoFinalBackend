@@ -1,4 +1,5 @@
 import UserService from "../services/daos/users/users.service.js";
+import { environmentConfig } from "../config/environment.config.js";
 import {
   createHash,
   isValidPassword,
@@ -57,11 +58,16 @@ export default class UsersController {
       };
       const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
       console.log("token generado ", access_token);
-      res.send({
-        message: "Login successful!",
-        access_token: access_token,
-        id: user._id,
-      });
+      res
+        .cookie("windwardCookie", access_token, {
+          maxAge: 120000,
+          httpOnly: true,
+        })
+        .send({
+          message: "Login successful!",
+          access_token: access_token,
+          id: user._id,
+        });
     } catch (error) {
       console.error(error);
       // return res.status(500).send({ status: "error", error: "Error interno de la applicacion." });
@@ -81,56 +87,40 @@ export default class UsersController {
     } = req.body;
     console.log("Registrando usuario:");
     console.log(req.body);
-    try {
-      const exists = await this.#userService.findByUsername(userEmail);
-      if (exists) {
-        return res
-          .status(400)
-          .send({ status: "error", message: "Usuario ya existe." });
-      }
-      const user = {
-        userName,
-        userLastName,
-        userEmail,
-        userAge,
-        userPassword: createHash(userPassword),
-        userRole,
-      };
-      const result = await this.#userService.save(user);
-      res.status(201).send({
-        status: "success",
-        message: "Usuario creado con éxito con ID: " + result._id,
-      });
 
-      const tokenUser = {
-        name: `${user.userName} ${user.userLastName}`,
-        email: user.userEmail,
-        age: user.userAge,
-        role: user.userRole,
-      };
-      const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
-      console.log("token generado ", access_token);
-      res.send({
-        message: "Signup successful!",
-        access_token: access_token,
-        id: user._id,
-      });
-    } catch (error) {
-      console.error(error);
-      // return res.status(500).send({ status: "error", error: "Error interno de la applicacion." });
-
-      return res.sendInternalServerError(error);
+    const exists = await this.#userService.findByUsername(userEmail);
+    if (exists) {
+      return res
+        .status(400)
+        .send({ status: "error", message: "Usuario ya existe." });
     }
+    const user = {
+      userName,
+      userLastName,
+      userEmail,
+      userAge,
+      userPassword: createHash(userPassword),
+      userRole,
+    };
+    const result = await this.#userService.save(user);
+    res.status(201).send({
+      status: "success",
+      message: "Usuario creado con éxito con ID: " + result._id,
+    });
   };
 
   logout = (req, res) => {
-    localStorage.clearItem("authToken");
-    localStorage.clearItem("USER_ID");
-
-    res.status(201).send({
-      status: "success",
-      message:
-        "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",
+    const cookieToken = req.cookies["windwardCookie"];
+    console.log("hay cookie token ", cookieToken);
+    if (cookieToken)
+      return res.clearCookie("windwardCookie").status(201).send({
+        status: "success",
+        message:
+          "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",
+      });
+    res.status(501).redirect("errors", {
+      status: "error",
+      message: "Hubo un error interno",
     });
   };
 }

@@ -1,8 +1,7 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import { environmentConfig } from "../../config/environment.config.js";
-import { passportCall } from "../../../utils.js";
-
+import pc from "picocolors";
 export default class CustomRouter {
   constructor() {
     this.router = Router();
@@ -57,20 +56,29 @@ export default class CustomRouter {
   handlePolicies = (policies) => (req, res, next) => {
     console.log("Politicas a evaluar:");
     console.log(policies);
-    //Validar si tiene acceso publico:
-    if (policies.includes("PUBLIC")) return next();
 
-    //El JWT token se guarda en los headers de autorización.
+    //Validar si tiene acceso publico:
+    // if (policies[0] === "PUBLIC") return next(); //Puede entrar cualquiera
+
+    let token;
+    //Si el JWT token se guarda en los headers de autorización.
     const authHeader = req.headers.authorization;
-    console.log("Token present in header auth:");
-    console.log(authHeader);
-    if (!authHeader) {
-      return res
-        .status(401)
-        .send({ error: "User not authenticated or missing token." });
+
+    //Si el JWT token se guarda en la cookie.
+    const authCookie = req.cookies["windwardCookie"];
+
+    if (authHeader || authCookie) {
+      token = authHeader ? authHeader.split(" ")[1] : authCookie;
+    } else {
+      if (policies.includes("PUBLIC")) return next();
+      return res.status(401).render("errors", {
+        error: "User not authenticated or missing token.",
+        message:
+          "Usuario no autenticado o problemas durante la autenticación. Intentalo de nuevo.",
+        style: "catalogo.css",
+      });
     }
-    const token = authHeader.split(" ")[1].trim(); //Se hace el split para retirar la palabra Bearer.
-    console.log("token sin bearer ", token);
+
     //Validar token
     jwt.verify(
       token,
@@ -84,17 +92,20 @@ export default class CustomRouter {
         const user = credentials.user;
 
         // Preguntamos si dentro del array policies se encuentra el user.role que me esta llegando con este usuario
-        if (!policies.includes(user.role.toUpperCase()))
-          return res.status(403).send({
+        if (
+          !policies.includes("PUBLIC") &&
+          !policies.includes(user.role.toUpperCase())
+        )
+          return res.status(403).render("errors", {
             error: "El usuario no tiene privilegios, revisa tus roles!",
+            message:
+              "No estás autorizado a entrar a este recurso. Para ir a este sector de la web debés ser ADMINISTRADOR",
+            style: "catalogo.css",
           });
 
         // si el user.role se encuentra dentro de policies, podes ingresar
         req.user = user;
-        console.log(
-          "datos del usuario con privilegios para acceder ",
-          req.user
-        );
+
         next();
       }
     );
@@ -105,19 +116,33 @@ export default class CustomRouter {
     res.sendSuccess = (payload) =>
       res.status(200).send({ status: "Success", payload });
     res.sendInternalServerError = (error) =>
-      res.status(500).send({ status: "Error", error });
+      res.status(500).render("errors", {
+        status: "Error",
+        error,
+        message:
+          "Error interno en la aplicación. Volvé a intentarlo más tarde.",
+      });
     res.sendClientError = (error) =>
-      res
-        .status(400)
-        .send({ status: "Client Error, Bad request from client.", error });
+      res.status(400).render({
+        status: "Client Error, Bad request from client.",
+        error,
+        message:
+          "Error del cliente. Seguramente escribiste mal una ruta, o no sos un usuario registrado.",
+        style: "catalogo.css",
+      });
     res.sendUnauthorizedError = (error) =>
-      res
-        .status(401)
-        .send({ error: "User not authenticated or missing token." });
+      res.status(401).render("errors", {
+        error: "User not authenticated or missing token.",
+        message: "No te has autenticado o ha habido un error de autenticación.",
+        style: "catalogo.css",
+      });
     res.sendForbiddenError = (error) =>
-      res.status(403).send({
+      res.status(403).render("errors", {
         error:
           "Token invalid or user with no access, Unauthorized please check your roles!",
+        message:
+          "Credenciales inválidas o no tenés los privilegios para acceder a este recurso. Para entrar a la sección de administración debés tener rol de ADMINISTRADOR",
+        style: "catalogo.css",
       });
     next();
   };

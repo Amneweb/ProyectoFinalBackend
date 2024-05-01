@@ -32,6 +32,10 @@ llamarApi();
 const deslogueo = document.querySelector("#logout");
 deslogueo.addEventListener("click", (e) => {
   e.preventDefault();
+
+  if (localStorage.getItem("USER_ID")) localStorage.removeItem("USER_ID");
+  if (localStorage.getItem("authToken")) localStorage.removeItem("authToken");
+
   fetch("/api/users/logout", {
     method: "GET",
     headers: { "Content-type": "application/json" },

@@ -87,9 +87,6 @@ export const createHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
 export const isValidPassword = (plainTextPassword, hashedPassword) => {
-  console.log(
-    `Datos a validar: password de formulario: ${plainTextPassword}, password hasheado: ${hashedPassword}`
-  );
   return bcrypt.compareSync(plainTextPassword, hashedPassword);
 };
 
@@ -106,6 +103,7 @@ export const generateJWToken = (user) => {
     expiresIn: "120s",
   });
 };
+//FIXME: esta función creo que no la uso, tal vez la puedo borrar
 /**
  * Metodo que autentica el token JWT para nuestros requests.
  * OJO: Esto actúa como un middleware, observar el next.
@@ -123,6 +121,7 @@ export const authToken = (req, res, next) => {
       .status(401)
       .send({ error: "User not authenticated or missing token." });
   }
+
   const token = authHeader.split(" ")[1].trim(); //Se hace el split para retirar la palabra Bearer.
   //Validar token
   jwt.verify(
@@ -141,7 +140,7 @@ export const authToken = (req, res, next) => {
     }
   );
 };
-
+//FIXME: por ahora no se usa.
 export const passportCall = (strategy) => {
   return async (req, res, next) => {
     console.log("Entrando a llamar strategy: ");

@@ -2,11 +2,12 @@ import { uploader, validateModifiedData } from "../../utils.js";
 import { validateFormData } from "../../utils.js";
 import CustomRouter from "./custom/custom.router.js";
 import ProductController from "../controllers/products.controller.js";
+import pc from "picocolors";
 
 export default class ProductsRouter extends CustomRouter {
   init() {
     const productController = new ProductController();
-    console.log("en clase products admin");
+    console.log(pc.bgYellow("ADMIN PRODUCTS"));
 
     this.get("/", ["PUBLIC"], productController.getAll);
     this.get("/:id", ["PUBLIC"], productController.getOne);
