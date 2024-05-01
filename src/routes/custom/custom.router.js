@@ -1,6 +1,7 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
 import { environmentConfig } from "../../config/environment.config.js";
+import { passportCall } from "../../../utils.js";
 
 export default class CustomRouter {
   constructor() {
@@ -56,7 +57,6 @@ export default class CustomRouter {
   handlePolicies = (policies) => (req, res, next) => {
     console.log("Politicas a evaluar:");
     console.log(policies);
-
     //Validar si tiene acceso publico:
     if (policies.includes("PUBLIC")) return next();
 

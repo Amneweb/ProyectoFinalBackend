@@ -81,26 +81,46 @@ export default class UsersController {
     } = req.body;
     console.log("Registrando usuario:");
     console.log(req.body);
+    try {
+      const exists = await this.#userService.findByUsername(userEmail);
+      if (exists) {
+        return res
+          .status(400)
+          .send({ status: "error", message: "Usuario ya existe." });
+      }
+      const user = {
+        userName,
+        userLastName,
+        userEmail,
+        userAge,
+        userPassword: createHash(userPassword),
+        userRole,
+      };
+      const result = await this.#userService.save(user);
+      res.status(201).send({
+        status: "success",
+        message: "Usuario creado con éxito con ID: " + result._id,
+      });
 
-    const exists = await this.#userService.findByUsername(userEmail);
-    if (exists) {
-      return res
-        .status(400)
-        .send({ status: "error", message: "Usuario ya existe." });
+      const tokenUser = {
+        name: `${user.userName} ${user.userLastName}`,
+        email: user.userEmail,
+        age: user.userAge,
+        role: user.userRole,
+      };
+      const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
+      console.log("token generado ", access_token);
+      res.send({
+        message: "Signup successful!",
+        access_token: access_token,
+        id: user._id,
+      });
+    } catch (error) {
+      console.error(error);
+      // return res.status(500).send({ status: "error", error: "Error interno de la applicacion." });
+
+      return res.sendInternalServerError(error);
     }
-    const user = {
-      userName,
-      userLastName,
-      userEmail,
-      userAge,
-      userPassword: createHash(userPassword),
-      userRole,
-    };
-    const result = await userService.save(user);
-    res.status(201).send({
-      status: "success",
-      message: "Usuario creado con éxito con ID: " + result.id,
-    });
   };
 
   logout = (req, res) => {
