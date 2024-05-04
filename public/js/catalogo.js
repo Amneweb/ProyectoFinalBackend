@@ -1,4 +1,4 @@
-const storage =
+let storage =
   localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart");
 const CARRITO = document.querySelector("#carritoEnCatalogo");
 CARRITO.innerHTML = storage
@@ -72,7 +72,7 @@ if (authToken) {
         title: "👌",
         text: "El producto se agregó con éxito al carrito",
       }).then((result) => {
-        storage = localStorage.getItem("windwardCart");
+        location.reload(true);
       });
     });
   });

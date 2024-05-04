@@ -188,5 +188,11 @@ Acceso exclusivo para administradores.
           .render("errors", { mesage: e.message, style: "catalogo.css" });
       }
     });
+
+    this.get("/localstorage", ["PUBLIC"], async (req, res) => {
+      res.render("localusercart", {
+        style: "general.css",
+      });
+    });
   }
 }

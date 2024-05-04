@@ -1,8 +1,41 @@
 const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 console.log("carrito ", carrito);
+const divProductos = document.querySelector(".contenedorCarrito");
 
-const htmlScript = document.getElementById("contenedorCarrito").innerHTML;
-let theTemplate = Handlebars.compile(htmlScript);
-const compiledTemplate = theTemplate(carrito);
-console.log(compiledTemplate);
-document.getElementById("mostrarContenido").innerHTML = compiledTemplate;
+const fetches = carrito.forEach((producto) => {
+  fetch(`/api/products/${producto.product}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      return response.json();
+    })
+    .then((result) => {
+      const datos = { ...result, qty: producto.qty };
+      const divProducto = document.createElement("div");
+      divProducto.classList.add("producto");
+      divProducto.innerHTML =
+        datos.thumb != ""
+          ? `<div class="producto_imagen">
+      <img
+        src="${datos.thumb}"
+        alt="${datos.title}"
+      />`
+          : `<div class="producto_imagen">
+      <img
+        src="/img/sinfoto.jpg"
+        alt="Imagen no disponible"
+      />
+  </div>`;
+      divProducto.innerHTML += `<div class="producto_nombre"><p>${datos.title}</p></div>
+  <div class="producto_cantidad"><p>${datos.qty}</p></div>
+  <div class="producto_borrar"><button
+      id="${datos._id}"
+      class="borrar"
+      name="${datos._id}"
+    >🗑️</button></div></div>
+`;
+      divProductos.append(divProducto);
+    });
+});

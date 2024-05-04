@@ -2,25 +2,16 @@
 
   <h1>Bienvenido a Windward Car &amp; Truck Battery Store</h1>
   <h2>Este es tu carrito de compras</h2>
-  <p>Tené en cuenta que este carrito aun no está guardado en nuestros registros y podría perderse la información para la próxima vez que entresa a nuestra página. Si querés asegurarte de guardar el carrito para una compra más adelante, hacé click en el botón GUARDAR. Te llevará al sistema de login y registro.</p>
-  <h3><button
-    class="borrarCarrito"
-  >Borrar carrito ❌</button>
-  <script id="userTemplate" type="text/x-handlebars-template">
-    {{#each carrito}}
-      <div class="producto">
-       
-        <div class="producto_nombre"><p>{{this.product}}</p></div>
-        <div class="producto_cantidad"><p>{{this.qty}}</p></div>
-        <div class="producto_borrar"><button
-            id="{{this.product}}"
-            class="borrar"
-            name="{{../carrito._id}}"
-          >🗑️</button></div>
-      </div>
-    {{/each}}
-  </script>
-<div class="contenedorCarrito" id="mostrarContenido"></div>
+  <p>Tené en cuenta que este carrito aun no está guardado en nuestros registros
+    y podría perderse la información para la próxima vez que entresa a nuestra
+    página. Si querés asegurarte de guardar el carrito para una compra más
+    adelante, hacé click en el botón GUARDAR. Te llevará al sistema de login y
+    registro.</p>
+  <button class="borrarCarrito">Borrar carrito ❌</button>
+
+  <div class="contenedorCarrito">
+
+  </div>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/localcart.js"></script>
