@@ -2,12 +2,13 @@
   <div class="usuario">
     {{#if user}}
       <h4>Hola,
-        <span class="nombre">{{user.name}}</span>
-        gracias por visitarnos</h4>
+        <a href="/users">{{user.name}}</a>
+        ¡Gracias por visitarnos! 🤩</h4>
       <p>Tenés rol de
-        <strong>{{#if role}}administrador {{else}} usuario{{/if}}</strong>
+        <strong>{{user.role}}</strong>
       </p>
-      <button id="logout">Desloguearme</button>
+      <p>Para desloguearte, click en el botón
+        <button id="logout">¡¡Chau!!</button></p>
     {{else}}
       <p>Aun no estás logueado. Click
         <a href="/users/login">aquí</a>

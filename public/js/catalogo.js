@@ -1,5 +1,5 @@
 const storage =
-  localStorage.getItem("windward") && localStorage.getItem("windward");
+  localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart");
 const CARRITO = document.querySelector("#carritoEnCatalogo");
 CARRITO.innerHTML = storage
   ? `Hay un carrito abierto con ID ${storage} <a href="/carrito/${storage}">👉</a>`
@@ -18,7 +18,7 @@ botonesAgregar.forEach((boton) => {
       const data = await newCart.json();
 
       cid = data._id;
-      localStorage.setItem("windward", cid);
+      localStorage.setItem("windwardCart", cid);
     } else {
       cid = storage;
     }

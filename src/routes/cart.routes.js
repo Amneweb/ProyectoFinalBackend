@@ -9,12 +9,8 @@ export default class CartsRouter extends CustomRouter {
     this.get("/", ["ADMIN"], async (req, res) => {
       res.send(await cartManager.getCarts());
     });
-    this.post("/", ["USER", "ADMIN"], cartController.postOne);
-    this.post(
-      "/:cid/product/:pid",
-      ["USER", "ADMIN"],
-      cartController.addToCart
-    );
+    this.post("/", ["PUBLIC"], cartController.postOne);
+    this.post("/:cid/product/:pid", ["PUBLIC"], cartController.addToCart);
     this.delete("/:id", ["USER", "ADMIN"], cartController.deleteCart);
     //borrar producto de carrito
     this.delete(

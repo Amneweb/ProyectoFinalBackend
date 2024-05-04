@@ -9,9 +9,9 @@ botonesBorrarCarrito.forEach((boton) => {
       headers: { "Content-type": "application/json" },
     });
 
-    const storage = localStorage.getItem("windward");
+    const storage = localStorage.getItem("windwardCart");
     if (cartID === storage) {
-      localStorage.removeItem("windward");
+      localStorage.removeItem("windwardCart");
     }
     Swal.fire({
       title: "👍",

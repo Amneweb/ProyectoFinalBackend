@@ -47,3 +47,9 @@ deslogueo.addEventListener("click", (e) => {
     window.location.replace("/users/login");
   });
 });
+
+const carrito = document.querySelector(".carrito");
+const carritoExistente = localStorage.getItem("windwardCart");
+if (carritoExistente) {
+  carrito.innerHTML = `<p>Tenés un carrito sin guardar. <a href="/carrito/${carritoExistente}">Miralo acá 👉</a></p>`;
+}

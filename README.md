@@ -4,8 +4,9 @@
 
 > [!WARNING]
 > Esta entrega está en la rama main
-> Para esta entrega ya se tiene un ecommerce con el backend completo, a excepción del método de pago.
-> El recorrido del usuario supone los siguientes pasos:
+
+Para esta entrega ya se tiene un ecommerce con el backend completo, a excepción del método de pago.
+El recorrido del usuario supone los siguientes pasos:
 
 1. El visitante no logueado puede recorrer el catálogo, elegir productos y armar un carrito que se guarda en el local storage
 2. Una vez armado el carrito, para iniciar la compra deberá loguearse (o registrarse primero y luego loguearse)

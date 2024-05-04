@@ -47,7 +47,6 @@ export default class ViewsRouter extends CustomRouter {
         res.render("catalogo", {
           productosObtenidos,
           user: req.user,
-          role: req.admin,
           style: "catalogo.css",
         });
       } catch (e) {
@@ -137,29 +136,25 @@ Acceso sólo para administradores.
 
     /*======================================================
 Vista del carrito del usuario. 
-Acceso para el usuario logueado.
+Acceso para el usuario que tiene un carrito en el localstorage
 ======================================================*/
-    this.get(
-      "/carrito/:cid",
-      ["USER", "ADMIN", "PREMIUM"],
-      async (req, res) => {
-        try {
-          const carrito = await cartManager.getCartByID(req.params.cid);
+    this.get("/carrito/:cid", ["PUBLIC"], async (req, res) => {
+      try {
+        const carrito = await cartManager.getCartByID(req.params.cid);
 
-          if (!carrito.success) {
-            throw new Error(carrito.message);
-          }
-          res.render("usercart", {
-            carrito: carrito.data,
-            style: "general.css",
-          });
-        } catch (e) {
-          res
-            .status(404)
-            .render("errors", { message: e.message, style: "catalogo.css" });
+        if (!carrito.success) {
+          throw new Error(carrito.message);
         }
+        res.render("usercart", {
+          carrito: carrito.data,
+          style: "general.css",
+        });
+      } catch (e) {
+        res
+          .status(404)
+          .render("errors", { message: e.message, style: "catalogo.css" });
       }
-    );
+    });
 
     /*======================================================
 Vista de datos de un producto. 
