@@ -7,7 +7,6 @@ GET http://localhost:8080/api/products/?limite=3
 ### crear producto en la db - (para crear con una imagen se puede usar el formulario en views /home)
 POST http://localhost:8080/api/products
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJDb2RlciBIb3VzZSIsImVtYWlsIjoiYWRtaW5Db2RlckBjb2Rlci5jb20iLCJhZ2UiOjE1LCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE0MzMwNDY1LCJleHAiOjE3MTQzMzA1ODV9.ilhyZAaV9Uxap4jilzVxk3bTWg1eBs3vgzn99btIke8
 
 {
     "title": "Batería Edna FW90 baja",
@@ -29,7 +28,7 @@ DELETE http://localhost:8080/api/products/65edcd94716a035c64244777
 ### modificamos un producto
 PUT http://localhost:8080/api/products/65edd56d96f4bb28bba426df
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJDb2RlciBIb3VzZSIsImVtYWlsIjoiYWRtaW5Db2RlckBjb2Rlci5jb20iLCJhZ2UiOjE1LCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE0MzMwNDY1LCJleHAiOjE3MTQzMzA1ODV9.ilhyZAaV9Uxap4jilzVxk3bTWg1eBs3vgzn99btIke8
+
 
 {"price":159999}
 
@@ -38,7 +37,6 @@ POST http://localhost:8080/api/imagenes/65edd56d96f4bb28bba426df
 
 ### vemos los carritos
 GET http://localhost:8080/api/carts/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJBbW5lIENhbGxlIiwiZW1haWwiOiJhbW5lcmlzLmNhbGxlQGdtYWlsLmNvbSIsImFnZSI6NTQsInJvbGUiOiJ1c2VyIn0sImlhdCI6MTcxNDMzMjY5NywiZXhwIjoxNzE0MzMyODE3fQ.CkMRKkw6Q8QxnyClP_NLyJPh1s561fGhssuq9rw9NI8
 
 ### vemos un carrito específico
 GET http://localhost:8080/api/carts/65f7976cf0591b658c609635
@@ -61,3 +59,12 @@ POST http://localhost:8080/api/categories/
 Content-Type: application/json
 
 {"cate":"Edna"}
+
+### login
+POST http://localhost:8080/api/users/login
+Content-Type: application/json
+
+{
+  "userName": "amneris.calle@gmail.com",
+  "userPassword": "amne3112"
+}
