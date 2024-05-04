@@ -15,8 +15,6 @@ export default class ViewsRouter extends CustomRouter {
 
     console.log(pc.bgGreen("VISTAS"));
     this.get("/catalogo", ["PUBLIC"], async (req, res) => {
-      console.log(pc.bgCyan("usuario ya dentro del router de catalogo"));
-      console.log(pc.bgCyan(req.user));
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 300;
       const criterio = req.query.criterio || "title";
@@ -60,8 +58,6 @@ export default class ViewsRouter extends CustomRouter {
 //Vista de un único producto. Abierta a todo el público
 ======================================================*/
     this.get("/catalogo/:id", ["PUBLIC"], async (req, res) => {
-      if (!req.session.user)
-        return res.render("login", { style: "general.css" });
       const id = req.params.id;
       try {
         const producto = await productManager.getProductByID(id);
