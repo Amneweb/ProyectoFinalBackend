@@ -7,18 +7,13 @@
     class="borrarCarrito"
   >Borrar carrito ❌</button>
   <script id="userTemplate" type="text/x-handlebars-template">
-    {{#each carrito.cart}}
+    {{#each carrito}}
       <div class="producto">
-        <div class="producto_imagen">{{#if this.product.thumb}}
-            <img
-              src="{{this.product.thumb}}"
-              alt="{{this.product.title}}"
-            />{{/if}}
-        </div>
-        <div class="producto_nombre"><p>{{this.product.title}}</p></div>
+       
+        <div class="producto_nombre"><p>{{this.product}}</p></div>
         <div class="producto_cantidad"><p>{{this.qty}}</p></div>
         <div class="producto_borrar"><button
-            id="{{this.product._id}}"
+            id="{{this.product}}"
             class="borrar"
             name="{{../carrito._id}}"
           >🗑️</button></div>
