@@ -1,5 +1,19 @@
 # ProyectoFinalBackend
 
+## Tercer entrega
+
+> [!WARNING]
+> Esta entrega está en la rama main
+> Para esta entrega ya se tiene un ecommerce con el backend completo, a excepción del método de pago.
+> El recorrido del usuario supone los siguientes pasos:
+
+1. El visitante no logueado puede recorrer el catálogo, elegir productos y armar un carrito que se guarda en el local storage
+2. Una vez armado el carrito, para iniciar la compra deberá loguearse (o registrarse primero y luego loguearse)
+3. Una vez logueado el usuario e iniciada la compra se genera una orden de compra con un ID
+4. Se envía un correo al usuario con el ID de la orden de compra y los componentes del carrito
+
+---
+
 ## Desafío Clase 21 - login con estrategia local y/o de terceros (GitHub)
 
 Para este desafío se implementaron las estrategias local y Github. Quien tiene cuenta de Github puede elegir logearse a través de ese servicio. En ambos casos la vista de login es la misma, pero el botón de github lleva directamente a la ruta de la api sessions que llama a la estrategia de GitHub (no usé una vista intermedia. En clase el profesor usó una vista intermedia, pero me pareció que no era necesario)
