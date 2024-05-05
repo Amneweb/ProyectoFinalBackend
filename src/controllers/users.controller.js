@@ -39,6 +39,7 @@ export default class UsersController {
   addCart = async (req, res) => {
     const value = req.params.cid;
     console.log("usuario en el req despues del middleware authToken");
+    //TODO: le saqué el middleware de la ruta. Hay que verificar qué pasa
     console.log(req.user);
     const user = await this.#userService.findByUsername(req.user.email);
     console.log("Usuario encontrado para login:");
@@ -104,7 +105,7 @@ export default class UsersController {
       console.log("token generado ", access_token);
       res
         .cookie("windwardCookie", access_token, {
-          maxAge: 120000,
+          maxAge: 600000,
           httpOnly: true,
         })
         .send({

@@ -31,7 +31,6 @@ export default class UsersRouter extends CustomRouter {
     this.put(
       "/cart/:cid",
       ["USER", "ADMIN", "PREMIUM"],
-      authToken,
       usersController.addCart
     );
 

@@ -6,9 +6,7 @@ export default class CartsRouter extends CustomRouter {
     console.log(pc.bgRed("CARTS"));
     const cartController = new CartController();
     this.get("/:cid", ["USER", "ADMIN"], cartController.getOne);
-    this.get("/", ["ADMIN"], async (req, res) => {
-      res.send(await cartManager.getCarts());
-    });
+    this.get("/", ["ADMIN"], cartController.getCarts);
     this.post("/", ["PUBLIC"], cartController.postOne);
     this.post("/:cid/product/:pid", ["PUBLIC"], cartController.addToCart);
     this.delete("/:id", ["USER", "ADMIN"], cartController.deleteCart);
@@ -18,5 +16,6 @@ export default class CartsRouter extends CustomRouter {
       ["USER", "ADMIN"],
       cartController.deleteProduct
     );
+    this.post("/:cid/purchase", ["USER", "PREMIUM"], cartController.purchase);
   }
 }

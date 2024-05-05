@@ -42,3 +42,12 @@ botonesBorrarProducto.forEach((boton) => {
     });
   });
 });
+const botonComprar = document.querySelector(".comprar");
+botonComprar.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const cartID = e.target.id;
+  const compra = await fetch(`/api/carts/${cartID}/purchase`, {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+  });
+});

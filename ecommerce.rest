@@ -9,9 +9,9 @@ POST http://localhost:8080/api/products
 Content-Type: application/json
 
 {
-    "title": "Batería Edna FW90 baja",
+    "title": "Batería JAOS 12 x 75 alta",
     "price": 280000,
-    "code": "FW180",
+    "code": "CC 75 alta",
     "description": "12x75 Tipo Edna 600",
     "status": true,
     "category": "EDNA",
@@ -68,3 +68,7 @@ Content-Type: application/json
   "userName": "adminCoder@coder.com",
   "userPassword": "adminCod3r123"
 }
+
+### realizar compra
+POST http://localhost:8080/api/carts/6637a7d70d36d061bcd24bc7/purchase
+Content-Type: application/json
