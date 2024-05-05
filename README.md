@@ -15,7 +15,7 @@ El recorrido del usuario supone los siguientes pasos:
 
 ### Consideraciones
 
-Suponemos que cada usuario sólo puede tener un carrito guardado en el sistema de persistencia. Si al momento de guardar un carrito, tenía uno guardado en la base de datos, éste se elimina automáticamente del documento del usuario y es reemplazado por el nuevo. Al mismo tiepo se elimina el carrito de la colección de carritos.
+Suponemos que cada usuario sólo puede tener 1 carrito guardado en el sistema de persistencia. Si al momento de guardar un carrito, tenía uno guardado en la base de datos, éste se elimina automáticamente del documento del usuario y es reemplazado por el nuevo. Al mismo tiepo se elimina el carrito de la colección de carritos.
 
 ---
 
