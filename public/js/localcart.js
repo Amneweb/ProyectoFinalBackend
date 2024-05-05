@@ -76,3 +76,14 @@ guardar.addEventListener("click", async (e) => {
     });
   }
 });
+const borrarCarrito = document.getElementById("borrarCarrito");
+borrarCarrito.addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.removeItem("windwardCart");
+  Swal.fire({
+    title: "👍",
+    text: "El carrito se borró con éxito",
+  }).then((result) => {
+    location.replace("/catalogo");
+  });
+});
