@@ -1,5 +1,6 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
+import { authToken } from "../../utils.js";
 import pc from "picocolors";
 
 export default class UsersRouter extends CustomRouter {
@@ -26,20 +27,19 @@ export default class UsersRouter extends CustomRouter {
     this.post("/register", ["PUBLIC"], usersController.register);
 
     this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
-  }
 
-  /*this.get("/:userId", authToken, async (req, res) => {
-      const userId = req.params.userId;
-      try {
-        const user = await userModel.findById(userId);
-        if (!user) {
-          res
-            .status(202)
-            .json({ message: "User not found with ID: " + userId });
-        }
-        res.json(user);
-      } catch (error) {
-        console.error("Error consultando el usuario con ID: " + userId);
-      }
-    });*/
+    this.put(
+      "/cart/:cid",
+      ["USER", "ADMIN", "PREMIUM"],
+      authToken,
+      usersController.addCart
+    );
+
+    this.get(
+      "/email",
+      ["USER", "ADMIN", "PREMIUM"],
+      authToken,
+      usersController.getByUsername
+    );
+  }
 }

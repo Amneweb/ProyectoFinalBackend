@@ -5,13 +5,17 @@
 > [!WARNING]
 > Esta entrega está en la rama main
 
-Para esta entrega ya se tiene un ecommerce con el backend completo, a excepción del método de pago.
+Para esta entrega ya se tiene armado un circuito completo de ecommerce, a excepción del método de pago.
 El recorrido del usuario supone los siguientes pasos:
 
 1. El visitante no logueado puede recorrer el catálogo, elegir productos y armar un carrito que se guarda en el local storage
 2. Una vez armado el carrito, para iniciar la compra deberá loguearse (o registrarse primero y luego loguearse)
 3. Una vez logueado el usuario e iniciada la compra se genera una orden de compra con un ID
 4. Se envía un correo al usuario con el ID de la orden de compra y los componentes del carrito
+
+### Consideraciones
+
+Suponemos que cada usuario sólo puede tener un carrito guardado en el sistema de persistencia. Si al momento de guardar un carrito, tenía uno guardado en la base de datos, éste se elimina automáticamente del documento del usuario y es reemplazado por el nuevo. Al mismo tiepo se elimina el carrito de la colección de carritos.
 
 ---
 

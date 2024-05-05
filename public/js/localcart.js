@@ -39,3 +39,40 @@ const fetches = carrito.forEach((producto) => {
       divProductos.append(divProducto);
     });
 });
+const guardar = document.querySelector("#guardar");
+guardar.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  const newCart = await fetch("/api/carts", {
+    method: "POST",
+    headers: { "Content-type": "application/json" },
+  });
+  const data = await newCart.json();
+
+  const cid = data._id;
+
+  carrito.forEach(async (producto) => {
+    const agregar = await fetch(
+      `/api/carts/${cid}/product/${producto.product}?qty=${producto.qty}`,
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+      }
+    );
+  });
+
+  const addCartToUser = await fetch(`/api/users/cart/${cid}`, {
+    method: "PUT",
+    headers: { "Content-type": "application/json" },
+  });
+  const dataCart = await addCartToUser._id;
+
+  if (dataCart) {
+    Swal.fire({
+      title: "👌",
+      text: "El carrito se ha guardado correctamente. Podés seguir agregando productos o terminar la compra",
+    }).then((result) => {
+      location.replace("/catalogo");
+    });
+  }
+});

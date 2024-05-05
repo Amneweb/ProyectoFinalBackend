@@ -2,7 +2,7 @@ let storage =
   localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart");
 const CARRITO = document.querySelector("#carritoEnCatalogo");
 CARRITO.innerHTML = storage
-  ? `Hay un carrito abierto <a href="/carrito/${storage}">VER 👉</a>`
+  ? `Hay un carrito abierto <a href="/localstorage">VER 👉</a>`
   : "";
 const botonesAgregar = document.querySelectorAll(".agregar");
 const authToken = false;

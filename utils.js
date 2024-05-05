@@ -103,26 +103,23 @@ export const generateJWToken = (user) => {
     expiresIn: "120s",
   });
 };
-//FIXME: esta función creo que no la uso, tal vez la puedo borrar
-/**
- * Metodo que autentica el token JWT para nuestros requests.
- * OJO: Esto actúa como un middleware, observar el next.
- * @param {*} req Objeto de request
- * @param {*} res Objeto de response
- * @param {*} next Pasar al siguiente evento.
- */
-export const authToken = (req, res, next) => {
-  //El JWT token se guarda en los headers de autorización.
-  const authHeader = req.headers.authorization;
-  console.log("Utils.js: Token present in header auth:");
-  console.log(authHeader);
-  if (!authHeader) {
-    return res
-      .status(401)
-      .send({ error: "User not authenticated or missing token." });
-  }
 
-  const token = authHeader.split(" ")[1].trim(); //Se hace el split para retirar la palabra Bearer.
+export const authToken = (req, res, next) => {
+  //El JWT token se guarda en los headers de autorización o en la cookie.
+  console.log("en auth token");
+  let token;
+  //Si se guarda en los headers de autorización.
+  const authHeader = req.headers.authorization;
+  console.log("el token en el header", authHeader);
+
+  //Si se guarda en la cookie.
+  const authCookie = req.cookies["windwardCookie"];
+  console.log("el token en la cookie", authCookie);
+
+  if (authHeader || authCookie) {
+    token = authHeader ? authHeader.split(" ")[1] : authCookie;
+  }
+  console.log("token", token);
   //Validar token
   jwt.verify(
     token,
@@ -132,10 +129,8 @@ export const authToken = (req, res, next) => {
         return res.status(403).send({ error: "Token invalid, Unauthorized!" });
       //Token OK
       req.user = credentials.user;
-      console.log(
-        "supuestamente tenemos el usuario que viene del header ",
-        req.user
-      );
+      console.log("user en utils ", credentials.user);
+
       next();
     }
   );

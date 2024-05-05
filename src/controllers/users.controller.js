@@ -1,21 +1,65 @@
 import UserService from "../services/daos/users/users.service.js";
+import CartService from "../services/daos/carts/carts.service.js";
 import { environmentConfig } from "../config/environment.config.js";
-import {
-  createHash,
-  isValidPassword,
-  generateJWToken,
-  authToken,
-} from "../../utils.js";
+import pc from "picocolors";
+import { createHash, isValidPassword, generateJWToken } from "../../utils.js";
 
 export default class UsersController {
   #userService;
+  #cartService;
   constructor() {
     this.#userService = new UserService();
+    this.#cartService = new CartService();
   }
 
   getAll = async (req, res) => {
     const todos = await this.#userService.getAll();
     res.send(todos);
+  };
+
+  getByUsername = async (req, res) => {
+    console.log("dentro de getByUsername");
+    console.log(req.user.email);
+    try {
+      const user = await this.#userService.findByUsername(req.user.email);
+      console.log("user en getbyusername ", user);
+      if (!user) {
+        res
+          .status(202)
+          .json({ message: "User not found with email: " + req.user.email });
+      }
+      res.json(user);
+    } catch (error) {
+      console.error(
+        "Error consultando el usuario con email: " + req.user.email
+      );
+    }
+  };
+
+  addCart = async (req, res) => {
+    const value = req.params.cid;
+    console.log("usuario en el req despues del middleware authToken");
+    console.log(req.user);
+    const user = await this.#userService.findByUsername(req.user.email);
+    console.log("Usuario encontrado para login:");
+    console.log(user);
+    const userID = user._id;
+    if (user.userCartID.length > 0) {
+      const carritoAnterior = user.userCartID[0];
+      console.log("carrito existente ", carritoAnterior);
+      await this.#cartService.deleteFullCartByID({ _id: carritoAnterior });
+    }
+
+    console.log(pc.bgYellow("en controller, metodo addCart"));
+    console.log(pc.yellow(value));
+    console.log(pc.yellow(userID));
+
+    const modificado = await this.#userService.update(
+      userID,
+      "userCartID",
+      value
+    );
+    res.sendSuccess(modificado);
   };
 
   getCurrentUser = (req, res) => {
