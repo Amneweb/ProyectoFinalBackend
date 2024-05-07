@@ -23,7 +23,8 @@ export default class UserService {
     console.log(value);
     const hayUsuario = await userModel.findOne({ _id: user });
 
-    hayUsuario[filter] = [value];
+    hayUsuario[filter] = value;
+
     await hayUsuario.save().then((result) => {
       const modificado = userModel.findOne({ _id: user });
       return modificado;

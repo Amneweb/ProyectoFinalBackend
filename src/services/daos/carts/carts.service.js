@@ -20,7 +20,18 @@ class CartManager {
   };
   //obtener carrito con id determinado
   getCartByID = async (id) => {
+    "dentro de get cart by id";
     const carrito = await cartModel.findOne({ _id: id }).lean();
+    const result = carrito
+      ? { success: true, data: { ...carrito } }
+      : { success: false, message: "no se encontró ningún carrito con ese id" };
+    return result;
+  };
+  updateCart = async (id, carritoRemanente) => {
+    const carrito = await cartModel.updateOne(
+      { _id: id },
+      { $set: { cart: carritoRemanente } }
+    );
     const result = carrito
       ? { success: true, data: { ...carrito } }
       : { success: false, message: "no se encontró ningún carrito con ese id" };

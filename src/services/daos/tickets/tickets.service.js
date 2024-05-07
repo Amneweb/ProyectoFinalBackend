@@ -2,6 +2,7 @@ import { ticketModel } from "./tickets.model.js";
 
 class TicketManager {
   createTicket = async (ticket) => {
+    console.log("entrando a la funcion de crear tickets");
     let ticketNuevo = await ticketModel.create(ticket);
     return ticketNuevo;
   };

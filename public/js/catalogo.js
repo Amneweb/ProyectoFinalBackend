@@ -11,7 +11,9 @@ botonesAgregar.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
     const current = await fetch("api/users/currentUser");
+
     try {
+      console.log("logueado o no", current.status);
       if (current.status === 200) {
         /* 
   ==========================================================================
@@ -62,8 +64,42 @@ botonesAgregar.forEach((boton) => {
           console.log("new cart cuando existe el storage ", newCart);
         }
 
-        productID = e.target.id;
-        const newProduct = { product: productID, qty: 1 };
+        const productID = e.target.id;
+        console.log("id que llega por el boton " + productID);
+        let newProduct = {};
+        /*const pos = newCart.findIndex((producto) => {
+          console.log("producto en for each " + producto.product);
+          producto.product === productID;
+        });
+
+
+        console.log("pos ", pos);
+
+        if (pos < 0) {
+          newProduct = { product: productID, qty: 1 };
+        } else {
+          const cantidadExistente = newCart[pos].qty;
+          newCart.splice(pos, 1);
+          newProduct = { product: productID, qty: cantidadExistente + 1 };
+        }*/
+        for (let i = 0; i <= newCart.lenght; i++) {
+          console.log(
+            pc.bgRed(
+              "id en el array " +
+                newCart[i].product +
+                "productID que viene del botón " +
+                productID
+            )
+          );
+          if (newCart[i].product === productID) {
+            const cantidadExistente = newCart[i].qty;
+            newCart.splice(i, 1);
+            newProduct = { product: productID, qty: cantidadExistente + 1 };
+            return newCart;
+          } else {
+            newProduct = { product: productID, qty: 1 };
+          }
+        }
         console.log("nueva entrada en carrito", newProduct);
         newCart.push(newProduct);
         localStorage.setItem("windwardCart", JSON.stringify(newCart));
