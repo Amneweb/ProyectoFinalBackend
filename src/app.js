@@ -1,5 +1,5 @@
 import express from "express";
-import __dirname from "../utils.js";
+import __dirname, { passportJWTCall } from "../utils.js";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import { environmentConfig } from "./config/environment.config.js";
@@ -62,6 +62,7 @@ const httpServer = app.listen(PORT, () => {
 //Middlewares Passport
 initializePassport();
 app.use(passport.initialize());
+app.use(passportJWTCall);
 const viewsRouter = new ViewsRouter();
 app.use("/", viewsRouter.getRouter());
 app.use("/users", usersViewsRouter);
