@@ -105,85 +105,37 @@ export default class CartController {
                   }
                 });
             })
-          ).then(async () => {
-            const ticket = {
-              order: order,
-              amount: amount,
-              purchaser: user.email,
-              code: uuidv4(),
-            };
-            console.log(pc.bgRed("ticket a enviar"));
+          )
+            .then(async () => {
+              let promise1;
+              let promise2;
+              if (carritoRemanente.length > 0) {
+                promise1 = await this.#cartManager.updateCart(
+                  req.params.cid,
+                  carritoRemanente
+                );
+                promise2 = "";
+              } else {
+                console.log("lo que mando al user manager", user);
+                const filter = "userCartID";
+                const value = [];
+                promise1 = this.#userManager.update(user, filter, value);
+                promise2 = this.#cartManager.deleteFullCartByID(req.params.cid);
+              }
+              await Promise.all([promise1, promise2]);
+            })
+            .then(async () => {
+              const ticket = {
+                order: order,
+                amount: amount,
+                purchaser: user.email,
+                code: uuidv4(),
+              };
+              console.log(pc.bgRed("ticket a enviar"));
 
-            res.send(await this.#ticketManager.createTicket(ticket));
-          });
+              res.send(await this.#ticketManager.createTicket(ticket));
+            });
         });
-    } catch (e) {}
-  };
-
-  purchasePrueba = async (req, res) => {
-    const user = req.user;
-    console.log("req completo ", req.params);
-    console.log("en controller purchase");
-    console.log(pc.bgGreen("req user " + req.user.email));
-    console.log(pc.bgYellow("req id" + req.params.cid));
-    try {
-      const carrito = await this.#cartManager.getCartByID(req.params.cid);
-      console.log(pc.bgGreen("carrito con toArray" + carrito));
-      if (carrito.success) {
-      } else {
-        throw new Error("no se encontró ningún carrito guardado en la bdd");
-      }
-      let carritoRemanente = [];
-
-      //verificamos stock, creamos el array "order" y calculamos el total
-      let order = [];
-      let amount = 0;
-      console.log("carrito.data.cart");
-      console.log(carrito.data.cart);
-      carrito.data.cart.forEach(async (producto) => {
-        console.log(pc.bgWhite("dentro del for each " + producto.product._id));
-        const stock = await this.#productManager.getProductByID(
-          producto.product._id
-        );
-        console.log(pc.yellow("stock de cada producto en el carrito "));
-        console.log(stock.stock);
-        console.log(pc.red("cantidad a comprar"));
-        console.log(producto.qty);
-        if (stock.stock < producto.qty) {
-          carritoRemanente.push({
-            product: producto.product._id,
-            qty: producto.qty - stock.stock,
-          });
-          order.push({ product: producto.product._id, qty: stock.stock });
-          amount += stock.stock * stock.price;
-        } else {
-          order.push({ product: producto.product._id, qty: producto.qty });
-          amount += stock.price * producto.qty;
-          console.log("amount " + amount);
-          console.log(
-            "precio " + stock.price + " producto.qty " + producto.qty
-          );
-          console.log(pc.bgWhite("a la orden"));
-          console.log(order);
-        }
-      });
-      if (carritoRemanente.length > 0) {
-        await this.#cartManager.updateCart(req.params.cid, carritoRemanente);
-      } else {
-        const filter = "userCartID";
-        const value = [];
-        this.#cartManager.deleteFullCartByID(req.params.cid);
-        this.#userManager.update(user, filter, value);
-      }
-      const ticket = {
-        order: order,
-        amount: amount,
-        purchaser: user.email,
-        code: uuidv4(),
-      };
-      console.log(pc.bgRed("ticket a enviar"));
-      console.dir(ticket);
-      res.send(await this.#ticketManager.createTicket(ticket));
     } catch (e) {}
   };
 }

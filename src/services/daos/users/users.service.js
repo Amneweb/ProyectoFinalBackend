@@ -21,12 +21,13 @@ export default class UserService {
     console.log("Update user with filter and value:");
     console.log(filter);
     console.log(value);
-    const hayUsuario = await userModel.findOne({ _id: user });
+    console.log(user);
+    const hayUsuario = await userModel.findOne({ userEmail: user.email });
 
     hayUsuario[filter] = value;
 
     await hayUsuario.save().then((result) => {
-      const modificado = userModel.findOne({ _id: user });
+      const modificado = userModel.findOne({ userEmail: user.email });
       return modificado;
     });
 
