@@ -10,9 +10,15 @@ const {
   GITHUB_CALLBACK_URL,
   MONGO_URL,
   MONGO_DB_NAME,
+  MAILER_AUTH_PASS,
+  MAILER_EMAIL,
 } = process.env;
 
 const environmentConfig = {
+  MAILER: {
+    AUTH_PASS: MAILER_AUTH_PASS,
+    EMAIL: MAILER_EMAIL,
+  },
   SERVER: {
     PORT: PORT ?? 8080,
     JWT: {
