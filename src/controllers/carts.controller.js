@@ -65,6 +65,68 @@ export default class CartController {
     console.log(pc.bgGreen("req user " + req.user.email));
     console.log(pc.bgYellow("req id" + req.params.cid));
     try {
+      await this.#cartManager
+        .getCartByID(req.params.cid)
+        .then(async (result) => {
+          console.log(pc.bgGreen("carrito encontrado" + result));
+          if (!result.success) {
+            return res.send({ message: "no se encontró el carrito" });
+          }
+
+          let carritoRemanente = [];
+
+          //verificamos stock, creamos el array "order" y calculamos el total
+          let order = [];
+          let amount = 0;
+          console.log("carrito.data.cart");
+          console.log(result.data.cart);
+
+          await Promise.all(
+            result.data.cart.map(async (producto) => {
+              await this.#productManager
+                .getProductByID(producto.product._id)
+                .then((info) => {
+                  const stock = info.stock;
+                  const precio = info.price;
+                  const compra = producto.qty;
+                  console.log(
+                    "dentro de map " + stock + " " + precio + " " + compra
+                  );
+                  if (stock < compra) {
+                    carritoRemanente.push({
+                      product: producto.product._id,
+                      qty: compra - stock,
+                    });
+                    order.push({ product: producto.product._id, qty: stock });
+                    amount += stock * precio;
+                  } else {
+                    order.push({ product: producto.product._id, qty: compra });
+                    amount += precio * compra;
+                  }
+                });
+            })
+          ).then(async () => {
+            const ticket = {
+              order: order,
+              amount: amount,
+              purchaser: user.email,
+              code: uuidv4(),
+            };
+            console.log(pc.bgRed("ticket a enviar"));
+
+            res.send(await this.#ticketManager.createTicket(ticket));
+          });
+        });
+    } catch (e) {}
+  };
+
+  purchasePrueba = async (req, res) => {
+    const user = req.user;
+    console.log("req completo ", req.params);
+    console.log("en controller purchase");
+    console.log(pc.bgGreen("req user " + req.user.email));
+    console.log(pc.bgYellow("req id" + req.params.cid));
+    try {
       const carrito = await this.#cartManager.getCartByID(req.params.cid);
       console.log(pc.bgGreen("carrito con toArray" + carrito));
       if (carrito.success) {
@@ -73,8 +135,6 @@ export default class CartController {
       }
       let carritoRemanente = [];
 
-      console.log(pc.blue("carrito remanente"));
-      console.dir(carritoRemanente);
       //verificamos stock, creamos el array "order" y calculamos el total
       let order = [];
       let amount = 0;
