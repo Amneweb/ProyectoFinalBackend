@@ -16,7 +16,7 @@ const environmentConfig = {
   SERVER: {
     PORT: PORT ?? 8080,
     JWT: {
-      SECRET: JWT_SECRET_KEY ?? "SECRET_KEEEY_!",
+      SECRET: JWT_SECRET_KEY,
     },
     COOKIES: {
       AUTH: COOKIE_AUTH_TOKEN_KEY ?? "token_login",

@@ -145,7 +145,7 @@ ESTRATEGIA JWT
       {
         jwtFromRequest: ExtractJWT.fromExtractors([
           cookieExtractor,
-          ExtractJWT.fromAuthHeaderAsBearerToken(),
+          //  ExtractJWT.fromAuthHeaderAsBearerToken(),
         ]),
         secretOrKey: environmentConfig.SERVER.JWT.SECRET,
       },

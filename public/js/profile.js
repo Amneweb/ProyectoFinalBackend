@@ -9,7 +9,7 @@ function llamarApi() {
     },
   });
   //me fijo si el usuario tiene un carrito armado
-  const promise2 = fetch("api/users/email/");
+  const promise2 = ""; //fetch("api/users/email/");
   Promise.all([promise1, promise2]).then((results) => {
     console.log("resultados de promesas");
     console.log("0", results[0]);
@@ -33,12 +33,12 @@ function llamarApi() {
       alert("Usuario no autorizado, revisa tus accesos.");
       window.location.replace("/users/login");
     }
-    results[1].json().then((json) => {
-      if (json.userCartID.length > 0) {
-        const plantillaCarrito = document.getElementById("carritoBDD");
-        plantillaCarrito.innerHTML += `<p><strong>Carrito guardado:</strong><a href="/carrito/${json.userCartID[0]}">${json.userCartID[0]}</a></p>`;
-      }
-    });
+    //results[1].json().then((json) => {
+    // if (json.userCartID.length > 0) {
+    //   const plantillaCarrito = document.getElementById("carritoBDD");
+    //   plantillaCarrito.innerHTML += `<p><strong>Carrito guardado:</strong><a href="/carrito/${json.userCartID[0]}">${json.userCartID[0]}</a></p>`;
+    // }
+    // });
   });
 
   /*.then((json) => {

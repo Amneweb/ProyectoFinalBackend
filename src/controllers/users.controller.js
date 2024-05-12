@@ -1,6 +1,5 @@
 import UserService from "../services/daos/users/users.service.js";
 import CartService from "../services/daos/carts/carts.service.js";
-import { environmentConfig } from "../config/environment.config.js";
 import pc from "picocolors";
 import { createHash, isValidPassword, generateJWToken } from "../../utils.js";
 
@@ -20,6 +19,7 @@ export default class UsersController {
   getByUsername = async (req, res) => {
     console.log("dentro de getByUsername");
     console.log(req.user.email);
+    const filtro = req.query.filtro && req.query.filtro;
     try {
       const user = await this.#userService.findByUsername(req.user.email);
       console.log("user en getbyusername ", user);
@@ -28,7 +28,8 @@ export default class UsersController {
           .status(202)
           .json({ message: "User not found with email: " + req.user.email });
       }
-      res.json(user);
+      const respuesta = filtro ? user[filtro] : user;
+      res.json(respuesta);
     } catch (error) {
       console.error(
         "Error consultando el usuario con email: " + req.user.email
@@ -36,6 +37,31 @@ export default class UsersController {
     }
   };
 
+  getCart = async (req, res) => {
+    try {
+      await this.#userService.findByUsername(req.user.email).then((result) => {
+        console.log("primer result ", result);
+        if (!result) {
+          return res.status(202).json({
+            message: "User not found with email: " + req.user.email,
+          });
+        }
+
+        try {
+          console.log("result pra get cart by id ", result);
+          this.#cartService
+            .getCartByID(result.userCartID)
+            .then((result) => res.json(result));
+        } catch (e) {
+          console.error("No se pudo obtener el carrito ");
+        }
+      });
+    } catch (error) {
+      console.error(
+        "Error consultando el usuario con email: " + req.user.email
+      );
+    }
+  };
   addCart = async (req, res) => {
     const value = [req.params.cid];
     console.log("usuario en el req despues del middleware authToken");

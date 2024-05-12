@@ -37,8 +37,15 @@ export default class UsersRouter extends CustomRouter {
     this.get(
       "/email",
       ["USER", "ADMIN", "PREMIUM"],
-      authToken,
+      //authToken,
       usersController.getByUsername
     );
+    this.get(
+      "/cart",
+      ["USER", "PREMIUM"],
+      //authToken,
+      usersController.getCart
+    );
+    this.get("/filtro/", ["USER", "PREMIUM"], usersController.getByUsername);
   }
 }

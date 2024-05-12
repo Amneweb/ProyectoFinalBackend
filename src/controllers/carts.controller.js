@@ -60,13 +60,12 @@ export default class CartController {
   };
   purchase = async (req, res) => {
     const user = req.user;
+    console.log("req completo ", req.params);
     console.log("en controller purchase");
-    console.log(pc.bgGreen("req user " + req.user));
-    console.log(pc.bgYellow("req id", req.params.cid));
+    console.log(pc.bgGreen("req user " + req.user.email));
+    console.log(pc.bgYellow("req id" + req.params.cid));
     try {
-      const carrito = await this.#cartManager
-        .getCartByID(req.params.cid)
-        .toArray();
+      const carrito = await this.#cartManager.getCartByID(req.params.cid);
       console.log(pc.bgGreen("carrito con toArray" + carrito));
       if (carrito.success) {
       } else {
