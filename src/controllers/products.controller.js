@@ -7,17 +7,21 @@ export default class ProductsController {
   }
 
   getAll = async (req, res) => {
-    let limite = parseInt(req.query.limite);
-    limite = limite < 0 || isNaN(limite) ? false : limite;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 300;
+    const criterio = req.query.criterio || "title";
+    const sentido = parseInt(req.query.sentido) || 1;
+    let sort = {};
+    sort[criterio] = sentido;
 
     try {
-      const productosObtenidos = await this.#productManager.getProducts();
+      const productosObtenidos = await this.#productManager.getProducts(
+        page,
+        limit,
+        sort
+      );
 
-      if (limite) {
-        return res.send(productosObtenidos.slice(0, limite));
-      } else {
-        return res.send(productosObtenidos);
-      }
+      return res.send(productosObtenidos);
     } catch (e) {
       res.status(500).send(e.message);
     }

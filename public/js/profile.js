@@ -5,7 +5,7 @@ function llamarApi() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+      /*Authorization: `Bearer ${localStorage.getItem("authToken")}`,*/
     },
   });
   //me fijo si el usuario tiene un carrito armado

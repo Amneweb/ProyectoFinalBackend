@@ -64,6 +64,9 @@ export default class UsersController {
   };
 
   getCurrentUser = (req, res) => {
+    console.log(pc.bgYellow("en get current user dentro del controlador "));
+
+    console.log(req.user);
     res.sendSuccess(req.user);
   };
 
@@ -104,8 +107,8 @@ export default class UsersController {
       const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
       console.log("token generado ", access_token);
       res
-        .cookie("windwardCookie", access_token, {
-          maxAge: 600000,
+        .cookie("token_login", access_token, {
+          maxAge: 120000,
           httpOnly: true,
         })
         .send({
@@ -155,10 +158,10 @@ export default class UsersController {
   };
 
   logout = (req, res) => {
-    const cookieToken = req.cookies["windwardCookie"];
+    const cookieToken = req.cookies["token_login"];
     console.log("hay cookie token ", cookieToken);
     if (cookieToken)
-      return res.clearCookie("windwardCookie").status(201).send({
+      return res.clearCookie("token_login").status(201).send({
         status: "success",
         message:
           "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",

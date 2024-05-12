@@ -54,25 +54,22 @@ export default class CustomRouter {
   handlePolicies = (policies) => (req, res, next) => {
     console.log("Politicas a evaluar:");
     console.log(policies);
-    if (policies.includes("PUBLIC")) return next();
-
+    if (policies.includes("PUBLIC")) {
+      console.log("sigue de largo porque es public");
+      return next();
+    }
+    console.log("usuario en handle policies", req.user);
     if (!req.user || !req.user.role) {
-      return res.status(401).render("errors", {
-        error: "User not authenticated or missing token.",
-        message:
-          "Usuario no autenticado o problemas durante la autenticación. Intentalo de nuevo.",
-        style: "catalogo.css",
-      });
+      return res
+        .status(401)
+        .send({ error: "User not authenticated or missing token." });
     }
 
     const role = req.user.role.toUpperCase();
     if (!policies.includes(role)) {
-      return res.status(403).render("errors", {
-        error: "El usuario no tiene privilegios, revisa tus roles!",
-        message:
-          "No estás autorizado a entrar a este recurso. Para ir a este sector de la web debés ser ADMINISTRADOR",
-        style: "catalogo.css",
-      });
+      return res
+        .status(403)
+        .send({ error: "El usuario no tiene privilegios, revisa tus roles!" });
     }
 
     next();
@@ -83,33 +80,19 @@ export default class CustomRouter {
     res.sendSuccess = (payload) =>
       res.status(200).send({ status: "Success", payload });
     res.sendInternalServerError = (error) =>
-      res.status(500).render("errors", {
-        status: "Error",
-        error,
-        message:
-          "Error interno en la aplicación. Volvé a intentarlo más tarde.",
-      });
+      res.status(500).send({ status: "Error", error });
     res.sendClientError = (error) =>
-      res.status(400).render({
-        status: "Client Error, Bad request from client.",
-        error,
-        message:
-          "Error del cliente. Seguramente escribiste mal una ruta, o no sos un usuario registrado.",
-        style: "catalogo.css",
-      });
+      res
+        .status(400)
+        .send({ status: "Client Error, Bad request from client.", error });
     res.sendUnauthorizedError = (error) =>
-      res.status(401).render("errors", {
-        error: "User not authenticated or missing token.",
-        message: "No te has autenticado o ha habido un error de autenticación.",
-        style: "catalogo.css",
-      });
+      res
+        .status(401)
+        .send({ error: "User not authenticated or missing token." });
     res.sendForbiddenError = (error) =>
-      res.status(403).render("errors", {
+      res.status(403).send({
         error:
           "Token invalid or user with no access, Unauthorized please check your roles!",
-        message:
-          "Credenciales inválidas o no tenés los privilegios para acceder a este recurso. Para entrar a la sección de administración debés tener rol de ADMINISTRADOR",
-        style: "catalogo.css",
       });
     next();
   };

@@ -145,7 +145,7 @@ ESTRATEGIA JWT
       {
         jwtFromRequest: ExtractJWT.fromExtractors([
           cookieExtractor,
-          ExtractJWT.fromAuthHeaderAsBearerToken,
+          ExtractJWT.fromAuthHeaderAsBearerToken(),
         ]),
         secretOrKey: environmentConfig.SERVER.JWT.SECRET,
       },
@@ -184,7 +184,9 @@ const cookieExtractor = (req) => {
     //Validamos que exista el request y las cookies.
     console.log("Cookies presentes: ");
     console.log(req.cookies);
-    token = req.cookies["windwardCookie"];
+    if (req.cookies["token_login"])
+      console.log("tiempo de la cookie ", req.cookies["token_login"].maxAge);
+    token = req.cookies["token_login"];
     console.log("Token obtenido desde Cookie:");
     console.log(token);
   }

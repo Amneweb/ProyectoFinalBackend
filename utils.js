@@ -113,7 +113,7 @@ export const authToken = (req, res, next) => {
   console.log("el token en el header", authHeader);
 
   //Si se guarda en la cookie.
-  const authCookie = req.cookies["windwardCookie"];
+  const authCookie = req.cookies["token_login"];
   console.log("el token en la cookie", authCookie);
 
   if (authHeader || authCookie) {
