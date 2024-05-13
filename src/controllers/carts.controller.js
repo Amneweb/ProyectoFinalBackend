@@ -31,8 +31,13 @@ export default class CartController {
   };
 
   postOne = async (req, res) => {
-    const carritoCreado = await this.#cartManager.addCart();
-    res.send(carritoCreado);
+    await this.#cartManager.addCart().then(async (result) => {
+      const filter = "userCartID";
+      const value = result._id;
+      await this.#userManager.update(req.user, filter, value).then((result) => {
+        res.send({ status: "success", payload: result });
+      });
+    });
   };
 
   addToCart = async (req, res) => {
@@ -133,8 +138,18 @@ export default class CartController {
               };
               console.log(pc.bgRed("ticket a enviar"));
 
-              res.send(await this.#ticketManager.createTicket(ticket));
+              const ticketcreado = await this.#ticketManager.createTicket(
+                ticket
+              );
+              res
+                .status(201)
+                .send({ status: "success", payload: ticketcreado });
             });
+          /*.then(async (result) => {
+              console.log(result)
+              req.ticket = result;
+              res.send(await sendEmail(req, res));
+            });*/
         });
     } catch (e) {}
   };

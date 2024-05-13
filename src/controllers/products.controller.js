@@ -49,11 +49,12 @@ export default class ProductsController {
     try {
       let imagen = [];
       req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
-      await this.#productManager.addProduct({
+      const result = await this.#productManager.addProduct({
         ...req.validatedData.data,
         thumb: imagen,
       });
-      res.redirect("/home/");
+      res.status(200).send({ status: "success", payload: result });
+      //res.redirect("/home/");
     } catch (e) {
       res.status(500).send(e.message);
     }

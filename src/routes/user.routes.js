@@ -47,5 +47,6 @@ export default class UsersRouter extends CustomRouter {
       usersController.getCart
     );
     this.get("/filtro/", ["USER", "PREMIUM"], usersController.getByUsername);
+    this.get("/tickets", ["USER", "PREMIUM"], usersController.getTickets);
   }
 }

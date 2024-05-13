@@ -1,14 +1,17 @@
 import UserService from "../services/daos/users/users.service.js";
 import CartService from "../services/daos/carts/carts.service.js";
+import TicketsService from "../services/daos/tickets/tickets.service.js";
 import pc from "picocolors";
 import { createHash, isValidPassword, generateJWToken } from "../../utils.js";
 
 export default class UsersController {
   #userService;
   #cartService;
+  #ticketsService;
   constructor() {
     this.#userService = new UserService();
     this.#cartService = new CartService();
+    this.#ticketsService = new TicketsService();
   }
 
   getAll = async (req, res) => {
@@ -64,7 +67,7 @@ export default class UsersController {
   };
   addCart = async (req, res) => {
     const value = [req.params.cid];
-    console.log("usuario en el req despues del middleware authToken");
+
     //TODO: le saqué el middleware de la ruta. Hay que verificar qué pasa
     console.log(req.user);
     const user = await this.#userService.findByUsername(req.user.email);
@@ -134,7 +137,7 @@ export default class UsersController {
       console.log("token generado ", access_token);
       res
         .cookie("token_login", access_token, {
-          maxAge: 120000,
+          maxAge: 240000,
           httpOnly: true,
         })
         .send({
@@ -181,6 +184,18 @@ export default class UsersController {
       status: "success",
       message: "Usuario creado con éxito con ID: " + result._id,
     });
+  };
+
+  getTickets = async (req, res) => {
+    const tickets = await this.#ticketsService.getTicketByUser(req.user.email);
+
+    if (!tickets) {
+      return res.status(500).send({
+        status: "error",
+        error: "No se pueden mostrar los tickets",
+      });
+    }
+    res.status(201).send({ status: "success", payload: tickets });
   };
 
   logout = (req, res) => {

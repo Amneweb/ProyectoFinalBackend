@@ -15,14 +15,11 @@ class TicketManager {
   };
   //obtener carrito con id determinado
   getTicketByUser = async (email) => {
-    const ticket = await ticketModel.findOne({ purchaser: email }).lean();
-    const result = ticket
-      ? { success: true, data: { ...ticket } }
-      : {
-          success: false,
-          message: "no se encontró ningún ticket para ese email",
-        };
-    return result;
+    console.log(email);
+    const tickets = await ticketModel.find({ purchaser: email });
+    console.log("tickets encontrados", tickets);
+
+    return tickets;
   };
 }
 export default TicketManager;

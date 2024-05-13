@@ -1,13 +1,23 @@
 import { transporter } from "../config/mailer.config.js";
 import { environmentConfig } from "../config/environment.config.js";
 export const sendEmail = async (req, res) => {
-  const destEmail = req.query.email;
+  console.log("en send email ", req.ticket);
+  let destEmail;
+  let html;
+  if (req.query.email) {
+    destEmail = req.query.email;
+    html = `<h3>Hola, ${destEmail}</h3><p>Gracias por probar nuestros servicios de correo. Te invitamos a recorrer nuestro shop online para elegir la mejor batería para tu auto</p>`;
+  } else {
+    const { purchase_datetime, code, purchaser, amount } = req.ticket;
+    destEmail = purchaser;
+    html = `<div><h3> Código de tu compra: ${code} </h3><p>Total de la compra: ${amount}</p><p>Fecha de compra: ${purchase_datetime} </p></div>`;
+  }
 
   const mailOptions = {
     from: "Windward Baterías - " + environmentConfig.MAILER.EMAIL,
     to: destEmail,
-    subject: "Correo de prueba CoderHouse Programacion backend clase_30",
-    html: `<div><h3> Esto es un Test de envio de correos con Nodemailer! </h3></div>`,
+    subject: "Gracias por comprar en Baterías Windward",
+    html: html,
     attachments: [],
   };
   try {
