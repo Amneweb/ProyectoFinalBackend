@@ -141,8 +141,14 @@ export default class CartController {
               };
               console.log(pc.bgRed("ticket a enviar"));
 
-              await this.#ticketManager.createTicket(ticket);
-              res.status(201).send({ status: "success", payload: result });
+              const ticketcreado = await this.#ticketManager.createTicket(
+                ticket
+              );
+              req.ticket = ticket;
+              //await sendEmail(req, res);
+              res
+                .status(201)
+                .send({ status: "success", payload: ticketcreado });
             });
           /* .then(async (result) => {
               console.log(result);
