@@ -100,7 +100,7 @@ export const isValidPassword = (plainTextPassword, hashedPassword) => {
  */
 export const generateJWToken = (user) => {
   return jwt.sign({ user }, environmentConfig.SERVER.JWT.SECRET, {
-    expiresIn: "120s",
+    expiresIn: "240s",
   });
 };
 

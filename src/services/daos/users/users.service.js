@@ -28,6 +28,10 @@ export default class UserService {
 
     await hayUsuario.save().then((result) => {
       const modificado = userModel.findOne({ userEmail: user.email });
+      console.log(
+        "modificado al final de update en users service ",
+        modificado
+      );
       return modificado;
     });
 

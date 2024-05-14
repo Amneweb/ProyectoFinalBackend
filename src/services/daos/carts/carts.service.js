@@ -27,16 +27,15 @@ class CartManager {
       : { success: false, message: "no se encontró ningún carrito con ese id" };
     return result;
   };
-  updateCart = async (id, carritoRemanente) => {
-    const carrito = await cartModel.updateOne(
+  updateCart = async (id, nuevoCarrito) => {
+    const carritomodificado = await cartModel.updateOne(
       { _id: id },
-      { $set: { cart: carritoRemanente } }
+      { $set: { cart: nuevoCarrito } }
     );
-    const result = carrito
-      ? { success: true, data: { ...carrito } }
-      : { success: false, message: "no se encontró ningún carrito con ese id" };
-    return result;
+
+    return carritomodificado;
   };
+
   //agregar producto a un carrito específico
   addProductToCartID = async (id, productID) => {
     let carritoBuscado = await cartModel.findById(id);
@@ -85,6 +84,29 @@ class CartManager {
       throw new Error("el producto indicado no existe en el carrito");
     } else {
       carritoBuscado.cart.splice(productIndex, 1);
+    }
+
+    await carritoBuscado.save();
+
+    return carritoBuscado;
+  };
+
+  //borrar producto de un carrito específico
+  deleteOneProduct = async (id, productID) => {
+    let carritoBuscado = await cartModel.findById(id);
+
+    if (!carritoBuscado) {
+      throw new Error("Carrito no encontrado");
+    }
+
+    const productIndex = carritoBuscado.cart.findIndex(
+      (productItem) => productItem.product._id.toString() === productID
+    );
+
+    if (productIndex === -1) {
+      throw new Error("el producto indicado no existe en el carrito");
+    } else {
+      carritoBuscado.cart[productIndex].qty--;
     }
 
     await carritoBuscado.save();

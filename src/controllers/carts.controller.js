@@ -34,9 +34,8 @@ export default class CartController {
     await this.#cartManager.addCart().then(async (result) => {
       const filter = "userCartID";
       const value = result._id;
-      await this.#userManager.update(req.user, filter, value).then((result) => {
-        res.send({ status: "success", payload: result });
-      });
+      await this.#userManager.update(req.user, filter, value);
+      res.send({ status: "success", payload: value });
     });
   };
 
@@ -56,9 +55,13 @@ export default class CartController {
   deleteProduct = async (req, res) => {
     const cartID = req.params.cid;
     const prodID = req.params.pid;
-
+    const one = parseInt(req.query.qty) === 1 ? true : false;
     try {
-      res.send(await this.#cartManager.deleteProductFromCart(cartID, prodID));
+      if (one) {
+        res.send(await this.#cartManager.deleteOneProduct(cartID, prodID));
+      } else {
+        res.send(await this.#cartManager.deleteProductFromCart(cartID, prodID));
+      }
     } catch (e) {
       throw e;
     }
@@ -138,18 +141,13 @@ export default class CartController {
               };
               console.log(pc.bgRed("ticket a enviar"));
 
-              const ticketcreado = await this.#ticketManager.createTicket(
-                ticket
-              );
-              res
-                .status(201)
-                .send({ status: "success", payload: ticketcreado });
+              await this.#ticketManager.createTicket(ticket);
+              res.status(201).send({ status: "success", payload: result });
             });
-          /*.then(async (result) => {
-              console.log(result)
+          /* .then(async (result) => {
+              console.log(result);
               req.ticket = result;
-              res.send(await sendEmail(req, res));
-            });*/
+              await sendEmail(req, res);*/
         });
     } catch (e) {}
   };
