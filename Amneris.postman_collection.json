@@ -252,6 +252,37 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "Borrar producto de carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/664296dca81e9f9673393a16/product/65f8d5fd34e4af075dec3408",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"664296dca81e9f9673393a16",
+								"product",
+								"65f8d5fd34e4af075dec3408"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar producto de a uno",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
