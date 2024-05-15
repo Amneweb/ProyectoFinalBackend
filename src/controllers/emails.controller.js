@@ -1,7 +1,6 @@
 import { transporter } from "../config/mailer.config.js";
 import { environmentConfig } from "../config/environment.config.js";
 export const sendEmail = async (req, res) => {
-  if (req.ticket) console.log("en send email ", req.ticket);
   let destEmail;
   let html;
   if (req.query.email) {

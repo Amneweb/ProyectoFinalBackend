@@ -2,6 +2,7 @@ import CartManager from "../services/daos/carts/carts.service.js";
 import ProductManager from "../services/daos/products/products.service.js";
 import TicketManager from "../services/daos/tickets/tickets.service.js";
 import UserManager from "../services/daos/users/users.service.js";
+import { sendEmail } from "../services/emails.service.js";
 import pc from "picocolors";
 import { v4 as uuidv4 } from "uuid";
 export default class CartController {
@@ -141,19 +142,17 @@ export default class CartController {
               };
               console.log(pc.bgRed("ticket a enviar"));
 
-              const ticketcreado = await this.#ticketManager.createTicket(
-                ticket
-              );
-              req.ticket = ticket;
-              //await sendEmail(req, res);
+              await this.#ticketManager.createTicket(ticket);
+            })
+            .then(async (result) => {
+              await fetch(`/api/email/?email=${req.user.email}`, {
+                method: "GET",
+                body: JSON.stringify(result.payload),
+              });
               res
                 .status(201)
-                .send({ status: "success", payload: ticketcreado });
+                .send({ status: "success", payload: result.payload });
             });
-          /* .then(async (result) => {
-              console.log(result);
-              req.ticket = result;
-              await sendEmail(req, res);*/
         });
     } catch (e) {}
   };

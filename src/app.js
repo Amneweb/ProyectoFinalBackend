@@ -63,7 +63,7 @@ const httpServer = app.listen(PORT, () => {
 initializePassport();
 app.use(passport.initialize());
 app.use(passportJWTCall);
-app.use("/email", emailRouter);
+app.use("/api/email", emailRouter);
 const viewsRouter = new ViewsRouter();
 app.use("/", viewsRouter.getRouter());
 app.use("/users", usersViewsRouter);
