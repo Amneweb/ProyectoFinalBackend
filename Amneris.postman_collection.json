@@ -523,6 +523,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Mocking de productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/mockproducts/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mockproducts",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

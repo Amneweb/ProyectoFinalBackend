@@ -142,17 +142,18 @@ export default class CartController {
               };
               console.log(pc.bgRed("ticket a enviar"));
 
-              await this.#ticketManager.createTicket(ticket);
-            })
-            .then(async (result) => {
-              await fetch(`/api/email/?email=${req.user.email}`, {
-                method: "GET",
-                body: JSON.stringify(result.payload),
-              });
+              const ticketcreado = await this.#ticketManager.createTicket(
+                ticket
+              );
               res
                 .status(201)
-                .send({ status: "success", payload: result.payload });
+                .send({ status: "success", payload: ticketcreado });
             });
+          //.then(async (result) => {
+          //  await fetch(`/api/email/?email=${req.user.email}`, {
+          //    method: "GET",
+          //    body: JSON.stringify(result.payload),
+          //  });
         });
     } catch (e) {}
   };
