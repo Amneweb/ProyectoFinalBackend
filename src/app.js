@@ -16,6 +16,7 @@ import ViewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
 import emailRouter from "./routes/email.routes.js";
 import usersViewsRouter from "./routes/user.views.routes.js";
+import mockRouter from "./routes/mock.routes.js";
 
 //import jwtRouter from "./routes/jwt.router.js";
 import messageModel from "./services/daos/mensajes/messages.model.js";
@@ -75,6 +76,7 @@ const categoriesRouter = new CategoriesRouter();
 app.use("/api/categories", categoriesRouter.getRouter());
 const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
+app.use("/api/mockproducts/", mockRouter);
 
 //FIXME:
 app.get("*", (req, res) => {

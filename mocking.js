@@ -1,39 +1,18 @@
-import { faker } from "@faker-js/faker";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-faker.locale = "es"; //Idioma de los datos
-export const generateUser = () => {
-  let numOfProducts = parseInt(
-    faker.random.numeric(1, { bannedDigits: ["0"] })
-  );
-  const roles = ["admin", "usuario", "editor", "invitado"];
-  let products = [];
-  for (let i = 0; i < numOfProducts; i++) {
-    products.push(generateProduct());
-  }
-  return {
-    name: faker.name.firstName(),
-    last_name: faker.name.lastName(),
-    sex: faker.name.sex(),
-    birthDate: faker.date.birthdate(),
-    products: products,
-    image: faker.internet.avatar(),
-    id: faker.database.mongodbObjectId(),
-    email: faker.internet.email(),
-    rol: roles[Math.floor(Math.random() * roles.length)],
-  };
-};
+import { fakerES as faker } from "@faker-js/faker";
 
 export const generateProduct = () => {
   return {
     title: faker.commerce.productName(),
+    code: faker.string.alphanumeric({ length: { min: 5, max: 10 } }),
     price: faker.commerce.price(),
-    stock: faker.random.numeric(1),
-    id: faker.database.mongodbObjectId(),
-    image: faker.image.image(),
+    stock: Math.floor(Math.random() * 100),
+    _id: faker.database.mongodbObjectId(),
+    thumb: faker.helpers.multiple(faker.system.fileName, { min: 0, max: 4 }),
+    category: faker.helpers.arrayElements(
+      ["EDNA", "camión", "JAOS", "auto", "MATEO"],
+      { min: 1, max: 4 }
+    ),
+    st: faker.datatype.boolean(0.9),
+    description: faker.lorem.paragraph({ min: 1, max: 3 }),
   };
 };
-
-export default __dirname;
