@@ -1,9 +1,9 @@
 # ProyectoFinalBackend
 
-## Tercer entrega corregida
+## Tercer entrega actualizada (incluye mocking)
 
 > [!WARNING]
-> Esta entrega está en la rama ticket
+> Esta entrega está en la rama MAIN
 
 En este caso preferí dejar de lado el front-end y todo el proceso de registro, compra, armado de carrito, etc, se deberá realizar desde postman, para lo cual generé un archivo con la colección de requests.
 
