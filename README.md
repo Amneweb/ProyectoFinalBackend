@@ -25,8 +25,8 @@ Pasos a seguir para armar un carrito y hacer la compra (cada paso corresponde a 
 
 ### Navegación en el front-end
 
-> [!WARNING]
-> El proceso de compra aun no funciona correctamente
+> [!CAUTION]
+> El desarrollo del front end quedó en stand by. Algunas funcionalidades tienen fallas. Por ahora las pruebas deben hacerse todas desde postman
 
 Hay 4 vistas principales:
 
