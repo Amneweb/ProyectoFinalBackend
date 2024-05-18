@@ -2,7 +2,7 @@
 
 ## Tercer entrega actualizada (incluye mocking y factory)
 
-> [!WARNING]
+> [!TIP]
 > Esta entrega está en la rama MAIN
 
 **Comandos para persistencia:**
@@ -24,7 +24,7 @@ Las requests están organizadas en carpetas: Usuarios, Carritos y Productos. Hay
 
 Pasos a seguir para armar un carrito y hacer la compra (cada paso corresponde a una request)
 
-> [!INFO]
+> [!IMPORTANT]
 > Este proceso completo sólo funciona con la persistencia de Mongo
 
 1. Registrar un nuevo usuario con rol "user"
