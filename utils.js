@@ -7,7 +7,7 @@ import bcrypt from "bcrypt";
 import { environmentConfig } from "./src/config/environment.config.js";
 import jwt from "jsonwebtoken";
 import passport from "passport";
-
+import { transporter } from "./src/config/mailer.config.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -159,4 +159,35 @@ export const authorization = (role) => {
     }
     next();
   };
+};
+export const sendEmail = (content) => {
+  let destEmail;
+  let html;
+  console.log("dentro de send email en utils");
+  const { purchase_datetime, code, purchaser, amount } = content;
+  destEmail = purchaser;
+  html = `<div><h3> Código de tu compra: ${code} </h3><p>Total de la compra: ${amount}</p><p>Fecha de compra: ${purchase_datetime} </p></div>`;
+
+  const mailOptions = {
+    from: "Windward Baterías - " + environmentConfig.MAILER.EMAIL,
+    to: destEmail,
+    subject: "Gracias por comprar en Baterías Windward",
+    html: html,
+    attachments: [],
+  };
+  try {
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+      }
+      console.log("Message sent: %s", info.messageId);
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({
+      error: error,
+      message:
+        "No se pudo enviar el email desde:" + environmentConfig.MAILER.EMAIL,
+    });
+  }
 };
