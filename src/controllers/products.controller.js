@@ -53,8 +53,8 @@ export default class ProductsController {
         ...req.validatedData.data,
         thumb: imagen,
       });
+
       res.status(200).send({ status: "success", payload: result });
-      //res.redirect("/home/");
     } catch (e) {
       res.status(500).send(e.message);
     }

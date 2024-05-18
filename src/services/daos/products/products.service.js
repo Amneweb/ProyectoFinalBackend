@@ -1,5 +1,5 @@
 import productModel from "./products.model.js";
-
+import pc from "picocolors";
 export default class ProductManager {
   constructor() {}
 
@@ -18,8 +18,15 @@ export default class ProductManager {
   };
 
   addProduct = async (product) => {
-    let productoNuevo = await productModel.create(product);
-    return productoNuevo;
+    try {
+      let productoNuevo = await productModel.create(product);
+      return productoNuevo;
+    } catch (e) {
+      console.log("error ", e.message);
+      console.log(pc.bgYellow("termina el error"));
+
+      throw new Error("Error al tratar de crear el producto " + e.message);
+    }
   };
   getProductByID = async (id) => {
     const product = await productModel.findOne({ _id: id }).lean();

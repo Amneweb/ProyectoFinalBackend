@@ -1,4 +1,5 @@
 import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 class Producto {
   constructor(title, price, code, stock, description, status, category, thumb) {
     this.title = title;
@@ -44,30 +45,8 @@ class ProductManager {
   /*=============================================
 =     Crear un producto (con imagen)          =
 =============================================*/
-  addProduct = async (
-    title,
-    price,
-    code,
-    stock,
-    description,
-    status,
-    category,
-    thumb
-  ) => {
-    if (category === "") {
-      category = "general";
-    }
-
-    let productoNuevo = new Producto(
-      title,
-      price,
-      code,
-      stock,
-      description,
-      status,
-      category,
-      thumb
-    );
+  addProduct = async (product) => {
+    let productoNuevo = new Producto({ ...product });
 
     try {
       const existentes = await this.getProducts();
@@ -81,27 +60,17 @@ class ProductManager {
           `El producto con código ${productoNuevo.code} ya está en el archivo y no será agregado\n`
         );
       } else {
-        let maxID = 0;
-
-        if (existentes.length > 0) {
-          const arrayDeID = existentes.map((producto) => producto.id);
-          maxID =
-            arrayDeID.length > 1
-              ? arrayDeID.reduce((a, b) => Math.max(a, b))
-              : arrayDeID[0];
-        }
+        newID = uuidv4();
         this.#productos.push({
           ...productoNuevo,
-          id: maxID + 1,
+          id: newID,
         });
 
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
         );
-        let msj = `El producto fue agregado con éxito con id = ${
-          maxID + 1
-        } \n\n`;
+        let msj = `El producto fue agregado con éxito con id = ${newID} \n\n`;
         return msj;
       }
     } catch (error) {
