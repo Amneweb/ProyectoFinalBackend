@@ -12,7 +12,11 @@ const typeNumberRequired = {
 const productSchema = new mongoose.Schema({
   title: typeStringRequired,
   price: typeNumberRequired,
-  code: { type: String, required: true, unique: true },
+  code: {
+    type: String,
+    required: [true, "El código de producto es requerido"],
+    unique: true,
+  },
   stock: typeNumberRequired,
   description: typeStringRequired,
   st: { type: Boolean, required: true, default: true },

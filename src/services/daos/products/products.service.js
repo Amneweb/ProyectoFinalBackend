@@ -22,10 +22,10 @@ export default class ProductManager {
       let productoNuevo = await productModel.create(product);
       return productoNuevo;
     } catch (e) {
+      console.log(pc.green("error completo " + e));
       console.log("error ", e.message);
       console.log(pc.bgYellow("termina el error"));
-
-      throw new Error("Error al tratar de crear el producto " + e.message);
+      throw new Error("No se pudo crear el producto " + e.message);
     }
   };
   getProductByID = async (id) => {
