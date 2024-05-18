@@ -2,24 +2,23 @@
   {
     "title": "Clorex 12x45",
     "price": 80000,
+    "category": ["EDNA"],
+    "description": "Prof. de Descarga: Mayor al 85%  Separadores: De polipropileno tipo sobre  Bornes: Plomo, bulón+tuerca+arand. inox.  Placas por celda: 9 positivas – 10 negativas  Tensión nominal: 12 Volts  Tensión de flote: 13,8 Volts  Tensión de carga: 14,5 Volts  Autodescarga: Menor al 3% mensual  Alta intensidad CCA: 800 A  Capacidad C20: 114 Ah  Reserva RC: 988 Min.  Vida cíclica (20% DOD): 1000 Ciclos  Expectativa de vida: Mayor a 2 años y medio  Intensidad nominal: 120 A",
     "code": "CLO45",
-    "stock": 2,
-    "description": "Batería de 12 placas 45 amperes",
-    "category": [
-      "EDNA"
-    ],
-    "thumb": [],
+    "stock": 5,
+    "thumb": "",
     "id": "e25f0bce-45d9-4c32-9921-7197cc763208"
   },
+
   {
-    "title": "Batería Edna de 12x65 Amperes",
-    "price": 84000,
-    "category": [
-      "EDNA"
-    ],
-    "description": "Prof. de Descarga: Mayor al 85%  Separadores: De polipropileno tipo sobre  Bornes: Plomo, bulón+tuerca+arand. inox.  Placas por celda: 9 positivas – 10 negativas  Tensión nominal: 12 Volts  Tensión de flote: 13,8 Volts  Tensión de carga: 14,5 Volts  Autodescarga: Menor al 3% mensual  Alta intensidad CCA: 800 A  Capacidad C20: 114 Ah  Reserva RC: 988 Min.  Vida cíclica (20% DOD): 1000 Ciclos  Expectativa de vida: Mayor a 2 años y medio  Intensidad nominal: 120 A",
-    "code": "FW70",
-    "stock": 2,
-    "thumb": "/img/1710693620872-FW50-2-550x440.jpg"
+    "title": "Bora Edna",
+    "price": 115000,
+    "code": "FW100",
+    "stock": 20,
+    "description": "Edna 12x110",
+    "status": true,
+    "category": ["EDNA, camiones"],
+    "thumb": [],
+    "id": "d9251fd2-558c-4a20-b7ae-985f1fcdd031"
   }
 ]

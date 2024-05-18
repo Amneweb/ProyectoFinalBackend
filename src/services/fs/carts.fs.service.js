@@ -1,5 +1,6 @@
 import __dirname from "../../../utils.js";
 import fs from "fs";
+import { v4 as uuidv4 } from "uuid";
 import ProductManagerFS from "./products.fs.service.js";
 let productManager = new ProductManagerFS();
 class CartManagerFS {
@@ -15,7 +16,7 @@ class CartManagerFS {
     this.#fs = fs;
   }
   /*=============================================
-=             Crear directorio                =
+=             Crear directorio y archivo                =
 =============================================*/
   createDir = async () => {
     try {
@@ -34,43 +35,29 @@ class CartManagerFS {
 =           Crear un carrito vacío            =
 =============================================*/
   addCart = async () => {
+    const newID = uuidv4();
     let newCarrito = {
       products: [],
+      id: newID,
     };
 
     try {
-      const existentes = await this.getCarts();
-
-      let maxID = 0;
-
-      if (existentes.length > 0) {
-        const arrayDeID = existentes.map((carrito) => carrito.id);
-        maxID =
-          arrayDeID.length > 1
-            ? arrayDeID.reduce((a, b) => Math.max(a, b))
-            : arrayDeID[0];
-      }
-
-      this.#carritos.push({
-        ...newCarrito,
-        id: maxID + 1,
-      });
+      this.#carritos.push(newCarrito);
 
       await this.#fs.promises.writeFile(
         this.#carritosRutaArchivo,
         JSON.stringify(this.#carritos, null, 2, "\t")
       );
-      let msj = `El carrito se ha generado con éxito con id ${maxID + 1}\n\n`;
-      return msj;
+      return newCarrito;
     } catch (error) {
       console.error(
         `Error creando el carrito nuevo: ${JSON.stringify(
-          carritoNuevo
+          newCarrito
         )}, detalle del error: ${error}`
       );
       throw new Error(
         `Error creando carrito nuevo: ${JSON.stringify(
-          carritoNuevo
+          newCarrito
         )}, detalle del ${error}`
       );
     }

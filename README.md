@@ -5,6 +5,15 @@
 > [!WARNING]
 > Esta entrega está en la rama MAIN
 
+**Comandos para persistencia:**
+
+- FS: node --watch src/app.js --persist fs
+- MONGO: node --watch src/app.js --persist mongodb
+
+En el caso de mongo se puede escribir "npm run dev" y automáticamente usa el servicio de mongo
+
+## Comentarios sobre la tercer entrega
+
 En este caso preferí dejar de lado el front-end y todo el proceso de registro, compra, armado de carrito, etc, se deberá realizar desde postman, para lo cual generé un archivo con la colección de requests.
 
 ### Requests en Postman
@@ -14,6 +23,9 @@ Las requests están organizadas en carpetas: Usuarios, Carritos y Productos. Hay
 ### Proceso de compra
 
 Pasos a seguir para armar un carrito y hacer la compra (cada paso corresponde a una request)
+
+> [!INFO]
+> Este proceso completo sólo funciona con la persistencia de Mongo
 
 1. Registrar un nuevo usuario con rol "user"
 1. Loguear el usuario
@@ -27,6 +39,10 @@ Pasos a seguir para armar un carrito y hacer la compra (cada paso corresponde a 
 
 Uso factory sólo para cambiar el método de persistencia de carritos y productos. NO lo uso para cambiar entre desarrollo y producción.
 Por otro lado, tampoco armé un servicio de usuarios con fileSystem, por lo que para agregar productos necesito la conexión con Mongo, así que en "fs" también inicializo Mongo (archivo **factory.js** línea 38)
+
+- En FileSystem se pueden agregar productos, borrar y modificar. Se pueden crear carritos a los que se les puede agregar productos.
+- El carrito se puede generar y se le pueden agregar productos sólo desde el rol de usuario.
+- Se pueden ver los carritos existentes sólo desde el rol de admin
 
 ### Navegación en el front-end
 

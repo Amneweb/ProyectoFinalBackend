@@ -8,7 +8,7 @@ class Producto {
     this.code = code;
     this.stock = stock;
     this.description = description;
-    this.status = status;
+    this.status = status ? status : true;
     this.category = category;
     this.thumb = thumb;
   }
@@ -163,7 +163,7 @@ class ProductManagerFS {
 
       if (productoAmodificar) {
         const indice = this.#productos.indexOf(productoAmodificar);
-        this.#productos[indice] = nuevo;
+        this.#productos[indice] = { ...nuevo, id: id };
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
