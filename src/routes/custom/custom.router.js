@@ -12,7 +12,6 @@ export default class CustomRouter {
   init() {} //Esta inicialilzacion se usa para las clases heredadas.
 
   get(path, policies, ...callbacks) {
-    console.log("Entrando por GET a custom router con Path: " + path);
     this.router.get(
       path,
       this.handlePolicies(policies),
@@ -22,7 +21,6 @@ export default class CustomRouter {
   }
 
   post(path, policies, ...callbacks) {
-    console.log("Entrando por POST a custom router con Path: " + path);
     this.router.post(
       path,
       this.handlePolicies(policies),
@@ -32,7 +30,6 @@ export default class CustomRouter {
   }
 
   put(path, policies, ...callbacks) {
-    console.log("Entrando por PUT a custom router con Path: " + path);
     this.router.put(
       path,
       this.handlePolicies(policies),
@@ -42,7 +39,6 @@ export default class CustomRouter {
   }
 
   delete(path, policies, ...callbacks) {
-    console.log("Entrando por DELETE a custom router con Path: " + path);
     this.router.delete(
       path,
       this.handlePolicies(policies),

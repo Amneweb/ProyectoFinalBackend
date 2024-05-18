@@ -1,5 +1,6 @@
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
+import pc from "picocolors";
 class Producto {
   constructor(title, price, code, stock, description, status, category, thumb) {
     this.title = title;
@@ -13,7 +14,7 @@ class Producto {
   }
 }
 
-class ProductManager {
+class ProductManagerFS {
   #productos;
   #productosRutaDirectorio;
   #productosRutaArchivo;
@@ -46,8 +47,22 @@ class ProductManager {
 =     Crear un producto (con imagen)          =
 =============================================*/
   addProduct = async (product) => {
-    let productoNuevo = new Producto({ ...product });
-
+    console.log(pc.bgBlue("lo que llega a add product"));
+    console.log(product);
+    const { title, price, code, stock, description, status, category, thumb } =
+      product;
+    let productoNuevo = new Producto(
+      title,
+      price,
+      code,
+      stock,
+      description,
+      status,
+      category,
+      thumb
+    );
+    console.log(pc.bgYellow("producto nuevo dentro de add product"));
+    console.log(productoNuevo);
     try {
       const existentes = await this.getProducts();
 
@@ -60,7 +75,8 @@ class ProductManager {
           `El producto con código ${productoNuevo.code} ya está en el archivo y no será agregado\n`
         );
       } else {
-        newID = uuidv4();
+        const newID = uuidv4();
+        console.log(pc.bgGreen("id generado con uuid " + newID));
         this.#productos.push({
           ...productoNuevo,
           id: newID,
@@ -117,7 +133,7 @@ class ProductManager {
   /*=============================================
 =         Borrar producto según ID            =
 =============================================*/
-  deleteProductByID = async (id) => {
+  deleteProduct = async (id) => {
     try {
       const productoAborrar = await this.getProductByID(id);
       if (productoAborrar) {
@@ -141,13 +157,13 @@ class ProductManager {
   /*=============================================
 =        Modificar producto por ID            =
 =============================================*/
-  updateProductByID = async (id, propiedad, nuevoValor) => {
+  updateProduct = async (id, nuevo) => {
     try {
       const productoAmodificar = await this.getProductByID(id);
 
       if (productoAmodificar) {
         const indice = this.#productos.indexOf(productoAmodificar);
-        this.#productos[indice][propiedad] = nuevoValor;
+        this.#productos[indice] = nuevo;
         await this.#fs.promises.writeFile(
           this.#productosRutaArchivo,
           JSON.stringify(this.#productos, null, 2, "\t")
@@ -161,6 +177,8 @@ class ProductManager {
       return `Error al tratar de modificar el producto.\nDetalle del error: ${error}`;
     }
   };
+
+  //FIXME: no utilizado
   /*=============================================
 =       Agregar 1 imagen a producto           =
 =============================================*/
@@ -188,4 +206,4 @@ class ProductManager {
     }
   };
 }
-export default ProductManager;
+export default ProductManagerFS;

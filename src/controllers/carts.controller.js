@@ -1,5 +1,5 @@
-import CartManager from "../services/daos/carts/carts.service.js";
-import ProductManager from "../services/daos/products/products.service.js";
+import { cartsService } from "../services/factory.js";
+import { productsService } from "../services/factory.js";
 import TicketManager from "../services/daos/tickets/tickets.service.js";
 import UserManager from "../services/daos/users/users.service.js";
 import { sendEmail } from "../../utils.js";
@@ -11,8 +11,8 @@ export default class CartController {
   #ticketManager;
   #userManager;
   constructor() {
-    this.#cartManager = new CartManager();
-    this.#productManager = new ProductManager();
+    this.#cartManager = cartsService;
+    this.#productManager = productsService;
     this.#ticketManager = new TicketManager();
     this.#userManager = new UserManager();
   }

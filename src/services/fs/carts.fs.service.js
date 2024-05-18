@@ -1,8 +1,8 @@
-import __dirname from "../../util.js";
+import __dirname from "../../../utils.js";
 import fs from "fs";
-import ProductManager from "./ProductManager.js";
-let productManager = new ProductManager();
-class CartManager {
+import ProductManagerFS from "./products.fs.service.js";
+let productManager = new ProductManagerFS();
+class CartManagerFS {
   #carritos;
   #carritosRutaDirectorio;
   #carritosRutaArchivo;
@@ -188,4 +188,4 @@ class CartManager {
   };
 }
 
-export default CartManager;
+export default CartManagerFS;

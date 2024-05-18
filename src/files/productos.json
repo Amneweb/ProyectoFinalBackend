@@ -1,40 +1,25 @@
 [
   {
-    "title": "Chaleco Salvavidas Zhik",
-    "price": "120000",
-    "code": "PFD20",
-    "stock": 100,
-    "description": "Chaleco con espuma de celda cerrada, forrado con neoprene. Ajuste ergonómico, con cierre lateral para fácil colocación",
-    "status": true,
-    "category": "general",
-    "thumb": [
-      "/Users/amneriscalle/Documents/McBook%20PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/img/1707677783706-optis-en-parqueo.jpg"
-    ],
-    "id": 1
-  },
-  {
-    "title": "Calza térmica infantil",
-    "price": "27000",
-    "code": "WST017",
+    "title": "Clorex 12x45",
+    "price": 80000,
+    "code": "CLO45",
     "stock": 2,
-    "description": "Calza larga fabricada en tela bamboo, ideal como primera piel para usarse debajo del neoprene",
-    "status": true,
-    "category": "general",
-    "thumb": [
-      "/Users/amneriscalle/Documents/McBook%20PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/img/1707684067188-calza_larga_dryskin_thermoskin_imagen1.jpg",
-      "/Users/amneriscalle/Documents/McBook%20PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/img/1707736950271-yco2021.png"
+    "description": "Batería de 12 placas 45 amperes",
+    "category": [
+      "EDNA"
     ],
-    "id": 2
+    "thumb": [],
+    "id": "e25f0bce-45d9-4c32-9921-7197cc763208"
   },
   {
-    "title": "Chaqueta náutica respirable Thermoskin",
-    "price": "96000",
-    "code": "Ws4019",
-    "stock": 20,
-    "description": "Chaqueta fabricada en tela impermeable y respirable, con puños y cintura de neoprene",
-    "status": true,
-    "category": "chaquetas",
-    "thumb": [],
-    "id": 3
+    "title": "Batería Edna de 12x65 Amperes",
+    "price": 84000,
+    "category": [
+      "EDNA"
+    ],
+    "description": "Prof. de Descarga: Mayor al 85%  Separadores: De polipropileno tipo sobre  Bornes: Plomo, bulón+tuerca+arand. inox.  Placas por celda: 9 positivas – 10 negativas  Tensión nominal: 12 Volts  Tensión de flote: 13,8 Volts  Tensión de carga: 14,5 Volts  Autodescarga: Menor al 3% mensual  Alta intensidad CCA: 800 A  Capacidad C20: 114 Ah  Reserva RC: 988 Min.  Vida cíclica (20% DOD): 1000 Ciclos  Expectativa de vida: Mayor a 2 años y medio  Intensidad nominal: 120 A",
+    "code": "FW70",
+    "stock": 2,
+    "thumb": "/img/1710693620872-FW50-2-550x440.jpg"
   }
 ]

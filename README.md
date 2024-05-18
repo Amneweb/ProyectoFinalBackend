@@ -1,6 +1,6 @@
 # ProyectoFinalBackend
 
-## Tercer entrega actualizada (incluye mocking)
+## Tercer entrega actualizada (incluye mocking y factory)
 
 > [!WARNING]
 > Esta entrega está en la rama MAIN
@@ -22,6 +22,11 @@ Pasos a seguir para armar un carrito y hacer la compra (cada paso corresponde a 
 1. Agregar productos al carrito teniendo en cuenta que hay que pegar el id del carrito en la ruta del endpoint correspondiente (Si se agregan productos con poco stock se puede evaluar el funcionamiento del carrito remanente)
 1. Comprar el carrito (pegar el id del carrito en la ruta)
 1. Se puede ver el carrito remanente (si se compraron productos con poco stock) volviendo a ejecutar la request para ver el carrito del usuario logueado
+
+### Sobre Factory
+
+Uso factory sólo para cambiar el método de persistencia de carritos y productos. NO lo uso para cambiar entre desarrollo y producción.
+Por otro lado, tampoco armé un servicio de usuarios con fileSystem, por lo que para agregar productos necesito la conexión con Mongo, así que en "fs" también inicializo Mongo (archivo **factory.js** línea 38)
 
 ### Navegación en el front-end
 

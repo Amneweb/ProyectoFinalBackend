@@ -1,9 +1,9 @@
-import ProductManager from "../services/daos/products/products.service.js";
+import { productsService } from "../services/factory.js";
 
 export default class ProductsController {
   #productManager;
   constructor() {
-    this.#productManager = new ProductManager();
+    this.#productManager = productsService;
   }
 
   getAll = async (req, res) => {

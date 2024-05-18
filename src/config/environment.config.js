@@ -1,4 +1,5 @@
 import dotenv from "dotenv";
+import { Command } from "commander";
 dotenv.config();
 
 const {
@@ -14,7 +15,26 @@ const {
   MAILER_EMAIL,
 } = process.env;
 
+const program = new Command(); //Crea la instancia de comandos de commander.
+
+//TODO: POR AHORA NO ESTOY USANDO FACTORY PARA CAMBIAR DE MODO DE TRABAJO, SOLO PARA PERSISTENCIA
+
+program
+  .option("-d", "Variable para debug", false)
+  .option("--persist <mode>", "Modo de persistencia", "mongodb")
+  .option("--mode <mode>", "Modo de trabajo", "dev");
+program.parse();
+
+//console.log("Options: ", program.opts());
+console.log("Environment Mode Option: ", program.opts().mode);
+console.log("Persistence Mode Option: ", program.opts().persist);
+
+/*dotenv.config({
+    path:environment==="prod"?"./src/config/.env.production":"./src/config/.env.development"
+});*/
+
 const environmentConfig = {
+  PERSISTENCE: program.opts().persist,
   MAILER: {
     AUTH_PASS: MAILER_AUTH_PASS,
     EMAIL: MAILER_EMAIL,

@@ -82,20 +82,6 @@ app.use("/api/mockproducts/", mockRouter);
 app.get("*", (req, res) => {
   res.status(400).send("Cannot get that URL!!");
 });
-const url = environmentConfig.DATABASE.MONGO.URL;
-const db = environmentConfig.DATABASE.MONGO.DB_NAME;
-
-const connectMongoDB = async () => {
-  try {
-    await mongoose.connect(url, { dbName: db });
-    //probando la conexión
-    console.log("Conectado con éxito a la base de datos");
-  } catch (error) {
-    console.error("No se pudo conectar a la BD usando Moongose: " + error);
-    process.exit();
-  }
-};
-connectMongoDB();
 
 const socketServer = new Server(httpServer);
 
