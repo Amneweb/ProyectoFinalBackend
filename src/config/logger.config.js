@@ -1,66 +1,104 @@
-import { createLogger, format, transports, addColors } from "winston";
+import { addColors, createLogger, format, transports } from "winston";
+import { environmentConfig } from "./environment.config.js";
 import __dirname from "../../utils.js";
 const filename = `${__dirname}/public/logs/global.log`;
-// definimos configuracion del logger
 
-const customLevelsOptions = {
+const customLevelOptions = {
   levels: {
-    fatal: 0,
-    error: 1,
-    warning: 2,
-    http: 3,
-    debug: 4,
-    method: 5,
-    path: 6,
+    error: 0,
+    warning: 1,
+    http: 2,
+    debug: 3,
+    method: 4,
+    path: 5,
+    silly: 6,
   },
   colors: {
-    fatal: "red",
-    error: "purple",
-    warning: "yellow",
-    http: "green",
-    debug: "blue",
-    method: "magenta",
+    error: "red",
+    warning: "bold magenta",
+    http: "yellow",
+    debug: "green",
+    method: "blue",
     path: "cyan",
+    silly: "magenta",
   },
 };
-//addColors(customLevelsOptions.colors);
+addColors(customLevelOptions);
 
-export const settings = {
-  levels: customLevelsOptions.levels,
-  level: "path",
-  format: format.timestamp({
-    format: "YYYY-MM-DD HH:mm:ss",
+let formatConsole = format.combine(
+  format.colorize({
+    all: true,
   }),
-  defaultMeta: { service: "global" },
-  transports: [
-    /*
+
+  format.timestamp({
+    format: "YY-MM-DD HH:mm:ss",
+  }),
+  format.printf((info) => {
+    const component = info.component.toUpperCase();
+    return `${info.timestamp} ${component} [${info.level}] : ${info.message}`;
+  })
+);
+
+let formatFile = format.combine(
+  format.timestamp({
+    format: "YY-MM-DD HH:mm:ss",
+  }),
+  format.printf((info) => {
+    const component = info.component.toUpperCase();
+    return `${info.timestamp} ${component} [${info.level}] : ${info.message}`;
+  })
+);
+
+const settings = {
+  levels: customLevelOptions.levels,
+  level: environmentConfig.ENVIRONMENT === "dev" ? "path" : "path",
+  /*
 ===================
 CONSOLA
 ===================
 */
-    new transports.Console({
-      format: format.combine(
-        format.colorize({ colors: customLevelsOptions.colors, message: true }),
-        format.errors({ stack: true }),
-        format.simple()
-      ),
-    }),
-    /*
+
+  transportConsole: new transports.Console({
+    format: format.combine(format.colorize(), format.splat(), formatConsole),
+  }),
+  /*
 ===================
 FILE
 ===================
 */
-    new transports.File({
-      filename: filename,
+  transportFile: new transports.File({
+    filename: filename,
 
-      format: format.combine(format.colorize(), format.simple()),
-    }),
-  ],
+    format: format.combine(format.splat(), formatFile),
+  }),
 };
 
+export const userLogger = createLogger({
+  levels: settings.levels,
+  level: settings.level,
+  transports: [settings.transportConsole, settings.transportFile],
+  defaultMeta: { component: "user-service" },
+});
+export const productsLogger = createLogger({
+  levels: settings.levels,
+  level: settings.level,
+  transports: [settings.transportConsole, settings.transportFile],
+  defaultMeta: { component: "product-service" },
+});
+export const customLogger = createLogger({
+  levels: settings.levels,
+  level: settings.level,
+  transports: [settings.transportConsole, settings.transportFile],
+  defaultMeta: { component: "custom-router" },
+});
+const logger = createLogger({
+  levels: settings.levels,
+  level: settings.level,
+  transports: [settings.transportConsole, settings.transportFile],
+  defaultMeta: { component: "global" },
+});
 // Declaramos un middleware
 export const addLogger = (req, res, next) => {
-  const logger = createLogger(settings);
   req.logger = logger;
 
   req.logger.path(`${req.method} en ${req.url} - `);

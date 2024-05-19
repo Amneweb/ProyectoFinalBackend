@@ -1,7 +1,7 @@
 import { productsService } from "../services/factory.js";
-import { createLogger } from "winston";
-import { settings } from "../config/logger.config.js";
-const logger = createLogger(settings);
+//import { createLogger } from "winston";
+import { productsLogger as logger } from "../config/logger.config.js";
+//const logger = createLogger(settings);
 export default class ProductsController {
   #productManager;
   constructor() {

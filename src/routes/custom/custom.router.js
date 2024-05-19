@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import { customLogger as logger } from "../../config/logger.config.js";
 export default class CustomRouter {
   constructor() {
     this.router = Router();
@@ -49,13 +49,13 @@ export default class CustomRouter {
   }
 
   handlePolicies = (policies) => (req, res, next) => {
-    console.log("Politicas a evaluar:");
-    console.log(policies);
+    logger.method("Políticas a evaluar: %s", policies);
+
     if (policies.includes("PUBLIC")) {
-      console.log("sigue de largo porque es public");
+      logger.silly("sigue de largo porque es PUBLIC");
       return next();
     }
-    console.log("usuario en handle policies", req.user);
+    logger.debug("Usuario en handle policies %j", req.user);
     if (!req.user || !req.user.role) {
       return res
         .status(401)
@@ -64,6 +64,7 @@ export default class CustomRouter {
 
     const role = req.user.role.toUpperCase();
     if (!policies.includes(role)) {
+      logger.warning("El usuario no tiene los privilegios necesarios");
       return res
         .status(403)
         .send({ error: "El usuario no tiene privilegios, revisa tus roles!" });

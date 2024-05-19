@@ -3,10 +3,10 @@ import CartService from "../services/daos/carts/carts.service.js";
 import TicketsService from "../services/daos/tickets/tickets.service.js";
 import pc from "picocolors";
 import { createHash, isValidPassword, generateJWToken } from "../../utils.js";
-import { createLogger } from "winston";
-import { settings } from "../config/logger.config.js";
+//import { createLogger } from "winston";
+import { userLogger as logger } from "../config/logger.config.js";
 
-const logger = createLogger(settings);
+//const logger = createLogger(settings);
 export default class UsersController {
   #userService;
   #cartService;

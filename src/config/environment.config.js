@@ -35,6 +35,7 @@ console.log("Persistence Mode Option: ", program.opts().persist);
 
 const environmentConfig = {
   PERSISTENCE: program.opts().persist,
+  ENVIRONMENT: program.opts().mode,
   MAILER: {
     AUTH_PASS: MAILER_AUTH_PASS,
     EMAIL: MAILER_EMAIL,
