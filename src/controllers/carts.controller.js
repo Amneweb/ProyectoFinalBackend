@@ -64,7 +64,7 @@ export default class CartController {
         res.send(await this.#cartManager.deleteProductFromCart(cartID, prodID));
       }
     } catch (e) {
-      throw e;
+      res.send(e.message);
     }
   };
   purchase = async (req, res) => {
@@ -140,6 +140,7 @@ export default class CartController {
                 purchaser: user.email,
                 code: uuidv4(),
               };
+
               console.log(pc.bgRed("ticket a enviar"));
 
               await this.#ticketManager
@@ -150,6 +151,8 @@ export default class CartController {
                 });
             });
         });
-    } catch (e) {}
+    } catch (e) {
+      res.send(e.message);
+    }
   };
 }

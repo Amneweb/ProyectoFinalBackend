@@ -70,25 +70,29 @@ class CartManager {
 
   //borrar producto de un carrito específico
   deleteProductFromCart = async (id, productID) => {
-    let carritoBuscado = await cartModel.findById(id);
+    try {
+      let carritoBuscado = await cartModel.findById(id);
 
-    if (!carritoBuscado) {
-      throw new Error("Carrito no encontrado");
+      if (!carritoBuscado) {
+        throw new Error("Carrito no encontrado");
+      }
+
+      const productIndex = carritoBuscado.cart.findIndex(
+        (productItem) => productItem.product._id.toString() === productID
+      );
+
+      if (productIndex === -1) {
+        throw new Error("el producto indicado no existe en el carrito");
+      } else {
+        carritoBuscado.cart.splice(productIndex, 1);
+      }
+
+      await carritoBuscado.save();
+
+      return carritoBuscado;
+    } catch (e) {
+      throw new Error(e);
     }
-
-    const productIndex = carritoBuscado.cart.findIndex(
-      (productItem) => productItem.product._id.toString() === productID
-    );
-
-    if (productIndex === -1) {
-      throw new Error("el producto indicado no existe en el carrito");
-    } else {
-      carritoBuscado.cart.splice(productIndex, 1);
-    }
-
-    await carritoBuscado.save();
-
-    return carritoBuscado;
   };
 
   //borrar producto de un carrito específico

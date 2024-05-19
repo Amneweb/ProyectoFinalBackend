@@ -137,7 +137,7 @@ export const authToken = (req, res, next) => {
 };
 
 export const passportJWTCall = async (req, res, next) => {
-  console.log("Entrando a llamar strategy: ");
+  req.logger.method("Entrando a llamar strategy: ");
 
   passport.authenticate("jwt", function (err, user) {
     if (err) return next(err);

@@ -3,6 +3,7 @@ import { Router } from "express";
 export default class CustomRouter {
   constructor() {
     this.router = Router();
+
     this.init();
   }
 

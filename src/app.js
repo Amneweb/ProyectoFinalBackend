@@ -1,7 +1,6 @@
 import express from "express";
 import __dirname, { passportJWTCall } from "../utils.js";
 import cookieParser from "cookie-parser";
-import mongoose from "mongoose";
 import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
@@ -18,7 +17,6 @@ import emailRouter from "./routes/email.routes.js";
 import usersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
 
-//import jwtRouter from "./routes/jwt.router.js";
 import messageModel from "./services/daos/mensajes/messages.model.js";
 const app = express();
 
@@ -47,19 +45,9 @@ const PORT = environmentConfig.SERVER.PORT;
 const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
+import { addLogger } from "./config/logger.config.js";
 
-/*app.use(
-  session({
-    store: MongoStore.create({
-      mongoUrl: uri,
-      ttl: 10 * 60,
-    }),
-    secret: claves.secret,
-    resave: false,
-    saveUninitialized: true,
-  })
-);*/
-
+app.use(addLogger);
 //Middlewares Passport
 initializePassport();
 app.use(passport.initialize());
@@ -78,11 +66,16 @@ const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
 app.use("/api/mockproducts/", mockRouter);
 
+app.get("/loggertest", (req, res) => {
+  // Logica
+  req.logger.warning("Prueba de log level warning --> en Endpoint");
+
+  res.send("Prueba de logger!");
+});
 //FIXME:
 app.get("*", (req, res) => {
   res.status(400).send("Cannot get that URL!!");
 });
-
 const socketServer = new Server(httpServer);
 
 socketServer.on("connection", async (socket) => {

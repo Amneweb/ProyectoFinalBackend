@@ -3,7 +3,10 @@ import CartService from "../services/daos/carts/carts.service.js";
 import TicketsService from "../services/daos/tickets/tickets.service.js";
 import pc from "picocolors";
 import { createHash, isValidPassword, generateJWToken } from "../../utils.js";
+import { createLogger } from "winston";
+import { settings } from "../config/logger.config.js";
 
+const logger = createLogger(settings);
 export default class UsersController {
   #userService;
   #cartService;
@@ -16,11 +19,14 @@ export default class UsersController {
 
   getAll = async (req, res) => {
     const todos = await this.#userService.getAll();
+
+    logger.method("getAll");
     res.send(todos);
   };
 
   getByUsername = async (req, res) => {
     console.log("dentro de getByUsername");
+
     console.log(req.user.email);
     const filtro = req.query.filtro && req.query.filtro;
     try {
@@ -41,10 +47,12 @@ export default class UsersController {
   };
 
   getCart = async (req, res) => {
+    logger.method("getCart");
     try {
       await this.#userService.findByUsername(req.user.email).then((result) => {
         console.log("primer result ", result);
         if (!result) {
+          logger.error("usuario con email %s no encontrado", req.user.email);
           return res.status(202).json({
             message: "User not found with email: " + req.user.email,
           });
@@ -56,6 +64,11 @@ export default class UsersController {
             .getCartByID(result.userCartID)
             .then((result) => res.json(result));
         } catch (e) {
+          logger.error(
+            "Carrito no encontrado para email %s at %s",
+            req.user.email,
+            new Date()
+          );
           console.error("No se pudo obtener el carrito ");
         }
       });

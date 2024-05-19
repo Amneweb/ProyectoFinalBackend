@@ -1,5 +1,7 @@
 import { productsService } from "../services/factory.js";
-
+import { createLogger } from "winston";
+import { settings } from "../config/logger.config.js";
+const logger = createLogger(settings);
 export default class ProductsController {
   #productManager;
   constructor() {
@@ -13,7 +15,6 @@ export default class ProductsController {
     const sentido = parseInt(req.query.sentido) || 1;
     let sort = {};
     sort[criterio] = sentido;
-
     try {
       const productosObtenidos = await this.#productManager.getProducts(
         page,
@@ -32,10 +33,13 @@ export default class ProductsController {
       const result = await this.#productManager.getProductByID(req.params.id);
       if (!result) {
         const mensaje = `no se encontró ningún producto con el ID ${req.params.id}`;
+
         throw new Error(mensaje);
       }
+      logger.method("getOne");
       res.status(201).send(result);
     } catch (e) {
+      logger.error(e.message);
       res.status(422).send({ message: e.message });
     }
   };
