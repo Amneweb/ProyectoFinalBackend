@@ -1,6 +1,6 @@
 # ProyectoFinalBackend
 
-## Tercer entrega actualizada (incluye mocking y factory)
+## Tercer entrega actualizada (incluye mocking, factory y winston)
 
 > [!TIP]
 > Esta entrega está en la rama MAIN
@@ -12,9 +12,23 @@
 
 En el caso de mongo se puede escribir "npm run dev" y automáticamente usa el servicio de mongo
 
-## Comentarios sobre la tercer entrega
+## Comentarios sobre la tercer entrega y desafíos posteriores
 
 En este caso preferí dejar de lado el front-end y todo el proceso de registro, compra, armado de carrito, etc, se deberá realizar desde postman, para lo cual generé un archivo con la colección de requests.
+
+### WINSTON
+
+#### RUTA DE PRUEBA
+
+El endpoint /loggertest muestra sólo el log que se genera en app.js a través del middleware addLogger. Haciendo correr las otras requests se van generando diferentes logs con mensajes, warnings y errores.
+
+#### LOGGERS PARTICULARES
+
+Para cada endpoint, el middleware genera un log con la ruta correspondiente. Los demás logs son generados por otros loggers que se llaman desde los distintos procesos (hasta el momento tengo creados los loggers que se llaman desde el controlador de usuarios, desde productos y desde custom router) Todos los loggers se crean en el archivo **logger.config.js**
+
+#### ARCHIVO GENERADO
+
+Según el modo en que estemos, se genera un archivo global.log (modo producción) o globalDEV.log (modo desarrollo)
 
 ### Requests en Postman
 

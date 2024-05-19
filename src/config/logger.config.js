@@ -1,8 +1,8 @@
 import { addColors, createLogger, format, transports } from "winston";
 import { environmentConfig } from "./environment.config.js";
 import __dirname from "../../utils.js";
+const filenameDEV = `${__dirname}/public/logs/globalDEV.log`;
 const filename = `${__dirname}/public/logs/global.log`;
-
 const customLevelOptions = {
   levels: {
     error: 0,
@@ -51,7 +51,7 @@ let formatFile = format.combine(
 
 const settings = {
   levels: customLevelOptions.levels,
-  level: environmentConfig.ENVIRONMENT === "dev" ? "path" : "http",
+  level: environmentConfig.ENVIRONMENT === "dev" ? "silly" : "http",
   /*
 ===================
 CONSOLA
@@ -67,7 +67,7 @@ FILE
 ===================
 */
   transportFile: new transports.File({
-    filename: filename,
+    filename: environmentConfig.ENVIRONMENT === "dev" ? filenameDEV : filename,
 
     format: format.combine(format.splat(), formatFile),
   }),
@@ -91,7 +91,7 @@ export const customLogger = createLogger({
   transports: [settings.transportConsole, settings.transportFile],
   defaultMeta: { component: "custom-router" },
 });
-const logger = createLogger({
+export const logger = createLogger({
   levels: settings.levels,
   level: settings.level,
   transports: [settings.transportConsole, settings.transportFile],
@@ -101,6 +101,6 @@ const logger = createLogger({
 export const addLogger = (req, res, next) => {
   req.logger = logger;
 
-  req.logger.path(`${req.method} en ${req.url} - `);
+  req.logger.path(`${req.method} en ${req.url}`);
   next();
 };

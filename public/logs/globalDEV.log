@@ -1,0 +1,20 @@
+24-05-19 15:42:42 GLOBAL [path] : GET en /loggertest
+24-05-19 15:42:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-19 15:42:42 GLOBAL [warning] : Prueba de log level warning --> en Endpoint
+24-05-19 15:48:14 GLOBAL [silly] : Conectado con éxito a la BDD
+24-05-19 15:58:47 GLOBAL [path] : GET en /loggertest
+24-05-19 15:58:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-19 15:58:47 GLOBAL [warning] : Prueba de log level warning --> en Endpoint
+24-05-19 15:59:21 GLOBAL [path] : GET en /api/products/
+24-05-19 15:59:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-19 15:59:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-19 15:59:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-19 15:59:27 GLOBAL [path] : POST en /api/users/login
+24-05-19 15:59:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-19 15:59:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-19 15:59:27 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-19 15:59:33 GLOBAL [path] : GET en /api/users/cart
+24-05-19 15:59:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-19 15:59:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-19 15:59:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-19 15:59:33 USER-SERVICE [method] : getCart
