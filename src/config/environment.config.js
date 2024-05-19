@@ -17,7 +17,7 @@ const {
 
 const program = new Command(); //Crea la instancia de comandos de commander.
 
-//TODO: POR AHORA NO ESTOY USANDO FACTORY PARA CAMBIAR DE MODO DE TRABAJO, SOLO PARA PERSISTENCIA
+//TODO: FACTORY ES SOLO PARA CAMBIAR LA PERSISTENCIA. EL MODO DE TRABAJO LO USO PARA WINSTON.
 
 program
   .option("-d", "Variable para debug", false)

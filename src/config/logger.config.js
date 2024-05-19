@@ -51,7 +51,7 @@ let formatFile = format.combine(
 
 const settings = {
   levels: customLevelOptions.levels,
-  level: environmentConfig.ENVIRONMENT === "dev" ? "path" : "path",
+  level: environmentConfig.ENVIRONMENT === "dev" ? "path" : "http",
   /*
 ===================
 CONSOLA
