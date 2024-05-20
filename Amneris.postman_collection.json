@@ -334,6 +334,27 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "Borrar carrito completo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/65ee28eab92d5d2cc3c0e277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"65ee28eab92d5d2cc3c0e277"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -495,6 +516,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Ver todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -542,6 +584,14 @@
 						""
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Logger",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
