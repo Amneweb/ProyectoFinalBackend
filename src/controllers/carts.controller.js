@@ -1,7 +1,7 @@
-import { cartsService } from "../services/factory.js";
-import { productsService } from "../services/factory.js";
-import TicketManager from "../services/daos/tickets/tickets.service.js";
-import UserManager from "../services/daos/users/users.service.js";
+import ProductManager from "../services/products.service.js";
+import CartManager from "../services/carts.service.js";
+import TicketManager from "../services/tickets.service.js";
+import UserManager from "../services/users.service.js";
 import {
   BadRequestError,
   UnauthorizedError,
@@ -19,8 +19,8 @@ export default class CartController {
   #ticketManager;
   #userManager;
   constructor() {
-    this.#cartManager = cartsService;
-    this.#productManager = productsService;
+    this.#cartManager = new CartManager();
+    this.#productManager = new ProductManager();
     this.#ticketManager = new TicketManager();
     this.#userManager = new UserManager();
   }
@@ -100,91 +100,18 @@ export default class CartController {
     }
   };
   purchase = async (req, res) => {
-    const user = req.user;
+    const user = req.user.email;
+    const cartID = req.params.cid;
     console.log("req completo ", req.params);
     console.log("en controller purchase");
     console.log(pc.bgGreen("req user " + req.user.email));
     console.log(pc.bgYellow("req id" + req.params.cid));
     try {
-      await this.#cartManager
-        .getCartByID(req.params.cid)
-        .then(async (result) => {
-          console.log(pc.bgGreen("carrito encontrado" + result));
-          if (!result.success) {
-            return res.send({ message: "no se encontró el carrito" });
-          }
-
-          let carritoRemanente = [];
-
-          //verificamos stock, creamos el array "order" y calculamos el total
-          let order = [];
-          let amount = 0;
-          console.log("carrito.data.cart");
-          console.log(result.data.cart);
-
-          await Promise.all(
-            result.data.cart.map(async (producto) => {
-              await this.#productManager
-                .getProductByID(producto.product._id)
-                .then((info) => {
-                  const stock = info.stock;
-                  const precio = info.price;
-                  const compra = producto.qty;
-                  console.log(
-                    "dentro de map " + stock + " " + precio + " " + compra
-                  );
-                  if (stock < compra) {
-                    carritoRemanente.push({
-                      product: producto.product._id,
-                      qty: compra - stock,
-                    });
-                    order.push({ product: producto.product._id, qty: stock });
-                    amount += stock * precio;
-                  } else {
-                    order.push({ product: producto.product._id, qty: compra });
-                    amount += precio * compra;
-                  }
-                });
-            })
-          )
-            .then(async () => {
-              let promise1;
-              let promise2;
-              if (carritoRemanente.length > 0) {
-                promise1 = await this.#cartManager.updateCart(
-                  req.params.cid,
-                  carritoRemanente
-                );
-                promise2 = "";
-              } else {
-                console.log("lo que mando al user manager", user);
-                const filter = "userCartID";
-                const value = [];
-                promise1 = this.#userManager.update(user, filter, value);
-                promise2 = this.#cartManager.deleteFullCartByID(req.params.cid);
-              }
-              await Promise.all([promise1, promise2]);
-            })
-            .then(async () => {
-              const ticket = {
-                order: order,
-                amount: amount,
-                purchaser: user.email,
-                code: uuidv4(),
-              };
-
-              console.log(pc.bgRed("ticket a enviar"));
-
-              await this.#ticketManager
-                .createTicket(ticket)
-                .then(async (result) => {
-                  sendEmail(result);
-                  res.status(201).send({ status: "success", payload: result });
-                });
-            });
-        });
+      const ticket = await this.#cartManager.purchase(user, cartID);
+      const email = sendEmail(ticket);
+      res.sendSuccess(ticket);
     } catch (e) {
-      res.send(e.message);
+      res.sendClientError(e);
     }
   };
 }

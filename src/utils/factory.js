@@ -1,8 +1,8 @@
 import MongoSingleton from "../config/singleton.config.js";
 import { environmentConfig } from "../config/environment.config.js";
 
-let productsService;
-let cartsService;
+let productDAO;
+let cartDAO;
 
 async function initializeMongoService() {
   console.log("Iniciando servicio para MongoDB");
@@ -17,19 +17,15 @@ async function initializeMongoService() {
 switch (environmentConfig.PERSISTENCE) {
   case "mongodb":
     initializeMongoService();
-    const { default: ProductManager } = await import(
-      "./daos/products/products.service.js"
-    );
-    productsService = new ProductManager();
+    const { default: productMongoDAO } = await import("./daos/mongo/index.js");
+    productDAO = productMongoDAO;
     console.log("Servicio de productos cargado:");
-    console.log(productsService);
+    console.log(productDAO);
 
-    const { default: CartManager } = await import(
-      "./daos/carts/carts.service.js"
-    );
-    cartsService = new CartManager();
+    const { default: cartMongoDAO } = await import("./daos/mongo/index.js");
+    cartDAO = new cartMongoDAO();
     console.log("Servicio de carritos cargado:");
-    console.log(cartsService);
+    console.log(cartDAO);
     break;
   case "fs":
     //TODO:
@@ -53,4 +49,4 @@ switch (environmentConfig.PERSISTENCE) {
     break;
 }
 
-export { productsService, cartsService };
+export { productDAO, cartDAO };

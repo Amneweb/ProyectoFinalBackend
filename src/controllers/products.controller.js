@@ -1,11 +1,11 @@
-import { productsService } from "../services/factory.js";
-//import { createLogger } from "winston";
+import { productManager } from "../services/products.service.js";
+import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
-//const logger = createLogger(settings);
+
 export default class ProductsController {
   #productManager;
   constructor() {
-    this.#productManager = productsService;
+    this.#productManager = productManager;
   }
 
   getAll = async (req, res) => {
@@ -21,99 +21,105 @@ export default class ProductsController {
         limit,
         sort
       );
+      if (!productosObtenidos) {
+        throw new InternalServerError(
+          "Error interno al tratar de obtener los productos. Por favor vuelva a intentarlo más tarde."
+        );
+      }
 
       return res.send(productosObtenidos);
     } catch (e) {
-      res.status(500).send(e.message);
+      res.sendInternalServerError(e);
     }
   };
 
   getOne = async (req, res) => {
     try {
-      const result = await this.#productManager.getProductByID(req.params.id);
+      const id = req.params.id;
+      const result = await this.#productManager.getProductByID(id);
       if (!result) {
-        const mensaje = `no se encontró ningún producto con el ID ${req.params.id}`;
-
-        throw new Error(mensaje);
+        throw new BadRequestError(
+          `no se encontró ningún producto con el ID ${req.params.id}`
+        );
       }
       logger.method("getOne");
-      res.status(201).send(result);
+      res.sendSuccess(result);
     } catch (e) {
       logger.error(e.message);
-      res.status(422).send({ message: e.message });
+      res.sendClientError(e);
     }
   };
 
   postOne = async (req, res) => {
-    if (req.validatedData.error) {
-      return res
-        .status(400)
-        .json({ error: JSON.parse(req.validatedData.error.message) });
+    const nuevo = req.validatedData;
+    if (nuevo.error) {
+      return res.sendClientError(nuevo.error.message);
     }
     try {
       let imagen = [];
-      req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
+      nuevo.data.thumb && imagen.push(nuevo.data.thumb);
       const result = await this.#productManager.addProduct({
-        ...req.validatedData.data,
+        ...nuevo.data,
         thumb: imagen,
       });
 
-      res.status(200).send({ status: "success", payload: result });
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(500).send(e.message);
+      res.sendClientError(e);
     }
   };
 
   deleteOne = async (req, res) => {
+    const id = req.params.id;
     try {
-      res.send(await this.#productManager.deleteProduct(req.params.id));
+      const result = await this.#productManager.deleteProduct(id);
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(400).send(e.message);
+      res.sendClientError(e);
     }
   };
 
   modifyOne = async (req, res) => {
     const nuevo = req.validatedData;
+    const id = req.params.id;
 
     if (nuevo.error) {
-      return res.status(400).json({ error: JSON.parse(nuevo.error.message) });
+      return res.sendClientError(nuevo.error.message);
     } else
       try {
-        res.send(
-          await this.#productManager.updateProduct(req.params.id, nuevo.data)
-        );
+        const result = await this.#productManager.updateProduct(id, nuevo.data);
+        res.sendSuccess(result);
       } catch (e) {
-        res.status(400).send(e.message);
+        res.sendClientError(e);
       }
   };
 
   modifyCate = async (req, res) => {
+    const id = req.params.id;
+    const category = req.params.cate;
+
     try {
-      res.send(
-        await this.#productManager.deleteProductCategory(
-          req.params.id,
-          req.params.cate
-        )
-      );
+      const result = this.#productManager.updateCategory(id, category);
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(400).send(e.message);
+      res.sendClientError(e);
     }
   };
-
   postImage = async (req, res) => {
     const id = req.body.IDproducto;
+    const datos = req.validatedData;
     if (!req.file) {
-      return res
-        .status(400)
-        .send({ status: "error", mensaje: "No se adjunto archivo." });
+      return res.sendClientError("no hay ningún archivo adjunto");
     }
 
     try {
       let imagen = [];
-      req.validatedData.data.thumb && imagen.push(req.validatedData.data.thumb);
-      res.send(await this.#productManager.updateProduct(id, { thumb: imagen }));
+      datos.data.thumb && imagen.push(datos.data.thumb);
+      const nuevo = { ...datos, thumb: imagen };
+      const result = await this.#productManager.updateProduct(id, nuevo);
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(500).send(e.message);
+      res.sendClientError(e);
     }
   };
 }

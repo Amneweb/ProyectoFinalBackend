@@ -25,7 +25,7 @@ export const uploader = multer({
   storage,
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
-    console.log(err);
+    throw new Error(`Error al tratar de subir la imagen ${err}`);
     next();
   },
 });
@@ -44,9 +44,7 @@ export const validateFormData = (req, res, next) => {
     thumb: thumb,
   };
 
-  const result = validatePartialProduct(datosConvertidos);
-
-  req.validatedData = result;
+  req.validatedData = datosConvertidos;
 
   next();
 };
@@ -70,9 +68,7 @@ export const validateModifiedData = (req, res, next) => {
     datosConvertidos["stock"] = parseInt(req.body.stock);
   }
 
-  const result = validatePartialProduct(datosConvertidos);
-
-  req.validatedData = result;
+  req.validatedData = datosConvertidos;
 
   next();
 };

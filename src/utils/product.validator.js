@@ -1,4 +1,5 @@
 import z from "zod";
+import mongoose from "mongoose";
 import pc from "picocolors";
 
 const productValidatorSchema = z.object({
@@ -56,4 +57,9 @@ export function validatePartialProduct(object) {
     .safeParse(object);
 
   return resultadoValidacionParcial;
+}
+export function validateId(id) {
+  const isValidObjectId = mongoose.isValidObjectId(id);
+
+  return isValidObjectId;
 }
