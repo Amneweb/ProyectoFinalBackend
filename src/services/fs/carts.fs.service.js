@@ -1,4 +1,4 @@
-import __dirname from "../../../utils.js";
+import __dirname from "../../../dirname.js";
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
 import ProductManagerFS from "./products.fs.service.js";

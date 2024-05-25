@@ -1,17 +1,11 @@
-import { fileURLToPath } from "url";
-import path from "path";
-import { dirname } from "path";
 import multer from "multer";
-import { validatePartialProduct } from "./src/services/product.validator.js";
+import { validatePartialProduct } from "../services/product.validator.js";
+import __dirname from "../../dirname.js";
 import bcrypt from "bcrypt";
-import { environmentConfig } from "./src/config/environment.config.js";
+import { environmentConfig } from "../config/environment.config.js";
 import jwt from "jsonwebtoken";
 import passport from "passport";
-import { transporter } from "./src/config/mailer.config.js";
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-export default __dirname;
+import { transporter } from "../config/mailer.config.js";
 
 // Configuracion de MULTER
 // Objeto de configuracion

@@ -1,5 +1,5 @@
-import { uploader, validateModifiedData } from "../../utils.js";
-import { validateFormData } from "../../utils.js";
+import { uploader, validateModifiedData } from "../utils/utils.js";
+import { validateFormData } from "../utils/utils.js";
 import CustomRouter from "./custom/custom.router.js";
 import ProductController from "../controllers/products.controller.js";
 import pc from "picocolors";

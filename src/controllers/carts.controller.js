@@ -2,7 +2,15 @@ import { cartsService } from "../services/factory.js";
 import { productsService } from "../services/factory.js";
 import TicketManager from "../services/daos/tickets/tickets.service.js";
 import UserManager from "../services/daos/users/users.service.js";
-import { sendEmail } from "../../utils.js";
+import {
+  BadRequestError,
+  UnauthorizedError,
+  ForbiddenError,
+  NotFoundError,
+  InternalServerError,
+} from "../utils/errors.js";
+
+import { sendEmail } from "../utils/utils.js";
 import pc from "picocolors";
 import { v4 as uuidv4 } from "uuid";
 export default class CartController {
@@ -18,26 +26,40 @@ export default class CartController {
   }
   getOne = async (req, res) => {
     try {
-      res.send(await this.#cartManager.getCartByID(req.params.cid));
+      const result = await this.#cartManager.getCartByID(req.params.cid);
+      if (!result) {
+        throw new BadRequestError("El carrito no existe");
+      }
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(404).send(e.message);
+      res.sendClientError(e);
     }
   };
   getCarts = async (req, res) => {
     try {
-      res.send(await this.#cartManager.getCarts());
+      const result = await this.#cartManager.getCarts();
+      res.sendSuccess(result);
     } catch (e) {
-      res.status(404).send(e.message);
+      res.sendInternalServerError(e);
     }
   };
 
   postOne = async (req, res) => {
-    await this.#cartManager.addCart().then(async (result) => {
+    try {
+      const carritoVacio = await this.#cartManager.addCart();
+      if (!carritoVacio) {
+        throw new InternalServerError("No se pudo crear el carrito");
+      }
       const filter = "userCartID";
-      const value = result._id;
-      await this.#userManager.update(req.user, filter, value);
-      res.send({ status: "success", payload: value });
-    });
+      const usuarioModificado = await this.#userManager.update(
+        req.user,
+        filter,
+        carritoVacio._id
+      );
+      res.sendSuccess(usuarioModificado);
+    } catch (e) {
+      res.sendNotFoundError(e);
+    }
   };
 
   addToCart = async (req, res) => {
@@ -45,26 +67,36 @@ export default class CartController {
     const prodID = req.params.pid;
 
     try {
-      res.send(await this.#cartManager.addProductToCartID(cartID, prodID));
+      const carritoModificado = await this.#cartManager.addProductToCartID(
+        cartID,
+        prodID
+      );
+      res.sendSuccess(carritoModificado);
     } catch (e) {
-      throw e;
+      res.sendClientError(e);
     }
   };
   deleteCart = async (req, res) => {
-    res.send(await this.#cartManager.deleteFullCartByID(req.params.id));
+    try {
+      const carritoBorrado = await this.#cartManager.deleteFullCartByID(
+        req.params.id
+      );
+      return res.sendSuccess(carritoBorrado);
+    } catch (e) {
+      return res.sendClientError(e);
+    }
   };
   deleteProduct = async (req, res) => {
     const cartID = req.params.cid;
     const prodID = req.params.pid;
     const one = parseInt(req.query.qty) === 1 ? true : false;
     try {
-      if (one) {
-        res.send(await this.#cartManager.deleteOneProduct(cartID, prodID));
-      } else {
-        res.send(await this.#cartManager.deleteProductFromCart(cartID, prodID));
-      }
+      const carritoModificado = one
+        ? await this.#cartManager.deleteOneProduct(cartID, prodID)
+        : await this.#cartManager.deleteProductFromCart(cartID, prodID);
+      res.sendSuccess(carritoModificado);
     } catch (e) {
-      res.send(e.message);
+      res.sendClientError(e.message);
     }
   };
   purchase = async (req, res) => {

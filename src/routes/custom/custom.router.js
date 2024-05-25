@@ -78,7 +78,7 @@ export default class CustomRouter {
     res.sendSuccess = (payload) =>
       res.status(200).send({ status: "Success", payload });
     res.sendInternalServerError = (error) =>
-      res.status(500).send({ status: "Error", error });
+      res.status(500).send({ status: "Internal Server Error", error });
     res.sendClientError = (error) =>
       res
         .status(400)
@@ -92,6 +92,8 @@ export default class CustomRouter {
         error:
           "Token invalid or user with no access, Unauthorized please check your roles!",
       });
+    res.sendNotFoundError = (error) =>
+      res.status(404).send({ error: "Not found error." });
     next();
   };
 

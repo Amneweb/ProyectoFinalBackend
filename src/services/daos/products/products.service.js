@@ -18,15 +18,8 @@ export default class ProductManager {
   };
 
   addProduct = async (product) => {
-    try {
-      let productoNuevo = await productModel.create(product);
-      return productoNuevo;
-    } catch (e) {
-      console.log(pc.green("error completo " + e));
-      console.log("error ", e.message);
-      console.log(pc.bgYellow("termina el error"));
-      throw new Error("No se pudo crear el producto " + e.message);
-    }
+    let productoNuevo = await productModel.create(product);
+    return productoNuevo;
   };
   getProductByID = async (id) => {
     const product = await productModel.findOne({ _id: id }).lean();

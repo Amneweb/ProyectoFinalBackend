@@ -1,5 +1,6 @@
 import express from "express";
-import __dirname, { passportJWTCall } from "../utils.js";
+import __dirname from "../dirname.js";
+import { passportJWTCall } from "./utils/utils.js";
 import cookieParser from "cookie-parser";
 import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";

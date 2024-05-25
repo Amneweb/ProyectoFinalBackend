@@ -1,6 +1,6 @@
 import { addColors, createLogger, format, transports } from "winston";
 import { environmentConfig } from "./environment.config.js";
-import __dirname from "../../utils.js";
+import __dirname from "../../dirname.js";
 const filenameDEV = `${__dirname}/public/logs/globalDEV.log`;
 const filename = `${__dirname}/public/logs/global.log`;
 const customLevelOptions = {

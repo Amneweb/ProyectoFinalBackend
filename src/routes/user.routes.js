@@ -1,6 +1,5 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
-import { authToken } from "../../utils.js";
 import pc from "picocolors";
 
 export default class UsersRouter extends CustomRouter {

@@ -1,20 +1,248 @@
-24-05-19 15:42:42 GLOBAL [path] : GET en /loggertest
-24-05-19 15:42:42 GLOBAL [method] : Entrando a llamar strategy: 
-24-05-19 15:42:42 GLOBAL [warning] : Prueba de log level warning --> en Endpoint
-24-05-19 15:48:14 GLOBAL [silly] : Conectado con éxito a la BDD
-24-05-19 15:58:47 GLOBAL [path] : GET en /loggertest
-24-05-19 15:58:47 GLOBAL [method] : Entrando a llamar strategy: 
-24-05-19 15:58:47 GLOBAL [warning] : Prueba de log level warning --> en Endpoint
-24-05-19 15:59:21 GLOBAL [path] : GET en /api/products/
-24-05-19 15:59:21 GLOBAL [method] : Entrando a llamar strategy: 
-24-05-19 15:59:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
-24-05-19 15:59:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
-24-05-19 15:59:27 GLOBAL [path] : POST en /api/users/login
-24-05-19 15:59:27 GLOBAL [method] : Entrando a llamar strategy: 
-24-05-19 15:59:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
-24-05-19 15:59:27 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
-24-05-19 15:59:33 GLOBAL [path] : GET en /api/users/cart
-24-05-19 15:59:33 GLOBAL [method] : Entrando a llamar strategy: 
-24-05-19 15:59:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
-24-05-19 15:59:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
-24-05-19 15:59:33 USER-SERVICE [method] : getCart
+24-05-22 20:02:16 GLOBAL [path] : POST en /api/users/login
+24-05-22 20:02:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:02:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-22 20:02:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-22 20:02:24 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:02:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:02:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:02:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:05:40 GLOBAL [path] : GET en /api/users/currentUser
+24-05-22 20:05:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:05:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-05-22 20:05:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:05:48 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:05:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:05:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:05:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:06:28 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:06:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:06:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:06:28 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-22 20:06:33 GLOBAL [path] : POST en /api/users/login
+24-05-22 20:06:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:06:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-22 20:06:33 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-22 20:06:37 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:06:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:06:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:06:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:07:14 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:07:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:07:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:07:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:07:48 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:07:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:07:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:07:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-22 20:08:07 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-22 20:08:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-22 20:08:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-22 20:08:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:30:36 GLOBAL [path] : POST en /api/users/login
+24-05-23 06:30:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:30:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 06:30:36 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 06:30:42 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:30:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:30:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:30:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:39:26 GLOBAL [path] : POST en /api/users/login
+24-05-23 06:39:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:39:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 06:39:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 06:39:30 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:39:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:39:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:39:30 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:42:25 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:42:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:42:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:42:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:43:00 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:43:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:43:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:43:01 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:43:37 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:43:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:43:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:43:37 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 06:43:43 GLOBAL [path] : POST en /api/users/login
+24-05-23 06:43:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:43:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 06:43:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 06:43:48 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:43:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:43:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:43:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:46:27 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:46:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:46:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:46:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 06:49:36 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:49:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:49:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:49:36 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 06:49:41 GLOBAL [path] : POST en /api/users/login
+24-05-23 06:49:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:49:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 06:49:41 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 06:49:54 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 06:49:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 06:49:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 06:49:54 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:47:20 GLOBAL [path] : POST en /api/users/login
+24-05-23 18:47:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:47:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 18:47:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 18:47:26 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:47:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:47:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:47:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:49:11 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:49:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:49:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:49:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:52:26 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:52:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:52:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:52:26 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 18:52:31 GLOBAL [path] : POST en /api/users/login
+24-05-23 18:52:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:52:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 18:52:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 18:52:36 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:52:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:52:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:52:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:53:58 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:53:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:53:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:53:58 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:58:17 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:58:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:58:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:58:17 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 18:58:22 GLOBAL [path] : POST en /api/users/login
+24-05-23 18:58:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:58:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 18:58:22 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 18:58:28 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:58:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:58:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:58:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 18:59:07 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 18:59:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 18:59:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 18:59:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:19:37 GLOBAL [path] : POST en /api/users/login
+24-05-23 19:19:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:19:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 19:19:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 19:19:43 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:19:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:19:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:19:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:20:56 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:20:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:20:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:20:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:52:37 GLOBAL [path] : POST en /api/users/login
+24-05-23 19:52:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:52:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 19:52:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 19:52:48 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:52:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:52:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:52:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:55:48 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:55:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:55:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:55:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:56:44 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:56:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:56:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:56:44 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 19:56:50 GLOBAL [path] : POST en /api/users/login
+24-05-23 19:56:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:56:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 19:56:50 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 19:56:54 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:56:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:56:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:56:54 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:57:21 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:57:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:57:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:57:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:58:13 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:58:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:58:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:58:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 19:59:03 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 19:59:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 19:59:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 19:59:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 20:00:09 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 20:00:09 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 20:00:09 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 20:00:09 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 20:01:05 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 20:01:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 20:01:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 20:01:05 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-23 20:01:10 GLOBAL [path] : POST en /api/users/login
+24-05-23 20:01:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 20:01:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 20:01:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 20:01:14 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 20:01:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 20:01:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 20:01:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 20:02:26 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 20:02:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 20:02:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 20:02:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 21:30:47 GLOBAL [path] : POST en /api/users/login
+24-05-23 21:30:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 21:30:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-23 21:30:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-23 21:30:56 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 21:30:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 21:30:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 21:30:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 21:31:07 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a/product/65ee79f09befe239e7aefb
+24-05-23 21:31:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 21:31:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 21:31:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-23 21:31:24 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb
+24-05-23 21:31:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-23 21:31:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-23 21:31:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-24 06:26:29 GLOBAL [path] : POST en /api/users/login
+24-05-24 06:26:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:26:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-24 06:26:29 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-24 06:26:37 GLOBAL [path] : GET en /api/carts/65ee28eab92d5d2cc3c0e277
+24-05-24 06:26:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:26:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-24 06:26:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-24 06:34:46 GLOBAL [path] : GET en /api/products/
+24-05-24 06:34:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:34:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-24 06:34:46 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-24 06:35:32 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb48
+24-05-24 06:35:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:35:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-24 06:35:32 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-24 06:35:39 GLOBAL [path] : POST en /api/users/login
+24-05-24 06:35:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:35:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-24 06:35:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-24 06:35:44 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb48
+24-05-24 06:35:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:35:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-24 06:35:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-24 06:37:04 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb48
+24-05-24 06:37:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-24 06:37:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-24 06:37:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
