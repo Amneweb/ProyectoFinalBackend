@@ -1,5 +1,4 @@
-import cartDAO from "../utils/factory.js";
-import productDAO from "../utils/factory.js";
+import { cartDAO, productDAO } from "../utils/factory.js";
 import { BadRequestError } from "../utils/errors.js";
 import { validateId } from "../utils/product.validator.js";
 class CartManager {

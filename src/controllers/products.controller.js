@@ -1,4 +1,4 @@
-import { productManager } from "../services/products.service.js";
+import productManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
 

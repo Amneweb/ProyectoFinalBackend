@@ -1,5 +1,4 @@
 import multer from "multer";
-import { validatePartialProduct } from "../services/product.validator.js";
 import __dirname from "../../dirname.js";
 import bcrypt from "bcrypt";
 import { environmentConfig } from "../config/environment.config.js";

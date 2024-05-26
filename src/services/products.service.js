@@ -1,5 +1,5 @@
 import { BadRequestError } from "../utils/errors.js";
-import productDAO from "../utils/factory.js";
+import { productDAO } from "../utils/factory.js";
 import { validateProduct, validateId } from "../utils/product.validator.js";
 export default class ProductManager {
   getProducts = async (page, limit, sort) => {
@@ -7,9 +7,9 @@ export default class ProductManager {
   };
 
   addProduct = async (product) => {
-    const existProduct = await productDAO.findOne({ code: product.code });
+    const existsProduct = await productDAO.findOne({ code: product.code });
 
-    if (existProduct) {
+    if (existsProduct) {
       throw new BadRequestError(
         `Ya existe un producto con el código ${product.code}`
       );

@@ -246,3 +246,7 @@
 24-05-24 06:37:04 GLOBAL [method] : Entrando a llamar strategy: 
 24-05-24 06:37:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
 24-05-24 06:37:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-26 08:11:18 GLOBAL [path] : GET en /api/products/
+24-05-26 08:11:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 08:11:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 08:11:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC

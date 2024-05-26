@@ -1,4 +1,4 @@
-import { ticketModel } from "./tickets.model.js";
+import { ticketModel } from "./daos/mongo/tickets/tickets.model.js";
 
 class TicketManager {
   createTicket = async (ticket) => {

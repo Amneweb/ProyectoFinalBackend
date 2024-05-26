@@ -1,16 +1,10 @@
-import UserService from "../services/daos/users/users.service.js";
-import CartService from "../services/daos/carts/carts.service.js";
-import TicketsService from "../services/daos/tickets/tickets.service.js";
-import pc from "picocolors";
-import {
-  createHash,
-  isValidPassword,
-  generateJWToken,
-} from "../utils/utils.js";
+import UserService from "../services/users.service.js";
+import CartService from "../services/carts.service.js";
+import TicketsService from "../services/tickets.service.js";
+
 //import { createLogger } from "winston";
 import { userLogger as logger } from "../config/logger.config.js";
 
-//const logger = createLogger(settings);
 export default class UsersController {
   #userService;
   #cartService;
@@ -22,96 +16,56 @@ export default class UsersController {
   }
 
   getAll = async (req, res) => {
-    const todos = await this.#userService.getAll();
+    try {
+      const todos = await this.#userService.getAll();
 
-    logger.method("getAll");
-    res.send(todos);
+      logger.method("getAll");
+      res.sendSuccess(todos);
+    } catch (e) {
+      res.sendInternalServerError(e);
+    }
   };
 
   getByUsername = async (req, res) => {
     console.log("dentro de getByUsername");
 
-    console.log(req.user.email);
-    const filtro = req.query.filtro && req.query.filtro;
     try {
       const user = await this.#userService.findByUsername(req.user.email);
       console.log("user en getbyusername ", user);
-      if (!user) {
-        res
-          .status(202)
-          .json({ message: "User not found with email: " + req.user.email });
-      }
-      const respuesta = filtro ? user[filtro] : user;
-      res.json(respuesta);
+
+      res.sendSuccess(user);
     } catch (error) {
-      console.error(
+      res.sendClientError(
         "Error consultando el usuario con email: " + req.user.email
       );
     }
   };
 
   getCart = async (req, res) => {
+    const email = req.user.email;
     logger.method("getCart");
     try {
-      await this.#userService.findByUsername(req.user.email).then((result) => {
-        console.log("primer result ", result);
-        if (!result) {
-          logger.error("usuario con email %s no encontrado", req.user.email);
-          return res.status(202).json({
-            message: "User not found with email: " + req.user.email,
-          });
-        }
+      const carrito = await this.#userService.findCart(email);
 
-        try {
-          console.log("result pra get cart by id ", result);
-          this.#cartService
-            .getCartByID(result.userCartID)
-            .then((result) => res.json(result));
-        } catch (e) {
-          logger.error(
-            "Carrito no encontrado para email %s at %s",
-            req.user.email,
-            new Date()
-          );
-          console.error("No se pudo obtener el carrito ");
-        }
-      });
-    } catch (error) {
-      console.error(
-        "Error consultando el usuario con email: " + req.user.email
-      );
+      res.sendSuccess(carrito);
+    } catch (e) {
+      res.sendClientError(e);
     }
   };
   addCart = async (req, res) => {
     const value = [req.params.cid];
+    const email = req.user.email;
+    const filter = "userCartID";
 
-    //TODO: le saqué el middleware de la ruta. Hay que verificar qué pasa
-    console.log(req.user);
-    const user = await this.#userService.findByUsername(req.user.email);
-    console.log("Usuario encontrado para login:");
-    console.log(user);
-    const userID = user._id;
-    if (user.userCartID.length > 0) {
-      const carritoAnterior = user.userCartID[0];
-      console.log("carrito existente ", carritoAnterior);
-      await this.#cartService.deleteFullCartByID({ _id: carritoAnterior });
+    try {
+      const modificado = await this.#userService.update(email, filter, value);
+      res.sendSuccess(modificado);
+    } catch (e) {
+      res.sendClientError(e);
     }
-
-    console.log(pc.bgYellow("en controller, metodo addCart"));
-    console.log(pc.yellow(value));
-    console.log(pc.yellow(userID));
-
-    const modificado = await this.#userService.update(
-      userID,
-      "userCartID",
-      value
-    );
-    res.sendSuccess(modificado);
   };
 
   getCurrentUser = (req, res) => {
-    console.log(pc.bgYellow("en get current user dentro del controlador "));
-
     console.log(req.user);
     res.sendSuccess(req.user);
   };
@@ -127,31 +81,11 @@ export default class UsersController {
   login = async (req, res) => {
     const { userEmail, userPassword } = req.body;
     try {
-      const user = await this.#userService.findByUsername(userEmail);
-      console.log("Usuario encontrado para login:");
-      console.log(user);
-      if (!user) {
-        console.warn("User doesn't exists with username: " + userEmail);
-        return res.status(202).send({
-          error: "Not found",
-          message: "Usuario no encontrado con username: " + userEmail,
-        });
-      }
-      if (!isValidPassword(userPassword, user.userPassword)) {
-        console.warn("Invalid credentials for user: " + userEmail);
-        return res.status(401).send({
-          status: "error",
-          error: "El usuario y la contraseña no coinciden!",
-        });
-      }
-      const tokenUser = {
-        name: `${user.userName} ${user.userLastName}`,
-        email: user.userEmail,
-        age: user.userAge,
-        role: user.userRole,
-      };
-      const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
-      console.log("token generado ", access_token);
+      const access_token = await this.#userService.login(
+        userEmail,
+        userPassword
+      );
+      //TODO: el login me tiene que devolver el access token
       res
         .cookie("token_login", access_token, {
           maxAge: 240000,
@@ -164,7 +98,6 @@ export default class UsersController {
         });
     } catch (error) {
       console.error(error);
-      // return res.status(500).send({ status: "error", error: "Error interno de la applicacion." });
 
       return res.sendInternalServerError(error);
     }
@@ -179,54 +112,44 @@ export default class UsersController {
       userPassword,
       userRole,
     } = req.body;
-    console.log("Registrando usuario:");
-    console.log(req.body);
-
-    const exists = await this.#userService.findByUsername(userEmail);
-    if (exists) {
-      return res
-        .status(400)
-        .send({ status: "error", message: "Usuario ya existe." });
+    try {
+      const registrado = this.#userService.save({
+        userName,
+        userLastName,
+        userEmail,
+        userAge,
+        userPassword,
+        userRole,
+      });
+      res.sendSuccess(registrado);
+    } catch (e) {
+      res.sendClientError(e);
     }
-    const user = {
-      userName,
-      userLastName,
-      userEmail,
-      userAge,
-      userPassword: createHash(userPassword),
-      userRole,
-    };
-    const result = await this.#userService.save(user);
-    res.status(201).send({
-      status: "success",
-      message: "Usuario creado con éxito con ID: " + result._id,
-    });
   };
 
   getTickets = async (req, res) => {
-    const tickets = await this.#ticketsService.getTicketByUser(req.user.email);
-
-    if (!tickets) {
-      return res.status(500).send({
-        status: "error",
-        error: "No se pueden mostrar los tickets",
-      });
+    try {
+      const tickets = await this.#ticketsService.getTicketByUser(
+        req.user.email
+      );
+      res.sendSuccess(tickets);
+    } catch (e) {
+      res.sendClientError(e);
     }
-    res.status(201).send({ status: "success", payload: tickets });
   };
 
   logout = (req, res) => {
     const cookieToken = req.cookies["token_login"];
     console.log("hay cookie token ", cookieToken);
     if (cookieToken)
-      return res.clearCookie("token_login").status(201).send({
-        status: "success",
-        message:
-          "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",
-      });
-    res.status(501).redirect("errors", {
-      status: "error",
-      message: "Hubo un error interno",
-    });
+      try {
+        return res.clearCookie("token_login").status(201).sendSuccess({
+          status: "success",
+          message:
+            "Te has deslogueado correctamente. Para volver a loguearte, hacé click en el botón de abajo",
+        });
+      } catch (e) {
+        res.sendInternalServerError(e);
+      }
   };
 }

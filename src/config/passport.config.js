@@ -3,7 +3,7 @@ import local from "passport-local";
 import jwtStrategy from "passport-jwt";
 import githubStrategy from "passport-github2";
 import { environmentConfig } from "./environment.config.js";
-import userModel from "../services/daos/users/users.model.js";
+import userModel from "../services/daos/mongo/users/users.model.js";
 import { createHash, isValidPassword } from "../utils/utils.js";
 const JwtStrategy = jwtStrategy.Strategy;
 const ExtractJWT = jwtStrategy.ExtractJwt;

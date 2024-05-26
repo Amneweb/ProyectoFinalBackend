@@ -18,7 +18,7 @@ import emailRouter from "./routes/email.routes.js";
 import usersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
 
-import messageModel from "./services/daos/mensajes/messages.model.js";
+import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
 const app = express();
 
 app.engine("handlebars", handlebars.engine());

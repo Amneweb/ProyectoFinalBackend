@@ -2,9 +2,9 @@
 RUTAS DESDE LA RAIZ DEL SITIO
 /*======================================================*/
 import CustomRouter from "./custom/custom.router.js";
-import ProductManager from "../services/daos/products/products.service.js";
-import CategoryManager from "../services/daos/categories/categories.service.js";
-import CartManager from "../services/daos/carts/carts.service.js";
+import ProductManager from "../services/products.service.js";
+import CategoryManager from "../services/categories.service.js";
+import CartManager from "../services/carts.service.js";
 import pc from "picocolors";
 
 export default class ViewsRouter extends CustomRouter {
