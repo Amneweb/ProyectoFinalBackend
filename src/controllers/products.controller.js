@@ -1,7 +1,7 @@
 import productManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
-
+import pc from "picocolors";
 export default class ProductsController {
   #productManager;
   constructor() {
@@ -9,6 +9,7 @@ export default class ProductsController {
   }
 
   getAll = async (req, res) => {
+    console.log(pc.bgGreen("en get all de productos"));
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 300;
     const criterio = req.query.criterio || "title";

@@ -17,18 +17,18 @@ async function initializeMongoService() {
 switch (environmentConfig.PERSISTENCE) {
   case "mongodb":
     initializeMongoService();
-    const { default: productMongoDAO } = await import(
-      "../services/daos/mongo/index.js"
+    const { default: ProductDAO } = await import(
+      "../services/daos/mongo/products/products.mongo.dao.js"
     );
-    productDAO = productMongoDAO;
-    console.log("Servicio de productos cargado:");
+    productDAO = new ProductDAO();
+    console.log("DAO de productos cargado:");
     console.log(productDAO);
 
-    const { default: cartMongoDAO } = await import(
-      "../services/daos/mongo/index.js"
+    const { default: CartDAO } = await import(
+      "../services/daos/mongo/carts/carts.mongo.dao.js"
     );
-    cartDAO = cartMongoDAO;
-    console.log("Servicio de carritos cargado:");
+    cartDAO = new CartDAO();
+    console.log("DAO de carritos cargado:");
     console.log(cartDAO);
     break;
   case "fs":

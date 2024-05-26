@@ -3,6 +3,7 @@ import { productDAO } from "../utils/factory.js";
 import { validateProduct, validateId } from "../utils/product.validator.js";
 export default class ProductManager {
   getProducts = async (page, limit, sort) => {
+    console.log("en get products de product service");
     return await productDAO.findAll(page, limit, sort);
   };
 

@@ -250,3 +250,23 @@
 24-05-26 08:11:18 GLOBAL [method] : Entrando a llamar strategy: 
 24-05-26 08:11:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
 24-05-26 08:11:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 08:53:34 GLOBAL [path] : GET en /api/products/
+24-05-26 08:53:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 08:53:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 08:53:34 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 08:54:19 GLOBAL [path] : GET en /api/products/
+24-05-26 08:54:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 08:54:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 08:54:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 08:58:38 GLOBAL [path] : GET en /api/products/
+24-05-26 08:58:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 08:58:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 08:58:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 09:02:57 GLOBAL [path] : GET en /api/products/
+24-05-26 09:02:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 09:02:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 09:02:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 09:05:25 GLOBAL [path] : GET en /api/products/
+24-05-26 09:05:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 09:05:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 09:05:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC

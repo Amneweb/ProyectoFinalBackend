@@ -7,6 +7,7 @@ class ProductDAO {
   }
 
   findAll = async (page, limit, sort) => {
+    console.log("en findAll de products dao");
     const products = await this.#model.paginate(
       {},
       {
