@@ -8,6 +8,9 @@ class UserDAO {
   findAll = async () => {
     return await this.#model.find();
   };
+  deleteOne = async (id) => {
+    return await this.#model.deleteOne({ _id: id });
+  };
   create = async ({
     userEmail,
     userPassword,
@@ -26,7 +29,7 @@ class UserDAO {
     });
   };
   findOne = async (email) => {
-    return await this.#model.findOne({ email });
+    return await this.#model.findOne({ userEmail: email });
   };
 }
 export default UserDAO;

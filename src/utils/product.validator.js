@@ -16,7 +16,7 @@ const productValidatorSchema = z.object({
     z
       .string({
         invalid_type_error: "La categoria debe ser texto",
-        required_error: "La categoría es requerida es requerido",
+        required_error: "La categoría es requerida",
       })
       .default("General")
   ),
@@ -40,10 +40,12 @@ const productValidatorSchema = z.object({
     .boolean({ required_error: "El status es un valor requerido" })
     .default(true),
   thumb: z
-    .string({
-      invalid_type_error: "La ruta al archivo debe ser un texto",
-    })
-    .default(""),
+    .array(
+      z.string({
+        invalid_type_error: "La ruta debe ser texto",
+      })
+    )
+    .default([]),
 });
 
 export function validateProduct(object) {

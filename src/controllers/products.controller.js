@@ -1,15 +1,14 @@
-import productManager from "../services/products.service.js";
+import ProductManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
-import pc from "picocolors";
 export default class ProductsController {
   #productManager;
+
   constructor() {
-    this.#productManager = productManager;
+    this.#productManager = new ProductManager();
   }
 
   getAll = async (req, res) => {
-    console.log(pc.bgGreen("en get all de productos"));
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 300;
     const criterio = req.query.criterio || "title";
@@ -23,50 +22,78 @@ export default class ProductsController {
         sort
       );
       if (!productosObtenidos) {
+        logger.debug("Error interno al tratar de obtener los productos.");
         throw new InternalServerError(
           "Error interno al tratar de obtener los productos. Por favor vuelva a intentarlo más tarde."
         );
       }
-
-      return res.send(productosObtenidos);
+      logger.debug("se obtuvieron todos los productos sin problema");
+      return res.sendSuccess(productosObtenidos);
     } catch (e) {
-      res.sendInternalServerError(e);
+      logger.error(
+        "Error interno al tratar de obtener productos: %s",
+        e.message
+      );
+      res.sendInternalServerError(
+        `Error interno al tratar de obtener los productos de la base de datos. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 
   getOne = async (req, res) => {
+    logger.method("getOne");
     try {
       const id = req.params.id;
       const result = await this.#productManager.getProductByID(id);
       if (!result) {
+        logger.debug(
+          "No se encontró ningún producto con el ID %s",
+          req.params.id
+        );
         throw new BadRequestError(
           `no se encontró ningún producto con el ID ${req.params.id}`
         );
       }
-      logger.method("getOne");
+      logger.debug("Se obtuvo el producto sin problemas");
       res.sendSuccess(result);
     } catch (e) {
-      logger.error(e.message);
-      res.sendClientError(e);
+      logger.error(
+        "Error al tratar de obtener el producto. Mensaje: '%s'",
+        e.message
+      );
+      res.sendClientError(
+        `Error al tratar de obtener el producto con id ${req.params.id}. Mensaje del sistema:  "${e.message}"`
+      );
     }
   };
 
   postOne = async (req, res) => {
     const nuevo = req.validatedData;
-    if (nuevo.error) {
-      return res.sendClientError(nuevo.error.message);
+
+    if (!nuevo) {
+      logger.error(
+        "Error de validación de datos al tratar de crear un producto nuevo: %s",
+        nuevo.error.message
+      );
+      return res.sendClientError(
+        `Error de validación de datos al tratar de crear un producto nuevo. Mensaje interno: "${nuevo.error.message}"`
+      );
     }
     try {
       let imagen = [];
-      nuevo.data.thumb && imagen.push(nuevo.data.thumb);
-      const result = await this.#productManager.addProduct({
-        ...nuevo.data,
+      if (nuevo.thumb != "") imagen.push(nuevo.thumb);
+      const product = {
+        ...nuevo,
         thumb: imagen,
-      });
-
+      };
+      const result = await this.#productManager.addProduct(product);
+      logger.debug("El producto se agregó correctamente con id %s", result._id);
       res.sendSuccess(result);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error("Error al tratar de crear un producto nuevo: %s", e.message);
+      res.sendClientError(
+        `Error al tratar de crear un producto nuevo. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 
@@ -74,43 +101,64 @@ export default class ProductsController {
     const id = req.params.id;
     try {
       const result = await this.#productManager.deleteProduct(id);
+      logger.debug(`El producto con id ${id} se borró exitosamente`);
       res.sendSuccess(result);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error("Error al tratar de borrar el producto: %s", e.message);
+      res.sendClientError(
+        `Error al tratar de borrar el producto. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 
   modifyOne = async (req, res) => {
-    const nuevo = req.validatedData;
+    const modified = req.validatedData;
     const id = req.params.id;
-
-    if (nuevo.error) {
-      return res.sendClientError(nuevo.error.message);
+    console.log("en modify controller ", modified);
+    if (modified.error) {
+      logger.error(
+        "Error de validación de datos al tratar de modificar el producto: %s",
+        modified.error.message
+      );
+      return res.sendClientError(
+        `Error de validación de datos al tratar de modificar el producto. Mensaje interno: "${modified.error.message}"`
+      );
     } else
       try {
-        const result = await this.#productManager.updateProduct(id, nuevo.data);
+        const result = await this.#productManager.updateProduct(id, modified);
+        logger.debug(`El producto con id ${id} se modificó exitosamente`);
         res.sendSuccess(result);
       } catch (e) {
-        res.sendClientError(e);
+        logger.error("Error al tratar de modificar el producto: %s", e.message);
+        res.sendClientError(
+          `Error al tratar de modificar el producto con id ${id}. Mensaje del sistema: "${e.message}"`
+        );
       }
   };
-
   modifyCate = async (req, res) => {
     const id = req.params.id;
     const category = req.params.cate;
 
     try {
-      const result = this.#productManager.updateCategory(id, category);
+      const result = await this.#productManager.updateCategory(id, category);
+
+      logger.debug("La categoría del producto se modificó exitosamente");
       res.sendSuccess(result);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error(
+        "Error al tratar de modificar la categoría del producto: %s",
+        e.message
+      );
+      res.sendClientError(
+        `Error al tratar de modifificar la categoría del producto con id ${id}. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
   postImage = async (req, res) => {
     const id = req.body.IDproducto;
     const datos = req.validatedData;
     if (!req.file) {
-      return res.sendClientError("no hay ningún archivo adjunto");
+      return res.sendClientError("No hay ningún archivo adjunto");
     }
 
     try {
@@ -118,9 +166,13 @@ export default class ProductsController {
       datos.data.thumb && imagen.push(datos.data.thumb);
       const nuevo = { ...datos, thumb: imagen };
       const result = await this.#productManager.updateProduct(id, nuevo);
+      logger.debug("La imagen se cargó correctamente");
       res.sendSuccess(result);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error("No se pudo subir la nueva imagen: %s", e.message);
+      res.sendClientError(
+        `Error al tratar de subir la imagen para el producto con ${id}. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 }

@@ -1,9 +1,10 @@
 import { BadRequestError } from "../utils/errors.js";
 import { productDAO } from "../utils/factory.js";
 import { validateProduct, validateId } from "../utils/product.validator.js";
+import { productsLogger as logger } from "../config/logger.config.js";
 export default class ProductManager {
+  constructor() {}
   getProducts = async (page, limit, sort) => {
-    console.log("en get products de product service");
     return await productDAO.findAll(page, limit, sort);
   };
 
@@ -16,7 +17,7 @@ export default class ProductManager {
       );
     }
     const { title, description, code, price, category, thumb, st, stock } =
-      validateProduct(product);
+      validateProduct(product).data;
 
     return await productDAO.create({
       title,

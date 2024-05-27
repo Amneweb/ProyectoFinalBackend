@@ -7,7 +7,6 @@ class ProductDAO {
   }
 
   findAll = async (page, limit, sort) => {
-    console.log("en findAll de products dao");
     const products = await this.#model.paginate(
       {},
       {
@@ -43,7 +42,7 @@ class ProductDAO {
     });
   };
   findByID = async (id) => {
-    return await this.#model.findByID(id).lean();
+    return await this.#model.findById(id).lean();
   };
   findOne = async (filters) => {
     return await this.#model.findOne(filters).lean();
@@ -56,6 +55,7 @@ class ProductDAO {
     const result = await this.#model.findOneAndUpdate({ _id: id }, nuevo, {
       new: true,
     });
+
     return result;
   };
 }

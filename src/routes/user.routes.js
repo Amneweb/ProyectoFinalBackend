@@ -8,8 +8,8 @@ export default class UsersRouter extends CustomRouter {
     console.log(pc.bgBlue("USUARIOS"));
     // Se instancia el service UserService
     const usersController = new UsersController();
-
-    this.get("/", ["ADMIN"], usersController.getAll);
+    //TODO: volver a poner admin, lo cambié sólo para probar
+    this.get("/", ["PUBLIC"], usersController.getAll);
 
     this.get(
       "/currentUser",
@@ -36,16 +36,18 @@ export default class UsersRouter extends CustomRouter {
     this.get(
       "/email",
       ["USER", "ADMIN", "PREMIUM"],
-      //authToken,
+
       usersController.getByUsername
     );
     this.get(
       "/cart",
       ["USER", "PREMIUM"],
-      //authToken,
+
       usersController.getCart
     );
     this.get("/filtro/", ["USER", "PREMIUM"], usersController.getByUsername);
     this.get("/tickets", ["USER", "PREMIUM"], usersController.getTickets);
+
+    this.delete("/:uid", ["ADMIN"], usersController.deleteUser);
   }
 }

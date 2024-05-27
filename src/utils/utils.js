@@ -41,6 +41,7 @@ export const validateFormData = (req, res, next) => {
     stock: parseInt(req.body.stock),
     category: categoria,
     thumb: thumb,
+    st: true,
   };
 
   req.validatedData = datosConvertidos;

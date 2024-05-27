@@ -1,7 +1,11 @@
-import userDAO from "./daos/mongo/users/users.mongo.dao.js";
-import cartDAO from "./daos/mongo/carts/carts.mongo.dao.js";
+import { userMongoDAO as userDAO } from "./daos/mongo/index.js";
+import { BadRequestError } from "../utils/errors.js";
 import { validateUser } from "../utils/user.validator.js";
-
+import {
+  isValidPassword,
+  generateJWToken,
+  createHash,
+} from "../utils/utils.js";
 export default class UserService {
   constructor() {
     console.log("Calling users model using a service.");
@@ -63,30 +67,32 @@ export default class UserService {
 
   findCart = async (email) => {
     logger.method("findCart");
-    try {
-      const usuario = await this.userDAO.findOne(email);
-      if (!usuario) {
-        logger.error("usuario con email %s no encontrado", email);
-        throw new BadRequestError("usuario con email %s no encontrado", email);
-      }
 
-      const carrito = this.cartDAO.findByID(usuario.userCartID);
-      if (!carrito) {
-        logger.error(
-          "Carrito no encontrado para email %s at %s",
-          req.user.email,
-          new Date()
-        );
-        console.error("No se pudo obtener el carrito ");
-        throw new BadRequestError(
-          "Carrito no encontrado para email %s at %s",
-          req.user.email
-        );
-      }
-      res.sendSuccess(carrito);
-    } catch (e) {
-      res.sendClientError(e);
+    const usuario = await this.userDAO.findOne(email);
+    if (!usuario) {
+      logger.error("usuario con email %s no encontrado", email);
+      throw new BadRequestError("usuario con email %s no encontrado", email);
     }
+
+    const carrito = this.cartDAO.findByID(usuario.userCartID);
+    if (!carrito) {
+      logger.error(
+        "Carrito no encontrado para email %s at %s",
+        req.user.email,
+        new Date()
+      );
+
+      throw new BadRequestError(
+        "Carrito no encontrado para email %s at %s",
+        req.user.email
+      );
+    }
+    return carrito;
+  };
+
+  deleteUser = async (id) => {
+    const usuarioBorrado = await userDAO.deleteOne(id);
+    return usuarioBorrado;
   };
 
   login = async (userEmail, userPassword) => {
@@ -95,13 +101,13 @@ export default class UserService {
     console.log(user);
     if (!user) {
       console.warn("User doesn't exists with username: " + userEmail);
-      return BadRequestError(
+      return new BadRequestError(
         "no hay un usuario registrado con email " + userEmail
       );
     }
     if (!isValidPassword(userPassword, user.userPassword)) {
       console.warn("Invalid credentials for user: " + userEmail);
-      return BadREquestError("El usuario y la contraseña no coinciden!");
+      return BadRequestError("El usuario y la contraseña no coinciden!");
     }
 
     const tokenUser = {
@@ -112,6 +118,7 @@ export default class UserService {
     };
     const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
     console.log("token generado ", access_token);
+
     return access_token;
   };
 }

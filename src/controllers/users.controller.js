@@ -1,8 +1,6 @@
 import UserService from "../services/users.service.js";
 import CartService from "../services/carts.service.js";
 import TicketsService from "../services/tickets.service.js";
-
-//import { createLogger } from "winston";
 import { userLogger as logger } from "../config/logger.config.js";
 
 export default class UsersController {
@@ -27,11 +25,8 @@ export default class UsersController {
   };
 
   getByUsername = async (req, res) => {
-    console.log("dentro de getByUsername");
-
     try {
       const user = await this.#userService.findByUsername(req.user.email);
-      console.log("user en getbyusername ", user);
 
       res.sendSuccess(user);
     } catch (error) {
@@ -94,7 +89,7 @@ export default class UsersController {
         .send({
           message: "Login successful!",
           access_token: access_token,
-          id: user._id,
+          //id: user._id,
         });
     } catch (error) {
       console.error(error);
@@ -151,5 +146,25 @@ export default class UsersController {
       } catch (e) {
         res.sendInternalServerError(e);
       }
+  };
+
+  deleteUser = async (req, res) => {
+    const id = req.params.uid;
+    try {
+      await this.#userService.deleteUser(id);
+
+      logger.debug(`El usuario con id ${id} fue borrado con éxito`);
+      res.sendSuccess("El usuario se ha borrado con éxito");
+    } catch (error) {
+      logger.error(
+        "No se pudo borrar el usuario. Mensaje interno: %s",
+        error.message
+      );
+      res.sendClientError(
+        `No se pudo borrar el usuario con id %s. Mensaje interno: %s`,
+        id,
+        error.message
+      );
+    }
   };
 }

@@ -15,7 +15,7 @@ class CartDAO {
   };
 
   findByID = async (id) => {
-    return await this.#model.findByID(id).lean();
+    return await this.#model.findById(id).lean();
   };
   update = async (id, nuevoCarrito) => {
     return await this.#model.updateOne(
