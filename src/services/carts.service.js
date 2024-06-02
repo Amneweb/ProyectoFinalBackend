@@ -70,7 +70,7 @@ class CartManager {
     const productIndex = carritoBuscado.cart.findIndex((productItem) => {
       console.log(productItem.product);
       console.log(productItem.product.toString());
-      productItem.product.toString() == pid;
+      productItem.product.toString() === pid;
     });
     console.log("product index", productIndex);
     if (productIndex === -1) {
