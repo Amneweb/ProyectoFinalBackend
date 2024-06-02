@@ -182,8 +182,7 @@ const cookieExtractor = (req) => {
   console.log("Entrando a Cookie Extractor");
   if (req && req.cookies) {
     //Validamos que exista el request y las cookies.
-    console.log("Cookies presentes: ");
-    console.log(req.cookies);
+
     if (req.cookies["token_login"])
       console.log("tiempo de la cookie ", req.cookies["token_login"].maxAge);
     token = req.cookies["token_login"];

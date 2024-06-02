@@ -73,6 +73,18 @@ export const validateModifiedData = (req, res, next) => {
   next();
 };
 
+export const validateUserFormData = (req, res, next) => {
+  const datosConvertidos = {
+    ...req.body,
+    userAge: parseInt(req.body.userAge),
+  };
+
+  req.validatedData = datosConvertidos;
+  console.log("en user validator", datosConvertidos);
+
+  next();
+};
+
 export const createHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 

@@ -1,6 +1,8 @@
 import { userMongoDAO as userDAO } from "./daos/mongo/index.js";
+import { cartDAO } from "../utils/factory.js";
 import { BadRequestError } from "../utils/errors.js";
 import { validateUser } from "../utils/user.validator.js";
+import { userLogger as logger } from "../config/logger.config.js";
 import {
   isValidPassword,
   generateJWToken,
@@ -19,7 +21,6 @@ export default class UserService {
     userEmail,
     userAge,
     userPassword,
-    userRole,
   }) => {
     const email = userEmail;
     const existsUser = await userDAO.findOne(email);
@@ -33,14 +34,18 @@ export default class UserService {
       userEmail,
       userAge,
       userPassword,
-      userRole,
     });
-    const role = "user";
+    console.log("validated user");
+    console.log(validatedUser);
+    if (!validatedUser) {
+      throw new BadRequestError(
+        "no se pudo validar el usuario, uno o más datos no cumple con los requerimientos"
+      );
+    }
+
     const userDTO = {
       ...validatedUser,
       userPassword: createHash(userPassword),
-      userRole: role,
-      userCartID: [],
     };
     return await userDAO.create(userDTO);
   };
@@ -68,13 +73,13 @@ export default class UserService {
   findCart = async (email) => {
     logger.method("findCart");
 
-    const usuario = await this.userDAO.findOne(email);
+    const usuario = await userDAO.findOne(email);
     if (!usuario) {
       logger.error("usuario con email %s no encontrado", email);
       throw new BadRequestError("usuario con email %s no encontrado", email);
     }
 
-    const carrito = this.cartDAO.findByID(usuario.userCartID);
+    const carrito = cartDAO.findByID(usuario.userCartID);
     if (!carrito) {
       logger.error(
         "Carrito no encontrado para email %s at %s",

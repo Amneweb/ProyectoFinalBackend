@@ -1,6 +1,7 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
 import pc from "picocolors";
+import { validateUserFormData } from "../utils/utils.js";
 
 export default class UsersRouter extends CustomRouter {
   init() {
@@ -23,7 +24,12 @@ export default class UsersRouter extends CustomRouter {
 
     this.post("/login", ["PUBLIC"], usersController.login);
 
-    this.post("/register", ["PUBLIC"], usersController.register);
+    this.post(
+      "/register",
+      ["PUBLIC"],
+      validateUserFormData,
+      usersController.register
+    );
 
     this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
 

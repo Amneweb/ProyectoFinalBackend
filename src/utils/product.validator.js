@@ -62,6 +62,6 @@ export function validatePartialProduct(object) {
 }
 export function validateId(id) {
   const isValidObjectId = mongoose.isValidObjectId(id);
-
+  console.log("en validador de id: ID a validar", id, isValidObjectId);
   return isValidObjectId;
 }

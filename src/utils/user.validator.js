@@ -1,4 +1,4 @@
-import z from "zod";
+import * as z from "zod";
 
 const userValidatorSchema = z.object({
   userName: z.string({
@@ -9,24 +9,36 @@ const userValidatorSchema = z.object({
   }),
   userAge: z
     .number({
-      invalid_type_error: "Age must be a number",
+      invalid_type_error: "La edad debe ser un valor numérico",
     })
-    .int()
-    .lt(100),
-  email: z
-    .string()
-    .email({
-      invalid_type_error: "El dato no corresponde a una casilla de correo",
+    .int({ message: "La edad debe ser un número entero" })
+    .lt(100, {
+      message: "La edad debe ser un número entero menor que 100",
     }),
-  password: z
+  userEmail: z
+    .string()
+    .min(1, { required_error: "El email es requerido" })
+    .email({ message: "El email ingresado es inválido" }),
+  userPassword: z
     .string({
       required_error: "El password es requerido",
     })
     .min(5, { message: "El password debe contener al menos 5 caracteres" }),
 });
 
-export function validateUser(object) {
-  const resultadoValidacion = userValidatorSchema.safeParse(object);
-
-  return resultadoValidacion;
-}
+export const validateUser = (object) => {
+  try {
+    const resultadoValidacion = userValidatorSchema.parse(object);
+    console.log("en user validator ", resultadoValidacion);
+    return resultadoValidacion;
+  } catch (err) {
+    if (err instanceof z.ZodError) {
+      console.log(err.issues);
+      const errores = err.issues
+        .map((cadaerror) => `'${cadaerror.message}'`)
+        .join(" ");
+      throw new Error(`Datos inválidos:${errores}`);
+      //return err.issues;
+    }
+  }
+};

@@ -475,3 +475,1668 @@
 24-05-26 21:42:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
 24-05-26 21:42:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
 24-05-26 21:42:57 USER-SERVICE [method] : getAll
+24-05-26 22:17:14 GLOBAL [path] : POST en /api/users/login
+24-05-26 22:17:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:17:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:17:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:17:20 GLOBAL [path] : GET en /api/users/
+24-05-26 22:17:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:17:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:17:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:17:20 USER-SERVICE [method] : getAll
+24-05-26 22:17:38 GLOBAL [path] : DELETE en /api/users/6653d6f1096f282fe73ea16b
+24-05-26 22:17:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:17:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-26 22:17:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-26 22:17:38 USER-SERVICE [debug] : El usuario con id 6653d6f1096f282fe73ea16b fue borrado con éxito
+24-05-26 22:18:00 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:18:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:18:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:18:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:19:08 GLOBAL [path] : GET en /api/users/
+24-05-26 22:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:19:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:19:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:19:08 USER-SERVICE [method] : getAll
+24-05-26 22:19:27 GLOBAL [path] : DELETE en /api/users/6653df489e6200a5f4f3f8b4
+24-05-26 22:19:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:19:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-26 22:19:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-26 22:19:27 USER-SERVICE [debug] : El usuario con id 6653df489e6200a5f4f3f8b4 fue borrado con éxito
+24-05-26 22:19:39 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:19:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:19:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:19:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:23:07 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:23:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:23:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:23:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:28:07 GLOBAL [path] : POST en /api/users/login
+24-05-26 22:28:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:28:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:28:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:28:19 GLOBAL [path] : GET en /api/users/
+24-05-26 22:28:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:28:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:28:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:28:19 USER-SERVICE [method] : getAll
+24-05-26 22:28:39 GLOBAL [path] : DELETE en /api/users/6653dfaba90c8e6a5d00873e
+24-05-26 22:28:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:28:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-26 22:28:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-26 22:28:39 USER-SERVICE [debug] : El usuario con id 6653dfaba90c8e6a5d00873e fue borrado con éxito
+24-05-26 22:28:49 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:28:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:28:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:28:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:30:37 GLOBAL [path] : GET en /api/users/
+24-05-26 22:30:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:30:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:30:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:30:37 USER-SERVICE [method] : getAll
+24-05-26 22:30:47 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:30:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:30:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:30:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:31:03 GLOBAL [path] : GET en /api/users/
+24-05-26 22:31:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:31:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:31:03 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:31:03 USER-SERVICE [method] : getAll
+24-05-26 22:32:51 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:32:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:32:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:32:51 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-26 22:37:39 GLOBAL [path] : POST en /api/users/register
+24-05-26 22:37:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-26 22:37:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-26 22:37:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:29:35 GLOBAL [path] : POST en /api/users/login
+24-05-27 06:29:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:29:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:29:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:29:51 GLOBAL [path] : GET en /api/users/
+24-05-27 06:29:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:29:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:29:51 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:29:51 USER-SERVICE [method] : getAll
+24-05-27 06:31:31 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:31:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:31:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:31:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:35:13 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:35:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:35:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:35:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:39:53 GLOBAL [path] : POST en /api/users/login
+24-05-27 06:39:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:39:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:39:53 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:39:58 GLOBAL [path] : GET en /api/users/
+24-05-27 06:39:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:39:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:39:58 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:39:58 USER-SERVICE [method] : getAll
+24-05-27 06:40:07 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:40:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:40:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:40:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:42:40 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:42:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:42:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:42:40 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:44:38 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:44:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:44:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:44:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:45:16 GLOBAL [path] : POST en /api/users/login
+24-05-27 06:45:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:45:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:45:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:45:24 GLOBAL [path] : GET en /api/users/
+24-05-27 06:45:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:45:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:45:24 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:45:24 USER-SERVICE [method] : getAll
+24-05-27 06:49:01 GLOBAL [path] : POST en /api/users/login
+24-05-27 06:49:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:49:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:49:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:49:11 GLOBAL [path] : DELETE en /api/users/6654560652272a18cb8b31e2
+24-05-27 06:49:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:49:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-27 06:49:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-27 06:49:11 USER-SERVICE [debug] : El usuario con id 6654560652272a18cb8b31e2 fue borrado con éxito
+24-05-27 06:49:18 GLOBAL [path] : POST en /api/users/register
+24-05-27 06:49:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:49:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:49:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:49:18 USER-SERVICE [debug] : se ha creado el usuario {}
+24-05-27 06:49:26 GLOBAL [path] : GET en /api/users/
+24-05-27 06:49:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:49:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:49:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:49:26 USER-SERVICE [method] : getAll
+24-05-27 06:49:54 GLOBAL [path] : DELETE en /api/users/66545590851756edd52d7cdd
+24-05-27 06:49:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:49:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-27 06:49:54 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-27 06:49:54 USER-SERVICE [debug] : El usuario con id 66545590851756edd52d7cdd fue borrado con éxito
+24-05-27 06:50:00 GLOBAL [path] : GET en /api/users/
+24-05-27 06:50:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 06:50:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 06:50:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 06:50:00 USER-SERVICE [method] : getAll
+24-05-27 20:23:08 GLOBAL [path] : POST en /api/users/register
+24-05-27 20:23:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-27 20:23:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-27 20:23:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-27 20:23:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Ale","userLastName":"Cloos","userPassword":"123456","userEmail":"ale@fay.org","userAge":61}
+24-05-27 20:23:08 USER-SERVICE [debug] : se ha creado el usuario {}
+24-05-28 06:27:10 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:27:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:27:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:27:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:27:10 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Ale","userLastName":"Cloos","userPassword":"123456","userEmail":"ale@fay.org","userAge":61}
+24-05-28 06:27:10 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email ale@fay.org
+24-05-28 06:28:31 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:28:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:28:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:28:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:28:31 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"123456","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:28:31 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-05-28 06:29:30 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:29:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:29:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:29:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:29:30 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"123456","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:29:30 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-05-28 06:30:54 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:30:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:30:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:30:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:30:54 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"123456","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:30:55 USER-SERVICE [debug] : se ha creado el usuario {"userPassword":"$2b$10$j0FaULPwpEXDH0MYE4.Q0Owl4VATcx2U2jr9Fr0G1FIQXkQ5S6I8u","userRole":"user","userCartID":[],"_id":"6655a44f72700c1beabcd40e","__v":0}
+24-05-28 06:32:45 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:32:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:32:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:32:45 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:32:45 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"123456","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:32:45 USER-SERVICE [error] : No se pudo crear el usuario E11000 duplicate key error collection: ecommerce.users index: userEmail_1 dup key: { userEmail: null }
+24-05-28 06:33:58 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:33:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:33:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:33:58 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:33:58 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"123456","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:33:58 USER-SERVICE [error] : No se pudo crear el usuario E11000 duplicate key error collection: ecommerce.users index: userEmail_1 dup key: { userEmail: null }
+24-05-28 06:34:08 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:34:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:34:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:34:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:34:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:34:08 USER-SERVICE [error] : No se pudo crear el usuario E11000 duplicate key error collection: ecommerce.users index: userEmail_1 dup key: { userEmail: null }
+24-05-28 06:34:24 GLOBAL [path] : POST en /api/users/login
+24-05-28 06:34:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:34:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:34:24 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:34:32 GLOBAL [path] : GET en /api/users/
+24-05-28 06:34:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:34:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:34:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:34:33 USER-SERVICE [method] : getAll
+24-05-28 06:34:56 GLOBAL [path] : DELETE en /api/users/6655a44f72700c1beabcd40e
+24-05-28 06:34:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:34:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-28 06:34:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-28 06:34:56 USER-SERVICE [debug] : El usuario con id 6655a44f72700c1beabcd40e fue borrado con éxito
+24-05-28 06:35:05 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:35:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:35:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:35:05 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:35:05 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:35:05 USER-SERVICE [debug] : se ha creado el usuario {"userPassword":"$2b$10$f59r6SwrG4TlxHqdgZUEkezgKE/kXKsd/9w7T.oLkt/otfdQjIYuK","userRole":"user","userCartID":[],"_id":"6655a5492fafe3e9e7f1dc95","__v":0}
+24-05-28 06:38:36 GLOBAL [path] : POST en /api/users/register
+24-05-28 06:38:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:38:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:38:36 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:38:36 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 06:38:36 USER-SERVICE [error] : No se pudo crear el usuario E11000 duplicate key error collection: ecommerce.users index: userEmail_1 dup key: { userEmail: null }
+24-05-28 06:40:36 GLOBAL [path] : POST en /api/products
+24-05-28 06:40:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:40:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-05-28 06:40:36 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-28 06:40:41 GLOBAL [path] : POST en /api/users/login
+24-05-28 06:40:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:40:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 06:40:41 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 06:40:47 GLOBAL [path] : POST en /api/products
+24-05-28 06:40:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 06:40:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-05-28 06:40:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-28 06:40:47 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-05-28 18:58:27 GLOBAL [path] : POST en /api/users/register
+24-05-28 18:58:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-28 18:58:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-28 18:58:27 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-28 18:58:27 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Alejandro","userLastName":"Cloos","userPassword":"","userEmail":"alecloos@fay.org","userAge":null}
+24-05-28 18:58:28 USER-SERVICE [error] : No se pudo crear el usuario Cannot read properties of undefined (reading 'success')
+24-05-30 06:18:21 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:18:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:18:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:18:33 GLOBAL [path] : GET en /api/carts/
+24-05-30 06:18:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:18:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-30 06:18:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-30 06:19:02 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/purchase
+24-05-30 06:19:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:19:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-30 06:19:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-30 06:19:02 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-05-30 06:19:10 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:19:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:19:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:19:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:19:16 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/purchase
+24-05-30 06:19:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:19:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-30 06:19:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:22:35 GLOBAL [path] : GET en /api/users/currentUser
+24-05-30 06:22:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:22:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-05-30 06:22:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:24:12 GLOBAL [path] : POST en /api/carts/
+24-05-30 06:24:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:24:12 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-05-30 06:24:17 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:24:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:24:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:24:22 GLOBAL [path] : POST en /api/carts/
+24-05-30 06:24:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:24:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:24:37 GLOBAL [path] : POST en /api/carts/6648e2604d3a99e9f5a6a0a0/product/65ee79f09befe239e7aefb48
+24-05-30 06:24:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:24:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:24:45 GLOBAL [path] : GET en /api/users/currentUser
+24-05-30 06:24:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-05-30 06:24:45 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:24:59 GLOBAL [path] : GET en /api/users/
+24-05-30 06:24:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:24:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:24:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:24:59 USER-SERVICE [method] : getAll
+24-05-30 06:26:03 GLOBAL [path] : GET en /api/carts/
+24-05-30 06:26:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:26:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-30 06:26:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:26:03 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-05-30 06:26:08 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:26:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:26:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:26:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:26:18 GLOBAL [path] : GET en /api/carts/
+24-05-30 06:26:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:26:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-30 06:26:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-30 06:26:32 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:26:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:26:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:26:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:26:53 GLOBAL [path] : GET en /api/users/cart
+24-05-30 06:26:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:26:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-30 06:26:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:26:53 USER-SERVICE [method] : getCart
+24-05-30 06:27:10 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:27:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:27:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:27:14 GLOBAL [path] : GET en /api/users/cart
+24-05-30 06:27:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-30 06:27:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:27:14 USER-SERVICE [method] : getCart
+24-05-30 06:27:22 GLOBAL [path] : GET en /api/users/filtro/?filtro=userCartID
+24-05-30 06:27:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-05-30 06:27:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:27:41 GLOBAL [path] : GET en /api/carts/665845c6749086bfe57496e4
+24-05-30 06:27:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-30 06:27:41 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:27:41 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-05-30 06:27:49 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:27:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:27:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:27:54 GLOBAL [path] : GET en /api/carts/665845c6749086bfe57496e4
+24-05-30 06:27:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:27:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-05-30 06:27:54 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-05-30 06:28:01 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:28:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:28:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:28:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:28:11 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65ee79f09befe239e7aefb48
+24-05-30 06:28:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:28:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:28:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:28:24 GLOBAL [path] : GET en /api/products/
+24-05-30 06:28:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:28:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:28:24 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:28:24 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-05-30 06:29:20 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 06:29:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:29:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:29:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:29:51 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 06:29:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:29:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:29:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:40:34 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:40:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:40:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:40:34 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:41:02 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 06:41:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:41:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:41:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:44:11 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:44:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:44:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:44:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:44:40 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 06:44:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:44:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:44:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:48:25 GLOBAL [path] : POST en /api/users/login
+24-05-30 06:48:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:48:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 06:48:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 06:48:29 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 06:48:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 06:48:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 06:48:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 06:48:29 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 06:48:29 CARTS-SERVICE [debug] : Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-05-30 20:24:13 GLOBAL [path] : POST en /api/users/login
+24-05-30 20:24:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:24:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 20:24:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 20:24:17 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 20:24:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:24:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 20:24:17 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 20:24:17 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 20:24:17 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-05-30 20:27:39 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 20:27:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:27:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 20:27:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 20:27:39 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 20:27:39 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-05-30 20:31:32 GLOBAL [path] : POST en /api/users/login
+24-05-30 20:31:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:31:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-05-30 20:31:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-05-30 20:31:43 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 20:31:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:31:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 20:31:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 20:31:43 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 20:31:43 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-05-30 20:32:57 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 20:32:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:32:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 20:32:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 20:32:57 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 20:32:57 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-05-30 20:35:28 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65f71cf4e96453230e13a9fc
+24-05-30 20:35:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-05-30 20:35:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-05-30 20:35:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-05-30 20:35:28 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665845c6749086bfe57496e4
+24-05-30 20:35:28 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 08:13:45 GLOBAL [path] : POST en /api/users/login
+24-06-01 08:13:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:13:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:13:45 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:13:53 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 08:13:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:13:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 08:13:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 08:14:17 GLOBAL [path] : GET en /api/users/tickets
+24-06-01 08:14:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:14:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 08:14:17 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 08:14:49 GLOBAL [path] : GET en /api/users/
+24-06-01 08:14:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:14:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:14:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:14:49 USER-SERVICE [method] : getAll
+24-06-01 08:15:32 GLOBAL [path] : POST en /api/users/login
+24-06-01 08:15:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:15:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:15:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:15:49 GLOBAL [path] : DELETE en /api/users/6655a5492fafe3e9e7f1dc95
+24-06-01 08:15:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:15:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 08:15:49 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 08:15:49 USER-SERVICE [debug] : El usuario con id 6655a5492fafe3e9e7f1dc95 fue borrado con éxito
+24-06-01 08:15:58 GLOBAL [path] : GET en /api/users/
+24-06-01 08:15:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:15:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:15:58 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:15:58 USER-SERVICE [method] : getAll
+24-06-01 08:17:13 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:17:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:17:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:17:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:17:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Rodri","userLastName":"Benve","userPassword":"123456","userEmail":"rodri@benve.com","userAge":30}
+24-06-01 08:17:13 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 08:18:19 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:18:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:18:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:18:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:18:19 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Rodri","userLastName":"Benve","userPassword":"123456","userEmail":"rodri@benve.com","userAge":30,"userRole":"user"}
+24-06-01 08:18:19 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 08:23:49 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:23:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:23:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:23:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:23:49 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Rodri","userLastName":"Benve","userPassword":"123456","userEmail":"rodri@benve.com","userAge":30,"userRole":"user"}
+24-06-01 08:23:49 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Rodri","userLastName":"Benve","userEmail":"rodri@benve.com","userAge":30,"userPassword":"$2b$10$KC1fpNY/WvDxkvg.pqxWNePy6KKPVNRndMdVSa4siXIR49usi0NWy","userRole":"user","userCartID":[],"_id":"665b04c5c1b94929fd2346be","__v":0}
+24-06-01 08:24:18 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:24:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:24:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:24:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:24:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Rodri","userLastName":"Benve","userPassword":"123456","userEmail":"rodri@benve.com","userAge":30,"userRole":"user"}
+24-06-01 08:24:18 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email rodri@benve.com
+24-06-01 08:25:07 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:25:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:25:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:25:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:25:07 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 08:25:07 USER-SERVICE [error] : No se pudo crear el usuario error is not defined
+24-06-01 08:25:37 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:25:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:25:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:25:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:25:37 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 08:25:37 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 08:27:13 GLOBAL [path] : POST en /api/users/register
+24-06-01 08:27:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 08:27:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 08:27:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 08:27:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 08:27:13 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 09:08:21 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:08:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:08:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:08:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:08:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:08:21 USER-SERVICE [error] : No se pudo crear el usuario Cannot read properties of undefined (reading 'data')
+24-06-01 09:10:24 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:10:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:10:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:10:24 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:10:24 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:10:24 USER-SERVICE [error] : No se pudo crear el usuario Cannot read properties of undefined (reading 'data')
+24-06-01 09:11:32 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:11:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:11:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:11:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:11:32 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:11:32 USER-SERVICE [error] : No se pudo crear el usuario Cannot read properties of undefined (reading 'data')
+24-06-01 09:14:07 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:14:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:14:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:14:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:14:07 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:14:07 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 09:15:37 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:15:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:15:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:15:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:15:37 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:15:38 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 09:17:16 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:17:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:17:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:17:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:17:16 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:17:17 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 09:18:28 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:18:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:18:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:18:28 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:18:28 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:18:28 USER-SERVICE [error] : No se pudo crear el usuario [object Object]
+24-06-01 09:20:49 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:20:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:20:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:20:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:20:49 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:20:49 USER-SERVICE [error] : No se pudo crear el usuario [object Object]
+24-06-01 09:23:00 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:23:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:23:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:23:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:23:00 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:23:00 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos: 
+24-06-01 09:24:12 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:24:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:24:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:24:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:24:12 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:24:12 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos: undefined
+24-06-01 09:25:02 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:25:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:25:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:25:02 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:25:02 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:25:03 USER-SERVICE [error] : No se pudo crear el usuario message is not defined
+24-06-01 09:25:47 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:25:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:25:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:25:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:25:47 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:25:47 USER-SERVICE [error] : No se pudo crear el usuario [object Object]
+24-06-01 09:26:06 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:26:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:26:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:26:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:26:06 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:26:06 USER-SERVICE [error] : No se pudo crear el usuario 
+24-06-01 09:26:44 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:26:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:26:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:26:44 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:26:44 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:26:44 USER-SERVICE [error] : No se pudo crear el usuario [
+  {
+    "code": "invalid_type",
+    "expected": "number",
+    "received": "nan",
+    "path": [
+      "userAge"
+    ],
+    "message": "Age must be a number"
+  }
+]
+24-06-01 09:29:20 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:29:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:29:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:29:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:29:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:29:20 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos: Age must be a number
+24-06-01 09:31:27 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:31:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:31:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:31:27 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:31:27 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":null,"userRole":"user"}
+24-06-01 09:31:28 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos: Age must be a number
+24-06-01 09:31:48 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:31:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:31:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:31:48 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:31:48 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:31:48 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos: Age must be a number Email is invalid
+24-06-01 09:34:31 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:34:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:34:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:34:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:34:31 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:34:31 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:
+ Age must be a number
+Email is invalid
+24-06-01 09:37:39 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:37:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:37:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:37:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:37:39 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:37:39 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:
+       Age must be a number
+Email is invalid
+24-06-01 09:38:24 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:38:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:38:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:38:24 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:38:24 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:38:24 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:
+      Age must be a numberEmail is invalid
+24-06-01 09:40:36 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:40:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:40:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:40:36 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:40:36 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:40:36 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:"Age must be a number" "Email is invalid"
+24-06-01 09:41:28 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:41:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:41:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:41:28 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:41:28 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":null,"userRole":"user"}
+24-06-01 09:41:28 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'Age must be a number' 'Email is invalid'
+24-06-01 09:43:38 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:43:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:43:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:43:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:43:38 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nicobenve.com","userAge":200,"userRole":"user"}
+24-06-01 09:43:38 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'Number must be less than 100' 'Email is invalid'
+24-06-01 09:45:49 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:45:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:45:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:45:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:45:49 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"12","userEmail":"nicobenve.com","userAge":200,"userRole":"user"}
+24-06-01 09:45:49 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'La edad debe ser un número entero menor que 100' 'El email ingresado es inválido' 'El password debe contener al menos 5 caracteres'
+24-06-01 09:46:41 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:46:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:46:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:46:41 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:46:41 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":20,"userRole":"user"}
+24-06-01 09:46:41 USER-SERVICE [error] : No se pudo crear el usuario no se pudo validar el usuario, uno o más datos no cumple con los requerimientos
+24-06-01 09:48:52 GLOBAL [path] : POST en /api/users/register
+24-06-01 09:48:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 09:48:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 09:48:52 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 09:48:52 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":20,"userRole":"user"}
+24-06-01 09:48:53 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Nico","userLastName":"Justin","userEmail":"nico@benve.com","userAge":20,"userPassword":"$2b$10$VfLdIXj0p4mC80XgzATUQOZos4Bg32PG9hikYHr/4OGFys4F/o1j2","userRole":"user","userCartID":[],"_id":"665b18b5b48cbdc6efe4d738","__v":0}
+24-06-01 12:56:26 GLOBAL [path] : POST en /api/users/login
+24-06-01 12:56:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:56:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 12:56:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 12:56:40 GLOBAL [path] : GET en /api/users/
+24-06-01 12:56:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:56:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 12:56:40 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 12:56:40 USER-SERVICE [method] : getAll
+24-06-01 12:58:15 GLOBAL [path] : DELETE en /api/users/665b18b5b48cbdc6efe4d738
+24-06-01 12:58:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:58:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 12:58:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 12:58:15 USER-SERVICE [debug] : El usuario con id 665b18b5b48cbdc6efe4d738 fue borrado con éxito
+24-06-01 12:58:23 GLOBAL [path] : GET en /api/users/
+24-06-01 12:58:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:58:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 12:58:23 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 12:58:23 USER-SERVICE [method] : getAll
+24-06-01 12:58:40 GLOBAL [path] : POST en /api/users/register
+24-06-01 12:58:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:58:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 12:58:40 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 12:58:40 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Nico","userLastName":"Justin","userPassword":"123456","userEmail":"nico@benve.com","userAge":20}
+24-06-01 12:58:40 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Nico","userLastName":"Justin","userEmail":"nico@benve.com","userAge":20,"userPassword":"$2b$10$YXq0oZJfFvaMdKKKaiLdJ.lnYpInvYXB5GGwl6tRNBmz.R/NrA94G","userRole":"user","userCartID":[],"_id":"665b4530ad55a42a1698c5eb","__v":0}
+24-06-01 12:58:57 GLOBAL [path] : GET en /api/users/
+24-06-01 12:58:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 12:58:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 12:58:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 12:58:57 USER-SERVICE [method] : getAll
+24-06-01 13:07:35 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 13:07:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:07:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 13:07:35 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 13:07:59 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:07:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:07:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:07:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:08:04 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 13:08:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:08:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 13:08:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:09:41 GLOBAL [path] : POST en /api/carts/
+24-06-01 13:09:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:09:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 13:09:41 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:10:26 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 13:10:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:10:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 13:10:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:10:26 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 13:10:26 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 13:14:23 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 13:14:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:14:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 13:14:23 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 13:14:32 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:14:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:14:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:14:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:14:44 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 13:14:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:14:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 13:14:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:14:44 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 13:14:44 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 13:22:53 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:22:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:22:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:22:53 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:23:01 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 13:23:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:23:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 13:23:01 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:23:13 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:23:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:23:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:23:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:23:13 USER-SERVICE [method] : getCart
+24-06-01 13:23:56 GLOBAL [path] : GET en /api/users/filtro/?filtro=userCartID
+24-06-01 13:23:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:23:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:23:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:30:27 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:30:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:30:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:30:27 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 13:30:32 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:30:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:30:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:30:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:30:37 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:30:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:30:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:30:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:30:37 USER-SERVICE [method] : getCart
+24-06-01 13:31:50 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:31:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:31:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:31:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:31:50 USER-SERVICE [method] : getCart
+24-06-01 13:31:50 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:41:56 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:41:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:41:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:41:56 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:42:06 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:42:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:42:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:42:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:42:06 USER-SERVICE [method] : getCart
+24-06-01 13:42:06 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:46:01 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:46:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:46:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:46:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:46:14 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:46:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:46:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:46:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:46:14 USER-SERVICE [method] : getCart
+24-06-01 13:46:14 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:50:05 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:50:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:50:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:50:05 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:50:11 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:50:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:50:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:50:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:50:11 USER-SERVICE [method] : getCart
+24-06-01 13:50:11 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:50:11 USER-SERVICE [error] : Error: logger is not defined
+24-06-01 13:52:53 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:52:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:52:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:52:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:52:53 USER-SERVICE [method] : getCart
+24-06-01 13:52:53 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:52:53 USER-SERVICE [method] : findCart
+24-06-01 13:52:53 USER-SERVICE [error] : Error: Cannot read properties of undefined (reading 'findByID')
+24-06-01 13:58:13 GLOBAL [path] : POST en /api/users/login
+24-06-01 13:58:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:58:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 13:58:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 13:58:22 GLOBAL [path] : GET en /api/users/cart
+24-06-01 13:58:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:58:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 13:58:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:58:22 USER-SERVICE [method] : getCart
+24-06-01 13:58:22 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 13:58:22 USER-SERVICE [method] : findCart
+24-06-01 13:58:39 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 13:58:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 13:58:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 13:58:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 13:58:39 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 13:58:39 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 14:02:24 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 14:02:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:02:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 14:02:24 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 14:02:30 GLOBAL [path] : POST en /api/users/login
+24-06-01 14:02:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:02:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 14:02:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 14:02:34 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 14:02:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:02:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 14:02:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 14:02:34 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 14:02:34 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 14:02:34 CARTS-SERVICE [error] : error en addToCart de controlador cartDAO.findById is not a function
+24-06-01 14:03:18 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 14:03:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:03:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 14:03:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 14:03:18 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 14:03:18 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 14:03:18 CARTS-SERVICE [error] : error en addToCart de controlador productDAO.findById is not a function
+24-06-01 14:03:37 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65f71cf4e96453230e13a9fc
+24-06-01 14:03:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:03:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 14:03:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 14:03:37 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65f71cf4e96453230e13a9fc; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 14:03:37 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65f71cf4e96453230e13a9fc
+24-06-01 14:03:51 GLOBAL [path] : GET en /api/users/cart
+24-06-01 14:03:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:03:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 14:03:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 14:03:51 USER-SERVICE [method] : getCart
+24-06-01 14:03:51 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 14:03:51 USER-SERVICE [method] : findCart
+24-06-01 14:30:07 GLOBAL [path] : POST en /api/users/login
+24-06-01 14:30:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:30:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 14:30:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 14:30:14 GLOBAL [path] : GET en /api/carts/
+24-06-01 14:30:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:30:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 14:30:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 14:53:22 GLOBAL [path] : GET en /api/products/
+24-06-01 14:53:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:53:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 14:53:22 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 14:53:22 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-01 14:53:55 GLOBAL [path] : POST en /api/users/login
+24-06-01 14:53:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:53:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 14:53:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 14:54:02 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65fb8739d974060df5f5f68e
+24-06-01 14:54:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:54:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 14:54:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 14:54:02 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 14:54:02 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 14:54:03 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of undefined (reading '_id')
+24-06-01 14:59:17 GLOBAL [path] : POST en /api/users/login
+24-06-01 14:59:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:59:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 14:59:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 14:59:20 GLOBAL [path] : GET en /api/carts/
+24-06-01 14:59:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 14:59:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 14:59:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:02:11 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:02:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:02:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:02:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:02:17 GLOBAL [path] : POST en /api/carts/665b47c5ad55a42a1698c5ef/product/65fb8739d974060df5f5f68e
+24-06-01 15:02:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:02:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:02:17 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:02:17 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b47c5ad55a42a1698c5ef
+24-06-01 15:02:17 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b47c5ad55a42a1698c5ef, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 15:02:17 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of undefined (reading 'toString')
+24-06-01 15:05:25 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:05:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:05:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:05:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:05:25 USER-SERVICE [method] : getCart
+24-06-01 15:05:25 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 15:05:25 USER-SERVICE [method] : findCart
+24-06-01 15:05:37 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:05:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:05:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:05:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:05:48 GLOBAL [path] : DELETE en /api/carts/665b47c5ad55a42a1698c5ef
+24-06-01 15:05:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:05:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:05:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:06:08 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:06:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:06:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:06:08 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:06:08 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-01 15:06:14 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:06:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:06:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:06:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:06:19 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:06:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:06:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:06:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:06:19 USER-SERVICE [method] : getCart
+24-06-01 15:06:19 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 15:06:19 USER-SERVICE [method] : findCart
+24-06-01 15:06:29 GLOBAL [path] : DELETE en /api/carts/665b47c5ad55a42a1698c5ef
+24-06-01 15:06:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:06:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:06:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:07:25 GLOBAL [path] : DELETE en /api/carts/665b47c5ad55a42a1698c5ef
+24-06-01 15:07:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:07:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:07:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:07:25 CARTS-SERVICE [error] : error en deleteCart de controlador cartDAO.findById is not a function
+24-06-01 15:08:28 GLOBAL [path] : DELETE en /api/carts/665b47c5ad55a42a1698c5ef
+24-06-01 15:08:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:08:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:08:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:08:28 CARTS-SERVICE [error] : error en deleteCart de controlador cartDAO.deleteOne is not a function
+24-06-01 15:08:57 GLOBAL [path] : DELETE en /api/carts/665b47c5ad55a42a1698c5ef
+24-06-01 15:08:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:08:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:08:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:06 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 15:09:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:09:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 15:09:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:15 GLOBAL [path] : POST en /api/carts/
+24-06-01 15:09:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:09:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:09:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:24 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:09:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:09:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:09:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:24 USER-SERVICE [method] : getCart
+24-06-01 15:09:24 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 15:09:24 USER-SERVICE [method] : findCart
+24-06-01 15:09:47 GLOBAL [path] : POST en /api/carts/665b63cb02952242e7cd875e/product/65fb8739d974060df5f5f68e
+24-06-01 15:09:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:09:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:09:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:47 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b63cb02952242e7cd875e
+24-06-01 15:09:47 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b63cb02952242e7cd875e, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 15:09:56 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:09:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:09:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:09:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Nico Justin","email":"nico@benve.com","age":20,"role":"user"}
+24-06-01 15:09:56 USER-SERVICE [method] : getCart
+24-06-01 15:09:56 USER-SERVICE [debug] : Buscando carrito de usuario con email nico@benve.com
+24-06-01 15:09:56 USER-SERVICE [method] : findCart
+24-06-01 15:10:55 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:10:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:10:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:10:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:10:58 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:10:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:10:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:10:58 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:11:54 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:11:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:11:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:11:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:12:05 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65fb8739d974060df5f5f68e
+24-06-01 15:12:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:12:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:12:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:12:05 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-01 15:12:58 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:12:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:12:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:12:58 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:13:07 GLOBAL [path] : POST en /api/carts/665845c6749086bfe57496e4/product/65fb8739d974060df5f5f68e
+24-06-01 15:13:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:13:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:13:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:13:07 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665845c6749086bfe57496e4
+24-06-01 15:13:07 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665845c6749086bfe57496e4, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 15:13:15 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:13:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:13:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:13:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:13:15 USER-SERVICE [method] : getCart
+24-06-01 15:13:15 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 15:13:15 USER-SERVICE [method] : findCart
+24-06-01 15:13:38 GLOBAL [path] : DELETE en /api/carts/665845c6749086bfe57496e4
+24-06-01 15:13:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:13:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'ADMIN' ]
+24-06-01 15:13:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:13:45 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:13:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:13:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:13:45 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:13:45 USER-SERVICE [method] : getCart
+24-06-01 15:13:45 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 15:13:45 USER-SERVICE [method] : findCart
+24-06-01 15:13:56 GLOBAL [path] : GET en /api/users/
+24-06-01 15:13:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:13:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:13:56 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:13:56 USER-SERVICE [method] : getAll
+24-06-01 15:14:36 GLOBAL [path] : GET en /api/carts/665845c6749086bfe57496e4
+24-06-01 15:14:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:14:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:14:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:14:36 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-01 15:14:43 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:14:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:14:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:14:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:14:48 GLOBAL [path] : GET en /api/carts/665845c6749086bfe57496e4
+24-06-01 15:14:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:14:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:14:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:33:51 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:33:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:33:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:33:51 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:33:57 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:33:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:33:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:33:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:33:57 GLOBAL [path] : Probando getCarts en req logger GET
+24-06-01 15:35:38 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:35:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:35:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:35:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:35:38 GLOBAL [path] : Probando getCarts en req logger [object Object]
+24-06-01 15:36:07 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:36:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:36:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:36:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:36:07 GLOBAL [path] : Probando getCarts en req logger [object Object]
+24-06-01 15:36:34 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:36:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:36:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:36:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:36:34 GLOBAL [path] : Probando getCarts en req logger [object Object]
+24-06-01 15:41:11 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:41:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:41:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:41:11 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 15:41:16 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:41:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:41:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:41:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:41:20 GLOBAL [path] : GET en /api/carts/
+24-06-01 15:41:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:41:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 15:41:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-01 15:41:20 GLOBAL [path] : Probando getCarts en req logger /
+24-06-01 15:41:20 CARTS-SERVICE [debug] : en getCarts de controlador
+24-06-01 15:44:15 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:44:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:44:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:44:15 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:44:25 GLOBAL [path] : POST en /api/carts/
+24-06-01 15:44:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:44:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:44:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:45:53 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 15:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:45:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 15:45:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:45:53 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 15:45:53 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 15:45:53 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 15:57:11 GLOBAL [path] : POST en /api/users/login
+24-06-01 15:57:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:57:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 15:57:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 15:57:15 GLOBAL [path] : GET en /api/users/cart
+24-06-01 15:57:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 15:57:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 15:57:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 15:57:15 USER-SERVICE [method] : getCart
+24-06-01 15:57:15 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 15:57:15 USER-SERVICE [method] : findCart
+24-06-01 16:00:19 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:00:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:00:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:00:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:00:23 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:00:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:00:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:00:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:00:23 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:00:23 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:00:23 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:00:23 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":0,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:00:39 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:00:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:00:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:00:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:00:39 USER-SERVICE [method] : getCart
+24-06-01 16:00:39 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:00:39 USER-SERVICE [method] : findCart
+24-06-01 16:02:57 GLOBAL [path] : GET en /api/users/currentUser
+24-06-01 16:02:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:02:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-01 16:02:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:03:05 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:03:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:03:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:03:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:03:05 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:03:05 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:03:05 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:03:05 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:03:14 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:03:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:03:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:03:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:03:14 USER-SERVICE [method] : getCart
+24-06-01 16:03:14 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:03:14 USER-SERVICE [method] : findCart
+24-06-01 16:03:33 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:03:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:03:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:03:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:03:33 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:03:33 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:03:33 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:03:34 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:03:37 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:03:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:03:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:03:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:03:37 USER-SERVICE [method] : getCart
+24-06-01 16:03:37 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:03:37 USER-SERVICE [method] : findCart
+24-06-01 16:05:19 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:05:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:05:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:05:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:05:23 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:05:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:05:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:05:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:05:23 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:05:23 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:05:23 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:05:23 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:05:27 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:05:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:05:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:05:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:05:27 USER-SERVICE [method] : getCart
+24-06-01 16:05:27 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:05:27 USER-SERVICE [method] : findCart
+24-06-01 16:06:27 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:06:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:06:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:06:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:06:27 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:06:27 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:06:27 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of undefined (reading 'toString')
+24-06-01 16:08:39 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:08:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:08:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:08:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:08:39 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:08:39 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:08:39 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:08:39 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:09:13 GLOBAL [path] : GET en /api/carts/
+24-06-01 16:09:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:09:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 16:09:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:09:13 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-01 16:09:21 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:09:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:09:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:09:21 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 16:09:25 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:09:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:09:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:09:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:09:28 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:09:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:09:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:09:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:09:28 USER-SERVICE [method] : getCart
+24-06-01 16:09:28 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:09:28 USER-SERVICE [method] : findCart
+24-06-01 16:15:04 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:15:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:15:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:15:04 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 16:15:12 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:15:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:15:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:15:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:15:18 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:15:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:15:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:15:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:15:18 USER-SERVICE [method] : getCart
+24-06-01 16:15:18 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:15:18 USER-SERVICE [method] : findCart
+24-06-01 16:16:08 GLOBAL [path] : GET en /api/users/cart
+24-06-01 16:16:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:16:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 16:16:08 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:16:08 USER-SERVICE [method] : getCart
+24-06-01 16:16:08 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 16:16:08 USER-SERVICE [method] : findCart
+24-06-01 16:16:19 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:16:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:16:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:16:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:16:19 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:16:19 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:16:19 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"}],"__v":0}
+24-06-01 16:16:20 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:18:29 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:18:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:18:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:18:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:18:29 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:18:29 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:18:29 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:18:29 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:32:28 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:32:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:32:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:32:28 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:32:33 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:32:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:32:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:32:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:32:33 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:32:33 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:32:34 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:32:34 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:33:42 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:33:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:33:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:33:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:33:42 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:33:42 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:33:42 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:33:42 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 16:55:10 GLOBAL [path] : POST en /api/users/login
+24-06-01 16:55:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:55:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 16:55:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 16:55:17 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 16:55:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 16:55:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 16:55:17 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 16:55:17 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 16:55:17 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 16:55:17 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 16:55:17 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:07:45 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:07:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:07:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:07:45 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:07:50 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:07:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:07:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:07:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:07:50 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:07:50 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:07:50 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"qty":1,"_id":"665b6c09e67fcac47f1e4812","product":"665b7ca572cc164bf2677583"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:07:50 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:08:55 GLOBAL [path] : GET en /api/users/filtro/?filtro=userCartID
+24-06-01 17:08:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:08:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 17:08:55 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:09:04 GLOBAL [path] : GET en /api/users/cart
+24-06-01 17:09:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:09:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 17:09:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:09:04 USER-SERVICE [method] : getCart
+24-06-01 17:09:04 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 17:09:04 USER-SERVICE [method] : findCart
+24-06-01 17:11:54 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:11:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:11:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:11:54 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 17:11:59 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:11:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:11:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:11:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:12:03 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:12:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:12:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:12:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:12:03 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:12:03 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:12:03 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:12:03 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:12:14 GLOBAL [path] : GET en /api/users/cart
+24-06-01 17:12:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:12:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 17:12:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:12:14 USER-SERVICE [method] : getCart
+24-06-01 17:12:14 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 17:12:14 USER-SERVICE [method] : findCart
+24-06-01 17:13:30 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:13:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:13:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:13:30 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:13:30 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:13:30 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:13:30 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:13:30 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:19:54 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:19:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:19:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:19:54 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 17:19:59 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:19:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:19:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:19:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:20:03 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:20:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:20:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:20:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:20:03 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:20:03 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:20:03 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:20:03 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:24:58 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:24:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:24:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:24:58 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 17:25:03 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:25:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:25:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:25:03 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:25:09 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:25:09 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:25:09 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:25:09 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:25:09 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:25:09 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:25:09 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b8273d495a58758a51911"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:25:09 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:39:06 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:39:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:39:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:39:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:39:10 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:39:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:39:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:39:10 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:39:10 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:39:10 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:39:10 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b8273d495a58758a51911"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b83a5fb040be37aef2b71"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:39:10 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:42:02 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:42:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:42:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:42:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:42:02 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:42:02 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:42:02 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"665b7ca572cc164bf2677583","qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b8273d495a58758a51911"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b83a5fb040be37aef2b71"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:42:02 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:43:41 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:43:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:43:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:43:41 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 17:43:46 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:43:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:43:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:43:46 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:43:51 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:43:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:43:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:43:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:43:51 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:43:51 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:43:51 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":null,"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b775294ac27e2da34781e"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b8273d495a58758a51911"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b83a5fb040be37aef2b71"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":{"_id":"65fb8739d974060df5f5f68e","title":"Batería Bosch s3 12x75","thumb":[]},"qty":1,"_id":"665b879a7be3b01779428822"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:43:51 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 17:56:01 GLOBAL [path] : POST en /api/users/login
+24-06-01 17:56:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:56:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 17:56:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 17:56:05 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 17:56:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 17:56:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 17:56:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 17:56:05 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 17:56:05 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 17:56:05 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":null,"qty":1,"_id":"665b6c09e67fcac47f1e4812"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7069c5da9b6f0dcc5e96"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7085c5da9b6f0dcc5e9e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b70f3c5da9b6f0dcc5ea8"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b71b739013fb64c5d3c51"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7383b3f196b7aa15c4f6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7405466d3ec357f6e4a1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b775294ac27e2da34781e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7796ae6fa82dec522786"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7ca572cc164bf267758c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b7f96703309dfc7a17c25"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b809381eb7e4470622ee6"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b80ea937f609a80af83e3"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b8273d495a58758a51911"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b83a5fb040be37aef2b71"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b879a7be3b01779428822"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b8807be77c3c747a31504"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 17:56:05 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:04:51 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:04:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:04:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:04:51 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:04:55 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:04:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:04:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:04:55 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:04:55 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:04:55 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:04:56 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of null (reading 'toString')
+24-06-01 18:06:12 GLOBAL [path] : GET en /api/users/cart
+24-06-01 18:06:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:06:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 18:06:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:06:12 USER-SERVICE [method] : getCart
+24-06-01 18:06:12 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 18:06:12 USER-SERVICE [method] : findCart
+24-06-01 18:20:21 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:20:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:20:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:20:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:20:26 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:20:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:20:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:20:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:20:26 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:20:26 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:20:26 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of null (reading 'toString')
+24-06-01 18:21:15 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:21:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:21:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:21:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:21:15 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:21:15 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:21:15 CARTS-SERVICE [error] : error en addToCart de controlador Cannot read properties of null (reading 'toString')
+24-06-01 18:24:19 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:24:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:24:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:24:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:24:19 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:24:19 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:24:19 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:24:19 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:24:55 GLOBAL [path] : GET en /api/users/cart
+24-06-01 18:24:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:24:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 18:24:55 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 18:24:59 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:24:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:24:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:24:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:25:06 GLOBAL [path] : GET en /api/users/cart
+24-06-01 18:25:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:25:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 18:25:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:25:06 USER-SERVICE [method] : getCart
+24-06-01 18:25:06 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 18:25:06 USER-SERVICE [method] : findCart
+24-06-01 18:26:03 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:26:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:26:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:26:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:26:03 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:26:03 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:26:03 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:26:03 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:26:21 GLOBAL [path] : GET en /api/users/cart
+24-06-01 18:26:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:26:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-01 18:26:21 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:26:21 USER-SERVICE [method] : getCart
+24-06-01 18:26:21 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-01 18:26:21 USER-SERVICE [method] : findCart
+24-06-01 18:27:50 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:27:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:27:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:27:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:27:50 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:27:50 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:27:50 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:27:50 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:29:12 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:29:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:29:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:29:12 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 18:29:18 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:29:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:29:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:29:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:29:22 GLOBAL [path] : GET en /api/carts/
+24-06-01 18:29:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:29:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-01 18:29:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:29:22 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-01 18:29:28 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:29:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:29:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:29:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:29:28 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:29:28 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:29:28 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:29:28 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:30:16 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:30:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:30:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:30:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:30:16 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:30:16 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:30:16 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:30:16 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:30:56 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:30:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:30:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:30:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:30:56 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:30:56 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:30:56 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:30:56 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:32:59 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:32:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:32:59 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:32:59 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:32:59 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:33:00 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:33:00 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:34:08 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:34:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:34:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:34:08 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 18:34:14 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:34:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:34:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:34:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:34:18 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:34:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:34:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:34:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:34:18 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:34:18 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:34:18 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:34:18 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:36:34 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:36:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:36:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:36:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:36:34 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:36:34 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:36:34 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:36:34 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:40:56 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:40:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:40:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:40:56 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 18:41:01 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:41:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:41:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:41:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:41:11 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:41:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:41:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:41:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:41:11 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:41:11 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:41:11 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:41:11 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:44:02 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:44:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:44:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:44:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:44:02 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:44:02 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:44:02 CARTS-SERVICE [error] : error en addToCart de controlador pid.toHexString is not a function
+24-06-01 18:45:08 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:45:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:45:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:45:08 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 18:45:12 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:45:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:45:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:45:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:45:15 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:45:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:45:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:45:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:45:15 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:45:15 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:45:15 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:45:15 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:47:56 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:47:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:47:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:47:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:47:56 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:47:56 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:47:56 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b966bb87c882c88d379b0"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:47:56 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:55:14 GLOBAL [path] : POST en /api/users/login
+24-06-01 18:55:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:55:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 18:55:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 18:55:20 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:55:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:55:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:55:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:55:20 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:55:20 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:55:20 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b966bb87c882c88d379b0"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b970ccee71a0a7a70002d"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:55:20 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 18:58:37 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 18:58:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 18:58:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 18:58:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 18:58:37 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 18:58:37 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 18:58:37 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b966bb87c882c88d379b0"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b970ccee71a0a7a70002d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b98c8f471675bcbb85408"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 18:58:37 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 19:00:03 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 19:00:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 19:00:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 19:00:03 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-01 19:00:08 GLOBAL [path] : POST en /api/users/login
+24-06-01 19:00:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 19:00:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-01 19:00:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-01 19:00:15 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 19:00:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 19:00:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 19:00:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 19:00:15 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 19:00:15 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 19:00:15 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b966bb87c882c88d379b0"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b970ccee71a0a7a70002d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b98c8f471675bcbb85408"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b998dfdaeb31fdddc8fb1"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 19:00:15 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-01 19:01:34 GLOBAL [path] : POST en /api/carts/665b6c09e67fcac47f1e4812/product/65fb8739d974060df5f5f68e
+24-06-01 19:01:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-01 19:01:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-01 19:01:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-01 19:01:34 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65fb8739d974060df5f5f68e; Id carrito: 665b6c09e67fcac47f1e4812
+24-06-01 19:01:34 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665b6c09e67fcac47f1e4812, Id de producto: 65fb8739d974060df5f5f68e
+24-06-01 19:01:34 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"665b6c09e67fcac47f1e4812","cart":[{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b86eea430e1e9b31ece39"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91838e0558e08f1244bb"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b91ebfcb2d0070ca7670d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92565acdd8ef5232827e"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92b87812998a0eae75ca"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b92e8b7e730cc651d7e0c"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b9310940ff048d1e12be4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b938cc62669c14c711d3d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b93da6f884ed1d53b2fb4"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b94626f784667e9eaadc9"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b957780595af0caf2ad5b"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b966bb87c882c88d379b0"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b970ccee71a0a7a70002d"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b98c8f471675bcbb85408"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b998dfdaeb31fdddc8fb1"},{"product":"65fb8739d974060df5f5f68e","qty":1,"_id":"665b99ef70b1dc883fe754bb"},{"product":"65fb8739d974060df5f5f68e","qty":1}],"__v":0}
+24-06-01 19:01:34 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}

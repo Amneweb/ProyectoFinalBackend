@@ -39,12 +39,14 @@ export default class UsersController {
   getCart = async (req, res) => {
     const email = req.user.email;
     logger.method("getCart");
+    logger.debug("Buscando carrito de usuario con email %s", email);
     try {
       const carrito = await this.#userService.findCart(email);
 
       res.sendSuccess(carrito);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error("Error: %s", e.message);
+      res.sendClientError("error en get cart", e);
     }
   };
   addCart = async (req, res) => {
@@ -99,26 +101,26 @@ export default class UsersController {
   };
 
   register = async (req, res) => {
-    const {
-      userName,
-      userLastName,
-      userEmail,
-      userAge,
-      userPassword,
-      userRole,
-    } = req.body;
+    const { userName, userLastName, userEmail, userAge, userPassword } =
+      req.validatedData;
+    logger.debug(
+      "Datos que llegan luego de la validación del formulario de login %j",
+      req.validatedData
+    );
+
     try {
-      const registrado = this.#userService.save({
+      const registrado = await this.#userService.save({
         userName,
         userLastName,
         userEmail,
         userAge,
         userPassword,
-        userRole,
       });
+      logger.debug("se ha creado el usuario %j", registrado);
       res.sendSuccess(registrado);
     } catch (e) {
-      res.sendClientError(e);
+      logger.error("No se pudo crear el usuario %s", e.message);
+      res.sendClientError(e.message);
     }
   };
 

@@ -1,6 +1,7 @@
 import { cartDAO, productDAO } from "../utils/factory.js";
 import { BadRequestError } from "../utils/errors.js";
 import { validateId } from "../utils/product.validator.js";
+import { cartsLogger as logger } from "../config/logger.config.js";
 class CartManager {
   //carrito vacío
   addCart = async () => {
@@ -32,44 +33,56 @@ class CartManager {
   };
 
   //agregar producto a un carrito específico
-  addProductToCartID = async (id, productID) => {
-    if (!validateId(id)) {
+  addProductToCartID = async (cid, pid) => {
+    logger.debug(
+      "En carts service | Id de carrito: %s, Id de producto: %s",
+      cid,
+      pid
+    );
+
+    if (!validateId(cid)) {
+      console.log("error de validacion de id de carrito");
       throw new BadRequestError(
-        `El id ${id} del carrito buscado no corresponde a un id válido`
+        `El id ${pid} del carrito buscado no corresponde a un id válido`
       );
     }
-    if (!validateId(productID)) {
+    if (!validateId(pid)) {
+      console.log("error de validacion de id de producto");
       throw new BadRequestError(
-        `El id ${productID} del producto buscado no es válido`
+        `El id ${pid} del producto buscado no es válido`
       );
     }
     console.log("en add product to cart");
 
-    let carritoBuscado = await cartDAO.findById(id);
+    let carritoBuscado = await cartDAO.findByID(cid);
+    console.log("carrito buscado luego de cart dao ", carritoBuscado);
     if (!carritoBuscado) {
-      throw new BadRequestError(`No se encontró ningún carrito con id ${id}`);
+      throw new BadRequestError(`No se encontró ningún carrito con id ${cid}`);
     }
-    const producto = await productDAO.findById(productID);
+    const producto = await productDAO.findByID(pid);
 
     //para verificar que exista un producto con ese id
     if (!producto) {
       console.log("adentro de if producto ");
-      throw new BadRequestError(
-        `No existe ningún producto con id ${productID}`
-      );
+      throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
-
-    const productIndex = carritoBuscado.cart.findIndex(
-      (productItem) => productItem.product._id.toString() === productID
-    );
-
+    console.log("pid directo del req", pid);
+    const productIndex = carritoBuscado.cart.findIndex((productItem) => {
+      console.log(productItem.product);
+      console.log(productItem.product.toString());
+      productItem.product.toString() == pid;
+    });
+    console.log("product index", productIndex);
     if (productIndex === -1) {
-      carritoBuscado.cart.push({ product: productID, qty: 1 });
+      carritoBuscado.cart.push({ product: pid, qty: 1 });
     } else {
       carritoBuscado.cart[productIndex].qty++;
     }
-
-    return await cartDAO.update(id, carritoBuscado);
+    logger.debug(
+      "carrito buscado luego de la transformacion %j",
+      carritoBuscado
+    );
+    return await cartDAO.update(cid, carritoBuscado.cart);
   };
 
   //borrar carrito
@@ -79,11 +92,11 @@ class CartManager {
         `El id ${id} del carrito buscado no corresponde a un id válido`
       );
     }
-    const carritoBuscado = cartDAO.findById(id);
+    const carritoBuscado = await cartDAO.findByID(id);
     if (!carritoBuscado) {
       throw new BadRequestError("El carrito buscado no existe");
     }
-    return await cartDAO.deleteOne(id);
+    return await cartDAO.delete(id);
   };
 
   //borrar producto de un carrito específico (cualquiera sea la cantidad)

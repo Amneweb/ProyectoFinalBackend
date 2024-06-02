@@ -1,41 +1,38 @@
-import ProductManager from "../services/products.service.js";
 import CartManager from "../services/carts.service.js";
-import TicketManager from "../services/tickets.service.js";
+
 import UserManager from "../services/users.service.js";
-import {
-  BadRequestError,
-  UnauthorizedError,
-  ForbiddenError,
-  NotFoundError,
-  InternalServerError,
-} from "../utils/errors.js";
+import { cartsLogger as logger } from "../config/logger.config.js";
+import { BadRequestError, InternalServerError } from "../utils/errors.js";
 
 import { sendEmail } from "../utils/utils.js";
 import pc from "picocolors";
-import { v4 as uuidv4 } from "uuid";
 export default class CartController {
   #cartManager;
-  #productManager;
-  #ticketManager;
   #userManager;
   constructor() {
     this.#cartManager = new CartManager();
-    this.#productManager = new ProductManager();
-    this.#ticketManager = new TicketManager();
     this.#userManager = new UserManager();
   }
   getOne = async (req, res) => {
+    logger.method("getOne");
     try {
       const result = await this.#cartManager.getCartByID(req.params.cid);
       if (!result) {
+        logger.error("El carrito con id %s no existe", req.params.cid);
         throw new BadRequestError("El carrito no existe");
       }
       res.sendSuccess(result);
     } catch (e) {
+      logger.error("error enviado al cliente: %s", e.message);
       res.sendClientError(e);
     }
   };
   getCarts = async (req, res) => {
+    req.logger.path(
+      `Probando getCarts en req logger ${(req.method, req.path)}`
+    );
+    logger.debug("en getCarts de controlador");
+
     try {
       const result = await this.#cartManager.getCarts();
       res.sendSuccess(result);
@@ -63,16 +60,25 @@ export default class CartController {
   };
 
   addToCart = async (req, res) => {
-    const cartID = req.params.cid;
-    const prodID = req.params.pid;
-
+    const cid = req.params.cid;
+    const pid = req.params.pid;
+    logger.debug(
+      "Dentro del controlador de carritos. Id producto: %s; Id carrito: %s",
+      pid,
+      cid
+    );
     try {
       const carritoModificado = await this.#cartManager.addProductToCartID(
-        cartID,
-        prodID
+        cid,
+        pid
+      );
+      logger.debug(
+        "carrito modificado luego de agregado el producto: %j",
+        carritoModificado
       );
       res.sendSuccess(carritoModificado);
     } catch (e) {
+      logger.error("error en addToCart de controlador %s", e.message);
       res.sendClientError(e);
     }
   };
@@ -83,6 +89,7 @@ export default class CartController {
       );
       return res.sendSuccess(carritoBorrado);
     } catch (e) {
+      logger.error("error en deleteCart de controlador %s", e.message);
       return res.sendClientError(e);
     }
   };

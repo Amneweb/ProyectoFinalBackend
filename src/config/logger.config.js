@@ -85,6 +85,12 @@ export const productsLogger = createLogger({
   transports: [settings.transportConsole, settings.transportFile],
   defaultMeta: { component: "product-service" },
 });
+export const cartsLogger = createLogger({
+  levels: settings.levels,
+  level: settings.level,
+  transports: [settings.transportConsole, settings.transportFile],
+  defaultMeta: { component: "carts-service" },
+});
 export const customLogger = createLogger({
   levels: settings.levels,
   level: settings.level,
