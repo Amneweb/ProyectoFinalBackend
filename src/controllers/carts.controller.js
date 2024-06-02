@@ -107,17 +107,18 @@ export default class CartController {
     }
   };
   purchase = async (req, res) => {
-    const user = req.user.email;
-    const cartID = req.params.cid;
+    const email = req.user.email;
+    const cid = req.params.cid;
     console.log("req completo ", req.params);
     console.log("en controller purchase");
     console.log(pc.bgGreen("req user " + req.user.email));
     console.log(pc.bgYellow("req id" + req.params.cid));
     try {
-      const ticket = await this.#cartManager.purchase(user, cartID);
-      const email = sendEmail(ticket);
+      const ticket = await this.#cartManager.purchase(email, cid);
+      const emailMethod = sendEmail(ticket);
       res.sendSuccess(ticket);
     } catch (e) {
+      logger.error("Error dentro de purchase en controller %s", e.message);
       res.sendClientError(e);
     }
   };

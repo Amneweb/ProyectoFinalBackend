@@ -85,7 +85,7 @@ export default class UsersController {
       //TODO: el login me tiene que devolver el access token
       res
         .cookie("token_login", access_token, {
-          maxAge: 240000,
+          maxAge: 600000,
           httpOnly: true,
         })
         .send({

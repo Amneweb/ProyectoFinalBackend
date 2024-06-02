@@ -18,6 +18,13 @@ class CartDAO {
     console.log("en dao find by id");
     return await this.#model.findById(id).lean();
   };
+  findAndPopulate = async (id) => {
+    console.log("en dao find by id");
+    return await this.#model
+      .findById(id)
+      .populate("cart.product", ["stock", "price"]);
+  };
+
   update = async (id, nuevoCarrito) => {
     return await this.#model.updateOne(
       { _id: id },

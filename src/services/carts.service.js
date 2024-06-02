@@ -1,8 +1,17 @@
 import { cartDAO, productDAO } from "../utils/factory.js";
+import TicketDAO from "./daos/mongo/tickets/tickets.mongo.dao.js";
 import { BadRequestError } from "../utils/errors.js";
+import { v4 as uuidv4 } from "uuid";
 import { validateId } from "../utils/product.validator.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
+import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
+import pc from "picocolors";
 class CartManager {
+  constructor() {
+    this.ticketDAO = new TicketDAO();
+    this.userDAO = new UserDAO();
+  }
+
   //carrito vacío
   addCart = async () => {
     let newCarrito = {
@@ -67,11 +76,24 @@ class CartManager {
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
     console.log("pid directo del req", pid);
-    const productIndex = carritoBuscado.cart.findIndex((productItem) => {
+    /*let i = -1;
+    if (carritoBuscado.length>0) {
+      for (i = 0; i < carritoBuscado.cart.length; i++) {
+        if (carritoBuscado.cart[i].product.toString() === pid) {
+          console.log("yes");
+          return i;
+        }
+      }
+    }
+    */
+
+    const productIndex = carritoBuscado.cart.indexOf((productItem) => {
       console.log(productItem.product);
       console.log(productItem.product.toString());
+      console.log(productItem.product.toString() === pid);
       productItem.product.toString() === pid;
     });
+
     console.log("product index", productIndex);
     if (productIndex === -1) {
       carritoBuscado.cart.push({ product: pid, qty: 1 });
@@ -82,6 +104,7 @@ class CartManager {
       "carrito buscado luego de la transformacion %j",
       carritoBuscado
     );
+
     return await cartDAO.update(cid, carritoBuscado.cart);
   };
 
@@ -159,12 +182,11 @@ class CartManager {
     return await cartDAO.update(id, carritoBuscado);
   };
 
-  purchase = async (cartID, user) => {
-    const carritoComprado = await this.cartDAO
-      .findById(cartID)
-      .populate("cart.product", ["stock", "price"]);
-
+  purchase = async (email, cid) => {
+    const carritoComprado = await cartDAO.findAndPopulate(cid);
+    logger.debug("carrito comprado luego del populate %j", carritoComprado);
     if (!carritoComprado) {
+      logger.error("no se encontró el carrito comprado");
       throw new BadRequestError("No se encontró el carrito");
     }
     let carritoRemanente = [];
@@ -193,28 +215,28 @@ class CartManager {
     });
 
     if (carritoRemanente.length > 0) {
-      const carritoActualizado = await this.cartDAO.updateCart(
-        cartID,
+      const carritoActualizado = await cartDAO.updateCart(
+        cid,
         carritoRemanente
       );
     } else {
-      console.log("lo que mando al user manager", user);
-      const filter = "userCartID";
-      const value = [];
-      await this.userDAO.update(user, filter, value);
-      await this.cartDAO.delete(cartID);
+      console.log("lo que mando al user manager", email);
+      //const filter = "userCartID";
+      //const value = [];
+      await this.userDAO.update(email);
+      await cartDAO.delete(cid);
     }
 
     const ticket = {
       order: order,
       amount: amount,
-      purchaser: user.email,
+      purchaser: email,
       code: uuidv4(),
     };
 
     console.log(pc.bgRed("ticket a enviar"));
 
-    const ticketCreado = await this.ticketDAO.createTicket(ticket);
+    const ticketCreado = await this.ticketDAO.create(ticket);
     return ticketCreado;
   };
 }

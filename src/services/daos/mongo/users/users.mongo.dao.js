@@ -31,5 +31,11 @@ class UserDAO {
   findOne = async (email) => {
     return await this.#model.findOne({ userEmail: email });
   };
+  update = async (email) => {
+    return await this.#model.updateOne(
+      { userEmail: email },
+      { $set: { userCartID: [] } }
+    );
+  };
 }
 export default UserDAO;
