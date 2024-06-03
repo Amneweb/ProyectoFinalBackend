@@ -4,7 +4,6 @@ import UserManager from "../services/users.service.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 
-import { sendEmail } from "../utils/utils.js";
 import pc from "picocolors";
 export default class CartController {
   #cartManager;
@@ -115,7 +114,7 @@ export default class CartController {
     console.log(pc.bgYellow("req id" + req.params.cid));
     try {
       const ticket = await this.#cartManager.purchase(email, cid);
-      const emailMethod = sendEmail(ticket);
+
       res.sendSuccess(ticket);
     } catch (e) {
       logger.error("Error dentro de purchase en controller %s", e.message);

@@ -169,4 +169,46 @@ export default class UsersController {
       );
     }
   };
+  recoverPassword = async (req, res) => {
+    const token = req.params.tid;
+    const cookie = req.cookies["email_recovery_expiration"];
+    if (!cookie) {
+      throw new Error("el tiempo ha expirado. Volvé a intentarlo");
+    }
+    try {
+      const emailRecibido = await this.#userService.recovery(token, cookie);
+      res.sendSuccess(
+        `Token y cookie son iguales, ahora renderizo el formulario para cargar el password nuevo para el email ${emailRecibido}. En postman, ir a Ingreso nuevo password`
+      );
+    } catch (e) {
+      res.sendBadClientError(e.message);
+    }
+  };
+
+  newpassword = async (req, res) => {
+    const email = req.body.email;
+    const pass = req.body.pass;
+    const cookie = req.cookies["email_recovery_expiration"];
+
+    try {
+      if (!cookie) {
+        throw new Error(
+          "el tiempo ha expirado. Volvé a intentarlo. Acá va el enlace a la página de recupero de contraseña"
+        );
+      }
+      const modificado = await this.#userService.verify(email, pass);
+      res.sendSuccess(
+        "El password para el usuario con email " +
+          modificado.userEmail +
+          " se ha guardado con éxito, ya podés loguearte nuevamente"
+      );
+      logger.debug(
+        "el password se ha guardado con éxito, ya podés loguearte nuevamente. %s",
+        modificado.email
+      );
+    } catch (e) {
+      logger.error("no se pudo guardar el password %s", e.message);
+      res.sendClientError("no se ha podido guardar el password", e);
+    }
+  };
 }

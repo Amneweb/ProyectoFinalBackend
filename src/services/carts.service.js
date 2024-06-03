@@ -5,11 +5,13 @@ import { v4 as uuidv4 } from "uuid";
 import { validateId } from "../utils/product.validator.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
+import MailingService from "./emails.service.js";
 import pc from "picocolors";
 class CartManager {
   constructor() {
     this.ticketDAO = new TicketDAO();
     this.userDAO = new UserDAO();
+    this.mailer = new MailingService();
   }
 
   //carrito vacío
@@ -76,16 +78,6 @@ class CartManager {
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
     console.log("pid directo del req", pid);
-    /*let i = -1;
-    if (carritoBuscado.length>0) {
-      for (i = 0; i < carritoBuscado.cart.length; i++) {
-        if (carritoBuscado.cart[i].product.toString() === pid) {
-          console.log("yes");
-          return i;
-        }
-      }
-    }
-    */
 
     const productIndex = carritoBuscado.cart.indexOf((productItem) => {
       console.log(productItem.product);
@@ -221,8 +213,7 @@ class CartManager {
       );
     } else {
       console.log("lo que mando al user manager", email);
-      //const filter = "userCartID";
-      //const value = [];
+
       await this.userDAO.update(email);
       await cartDAO.delete(cid);
     }
@@ -237,6 +228,16 @@ class CartManager {
     console.log(pc.bgRed("ticket a enviar"));
 
     const ticketCreado = await this.ticketDAO.create(ticket);
+
+    const html = `<div><h3> Código de tu compra: ${ticketCreado.code} </h3><p>Total de la compra: ${ticketCreado.amount}</p><p>Fecha de compra: ${ticketCreado.purchase_datetime} </p></div>`;
+    const mailOptions = {
+      to: ticketCreado.purchaser,
+      subject: "Gracias por comprar en Baterías Windward",
+      html: html,
+      attachments: [],
+    };
+
+    await this.mailer.sendEmail({ ...mailOptions });
     return ticketCreado;
   };
 }

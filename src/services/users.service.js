@@ -1,8 +1,10 @@
 import { userMongoDAO as userDAO } from "./daos/mongo/index.js";
+import jwt from "jsonwebtoken";
 import { cartDAO } from "../utils/factory.js";
 import { BadRequestError } from "../utils/errors.js";
 import { validateUser } from "../utils/user.validator.js";
 import { userLogger as logger } from "../config/logger.config.js";
+import { environmentConfig } from "../config/environment.config.js";
 import {
   isValidPassword,
   generateJWToken,
@@ -112,7 +114,7 @@ export default class UserService {
     }
     if (!isValidPassword(userPassword, user.userPassword)) {
       console.warn("Invalid credentials for user: " + userEmail);
-      return BadRequestError("El usuario y la contraseña no coinciden!");
+      return new BadRequestError("El usuario y la contraseña no coinciden!");
     }
 
     const tokenUser = {
@@ -125,5 +127,38 @@ export default class UserService {
     console.log("token generado ", access_token);
 
     return access_token;
+  };
+  recovery = async (token, cookie) => {
+    if (token === cookie) {
+      //verifico el contenido del token
+      const jwtInfo = jwt.verify(token, environmentConfig.SERVER.JWT.SECRET);
+      console.log("email extraido de jwt", jwtInfo);
+      return jwtInfo.user.email;
+    } else {
+      return new BadRequestError("el email no es el que hizo la petición");
+    }
+  };
+  verify = async (email, pass) => {
+    const usuarioEncontrado = await userDAO.findOne(email);
+    logger.debug(
+      "usuario obtenido para modificar password %j",
+      usuarioEncontrado
+    );
+    if (!usuarioEncontrado) {
+      throw new BadRequestError("no se encontró el usuario con email " + email);
+    }
+    const hasheado = createHash(pass);
+    console.log("hasheado", hasheado);
+    console.log("original ", usuarioEncontrado.userPassword);
+
+    if (isValidPassword(pass, usuarioEncontrado.userPassword)) {
+      throw new BadRequestError(
+        "El password no puede repetirse, por favor ingresá un password diferente al anterior"
+      );
+    }
+
+    usuarioEncontrado["userPassword"] = hasheado;
+    await usuarioEncontrado.save();
+    return usuarioEncontrado;
   };
 }

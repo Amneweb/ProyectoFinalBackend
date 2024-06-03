@@ -177,7 +177,7 @@ ESTRATEGIA JWT
     }
   });
 };
-const cookieExtractor = (req) => {
+export const cookieExtractor = (req) => {
   let token = null;
   console.log("Entrando a Cookie Extractor");
   if (req && req.cookies) {
