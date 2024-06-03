@@ -1,5 +1,23 @@
 # ProyectoFinalBackend
 
+## Desafío recuperación de contraseña
+
+Se ha implementado un método de recuperación de contraseña en 3 pasos
+
+- El cliente visita la página de recuperación de contraseña, carga su dirección de correo y el sistema le envía un correo con un link
+- El cliente hace click en el link y es dirigido a una página en donde ingresa un nuevo password
+- Si el password es distinto al anterior, se guarda en el sistema, si no, es rechazado
+
+**Controles en cada uno de los pasos**
+
+- Cuando el cliente carga su dirección de correo, primero se verifica que corresponda a un cliente registrado
+- En el momento en que se envía el formulario que da la orden del envío del correo, se genera una cookie con una vida de 1 hora (en el ejemplo la hice de 10 minutos)
+- En la cookie se guarda un jwt token que tiene el email del usuario
+- Ese token se agrega como parámetro en la ruta del enlace que recibe el usuario por correo
+- Cuando el usuario hace click en el enlace, en el endpoint se verifica que la cookie todavía exista y que el token guardado en la cookie sea el mismo que el que llega por parámetro.
+- Si son iguales, el correo guardado en el token es el que se renderiza en el último paso, cuando se le pide al usuario que ingrese un nuevo password
+- Antes de guardar el password en la BDD, se verifica que no sea igual al anterior
+
 ## Tercer entrega actualizada (incluye mocking, factory y winston)
 
 > [!TIP]
