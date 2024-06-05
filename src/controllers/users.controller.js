@@ -82,6 +82,10 @@ export default class UsersController {
         userEmail,
         userPassword
       );
+      logger.debug(
+        "El usuario que se quiere loguear tiene email: %s",
+        userEmail
+      );
       //TODO: el login me tiene que devolver el access token
       res
         .cookie("token_login", access_token, {
@@ -95,7 +99,10 @@ export default class UsersController {
         });
     } catch (error) {
       console.error(error);
-
+      logger.error(
+        "Ha habido un error interno al tratar de loguear al usuario con email %s",
+        userEmail
+      );
       return res.sendInternalServerError(error);
     }
   };

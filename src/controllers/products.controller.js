@@ -69,7 +69,18 @@ export default class ProductsController {
 
   postOne = async (req, res) => {
     const nuevo = req.validatedData;
+    logger.debug("usuario en controlador de productos %s", req.user);
+    console.log("req user role", req.user.role.toUpperCase());
+    if (req.user.role.toUpperCase() === "PREMIUM") {
+      const owner = req.user.email;
+    }
 
+    const owner = req.user.role.toUpperCase() === "PREMIUM" && req.user.email;
+    logger.debug("owner en controlador %s", owner);
+    logger.debug(
+      "datos para crear producto que llegan al controlador %j",
+      req.validatedData
+    );
     if (!nuevo) {
       logger.error(
         "Error de validación de datos al tratar de crear un producto nuevo: %s",
@@ -85,7 +96,9 @@ export default class ProductsController {
       const product = {
         ...nuevo,
         thumb: imagen,
+        ...(owner && { owner: owner }),
       };
+
       const result = await this.#productManager.addProduct(product);
       logger.debug("El producto se agregó correctamente con id %s", result._id);
       res.sendSuccess(result);
@@ -99,8 +112,9 @@ export default class ProductsController {
 
   deleteOne = async (req, res) => {
     const id = req.params.id;
+    const userEmail = req.user.email;
     try {
-      const result = await this.#productManager.deleteProduct(id);
+      const result = await this.#productManager.deleteProduct(id, userEmail);
       logger.debug(`El producto con id ${id} se borró exitosamente`);
       res.sendSuccess(result);
     } catch (e) {

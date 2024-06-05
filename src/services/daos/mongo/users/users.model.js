@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
   },
   userAge: Number,
-  userPassword: String, //Se deja plano por el momento.
+  userPassword: String,
   userRole: {
     type: String,
     enum: ["user", "admin", "premium"],

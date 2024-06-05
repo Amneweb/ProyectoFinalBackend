@@ -1,6 +1,7 @@
 import multer from "multer";
 import __dirname from "../../dirname.js";
 import bcrypt from "bcrypt";
+import UserService from "../services/users.service.js";
 import { environmentConfig } from "../config/environment.config.js";
 import jwt from "jsonwebtoken";
 import passport from "passport";
@@ -82,6 +83,15 @@ export const validateUserFormData = (req, res, next) => {
   req.validatedData = datosConvertidos;
   console.log("en user validator", datosConvertidos);
 
+  next();
+};
+
+export const obtenerUserID = async (req, res, next) => {
+  const rol = req.user.role;
+  if (rol.toUpperCase() === "PREMIUM") {
+    const userService = new UserService();
+    req.owner = await userService.findByUsername(req.user.email)._id;
+  }
   next();
 };
 

@@ -20,25 +20,9 @@ class ProductDAO {
     return products;
   };
 
-  create = async ({
-    title,
-    description,
-    code,
-    price,
-    category,
-    thumb,
-    status,
-    stock,
-  }) => {
+  create = async ({ ...arg }) => {
     return await this.#model.create({
-      title,
-      description,
-      code,
-      price,
-      category,
-      thumb,
-      status,
-      stock,
+      ...arg,
     });
   };
   findByID = async (id) => {

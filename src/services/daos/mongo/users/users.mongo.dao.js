@@ -17,7 +17,6 @@ class UserDAO {
     userAge,
     userName,
     userLastName,
-    userRole,
   }) => {
     return await this.#model.create({
       userEmail,
@@ -25,7 +24,6 @@ class UserDAO {
       userAge,
       userName,
       userLastName,
-      userRole,
     });
   };
   findOne = async (email) => {

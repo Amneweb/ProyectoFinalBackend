@@ -1,5 +1,5 @@
 import { uploader, validateModifiedData } from "../utils/utils.js";
-import { validateFormData } from "../utils/utils.js";
+import { validateFormData, obtenerUserID } from "../utils/utils.js";
 import CustomRouter from "./custom/custom.router.js";
 import ProductController from "../controllers/products.controller.js";
 import pc from "picocolors";
@@ -15,16 +15,23 @@ export default class ProductsRouter extends CustomRouter {
     this.post(
       "/",
       ["ADMIN", "PREMIUM"],
+
       uploader.single("imagen"),
       validateFormData,
       productController.postOne
     );
 
-    this.delete("/:id", ["ADMIN", "PREMIUM"], productController.deleteOne);
+    this.delete(
+      "/:id",
+      ["ADMIN", "PREMIUM"],
+      obtenerUserID,
+      productController.deleteOne
+    );
 
     this.put(
       "/:id",
       ["ADMIN", "PREMIUM"],
+      obtenerUserID,
       validateModifiedData,
       productController.modifyOne
     );

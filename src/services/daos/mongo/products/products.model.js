@@ -22,6 +22,10 @@ const productSchema = new mongoose.Schema({
   st: { type: Boolean, required: true, default: true },
   category: Array,
   thumb: Array,
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "users",
+  },
 });
 productSchema.plugin(mongoosePagination);
 const productModel = mongoose.model(PRODUCTS_COLLECTION, productSchema);

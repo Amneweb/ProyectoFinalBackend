@@ -148,8 +148,6 @@ export default class UserService {
       throw new BadRequestError("no se encontró el usuario con email " + email);
     }
     const hasheado = createHash(pass);
-    console.log("hasheado", hasheado);
-    console.log("original ", usuarioEncontrado.userPassword);
 
     if (isValidPassword(pass, usuarioEncontrado.userPassword)) {
       throw new BadRequestError(
