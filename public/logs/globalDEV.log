@@ -1322,3 +1322,1098 @@
 24-06-05 18:43:10 PRODUCT-SERVICE [debug] : Resultado de la validacion {"success":true,"data":{"title":"Clorex 325 Ximena","price":115000,"category":["CLOREX"],"description":"12x65 Amp/h","code":"CL32565RXFC","stock":1,"st":true,"thumb":[]}}
 24-06-05 18:43:10 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
 24-06-05 18:43:10 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6660dbeecefca1f6d5fc262c
+24-06-06 06:49:31 GLOBAL [path] : POST en /api/users/login
+24-06-06 06:49:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:49:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-06 06:49:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-06 06:49:31 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-06 06:49:42 GLOBAL [path] : GET en /api/products/
+24-06-06 06:49:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:49:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-06 06:49:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-06 06:49:43 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-06 06:49:57 GLOBAL [path] : POST en /api/products
+24-06-06 06:49:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:49:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-06 06:49:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:49:57 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-06 06:49:57 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-06 06:49:57 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-06 06:49:57 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-06 06:49:57 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Ya existe un producto con el código CL32565RXFC
+24-06-06 06:50:12 GLOBAL [path] : GET en /api/products/
+24-06-06 06:50:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:50:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-06 06:50:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-06 06:50:12 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-06 06:50:52 GLOBAL [path] : DELETE en /api/products/owner/6660dbeecefca1f6d5fc262c
+24-06-06 06:50:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:50:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PREMIUM' ]
+24-06-06 06:50:52 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:50:52 PRODUCT-SERVICE [debug] : El producto con id 6660dbeecefca1f6d5fc262c se borró exitosamente
+24-06-06 06:52:43 GLOBAL [path] : POST en /api/products
+24-06-06 06:52:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:52:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-06 06:52:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-06 06:52:43 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666186eb3a2b5dca1ad05392
+24-06-06 06:53:00 GLOBAL [path] : DELETE en /api/products/owner/666186eb3a2b5dca1ad05392
+24-06-06 06:53:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:53:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PREMIUM' ]
+24-06-06 06:53:00 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:53:00 PRODUCT-SERVICE [debug] : El producto con id 666186eb3a2b5dca1ad05392 se borró exitosamente
+24-06-06 06:54:03 GLOBAL [path] : POST en /api/products
+24-06-06 06:54:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:54:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-06 06:54:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:54:03 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-06 06:54:03 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-06 06:54:03 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-06 06:54:03 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-06 06:54:03 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-06 06:54:04 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6661873bd648dc45bb646882
+24-06-06 06:54:22 GLOBAL [path] : DELETE en /api/products/owner/6661873bd648dc45bb646882
+24-06-06 06:54:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:54:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PREMIUM' ]
+24-06-06 06:54:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:54:22 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-06 06:54:22 PRODUCT-SERVICE [debug] : El producto con id 6661873bd648dc45bb646882 se borró exitosamente
+24-06-06 06:56:02 GLOBAL [path] : POST en /api/products
+24-06-06 06:56:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:56:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-06 06:56:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-06 06:56:02 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666187b208c5870ff1f51d12
+24-06-06 06:56:15 GLOBAL [path] : DELETE en /api/products/owner/666187b208c5870ff1f51d12
+24-06-06 06:56:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:56:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PREMIUM' ]
+24-06-06 06:56:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:56:15 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-06 06:56:15 PRODUCT-SERVICE [debug] : El producto con id 666187b208c5870ff1f51d12 se borró exitosamente
+24-06-06 06:57:22 GLOBAL [path] : POST en /api/products
+24-06-06 06:57:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:57:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-06 06:57:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:57:22 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-06 06:57:22 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-06 06:57:22 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-06 06:57:22 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-06 06:57:22 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-06 06:57:23 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6661880296663b819b5274f6
+24-06-06 06:57:34 GLOBAL [path] : DELETE en /api/products/owner/6661880296663b819b5274f6
+24-06-06 06:57:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-06 06:57:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PREMIUM' ]
+24-06-06 06:57:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-06 06:57:34 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-06 06:57:34 PRODUCT-SERVICE [debug] : El producto con id 6661880296663b819b5274f6 se borró exitosamente
+24-06-07 06:47:25 GLOBAL [path] : POST en /api/users/login
+24-06-07 06:47:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:47:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 06:47:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 06:47:25 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 06:47:39 GLOBAL [path] : GET en /api/products/
+24-06-07 06:47:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:47:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 06:47:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 06:47:39 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 06:48:06 GLOBAL [path] : POST en /api/products
+24-06-07 06:48:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:48:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 06:48:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 06:48:06 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6662d756f9e669867fd5247f
+24-06-07 06:48:29 GLOBAL [path] : DELETE en /api/products/owner/6662d756f9e669867fd5247f
+24-06-07 06:48:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:48:44 GLOBAL [path] : DELETE en /api/products/6662d756f9e669867fd5247f
+24-06-07 06:48:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:48:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 06:48:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 06:48:44 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-07 06:48:44 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"6662d756f9e669867fd5247f","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 06:48:44 PRODUCT-SERVICE [debug] : El producto con id 6662d756f9e669867fd5247f se borró exitosamente
+24-06-07 06:49:46 GLOBAL [path] : GET en /api/products/
+24-06-07 06:49:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:49:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 06:49:46 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 06:49:46 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 06:50:02 GLOBAL [path] : DELETE en /api/products/65f728af4b180f5047e456c5
+24-06-07 06:50:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:50:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 06:50:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 06:50:02 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-07 06:50:02 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"65f728af4b180f5047e456c5","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 06:50:02 PRODUCT-SERVICE [debug] : El producto con id 65f728af4b180f5047e456c5 se borró exitosamente
+24-06-07 06:50:07 GLOBAL [path] : DELETE en /api/products/65f728af4b180f5047e456c5
+24-06-07 06:50:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 06:50:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 06:50:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 06:50:07 PRODUCT-SERVICE [debug] : product owner en controlador undefined
+24-06-07 06:50:07 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"65f728af4b180f5047e456c5","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 06:50:07 PRODUCT-SERVICE [debug] : El producto con id 65f728af4b180f5047e456c5 se borró exitosamente
+24-06-07 18:37:28 GLOBAL [path] : POST en /api/users/login
+24-06-07 18:37:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:37:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 18:37:28 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 18:37:28 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 18:37:38 GLOBAL [path] : POST en /api/products
+24-06-07 18:37:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:37:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:37:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 18:37:38 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66637da21ad5fafd10bead06
+24-06-07 18:38:59 GLOBAL [path] : DELETE en /api/products/66637da21ad5fafd10bead06
+24-06-07 18:38:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:38:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:38:59 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:38:59 PRODUCT-SERVICE [debug] : product owner en controlador rainxfc@ximena.com
+24-06-07 18:38:59 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"66637da21ad5fafd10bead06","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 18:38:59 PRODUCT-SERVICE [debug] : El producto con id 66637da21ad5fafd10bead06 se borró exitosamente
+24-06-07 18:42:35 GLOBAL [path] : POST en /api/products
+24-06-07 18:42:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:42:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:42:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:42:35 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 18:42:35 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 18:42:35 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-07 18:42:35 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 18:42:36 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 18:42:36 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66637ecc87b9cfa9396b5838
+24-06-07 18:42:50 GLOBAL [path] : DELETE en /api/products/66637ecc87b9cfa9396b5838
+24-06-07 18:42:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:42:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:42:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : product owner en controlador rainxfc@ximena.com
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"66637ecc87b9cfa9396b5838","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : ID del producto a borrar 66637ecc87b9cfa9396b5838
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : id del owner en el objeto Producto undefined
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@ximena.com: undefined
+24-06-07 18:42:50 PRODUCT-SERVICE [debug] : El producto con id 66637ecc87b9cfa9396b5838 se borró exitosamente
+24-06-07 18:45:12 GLOBAL [path] : POST en /api/products
+24-06-07 18:45:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:45:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:45:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:45:12 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 18:45:12 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 18:45:12 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-07 18:45:12 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 18:45:12 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 18:45:13 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66637f68b27d12ce20a7e0b6
+24-06-07 18:45:27 GLOBAL [path] : DELETE en /api/products/66637f68b27d12ce20a7e0b6
+24-06-07 18:45:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:45:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:45:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:45:27 PRODUCT-SERVICE [debug] : product owner en controlador rainxfc@ximena.com
+24-06-07 18:45:27 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"66637f68b27d12ce20a7e0b6","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 18:45:27 PRODUCT-SERVICE [debug] : ID del producto a borrar 66637f68b27d12ce20a7e0b6
+24-06-07 18:45:27 PRODUCT-SERVICE [debug] : id del owner en el objeto Producto undefined
+24-06-07 18:45:27 PRODUCT-SERVICE [debug] : datos del usuario con email rainxfc@ximena.com: {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 18:45:27 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: ownerEmail is not defined
+24-06-07 18:53:58 GLOBAL [path] : POST en /api/users/login
+24-06-07 18:53:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:53:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 18:53:58 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 18:53:58 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 18:54:06 GLOBAL [path] : GET en /api/products/
+24-06-07 18:54:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:54:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 18:54:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 18:54:07 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 18:54:24 GLOBAL [path] : DELETE en /api/products/65fb8923f2ccb2ac1491c18e
+24-06-07 18:54:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:54:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:54:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : product owner en controlador rainxfc@ximena.com
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"65fb8923f2ccb2ac1491c18e","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : ID del producto a borrar 65fb8923f2ccb2ac1491c18e
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : id del owner en el objeto Producto undefined
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : datos del usuario con email rainxfc@ximena.com: undefined
+24-06-07 18:54:24 PRODUCT-SERVICE [debug] : El producto con id 65fb8923f2ccb2ac1491c18e se borró exitosamente
+24-06-07 18:55:28 GLOBAL [path] : GET en /api/products/
+24-06-07 18:55:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:55:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 18:55:28 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 18:55:28 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 18:56:11 GLOBAL [path] : DELETE en /api/products/65f8d63934e4af075dec340b
+24-06-07 18:56:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:56:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 18:56:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : product owner en controlador rainxfc@ximena.com
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : argumentos enviados al servicio para borrar {"id":"65f8d63934e4af075dec340b","ownerEmail":"rainxfc@ximena.com"}
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : ID del producto a borrar 65f8d63934e4af075dec340b
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : id del owner en el objeto Producto undefined
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : datos del usuario con email rainxfc@ximena.com: undefined
+24-06-07 18:56:11 PRODUCT-SERVICE [debug] : El producto con id 65f8d63934e4af075dec340b se borró exitosamente
+24-06-07 18:56:17 GLOBAL [path] : GET en /api/products/
+24-06-07 18:56:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 18:56:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 18:56:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 18:56:17 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 19:35:06 GLOBAL [path] : POST en /api/users/login
+24-06-07 19:35:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:35:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 19:35:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 19:35:06 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 19:35:33 GLOBAL [path] : GET en /api/products/
+24-06-07 19:35:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:35:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 19:35:33 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 19:35:33 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 19:36:03 GLOBAL [path] : DELETE en /api/products/66416406f46b85a5af0f0e80
+24-06-07 19:36:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:36:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 19:36:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 19:36:03 PRODUCT-SERVICE [debug] : ID del producto a borrar 66416406f46b85a5af0f0e80
+24-06-07 19:36:03 PRODUCT-SERVICE [debug] : id del owner en el objeto Producto undefined
+24-06-07 19:36:03 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@ximena.com: undefined
+24-06-07 19:36:03 PRODUCT-SERVICE [debug] : El producto con id 66416406f46b85a5af0f0e80 se borró exitosamente
+24-06-07 19:57:15 GLOBAL [path] : POST en /api/users/login
+24-06-07 19:57:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:57:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 19:57:15 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 19:57:15 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 19:57:40 GLOBAL [path] : POST en /api/products
+24-06-07 19:57:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:57:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 19:57:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 19:57:40 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 19:57:40 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 19:57:40 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":""}
+24-06-07 19:57:40 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 325 Ximena","price":115000,"code":"CL32565RXFC","description":"12x65 Amp/h","st":true,"category":["CLOREX"],"stock":1,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 19:57:40 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Ya existe un producto con el código CL32565RXFC
+24-06-07 19:58:35 GLOBAL [path] : POST en /api/products
+24-06-07 19:58:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:58:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 19:58:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"FW90 RXFC","price":115000,"code":"FW90RXFC","description":"12x75 Amp/h","st":true,"category":["EDNA"],"stock":5,"thumb":""}
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"FW90 RXFC","price":115000,"code":"FW90RXFC","description":"12x75 Amp/h","st":true,"category":["EDNA"],"stock":5,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 19:58:35 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6663909ba31113561480c91b
+24-06-07 19:59:47 GLOBAL [path] : POST en /api/products
+24-06-07 19:59:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:59:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 19:59:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"FW125 RXFC","price":134000,"code":"FW125RXFC","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":""}
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"FW125 RXFC","price":134000,"code":"FW125RXFC","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 19:59:47 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666390e3a31113561480c91f
+24-06-07 19:59:56 GLOBAL [path] : GET en /api/products/
+24-06-07 19:59:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 19:59:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 19:59:56 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 19:59:56 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 20:03:25 GLOBAL [path] : DELETE en /api/products/66637f68b27d12ce20a7e0b6
+24-06-07 20:03:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:03:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 20:03:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 20:03:25 PRODUCT-SERVICE [debug] : ID del producto a borrar 66637f68b27d12ce20a7e0b6
+24-06-07 20:03:25 PRODUCT-SERVICE [error] : El usuario con email rainxfc@ximena.com no es el owner del producto con id 66637f68b27d12ce20a7e0b6
+24-06-07 20:03:25 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@ximena.com no tiene los privilegios para borrar el producto con id 66637f68b27d12ce20a7e0b6
+24-06-07 20:04:29 GLOBAL [path] : DELETE en /api/products/665ee2bc433599ad746fa8ba
+24-06-07 20:04:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:04:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 20:04:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 20:04:29 PRODUCT-SERVICE [debug] : ID del producto a borrar 665ee2bc433599ad746fa8ba
+24-06-07 20:04:29 PRODUCT-SERVICE [error] : El usuario con email rainxfc@ximena.com no es el owner del producto con id 665ee2bc433599ad746fa8ba
+24-06-07 20:04:29 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@ximena.com no tiene los privilegios para borrar el producto con id 665ee2bc433599ad746fa8ba
+24-06-07 20:05:04 GLOBAL [path] : DELETE en /api/products/6663909ba31113561480c91b
+24-06-07 20:05:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:05:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 20:05:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 20:05:04 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663909ba31113561480c91b
+24-06-07 20:05:04 PRODUCT-SERVICE [error] : El usuario con email rainxfc@ximena.com no es el owner del producto con id 6663909ba31113561480c91b
+24-06-07 20:05:04 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@ximena.com no tiene los privilegios para borrar el producto con id 6663909ba31113561480c91b
+24-06-07 20:05:55 GLOBAL [path] : GET en /api/users/currentUser
+24-06-07 20:05:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:05:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-07 20:05:55 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 20:06:06 GLOBAL [path] : POST en /api/users/login
+24-06-07 20:06:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:06:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 20:06:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 20:06:06 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-07 20:06:12 GLOBAL [path] : GET en /api/users/
+24-06-07 20:06:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 20:06:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 20:06:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 20:06:12 USER-SERVICE [method] : getAll
+24-06-07 21:13:21 GLOBAL [path] : POST en /api/users/login
+24-06-07 21:13:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:13:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:13:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:13:21 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 21:14:11 GLOBAL [path] : POST en /api/products
+24-06-07 21:14:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:14:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:14:11 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"FW100 bora RXFC","price":145000,"code":"FW100boraRXFC","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":""}
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"FW100 bora RXFC","price":145000,"code":"FW100boraRXFC","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 21:14:11 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6663a2535122e66c58035424
+24-06-07 21:17:34 GLOBAL [path] : GET en /api/products/
+24-06-07 21:17:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:17:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:17:34 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:17:34 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 21:18:37 GLOBAL [path] : DELETE en /api/products/6643829f96fa24c4ab52b384
+24-06-07 21:18:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:18:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:18:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 21:18:37 PRODUCT-SERVICE [debug] : ID del producto a borrar 6643829f96fa24c4ab52b384
+24-06-07 21:18:37 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-07 21:18:37 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: owner is not defined
+24-06-07 21:21:39 GLOBAL [path] : DELETE en /api/products/6643829f96fa24c4ab52b384
+24-06-07 21:21:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:21:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:21:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 21:21:39 PRODUCT-SERVICE [debug] : ID del producto a borrar 6643829f96fa24c4ab52b384
+24-06-07 21:21:39 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-07 21:21:39 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: owner is not defined
+24-06-07 21:24:40 GLOBAL [path] : DELETE en /api/products/6643829f96fa24c4ab52b384
+24-06-07 21:24:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:24:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:24:40 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-07 21:24:47 GLOBAL [path] : POST en /api/users/login
+24-06-07 21:24:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:24:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:24:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:24:47 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@ximena.com
+24-06-07 21:24:57 GLOBAL [path] : DELETE en /api/products/6643829f96fa24c4ab52b384
+24-06-07 21:24:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:24:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:24:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 21:24:57 PRODUCT-SERVICE [debug] : ID del producto a borrar 6643829f96fa24c4ab52b384
+24-06-07 21:24:57 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-07 21:24:57 PRODUCT-SERVICE [error] : El producto no tiene dueño
+24-06-07 21:24:57 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@ximena.com no tiene los privilegios para borrar el producto con id 6643829f96fa24c4ab52b384
+24-06-07 21:28:08 GLOBAL [path] : POST en /api/users/register
+24-06-07 21:28:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:28:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:28:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:28:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Ximena","userLastName":"Calle","userPassword":"123456","userEmail":"rainxfc@amneweb.com","userAge":24}
+24-06-07 21:28:09 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"user","userCartID":[],"_id":"6663a598a977813109b5a84c","__v":0}
+24-06-07 21:31:20 GLOBAL [path] : POST en /api/products
+24-06-07 21:31:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:31:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:31:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@ximena.com","age":20,"role":"premium"}
+24-06-07 21:31:20 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@ximena.com',
+  age: 20,
+  role: 'premium'
+}
+24-06-07 21:31:20 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@ximena.com
+24-06-07 21:31:20 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"FW100 bora AW","price":145000,"code":"FW100boraAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":""}
+24-06-07 21:31:20 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"FW100 bora AW","price":145000,"code":"FW100boraAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":[],"owner":"rainxfc@ximena.com"}
+24-06-07 21:31:20 PRODUCT-SERVICE [debug] : owner verificado {"_id":"665ee2bc433599ad746fa8ba","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@ximena.com","userAge":20,"userPassword":"$2b$10$RfjSN0DGUbKdibS.b/bl8uTUNCSXxThAOaDEqIe5eWQvqaxdOBPXS","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 21:31:21 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6663a658a977813109b5a850
+24-06-07 21:31:57 GLOBAL [path] : POST en /api/users/login
+24-06-07 21:31:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:31:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:31:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:31:57 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-07 21:38:12 GLOBAL [path] : POST en /api/products
+24-06-07 21:38:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:38:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:38:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"user"}
+24-06-07 21:38:12 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-07 21:44:08 GLOBAL [path] : POST en /api/users/login
+24-06-07 21:44:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:44:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:44:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:44:09 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-07 21:44:15 GLOBAL [path] : GET en /api/products/
+24-06-07 21:44:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:44:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:44:15 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:44:15 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-07 21:47:02 GLOBAL [path] : POST en /api/users/login
+24-06-07 21:47:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:47:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-07 21:47:02 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-07 21:47:02 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-07 21:47:08 GLOBAL [path] : GET en /api/users/currentUser
+24-06-07 21:47:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:47:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-07 21:47:08 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-07 21:48:02 GLOBAL [path] : POST en /api/products
+24-06-07 21:48:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:48:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:48:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@amneweb.com',
+  age: 24,
+  role: 'premium'
+}
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@amneweb.com
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"65 amplus Amneweb","price":80000,"code":"65AMAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":""}
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"65 amplus Amneweb","price":80000,"code":"65AMAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":[],"owner":"rainxfc@amneweb.com"}
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : owner verificado {"_id":"6663a598a977813109b5a84c","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 21:48:02 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6663aa42a977813109b5a859
+24-06-07 21:48:34 GLOBAL [path] : POST en /api/products
+24-06-07 21:48:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:48:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-07 21:48:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@amneweb.com',
+  age: 24,
+  role: 'premium'
+}
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@amneweb.com
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"75 amplus Amneweb","price":85000,"code":"75AMAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":""}
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"75 amplus Amneweb","price":85000,"code":"75AMAW","description":"12x125 Amp/h","st":true,"category":["EDNA"],"stock":3,"thumb":[],"owner":"rainxfc@amneweb.com"}
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : owner verificado {"_id":"6663a598a977813109b5a84c","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"premium","userCartID":[],"__v":0}
+24-06-07 21:48:34 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6663aa62a977813109b5a85d
+24-06-07 21:48:59 GLOBAL [path] : GET en /api/users/currentUser
+24-06-07 21:48:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-07 21:48:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-07 21:48:59 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:21:39 GLOBAL [path] : POST en /api/users/login
+24-06-08 06:21:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:21:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:21:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:21:39 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 06:21:47 GLOBAL [path] : GET en /api/products/
+24-06-08 06:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:21:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:21:47 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 06:22:29 GLOBAL [path] : DELETE en /api/products/65fb8739d974060df5f5f68e
+24-06-08 06:22:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:22:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:22:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:22:29 PRODUCT-SERVICE [debug] : ID del producto a borrar 65fb8739d974060df5f5f68e
+24-06-08 06:22:29 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:22:29 PRODUCT-SERVICE [error] : El producto no tiene dueño
+24-06-08 06:22:29 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 65fb8739d974060df5f5f68e
+24-06-08 06:24:57 GLOBAL [path] : DELETE en /api/products/6663909ba31113561480c91b
+24-06-08 06:24:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:24:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:24:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:24:57 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663909ba31113561480c91b
+24-06-08 06:24:57 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:24:57 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: undefined
+24-06-08 06:24:57 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663909ba31113561480c91b
+24-06-08 06:24:57 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663909ba31113561480c91b
+24-06-08 06:27:28 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 06:27:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:27:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:27:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:27:28 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 06:27:28 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:27:28 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: undefined
+24-06-08 06:27:28 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 06:27:28 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 06:27:57 GLOBAL [path] : POST en /api/users/login
+24-06-08 06:27:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:27:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:27:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:27:58 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 06:28:01 GLOBAL [path] : POST en /api/users/login
+24-06-08 06:28:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:28:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:28:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:28:02 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 06:28:12 GLOBAL [path] : GET en /api/users/
+24-06-08 06:28:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:28:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:28:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:28:12 USER-SERVICE [method] : getAll
+24-06-08 06:29:14 GLOBAL [path] : POST en /api/users/login
+24-06-08 06:29:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:29:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 06:29:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 06:29:14 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 06:29:37 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 06:29:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:29:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:29:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:29:37 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 06:29:37 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:29:37 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: undefined
+24-06-08 06:29:37 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 06:29:37 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 06:33:15 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 06:33:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:33:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:33:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:33:15 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 06:33:15 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:33:16 PRODUCT-SERVICE [debug] : datos del usuario logueado {"_id":"6663a598a977813109b5a84c","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"premium","userCartID":[],"__v":0}
+24-06-08 06:33:16 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 06:33:16 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 06:33:16 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 06:35:23 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 06:35:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 06:35:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 06:35:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 06:35:23 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 06:35:23 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 06:35:23 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 06:35:23 PRODUCT-SERVICE [debug] : datos del usuario logueado {"_id":"6663a598a977813109b5a84c","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"premium","userCartID":[],"__v":0}
+24-06-08 06:35:23 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 06:35:23 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 06:35:23 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 07:08:10 GLOBAL [path] : POST en /api/users/login
+24-06-08 07:08:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:08:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 07:08:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 07:08:11 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 07:08:16 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:08:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:08:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:08:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:08:16 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:08:16 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:08:16 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:08:16 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:08:16 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 07:08:16 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 07:18:37 GLOBAL [path] : POST en /api/users/login
+24-06-08 07:18:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:18:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 07:18:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 07:18:37 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 07:19:33 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:19:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:19:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:19:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:19:33 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:19:33 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:19:33 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:19:33 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:19:33 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 6663aa62a977813109b5a85d
+24-06-08 07:19:33 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 6663aa62a977813109b5a85d
+24-06-08 07:21:05 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:21:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:21:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:21:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:21:05 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:21:05 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:21:05 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:21:05 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:21:05 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.toUpperCase is not a function
+24-06-08 07:21:43 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:21:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:21:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:21:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:21:43 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:21:43 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:21:43 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:21:43 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:21:43 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:26:19 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:26:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:26:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:26:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:26:19 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:26:19 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:26:19 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:26:19 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: typeOf is not defined
+24-06-08 07:27:23 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:27:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:27:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:27:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:27:23 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:27:23 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:27:23 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:27:23 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:27:23 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:28:36 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:28:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:28:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:28:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:28:36 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:28:36 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:28:36 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:28:36 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:28:36 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:29:50 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:29:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:29:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:29:50 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 07:29:55 GLOBAL [path] : POST en /api/users/login
+24-06-08 07:29:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:29:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 07:29:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 07:29:56 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 07:29:58 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:29:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:29:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:29:58 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:29:58 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:29:58 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:29:59 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:29:59 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:29:59 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:30:20 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:30:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:30:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:30:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:30:20 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:30:20 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:30:21 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:30:21 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:30:21 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:30:57 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:30:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:30:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:30:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:30:57 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:30:57 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:30:57 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:30:57 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:30:57 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: productOwner.owner.toUpperCase is not a function
+24-06-08 07:33:41 GLOBAL [path] : DELETE en /api/products/6663aa62a977813109b5a85d
+24-06-08 07:33:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:33:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:33:41 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:33:41 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa62a977813109b5a85d
+24-06-08 07:33:41 PRODUCT-SERVICE [silly] : como no es admin viene por el if
+24-06-08 07:33:41 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:33:41 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:33:41 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-08 07:33:41 PRODUCT-SERVICE [debug] : El producto con id 6663aa62a977813109b5a85d se borró exitosamente
+24-06-08 07:56:35 GLOBAL [path] : GET en /api/products/
+24-06-08 07:56:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:56:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 07:56:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 07:56:35 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 07:56:57 GLOBAL [path] : POST en /api/users/login
+24-06-08 07:56:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:56:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 07:56:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 07:56:57 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 07:57:07 GLOBAL [path] : DELETE en /api/products/6663aa42a977813109b5a859
+24-06-08 07:57:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 07:57:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 07:57:07 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 07:57:07 PRODUCT-SERVICE [debug] : ID del producto a borrar 6663aa42a977813109b5a859
+24-06-08 07:57:07 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 07:57:07 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 07:57:07 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-08 07:57:07 PRODUCT-SERVICE [debug] : El producto con id 6663aa42a977813109b5a859 se borró exitosamente
+24-06-08 08:12:40 GLOBAL [path] : POST en /api/users/login
+24-06-08 08:12:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 08:12:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 08:12:40 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 08:12:40 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: rainxfc@amneweb.com
+24-06-08 08:13:52 GLOBAL [path] : POST en /api/products
+24-06-08 08:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 08:13:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 08:13:52 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Ximena Calle',
+  email: 'rainxfc@amneweb.com',
+  age: 24,
+  role: 'premium'
+}
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : owner en controlador rainxfc@amneweb.com
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"OD29 amplus Amneweb","price":254000,"code":"OD29","description":"12x200 Amp/h","st":true,"category":["EDNA, tractores"],"stock":10,"thumb":""}
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"OD29 amplus Amneweb","price":254000,"code":"OD29","description":"12x200 Amp/h","st":true,"category":["EDNA, tractores"],"stock":10,"thumb":[],"owner":"rainxfc@amneweb.com"}
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : owner verificado {"_id":"6663a598a977813109b5a84c","userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com","userAge":24,"userPassword":"$2b$10$Ffaswacto1PbCaoBmfVe7.GpZrYFQVbqWBmhExr34dggsRhIhodDO","userRole":"premium","userCartID":[],"__v":0}
+24-06-08 08:13:52 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66643cf0550cd1da27ff1b63
+24-06-08 08:14:12 GLOBAL [path] : DELETE en /api/products/66643cf0550cd1da27ff1b63
+24-06-08 08:14:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 08:14:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 08:14:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 08:14:12 PRODUCT-SERVICE [debug] : ID del producto a borrar 66643cf0550cd1da27ff1b63
+24-06-08 08:14:12 PRODUCT-SERVICE [silly] : id del owner del producto 6663a598a977813109b5a84c
+24-06-08 08:14:12 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 08:14:12 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-08 08:14:12 PRODUCT-SERVICE [debug] : El producto con id 66643cf0550cd1da27ff1b63 se borró exitosamente
+24-06-08 08:14:37 GLOBAL [path] : GET en /api/products/
+24-06-08 08:14:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 08:14:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 08:14:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 08:14:37 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 08:15:17 GLOBAL [path] : DELETE en /api/products/666390e3a31113561480c91f
+24-06-08 08:15:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 08:15:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 08:15:17 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Ximena Calle","email":"rainxfc@amneweb.com","age":24,"role":"premium"}
+24-06-08 08:15:17 PRODUCT-SERVICE [debug] : ID del producto a borrar 666390e3a31113561480c91f
+24-06-08 08:15:17 PRODUCT-SERVICE [silly] : id del owner del producto 665ee2bc433599ad746fa8ba
+24-06-08 08:15:17 PRODUCT-SERVICE [debug] : id del usuario con email rainxfc@amneweb.com: 6663a598a977813109b5a84c
+24-06-08 08:15:17 PRODUCT-SERVICE [error] : El usuario con email rainxfc@amneweb.com no es el owner del producto con id 666390e3a31113561480c91f
+24-06-08 08:15:17 PRODUCT-SERVICE [error] : Error al tratar de borrar el producto: El usuario con email rainxfc@amneweb.com no tiene los privilegios para borrar el producto con id 666390e3a31113561480c91f
+24-06-08 09:01:43 GLOBAL [path] : POST en /api/users/login
+24-06-08 09:01:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:01:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 09:01:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 09:01:43 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 09:01:51 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 09:01:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:01:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 09:01:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:01:57 GLOBAL [path] : GET en /api/users/cart
+24-06-08 09:01:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:01:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 09:01:57 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:01:57 USER-SERVICE [method] : getCart
+24-06-08 09:01:57 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 09:01:57 USER-SERVICE [method] : findCart
+24-06-08 09:05:06 GLOBAL [path] : POST en /api/carts/
+24-06-08 09:05:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:05:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:28 GLOBAL [path] : POST en /api/carts/665ce8bdb1c49f434e82181e/product/65ec437503fd3c53d7acc900
+24-06-08 09:05:28 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:28 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:05:28 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:28 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 665ce8bdb1c49f434e82181e
+24-06-08 09:05:28 CARTS-SERVICE [debug] : En carts service | Id de carrito: 665ce8bdb1c49f434e82181e, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:05:28 CARTS-SERVICE [error] : error en addToCart de controlador No se encontró ningún carrito con id 665ce8bdb1c49f434e82181e
+24-06-08 09:05:38 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:05:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:05:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:38 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:05:38 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:05:38 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:05:39 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:05:44 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:05:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:05:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:44 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:05:44 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:05:44 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:05:44 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:05:45 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:05:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:05:45 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:45 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:05:45 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:05:45 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:05:46 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:05:58 GLOBAL [path] : GET en /api/users/cart
+24-06-08 09:05:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:05:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 09:05:58 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:05:58 USER-SERVICE [method] : getCart
+24-06-08 09:05:58 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 09:05:58 USER-SERVICE [method] : findCart
+24-06-08 09:11:46 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:11:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:11:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:11:46 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 09:11:52 GLOBAL [path] : POST en /api/users/login
+24-06-08 09:11:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:11:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 09:11:52 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 09:11:53 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 09:12:00 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:12:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:12:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:12:00 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:12:00 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:12:00 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:12:01 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"}]
+24-06-08 09:12:01 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:12:01 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:15:48 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:15:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:15:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:15:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:15:48 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:15:48 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:15:48 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"}]
+24-06-08 09:15:48 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:15:48 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:18:40 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:18:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:18:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:18:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:18:40 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:18:40 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:18:40 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644b746557dc7c05ff068f"}]
+24-06-08 09:18:40 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644b746557dc7c05ff068f"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:18:40 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:20:55 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:20:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:20:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:20:55 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:20:55 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:20:55 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:20:55 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644b746557dc7c05ff068f"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644c201793015fce300471"}]
+24-06-08 09:20:55 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:20:55 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644912d6c4029a9856ab18"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644918d6c4029a9856ab1d"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644919d6c4029a9856ab23"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644a91947f1dc4263ed07a"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644b746557dc7c05ff068f"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644c201793015fce300471"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:20:55 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:24:38 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:24:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:24:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:24:38 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 09:24:45 GLOBAL [path] : POST en /api/users/login
+24-06-08 09:24:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:24:45 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 09:24:45 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 09:24:45 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 09:24:51 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:24:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:24:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:24:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:24:51 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:24:51 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:24:51 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:24:51 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"}]
+24-06-08 09:24:51 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900"]
+24-06-08 09:24:51 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:24:51 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:27:47 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:27:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:27:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:27:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:27:47 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:27:47 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:27:47 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:27:47 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"}]
+24-06-08 09:27:47 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:27:47 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:27:47 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:27:47 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:27:48 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:30:12 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:30:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:30:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:30:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:30:12 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:30:12 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:30:12 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:30:12 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"}]
+24-06-08 09:30:12 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:30:12 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:30:12 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:30:12 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:30:12 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:30:12 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:36:12 GLOBAL [path] : POST en /api/users/login
+24-06-08 09:36:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:36:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 09:36:12 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 09:36:12 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 09:36:19 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:36:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:36:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:36:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:36:19 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:36:19 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:36:19 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:36:19 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"}]
+24-06-08 09:36:19 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:36:19 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:36:19 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:36:19 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:36:19 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:36:19 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:36:20 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:37:26 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:37:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:37:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:37:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:37:26 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:37:26 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:37:26 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645043fc964296bae54649"}]
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:37:26 CARTS-SERVICE [silly] : tipo de dato object
+24-06-08 09:37:26 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:37:26 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645043fc964296bae54649"},{"product":"65ec437503fd3c53d7acc900","qty":1}],"__v":0}
+24-06-08 09:37:26 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:39:21 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:39:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:39:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:39:21 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:39:21 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:39:21 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:39:21 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645043fc964296bae54649"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645086a7dbe0d618be426a"}]
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:39:21 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900","65ec437503fd3c53d7acc900"]
+24-06-08 09:39:21 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":2,"_id":"66644ca7faa36148fd9556bc"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644d93205a654d65adcc19"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644e44a076329cd82fb488"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66644ed4ad34ec6592ecf4fa"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645043fc964296bae54649"},{"product":"65ec437503fd3c53d7acc900","qty":1,"_id":"66645086a7dbe0d618be426a"}],"__v":0}
+24-06-08 09:39:21 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:39:40 GLOBAL [path] : GET en /api/users/cart
+24-06-08 09:39:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:39:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 09:39:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:39:40 USER-SERVICE [method] : getCart
+24-06-08 09:39:40 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 09:39:40 USER-SERVICE [method] : findCart
+24-06-08 09:45:35 GLOBAL [path] : POST en /api/users/login
+24-06-08 09:45:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:45:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 09:45:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 09:45:35 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 09:45:43 GLOBAL [path] : GET en /api/users/cart
+24-06-08 09:45:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:45:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 09:45:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:45:43 USER-SERVICE [method] : getCart
+24-06-08 09:45:43 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 09:45:43 USER-SERVICE [method] : findCart
+24-06-08 09:45:50 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65ec437503fd3c53d7acc900
+24-06-08 09:45:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:45:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:45:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:45:50 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65ec437503fd3c53d7acc900; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:45:50 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65ec437503fd3c53d7acc900
+24-06-08 09:45:51 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:45:51 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":2,"_id":"66644ca7faa36148fd9556bc"}]
+24-06-08 09:45:51 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:45:51 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900"]
+24-06-08 09:45:51 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"}],"__v":0}
+24-06-08 09:45:51 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:46:24 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/666390e3a31113561480c91f
+24-06-08 09:46:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:46:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:46:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:46:24 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 666390e3a31113561480c91f; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:46:24 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 666390e3a31113561480c91f
+24-06-08 09:46:24 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:46:24 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"}]
+24-06-08 09:46:24 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:24 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900"]
+24-06-08 09:46:24 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":1}],"__v":0}
+24-06-08 09:46:24 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:46:25 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/666390e3a31113561480c91f
+24-06-08 09:46:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:46:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:46:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:46:25 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 666390e3a31113561480c91f; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:46:25 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 666390e3a31113561480c91f
+24-06-08 09:46:25 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:46:25 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":1,"_id":"666452a012e43f6697ebb032"}]
+24-06-08 09:46:25 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:25 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:25 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","666390e3a31113561480c91f"]
+24-06-08 09:46:25 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":2,"_id":"666452a012e43f6697ebb032"}],"__v":0}
+24-06-08 09:46:25 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:46:26 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/666390e3a31113561480c91f
+24-06-08 09:46:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:46:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:46:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:46:26 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 666390e3a31113561480c91f; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:46:26 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 666390e3a31113561480c91f
+24-06-08 09:46:26 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:46:26 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":2,"_id":"666452a012e43f6697ebb032"}]
+24-06-08 09:46:26 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:26 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:26 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","666390e3a31113561480c91f"]
+24-06-08 09:46:26 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":3,"_id":"666452a012e43f6697ebb032"}],"__v":0}
+24-06-08 09:46:26 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:46:27 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/666390e3a31113561480c91f
+24-06-08 09:46:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:46:27 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 09:46:27 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:46:27 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 666390e3a31113561480c91f; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 09:46:27 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 666390e3a31113561480c91f
+24-06-08 09:46:27 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 09:46:27 CARTS-SERVICE [debug] : listado dentro de carrito [{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":3,"_id":"666452a012e43f6697ebb032"}]
+24-06-08 09:46:27 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:27 CARTS-SERVICE [silly] : tipo de dato string
+24-06-08 09:46:27 CARTS-SERVICE [debug] : solo id de productos, ["65ec437503fd3c53d7acc900","666390e3a31113561480c91f"]
+24-06-08 09:46:27 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"}],"__v":0}
+24-06-08 09:46:27 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 09:46:42 GLOBAL [path] : GET en /api/users/cart
+24-06-08 09:46:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 09:46:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 09:46:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 09:46:42 USER-SERVICE [method] : getCart
+24-06-08 09:46:42 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 09:46:42 USER-SERVICE [method] : findCart

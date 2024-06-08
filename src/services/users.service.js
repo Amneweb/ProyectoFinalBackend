@@ -53,6 +53,7 @@ export default class UserService {
   };
 
   findByUsername = async (userEmail) => {
+    console.log("llega desde crear el req owner middleware");
     return await userDAO.findOne(userEmail);
   };
   update = async (user, filter, value) => {

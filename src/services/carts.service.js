@@ -2,7 +2,7 @@ import { cartDAO, productDAO } from "../utils/factory.js";
 import TicketDAO from "./daos/mongo/tickets/tickets.mongo.dao.js";
 import { BadRequestError } from "../utils/errors.js";
 import { v4 as uuidv4 } from "uuid";
-import { validateId } from "../utils/product.validator.js";
+import { validateId } from "./validators.service.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 import MailingService from "./emails.service.js";
@@ -71,20 +71,18 @@ class CartManager {
       throw new BadRequestError(`No se encontró ningún carrito con id ${cid}`);
     }
     const producto = await productDAO.findByID(pid);
-
+    logger.silly("tipo de datos %s", typeof pid);
     //para verificar que exista un producto con ese id
     if (!producto) {
       console.log("adentro de if producto ");
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
-    console.log("pid directo del req", pid);
-
-    const productIndex = carritoBuscado.cart.indexOf((productItem) => {
-      console.log(productItem.product);
-      console.log(productItem.product.toString());
-      console.log(productItem.product.toString() === pid);
-      productItem.product.toString() === pid;
-    });
+    logger.debug("listado dentro de carrito %j", carritoBuscado.cart);
+    const mapeado = carritoBuscado.cart.map((item) => item.product.toString());
+    mapeado.forEach((item) => logger.silly("tipo de dato %s", typeof item));
+    logger.debug("solo id de productos, %j", mapeado);
+    const equalsPid = (element) => element === pid.toString();
+    const productIndex = mapeado.findIndex(equalsPid);
 
     console.log("product index", productIndex);
     if (productIndex === -1) {

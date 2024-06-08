@@ -86,15 +86,6 @@ export const validateUserFormData = (req, res, next) => {
   next();
 };
 
-export const obtenerUserID = async (req, res, next) => {
-  const rol = req.user.role;
-  if (rol.toUpperCase() === "PREMIUM") {
-    const userService = new UserService();
-    req.owner = await userService.findByUsername(req.user.email)._id;
-  }
-  next();
-};
-
 export const createHash = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 

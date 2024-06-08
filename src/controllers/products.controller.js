@@ -112,9 +112,10 @@ export default class ProductsController {
 
   deleteOne = async (req, res) => {
     const id = req.params.id;
-    const userEmail = req.user.email;
+    const user = req.user;
+
     try {
-      const result = await this.#productManager.deleteProduct(id, userEmail);
+      const result = await this.#productManager.deleteProduct(id, user);
       logger.debug(`El producto con id ${id} se borró exitosamente`);
       res.sendSuccess(result);
     } catch (e) {
@@ -128,6 +129,7 @@ export default class ProductsController {
   modifyOne = async (req, res) => {
     const modified = req.validatedData;
     const id = req.params.id;
+    const user = req.user;
     console.log("en modify controller ", modified);
     if (modified.error) {
       logger.error(
@@ -139,7 +141,11 @@ export default class ProductsController {
       );
     } else
       try {
-        const result = await this.#productManager.updateProduct(id, modified);
+        const result = await this.#productManager.updateProduct(
+          id,
+          modified,
+          user
+        );
         logger.debug(`El producto con id ${id} se modificó exitosamente`);
         res.sendSuccess(result);
       } catch (e) {
@@ -152,9 +158,13 @@ export default class ProductsController {
   modifyCate = async (req, res) => {
     const id = req.params.id;
     const category = req.params.cate;
-
+    const user = req.user;
     try {
-      const result = await this.#productManager.updateCategory(id, category);
+      const result = await this.#productManager.updateCategory(
+        id,
+        category,
+        user
+      );
 
       logger.debug("La categoría del producto se modificó exitosamente");
       res.sendSuccess(result);
