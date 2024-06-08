@@ -77,10 +77,9 @@ class CartManager {
       console.log("adentro de if producto ");
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
-    logger.debug("listado dentro de carrito %j", carritoBuscado.cart);
+
     const mapeado = carritoBuscado.cart.map((item) => item.product.toString());
-    mapeado.forEach((item) => logger.silly("tipo de dato %s", typeof item));
-    logger.debug("solo id de productos, %j", mapeado);
+
     const equalsPid = (element) => element === pid.toString();
     const productIndex = mapeado.findIndex(equalsPid);
 
