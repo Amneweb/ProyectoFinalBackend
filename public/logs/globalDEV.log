@@ -2417,3 +2417,881 @@
 24-06-08 09:46:42 USER-SERVICE [method] : getCart
 24-06-08 09:46:42 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
 24-06-08 09:46:42 USER-SERVICE [method] : findCart
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:17 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:27:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:27:18 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:27:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:04 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:28:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:04 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:28:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:04 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:28:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:05 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:28:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:05 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:28:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:28:05 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:28:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:32:59 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:32:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:25 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:37:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:25 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:37:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:25 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:37:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:25 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:37:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:25 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:37:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:37:26 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:37:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:32 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:47:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:32 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:47:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:32 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:47:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:32 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:47:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:32 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:47:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:47:33 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:47:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 10:48:54 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 10:48:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 11:37:06 GLOBAL [path] : POST en /api/users/login
+24-06-08 11:37:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 11:37:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 11:37:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 11:37:07 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 12:04:26 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:04:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:04:26 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:04:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:04:26 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:04:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:04:26 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:04:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:04:26 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:04:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:04:27 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:04:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:53 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:53 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:53 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:53 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:53 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:05:54 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:05:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:49 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:09:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:49 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:09:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:49 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:09:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:49 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:09:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:49 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:09:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:09:50 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:09:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:22 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:13:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:22 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:13:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:22 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:13:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:22 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:13:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:22 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:13:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:13:23 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:13:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:42 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:18:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:42 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:18:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:42 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:18:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:42 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:18:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:42 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:18:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:18:43 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:18:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:23 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:19:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:23 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:19:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:23 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:19:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:23 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:19:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:23 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:19:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:19:24 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:19:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:27:50 GLOBAL [path] : GET en /api/products/66637f68b27d12ce20a7e0b6
+24-06-08 12:27:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:27:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 12:27:50 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 12:27:50 PRODUCT-SERVICE [method] : getOne
+24-06-08 12:27:50 PRODUCT-SERVICE [debug] : Se obtuvo el producto sin problemas
+24-06-08 12:46:59 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:46:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:46:59 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:46:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:46:59 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:46:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:46:59 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:46:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:46:59 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:46:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:47:00 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:47:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:16 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:49:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:16 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:49:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:16 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:49:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:16 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:49:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:16 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:49:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:49:17 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:49:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:18 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:50:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:18 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:50:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:18 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:50:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:18 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:50:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:18 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:50:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:50:19 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:50:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:32 GLOBAL [path] : GET en /api/docs/
+24-06-08 12:52:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:32 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 12:52:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:32 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 12:52:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:32 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 12:52:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:32 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 12:52:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 12:52:33 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 12:52:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:25 GLOBAL [path] : GET en /api/docs/
+24-06-08 13:15:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:25 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 13:15:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:25 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 13:15:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:25 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 13:15:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:25 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 13:15:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:26 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 13:15:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:55 GLOBAL [path] : GET en /api/products/66637f68b27d12ce20a7e0b6
+24-06-08 13:15:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:15:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 13:15:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 13:15:55 PRODUCT-SERVICE [method] : getOne
+24-06-08 13:15:55 PRODUCT-SERVICE [debug] : Se obtuvo el producto sin problemas
+24-06-08 13:39:19 GLOBAL [path] : GET en /api/docs/
+24-06-08 13:39:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:39:19 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 13:39:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:39:19 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 13:39:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:39:19 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 13:39:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:39:19 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 13:39:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:39:20 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 13:39:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:15 GLOBAL [path] : GET en /api/docs/
+24-06-08 13:40:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:15 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 13:40:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:15 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 13:40:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:15 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 13:40:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:15 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 13:40:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:16 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 13:40:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 13:40:39 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 13:40:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:15:43 GLOBAL [path] : GET en /api/products/
+24-06-08 14:15:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:15:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 14:15:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 14:15:43 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 14:16:55 GLOBAL [path] : GET en /api/products/
+24-06-08 14:16:55 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:16:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 14:16:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 14:16:55 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 14:18:13 GLOBAL [path] : GET en /api/products/
+24-06-08 14:18:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:18:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 14:18:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 14:18:13 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 14:55:03 GLOBAL [path] : GET en /api/docs/
+24-06-08 14:55:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:03 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 14:55:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:03 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 14:55:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:03 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 14:55:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:03 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 14:55:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:04 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 14:55:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:11 GLOBAL [path] : GET en /api/products/
+24-06-08 14:55:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 14:55:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 14:55:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 14:55:11 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 15:13:52 GLOBAL [path] : GET en /api/docs/
+24-06-08 15:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:13:52 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 15:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:13:52 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 15:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:13:52 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 15:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:13:52 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 15:13:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:13:53 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 15:13:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:14:21 GLOBAL [path] : GET en /api/products/?limit=4&criterio=price&sentido=0
+24-06-08 15:14:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:14:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 15:14:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 15:14:21 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-08 15:15:59 GLOBAL [path] : GET en /api/docs/
+24-06-08 15:15:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:15:59 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 15:15:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:15:59 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 15:15:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:15:59 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 15:15:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:15:59 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 15:15:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:00 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 15:16:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:15 GLOBAL [path] : GET en /api/docs/
+24-06-08 15:16:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:15 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 15:16:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:15 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 15:16:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:15 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 15:16:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:15 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 15:16:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:16:16 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 15:16:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:18:01 GLOBAL [path] : GET en /api/products/6663a2535122e66c58035424
+24-06-08 15:18:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 15:18:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 15:18:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 15:18:01 PRODUCT-SERVICE [method] : getOne
+24-06-08 15:18:01 PRODUCT-SERVICE [debug] : Se obtuvo el producto sin problemas
+24-06-08 16:16:44 GLOBAL [path] : POST en /api/users/login
+24-06-08 16:16:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 16:16:44 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 16:16:44 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 16:16:57 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:16:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:57 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:16:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:57 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:16:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:57 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:16:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:57 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:16:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:16:58 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:16:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:46 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:18:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:46 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:18:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:46 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:18:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:46 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:18:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:46 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:18:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:18:47 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:18:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:08 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:08 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:08 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:08 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:08 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:19:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:09 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:19:09 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:40 GLOBAL [path] : POST en /api/products/
+24-06-08 16:19:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:19:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 16:19:40 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 16:20:18 GLOBAL [path] : POST en /api/users/login
+24-06-08 16:20:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:20:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 16:20:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 16:20:18 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 16:20:30 GLOBAL [path] : POST en /api/products/
+24-06-08 16:20:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:20:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 16:20:30 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 16:21:33 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:21:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:33 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:21:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:33 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:21:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:33 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:21:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:33 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:21:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:34 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:21:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:38 GLOBAL [path] : POST en /api/users/login
+24-06-08 16:21:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 16:21:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 16:21:38 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:47 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:58 GLOBAL [path] : POST en /api/products/
+24-06-08 16:21:58 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:21:58 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 16:21:58 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 16:23:39 GLOBAL [path] : POST en /api/users/login
+24-06-08 16:23:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:23:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 16:23:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 16:23:39 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 16:24:29 GLOBAL [path] : POST en /api/products/
+24-06-08 16:24:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:24:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 16:24:29 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 16:44:31 GLOBAL [path] : GET en /api/docs/
+24-06-08 16:44:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:44:31 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 16:44:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:44:31 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 16:44:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:44:31 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 16:44:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:44:31 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 16:44:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:44:32 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 16:44:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:46:11 GLOBAL [path] : POST en /api/products/
+24-06-08 16:46:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 16:46:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 16:46:11 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 17:07:16 GLOBAL [path] : POST en /api/users/login
+24-06-08 17:07:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 17:07:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 17:07:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 17:07:17 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 17:08:09 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 17:08:09 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 17:08:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 17:08:10 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:05:21 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:05:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:05:21 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:05:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:05:21 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:05:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:05:22 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:05:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:05:22 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:05:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:05:24 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:05:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:26 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:27 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:08:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:27 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:08:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:27 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:08:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:27 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:08:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:08:27 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:08:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:09:52 GLOBAL [path] : POST en /api/users/login
+24-06-08 18:09:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:09:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:09:52 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:09:52 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 18:10:12 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 18:10:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:10:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 18:10:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 18:12:18 GLOBAL [path] : POST en /api/users/register
+24-06-08 18:12:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:12:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:12:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:12:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"name":"Amneris Calle","email":"amneris.calle@gmail.com","age":54,"role":"user","password":123456,"userAge":null}
+24-06-08 18:12:18 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'El nombre es requerido' 'El apellido es requerido' 'La edad debe ser un valor numérico' 'Required' 'El password es requerido'
+24-06-08 18:18:21 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:18:21 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:18:21 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:18:21 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:18:21 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:18:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:18:22 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:18:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:19:48 GLOBAL [path] : POST en /api/users/login
+24-06-08 18:19:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:19:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:19:48 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:19:48 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 18:20:05 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 18:20:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:20:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 18:20:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 18:21:36 GLOBAL [path] : POST en /api/users/register
+24-06-08 18:21:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:21:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:21:36 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:21:36 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Amneris Calle","userEmail":"amneris.calle.fleire@gmail.com","userAge":54,"userRole":"user","userPassword":123456}
+24-06-08 18:21:36 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'El apellido es requerido' 'Expected string, received number'
+24-06-08 18:31:22 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:31:22 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:31:22 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:31:22 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:31:22 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:31:23 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:31:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:32:10 GLOBAL [path] : POST en /api/users/register
+24-06-08 18:32:10 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:32:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:32:10 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:32:10 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Amneris","userLastName":"Calle Fleire","userEmail":"amneriscallefleire@gmail.com","userAge":23,"userPassword":"123456"}
+24-06-08 18:32:10 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Amneris","userLastName":"Calle Fleire","userEmail":"amneriscallefleire@gmail.com","userAge":23,"userPassword":"$2b$10$Y7XTXp.VekilqTgi84blJuGAIf4kHgN1Wg21iA5/vJiRN7qkkZ40.","userRole":"user","userCartID":[],"_id":"6664cdda0a8f508ebf944982","__v":0}
+24-06-08 18:33:04 GLOBAL [path] : POST en /api/users/login
+24-06-08 18:33:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:33:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:33:04 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:33:04 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: amneriscallefleire@gmail.com
+24-06-08 18:33:24 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 18:33:24 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:33:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 18:33:24 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle Fleire","email":"amneriscallefleire@gmail.com","age":23,"role":"user"}
+24-06-08 18:34:30 GLOBAL [path] : POST en /api/users/login
+24-06-08 18:34:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:34:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:34:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:34:30 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 18:34:40 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 18:34:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:34:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 18:34:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:35:05 GLOBAL [path] : POST en /api/products/
+24-06-08 18:35:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:35:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:35:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:35:05 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:35:05 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:35:05 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":""}
+24-06-08 18:35:05 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":[]}
+24-06-08 18:35:05 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-08 18:40:35 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:40:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:35 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:40:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:35 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:40:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:35 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:40:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:35 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:40:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:36 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:40:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:47 GLOBAL [path] : GET en /api/users/currentUser
+24-06-08 18:40:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:40:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-08 18:40:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:41:12 GLOBAL [path] : POST en /api/products/
+24-06-08 18:41:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:41:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:41:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:41:12 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:41:12 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:41:12 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":""}
+24-06-08 18:41:12 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":[]}
+24-06-08 18:41:12 PRODUCT-SERVICE [silly] : al validar 
+24-06-08 18:41:12 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-08 18:42:03 GLOBAL [path] : POST en /api/products/
+24-06-08 18:42:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:42:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:42:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:42:03 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:42:03 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:42:03 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":""}
+24-06-08 18:42:03 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":[]}
+24-06-08 18:42:03 PRODUCT-SERVICE [silly] : al validar 
+24-06-08 18:42:03 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-08 18:42:15 GLOBAL [path] : POST en /api/products/
+24-06-08 18:42:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:42:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:42:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:42:15 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:42:15 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:42:15 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":""}
+24-06-08 18:42:15 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":[]}
+24-06-08 18:42:15 PRODUCT-SERVICE [silly] : al validar 
+24-06-08 18:42:15 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-08 18:43:15 GLOBAL [path] : POST en /api/products/
+24-06-08 18:43:15 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:43:15 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:43:15 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:43:15 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:43:15 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:43:15 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":""}
+24-06-08 18:43:15 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Batería de 19 placas para colectivo","price":133000,"code":"180MECL19","stock":10,"description":"12x180 Amp/h 19 placas","st":true,"category":[["CLOREX","Colectivo"]],"thumb":[]}
+24-06-08 18:43:15 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"array","path":["category",0],"message":"La categoria debe ser texto"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"array","path":["category",0],"message":"La categoria debe ser texto"}],"name":"ZodError"}}
+24-06-08 18:43:15 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-08 18:45:53 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:45:53 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:45:53 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:45:53 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:45:53 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:45:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:45:54 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:45:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:46:13 GLOBAL [path] : POST en /api/products/
+24-06-08 18:46:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:46:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:46:13 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 18:47:17 GLOBAL [path] : POST en /api/users/login
+24-06-08 18:47:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:47:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:47:17 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-08 18:47:30 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:47:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:30 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:47:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:30 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:47:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:30 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:47:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:30 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:47:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:47:31 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:47:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:39 GLOBAL [path] : GET en /api/docs/
+24-06-08 18:48:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:40 GLOBAL [path] : GET en /api/docs/swagger-ui-bundle.js
+24-06-08 18:48:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:40 GLOBAL [path] : GET en /api/docs/swagger-ui-standalone-preset.js
+24-06-08 18:48:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:40 GLOBAL [path] : GET en /api/docs/swagger-ui-init.js
+24-06-08 18:48:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:40 GLOBAL [path] : GET en /api/docs/swagger-ui.css
+24-06-08 18:48:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:48:40 GLOBAL [path] : GET en /api/docs/favicon-32x32.png
+24-06-08 18:48:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:50:21 GLOBAL [path] : POST en /api/products/
+24-06-08 18:50:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:50:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-08 18:50:21 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Coder House',
+  email: 'adminCoder@coder.com',
+  age: 15,
+  role: 'admin'
+}
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Clorex 180 23 placas","price":230000,"code":"CL180FL","stock":23,"description":"clorex 23 placas","st":true,"category":["CLOREX"],"thumb":""}
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Clorex 180 23 placas","price":230000,"code":"CL180FL","stock":23,"description":"clorex 23 placas","st":true,"category":["CLOREX"],"thumb":[]}
+24-06-08 18:50:21 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Clorex 180 23 placas","price":230000,"category":["CLOREX"],"description":"clorex 23 placas","code":"CL180FL","stock":23,"st":true,"thumb":[]}}
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-08 18:50:21 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6664d21d707e1efa3f5cf7be
+24-06-08 18:51:39 GLOBAL [path] : GET en /api/products/6664d21d707e1efa3f5cf7be
+24-06-08 18:51:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 18:51:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 18:51:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 18:51:39 PRODUCT-SERVICE [method] : getOne
+24-06-08 18:51:39 PRODUCT-SERVICE [debug] : Se obtuvo el producto sin problemas
+24-06-08 22:30:40 GLOBAL [path] : POST en /api/users/login
+24-06-08 22:30:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:30:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 22:30:40 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 22:30:41 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 22:30:57 GLOBAL [path] : POST en /api/users/login
+24-06-08 22:30:57 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:30:57 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 22:30:57 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 22:30:57 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 22:31:06 GLOBAL [path] : GET en /api/users/cart
+24-06-08 22:31:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:31:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 22:31:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:31:06 USER-SERVICE [method] : getCart
+24-06-08 22:31:06 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 22:31:06 USER-SERVICE [method] : findCart
+24-06-08 22:32:32 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:32 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:32 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:32 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:32 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:32 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":1}],"__v":0}
+24-06-08 22:32:32 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:34 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:34 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:34 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:34 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:34 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":2,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:34 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:35 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:35 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:35 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:35 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:35 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":3,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:35 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:36 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:36 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:36 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:36 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:36 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":4,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:36 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:37 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:37 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:37 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:37 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:37 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":5,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:37 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:38 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:38 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:38 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:38 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:38 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":6,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:38 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:39 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:39 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:39 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:39 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:39 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":7,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:39 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:40 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:40 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:40 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:40 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:40 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:40 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:40 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:40 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":8,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:40 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:41 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:41 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:41 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:41 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:41 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:41 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":9,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:41 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:42 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/product/65edce4840922c7a40fb3378
+24-06-08 22:32:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER' ]
+24-06-08 22:32:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:42 CARTS-SERVICE [debug] : Dentro del controlador de carritos. Id producto: 65edce4840922c7a40fb3378; Id carrito: 666448f2d6c4029a9856ab11
+24-06-08 22:32:42 CARTS-SERVICE [debug] : En carts service | Id de carrito: 666448f2d6c4029a9856ab11, Id de producto: 65edce4840922c7a40fb3378
+24-06-08 22:32:42 CARTS-SERVICE [silly] : tipo de datos string
+24-06-08 22:32:42 CARTS-SERVICE [debug] : carrito buscado luego de la transformacion {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":"65ec437503fd3c53d7acc900","qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":"666390e3a31113561480c91f","qty":4,"_id":"666452a012e43f6697ebb032"},{"product":"65edce4840922c7a40fb3378","qty":10,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:32:42 CARTS-SERVICE [debug] : carrito modificado luego de agregado el producto: {"acknowledged":true,"modifiedCount":1,"upsertedId":null,"upsertedCount":0,"matchedCount":1}
+24-06-08 22:32:46 GLOBAL [path] : GET en /api/users/cart
+24-06-08 22:32:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:32:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 22:32:46 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:32:46 USER-SERVICE [method] : getCart
+24-06-08 22:32:46 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 22:32:46 USER-SERVICE [method] : findCart
+24-06-08 22:41:51 GLOBAL [path] : POST en /api/users/login
+24-06-08 22:41:51 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:41:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 22:41:51 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 22:41:51 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 22:42:44 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/purchase
+24-06-08 22:42:44 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 22:42:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 22:42:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 22:42:44 CARTS-SERVICE [debug] : carrito comprado luego del populate {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":{"_id":"65ec437503fd3c53d7acc900","price":72000,"stock":2},"qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":{"_id":"666390e3a31113561480c91f","price":134000,"stock":3},"qty":4,"_id":"666452a012e43f6697ebb032"},{"product":{"_id":"65edce4840922c7a40fb3378","price":139000,"stock":5},"qty":10,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 22:42:44 CARTS-SERVICE [error] : Error dentro de purchase en controller cartDAO.updateCart is not a function
+24-06-08 23:03:49 GLOBAL [path] : GET en /api/users/cart
+24-06-08 23:03:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:03:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 23:03:49 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-08 23:03:54 GLOBAL [path] : POST en /api/users/login
+24-06-08 23:03:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:03:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-08 23:03:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-08 23:03:54 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-08 23:04:05 GLOBAL [path] : GET en /api/users/cart
+24-06-08 23:04:05 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:04:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 23:04:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 23:04:05 USER-SERVICE [method] : getCart
+24-06-08 23:04:05 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 23:04:05 USER-SERVICE [method] : findCart
+24-06-08 23:04:13 GLOBAL [path] : GET en /api/users/cart
+24-06-08 23:04:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:04:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 23:04:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 23:04:13 USER-SERVICE [method] : getCart
+24-06-08 23:04:13 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 23:04:13 USER-SERVICE [method] : findCart
+24-06-08 23:04:39 GLOBAL [path] : POST en /api/carts/666448f2d6c4029a9856ab11/purchase
+24-06-08 23:04:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:04:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 23:04:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 23:04:39 CARTS-SERVICE [debug] : carrito comprado luego del populate {"_id":"666448f2d6c4029a9856ab11","cart":[{"product":{"_id":"65ec437503fd3c53d7acc900","price":72000,"stock":2},"qty":3,"_id":"66644ca7faa36148fd9556bc"},{"product":{"_id":"666390e3a31113561480c91f","price":134000,"stock":3},"qty":4,"_id":"666452a012e43f6697ebb032"},{"product":{"_id":"65edce4840922c7a40fb3378","price":139000,"stock":5},"qty":10,"_id":"66650630707e1efa3f5cf7c9"}],"__v":0}
+24-06-08 23:05:03 GLOBAL [path] : GET en /api/users/cart
+24-06-08 23:05:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-08 23:05:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-08 23:05:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-08 23:05:03 USER-SERVICE [method] : getCart
+24-06-08 23:05:03 USER-SERVICE [debug] : Buscando carrito de usuario con email info@amneweb.com.ar
+24-06-08 23:05:03 USER-SERVICE [method] : findCart

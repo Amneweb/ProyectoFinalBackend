@@ -10,7 +10,8 @@ export default class ProductManager {
   }
 
   getProducts = async (page, limit, sort) => {
-    return await productDAO.findAll(page, limit, sort);
+    const options = limit === 0 ? { pagination: false } : { page, limit, sort };
+    return await productDAO.findAll(options);
   };
 
   addProduct = async (product) => {
@@ -22,6 +23,7 @@ export default class ProductManager {
         `Ya existe un producto con el código ${product.code}`
       );
     }
+    logger.silly("al validar %j", validateProduct(product));
     const { title, description, code, price, category, thumb, st, stock } =
       validateProduct(product).data;
     const ownerVerificado =

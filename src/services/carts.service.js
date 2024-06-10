@@ -204,10 +204,7 @@ class CartManager {
     });
 
     if (carritoRemanente.length > 0) {
-      const carritoActualizado = await cartDAO.updateCart(
-        cid,
-        carritoRemanente
-      );
+      const carritoActualizado = await cartDAO.update(cid, carritoRemanente);
     } else {
       console.log("lo que mando al user manager", email);
 

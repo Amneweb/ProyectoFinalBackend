@@ -1,0 +1,149 @@
+paths:
+  /api/users/:
+    get:
+      summary: Obtiene todos los usuarios, accesible sólo para los administradores
+      tags:
+        - Usuarios
+      responses:
+        "200":
+          description: Se obtuvieron todos los usuarios correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/ManyUsersSuccess"
+        "500":
+          description: Error interno al tratar de obtener los usuarios
+  /api/users/currentUser:
+    get:
+      summary: Obtiene los datos del usuario logueado
+      tags:
+        - Usuarios
+      responses:
+        "200":
+          description: Se obtuvieron todos los datos del usuario correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/OneUserSuccess"
+        "500":
+          description: Error interno al tratar de obtener los usuarios
+  /api/users/register:
+    post:
+      summary: crea un nuevo usuario
+      tags:
+        - Usuarios
+      requestBody:
+        description: recibe datos de formulario, los valida y crea un nuevo usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/nuevoUsuario"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/requestBodies/nuevoUsuario"
+      responses:
+        "201":
+          description: Usuario creado con éxito y agregado a la base de datos
+        "400":
+          description: Usuario no logueado o con las credenciales incorrectas
+  /api/users/login:
+    post:
+      summary: loguea un usuario ya registrado
+      tags:
+        - Usuarios
+      requestBody:
+        description: recibe datos de formulario, los valida y loguea al usuario
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/loguearUsuario"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/requestBodies/loguearUsuario"
+      responses:
+        "201":
+          description: Usuario logueado con éxito
+        "400":
+          description: No se pudo loguear al usuario
+components:
+  schemas:
+    OneUserSuccess:
+      type: object
+      properties:
+        staus:
+          type: string
+          description: devuelve success o Error
+        payload:
+          type: object
+          description: el objecto conteniendo la respuesta
+          $ref: "#/components/schemas/Usuario"
+    Usuario:
+      type: object
+      required:
+        - userEmail
+      properties:
+        userName:
+          type: string
+          description: Nombre completo del usuario
+        userEmail:
+          type: string
+          description: email del usuario
+        userAge:
+          type: integer
+          description: edad del usuario
+        userRole:
+          type: string
+          description: rol del usuario logueado, puede ser user, admin o premium
+      example:
+        userName: Amneris Calle
+        userEmail: amneris.calle@gmail.com
+        userAge: 54
+        userRole: user
+  requestBodies:
+    nuevoUsuario:
+      type: object
+      required:
+        - userEmail
+        - userName
+        - userLastName
+        - userPassword
+        - userAge
+      properties:
+        userName:
+          type: string
+          description: Nombre del usuario
+        userLastName:
+          type: string
+          description: Apellido del usuario
+        userEmail:
+          type: string
+          description: email del usuario
+        userAge:
+          type: integer
+          description: edad del usuario
+        userPassword:
+          type: string
+          description: cadena de caracteres para generar password
+      example:
+        userName: Amneris Calle
+        userLastName: Fleire
+        userEmail: amneris.calle.fleire@gmail.com
+        userAge: 54
+        userPassword: 123456
+    loguearUsuario:
+      type: object
+      required:
+        - userEmail
+        - userPassword
+      properties:
+        userEmail:
+          type: string
+          description: email del usuario
+        userPassword:
+          type: string
+          description: cadena de caracteres del password
+      example:
+        userEmail: amneris.calle@gmail.com
+        userPassword: 123456

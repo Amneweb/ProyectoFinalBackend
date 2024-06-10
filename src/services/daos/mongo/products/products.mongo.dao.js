@@ -6,13 +6,11 @@ class ProductDAO {
     this.#model = productModel;
   }
 
-  findAll = async (page, limit, sort) => {
+  findAll = async (options) => {
     const products = await this.#model.paginate(
       {},
       {
-        page,
-        limit,
-        sort,
+        ...options,
         lean: true,
       }
     );

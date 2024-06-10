@@ -5,7 +5,8 @@ import cookieParser from "cookie-parser";
 import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";
 import { Server } from "socket.io";
-
+import swaggerUi from "swagger-ui-express";
+import swaggerSpecs from "../src/config/swagger.config.js";
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
 
@@ -74,6 +75,8 @@ app.get("/loggertest", (req, res) => {
 
   res.send("Prueba de logger!");
 });
+
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 //FIXME:
 app.get("*", (req, res) => {
   res.status(400).send("Cannot get that URL!!");

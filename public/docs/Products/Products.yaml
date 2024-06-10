@@ -1,0 +1,236 @@
+paths:
+  /api/products/:
+    get:
+      summary: Obtiene todos los productos, es accesible para cualquier usuario
+      tags:
+        - Productos
+      # ----------------------------------------------------
+      # los parametros que siguen son para la paginacion
+      # de mongoose. Ninguno es obligatorio
+      # ----------------------------------------------------
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+        - in: query
+          name: criterio
+          schema:
+            type: string
+            enum: [title, price]
+        - in: query
+          name: sentido
+          schema:
+            type: integer
+            enum: [0, 1]
+      responses:
+        "200":
+          description: Se obtuvieron todos los productos correctamente
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/ManyProductsSuccess"
+        "500":
+          description: Error interno al tratar de obtener los productos
+    post:
+      summary: crea un nuevo producto. Sólo pueden acceder los usuarios logueados
+      tags:
+        - Productos
+      requestBody:
+        description: recibe datos de formulario, los valida y crea un nuevo producto
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/nuevoProducto"
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/requestBodies/nuevoProducto"
+      responses:
+        "201":
+          description: Producto creado con éxito y agregado a la base de datos
+        "400":
+          description: Usuario no logueado o con las credenciales incorrectas
+
+  /api/products/{id}:
+    get:
+      summary: Obtiene un solo producto, filtrado por el id que llega como parámetro en la url. Pueden acceder todos los usuarios
+      tags:
+        - Productos
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: id del producto a obtener
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: Se obtiene un objecto con la propiedad Success y la propiedad payload, que a su vez contiene el objeto producto
+          content:
+            application/json:
+              schema:
+                $ref: "#components/schemas/OneProductSuccess"
+        "500":
+          description: Error interno al tratar de obtener el producto
+components:
+  schemas:
+    ManyProductsSuccess:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Success
+        payload:
+          type: object
+          description: mongoose pagination object conteniendo toda la info para hacer la paginación.
+          properties:
+            docs:
+              type: array
+              description: array con todos los productos, o con la cantidad de productos según los parámetros de paginación
+              items:
+                type: object
+                $ref: "#/components/schemas/Producto"
+            # --------------------------------------------------------
+            # los que siguen son los parámetros de mongoose pagination
+            # --------------------------------------------------------
+            totalDocs:
+              type: integer
+              description: cantidad de productos mostrados en la página actual
+            offset:
+              type: integer
+              description: cantidad de productos que existen en el listado de productos antes que el primero mostrado en la página actual
+            limit:
+              type: integer
+              description: cantidad máxima de productos mostrados por página.El valor viene de la query en la url. Si en la query no hay valor de limit, totalDocs es igual a limit
+            totalPages:
+              type: integer
+              description: cantidad de páginas a mostrar según los filtros de paginación
+            page:
+              type: integer
+              description: página actual
+            pagingCounter:
+              type: integer
+              description: contador de productos para la paginación
+            hasPrevPage:
+              type: boolean
+              description: true or false dependiendo de si hay páginas anteriores
+            hasNextPage:
+              type: boolean
+              description: true or false dependiendo de si hay páginas posteriores
+            prevPage:
+              type: integer
+              nullable: true
+              description: número de página anterior
+            nextPage:
+              type: integer
+              nullable: true
+              description: número de página siguiente
+
+    OneProductSuccess:
+      type: object
+      properties:
+        staus:
+          type: string
+          description: devuelve success o Error
+        payload:
+          type: object
+          description: el objecto conteniendo la respuesta
+          $ref: "#/components/schemas/Producto"
+    Producto:
+      type: object
+      required:
+        - code
+        - title
+        - st
+      properties:
+        _id:
+          type: string
+          description: id autogenerado por mongodb
+        title:
+          type: string
+          description: Nombre del producto
+        price:
+          type: number
+          description: precio del producto
+        code:
+          type: string
+          description: código SKU del producto, es un valor único de cada producto, no puede haber dos productos con el mismo valor
+        stock:
+          type: number
+          description: cantidad de productos en stock. Valor mínimo 0
+        description:
+          type: string
+          description: información sobre el producto. Puede ser texto plano o html con enlaces e imágenes
+        st:
+          type: boolean
+          description: Si es verdadero el producto está disponible para su comercialización. De lo contrario no estará visible en la tienda.
+        category:
+          type: array
+          items:
+            type: string
+          description: array conteniendo las posibles categorías del producto. El valor debe estar dentro de los valores de un array de enum
+        thumb:
+          type: array
+          items:
+            type: string
+          description: array conteniendo las rutas hacia cada imagen
+        owner:
+          type: string
+          description: id del usuario que creó el producto
+      example:
+        _id: 'ObjectId("66637f68b27d12ce20a7e0b6")'
+        title: "Clorex 325 Ximena"
+        price: 115000
+        code: "CL32565RXFC"
+        stock: 1
+        description: "12x65 Amp/h"
+        st: true
+        category: ["CLOREX"]
+        thumb: []
+        owner: 'ObjectId("665ee2bc433599ad746fa8ba")'
+  requestBodies:
+    nuevoProducto:
+      type: object
+      required:
+        - code
+        - title
+        - stock
+        - price
+        - description
+      properties:
+        title:
+          type: string
+          description: Nombre del producto
+        price:
+          type: number
+          description: precio del producto
+        code:
+          type: string
+          description: código SKU del producto, es un valor único de cada producto, no puede haber dos productos con el mismo valor
+        stock:
+          type: number
+          description: cantidad de productos en stock. Valor mínimo 0
+        description:
+          type: string
+          description: información sobre el producto. Puede ser texto plano o html con enlaces e imágenes
+        st:
+          type: boolean
+          description: Si es verdadero el producto está disponible para su comercialización. De lo contrario no estará visible en la tienda.
+        category:
+          type: string
+          description: array conteniendo las posibles categorías del producto. El valor debe estar dentro de los valores de un array de enum
+        thumb:
+          type: array
+          items:
+            type: string
+          description: array conteniendo las rutas hacia cada imagen
+      example:
+        title: "Batería de 19 placas para colectivo"
+        price: 133000
+        code: "180MECL19"
+        stock: 10
+        description: "12x180 Amp/h 19 placas"
+        st: true
+        category: "CLOREX"
+        thumb: []

@@ -9,7 +9,7 @@
     "dev": "node --watch src/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Amneris Calle",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -32,6 +32,8 @@
     "passport-local": "^1.0.0",
     "picocolors": "1.0.0",
     "socket.io": "^4.7.4",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "uuid": "^9.0.1",
     "winston": "^3.13.0",
     "zod": "^3.22.4"

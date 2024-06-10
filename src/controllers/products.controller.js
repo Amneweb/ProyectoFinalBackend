@@ -10,7 +10,7 @@ export default class ProductsController {
 
   getAll = async (req, res) => {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 300;
+    const limit = parseInt(req.query.limit) || 0;
     const criterio = req.query.criterio || "title";
     const sentido = parseInt(req.query.sentido) || 1;
     let sort = {};
