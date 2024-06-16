@@ -22,7 +22,8 @@ const program = new Command(); //Crea la instancia de comandos de commander.
 program
   .option("-d", "Variable para debug", false)
   .option("--persist <mode>", "Modo de persistencia", "mongodb")
-  .option("--mode <mode>", "Modo de trabajo", "dev");
+  .option("--mode <mode>", "Modo de trabajo", "dev")
+  .option("--test <test>", "Modo test", "test");
 program.parse();
 
 //console.log("Options: ", program.opts());
@@ -55,7 +56,8 @@ const environmentConfig = {
       URL:
         MONGO_URL ??
         "mongodb+srv://Amneweb:87a5e76@clustercursocoder.2encwlm.mongodb.net/?retryWrites=true&w=majority&appName=ClusterCursoCoder",
-      DB_NAME: MONGO_DB_NAME ?? "ecommerce",
+      DB_NAME:
+        program.opts().test === "test" ? "test" : MONGO_DB_NAME ?? "ecommerce",
     },
   },
 };

@@ -1,0 +1,825 @@
+24-06-15 22:32:38 GLOBAL [path] : GET en /api/products/
+24-06-15 22:32:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-15 22:32:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-15 22:32:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-15 22:32:38 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-16 09:27:52 GLOBAL [path] : POST en /api/pets/
+24-06-16 09:27:52 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 09:54:26 GLOBAL [path] : POST en /api/users/login
+24-06-16 09:54:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 09:54:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 09:54:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 09:54:26 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-16 09:54:45 GLOBAL [path] : POST en /api/pets/
+24-06-16 09:54:45 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:39:27 GLOBAL [path] : POST en /api/pets/
+24-06-16 10:39:27 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:45:42 GLOBAL [path] : POST en /api/pets/
+24-06-16 10:45:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:47:08 GLOBAL [path] : POST en /api/users/register
+24-06-16 10:47:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:47:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 10:47:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 10:47:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba2@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 10:47:08 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba2@gmail.com","userAge":54,"userPassword":"$2b$10$bQa4/wUZEHjmzsUF81N.g.fmFbx5PXzf1gaXE8ziVubVfkJscVvOq","userRole":"user","userCartID":[],"_id":"666eecdcefb4d9876a4577a3","__v":0}
+24-06-16 10:47:08 GLOBAL [path] : POST en /api/pets/
+24-06-16 10:47:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:48:13 GLOBAL [path] : POST en /api/users/register
+24-06-16 10:48:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 10:48:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 10:48:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 10:48:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba2@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 10:48:13 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email correodeprueba2@gmail.com
+24-06-16 10:48:13 GLOBAL [path] : POST en /api/pets/
+24-06-16 10:48:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 11:09:23 GLOBAL [path] : POST en /api/pets/
+24-06-16 11:09:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 11:10:06 GLOBAL [path] : POST en /api/users/register
+24-06-16 11:10:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 11:10:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 11:10:06 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 11:10:06 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 11:10:06 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"$2b$10$kV8lncF9QLtruqDMQA5uJOQfTZQ0SYQoj04.Fu3F.c.kKorx0hZ/a","userRole":"user","userCartID":[],"_id":"666ef23eefb4d9876a4577a7","__v":0}
+24-06-16 11:10:06 GLOBAL [path] : POST en /api/pets/
+24-06-16 11:10:06 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:08:17 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:08:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:08:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:08:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:08:17 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:08:17 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email correodeprueba3@gmail.com
+24-06-16 12:08:17 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:08:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:09:56 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:09:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:09:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:09:56 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:09:56 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:09:56 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email correodeprueba3@gmail.com
+24-06-16 12:09:56 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:09:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:23:48 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:23:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:23:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:23:48 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:23:48 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:23:49 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"$2b$10$8Od2HVkg0EAfXnYOu6clEuQJBoVlzpFxE6Vb8cmSRv2rjLHCLkZo.","userRole":"user","userCartID":[],"_id":"666f0385186405d17c6df3ed","__v":0}
+24-06-16 12:23:49 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:23:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:25:25 GLOBAL [path] : GET en /api/products/
+24-06-16 12:25:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:25:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:25:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:25:25 PRODUCT-SERVICE [debug] : se obtuvieron todos los productos sin problema
+24-06-16 12:31:02 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:31:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:31:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:31:02 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:31:02 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"correodeprueba3@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:31:02 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email correodeprueba3@gmail.com
+24-06-16 12:31:02 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:31:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:33:37 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:33:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:33:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:33:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:33:37 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:33:37 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$6RIQ.FhtYYCutqtSJgCwYe.NyGMZselOEubk2S5zeKblKv2Rtkx2S","userRole":"user","userCartID":[],"_id":"666f05d1186405d17c6df3f2","__v":0}
+24-06-16 12:33:37 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:33:37 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:35:23 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:35:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:35:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:35:23 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:35:23 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:35:23 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$DzgIm3nF2hGF52d2amFW.eBMHkr6m2VKIvIW49YAhKOv.UH/QmW6G","userRole":"user","userCartID":[],"_id":"666f063b186405d17c6df3f5","__v":0}
+24-06-16 12:35:23 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:35:23 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:36:59 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:36:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:36:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:36:59 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:36:59 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:36:59 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$EOhj9pZEkltTTPjwb4uqxu4Gz.2QyWwUosHWfKU6mUgNqqLhFgCHK","userRole":"user","userCartID":[],"_id":"666f069b186405d17c6df3f8","__v":0}
+24-06-16 12:36:59 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:36:59 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:38:14 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:38:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:38:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:38:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:38:14 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:38:14 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$FkQmy.v9EQrqwzKL7SDrLe09cqv5lcMScrWYj5UEK96VXdx7sLzJW","userRole":"user","userCartID":[],"_id":"666f06e6186405d17c6df3fb","__v":0}
+24-06-16 12:38:14 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:38:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:39:56 GLOBAL [path] : POST en /api/users/register
+24-06-16 12:39:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 12:39:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 12:39:56 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 12:39:56 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 12:39:56 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$IWSnq3E4mapYNCvgavxD9.GJoxigv6z34BiQG2DSOdLNOFzlx90d.","userRole":"user","userCartID":[],"_id":"666f074c186405d17c6df3fe","__v":0}
+24-06-16 12:39:56 GLOBAL [path] : POST en /api/pets/
+24-06-16 12:39:56 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:26:20 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:26:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:26:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:26:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:26:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:26:20 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$8XmYfpCDfRi8hfUjn2JsDugYZzgEpXlb/6mo.6fjzVoSfpSrwIjm2","userRole":"user","userCartID":[],"_id":"666f2e4c186405d17c6df401","__v":0}
+24-06-16 15:28:17 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:28:17 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:28:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:28:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:28:17 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:28:17 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$eEsmD.PhvKlJtZ0j3VM1qeNvUnDdDjBWpQwGKRXbYWm2I4ERkdJmi","userRole":"user","userCartID":[],"_id":"666f2ec1186405d17c6df404","__v":0}
+24-06-16 15:32:00 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:32:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:32:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:32:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:32:00 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Ximena","userLastName":"Calle","userPassword":"123456","userEmail":"rainxfc@amneweb.com.ar","userAge":24}
+24-06-16 15:32:01 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Ximena","userLastName":"Calle","userEmail":"rainxfc@amneweb.com.ar","userAge":24,"userPassword":"$2b$10$oOL3btQMpyEY0xbD5KL.quyiq612aOkyA5fNoIvWTkNe9us2ORJz6","userRole":"user","userCartID":[],"_id":"666f2fa16fca434177172507","__v":0}
+24-06-16 15:35:12 GLOBAL [path] : GET en /api/users/currentUser
+24-06-16 15:35:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:35:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-16 15:35:12 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-16 15:35:21 GLOBAL [path] : POST en /api/users/login
+24-06-16 15:35:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:35:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:35:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:35:21 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-16 15:35:42 GLOBAL [path] : POST en /api/users/login
+24-06-16 15:35:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:35:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:35:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:35:42 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-16 15:37:26 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:37:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:37:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:37:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:37:26 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:37:26 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email correodepruebaFinal@gmail.com
+24-06-16 15:38:43 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:38:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:38:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:38:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:38:43 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:38:43 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"correodepruebaFinal@gmail.com","userAge":54,"userPassword":"$2b$10$KkYs9F8e5PjS8xNwlu4KieSv8HKPP3Rv.LQXLy6/ffXPV4D8xdikK","userRole":"user","userCartID":[],"_id":"666f31336fca43417717250d","__v":0}
+24-06-16 15:43:47 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:43:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:43:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:43:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:43:47 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 4","userLastName":"Apellido de prueba 4","userEmail":"prueba4@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:43:47 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 4","userLastName":"Apellido de prueba 4","userEmail":"prueba4@gmail.com","userAge":54,"userPassword":"$2b$10$JbAQpoJOW.WiY6qA.PHuNOWhbEwsLgiu/CJObPuQTtjo8M5rIPbPy","userRole":"user","userCartID":[],"_id":"666f32636fca434177172510","__v":0}
+24-06-16 15:47:43 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:47:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:47:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:47:43 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:47:43 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 4","userLastName":"Apellido de prueba 4","userEmail":"prueba4@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:47:44 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 4","userLastName":"Apellido de prueba 4","userEmail":"prueba4@gmail.com","userAge":54,"userPassword":"$2b$10$jOJ4cK9f97HeBwcDU3Zii.zdK42T0EGECIyZcI3eWokkrDPC9PNb6","userRole":"user","userCartID":[],"_id":"666f33506fca434177172513","__v":0}
+24-06-16 15:52:29 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:52:29 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:52:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:52:29 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:52:29 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 4","userLastName":"Apellido de prueba 4","userEmail":"prueba4@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:52:29 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba4@gmail.com
+24-06-16 15:53:50 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:53:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:53:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:53:50 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:53:50 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:53:50 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$AjXg/BtCjeu9aNrQAFjBvOYzxkCz0sps6QRBV30ACp6aLdGgy6cQu","userRole":"user","userCartID":[],"_id":"666f34be6fca434177172517","__v":0}
+24-06-16 15:57:08 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:57:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:57:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:57:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:57:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:57:08 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$HAaSlTGFqc.V.iMtGNbo8u5sHtUM.jQOvUpcM9sLtFqYc14gAosGy","userRole":"user","userCartID":[],"_id":"666f35846fca43417717251a","__v":0}
+24-06-16 15:59:20 GLOBAL [path] : POST en /api/users/register
+24-06-16 15:59:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 15:59:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 15:59:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 15:59:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 15:59:20 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$sphd9z1zSzv4bVc.lJPrSuvddTSqGO00yXgeZkWeaBFEW9ae7lUMC","userRole":"user","userCartID":[],"_id":"666f36086fca43417717251d","__v":0}
+24-06-16 16:24:18 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:24:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:24:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:24:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:24:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 16:24:18 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$vUD3FlubwbjBwhrP5Ocb1ubsRH1fWco8hzOPeUjDBjyI0F23xwnJa","userRole":"user","userCartID":[],"_id":"666f3be26fca434177172520","__v":0}
+24-06-16 16:24:18 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:24:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:24:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:24:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:24:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 16:24:19 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$sflkA77g3s4zeLzgshrVeuey1ZVuTQW0h4FDCKQEcQAFPAC/gzzHq","userRole":"user","userCartID":[],"_id":"666f3be36fca434177172523","__v":0}
+24-06-16 16:27:25 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:27:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:27:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:27:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:27:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 16:27:25 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$bSqQRhebSO8mOUsXuGzTqOPV5lGv9Ki5dzm8DTGZoXpRUTS00mopW","userRole":"user","userCartID":[],"_id":"666f3c9d6fca434177172526","__v":0}
+24-06-16 16:27:25 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:27:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:27:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:27:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:27:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 16:27:25 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$e0roSs.GxxT1oY8GfPAQxe4gxzkyaj3nD97fpwM0.JhpbX0OfLBVa","userRole":"user","userCartID":[],"_id":"666f3c9d6fca434177172529","__v":0}
+24-06-16 16:29:54 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:29:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:29:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:29:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:29:54 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 16:29:54 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$hj4n2/F9IJLIKFhQ0A4pQ.xLkU88Q/QLZxEY1Q9DQtd6O/JMsVnA6","userRole":"user","userCartID":[],"_id":"666f3d326fca43417717252c","__v":0}
+24-06-16 16:29:54 GLOBAL [path] : POST en /api/users/register
+24-06-16 16:29:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 16:29:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 16:29:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 16:29:54 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 16:29:54 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$8VGJbX309rKJVFTXkJ2.N.jfzofv1M0RuW7V9kb3bhZDNTv7naywO","userRole":"user","userCartID":[],"_id":"666f3d326fca43417717252f","__v":0}
+24-06-16 17:05:53 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:05:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:05:53 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:05:53 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:05:53 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$TWeMKRtd5aJlBBz7iyWkcOJqnFnlLBWmPX5EcbXFP6hQz5ipYiwH2","userRole":"user","userCartID":[],"_id":"666f45a16fca434177172532","__v":0}
+24-06-16 17:05:53 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:05:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:05:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:05:53 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:05:53 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:05:53 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$JNZcETgTlU11m.kybm9cKOMnrSAlvkpYk0ysw5RHZGMqj78QcA9PG","userRole":"user","userCartID":[],"_id":"666f45a16fca434177172535","__v":0}
+24-06-16 17:11:20 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:11:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:11:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:11:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:11:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:11:21 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba@gmail.com
+24-06-16 17:11:21 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:11:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:11:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:11:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:11:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:11:21 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba2@gmail.com
+24-06-16 17:12:22 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:12:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:12:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:12:22 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:12:22 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:12:22 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba@gmail.com
+24-06-16 17:12:22 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:12:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:12:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:12:22 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:12:22 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:12:22 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba2@gmail.com
+24-06-16 17:27:33 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:27:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:27:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:27:33 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:27:33 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:27:34 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$fzCfeOfoaOUhNivxZq.s8uCaWYB/Vq3XKTUEdlsBeHhsMVYW2aw7y","userRole":"user","userCartID":[],"_id":"666f4ab56fca43417717253c","__v":0}
+24-06-16 17:27:34 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:27:34 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:27:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:27:34 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:27:34 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:27:34 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$kcByRPIGClLxHduCMkTH6e2jMi/yiFtONHLrtoZBnRkiJutq6EEdG","userRole":"user","userCartID":[],"_id":"666f4ab66fca43417717253f","__v":0}
+24-06-16 17:33:49 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:33:49 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:33:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:33:49 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:33:49 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:33:49 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba@gmail.com
+24-06-16 17:33:50 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:33:50 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:33:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:33:50 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:33:50 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:33:50 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba2@gmail.com
+24-06-16 17:34:31 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:34:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:34:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:34:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:34:31 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:34:31 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$9o1ZjtYi6VuO223TUiL2NO0ispDq0VWIfT8lxFab1r9i7InbHBdTi","userRole":"user","userCartID":[],"_id":"666f4c576fca434177172544","__v":0}
+24-06-16 17:34:31 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:34:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:34:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:34:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:34:31 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:34:31 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$IHF.6VqmGxhc3jEzI5Yxu.MyKhE6f2p0/k0y7GAxs/Te.zq/iEENu","userRole":"user","userCartID":[],"_id":"666f4c576fca434177172547","__v":0}
+24-06-16 17:38:01 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:38:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:38:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:38:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:38:01 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:38:02 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$tGkFjLGA0z.ptyihXlW5P.VEt07jycnT.oRko/0o3Zl.ZhlNlwpvW","userRole":"user","userCartID":[],"_id":"666f4d2a6fca43417717254a","__v":0}
+24-06-16 17:38:02 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:38:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:38:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:38:02 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:38:02 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:38:02 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$2smnjhz6QCe76h5XT8RECOVolGlGGFEYvQQKVwP2dk.GICcZMXvEe","userRole":"user","userCartID":[],"_id":"666f4d2a6fca43417717254d","__v":0}
+24-06-16 17:42:00 GLOBAL [path] : POST en /api/users/login
+24-06-16 17:42:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:42:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:42:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:42:00 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 17:42:00 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:42:00 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:42:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:42:00 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:42:00 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:42:01 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$Xv25oP0yRzwdmvGbmLMnEe7xW5lwnBIm8F/02Sxk4oK/VSzGYKbE2","userRole":"user","userCartID":[],"_id":"666f4e186fca434177172551","__v":0}
+24-06-16 17:42:01 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:42:01 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:42:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:42:01 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:42:01 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:42:01 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$4t8BkLXy2Au6hk97IJSNkOcwRIhAm5PuqZwmN/ONqtXYdUvi4LSfe","userRole":"user","userCartID":[],"_id":"666f4e196fca434177172554","__v":0}
+24-06-16 17:44:25 GLOBAL [path] : POST en /api/users/login
+24-06-16 17:44:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:44:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:44:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:44:25 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 17:44:25 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:44:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:44:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:44:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:44:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 17:44:26 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$izVH..DpVRffxSzIfkoxwOTN2udtw/d53LJHNxq/ZMFvxO/ErLSc2","userRole":"user","userCartID":[],"_id":"666f4ea96fca434177172558","__v":0}
+24-06-16 17:44:26 GLOBAL [path] : POST en /api/users/register
+24-06-16 17:44:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 17:44:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 17:44:26 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 17:44:26 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 17:44:26 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$grgB.YHaZegBhmZYnI6BeuIAprF/Gmwd/yHNT1VJwK29CikOmdZva","userRole":"user","userCartID":[],"_id":"666f4eaa6fca43417717255b","__v":0}
+24-06-16 18:15:07 GLOBAL [path] : POST en /api/users/register
+24-06-16 18:15:07 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:15:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:15:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:15:07 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 18:15:08 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$6iTD0DBg7pmSNyA3aVBWJusKiYKCjcM6Q0276/TLKFE6C9hrmfcZu","userRole":"user","userCartID":[],"_id":"666f55db6fca43417717255e","__v":0}
+24-06-16 18:15:08 GLOBAL [path] : POST en /api/users/register
+24-06-16 18:15:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:15:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:15:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:15:08 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 18:15:08 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$ofTtRe6aFKJzc4TT2VUgmOXKprYu41wndjel0MLvfBIfFP.kuqyjG","userRole":"user","userCartID":[],"_id":"666f55dc6fca434177172561","__v":0}
+24-06-16 18:15:08 GLOBAL [path] : POST en /api/users/login
+24-06-16 18:15:08 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:15:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:15:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:15:08 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 18:58:53 GLOBAL [path] : POST en /api/users/register
+24-06-16 18:58:53 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:58:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:58:53 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:58:53 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 18:58:53 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$9GMex5lvSwGIQzbMPDCsq.P02N0AxAwohWn6EDVRlyE6PUnHTNck6","userRole":"user","userCartID":[],"_id":"666f601d6fca434177172565","__v":0}
+24-06-16 18:58:54 GLOBAL [path] : POST en /api/users/register
+24-06-16 18:58:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:58:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:58:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:58:54 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 18:58:54 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$uQx3U8FmHGO4CeITD5dx8uZ17XB1Fj76E80sccmIOVgCkCYwUnmPS","userRole":"user","userCartID":[],"_id":"666f601e6fca434177172568","__v":0}
+24-06-16 18:58:54 GLOBAL [path] : POST en /api/users/login
+24-06-16 18:58:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:58:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 18:58:54 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 18:58:54 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 18:58:54 GLOBAL [path] : POST en /api/products/
+24-06-16 18:58:54 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 18:58:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 18:58:54 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-16 19:36:42 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:36:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:36:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:36:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:36:42 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 19:36:42 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$xj2lZWTVqTwF8aw0HyKuaOKR4rueKFOpDcIHTX0qQloM.vcHRo33i","userRole":"user","userCartID":[],"_id":"666f68fa6fca43417717256c","__v":0}
+24-06-16 19:36:42 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:36:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:36:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:36:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:36:42 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 19:36:42 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$10X8dpc9SYFUDdjHqQ68k.KGxQjTzRp662nd1nQe49fkcrm3iEQuS","userRole":"user","userCartID":[],"_id":"666f68fa6fca43417717256f","__v":0}
+24-06-16 19:36:42 GLOBAL [path] : POST en /api/users/login
+24-06-16 19:36:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:36:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:36:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:36:43 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 19:46:18 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:46:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:46:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:46:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:46:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 19:46:18 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$Zr5DMlioafRNxyqbS5WZQOdHlYRwvn5nRU3U/NqJS8pw3a1Q57sQu","userRole":"user","userCartID":[],"_id":"666f6b3a6fca434177172573","__v":0}
+24-06-16 19:46:18 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:46:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:46:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:46:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:46:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"123456"}
+24-06-16 19:46:19 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 2","userLastName":"Apellido de prueba 2","userEmail":"prueba2@gmail.com","userAge":24,"userPassword":"$2b$10$k8xUhOVUtHc0MasLZrezYurahZzx8J4ORlYK6OCOLC3mZ0XiXdnl6","userRole":"user","userCartID":[],"_id":"666f6b3b6fca434177172576","__v":0}
+24-06-16 19:46:19 GLOBAL [path] : POST en /api/users/login
+24-06-16 19:46:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:46:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:46:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:46:19 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 19:46:19 GLOBAL [path] : POST en /api/products/
+24-06-16 19:46:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:46:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 19:46:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"user"}
+24-06-16 19:46:19 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-16 19:51:38 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:51:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:51:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:51:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:51:38 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 19:51:38 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$UdnEW1sO7CjcVo74nirQy.GHGG2HVCj2pgzUBNL4Jy.WMQ7q5EfvO","userRole":"user","userCartID":[],"_id":"666f6c7a6fca43417717257a","__v":0}
+24-06-16 19:51:38 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:51:38 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:51:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:51:38 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:51:38 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 19:51:39 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$89l2T3cYpY0kfAT3RH4dee0HY9W5HhNSxhUZbPFdtKXbThhRjcVD6","userRole":"user","userCartID":[],"_id":"666f6c7b6fca43417717257d","__v":0}
+24-06-16 19:51:39 GLOBAL [path] : POST en /api/users/login
+24-06-16 19:51:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:51:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:51:39 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:51:39 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 19:51:39 GLOBAL [path] : POST en /api/products/
+24-06-16 19:51:39 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:51:39 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 19:51:39 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 19:51:39 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 19:51:39 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f6c7b6fca434177172581
+24-06-16 19:54:02 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:54:02 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:54:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:54:02 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:54:02 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 19:54:03 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$j9Tq6I7EDAbaUHIEIR3CseuEJdE2zQ.cYUWnvP28PxNLqDMaJFOaq","userRole":"user","userCartID":[],"_id":"666f6d0a6fca434177172584","__v":0}
+24-06-16 19:54:03 GLOBAL [path] : POST en /api/users/register
+24-06-16 19:54:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:54:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:54:03 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:54:03 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 19:54:03 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$jAAqa7no.DMvhmd7uExqdOGTFAzVNepTrqwShcbiEPcev.ir8Jdxu","userRole":"user","userCartID":[],"_id":"666f6d0b6fca434177172587","__v":0}
+24-06-16 19:54:03 GLOBAL [path] : POST en /api/users/login
+24-06-16 19:54:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:54:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 19:54:03 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 19:54:03 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 19:54:03 GLOBAL [path] : POST en /api/products/
+24-06-16 19:54:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 19:54:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 19:54:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 19:54:03 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 19:54:03 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f6d0b6fca43417717258b
+24-06-16 20:06:20 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:06:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:06:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:06:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:06:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:06:20 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba@gmail.com
+24-06-16 20:06:20 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:06:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:06:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:06:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:06:20 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:06:20 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba3@gmail.com
+24-06-16 20:06:20 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:06:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:06:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:06:20 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:06:20 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:06:20 GLOBAL [path] : DELETE en /api/users/undefined
+24-06-16 20:06:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:06:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:06:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:06:20 USER-SERVICE [error] : No se pudo borrar el usuario. Mensaje interno: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "users"
+24-06-16 20:06:20 GLOBAL [path] : POST en /api/products/
+24-06-16 20:06:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:06:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:06:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:06:20 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:06:20 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:06:20 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:06:20 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:06:20 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Ya existe un producto con el código PFST2
+24-06-16 20:08:18 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:08:18 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:08:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:08:18 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:08:18 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:08:18 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$SKgrWHbOMt15DtqTaHDPTuH/I93uE1gFYgKwlMPR2kwEWfOOEnTO2","userRole":"user","userCartID":[],"_id":"666f70626fca434177172592","__v":0}
+24-06-16 20:08:19 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:08:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:08:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:08:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:08:19 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:08:19 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$mS0mh0lLo1HBvTnI0xD.Y.yUDWCBZZfyC8fpwdKOXRAj8rL1m3GC2","userRole":"user","userCartID":[],"_id":"666f70636fca434177172595","__v":0}
+24-06-16 20:08:19 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:08:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:08:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:08:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:08:19 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:08:19 GLOBAL [path] : DELETE en /api/users/undefined
+24-06-16 20:08:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:08:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:08:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:08:19 USER-SERVICE [error] : No se pudo borrar el usuario. Mensaje interno: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "users"
+24-06-16 20:08:19 GLOBAL [path] : POST en /api/products/
+24-06-16 20:08:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:08:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:08:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:08:19 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 20:08:19 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f70636fca434177172599
+24-06-16 20:12:11 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:12:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:12:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:12:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:12:11 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:12:11 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba@gmail.com
+24-06-16 20:12:11 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:12:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:12:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:12:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:12:11 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:12:11 USER-SERVICE [error] : No se pudo crear el usuario Ya existe un usuario con el email prueba3@gmail.com
+24-06-16 20:12:11 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:12:11 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:12:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:12:11 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:12:12 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:12:12 GLOBAL [path] : DELETE en /api/users/undefined
+24-06-16 20:12:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:12:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:12:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:12:12 USER-SERVICE [error] : No se pudo borrar el usuario. Mensaje interno: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "users"
+24-06-16 20:12:12 GLOBAL [path] : POST en /api/products/
+24-06-16 20:12:12 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:12:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:12:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:12:12 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:12:12 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:12:12 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:12:12 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:12:12 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Ya existe un producto con el código PFST2
+24-06-16 20:13:13 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:13:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:13:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:13:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:13:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:13:14 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$ljSn.BTVuG6juo7CVqE.J.KMhwgiz1ijFbt0LGtwVCiR9OHjNapeO","userRole":"user","userCartID":[],"_id":"666f718a6fca4341771725a0","__v":0}
+24-06-16 20:13:14 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:13:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:13:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:13:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:13:14 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:13:14 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$le1obcmfqiWU/MLWqWgheuZbA2MnzOrI6vGpWLcoJBd5oacRUQwja","userRole":"user","userCartID":[],"_id":"666f718a6fca4341771725a3","__v":0}
+24-06-16 20:13:14 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:13:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:13:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:13:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:13:14 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:13:14 GLOBAL [path] : DELETE en /api/users/undefined
+24-06-16 20:13:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:13:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:13:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:13:14 USER-SERVICE [error] : No se pudo borrar el usuario. Mensaje interno: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "users"
+24-06-16 20:13:14 GLOBAL [path] : POST en /api/products/
+24-06-16 20:13:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:13:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:13:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:13:14 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 20:13:14 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f718a6fca4341771725a7
+24-06-16 20:16:03 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:16:03 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:16:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:16:03 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:16:03 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:16:04 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$13WZCHVxeTTgh.6yogkLhuCzclAafUPe75xP58hAmdqSs66uuhEYa","userRole":"user","userCartID":[],"_id":"666f72346fca4341771725aa","__v":0}
+24-06-16 20:16:04 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:16:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:16:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:16:04 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:16:04 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:16:04 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$J/gZ33TOaNTbUintVNUJr.gU0VGtzyiJH90MTqTL7UzY.vmLDS3tK","userRole":"user","userCartID":[],"_id":"666f72346fca4341771725ad","__v":0}
+24-06-16 20:16:04 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:16:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:16:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:16:04 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:16:04 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:16:04 GLOBAL [path] : DELETE en /api/users/666f72346fca4341771725ad
+24-06-16 20:16:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:16:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:16:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:16:04 USER-SERVICE [debug] : El usuario con id 666f72346fca4341771725ad fue borrado con éxito
+24-06-16 20:16:04 GLOBAL [path] : POST en /api/products/
+24-06-16 20:16:04 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:16:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:16:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:16:04 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 20:16:04 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f72346fca4341771725b2
+24-06-16 20:20:16 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:20:16 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:20:16 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$F4uOKS4RdYmYhggqBoMizOnP.Si7Wp.9wGakTQokQ0hrrj8Tr4wnu","userRole":"user","userCartID":[],"_id":"666f73306fca4341771725b5","__v":0}
+24-06-16 20:20:16 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:20:16 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:20:16 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$AWfIh/fGnwsRduQmgWWC8elr7Hj6dzqjcb37chatXS.xMMl28g3a2","userRole":"user","userCartID":[],"_id":"666f73306fca4341771725b8","__v":0}
+24-06-16 20:20:16 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:20:16 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:20:16 GLOBAL [path] : DELETE en /api/users/666f73306fca4341771725b8
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:20:16 USER-SERVICE [debug] : El usuario con id 666f73306fca4341771725b8 fue borrado con éxito
+24-06-16 20:20:16 GLOBAL [path] : DELETE en /api/users/666f73306fca4341771725b5
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:20:16 USER-SERVICE [debug] : El usuario con id 666f73306fca4341771725b5 fue borrado con éxito
+24-06-16 20:20:16 GLOBAL [path] : POST en /api/products/
+24-06-16 20:20:16 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:20:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:20:16 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:20:16 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:20:16 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:20:16 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:20:16 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:20:16 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Ya existe un producto con el código PFST2
+24-06-16 20:26:13 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:26:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:26:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:26:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:26:13 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$N8VRyr2zdGe8kW4O8dsKEetFp2Z07XnytPEDvXZ.n7ELjz1ow.U7m","userRole":"user","userCartID":[],"_id":"666f74956fca4341771725bf","__v":0}
+24-06-16 20:26:13 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:26:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:26:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:26:13 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:26:13 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$i2ZZxiv9Y.iaWK5w6iVtmOSmjPQuFD7Lh0pljFWStx8NL7moDfOUC","userRole":"user","userCartID":[],"_id":"666f74956fca4341771725c2","__v":0}
+24-06-16 20:26:13 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:26:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:26:13 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:26:13 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:26:13 GLOBAL [path] : DELETE en /api/users/666f74956fca4341771725c2
+24-06-16 20:26:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:26:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:26:13 USER-SERVICE [debug] : El usuario con id 666f74956fca4341771725c2 fue borrado con éxito
+24-06-16 20:26:13 GLOBAL [path] : DELETE en /api/users/666f74956fca4341771725bf
+24-06-16 20:26:13 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:26:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:26:14 USER-SERVICE [debug] : El usuario con id 666f74956fca4341771725bf fue borrado con éxito
+24-06-16 20:26:14 GLOBAL [path] : POST en /api/products/
+24-06-16 20:26:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:26:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:26:14 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f74966fca4341771725c8
+24-06-16 20:26:14 GLOBAL [path] : DELETE en /api/products/666f74966fca4341771725c8
+24-06-16 20:26:14 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:26:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:26:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : ID del producto a borrar 666f74966fca4341771725c8
+24-06-16 20:26:14 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-16 20:26:14 PRODUCT-SERVICE [debug] : El producto con id 666f74966fca4341771725c8 se borró exitosamente
+24-06-16 20:29:32 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:29:32 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-16 20:29:32 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$CC4MxL6U0KSk39GU6e39OuZ1U39pYgUSAxQ02QGqxRZ69ASIUAlsS","userRole":"user","userCartID":[],"_id":"666f755caa8c77d47ce98207","__v":0}
+24-06-16 20:29:32 GLOBAL [path] : POST en /api/users/register
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:29:32 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-16 20:29:32 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$CY3ffzy.0TLuBEFXr3T9IOmFXVY2HHn8gbrbztT2vkXkrQS9Go2hS","userRole":"user","userCartID":[],"_id":"666f755caa8c77d47ce9820a","__v":0}
+24-06-16 20:29:32 GLOBAL [path] : POST en /api/users/login
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-16 20:29:32 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-16 20:29:32 GLOBAL [path] : DELETE en /api/users/666f755caa8c77d47ce9820a
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:29:32 USER-SERVICE [debug] : El usuario con id 666f755caa8c77d47ce9820a fue borrado con éxito
+24-06-16 20:29:32 GLOBAL [path] : DELETE en /api/users/666f755caa8c77d47ce98207
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:29:32 USER-SERVICE [debug] : El usuario con id 666f755caa8c77d47ce98207 fue borrado con éxito
+24-06-16 20:29:32 GLOBAL [path] : POST en /api/products/
+24-06-16 20:29:32 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:29:32 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:29:32 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-16 20:29:32 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-16 20:29:32 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-16 20:29:32 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-16 20:29:33 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-16 20:29:33 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-16 20:29:33 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 666f755daa8c77d47ce98210
+24-06-16 20:29:33 GLOBAL [path] : DELETE en /api/products/666f755daa8c77d47ce98210
+24-06-16 20:29:33 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-16 20:29:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-16 20:29:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-16 20:29:33 PRODUCT-SERVICE [debug] : ID del producto a borrar 666f755daa8c77d47ce98210
+24-06-16 20:29:33 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-16 20:29:33 PRODUCT-SERVICE [debug] : El producto con id 666f755daa8c77d47ce98210 se borró exitosamente
