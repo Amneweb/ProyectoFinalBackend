@@ -1,5 +1,22 @@
 # ProyectoFinalBackend
 
+## Desafío testing
+
+Para realizar el test de integración, se abren dos terminales, una para el servidor y otra para el test.
+La del servidor debe especificar que se trata de un test, para que la base de datos con la que se trabaja sea la base "test" y no la base real del ecommerce. Para eso, en la cli se debe escribir
+**node --watch src/app.js --test test**
+En la terminal del test el comando es
+**npm test**
+Los tests unitarios (TDD) se realizan sobre los módulos de productos, carritos y usuarios
+Los tests de integración se realizan sobre las rutas de usuarios, productos y carritos
+**Usuarios:** registro, login y delete de un usuario
+**Productos:** obtener todos los productos, crear un producto, borrar un producto
+
+## Desafío de documentación
+
+Se documentó parte de la API con Swagger.
+La ruta para ver la documentación es **http://localhost:8080/api/docs/**
+
 ## Desafío recuperación de contraseña
 
 Se ha implementado un método de recuperación de contraseña en 3 pasos

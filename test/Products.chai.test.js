@@ -26,8 +26,7 @@ TEST 1
 
     // Then
     const result = await this.productDAO.findAll();
-    console.log(pc.bgBlue("Test 1 con Chai = result es un array?"));
-    console.log(result.docs);
+
     // Asserts
     expect(result.docs).deep.equal([]);
   });
@@ -54,9 +53,6 @@ TEST 2
 
     // Asserts
     expect(result._id).to.be.ok;
-
-    console.log(pc.bgBlue("Test 2 con Chai = producto creado "));
-    console.log(result);
   });
   /*
 ============================
@@ -78,9 +74,6 @@ TEST 3
 
     // Asserts
     expect(result.thumb).deep.equal([]);
-
-    console.log(pc.bgBlue("Test 3 con Chai = producto creado "));
-    console.log(result);
   });
 
   /*
@@ -92,8 +85,6 @@ TEST 4
     const filters = { code: "PF2" };
     const result = await this.productDAO.findOne(filters);
     expect(typeof result).to.be.deep.equal("object");
-    console.log(pc.bgBlue("Test 4 con Chai = producto encontrado "));
-    console.log(result);
   });
 
   after(function () {
