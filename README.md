@@ -17,13 +17,17 @@ Para realizar los tests se tendrán abiertas dos terminales, una para el servido
 
 Para indicar que se trabajará con la base de datos "test", en la línea de comandos se agregará la opción --test, de manera que en la cli se escribirá:
 
-**node --watch src/app.js --test test**
+```
+node --watch src/app.js --test test
+```
 
 **TEST**
 
 En la terminal del test el comando es
 
-**npm test**
+```
+npm test
+```
 
 > [!NOTE]
 > QUE ESTAREMOS EVALUANDO
