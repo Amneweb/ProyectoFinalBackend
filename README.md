@@ -8,7 +8,8 @@
 
 Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la app en cada una de las rutas principales.
 
-> [!TIP] COMANDOS PARA REALIZAR EL TEST
+> [!TIP]
+> COMANDOS PARA REALIZAR EL TEST
 
 Para realizar los tests se tendrán abiertas dos terminales, una para el servidor y otra para el test.
 
@@ -24,7 +25,8 @@ En la terminal del test el comando es
 
 **npm test**
 
-> [!NOTE] QUE ESTAREMOS EVALUANDO
+> [!NOTE]
+> QUE ESTAREMOS EVALUANDO
 
 Terminado toda la configuración de testing, se deberán poder realizar:
 
