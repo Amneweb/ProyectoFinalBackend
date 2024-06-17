@@ -65,7 +65,7 @@ describe("Test del DAO de carritos", () => {
   TEST 4
   ============================
   */
-  it("El dao devuelve null si se pide un carrito inexistente", async function () {
+  it("El dao debe devuelve error si se pide un carrito inexistente", async function () {
     //Given
     // Then
     const result = await this.cartDAO.findByID("666f6b3b6fca434177172576");
