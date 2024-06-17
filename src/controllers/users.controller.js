@@ -110,12 +110,22 @@ export default class UsersController {
   register = async (req, res) => {
     const { userName, userLastName, userEmail, userAge, userPassword } =
       req.validatedData;
+
     logger.debug(
       "Datos que llegan luego de la validación del formulario de login %j",
       req.validatedData
     );
 
     try {
+      if (
+        !userName ||
+        !userLastName ||
+        !userEmail ||
+        !userAge ||
+        !userPassword
+      ) {
+        throw new Error("Error de ingreso de datos", req.validatedData.error);
+      }
       const registrado = await this.#userService.save({
         userName,
         userLastName,
@@ -126,7 +136,7 @@ export default class UsersController {
       logger.debug("se ha creado el usuario %j", registrado);
       res.sendSuccess(registrado);
     } catch (e) {
-      logger.error("No se pudo crear el usuario %s", e.message);
+      logger.error("No se pudo crear el usuario %j", e.message);
       res.sendClientError(e.message);
     }
   };

@@ -1634,3 +1634,682 @@
 24-06-17 10:07:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
 24-06-17 10:07:44 PRODUCT-SERVICE [silly] : pasó todos los controles
 24-06-17 10:07:44 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 10:22:41 GLOBAL [path] : POST en /api/users/register
+24-06-17 10:22:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:22:41 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:22:41 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 10:22:41 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$05S2qlINtlFznNKvuzH7Q.du6dGR1RpwEFcmunZzz59QShdEezkHa","userRole":"user","userCartID":[],"_id":"667038a17bd3d6bce3be689f","__v":0}
+24-06-17 10:22:41 GLOBAL [path] : POST en /api/users/register
+24-06-17 10:22:41 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:41 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:22:41 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:22:41 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 10:22:42 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$Vh2A458Wc5ZMuPQgUefYeOUuYhsLo/FPfnoNvTH/r0sVTKCz3Ea02","userRole":"user","userCartID":[],"_id":"667038a17bd3d6bce3be68a2","__v":0}
+24-06-17 10:22:42 GLOBAL [path] : POST en /api/users/login
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:22:42 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 10:22:42 GLOBAL [path] : DELETE en /api/users/667038a17bd3d6bce3be68a2
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 USER-SERVICE [debug] : El usuario con id 667038a17bd3d6bce3be68a2 fue borrado con éxito
+24-06-17 10:22:42 GLOBAL [path] : DELETE en /api/users/667038a17bd3d6bce3be689f
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 USER-SERVICE [debug] : El usuario con id 667038a17bd3d6bce3be689f fue borrado con éxito
+24-06-17 10:22:42 GLOBAL [path] : POST en /api/products/
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 10:22:42 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 667038a27bd3d6bce3be68a8
+24-06-17 10:22:42 GLOBAL [path] : DELETE en /api/products/667038a27bd3d6bce3be68a8
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : ID del producto a borrar 667038a27bd3d6bce3be68a8
+24-06-17 10:22:42 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : El producto con id 667038a27bd3d6bce3be68a8 se borró exitosamente
+24-06-17 10:22:42 GLOBAL [path] : POST en /api/products
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718630562535-afuera.jpeg","st":true}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718630562535-afuera.jpeg"],"st":true}
+24-06-17 10:22:42 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718630562535-afuera.jpeg"]}}
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 10:22:42 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 667038a27bd3d6bce3be68ac
+24-06-17 10:22:42 GLOBAL [path] : PUT en /api/products/667038a27bd3d6bce3be68ac/imagenes
+24-06-17 10:22:42 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:22:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:42 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:22:43 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 10:22:43 GLOBAL [path] : DELETE en /api/products/667038a27bd3d6bce3be68ac
+24-06-17 10:22:43 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:22:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:22:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:22:43 PRODUCT-SERVICE [debug] : ID del producto a borrar 667038a27bd3d6bce3be68ac
+24-06-17 10:22:43 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:22:43 PRODUCT-SERVICE [debug] : El producto con id 667038a27bd3d6bce3be68ac se borró exitosamente
+24-06-17 10:47:19 GLOBAL [path] : POST en /api/users/register
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:47:19 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 10:47:19 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$9Q9PQrl5vsEEIqMhcjzafuTLAxR9ApHhgBOr4NKxW5n8lK3Gz1KFG","userRole":"user","userCartID":[],"_id":"66703e677bd3d6bce3be68b2","__v":0}
+24-06-17 10:47:19 GLOBAL [path] : POST en /api/users/register
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:47:19 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 10:47:19 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$VB3vgqx7GK37g.m5g4hUp.yLpz1r9YlQtNZUvCHSUEyRQQolQu19G","userRole":"user","userCartID":[],"_id":"66703e677bd3d6bce3be68b5","__v":0}
+24-06-17 10:47:19 GLOBAL [path] : POST en /api/users/login
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 10:47:19 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 10:47:19 GLOBAL [path] : DELETE en /api/users/66703e677bd3d6bce3be68b5
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:19 USER-SERVICE [debug] : El usuario con id 66703e677bd3d6bce3be68b5 fue borrado con éxito
+24-06-17 10:47:19 GLOBAL [path] : DELETE en /api/users/66703e677bd3d6bce3be68b2
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:19 USER-SERVICE [debug] : El usuario con id 66703e677bd3d6bce3be68b2 fue borrado con éxito
+24-06-17 10:47:19 GLOBAL [path] : POST en /api/products/
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 10:47:19 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66703e677bd3d6bce3be68bb
+24-06-17 10:47:19 GLOBAL [path] : DELETE en /api/products/66703e677bd3d6bce3be68bb
+24-06-17 10:47:19 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : ID del producto a borrar 66703e677bd3d6bce3be68bb
+24-06-17 10:47:19 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:47:19 PRODUCT-SERVICE [debug] : El producto con id 66703e677bd3d6bce3be68bb se borró exitosamente
+24-06-17 10:47:20 GLOBAL [path] : POST en /api/products/
+24-06-17 10:47:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 10:47:20 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 10:47:20 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 10:47:20 GLOBAL [path] : POST en /api/products
+24-06-17 10:47:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718632040081-afuera.jpeg","st":true}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718632040081-afuera.jpeg"],"st":true}
+24-06-17 10:47:20 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718632040081-afuera.jpeg"]}}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 66703e687bd3d6bce3be68c0
+24-06-17 10:47:20 GLOBAL [path] : PUT en /api/products/66703e687bd3d6bce3be68c0/imagenes
+24-06-17 10:47:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:20 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 10:47:20 GLOBAL [path] : DELETE en /api/products/66703e687bd3d6bce3be68c0
+24-06-17 10:47:20 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 10:47:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 10:47:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : ID del producto a borrar 66703e687bd3d6bce3be68c0
+24-06-17 10:47:20 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 10:47:20 PRODUCT-SERVICE [debug] : El producto con id 66703e687bd3d6bce3be68c0 se borró exitosamente
+24-06-17 11:00:30 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:00:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:00:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:00:30 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:00:30 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$NSjPmRpp9BrjNirX4SFYaud319OPgEdhhJmsP8BM9DMVfSeNa9yPu","userRole":"user","userCartID":[],"_id":"6670417e2ad29b95f2f9f71d","__v":0}
+24-06-17 11:00:30 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:00:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:00:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:00:30 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userAge":54,"userPassword":"123456"}
+24-06-17 11:00:30 USER-SERVICE [error] : No se pudo crear el usuario Datos inválidos:'Required'
+24-06-17 11:00:30 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:00:30 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:30 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:00:30 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:00:30 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 11:00:31 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$M5WhDQHsPVffJ/bwiihL1.mUbjy3Dh1RkYVD.G2UuhY0UDjanZjse","userRole":"user","userCartID":[],"_id":"6670417e2ad29b95f2f9f721","__v":0}
+24-06-17 11:00:31 GLOBAL [path] : POST en /api/users/login
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:00:31 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 11:00:31 GLOBAL [path] : DELETE en /api/users/6670417e2ad29b95f2f9f721
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 USER-SERVICE [debug] : El usuario con id 6670417e2ad29b95f2f9f721 fue borrado con éxito
+24-06-17 11:00:31 GLOBAL [path] : DELETE en /api/users/6670417e2ad29b95f2f9f71d
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 USER-SERVICE [debug] : El usuario con id 6670417e2ad29b95f2f9f71d fue borrado con éxito
+24-06-17 11:00:31 GLOBAL [path] : POST en /api/products/
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670417f2ad29b95f2f9f727
+24-06-17 11:00:31 GLOBAL [path] : DELETE en /api/products/6670417f2ad29b95f2f9f727
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670417f2ad29b95f2f9f727
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : El producto con id 6670417f2ad29b95f2f9f727 se borró exitosamente
+24-06-17 11:00:31 GLOBAL [path] : POST en /api/products/
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 11:00:31 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 11:00:31 GLOBAL [path] : POST en /api/products
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718632831662-afuera.jpeg","st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718632831662-afuera.jpeg"],"st":true}
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718632831662-afuera.jpeg"]}}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670417f2ad29b95f2f9f72c
+24-06-17 11:00:31 GLOBAL [path] : PUT en /api/products/6670417f2ad29b95f2f9f72c/imagenes
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 11:00:31 GLOBAL [path] : DELETE en /api/products/6670417f2ad29b95f2f9f72c
+24-06-17 11:00:31 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:00:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:00:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670417f2ad29b95f2f9f72c
+24-06-17 11:00:31 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:00:31 PRODUCT-SERVICE [debug] : El producto con id 6670417f2ad29b95f2f9f72c se borró exitosamente
+24-06-17 11:08:25 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:08:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:08:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:08:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:08:25 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$sM.N4YvKwecMWYtFjl7hl.SxyTkFdWljlDzFs4IWLAbXnMxDf8XDy","userRole":"user","userCartID":[],"_id":"667043597d2a9eece61c549d","__v":0}
+24-06-17 11:08:25 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:08:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:08:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:08:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userAge":54,"userPassword":"123456"}
+24-06-17 11:08:25 USER-SERVICE [error] : No se pudo crear el usuario {}
+24-06-17 11:08:25 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:08:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:08:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:08:25 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 11:08:25 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$sVuPtwJv9BUJWY/2gURH9O2bKAOHgI7kcP7z/BZqm5o2BXUolbFga","userRole":"user","userCartID":[],"_id":"667043597d2a9eece61c54a1","__v":0}
+24-06-17 11:08:25 GLOBAL [path] : POST en /api/users/login
+24-06-17 11:08:25 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:08:25 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:08:26 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 11:08:26 GLOBAL [path] : DELETE en /api/users/667043597d2a9eece61c54a1
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 USER-SERVICE [debug] : El usuario con id 667043597d2a9eece61c54a1 fue borrado con éxito
+24-06-17 11:08:26 GLOBAL [path] : DELETE en /api/users/667043597d2a9eece61c549d
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 USER-SERVICE [debug] : El usuario con id 667043597d2a9eece61c549d fue borrado con éxito
+24-06-17 11:08:26 GLOBAL [path] : POST en /api/products/
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670435a7d2a9eece61c54a7
+24-06-17 11:08:26 GLOBAL [path] : DELETE en /api/products/6670435a7d2a9eece61c54a7
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670435a7d2a9eece61c54a7
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : El producto con id 6670435a7d2a9eece61c54a7 se borró exitosamente
+24-06-17 11:08:26 GLOBAL [path] : POST en /api/products/
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 11:08:26 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 11:08:26 GLOBAL [path] : POST en /api/products
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718633306494-afuera.jpeg","st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718633306494-afuera.jpeg"],"st":true}
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718633306494-afuera.jpeg"]}}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670435a7d2a9eece61c54ac
+24-06-17 11:08:26 GLOBAL [path] : PUT en /api/products/6670435a7d2a9eece61c54ac/imagenes
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 11:08:26 GLOBAL [path] : DELETE en /api/products/6670435a7d2a9eece61c54ac
+24-06-17 11:08:26 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:08:26 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:08:26 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670435a7d2a9eece61c54ac
+24-06-17 11:08:26 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:08:26 PRODUCT-SERVICE [debug] : El producto con id 6670435a7d2a9eece61c54ac se borró exitosamente
+24-06-17 11:21:46 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:21:46 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:21:46 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:21:46 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:21:47 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$A.jVvdKpX49zVCRHLFYOKu2KY9zdVvuB3glaMa.xsMEOc7R03HDb.","userRole":"user","userCartID":[],"_id":"6670467b2bc4a8216970a2ef","__v":0}
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:21:47 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userAge":54,"userPassword":"123456"}
+24-06-17 11:21:47 USER-SERVICE [error] : No se pudo crear el usuario "Error de ingreso de datos"
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:21:47 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 11:21:47 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$1l7tIbRV3YKlk6X86jEq0eVMKEeiBu9etaD4.EuZi0UtLO035y40.","userRole":"user","userCartID":[],"_id":"6670467b2bc4a8216970a2f2","__v":0}
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/users/login
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:21:47 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 11:21:47 GLOBAL [path] : DELETE en /api/users/6670467b2bc4a8216970a2f2
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 USER-SERVICE [debug] : El usuario con id 6670467b2bc4a8216970a2f2 fue borrado con éxito
+24-06-17 11:21:47 GLOBAL [path] : DELETE en /api/users/6670467b2bc4a8216970a2ef
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 USER-SERVICE [debug] : El usuario con id 6670467b2bc4a8216970a2ef fue borrado con éxito
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/products/
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670467b2bc4a8216970a2f8
+24-06-17 11:21:47 GLOBAL [path] : DELETE en /api/products/6670467b2bc4a8216970a2f8
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670467b2bc4a8216970a2f8
+24-06-17 11:21:47 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : El producto con id 6670467b2bc4a8216970a2f8 se borró exitosamente
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/products/
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 11:21:47 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 11:21:47 GLOBAL [path] : POST en /api/products
+24-06-17 11:21:47 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:47 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:47 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718634107927-afuera.jpeg","st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718634107927-afuera.jpeg"],"st":true}
+24-06-17 11:21:47 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718634107927-afuera.jpeg"]}}
+24-06-17 11:21:47 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:21:48 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670467b2bc4a8216970a2fd
+24-06-17 11:21:48 GLOBAL [path] : PUT en /api/products/6670467b2bc4a8216970a2fd/imagenes
+24-06-17 11:21:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:48 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:21:48 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 11:21:48 GLOBAL [path] : DELETE en /api/products/6670467b2bc4a8216970a2fd
+24-06-17 11:21:48 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:21:48 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:21:48 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:21:48 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670467b2bc4a8216970a2fd
+24-06-17 11:21:48 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:21:48 PRODUCT-SERVICE [debug] : El producto con id 6670467b2bc4a8216970a2fd se borró exitosamente
+24-06-17 11:26:35 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:26:35 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:26:35 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$CkOgZzZLn1OUEUlKycqZYupFfVTi7NXsgKqCB9VG8U10jznGRO66K","userRole":"user","userCartID":[],"_id":"6670479b2bc4a8216970a303","__v":0}
+24-06-17 11:26:35 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:26:35 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userAge":54,"userPassword":"123456"}
+24-06-17 11:26:35 USER-SERVICE [error] : No se pudo crear el usuario "Error de ingreso de datos"
+24-06-17 11:26:35 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:26:35 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 11:26:35 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$klH7pvDkNgLFAtv0GUW1LuSCMug2.4isfsnugx1bfekHOk/STkeem","userRole":"user","userCartID":[],"_id":"6670479b2bc4a8216970a306","__v":0}
+24-06-17 11:26:35 GLOBAL [path] : POST en /api/users/login
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:26:35 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 11:26:35 GLOBAL [path] : DELETE en /api/users/6670479b2bc4a8216970a306
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:35 USER-SERVICE [debug] : El usuario con id 6670479b2bc4a8216970a306 fue borrado con éxito
+24-06-17 11:26:35 GLOBAL [path] : DELETE en /api/users/6670479b2bc4a8216970a303
+24-06-17 11:26:35 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:26:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 USER-SERVICE [debug] : El usuario con id 6670479b2bc4a8216970a303 fue borrado con éxito
+24-06-17 11:26:36 GLOBAL [path] : POST en /api/products/
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670479c2bc4a8216970a30c
+24-06-17 11:26:36 GLOBAL [path] : DELETE en /api/products/6670479c2bc4a8216970a30c
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670479c2bc4a8216970a30c
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : El producto con id 6670479c2bc4a8216970a30c se borró exitosamente
+24-06-17 11:26:36 GLOBAL [path] : POST en /api/products/
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 11:26:36 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 11:26:36 GLOBAL [path] : POST en /api/products
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718634396297-afuera.jpeg","st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718634396297-afuera.jpeg"],"st":true}
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718634396297-afuera.jpeg"]}}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 6670479c2bc4a8216970a311
+24-06-17 11:26:36 GLOBAL [path] : PUT en /api/products/6670479c2bc4a8216970a311/imagenes
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 11:26:36 GLOBAL [path] : DELETE en /api/products/6670479c2bc4a8216970a311
+24-06-17 11:26:36 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:26:36 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:26:36 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : ID del producto a borrar 6670479c2bc4a8216970a311
+24-06-17 11:26:36 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:26:36 PRODUCT-SERVICE [debug] : El producto con id 6670479c2bc4a8216970a311 se borró exitosamente
+24-06-17 11:31:21 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:31:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:31:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:31:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:31:21 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"$2b$10$xIy6CtZ7Xokk1OrRE9G1fO8nykCH2ykNBvpfI1xZkGmZ/OyW3px6i","userRole":"user","userCartID":[],"_id":"667048b92bc4a8216970a317","__v":0}
+24-06-17 11:31:21 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:31:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:31:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:31:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userAge":54,"userPassword":"123456"}
+24-06-17 11:31:21 USER-SERVICE [error] : No se pudo crear el usuario "Error de ingreso de datos"
+24-06-17 11:31:21 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:31:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:31:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:31:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba","userLastName":"Apellido de prueba","userEmail":"prueba@gmail.com","userAge":54,"userPassword":"123456"}
+24-06-17 11:31:21 USER-SERVICE [error] : No se pudo crear el usuario "Ya existe un usuario con el email prueba@gmail.com"
+24-06-17 11:31:21 GLOBAL [path] : POST en /api/users/register
+24-06-17 11:31:21 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:31:21 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:31:21 USER-SERVICE [debug] : Datos que llegan luego de la validación del formulario de login {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"123456"}
+24-06-17 11:31:22 USER-SERVICE [debug] : se ha creado el usuario {"userName":"Usuario de prueba 3","userLastName":"Apellido de prueba 3","userEmail":"prueba3@gmail.com","userAge":18,"userPassword":"$2b$10$asr/DaCrXmQZxeXt7D.XwOJS./QdCJpT77fXfwJ7fXlcVIGYL7qDG","userRole":"user","userCartID":[],"_id":"667048b92bc4a8216970a31b","__v":0}
+24-06-17 11:31:22 GLOBAL [path] : POST en /api/users/login
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-17 11:31:22 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: prueba2@gmail.com
+24-06-17 11:31:22 GLOBAL [path] : DELETE en /api/users/667048b92bc4a8216970a31b
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 USER-SERVICE [debug] : El usuario con id 667048b92bc4a8216970a31b fue borrado con éxito
+24-06-17 11:31:22 GLOBAL [path] : DELETE en /api/users/667048b92bc4a8216970a317
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 USER-SERVICE [debug] : El usuario con id 667048b92bc4a8216970a317 fue borrado con éxito
+24-06-17 11:31:22 GLOBAL [path] : POST en /api/products/
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":"","st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio ST2","stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST2","thumb":[],"st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio ST2","price":100001,"category":["EDNA"],"description":"descripcion del producto ficticio 2 generado con supertest","code":"PFST2","stock":50,"st":true,"thumb":[]}}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 667048ba2bc4a8216970a321
+24-06-17 11:31:22 GLOBAL [path] : DELETE en /api/products/667048ba2bc4a8216970a321
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : ID del producto a borrar 667048ba2bc4a8216970a321
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : El producto con id 667048ba2bc4a8216970a321 se borró exitosamente
+24-06-17 11:31:22 GLOBAL [path] : POST en /api/products/
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":"","st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"stock":50,"description":"descripcion del producto ficticio 2 generado con supertest","price":100001,"category":["EDNA"],"code":"PFST5","thumb":[],"st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : al validar {"success":false,"error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"},"_error":{"issues":[{"code":"invalid_type","expected":"string","received":"undefined","path":["title"],"message":"El nombre es requerido"}],"name":"ZodError"}}
+24-06-17 11:31:22 PRODUCT-SERVICE [error] : Error al tratar de crear un producto nuevo: Cannot destructure property 'title' of 'validateProduct(...).data' as it is undefined.
+24-06-17 11:31:22 GLOBAL [path] : POST en /api/products
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : usuario en controlador de productos {
+  name: 'Usuario de prueba 2 Apellido de prueba 2',
+  email: 'prueba2@gmail.com',
+  age: 24,
+  role: 'admin'
+}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : owner en controlador false
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : datos para crear producto que llegan al controlador {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":"/img/1718634682663-afuera.jpeg","st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : Datos que llegan al servicio {"title":"Producto ficticio MT","stock":10,"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","price":100341,"category":["EDNA"],"code":"PFMT","thumb":["/img/1718634682663-afuera.jpeg"],"st":true}
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : al validar {"success":true,"data":{"title":"Producto ficticio MT","price":100341,"category":["EDNA"],"description":"descripcion del producto ficticio generado con supertest para probar la subida de imágenes","code":"PFMT","stock":10,"st":true,"thumb":["/img/1718634682663-afuera.jpeg"]}}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : owner verificado undefined
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : El producto se agregó correctamente con id 667048ba2bc4a8216970a326
+24-06-17 11:31:22 GLOBAL [path] : PUT en /api/products/667048ba2bc4a8216970a326/imagenes
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : La imagen se cargó correctamente
+24-06-17 11:31:22 GLOBAL [path] : DELETE en /api/products/667048ba2bc4a8216970a326
+24-06-17 11:31:22 GLOBAL [method] : Entrando a llamar strategy: 
+24-06-17 11:31:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN', 'PREMIUM' ]
+24-06-17 11:31:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Usuario de prueba 2 Apellido de prueba 2","email":"prueba2@gmail.com","age":24,"role":"admin"}
+24-06-17 11:31:22 PRODUCT-SERVICE [debug] : ID del producto a borrar 667048ba2bc4a8216970a326
+24-06-17 11:31:22 PRODUCT-SERVICE [silly] : pasó todos los controles
+24-06-17 11:31:23 PRODUCT-SERVICE [debug] : El producto con id 667048ba2bc4a8216970a326 se borró exitosamente

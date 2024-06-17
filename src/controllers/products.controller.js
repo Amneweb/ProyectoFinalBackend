@@ -183,7 +183,7 @@ export default class ProductsController {
     const datos = req.validatedData;
     const user = req.user;
     if (!datos.thumb) {
-      return res.sendClientError("No se ha subido ning;un archivo adjunto");
+      return res.sendClientError("No se ha subido ningún archivo adjunto");
     }
 
     try {
