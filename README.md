@@ -2,12 +2,13 @@
 
 ## Desafío testing
 
-> CONSIGNA: Realizar módulos de testing para tu proyecto principal, utilizando los módulos de mocha + chai + supertest
+### CONSIGNA
+
+> Realizar módulos de testing para tu proyecto principal, utilizando los módulos de mocha + chai + supertest
 
 Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la app en cada una de las rutas principales.
 
-> [!TIP]
-> Comandos para realizar el test
+> [!TIP] COMANDOS PARA REALIZAR EL TEST
 
 Para realizar los tests se tendrán abiertas dos terminales, una para el servidor y otra para el test.
 
@@ -22,6 +23,8 @@ Para indicar que se trabajará con la base de datos "test", en la línea de coma
 En la terminal del test el comando es
 
 **npm test**
+
+> [!NOTE] QUE ESTAREMOS EVALUANDO
 
 Terminado toda la configuración de testing, se deberán poder realizar:
 
@@ -60,8 +63,6 @@ Hasta el momento están configurados los siguientes tests
 
 ✔ El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado
 
-✔ El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado
-
 **Tests de productos**
 
 ✔ el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner (141ms)
@@ -75,8 +76,6 @@ Hasta el momento están configurados los siguientes tests
 ✔ se debe poder crear un producto con la imagen subida y la ruta guardada en la propiedad thumb
 
 ✔ El endpoint PUT /api/products/:id/imagenes debe cargar una imagen y la ruta se agregará al array de la propiedad thumb
-
-✔ el endpoing DELETE api/products/:id borra el producto creado para probar Multer
 
 ---
 
