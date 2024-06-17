@@ -6,8 +6,6 @@
 
 > Realizar módulos de testing para tu proyecto principal, utilizando los módulos de mocha + chai + supertest
 
-Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la app en cada una de las rutas principales.
-
 > [!TIP]
 > COMANDOS PARA REALIZAR EL TEST
 
@@ -27,12 +25,7 @@ npm test
 
 ## EVALUACIONES A REALIZAR
 
-Terminado toda la configuración de testing, se deberán poder realizar:
-
-- Tests unitarios (TDD) sobre los módulos de productos, carritos y usuarios
-- Tests de integración (BDD) sobre las rutas de usuarios, productos y carritos
-
-Hasta el momento están configurados los siguientes tests
+Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la app en cada una de las rutas principales.
 
 ## TDD
 
@@ -44,7 +37,7 @@ Hasta el momento están configurados los siguientes tests
 
 ✔ El dao debe devolver el carrito correspondiente al id enviado
 
-✔ El dao debe devuelve error si se pide un carrito inexistente
+✔ El dao devuelve null si se pide un carrito inexistente
 
 ✔ El dao modifica correctamente un carrito existente
 
