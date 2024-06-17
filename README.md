@@ -11,11 +11,9 @@ Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la ap
 > [!TIP]
 > COMANDOS PARA REALIZAR EL TEST
 
-Para realizar los tests se tendrán abiertas dos terminales, una para el servidor y otra para el test.
+Para realizar los tests se tendrán abiertas dos terminales, una para el servidor y otra para el test. Los comandos para inicializar el test en cada una de ellas son:
 
 **SERVIDOR**
-
-Para indicar que se trabajará con la base de datos "test", en la línea de comandos se agregará la opción --test, de manera que en la cli se escribirá:
 
 ```
 node --watch src/app.js --test test
@@ -23,14 +21,11 @@ node --watch src/app.js --test test
 
 **TEST**
 
-En la terminal del test el comando es
-
 ```
 npm test
 ```
 
-> [!NOTE]
-> QUE ESTAREMOS EVALUANDO
+## EVALUACIONES A REALIZAR
 
 Terminado toda la configuración de testing, se deberán poder realizar:
 
@@ -41,7 +36,21 @@ Hasta el momento están configurados los siguientes tests
 
 ## TDD
 
-### Test del DAO de productos
+### Tests del DAO de carritos
+
+✔ El dao debe devolver los carritos en un Array
+
+✔ El dao debe agregar un carrito vacío a la base de datos
+
+✔ El dao debe devolver el carrito correspondiente al id enviado
+
+✔ El dao debe devuelve error si se pide un carrito inexistente
+
+✔ El dao modifica correctamente un carrito existente
+
+✔ el dao debe borrar un carrito en base a su id
+
+### Tests del DAO de productos
 
 ✔ El dao debe devolver los productos en un Array
 
@@ -71,9 +80,9 @@ Hasta el momento están configurados los siguientes tests
 
 **Tests de productos**
 
-✔ el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner (141ms)
+✔ el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner
 
-✔ el endpoing DELETE api/products/:id borra el producto correctamente (59ms)
+✔ el endpoing DELETE api/products/:id borra el producto correctamente
 
 ✔ El endpoint POST /api/products/ debe devolver status 400 y el error al intentar crear un producto sin el nombre
 
