@@ -2,26 +2,90 @@
 
 ## Desafío testing
 
-Para realizar el test de integración, se abren dos terminales, una para el servidor y otra para el test.
-La del servidor debe especificar que se trata de un test, para que la base de datos con la que se trabaja sea la base "test" y no la base real del ecommerce. Para eso, en la cli se debe escribir
+> CONSIGNA: Realizar módulos de testing para tu proyecto principal, utilizando los módulos de mocha + chai + supertest
+
+Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la app en cada una de las rutas principales.
+
+> [!TIP]
+> Comandos para realizar el test
+
+Para realizar los tests se tendrán abiertas dos terminales, una para el servidor y otra para el test.
+
+**SERVIDOR**
+
+Para indicar que se trabajará con la base de datos "test", en la línea de comandos se agregará la opción --test, de manera que en la cli se escribirá:
 
 **node --watch src/app.js --test test**
+
+**TEST**
 
 En la terminal del test el comando es
 
 **npm test**
 
-Los tests unitarios (TDD) se realizan sobre los módulos de productos, carritos y usuarios
-Los tests de integración se realizan sobre las rutas de usuarios, productos y carritos
+Terminado toda la configuración de testing, se deberán poder realizar:
 
-**Usuarios:** registro, login y delete de un usuario
+- Tests unitarios (TDD) sobre los módulos de productos, carritos y usuarios
+- Tests de integración (BDD) sobre las rutas de usuarios, productos y carritos
 
-**Productos:** obtener todos los productos, crear un producto, borrar un producto
+Hasta el momento están configurados los siguientes tests
+
+## TDD
+
+### Test del DAO de productos
+
+✔ El dao debe devolver los productos en un Array
+
+✔ El dao debe agregar un producto correctamente a la base de datos
+
+✔ Cuando no lo envía el usuario, el dao creará por defecto la propiedad thumb con un array vacío
+
+✔ El dao debe obtener un producto por su SKU (code)
+
+## BDD
+
+### Tests de toda la App
+
+**Tests de usuarios**
+
+✔ el endpoing POST api/users/register debe crear un usuario correctamente
+
+✔ el endpoing POST api/users/register no debe permitir la creación de un usuario sin email
+
+✔ el endpoing POST api/users/register no debe permitir la creación de un usuario con email existente
+
+✔ el usuario creado en el endpoing POST api/users/register debe tener la propiedad userCartID como array vacío
+
+✔ Test Login Usuario: Debe poder hacer login correctamente con el usuario registrado previamente.
+
+✔ El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado
+
+✔ El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado
+
+**Tests de productos**
+
+✔ el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner (141ms)
+
+✔ el endpoing DELETE api/products/:id borra el producto correctamente (59ms)
+
+✔ El endpoint POST /api/products/ debe devolver status 400 y el error al intentar crear un producto sin el nombre
+
+**Test de subida de imágenes**
+
+✔ se debe poder crear un producto con la imagen subida y la ruta guardada en la propiedad thumb
+
+✔ El endpoint PUT /api/products/:id/imagenes debe cargar una imagen y la ruta se agregará al array de la propiedad thumb
+
+✔ el endpoing DELETE api/products/:id borra el producto creado para probar Multer
+
+---
 
 ## Desafío de documentación
 
 Se documentó parte de la API con Swagger.
 La ruta para ver la documentación es **http://localhost:8080/api/docs/**
+
+---
 
 ## Desafío recuperación de contraseña
 
@@ -40,6 +104,8 @@ Se ha implementado un método de recuperación de contraseña en 3 pasos
 - Cuando el usuario hace click en el enlace, en el endpoint se verifica que la cookie todavía exista y que el token guardado en la cookie sea el mismo que el que llega por parámetro.
 - Si son iguales, el correo guardado en el token es el que se renderiza en el último paso, cuando se le pide al usuario que ingrese un nuevo password
 - Antes de guardar el password en la BDD, se verifica que no sea igual al anterior
+
+---
 
 ## Tercer entrega actualizada (incluye mocking, factory y winston)
 
@@ -99,6 +165,8 @@ Por otro lado, tampoco armé un servicio de usuarios con fileSystem, por lo que 
 - El carrito se puede generar y se le pueden agregar productos sólo desde el rol de usuario.
 - Se pueden ver los carritos existentes sólo desde el rol de admin
 
+---
+
 ### Navegación en el front-end
 
 > [!CAUTION]
@@ -132,6 +200,8 @@ La modificación de los productos se hace con fetch. Se pueden modificar los dat
 
 Por ahora sólo programé la paginación, con una cantidad de productos por página fija y se ordena por cantidad de stock.
 Tengo que pensar un poco más cómo hacer que la cantidad de productos pueda ser elegida por el usuario, porque con la paginación, al ir a la segunda página el límite que se cargaba como req.query la primera vez, ya no queda en la url. (tengo que ver si lo puedo agregar desde handlebars con un if, pero todavía no lo pude pensar bien)
+
+---
 
 ## CARPETAS
 
