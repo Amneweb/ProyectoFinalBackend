@@ -10,6 +10,7 @@ describe("Test de toda la App", () => {
   let IDusuarioFicticio2;
   let IDusuarioFicticio;
   let IDproducto;
+  let IDproductoMulter;
   describe("Test del módulo Usuarios", () => {
     console.log(
       pc.bgCyan("nombre base de datos"),
@@ -151,16 +152,77 @@ RUTA PROTEGIDA: BORRAR USUARIOS
       expect(_body.payload).to.not.have.property("owner");
     });
     /*
-==================================
-BORRA EL PRODUCTO RECIEN CREADO
-==================================
-*/
+    ==================================
+    BORRA EL PRODUCTO RECIEN CREADO
+    ==================================
+    */
     it("el endpoing DELETE api/products/:id borra el producto correctamente", async () => {
       //Given
 
       //Then
       const { statusCode } = await requester
         .delete(`/api/products/${IDproducto}`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`]);
+      // Assert
+      expect(statusCode).is.eql(200);
+    });
+  });
+  describe("Test de subida de imagenes", () => {
+    it("se debe poder crear un producto con la imagen subida y la ruta guardada en la propiedad thumb", async function () {
+      //Given
+      const productoFicticioMulter = {
+        title: "Producto ficticio MT",
+        stock: 10,
+        description:
+          "descripcion del producto ficticio generado con supertest para probar la subida de imágenes",
+        price: 100341,
+        category: "EDNA",
+        code: "PFMT",
+      };
+      //Then
+      const result = await requester
+        .post("/api/products")
+        .set("Cookie", [`${cookie.name}=${cookie.value}`])
+        .field("title", productoFicticioMulter.title)
+        .field("stock", productoFicticioMulter.stock)
+        .field("description", productoFicticioMulter.description)
+        .field("price", productoFicticioMulter.price)
+        .field("category", productoFicticioMulter.category)
+        .field("code", productoFicticioMulter.code)
+        .attach("imagen", "./test/imagenes/afuera.jpeg");
+      IDproductoMulter = result._body.payload._id;
+      // Assert
+      expect(result.statusCode).to.eql(200);
+      // console.log(result._body);
+      expect(result._body.payload.thumb).to.be.ok;
+    });
+
+    it("El endpoint PUT /api/products/:id/imagenes debe cargar una imagen y la ruta se agregará al array de la propiedad thumb", async function () {
+      //Given
+
+      //Then
+      const result = await requester
+        .put(`/api/products/${IDproductoMulter}/imagenes`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`])
+        .attach("imagen", "./test/imagenes/estanterias.jpeg");
+
+      // Assert
+      expect(result.statusCode).to.eql(200);
+      // console.log(result._body);
+      expect(result._body.payload.thumb).to.be.ok;
+    });
+
+    /*
+    ==================================
+    BORRA EL PRODUCTO RECIEN CREADO
+    ==================================
+    */
+    it("el endpoing DELETE api/products/:id borra el producto creado para probar Multer", async () => {
+      //Given
+
+      //Then
+      const { statusCode } = await requester
+        .delete(`/api/products/${IDproductoMulter}`)
         .set("Cookie", [`${cookie.name}=${cookie.value}`]);
       // Assert
       expect(statusCode).is.eql(200);

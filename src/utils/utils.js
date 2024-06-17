@@ -25,15 +25,14 @@ export const uploader = multer({
   storage,
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
-    throw new Error(`Error al tratar de subir la imagen ${err}`);
+    console.log(`Error al tratar de subir la imagen ${err}`);
     next();
   },
 });
 
 export const validateFormData = (req, res, next) => {
-  const thumb = req.file
-    ? "/img/" + path.basename(req.file.path.replaceAll(" ", "%20"))
-    : "";
+  console.log("req.file ", req.file);
+  const thumb = req.file ? "/img/" + req.file.filename : "";
   let categoria = [];
   categoria.push(req.body.category);
   const datosConvertidos = {
@@ -52,8 +51,11 @@ export const validateFormData = (req, res, next) => {
 
 export const validateModifiedData = (req, res, next) => {
   let datosConvertidos = { ...req.body };
+  console.log("datos convertidos recibidos en el body");
+  console.log(datosConvertidos);
   if (req.file) {
-    const thumb = "/img/" + path.basename(req.file.path.replaceAll(" ", "%20"));
+    console.log("req.file ", req.file);
+    const thumb = req.file ? "/img/" + req.file.filename : "";
     datosConvertidos["thumb"] = thumb;
   }
 
@@ -70,7 +72,8 @@ export const validateModifiedData = (req, res, next) => {
   }
 
   req.validatedData = datosConvertidos;
-
+  console.log("datos verificados en el middleware de verified partial data ");
+  console.log(datosConvertidos);
   next();
 };
 

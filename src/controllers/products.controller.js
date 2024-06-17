@@ -178,18 +178,20 @@ export default class ProductsController {
       );
     }
   };
-  postImage = async (req, res) => {
-    const id = req.body.IDproducto;
+  putImage = async (req, res) => {
+    const id = req.params.id;
     const datos = req.validatedData;
-    if (!req.file) {
-      return res.sendClientError("No hay ningún archivo adjunto");
+    const user = req.user;
+    if (!datos.thumb) {
+      return res.sendClientError("No se ha subido ning;un archivo adjunto");
     }
 
     try {
-      let imagen = [];
-      datos.data.thumb && imagen.push(datos.data.thumb);
-      const nuevo = { ...datos, thumb: imagen };
-      const result = await this.#productManager.updateProduct(id, nuevo);
+      const result = await this.#productManager.updateImages(
+        id,
+        datos.thumb,
+        user
+      );
       logger.debug("La imagen se cargó correctamente");
       res.sendSuccess(result);
     } catch (e) {

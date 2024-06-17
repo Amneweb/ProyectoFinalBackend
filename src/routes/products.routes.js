@@ -36,12 +36,12 @@ export default class ProductsRouter extends CustomRouter {
       productController.modifyCate
     );
 
-    this.post(
-      "/imagenes/",
+    this.put(
+      "/:id/imagenes/",
       ["ADMIN", "PREMIUM"],
       uploader.single("imagen"),
       validateModifiedData,
-      productController.postImage
+      productController.putImage
     );
   }
 }

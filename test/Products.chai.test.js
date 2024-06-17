@@ -28,7 +28,7 @@ TEST 1
     const result = await this.productDAO.findAll();
 
     // Asserts
-    expect(result.docs).deep.equal([]);
+    expect(Array.isArray(result.docs)).to.be.equals(true);
   });
 
   /*

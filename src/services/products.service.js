@@ -92,4 +92,27 @@ export default class ProductManager {
       category: arrayCategorias,
     });
   };
+
+  updateImages = async (id, thumb, user) => {
+    const role = user.role;
+    const email = user.email;
+    if (role.toUpperCase() != "ADMIN") {
+      await validateOwnership(id, email);
+    }
+    logger.silly("pasó todos los controles");
+    const existente = await productDAO.findByID(id);
+    if (!existente) {
+      throw new BadRequestError("no existe ningún producto con ese ID");
+    }
+    const arrayThumb = existente.thumb;
+    if (arrayThumb.indexOf(thumb) === -1) {
+      arrayThumb.push(thumb);
+    } else {
+      arrayThumb.splice(arrayThumb.indexOf(thumb), 1);
+    }
+    return await productDAO.update(id, {
+      ...existente,
+      thumb: arrayThumb,
+    });
+  };
 }
