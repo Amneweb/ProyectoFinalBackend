@@ -14,16 +14,14 @@ export default class CartController {
   }
   getOne = async (req, res) => {
     logger.method("getOne");
+    const user = req.user;
     try {
-      const result = await this.#cartManager.getCartByID(req.params.cid);
-      if (!result) {
-        logger.error("El carrito con id %s no existe", req.params.cid);
-        throw new BadRequestError("El carrito no existe");
-      }
+      const result = await this.#cartManager.getCartByID(req.params.cid, user);
+
       res.sendSuccess(result);
     } catch (e) {
       logger.error("error enviado al cliente: %s", e.message);
-      res.sendClientError(e);
+      res.sendClientError(e.message);
     }
   };
   getCarts = async (req, res) => {
@@ -61,6 +59,7 @@ export default class CartController {
   addToCart = async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
+    const user = req.user;
     logger.debug(
       "Dentro del controlador de carritos. Id producto: %s; Id carrito: %s",
       pid,
@@ -69,7 +68,8 @@ export default class CartController {
     try {
       const carritoModificado = await this.#cartManager.addProductToCartID(
         cid,
-        pid
+        pid,
+        user
       );
       logger.debug(
         "carrito modificado luego de agregado el producto: %j",
@@ -78,7 +78,7 @@ export default class CartController {
       res.sendSuccess(carritoModificado);
     } catch (e) {
       logger.error("error en addToCart de controlador %s", e.message);
-      res.sendClientError(e);
+      res.sendClientError(e.message);
     }
   };
   deleteCart = async (req, res) => {
@@ -89,7 +89,7 @@ export default class CartController {
       return res.sendSuccess(carritoBorrado);
     } catch (e) {
       logger.error("error en deleteCart de controlador %s", e.message);
-      return res.sendClientError(e);
+      return res.sendClientError(e.message);
     }
   };
   deleteProduct = async (req, res) => {

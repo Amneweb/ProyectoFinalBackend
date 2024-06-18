@@ -2,7 +2,7 @@ import { cartDAO, productDAO } from "../utils/factory.js";
 import TicketDAO from "./daos/mongo/tickets/tickets.mongo.dao.js";
 import { BadRequestError } from "../utils/errors.js";
 import { v4 as uuidv4 } from "uuid";
-import { validateId } from "./validators.service.js";
+import { validateId, validateCartOwnership } from "./validators.service.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 import MailingService from "./emails.service.js";
@@ -25,10 +25,19 @@ class CartManager {
   getCarts = async () => {
     return await cartDAO.findAll();
   };
-  //obtener carrito con id determinado
-  getCartByID = async (id) => {
+  //obtener carrito con id determinado, sólo para ADMIN o usuarios que son dueños del carrito
+  getCartByID = async (id, user) => {
     if (!validateId(id)) {
       throw new BadRequestError(`El id ${id} no corresponde a un id válido`);
+    }
+    if (user.role.toUpperCase() != "ADMIN") {
+      const validatedCart = await validateCartOwnership(id, user.email);
+
+      if (!validatedCart) {
+        throw new BadRequestError(
+          `El usuario con email ${user.email} no es propietario del carrito con id ${id}`
+        );
+      }
     }
     return await cartDAO.findByID(id);
   };
@@ -40,44 +49,59 @@ class CartManager {
     if (!existe) {
       throw new BadRequestError(`No existe ningún carrito con el id ${id}`);
     }
+
     return await cartDAO.update(id, nuevoCarrito);
   };
 
   //agregar producto a un carrito específico
-  addProductToCartID = async (cid, pid) => {
+  addProductToCartID = async (cid, pid, user) => {
     logger.debug(
       "En carts service | Id de carrito: %s, Id de producto: %s",
       cid,
       pid
     );
+    if (user.role.toUpperCase() != "ADMIN") {
+      const validatedCart = await validateCartOwnership(cid, user.email);
 
+      if (!validatedCart) {
+        throw new BadRequestError(
+          `El usuario con email ${user.email} no es propietario del carrito con id ${cid}`
+        );
+      }
+    }
     if (!validateId(cid)) {
-      console.log("error de validacion de id de carrito");
       throw new BadRequestError(
         `El id ${pid} del carrito buscado no corresponde a un id válido`
       );
     }
     if (!validateId(pid)) {
-      console.log("error de validacion de id de producto");
       throw new BadRequestError(
         `El id ${pid} del producto buscado no es válido`
       );
     }
-    console.log("en add product to cart");
 
     let carritoBuscado = await cartDAO.findByID(cid);
-    console.log("carrito buscado luego de cart dao ", carritoBuscado);
+
     if (!carritoBuscado) {
       throw new BadRequestError(`No se encontró ningún carrito con id ${cid}`);
     }
     const producto = await productDAO.findByID(pid);
-    logger.silly("tipo de datos %s", typeof pid);
+
     //para verificar que exista un producto con ese id
     if (!producto) {
       console.log("adentro de if producto ");
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
-
+    if (user.role.toUpperCase() === "PREMIUM" && producto.owner) {
+      const userData = await this.userDAO.findOne(user.email);
+      const userID = userData && userData._id;
+      console.log("ID de usuario", userID);
+      console.log("owner de producto ", producto.owner);
+      if (producto.owner.toString() === userID.toString())
+        throw new BadRequestError(
+          `El usuario con email ${user.email} es dueño del producto con SKU ${producto.code} y por lo tanto no lo puede comprar`
+        );
+    }
     const mapeado = carritoBuscado.cart.map((item) => item.product.toString());
 
     const equalsPid = (element) => element === pid.toString();

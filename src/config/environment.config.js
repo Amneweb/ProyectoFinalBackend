@@ -23,7 +23,7 @@ program
   .option("-d", "Variable para debug", false)
   .option("--persist <mode>", "Modo de persistencia", "mongodb")
   .option("--mode <mode>", "Modo de trabajo", "dev")
-  .option("--test <test>", "Modo test", "test");
+  .option("--test <test>", "Modo test", "");
 program.parse();
 
 //console.log("Options: ", program.opts());
