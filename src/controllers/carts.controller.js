@@ -82,9 +82,11 @@ export default class CartController {
     }
   };
   deleteCart = async (req, res) => {
+    const user = req.user;
     try {
       const carritoBorrado = await this.#cartManager.deleteFullCartByID(
-        req.params.id
+        req.params.id,
+        user
       );
       return res.sendSuccess(carritoBorrado);
     } catch (e) {
@@ -95,30 +97,35 @@ export default class CartController {
   deleteProduct = async (req, res) => {
     const cartID = req.params.cid;
     const prodID = req.params.pid;
-    const one = parseInt(req.query.qty) === 1 ? true : false;
+    const user = req.user;
+    const qty = req.query.qty ? parseInt(req.query.qty) : "";
     try {
-      const carritoModificado = one
-        ? await this.#cartManager.deleteOneProduct(cartID, prodID)
-        : await this.#cartManager.deleteProductFromCart(cartID, prodID);
+      const carritoModificado = await this.#cartManager.deleteOneProduct(
+        cartID,
+        prodID,
+        qty,
+        user
+      );
+
       res.sendSuccess(carritoModificado);
     } catch (e) {
       res.sendClientError(e.message);
     }
   };
   purchase = async (req, res) => {
-    const email = req.user.email;
+    const user = req.user;
     const cid = req.params.cid;
     console.log("req completo ", req.params);
     console.log("en controller purchase");
     console.log(pc.bgGreen("req user " + req.user.email));
     console.log(pc.bgYellow("req id" + req.params.cid));
     try {
-      const ticket = await this.#cartManager.purchase(email, cid);
+      const ticket = await this.#cartManager.purchase(user, cid);
 
       res.sendSuccess(ticket);
     } catch (e) {
       logger.error("Error dentro de purchase en controller %s", e.message);
-      res.sendClientError(e);
+      res.sendClientError(e.message);
     }
   };
 }

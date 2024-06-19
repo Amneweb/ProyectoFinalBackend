@@ -45,7 +45,7 @@ class CartManager {
     if (!validateId(id)) {
       throw new BadRequestError(`El id ${id} no corresponde a un id válido`);
     }
-    const existe = await cartDAO.findById(id);
+    const existe = await cartDAO.findByID(id);
     if (!existe) {
       throw new BadRequestError(`No existe ningún carrito con el id ${id}`);
     }
@@ -122,7 +122,7 @@ class CartManager {
   };
 
   //borrar carrito
-  deleteFullCartByID = async (id) => {
+  deleteFullCartByID = async (id, user) => {
     if (!validateId(id)) {
       throw new BadRequestError(
         `El id ${id} del carrito buscado no corresponde a un id válido`
@@ -131,6 +131,15 @@ class CartManager {
     const carritoBuscado = await cartDAO.findByID(id);
     if (!carritoBuscado) {
       throw new BadRequestError("El carrito buscado no existe");
+    }
+    if (user.role.toUpperCase() != "ADMIN") {
+      const validatedCart = await validateCartOwnership(id, user.email);
+
+      if (!validatedCart) {
+        throw new BadRequestError(
+          `El usuario con email ${user.email} no es propietario del carrito con id ${id}`
+        );
+      }
     }
     return await cartDAO.delete(id);
   };
@@ -147,12 +156,20 @@ class CartManager {
         `El id ${productID} del producto buscado no es válido`
       );
     }
-    let carritoBuscado = await cartDAO.findById(id);
+    let carritoBuscado = await cartDAO.findByID(id);
 
     if (!carritoBuscado) {
       throw new BadRequestError("Carrito no encontrado");
     }
+    if (user.role.toUpperCase() != "ADMIN") {
+      const validatedCart = await validateCartOwnership(id, user.email);
 
+      if (!validatedCart) {
+        throw new BadRequestError(
+          `El usuario con email ${user.email} no es propietario del carrito con id ${id}`
+        );
+      }
+    }
     const productIndex = carritoBuscado.cart.findIndex(
       (productItem) => productItem.product._id.toString() === productID
     );
@@ -166,41 +183,69 @@ class CartManager {
   };
 
   //borrar producto de un carrito específico (uno por uno)
-  deleteOneProduct = async (id, productID) => {
-    if (!validateId(id)) {
+  deleteOneProduct = async (cid, pid, qty, user) => {
+    if (!validateId(cid)) {
       throw new BadRequestError(
-        `El id ${id} del carrito buscado no corresponde a un id válido`
+        `El id ${cid} del carrito buscado no corresponde a un id válido`
       );
     }
-    if (!validateId(productID)) {
+    if (!validateId(pid)) {
       throw new BadRequestError(
-        `El id ${productID} del producto buscado no es válido`
+        `El id ${pid} del producto buscado no es válido`
       );
     }
-    let carritoBuscado = await cartDAO.findById(id);
+    let carritoBuscado = await cartDAO.findByID(cid);
 
     if (!carritoBuscado) {
       throw new BadRequestError("Carrito no encontrado");
     }
+    const validatedCart = await validateCartOwnership(cid, user.email);
+
+    if (!validatedCart) {
+      throw new BadRequestError(
+        `El usuario con email ${user.email} no es propietario del carrito con id ${cid}`
+      );
+    }
 
     const productIndex = carritoBuscado.cart.findIndex(
-      (productItem) => productItem.product._id.toString() === productID
+      (productItem) => productItem.product.toString() === pid
     );
 
     if (productIndex === -1) {
       throw new BadRequestError("el producto indicado no existe en el carrito");
     }
-    carritoBuscado.cart[productIndex].qty--;
 
-    return await cartDAO.update(id, carritoBuscado);
+    const inCartQty = carritoBuscado.cart[productIndex].qty;
+    console.log("productIndex ", productIndex);
+    console.log("inCartQty ", inCartQty);
+    console.log("qty ", qty);
+    if (qty != "" && qty < inCartQty && qty > 0) {
+      carritoBuscado.cart[productIndex].qty = inCartQty - qty;
+
+      console.log("newQty ", carritoBuscado.cart[productIndex].qty);
+    } else {
+      carritoBuscado.cart.splice(productIndex, 1);
+    }
+    console.log("nuevo carrito");
+    console.log(carritoBuscado);
+    return await cartDAO.update(cid, carritoBuscado.cart);
   };
 
-  purchase = async (email, cid) => {
+  purchase = async (user, cid) => {
     const carritoComprado = await cartDAO.findAndPopulate(cid);
     logger.debug("carrito comprado luego del populate %j", carritoComprado);
     if (!carritoComprado) {
-      logger.error("no se encontró el carrito comprado");
-      throw new BadRequestError("No se encontró el carrito");
+      logger.error("no se encontró el carrito buscado");
+      throw new BadRequestError("No se encontró el carrito buscado");
+    }
+    if (user.role.toUpperCase() != "ADMIN") {
+      const validatedCart = await validateCartOwnership(cid, user.email);
+
+      if (!validatedCart) {
+        throw new BadRequestError(
+          `El usuario con email ${user.email} no es propietario del carrito con id ${cid}`
+        );
+      }
     }
     let carritoRemanente = [];
 
@@ -230,16 +275,16 @@ class CartManager {
     if (carritoRemanente.length > 0) {
       const carritoActualizado = await cartDAO.update(cid, carritoRemanente);
     } else {
-      console.log("lo que mando al user manager", email);
+      console.log("lo que mando al user manager", user.email);
 
-      await this.userDAO.update(email);
+      await this.userDAO.update(user.email);
       await cartDAO.delete(cid);
     }
 
     const ticket = {
       order: order,
       amount: amount,
-      purchaser: email,
+      purchaser: user.email,
       code: uuidv4(),
     };
 
