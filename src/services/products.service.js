@@ -15,7 +15,7 @@ export default class ProductManager {
   };
 
   addProduct = async (product) => {
-    logger.debug("Datos que llegan al servicio %j", product);
+    logger.debug("Datos que llegan al servicio %s", product.code);
     const existsProduct = await productDAO.findOne({ code: product.code });
 
     if (existsProduct) {

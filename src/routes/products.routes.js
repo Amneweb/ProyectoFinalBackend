@@ -7,7 +7,6 @@ import pc from "picocolors";
 export default class ProductsRouter extends CustomRouter {
   init() {
     const productController = new ProductController();
-    console.log(pc.bgYellow("ADMIN PRODUCTS"));
 
     this.get("/", ["PUBLIC"], productController.getAll);
     this.get("/:id", ["PUBLIC"], productController.getOne);

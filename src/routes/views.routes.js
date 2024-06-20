@@ -13,7 +13,6 @@ export default class ViewsRouter extends CustomRouter {
     const cartManager = new CartManager();
     const categoryManager = new CategoryManager();
 
-    console.log(pc.bgGreen("VISTAS"));
     this.get("/catalogo", ["PUBLIC"], async (req, res) => {
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 300;

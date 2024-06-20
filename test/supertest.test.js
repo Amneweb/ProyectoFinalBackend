@@ -14,6 +14,7 @@ describe("Test de toda la App", () => {
   let IDusuarioFicticio;
   let IDproducto;
   let IDproductoMulter;
+  let RoleUsuarioFicticio2;
   /*
   * * * * * * * * * * * * * * * * *
   TESTS DE USUARIOS
@@ -107,6 +108,7 @@ describe("Test de toda la App", () => {
         .post("/api/users/register")
         .send(usuarioFicticio2);
       IDusuarioFicticio2 = _body.payload._id;
+      RoleUsuarioFicticio2 = _body.payload.userRole;
       // Assert
       expect(statusCode).is.eql(200);
       expect(_body.payload)
@@ -144,7 +146,7 @@ describe("Test de toda la App", () => {
     */
     it(`PUT /api/users/premium/:uid debe cambiar correctamente el rol del usuario logueado.`, async function () {
       // Given
-      const torole = "premium";
+      const torole = { torole: "premium" };
       // Then
       const { statusCode, _body } = await requester
         .put(`/api/users/premium/${IDusuarioFicticio2}`)
@@ -154,6 +156,23 @@ describe("Test de toda la App", () => {
       // Assert
       expect(statusCode).is.eql(200);
       expect(_body.payload).to.ok;
+    });
+    /*
+    ===========================================
+    TEST 6 = VERIFICACION DE ROL CAMBIADO
+    ===========================================
+    */
+    it(`PUT /api/users/updateCurrentUser debe traer la información actualizada del usuario logueado.`, async function () {
+      // Then
+      const { statusCode, _body } = await requester
+        .get(`/api/users/updateCurrentUser`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`]);
+
+      console.log("body payload en update user", _body.payload);
+      // Assert
+      expect(statusCode).is.eql(200);
+      expect(_body.payload).to.ok;
+      expect(_body.payload).to.have.property("userRole").to.equal("premium");
     });
     /*
     =======================================================================

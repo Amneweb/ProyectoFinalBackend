@@ -6,7 +6,7 @@ import { validateUserFormData } from "../utils/utils.js";
 export default class UsersRouter extends CustomRouter {
   init() {
     // Todas las req/res van dentro de este init()
-    console.log(pc.bgBlue("USUARIOS"));
+
     // Se instancia el service UserService
     const usersController = new UsersController();
     //TODO: volver a poner admin, lo cambié sólo para probar
@@ -16,6 +16,11 @@ export default class UsersRouter extends CustomRouter {
       "/currentUser",
       ["USER", "PREMIUM", "ADMIN"],
       usersController.getCurrentUser
+    );
+    this.get(
+      "/updateCurrentUser",
+      ["USER", "PREMIUM", "ADMIN"],
+      usersController.updateCurrentUser
     );
 
     this.get("/premiumUser", ["PREMIUM"], usersController.getPremiumUser);

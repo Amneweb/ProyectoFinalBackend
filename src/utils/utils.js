@@ -50,7 +50,6 @@ export const uploader = multer({
 });
 
 export const validateFormData = (req, res, next) => {
-  console.log("req.file ", req.file);
   const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
   let categoria = [];
   categoria.push(req.body.category);
@@ -70,10 +69,8 @@ export const validateFormData = (req, res, next) => {
 
 export const validateModifiedData = (req, res, next) => {
   let datosConvertidos = { ...req.body };
-  console.log("datos convertidos recibidos en el body");
-  console.log(datosConvertidos);
+
   if (req.file) {
-    console.log("req.file ", req.file);
     const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
     datosConvertidos["thumb"] = thumb;
   }
@@ -103,7 +100,6 @@ export const validateUserFormData = (req, res, next) => {
   };
 
   req.validatedData = datosConvertidos;
-  console.log("en user validator", datosConvertidos);
 
   next();
 };
@@ -162,7 +158,7 @@ export const authToken = (req, res, next) => {
 };
 
 export const passportJWTCall = async (req, res, next) => {
-  req.logger.method("Entrando a llamar strategy: ");
+  req.logger.method("Entrando a llamar strategy");
 
   passport.authenticate("jwt", function (err, user) {
     if (err) return next(err);

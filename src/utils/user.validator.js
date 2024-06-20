@@ -29,7 +29,7 @@ const userValidatorSchema = z.object({
 export const validateUser = (object) => {
   try {
     const resultadoValidacion = userValidatorSchema.parse(object);
-    console.log("en user validator ", resultadoValidacion);
+
     return resultadoValidacion;
   } catch (err) {
     if (err instanceof z.ZodError) {

@@ -72,7 +72,7 @@ export default class ProductsController {
 
   postOne = async (req, res) => {
     const nuevo = req.validatedData;
-    logger.debug("usuario en controlador de productos %s", req.user);
+    logger.debug("usuario en controlador de productos %s", req.user.email);
     console.log("req user role", req.user.role.toUpperCase());
     if (req.user.role.toUpperCase() === "PREMIUM") {
       const owner = req.user.email;
@@ -81,8 +81,8 @@ export default class ProductsController {
     const owner = req.user.role.toUpperCase() === "PREMIUM" && req.user.email;
     logger.debug("owner en controlador %s", owner);
     logger.debug(
-      "datos para crear producto que llegan al controlador %j",
-      req.validatedData
+      "datos para crear producto que llegan al controlador %s",
+      req.validatedData.code
     );
     if (!nuevo) {
       logger.error(

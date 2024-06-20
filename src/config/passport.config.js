@@ -150,7 +150,6 @@ ESTRATEGIA JWT
         secretOrKey: environmentConfig.SERVER.JWT.SECRET,
       },
       async (jwt_payload, done) => {
-        console.log("Entrando a passport Strategy con JWT.");
         try {
           console.log("JWT obtenido del payload");
           console.log(jwt_payload);
@@ -179,15 +178,11 @@ ESTRATEGIA JWT
 };
 export const cookieExtractor = (req) => {
   let token = null;
-  console.log("Entrando a Cookie Extractor");
+
   if (req && req.cookies) {
     //Validamos que exista el request y las cookies.
 
-    if (req.cookies["token_login"])
-      console.log("tiempo de la cookie ", req.cookies["token_login"].maxAge);
-    token = req.cookies["token_login"];
-    console.log("Token obtenido desde Cookie:");
-    console.log(token);
+    if (req.cookies["token_login"]) token = req.cookies["token_login"];
   }
   return token;
 };

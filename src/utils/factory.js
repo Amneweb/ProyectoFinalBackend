@@ -21,15 +21,12 @@ switch (environmentConfig.PERSISTENCE) {
       "../services/daos/mongo/products/products.mongo.dao.js"
     );
     productDAO = new ProductDAO();
-    console.log("DAO de productos cargado:");
-    console.log(productDAO);
 
     const { default: CartDAO } = await import(
       "../services/daos/mongo/carts/carts.mongo.dao.js"
     );
     cartDAO = new CartDAO();
-    console.log("DAO de carritos cargado:");
-    console.log(cartDAO);
+
     break;
   case "fs":
     //TODO:

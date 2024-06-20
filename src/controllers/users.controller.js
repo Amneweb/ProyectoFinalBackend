@@ -111,10 +111,7 @@ export default class UsersController {
     const { userName, userLastName, userEmail, userAge, userPassword } =
       req.validatedData;
 
-    logger.debug(
-      "Datos que llegan luego de la validación del formulario de login %j",
-      req.validatedData
-    );
+    logger.debug("Email del usuario a crear %s", req.validatedData.userEmail);
 
     try {
       if (
@@ -133,7 +130,10 @@ export default class UsersController {
         userAge,
         userPassword,
       });
-      logger.debug("se ha creado el usuario %j", registrado);
+      logger.debug(
+        "se ha creado el usuario con email %s",
+        registrado.userEmail
+      );
       res.sendSuccess(registrado);
     } catch (e) {
       logger.error("No se pudo crear el usuario %j", e.message);
@@ -228,6 +228,23 @@ export default class UsersController {
       res.sendClientError("no se ha podido guardar el password", e);
     }
   };
+  updateCurrentUser = async (req, res) => {
+    logger.method("Actualizar current user");
+    const user = req.user;
+    try {
+      const datosActuales = await this.#userService.findByUsername(user.email);
+      res.sendSuccess(datosActuales);
+    } catch (e) {
+      logger.error(
+        "no pudo cargar la información del usuario. Error: %s",
+        e.message
+      );
+      res.sendClientError(
+        "No se ha podido cargar la información del usuario logueado. Mensaje de error:",
+        e.message
+      );
+    }
+  };
   changerole = async (req, res) => {
     logger.method("changerole");
     const uid = req.params.uid;
@@ -236,7 +253,7 @@ export default class UsersController {
     try {
       await this.#userService.changerole(uid, torole, user);
       res.sendSuccess(
-        "El rol fue modificado con éxito. Para corroborar los cambios deberás loguearte nuevamente."
+        "El rol fue modificado con éxito. Para corroborar los cambios deberás hacer click en actualizar datos."
       );
     } catch (e) {
       res.sendClientError(e.message);

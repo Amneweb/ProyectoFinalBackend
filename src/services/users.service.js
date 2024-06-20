@@ -11,9 +11,7 @@ import {
   createHash,
 } from "../utils/utils.js";
 export default class UserService {
-  constructor() {
-    console.log("Calling users model using a service.");
-  }
+  constructor() {}
   getAll = async () => {
     return await userDAO.findAll();
   };
@@ -37,8 +35,7 @@ export default class UserService {
       userAge,
       userPassword,
     });
-    console.log("validated user");
-    console.log(validatedUser);
+
     if (!validatedUser) {
       throw new BadRequestError(
         "no se pudo validar el usuario, uno o más datos no cumple con los requerimientos"
@@ -53,7 +50,6 @@ export default class UserService {
   };
 
   findByUsername = async (userEmail) => {
-    console.log("llega desde crear el req owner middleware");
     return await userDAO.findOne(userEmail);
   };
   update = async (user, filter, value) => {
@@ -125,7 +121,6 @@ export default class UserService {
       role: user.userRole,
     };
     const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
-    console.log("token generado ", access_token);
 
     return access_token;
   };

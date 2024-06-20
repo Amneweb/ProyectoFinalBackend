@@ -87,6 +87,12 @@ Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la ap
 
 ---
 
+## Desafío de carga de imágenes y documentación
+
+El último desafío antes de la entrega final pide configurar el servidor para que los usuarios puedan cargar documentación y según el tipo y objetivo de los archivos, éstos se carguen en diferentes carpetas. Además, se pide registar información de la documentación subida y de cuándo los usuarios se conectaron por última vez.
+
+Para la parte del redireccionamiento de los archivos, que por ahora está configurado sólo para las imágenes de productos, agregué un middleware en las rutas de creación y modificación de productos. Dicho middleware arma la ruta de destino del archivo en base a las propiedades baseUrl y path que vienen con el req.
+
 ## Desafío de documentación
 
 Se documentó parte de la API con Swagger.
