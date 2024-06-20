@@ -5,7 +5,7 @@ const db =
   environmentConfig.TESTING === "test"
     ? "test"
     : environmentConfig.DATABASE.MONGO.DB_NAME;
-
+console.log("base de datos usada ", db);
 export default class MongoSingleton {
   static #instance;
 

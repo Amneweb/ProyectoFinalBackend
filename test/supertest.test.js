@@ -1,35 +1,33 @@
-import pc from "picocolors";
 import * as chai from "chai";
 import supertest from "supertest";
-
-import { environmentConfig } from "../src/config/environment.config.js";
+import pc from "picocolors";
+import mongoose from "mongoose";
 const expect = chai.expect;
 const requester = supertest("http://localhost:8080");
 describe("Test de toda la App", () => {
+  console.log(pc.bgYellow("NOTA PREVIA:"));
+  console.log(
+    "En lo que sigue, el usuario con email prueba2@gmail ya está cargado en la base de datos, y no se borra. Los otros usuarios se crean y se borran en el proceso de testing de usuarios. El usuario admin queda logueado para las pruebas de productos"
+  );
   let cookie;
   let IDusuarioFicticio2;
   let IDusuarioFicticio;
   let IDproducto;
   let IDproductoMulter;
   /*
-  *******************************
+  * * * * * * * * * * * * * * * * *
   TESTS DE USUARIOS
-  *******************************
+  * * * * * * * * * * * * * * * * *  
   */
   describe("Test del módulo Usuarios", () => {
-    console.log(
-      pc.bgCyan("nombre base de datos"),
-      environmentConfig.DATABASE.MONGO.DB_NAME
-    );
-
     /*
     ==================================
     TEST 1 = REGISTRO DE USUARIOS
     ==================================
     */
-    it("el endpoing POST api/users/register debe crear un usuario correctamente", async () => {
+    it("POST api/users/register crea un usuario correctamente (con rol user por default)", async () => {
       // Given
-      const usuarioFicticio = {
+      const usuarioFicticioOK = {
         userName: "Usuario de prueba",
         userLastName: "Apellido de prueba",
         userEmail: "prueba@gmail.com",
@@ -39,7 +37,7 @@ describe("Test de toda la App", () => {
       // Then
       const { _body, statusCode } = await requester
         .post("/api/users/register")
-        .send(usuarioFicticio);
+        .send(usuarioFicticioOK);
       IDusuarioFicticio = _body.payload._id;
       // Assert
       expect(statusCode).is.eql(200);
@@ -52,10 +50,10 @@ describe("Test de toda la App", () => {
     TEST 2 = USUARIO SIN ALGUNO DE LOS DATOS
     =========================================================
     */
-    it("el endpoing POST api/users/register no debe permitir la creación de un usuario sin alguno de los datos", async () => {
+    it("POST api/users/register no debe permitir la creación de un usuario sin alguno de los datos", async () => {
       // Given
-      const usuarioFicticio1 = {
-        userName: "Usuario de prueba",
+      const usuarioFicticioNOK = {
+        userName: "Usuario de prueba NOK",
         userLastName: "Apellido de prueba",
         userAge: 54,
         userPassword: "123456",
@@ -63,7 +61,7 @@ describe("Test de toda la App", () => {
       // Then
       const { _body, statusCode } = await requester
         .post("/api/users/register")
-        .send(usuarioFicticio1);
+        .send(usuarioFicticioNOK);
       // Assert
       expect(statusCode).is.eql(400);
       expect(_body).to.ok.and.to.have.property("error");
@@ -73,10 +71,10 @@ describe("Test de toda la App", () => {
     TEST 3 = USUARIO CON EMAIL YA EXISTENTE
     =====================================================
     */
-    it("el endpoing POST api/users/register no debe permitir la creación de un usuario con email existente", async () => {
+    it("POST api/users/register no debe permitir la creación de un usuario con email existente", async () => {
       // Given
-      const usuarioFicticio1 = {
-        userName: "Usuario de prueba",
+      const usuarioFicticioNOK = {
+        userName: "Usuario de prueba NOK",
         userLastName: "Apellido de prueba",
         userEmail: "prueba@gmail.com",
         userAge: 54,
@@ -85,8 +83,7 @@ describe("Test de toda la App", () => {
       // Then
       const { _body, statusCode } = await requester
         .post("/api/users/register")
-        .send(usuarioFicticio1);
-
+        .send(usuarioFicticioNOK);
       // Assert
       expect(statusCode).is.eql(400);
       expect(_body).to.ok.and.to.have.property("error");
@@ -96,7 +93,7 @@ describe("Test de toda la App", () => {
     TEST 4 = EL USUARIO CREADO DEBE TENER UN CARRITO VACIO
     ========================================================
     */
-    it("el usuario creado en el endpoing POST api/users/register debe tener la propiedad userCartID como array vacío", async () => {
+    it("POST api/users/register crea un usuario con la propiedad userCartID como array vacío", async () => {
       // Given
       const usuarioFicticio2 = {
         userName: "Usuario de prueba 3",
@@ -110,7 +107,6 @@ describe("Test de toda la App", () => {
         .post("/api/users/register")
         .send(usuarioFicticio2);
       IDusuarioFicticio2 = _body.payload._id;
-
       // Assert
       expect(statusCode).is.eql(200);
       expect(_body.payload)
@@ -122,7 +118,67 @@ describe("Test de toda la App", () => {
     TEST 5 = LOGIN
     ===================================
     */
-    it("Test Login Usuario: Debe poder hacer login correctamente con el usuario registrado previamente.", async function () {
+    it("POST api/users/login loguea un usuario correctamente", async function () {
+      // Given
+      const mockLogin = {
+        userEmail: "prueba3@gmail.com",
+        userPassword: "123456",
+      };
+      // Then
+      const result = await requester.post("/api/users/login").send(mockLogin);
+      const cookieResult = result.headers["set-cookie"][0];
+      const cookieData = cookieResult.split("=");
+      cookie = {
+        name: cookieData[0],
+        value: cookieData[1],
+      };
+      // Assert
+      expect(result.statusCode).is.eqls(200);
+      expect(cookie.name).to.be.ok.and.eql("token_login");
+      expect(cookie.value).to.be.ok;
+    });
+    /*
+    ===========================================
+    TEST 6 = CAMBIO DE ROL
+    ===========================================
+    */
+    it(`PUT /api/users/premium/:uid debe cambiar correctamente el rol del usuario logueado.`, async function () {
+      // Given
+      const torole = "premium";
+      // Then
+      const { statusCode, _body } = await requester
+        .put(`/api/users/premium/${IDusuarioFicticio2}`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`])
+        .send(torole);
+      console.log("body payload en cambio de rol", _body.payload);
+      // Assert
+      expect(statusCode).is.eql(200);
+      expect(_body.payload).to.ok;
+    });
+    /*
+    =======================================================================
+    TEST 7 = CAMBIO DE ROL CON UN USUARIO QUE NO TIENE EL ID DEL PARAMETRO
+    =======================================================================
+    */
+    it(`PUT /api/users/premium/:uid da error cuando el usuario logueado no tiene ID = uid.`, async function () {
+      // Given
+      const torole = "premium";
+      // Then
+      const { statusCode, _body } = await requester
+        .put(`/api/users/premium/${IDusuarioFicticio}`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`])
+        .send(torole);
+      console.log("body payload en cambio de rol", _body.error);
+      // Assert
+      expect(statusCode).is.eql(400);
+      expect(_body).to.ok.and.to.have.property("error");
+    });
+    /*
+    ===================================
+    TEST 8 = LOGIN DE USUARIO ADMIN
+    ===================================
+    */
+    it("POST api/users/login loguea un usuario correctamente (este usuario ya tiene configurado rol = ADMIN)", async function () {
       // Given
       const mockLogin = {
         userEmail: "prueba2@gmail.com",
@@ -143,10 +199,10 @@ describe("Test de toda la App", () => {
     });
     /*
     ===========================================
-    TEST 6 = RUTA PROTEGIDA: BORRAR USUARIO 1
+    TEST 9 = RUTA PROTEGIDA: BORRAR USUARIO 1
     ===========================================
     */
-    it(`El endpoint DELETE /api/users/:id debe borrar al usuario con el id indicado (usuario 1)`, async function () {
+    it(`DELETE /api/users/:id borra al usuario con el id indicado (primer usuario creado)`, async function () {
       const { statusCode, _body } = await requester
         .delete(`/api/users/${IDusuarioFicticio}`)
         .set("Cookie", [`${cookie.name}=${cookie.value}`]);
@@ -155,30 +211,11 @@ describe("Test de toda la App", () => {
       expect(_body.payload).to.ok;
     });
     /*
-===========================================
-    TEST 6 = CAMBIO DE ROL
+    ===========================================
+    TEST 10 = RUTA PROTEGIDA: BORRAR USUARIO 2
     ===========================================
     */
-    it(`El endpoint PUT /api/users/premium/:uid debe cambiar correctamente el rol del usuario logueado.`, async function () {
-      // Given
-      const torole = "premium";
-      // Then
-      const { statusCode, _body } = await requester
-        .put(`/api/users/premium/${IDusuarioFicticio2}`)
-        .set("Cookie", [`${cookie.name}=${cookie.value}`])
-        .send(torole);
-
-      console.log(_body.payload);
-      // Assert
-      expect(statusCode).is.eql(200);
-      expect(_body.payload).to.ok;
-    });
-    /*
-===========================================
-    TEST 6 = RUTA PROTEGIDA: BORRAR USUARIO 2
-    ===========================================
-    */
-    it(`El endpoint DELETE /api/users/:id debe borrar al usuario con el id indicado (usuario 2)`, async function () {
+    it(`DELETE /api/users/:id borra al usuario con el id indicado (segundo usuario creado)`, async function () {
       const { statusCode, _body } = await requester
         .delete(`/api/users/${IDusuarioFicticio2}`)
         .set("Cookie", [`${cookie.name}=${cookie.value}`]);
@@ -188,9 +225,9 @@ describe("Test de toda la App", () => {
     });
   });
   /*
-  *************************************
+  * * * * * * * * * * * * * * * * *
   TESTS DE PRODUCTOS
-  *************************************
+  * * * * * * * * * * * * * * * * *
   */
   describe("Test del módulo Productos", () => {
     /* 
@@ -198,7 +235,7 @@ describe("Test de toda la App", () => {
     TEST 1 = RUTA PROTEGIDA: CREAR PRODUCTO
     =========================================
     */
-    it("el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner", async () => {
+    it("POST api/products/ con un usuario 'admin' crea un producto correctamente y sin el campo owner", async () => {
       //Given
       const productoFicticioSupertest = {
         title: "Producto ficticio ST2",
@@ -226,7 +263,7 @@ describe("Test de toda la App", () => {
     TEST 2 = BORRA EL PRODUCTO RECIEN CREADO
     ==========================================
     */
-    it("el endpoing DELETE api/products/:id borra el producto correctamente", async () => {
+    it("DELETE api/products/:id borra el producto correctamente", async () => {
       //Given
       //Then
       const { statusCode } = await requester
@@ -240,7 +277,7 @@ describe("Test de toda la App", () => {
     TEST 3 = PRODUCTO SIN TODOS LOS DATOS
     =========================================
     */
-    it("El endpoint POST /api/products/ debe devolver status 400 y el error al intentar crear un producto sin el nombre ", async function () {
+    it("POST /api/products/ debe devolver status 400 y el error al intentar crear un producto sin el nombre ", async function () {
       //Given
       const productoFicticioSinDatos = {
         stock: 50,
@@ -261,9 +298,9 @@ describe("Test de toda la App", () => {
     });
   });
   /*
-  *************************************
+  * * * * * * * * * * * * * * * * *
   TESTS DE CARGA DE ARCHIVOS
-  *************************************
+  * * * * * * * * * * * * * * * * *
   */
   describe("Test de subida de imagenes", () => {
     /*
@@ -271,7 +308,7 @@ describe("Test de toda la App", () => {
     TEST 1 = CREACION DE PRODUCTO CON IMAGEN
     ===========================================
     */
-    it("se debe poder crear un producto con la imagen subida y la ruta guardada en la propiedad thumb", async function () {
+    it("POST /api/products crea un producto con la imagen subida y la ruta guardada en la propiedad thumb", async function () {
       //Given
       const productoFicticioMulter = {
         title: "Producto ficticio MT",
@@ -304,7 +341,7 @@ describe("Test de toda la App", () => {
     TEST 2 = MODIFICACION DE PRODUCTO CON NUEVA IMAGEN
     =====================================================
     */
-    it("El endpoint PUT /api/products/:id/imagenes debe cargar una imagen y la ruta se agregará al array de la propiedad thumb", async function () {
+    it("PUT /api/products/:id/imagenes sube correctamente una imagen y la ruta se agrega al array de thumb", async function () {
       //Given
       //Then
       const result = await requester
@@ -321,7 +358,7 @@ describe("Test de toda la App", () => {
     TEST 3 = BORRA EL PRODUCTO RECIEN CREADO
     ===========================================
     */
-    it("el endpoing DELETE api/products/:id borra el producto creado para probar Multer", async () => {
+    it("DELETE api/products/:id borra el producto creado para probar Multer", async () => {
       //Given
       //Then
       const { statusCode } = await requester
@@ -331,4 +368,7 @@ describe("Test de toda la App", () => {
       expect(statusCode).is.eql(200);
     });
   });
+  //after(function () {
+  //  mongoose.connection.collections.products.drop();
+  //});
 });
