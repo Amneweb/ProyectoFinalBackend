@@ -1,4 +1,4 @@
-import { uploader, validateModifiedData } from "../utils/utils.js";
+import { uploader, validateModifiedData, agregarRuta } from "../utils/utils.js";
 import { validateFormData } from "../utils/utils.js";
 import CustomRouter from "./custom/custom.router.js";
 import ProductController from "../controllers/products.controller.js";
@@ -15,7 +15,7 @@ export default class ProductsRouter extends CustomRouter {
     this.post(
       "/",
       ["ADMIN", "PREMIUM"],
-
+      agregarRuta,
       uploader.single("imagen"),
       validateFormData,
       productController.postOne
@@ -39,6 +39,7 @@ export default class ProductsRouter extends CustomRouter {
     this.put(
       "/:id/imagenes/",
       ["ADMIN", "PREMIUM"],
+      agregarRuta,
       uploader.single("imagen"),
       validateModifiedData,
       productController.putImage

@@ -1,6 +1,7 @@
 import ProductManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
+import url from "url";
 export default class ProductsController {
   #productManager;
 
@@ -9,6 +10,8 @@ export default class ProductsController {
   }
 
   getAll = async (req, res) => {
+    var path = req.baseUrl;
+    console.log("path:", path);
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 0;
     const criterio = req.query.criterio || "title";

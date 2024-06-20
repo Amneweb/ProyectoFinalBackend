@@ -6,12 +6,31 @@ import jwt from "jsonwebtoken";
 import passport from "passport";
 import { transporter } from "../config/mailer.config.js";
 
+export const agregarRuta = function (req, res, next) {
+  let destinationPath;
+  console.log("req en agregar Ruta", req.baseUrl);
+  switch (req.baseUrl) {
+    case "/api/products":
+      destinationPath = "/public/uploads/img/products";
+      break;
+    case "api/users":
+      if (req.path === "/documentation") {
+        destinationPath = "/public/uploads/docs";
+      }
+      destinationPath = "/public/uploads/img/profile";
+      break;
+    default:
+      destinationPath = "/public/uploads/defaults";
+  }
+  req.destinationPath = destinationPath;
+  next();
+};
 // Configuracion de MULTER
 // Objeto de configuracion
 const storage = multer.diskStorage({
   // ubicacion del directorio donde voy a guardar los archivos
   destination: function (req, file, cb) {
-    cb(null, `${__dirname}/public/img`);
+    cb(null, `${__dirname}${req.destinationPath}`);
   },
 
   // el nombre que quiero que tengan los archivos que voy a subir
@@ -25,13 +44,14 @@ export const uploader = multer({
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
     console.log(`Error al tratar de subir la imagen ${err}`);
+    throw new Error("error al tratar de subir la imagen" + err);
     next();
   },
 });
 
 export const validateFormData = (req, res, next) => {
   console.log("req.file ", req.file);
-  const thumb = req.file ? "/img/" + req.file.filename : "";
+  const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
   let categoria = [];
   categoria.push(req.body.category);
   const datosConvertidos = {
@@ -54,7 +74,7 @@ export const validateModifiedData = (req, res, next) => {
   console.log(datosConvertidos);
   if (req.file) {
     console.log("req.file ", req.file);
-    const thumb = req.file ? "/img/" + req.file.filename : "";
+    const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
     datosConvertidos["thumb"] = thumb;
   }
 
