@@ -97,6 +97,8 @@ El último desafío antes de la entrega final pide configurar el servidor para q
 
 Para la parte del redireccionamiento de los archivos, que por ahora está configurado sólo para las imágenes de productos, agregué un middleware en las rutas de creación y modificación de productos. Dicho middleware arma la ruta de destino del archivo en base a las propiedades baseUrl y path que vienen con el req.
 
+---
+
 ## Desafío de documentación
 
 Se documentó parte de la API con Swagger.
