@@ -143,20 +143,44 @@ describe("Test de toda la App", () => {
     });
     /*
     ===========================================
-    TEST 6 = RUTA PROTEGIDA: BORRAR USUARIOS
+    TEST 6 = RUTA PROTEGIDA: BORRAR USUARIO 1
     ===========================================
     */
-    it(`El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado`, async function () {
+    it(`El endpoint DELETE /api/users/:id debe borrar al usuario con el id indicado (usuario 1)`, async function () {
       const { statusCode, _body } = await requester
-        .delete(`/api/users/${IDusuarioFicticio2}`)
+        .delete(`/api/users/${IDusuarioFicticio}`)
         .set("Cookie", [`${cookie.name}=${cookie.value}`]);
       // Assert
       expect(statusCode).is.eql(200);
       expect(_body.payload).to.ok;
     });
-    it(`El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado`, async function () {
+    /*
+===========================================
+    TEST 6 = CAMBIO DE ROL
+    ===========================================
+    */
+    it(`El endpoint PUT /api/users/premium/:uid debe cambiar correctamente el rol del usuario logueado.`, async function () {
+      // Given
+      const torole = "premium";
+      // Then
       const { statusCode, _body } = await requester
-        .delete(`/api/users/${IDusuarioFicticio}`)
+        .put(`/api/users/premium/${IDusuarioFicticio2}`)
+        .set("Cookie", [`${cookie.name}=${cookie.value}`])
+        .send(torole);
+
+      console.log(_body.payload);
+      // Assert
+      expect(statusCode).is.eql(200);
+      expect(_body.payload).to.ok;
+    });
+    /*
+===========================================
+    TEST 6 = RUTA PROTEGIDA: BORRAR USUARIO 2
+    ===========================================
+    */
+    it(`El endpoint DELETE /api/users/:id debe borrar al usuario con el id indicado (usuario 2)`, async function () {
+      const { statusCode, _body } = await requester
+        .delete(`/api/users/${IDusuarioFicticio2}`)
         .set("Cookie", [`${cookie.name}=${cookie.value}`]);
       // Assert
       expect(statusCode).is.eql(200);

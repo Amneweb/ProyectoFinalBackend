@@ -23,7 +23,7 @@ program
   .option("-d", "Variable para debug", false)
   .option("--persist <mode>", "Modo de persistencia", "mongodb")
   .option("--mode <mode>", "Modo de trabajo", "dev")
-  .option("--test <test>", "Modo test", "");
+  .option("--test <test>", "Modo test");
 program.parse();
 
 //console.log("Options: ", program.opts());
@@ -33,6 +33,7 @@ console.log("Persistence Mode Option: ", program.opts().persist);
 const environmentConfig = {
   PERSISTENCE: program.opts().persist,
   ENVIRONMENT: program.opts().mode,
+  TESTING: program.opts().test,
   MAILER: {
     AUTH_PASS: MAILER_AUTH_PASS,
     EMAIL: MAILER_EMAIL,
@@ -56,8 +57,7 @@ const environmentConfig = {
       URL:
         MONGO_URL ??
         "mongodb+srv://Amneweb:87a5e76@clustercursocoder.2encwlm.mongodb.net/?retryWrites=true&w=majority&appName=ClusterCursoCoder",
-      DB_NAME:
-        program.opts().test === "test" ? "test" : MONGO_DB_NAME ?? "ecommerce",
+      DB_NAME: MONGO_DB_NAME ?? "ecommerce",
     },
   },
 };

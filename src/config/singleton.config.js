@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 import { environmentConfig } from "./environment.config.js";
 const url = environmentConfig.DATABASE.MONGO.URL;
-const db = environmentConfig.DATABASE.MONGO.DB_NAME;
+const db =
+  environmentConfig.TESTING === "test"
+    ? "test"
+    : environmentConfig.DATABASE.MONGO.DB_NAME;
 
 export default class MongoSingleton {
   static #instance;
