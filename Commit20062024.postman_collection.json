@@ -47,7 +47,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/products/65f8d66e34e4af075dec3410",
+							"raw": "http://localhost:8080/api/products/6662d756f9e669867fd5247f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -56,7 +56,7 @@
 							"path": [
 								"api",
 								"products",
-								"65f8d66e34e4af075dec3410"
+								"6662d756f9e669867fd5247f"
 							]
 						}
 					},
@@ -177,6 +177,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Modificar categoría",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/:id/categoria/:cate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								":id",
+								"categoria",
+								":cate"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								},
+								{
+									"key": "cate",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -289,14 +322,6 @@
 					"response": []
 				},
 				{
-					"name": "Carrito de usuario logueado",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				},
-				{
 					"name": "ID carrito usuario logueado",
 					"request": {
 						"method": "GET",
@@ -310,8 +335,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/carts/664296dca81e9f9673393a16/product/65f8d5fd34e4af075dec3408",
-							"protocol": "http",
+							"raw": "localhost:8080/api/carts/:cid/product/:pid/?qty=3",
 							"host": [
 								"localhost"
 							],
@@ -319,19 +343,28 @@
 							"path": [
 								"api",
 								"carts",
-								"664296dca81e9f9673393a16",
+								":cid",
 								"product",
-								"65f8d5fd34e4af075dec3408"
+								":pid",
+								""
+							],
+							"query": [
+								{
+									"key": "qty",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "666448f2d6c4029a9856ab11"
+								},
+								{
+									"key": "pid",
+									"value": "66650630707e1efa3f5cf7c9"
+								}
 							]
 						}
-					},
-					"response": []
-				},
-				{
-					"name": "Borrar producto de a uno",
-					"request": {
-						"method": "GET",
-						"header": []
 					},
 					"response": []
 				},
@@ -434,6 +467,17 @@
 					"response": []
 				},
 				{
+					"name": "Login Rol Premium",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Current User",
 					"request": {
 						"method": "GET",
@@ -451,27 +495,27 @@
 							"urlencoded": [
 								{
 									"key": "userName",
-									"value": "Alejandro",
+									"value": "Nico",
 									"type": "text"
 								},
 								{
 									"key": "userLastName",
-									"value": "Cloos",
+									"value": "Justin",
 									"type": "text"
 								},
 								{
 									"key": "userPassword",
-									"value": "050561",
+									"value": "123456",
 									"type": "text"
 								},
 								{
 									"key": "userEmail",
-									"value": "ale.cloos@gmail.com",
+									"value": "nicobenve.com",
 									"type": "text"
 								},
 								{
 									"key": "userAge",
-									"value": "63",
+									"value": "amneris",
 									"type": "text"
 								},
 								{
@@ -518,7 +562,7 @@
 					"response": []
 				},
 				{
-					"name": "Ver todos",
+					"name": "Todos los usuarios",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -537,8 +581,140 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Borrar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/664807270ce7603d97abf765",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"664807270ce7603d97abf765"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carrito de usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Cambio de rol",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "torole",
+									"value": "premium",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/premium/:uid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"premium",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "6648183be5e204d17a499205"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
+		},
+		{
+			"name": "Recupero contraseña",
+			"item": [
+				{
+					"name": "Recupero contraseña",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/email/recupero",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"email",
+								"recupero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recibir email recuperación",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Ingreso nuevo password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userPassword",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/api/users/newpass",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"newpass"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "1. POST - Recupero contraseña: Hacer el post de recupero de contraseña enviando la casilla de correo cargada en el sistema\n    \n2. GET - Recibir email: Pegar la ruta del enlace enviado x email\n    \n3. POST - Ingreso nuevo password: Cargar nuevo password"
 		},
 		{
 			"name": "Email prueba",
