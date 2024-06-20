@@ -648,6 +648,27 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Actualizar usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/updateCurrentUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"updateCurrentUser"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

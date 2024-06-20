@@ -71,6 +71,10 @@ Se realizarán tests unitarios (TDD) y tests de integración (BDD) de toda la ap
 
 ✔ El endpoint DELETE /api/users/:id debe borrar correctamente al usuario con el id indicado
 
+✔ El endpoint PUT /api/users/premium/:uid debe reemplazar el rol user por el rol premium
+
+✔ El endpoint GET /api/users/updateCurrentUser trae los datos de la base de datos para verificar el cambio de rol
+
 **Tests de productos**
 
 ✔ el endpoing POST api/products/ con un usuario 'user' debe crear un producto correctamente y sin el campo owner
