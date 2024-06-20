@@ -160,4 +160,23 @@ export default class UserService {
     await usuarioEncontrado.save();
     return usuarioEncontrado;
   };
+  changerole = async (uid, torole, user) => {
+    const usuarioEncontrado = await userDAO.findByID(uid);
+
+    if (!usuarioEncontrado) {
+      throw new BadRequestError("no se encontró el usuario con id " + uid);
+    }
+    if (usuarioEncontrado.userEmail != user.email) {
+      logger.error(
+        "El usuario logueado no es el usuario con el id ingresado por parámetro"
+      );
+      throw new BadRequestError(
+        "El usuario logueado no es el mismo que el usuario con id " + uid
+      );
+    }
+    const usuarioModificado = await userDAO.updateByFilter(user.email, {
+      userRole: torole,
+    });
+    return usuarioModificado;
+  };
 }

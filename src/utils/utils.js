@@ -1,7 +1,6 @@
 import multer from "multer";
 import __dirname from "../../dirname.js";
 import bcrypt from "bcrypt";
-import UserService from "../services/users.service.js";
 import { environmentConfig } from "../config/environment.config.js";
 import jwt from "jsonwebtoken";
 import passport from "passport";

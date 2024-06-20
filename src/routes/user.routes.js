@@ -57,5 +57,6 @@ export default class UsersRouter extends CustomRouter {
     this.delete("/:uid", ["ADMIN"], usersController.deleteUser);
     this.get("/recupero/:tid/", ["PUBLIC"], usersController.recoverPassword);
     this.post("/newpassword", ["PUBLIC"], usersController.newpassword);
+    this.put("/premium/:uid", ["USER", "PREMIUM"], usersController.changerole);
   }
 }

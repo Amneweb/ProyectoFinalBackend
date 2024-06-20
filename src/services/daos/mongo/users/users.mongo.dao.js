@@ -35,5 +35,18 @@ class UserDAO {
       { $set: { userCartID: [] } }
     );
   };
+  findByID = async (uid) => {
+    return await this.#model.findOne({ _id: uid });
+  };
+  updateByFilter = async (email, filters) => {
+    console.log("en update by filter", email);
+    console.log("idem filters");
+    console.log(filters);
+
+    return await this.#model.updateOne(
+      { userEmail: email },
+      { $set: { ...filters } }
+    );
+  };
 }
 export default UserDAO;

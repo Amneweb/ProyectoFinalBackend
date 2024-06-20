@@ -228,4 +228,18 @@ export default class UsersController {
       res.sendClientError("no se ha podido guardar el password", e);
     }
   };
+  changerole = async (req, res) => {
+    logger.method("changerole");
+    const uid = req.params.uid;
+    const torole = req.body.torole;
+    const user = req.user;
+    try {
+      await this.#userService.changerole(uid, torole, user);
+      res.sendSuccess(
+        "El rol fue modificado con éxito. Para corroborar los cambios deberás loguearte nuevamente."
+      );
+    } catch (e) {
+      res.sendClientError(e.message);
+    }
+  };
 }
