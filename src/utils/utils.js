@@ -9,15 +9,19 @@ import { transporter } from "../config/mailer.config.js";
 export const agregarRuta = function (req, res, next) {
   let destinationPath;
   console.log("req en agregar Ruta", req.baseUrl);
+
   switch (req.baseUrl) {
     case "/api/products":
       destinationPath = "/public/uploads/img/products";
       break;
-    case "api/users":
-      if (req.path === "/documentation") {
+    case "/api/users":
+      const splitPathLength = req.path.split("/").length;
+
+      if (req.path.split("/")[splitPathLength - 1] === "documents") {
         destinationPath = "/public/uploads/docs";
+      } else {
+        destinationPath = "/public/uploads/img/profile";
       }
-      destinationPath = "/public/uploads/img/profile";
       break;
     default:
       destinationPath = "/public/uploads/defaults";
@@ -88,8 +92,7 @@ export const validateModifiedData = (req, res, next) => {
   }
 
   req.validatedData = datosConvertidos;
-  console.log("datos verificados en el middleware de verified partial data ");
-  console.log(datosConvertidos);
+
   next();
 };
 

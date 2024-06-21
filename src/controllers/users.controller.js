@@ -259,4 +259,31 @@ export default class UsersController {
       res.sendClientError(e.message);
     }
   };
+  uploadDoc = async (req, res) => {
+    const uid = req.params.uid;
+
+    const user = req.user;
+    const doc = req.file && `${req.destinationPath}/${req.file.filename}`;
+    try {
+      if (!doc) {
+        return res.sendClientError("No se ha subido ningún archivo adjunto");
+      }
+      const docName = req.body.docName
+        ? req.body.docName
+        : req.file.originalname;
+      const result = await this.#userService.uploadDocs(
+        uid,
+        user,
+        doc,
+        docName
+      );
+      logger.debug("El documento se cargó correctamente");
+      res.sendSuccess(result);
+    } catch (e) {
+      logger.error("No se pudo subir el documento: %s", e.message);
+      res.sendClientError(
+        `Error al tratar de subir el documento del usuario con email ${user.email}. Mensaje del sistema: "${e.message}"`
+      );
+    }
+  };
 }

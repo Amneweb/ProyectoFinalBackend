@@ -18,6 +18,14 @@ const userSchema = new mongoose.Schema({
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Carts" }],
     default: [],
   },
+  userDocs: {
+    type: Array,
+    default: [],
+  },
+  userStatus: {
+    type: Array,
+    default: [],
+  },
 });
 const userModel = mongoose.model(USERS_COLLECTION, userSchema);
 export default userModel;

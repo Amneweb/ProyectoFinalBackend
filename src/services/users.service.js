@@ -174,4 +174,37 @@ export default class UserService {
     });
     return usuarioModificado;
   };
+  uploadDocs = async (uid, user, doc, docName) => {
+    const usuarioEncontrado = await userDAO.findByID(uid);
+
+    if (!usuarioEncontrado) {
+      throw new BadRequestError("no se encontró el usuario con id " + uid);
+    }
+    if (usuarioEncontrado.userEmail != user.email) {
+      logger.error(
+        "El usuario logueado no es el usuario con el id ingresado por parámetro"
+      );
+      throw new BadRequestError(
+        "El usuario logueado no es el mismo que el usuario con id " + uid
+      );
+    }
+    const docObject = {
+      docName: docName,
+      docAddress: doc,
+    };
+    console.log("docObject");
+    console.log(docObject);
+    const arrayDocs = usuarioEncontrado.userDocs;
+    console.log("array Docs");
+    console.log(arrayDocs);
+    if (arrayDocs.indexOf(docObject) === -1) {
+      arrayDocs.push(docObject);
+      console.log("array Docs modificado", arrayDocs);
+    } else {
+      arrayDocs.splice(arrayDocs.indexOf(docObject), 1);
+    }
+    return await userDAO.updateByFilter(user.email, {
+      userDocs: arrayDocs,
+    });
+  };
 }

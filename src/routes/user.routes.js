@@ -1,7 +1,7 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
 import pc from "picocolors";
-import { validateUserFormData } from "../utils/utils.js";
+import { uploader, validateUserFormData, agregarRuta } from "../utils/utils.js";
 
 export default class UsersRouter extends CustomRouter {
   init() {
@@ -63,5 +63,12 @@ export default class UsersRouter extends CustomRouter {
     this.get("/recupero/:tid/", ["PUBLIC"], usersController.recoverPassword);
     this.post("/newpassword", ["PUBLIC"], usersController.newpassword);
     this.put("/premium/:uid", ["USER", "PREMIUM"], usersController.changerole);
+    this.put(
+      "/:uid/documents",
+      ["USER", "PREMIUM"],
+      agregarRuta,
+      uploader.single("doc"),
+      usersController.uploadDoc
+    );
   }
 }
