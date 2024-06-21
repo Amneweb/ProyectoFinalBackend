@@ -1,10 +1,12 @@
 # ProyectoFinalBackend
 
-El curso de BackEnd de Coderhouse está estructurado en tres módulos, cada uno con diferentes objetivos, pero todos unidos por un hilo conductor que es el proyecto de una app de un ecommerce. Para poder avanzar en el curso es necesario ir realizando entregas con las mejoras aprendidas a medida que avanza el curso.
+El curso de BackEnd de Coderhouse está estructurado en tres módulos, cada uno con diferentes objetivos, pero todos unidos por un hilo conductor que es el proyecto de una api completa para un ecommerce. Para poder avanzar en el curso es necesario ir realizando entregas con las mejoras aprendidas a medida que se desarrollan las clases.
 
 ## DESAFIOS QUE FUERON COMPLETANDOSE HASTA LLEGAR AL PF
 
 Este readme contiene toda la información de las entregas principales y los desafíos intermedios, con las consignas de cada uno y en algunos casos, con aclaraciones sobre la solución propuesta por mí. Los desafíos están ordenados cronológicamente de más recientes a más antiguos.
+
+> Los párrafos con borde gris a la izquierda representan las consignas de cada desafío
 
 ### DESAFIO 14: **DOCUMENTACION DEL USUARIO Y PERMISOS**
 
@@ -12,7 +14,7 @@ Este readme contiene toda la información de las entregas principales y los desa
 
 Para la parte del redireccionamiento de los archivos agregué un middleware en las rutas de creación y modificación de productos, y en la nueva ruta de carga de documentación. Dicho middleware arma la ruta de destino del archivo en base a las propiedades baseUrl y path que vienen con el req.
 
-Aunque no se pide, para la documentación hice una colección "Documentation", que contiene objetos con las propiedades código, obligatoriedad y nombre del archivo requerido. De esa manera, si en el futuro se requiere incluir otro documento como obligatorio, se puede subir a esa colección. Para verificar que un usuario puede tener permisos de premium, se comparan los documentos que subió el usuario con los que se guardan en dicha colección.
+Aunque no se pide, para la documentación hice una colección "Documentation", que contiene objetos con las propiedades código, obligatoriedad y nombre del archivo requerido. De esa manera, si en el futuro se requiere incluir otro documento como obligatorio, se puede subir a esa colección. Para verificar que un usuario puede tener permisos de premium, se comparan los códigos de los documentos que subió el usuario con los códigos de la documentación requerida, guardados en la colección "documentation".
 
 ---
 
