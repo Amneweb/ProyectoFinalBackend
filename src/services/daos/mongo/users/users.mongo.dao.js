@@ -42,10 +42,12 @@ class UserDAO {
     console.log("en update by filter", email);
     console.log("idem filters");
     console.log(filters);
+    console.log("despues de filters");
 
-    return await this.#model.updateOne(
+    return await this.#model.findOneAndUpdate(
       { userEmail: email },
-      { $set: { ...filters } }
+      { $set: { ...filters } },
+      { new: true }
     );
   };
 }

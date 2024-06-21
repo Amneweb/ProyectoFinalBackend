@@ -251,10 +251,8 @@ export default class UsersController {
     const torole = req.body.torole;
     const user = req.user;
     try {
-      await this.#userService.changerole(uid, torole, user);
-      res.sendSuccess(
-        "El rol fue modificado con éxito. Para corroborar los cambios deberás hacer click en actualizar datos."
-      );
+      const modificado = await this.#userService.changerole(uid, torole, user);
+      res.sendSuccess(modificado);
     } catch (e) {
       res.sendClientError(e.message);
     }
@@ -268,14 +266,14 @@ export default class UsersController {
       if (!doc) {
         return res.sendClientError("No se ha subido ningún archivo adjunto");
       }
-      const docName = req.body.docName
-        ? req.body.docName
+      const docCode = req.body.docCode
+        ? req.body.docCode
         : req.file.originalname;
       const result = await this.#userService.uploadDocs(
         uid,
         user,
         doc,
-        docName
+        docCode
       );
       logger.debug("El documento se cargó correctamente");
       res.sendSuccess(result);

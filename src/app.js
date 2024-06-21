@@ -12,6 +12,7 @@ import initializePassport from "./config/passport.config.js";
 
 import ProductsRouter from "./routes/products.routes.js";
 import CategoriesRouter from "./routes/category.routes.js";
+import DocumentationRouter from "./routes/documentation.routes.js";
 import CartsRouter from "./routes/cart.routes.js";
 import ViewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
@@ -68,6 +69,8 @@ app.use("/api/categories", categoriesRouter.getRouter());
 const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
 app.use("/api/mockproducts/", mockRouter);
+const documentationRouter = new DocumentationRouter();
+app.use("/api/documentation", documentationRouter.getRouter());
 
 app.get("/loggertest", (req, res) => {
   // Logica

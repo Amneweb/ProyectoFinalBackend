@@ -1,4 +1,5 @@
 import { userMongoDAO as userDAO } from "./daos/mongo/index.js";
+import fs from "fs";
 import jwt from "jsonwebtoken";
 import { cartDAO } from "../utils/factory.js";
 import { BadRequestError } from "../utils/errors.js";
@@ -10,8 +11,12 @@ import {
   generateJWToken,
   createHash,
 } from "../utils/utils.js";
+import __dirname from "../../dirname.js";
+import DocumentationDAO from "./daos/mongo/documentation/documentation.mongo.dao.js";
 export default class UserService {
-  constructor() {}
+  constructor() {
+    this.documentationDAO = new DocumentationDAO();
+  }
   getAll = async () => {
     return await userDAO.findAll();
   };
@@ -169,12 +174,25 @@ export default class UserService {
         "El usuario logueado no es el mismo que el usuario con id " + uid
       );
     }
+
+    if (torole === "premium") {
+      console.log("dentro del if");
+      console.log(usuarioEncontrado.userStatus);
+      if (usuarioEncontrado.userStatus === false) {
+        logger.error(
+          "el usuario todavía no tiene el permiso para cambiar de rol"
+        );
+        throw new BadRequestError(
+          "El usuario aun no cuenta con los permisos necesarios para cambiar el rol dado que hay documentación faltante. Contactate con nosotros ante cualquier duda."
+        );
+      }
+    }
     const usuarioModificado = await userDAO.updateByFilter(user.email, {
       userRole: torole,
     });
     return usuarioModificado;
   };
-  uploadDocs = async (uid, user, doc, docName) => {
+  uploadDocs = async (uid, user, doc, docCode) => {
     const usuarioEncontrado = await userDAO.findByID(uid);
 
     if (!usuarioEncontrado) {
@@ -189,22 +207,59 @@ export default class UserService {
       );
     }
     const docObject = {
-      docName: docName,
+      docCode: docCode,
       docAddress: doc,
     };
-    console.log("docObject");
-    console.log(docObject);
+
     const arrayDocs = usuarioEncontrado.userDocs;
-    console.log("array Docs");
-    console.log(arrayDocs);
-    if (arrayDocs.indexOf(docObject) === -1) {
+    const mapped = arrayDocs.map((item) => item.docCode);
+    console.log(
+      "indice del archivo con el mismo codigo",
+      mapped.indexOf(docObject.docCode)
+    );
+    if (mapped.indexOf(docObject.docCode) === -1) {
       arrayDocs.push(docObject);
-      console.log("array Docs modificado", arrayDocs);
     } else {
-      arrayDocs.splice(arrayDocs.indexOf(docObject), 1);
+      arrayDocs.splice(mapped.indexOf(docObject.docCode), 1);
+      console.log(
+        "direccion archivo a borrar ",
+        __dirname + docObject.docAddress
+      );
+      fs.unlink(__dirname + docObject.docAddress, (error) => {
+        if (error) console.log(error);
+        else {
+          console.log("\nDeleted file: " + docObject.docAddress);
+        }
+      });
+
+      arrayDocs.push(docObject);
     }
-    return await userDAO.updateByFilter(user.email, {
+    const modificado = await userDAO.updateByFilter(user.email, {
       userDocs: arrayDocs,
     });
+
+    const docs = await this.documentationDAO.findAll();
+    const obligatorios = docs.map((doc) => {
+      if (doc.obligatorio === true) return doc.codigo;
+    });
+
+    let faltantes = [];
+    const soloCodigos = modificado.userDocs.map((item) => item.docCode);
+
+    obligatorios.forEach((item) => {
+      if (soloCodigos.indexOf(item) < 0) {
+        faltantes.push(item);
+      }
+    });
+    console.log("faltantes");
+    console.log(faltantes);
+    if (faltantes.length === 0) {
+      return await userDAO.updateByFilter(user.email, { userStatus: true });
+    } else {
+      return {
+        message: "aun falta la siguiente documentacion",
+        faltantes: faltantes,
+      };
+    }
   };
 }

@@ -1,0 +1,416 @@
+24-06-21 11:51:32 GLOBAL [path] : POST en /api/users/login
+24-06-21 11:51:32 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 11:51:32 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 11:51:32 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 11:51:32 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 11:52:20 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 11:52:20 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 11:52:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 11:52:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 11:52:20 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 11:53:00 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 11:53:00 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 11:53:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 11:53:00 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 11:53:00 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 11:54:35 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 11:54:35 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 11:54:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 11:54:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 11:54:35 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 12:15:14 GLOBAL [path] : POST en /api/users/login
+24-06-21 12:15:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:15:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 12:15:14 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 12:15:14 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 12:15:20 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:15:20 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:15:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:15:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:15:20 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:15:31 GLOBAL [path] : GET en /api/documentation/
+24-06-21 12:15:31 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:15:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 12:15:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:15:31 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-21 12:15:37 GLOBAL [path] : POST en /api/users/login
+24-06-21 12:15:37 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:15:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 12:15:37 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 12:15:37 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-21 12:15:42 GLOBAL [path] : GET en /api/documentation/
+24-06-21 12:15:42 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:15:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 12:15:42 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-21 12:16:08 GLOBAL [path] : POST en /api/users/login
+24-06-21 12:16:08 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:16:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 12:16:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 12:16:08 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 12:16:22 GLOBAL [path] : GET en /api/users/currentUser
+24-06-21 12:16:22 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:16:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:16:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:17:01 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:17:01 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:17:01 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:17:01 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:17:01 USER-SERVICE [method] : changerole
+24-06-21 12:18:19 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:18:19 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:18:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:18:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:18:19 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:18:37 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:18:37 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:18:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:18:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:18:37 USER-SERVICE [method] : changerole
+24-06-21 12:20:52 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:20:52 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:20:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:20:52 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:20:52 USER-SERVICE [method] : changerole
+24-06-21 12:21:04 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:21:04 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:21:04 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:21:04 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:21:04 USER-SERVICE [method] : changerole
+24-06-21 12:22:52 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:22:52 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:22:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:22:52 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:22:52 USER-SERVICE [method] : changerole
+24-06-21 12:24:43 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:24:43 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:24:43 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:24:43 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:24:43 USER-SERVICE [method] : changerole
+24-06-21 12:25:06 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:25:06 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:25:06 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:25:06 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:25:06 USER-SERVICE [method] : changerole
+24-06-21 12:25:19 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:25:19 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:25:19 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:25:19 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:25:19 USER-SERVICE [method] : changerole
+24-06-21 12:27:25 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:27:25 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:27:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:27:25 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-21 12:27:29 GLOBAL [path] : POST en /api/users/login
+24-06-21 12:27:29 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:27:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 12:27:29 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 12:27:30 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 12:27:33 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:27:33 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:27:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:27:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:27:33 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:27:50 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:27:50 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:27:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:27:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:27:50 USER-SERVICE [method] : changerole
+24-06-21 12:27:56 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:27:56 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:27:56 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:27:56 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:27:56 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:28:20 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:28:20 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:28:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:28:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:28:20 USER-SERVICE [method] : changerole
+24-06-21 12:29:03 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:29:03 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:29:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:29:03 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:29:03 USER-SERVICE [method] : changerole
+24-06-21 12:31:14 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:31:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:31:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:31:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:31:14 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:31:23 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:31:23 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:31:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:31:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:31:23 USER-SERVICE [method] : changerole
+24-06-21 12:33:50 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:33:50 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:33:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:33:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:33:50 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:34:00 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:34:00 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:34:00 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:34:00 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:34:00 USER-SERVICE [method] : changerole
+24-06-21 12:34:05 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 12:34:05 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:34:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 12:34:05 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:34:05 USER-SERVICE [method] : Actualizar current user
+24-06-21 12:34:14 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 12:34:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 12:34:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 12:34:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"premium"}
+24-06-21 12:34:14 USER-SERVICE [method] : changerole
+24-06-21 13:05:05 GLOBAL [path] : POST en /api/users/login
+24-06-21 13:05:05 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:05 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 13:05:05 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 13:05:06 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 13:05:14 GLOBAL [path] : GET en /api/users/currentUser
+24-06-21 13:05:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 13:05:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:05:21 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 13:05:21 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 13:05:21 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:05:21 USER-SERVICE [method] : changerole
+24-06-21 13:05:21 USER-SERVICE [error] : el usuario todavía no tiene el permiso para cambiar de rol
+24-06-21 13:05:38 GLOBAL [path] : GET en /api/documentation/
+24-06-21 13:05:38 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 13:05:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:05:38 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-21 13:05:42 GLOBAL [path] : POST en /api/users/login
+24-06-21 13:05:42 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:42 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 13:05:42 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 13:05:42 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: adminCoder@coder.com
+24-06-21 13:05:46 GLOBAL [path] : GET en /api/documentation/
+24-06-21 13:05:46 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:05:46 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 13:05:46 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-21 13:06:52 GLOBAL [path] : POST en /api/documentation
+24-06-21 13:06:52 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:06:52 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 13:06:52 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-21 13:06:59 GLOBAL [path] : GET en /api/documentation/
+24-06-21 13:06:59 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:06:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'ADMIN' ]
+24-06-21 13:06:59 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-21 13:07:12 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 13:07:12 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:07:12 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 13:07:12 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Coder House","email":"adminCoder@coder.com","age":15,"role":"admin"}
+24-06-21 13:07:12 CUSTOM-ROUTER [warning] : El usuario no tiene los privilegios necesarios
+24-06-21 13:07:17 GLOBAL [path] : POST en /api/users/login
+24-06-21 13:07:17 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:07:17 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 13:07:17 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 13:07:17 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 13:07:29 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 13:07:29 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:07:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 13:07:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:07:30 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 13:10:18 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 13:10:18 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:10:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 13:10:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:10:18 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 13:12:51 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 13:12:51 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:12:51 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 13:12:51 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:12:51 USER-SERVICE [method] : Actualizar current user
+24-06-21 13:58:55 GLOBAL [path] : POST en /api/users/login
+24-06-21 13:58:55 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:58:55 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 13:58:55 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 13:58:55 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 13:59:02 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 13:59:02 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 13:59:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 13:59:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 13:59:02 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 14:02:14 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:02:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:02:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:02:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:02:14 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 14:04:18 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:04:18 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:04:18 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:04:18 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:04:18 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 14:06:53 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:06:53 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:06:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:06:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:06:53 USER-SERVICE [error] : No se pudo subir el documento: boolean false is not a function
+24-06-21 14:08:49 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:08:49 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:08:49 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:08:49 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:08:49 USER-SERVICE [error] : No se pudo subir el documento: string "DOMICILIO" is not a function
+24-06-21 14:13:44 GLOBAL [path] : POST en /api/users/login
+24-06-21 14:13:44 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:13:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 14:13:44 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 14:13:45 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 14:13:50 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:13:50 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:13:50 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:13:50 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:13:50 USER-SERVICE [error] : No se pudo subir el documento: string "DOMICILIO" is not a function
+24-06-21 14:14:53 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:14:53 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:14:53 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:14:53 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:14:54 USER-SERVICE [error] : No se pudo subir el documento: string "DOMICILIO" is not a function
+24-06-21 14:18:09 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:18:09 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:18:09 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:18:09 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:18:09 USER-SERVICE [error] : No se pudo subir el documento: string "DOMICILIO" is not a function
+24-06-21 14:19:54 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:19:54 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:19:54 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:19:54 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:19:54 USER-SERVICE [error] : No se pudo subir el documento: string "DOMICILIO" is not a function
+24-06-21 14:21:09 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:21:09 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:21:09 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:21:09 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:21:09 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:22:02 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:22:02 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:22:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:22:02 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:22:02 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:22:09 GLOBAL [path] : PUT en /api/users/premium/6648183be5e204d17a499205
+24-06-21 14:22:09 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:22:09 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:22:09 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:22:09 USER-SERVICE [method] : changerole
+24-06-21 14:22:09 USER-SERVICE [error] : el usuario todavía no tiene el permiso para cambiar de rol
+24-06-21 14:24:02 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:24:02 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:24:02 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:24:02 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-21 14:24:07 GLOBAL [path] : POST en /api/users/login
+24-06-21 14:24:07 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:24:07 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 14:24:07 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 14:24:07 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 14:24:10 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:24:10 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:24:10 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:24:10 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:24:10 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:24:33 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:24:33 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:24:33 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:24:33 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:24:33 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:28:23 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:28:23 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:28:23 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:28:23 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:28:23 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:28:31 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:28:31 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:28:31 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:28:31 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:28:31 USER-SERVICE [error] : No se pudo subir el documento: __dirname is not defined
+24-06-21 14:29:59 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:29:59 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:29:59 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:29:59 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:29:59 USER-SERVICE [error] : No se pudo subir el documento: The "cb" argument must be of type function. Received undefined
+24-06-21 14:36:11 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:36:11 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:36:11 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:36:11 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-21 14:36:16 GLOBAL [path] : POST en /api/users/login
+24-06-21 14:36:16 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:36:16 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 14:36:16 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 14:36:17 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 14:36:21 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:36:21 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:36:21 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:36:21 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:36:21 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:43:22 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:43:22 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:43:22 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:43:22 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:43:22 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:44:38 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:44:38 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:44:38 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:44:38 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:44:38 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:49:03 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:49:03 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:49:03 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:49:03 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-21 14:49:08 GLOBAL [path] : POST en /api/users/login
+24-06-21 14:49:08 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:49:08 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 14:49:08 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 14:49:09 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 14:49:13 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:49:13 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:49:13 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:49:13 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:49:13 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:49:20 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:49:20 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:49:20 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:49:20 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:49:20 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:51:37 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:51:37 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:51:37 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:51:37 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:51:37 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:55:14 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:55:14 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:55:14 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:55:14 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:55:14 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:55:29 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:55:29 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:55:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:55:29 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:55:29 USER-SERVICE [method] : Actualizar current user
+24-06-21 14:58:25 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 14:58:25 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:58:25 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 14:58:25 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:58:25 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 14:58:35 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 14:58:35 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 14:58:35 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 14:58:35 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 14:58:35 USER-SERVICE [method] : Actualizar current user
+24-06-21 15:00:24 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 15:00:24 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 15:00:24 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 15:00:24 CUSTOM-ROUTER [debug] : Usuario en handle policies undefined
+24-06-21 15:00:29 GLOBAL [path] : POST en /api/users/login
+24-06-21 15:00:29 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 15:00:29 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'PUBLIC' ]
+24-06-21 15:00:29 CUSTOM-ROUTER [silly] : sigue de largo porque es PUBLIC
+24-06-21 15:00:29 USER-SERVICE [debug] : El usuario que se quiere loguear tiene email: info@amneweb.com.ar
+24-06-21 15:00:34 GLOBAL [path] : PUT en /api/users/6648183be5e204d17a499205/documents
+24-06-21 15:00:34 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 15:00:34 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM' ]
+24-06-21 15:00:34 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 15:00:34 USER-SERVICE [debug] : El documento se cargó correctamente
+24-06-21 15:00:44 GLOBAL [path] : GET en /api/users/updateCurrentUser
+24-06-21 15:00:44 GLOBAL [method] : Entrando a llamar strategy
+24-06-21 15:00:44 CUSTOM-ROUTER [method] : Políticas a evaluar: [ 'USER', 'PREMIUM', 'ADMIN' ]
+24-06-21 15:00:44 CUSTOM-ROUTER [debug] : Usuario en handle policies {"name":"Amneris Calle","email":"info@amneweb.com.ar","age":54,"role":"user"}
+24-06-21 15:00:44 USER-SERVICE [method] : Actualizar current user

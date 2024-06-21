@@ -23,8 +23,8 @@ const userSchema = new mongoose.Schema({
     default: [],
   },
   userStatus: {
-    type: Array,
-    default: [],
+    type: Boolean,
+    default: false,
   },
 });
 const userModel = mongoose.model(USERS_COLLECTION, userSchema);
