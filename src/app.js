@@ -17,7 +17,7 @@ import CartsRouter from "./routes/cart.routes.js";
 import ViewsRouter from "./routes/views.routes.js";
 import UsersRouter from "./routes/user.routes.js";
 import EmailRouter from "./routes/email.routes.js";
-import usersViewsRouter from "./routes/user.views.routes.js";
+import UsersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
 
 import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
@@ -70,7 +70,8 @@ const emailRouter = new EmailRouter();
 app.use("/api/email", emailRouter.getRouter());
 const viewsRouter = new ViewsRouter();
 app.use("/", viewsRouter.getRouter());
-app.use("/users", usersViewsRouter);
+const usersViewsRouter = new UsersViewsRouter();
+app.use("/users", usersViewsRouter.getRouter());
 const productRouter = new ProductsRouter();
 app.use("/api/products", productRouter.getRouter());
 const cartsRouter = new CartsRouter();

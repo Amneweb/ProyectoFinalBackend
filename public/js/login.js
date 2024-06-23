@@ -22,14 +22,11 @@ loginForm.addEventListener("submit", (e) => {
   }).then((result) => {
     if (result.status === 200) {
       result.json().then((json) => {
-        //TODO: agregar opción de cookie
-        // localStorage.setItem("authToken", json.access_token);
-        //localStorage.setItem("USER_ID", json.id);
         //FIXME: modificar el alert y transformarlo en sweet alert
         alert(
           "Login realizado con exito! De acá se va a /users, que debería mostrar los datos del usuario en base al token"
         );
-        window.location.replace("/users");
+        window.location.replace("/users/currentUser");
       });
     } else if (result.status === 401) {
       console.log("resultado de un login invalido", result);

@@ -1,8 +1,7 @@
 import ProductManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
-
 import { productsLogger as logger } from "../config/logger.config.js";
-
+import url from "url";
 export default class ProductsController {
   #productManager;
 
@@ -11,20 +10,21 @@ export default class ProductsController {
   }
 
   getAll = async (req, res) => {
-    const renderOption = req.renderOption;
-    let page = parseInt(req.query.page) || 1;
+    var path = req.baseUrl;
+    console.log("path:", path);
+    const page = parseInt(req.query.page) || 1;
     if (page <= 0 || page > 1000) {
       page = 1;
     }
-    let limit = parseInt(req.query.limit) || 0;
+    const limit = parseInt(req.query.limit) || 0;
     if (limit < 0 || limit > 10000) {
       limit = 0;
     }
-    let criterio = req.query.criterio || "title";
+    const criterio = req.query.criterio || "title";
     if (criterio != "title" && criterio != "price" && criterio != "stock") {
       criterio = "title";
     }
-    let sentido = parseInt(req.query.sentido) || 1;
+    const sentido = parseInt(req.query.sentido) || 1;
     if (sentido != -1 && sentido != 1) sentido = 1;
     let sort = {};
     sort[criterio] = sentido;
@@ -40,40 +40,20 @@ export default class ProductsController {
           "Error interno al tratar de obtener los productos. Por favor vuelva a intentarlo más tarde."
         );
       }
-
       logger.debug("se obtuvieron todos los productos sin problema");
-      logger.debug("render options %s", renderOption);
-      if (renderOption === "RENDER") {
-        productosObtenidos.prevLink = productosObtenidos.hasPrevPage
-          ? `/catalogo/?page=${productosObtenidos.prevPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
-          : "";
-        productosObtenidos.nextLink = productosObtenidos.hasNextPage
-          ? `/catalogo/?page=${productosObtenidos.nextPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
-          : "";
-
-        productosObtenidos.isValid = !(
-          page < 1 || page > productosObtenidos.totalPages
-        );
-        res.render("catalogo", {
-          productosObtenidos,
-          style: `catalogo.css`,
-        });
-      } else {
-        res.sendSuccess(productosObtenidos);
-      }
-
-      //return consultaExitosa(res, productosObtenidos, renderOption, "catalogo");
+      return res.sendSuccess(productosObtenidos);
     } catch (e) {
       logger.error(
         "Error interno al tratar de obtener productos: %s",
         e.message
       );
-      res.sendInternalServerError(e);
+      res.sendInternalServerError(
+        `Error interno al tratar de obtener los productos de la base de datos. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 
   getOne = async (req, res) => {
-    const renderOption = req.renderOption;
     logger.method("getOne");
     try {
       const id = req.params.id;
@@ -88,28 +68,19 @@ export default class ProductsController {
         );
       }
       logger.debug("Se obtuvo el producto sin problemas");
-      if (renderOption === "RENDER") {
-        res.render("product", {
-          result,
-          style: `catalogo.css`,
-        });
-      } else {
-        res.sendSuccess(result);
-      }
+      res.sendSuccess(result);
     } catch (e) {
       logger.error(
         "Error al tratar de obtener el producto. Mensaje: '%s'",
         e.message
       );
       res.sendClientError(
-        "Hubo un error al tratar de traer los datos del producto. Mensaje del sistema ",
-        e.message
+        `Error al tratar de obtener el producto con id ${req.params.id}. Mensaje del sistema:  "${e.message}"`
       );
     }
   };
 
   postOne = async (req, res) => {
-    const renderOption = req.renderOption;
     const nuevo = req.validatedData;
     logger.debug("usuario en controlador de productos %s", req.user.email);
     console.log("req user role", req.user.role.toUpperCase());
@@ -143,15 +114,16 @@ export default class ProductsController {
 
       const result = await this.#productManager.addProduct(product);
       logger.debug("El producto se agregó correctamente con id %s", result._id);
-      consultaExitosa(res, result, renderOption, "catalogo");
+      res.sendSuccess(result);
     } catch (e) {
       logger.error("Error al tratar de crear un producto nuevo: %s", e.message);
-      res.status(500).send({ status: "Internal Server Error", error });
+      res.sendClientError(
+        `Error al tratar de crear un producto nuevo. Mensaje del sistema: "${e.message}"`
+      );
     }
   };
 
   deleteOne = async (req, res) => {
-    const renderOption = req.renderOption;
     const id = req.params.id;
     const user = req.user;
 
@@ -168,7 +140,6 @@ export default class ProductsController {
   };
 
   modifyOne = async (req, res) => {
-    const renderOption = req.renderOption;
     const modified = req.validatedData;
     const id = req.params.id;
     const user = req.user;
@@ -198,7 +169,6 @@ export default class ProductsController {
       }
   };
   modifyCate = async (req, res) => {
-    const renderOption = req.renderOption;
     const id = req.params.id;
     const category = req.params.cate;
     const user = req.user;
@@ -222,7 +192,6 @@ export default class ProductsController {
     }
   };
   putImage = async (req, res) => {
-    const renderOption = req.renderOption;
     const id = req.params.id;
     const datos = req.validatedData;
     const user = req.user;

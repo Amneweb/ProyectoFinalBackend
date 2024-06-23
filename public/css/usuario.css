@@ -1,0 +1,15 @@
+.usuario a {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-style: dashed;
+}
+.usuario a:hover {
+  text-decoration-style: wavy;
+}
+.usuario h4 {
+  margin-bottom: 1rem;
+}
+.icono a {
+  font-size: 1.5rem;
+}

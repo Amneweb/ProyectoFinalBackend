@@ -1,13 +1,14 @@
+{{> nav}}
 <section class="main">
   <h1>Hola, bienvenidos al panel de administración de Windward Car &amp; Truck -
     Battery Store</h1>
   <h2>Modificar producto:
-    <span class="titulo">{{productosObtenidos.title}}</span></h2>
+    <span class="titulo">{{result.title}}</span></h2>
 
   <div>
 
     <h3>ID del producto:
-      <span id="idproducto">{{productosObtenidos._id}}</span>
+      <span id="idproducto">{{result._id}}</span>
     </h3>
 
     <form id="modificar" action="" enctype="multipart/form-data">
@@ -16,59 +17,35 @@
         type="text"
         id="title"
         name="title"
-        value="{{productosObtenidos.title}}"
+        value="{{result.title}}"
       />
       <label for="price">Precio</label>
       <input
         type="number"
         id="price"
         name="price"
-        value={{productosObtenidos.price}}
+        value={{result.price}}
       />
-      <label for="category">Asignar categoría</label>
-      <select name="category" id="category">
-        <option value="">Elegir categoría</option>
-        {{#each categoriasExistentes}}
-          <option value={{this.category}}>{{this.category}} </option>
-        {{/each}}
-      </select>
-      <small></small><small>Si querés agregar una nueva opción de categoría,
-        utilizá el
-        <strong>Administrador de Categorías</strong>
-        de más abajo.</small>
-      <small>Categorías ya asignadas</small><small>{{#each
-          productosObtenidos.category
-        }}
-
-          <button
-            class="badge borrarCate"
-            name="{{../productosObtenidos._id}}"
-            id="{{this}}"
-          >{{this}} ❌</button>
-
-        {{/each}}
-      </small>
-      <small></small>
-      <small>Hacer click en la cruz roja para borrar una categoría asignada</small>
+      
       <label for="code">Código (SKU)</label>
       <input
         type="text"
         id="code"
         name="code"
-        value={{productosObtenidos.code}}
+        value={{result.code}}
       />
       <label for="description">Descripcion</label>
       <input
         type="text"
         id="description"
-        value="{{productosObtenidos.description}}"
+        value="{{result.description}}"
         name="description"
       />
       <label for="stock">Stock</label>
       <input
         type="number"
         id="stock"
-        value={{productosObtenidos.stock}}
+        value={{result.stock}}
         name="stock"
       />
       <label for="status">Status</label>
@@ -76,6 +53,35 @@
       <input type="submit" />
     </form>
     <div class="errores" id="errorModificar"></div>
+    <div><small>Categorías existentes</small><small id="existentes">
+        {{#each categoriasExistentes}}
+          
+          <button
+            class="badge agregarCate"
+            name="{{../result._id}}"
+            id="{{this.category}}"
+          >{{this.category}} ✅</button>
+        {{/each}}
+      </small>
+      <small></small><small>Si querés agregar una nueva opción de categoría,
+        utilizá el
+        <strong>Administrador de Categorías</strong>
+        de más abajo.</small></div>
+     <div><small>Categorías ya asignadas</small><small id="asignadas">{{#each
+          result.category
+        }}
+
+          <button
+            class="badge borrarCate"
+            name="{{../result._id}}"
+            id="{{this}}"
+          >{{this}} ❌</button>
+
+        {{/each}}
+      </small>
+      <small></small>
+      <small>Hacer click en la cruz roja para borrar una categoría asignada</small>
+  </div>
   </div>
 
   <div>

@@ -1,0 +1,23 @@
+.error {
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  margin: auto;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background-color: white;
+  border: #91a3b0 solid 1px;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.error a {
+  background-color: #91a3b0;
+  color: white;
+  padding: 3px 5px;
+  border-radius: 3px;
+}

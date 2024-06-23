@@ -1,9 +1,9 @@
 import { BadRequestError } from "../utils/errors.js";
 import { productDAO } from "../utils/factory.js";
 import { validateProduct } from "../utils/product.validator.js";
-import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 import { productsLogger as logger } from "../config/logger.config.js";
 import { validateId, validateOwnership } from "./validators.service.js";
+import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 export default class ProductManager {
   constructor() {
     this.userDAO = new UserDAO();

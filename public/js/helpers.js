@@ -68,20 +68,54 @@ borrarCategoria.forEach((boton) => {
     e.preventDefault();
     const productID = e.target.name;
     const categoria = e.target.id;
-    await fetch(`/api/products/${productID}/categoria/${categoria}`, {
-      method: "PUT",
-      headers: { "Content-type": "application/json" },
-    });
+    try {
+      const modificado = await fetch(
+        `/api/products/${productID}/categoria/${categoria}`,
+        {
+          method: "PUT",
+          headers: { "Content-type": "application/json" },
+        }
+      );
+      const parseado = await modificado.json();
+      console.log(modificado);
+      if (!modificado) {
+        throw new Error("No se pudo borrar la categoría");
+      }
+      await Swal.fire({
+        title: "👍",
+        text: "La categoría se borró con éxito",
+        position: "top-end",
+        timer: 1500,
+        showConfirmButton: false,
+      });
 
-    Swal.fire({
-      title: "👍",
-      text: "La categoría se borró con éxito",
-      position: "top-end",
-      timer: 1500,
-      showConfirmButton: false,
-    }).then((result) => {
-      location.reload(true);
-    });
+      console.log("parseado ", parseado);
+      const categorias = parseado.payload.category;
+      console.log("categorias", categorias);
+      const bannerCategorias = document.getElementById("asignadas");
+      const nuevoHTML = categorias
+        .map(
+          (cadauno) =>
+            "<button class='badge borrarCate' name='" +
+            productID +
+            "' id='" +
+            cadauno +
+            "'>" +
+            cadauno +
+            " ❌</button>"
+        )
+        .join("");
+
+      console.log("html", nuevoHTML);
+      bannerCategorias.innerHTML = nuevoHTML;
+    } catch (e) {
+      Swal.fire({
+        title: "Oops",
+        text: `La categoría no se pudo borrar debido a ${e.message}`,
+        position: "top-end",
+        showConfirmButton: true,
+      });
+    }
   });
 });
 
@@ -104,5 +138,63 @@ agregarCategoria.addEventListener("submit", async (e) => {
     showConfirmButton: false,
   }).then((result) => {
     location.reload(true);
+  });
+});
+
+const agregarCategoriaAproducto = document.querySelectorAll(".agregarCate");
+
+agregarCategoriaAproducto.forEach((boton) => {
+  boton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const productID = e.target.name;
+    const categoria = e.target.id;
+    try {
+      const modificado = await fetch(
+        `/api/products/${productID}/categoria/${categoria}`,
+        {
+          method: "PUT",
+          headers: { "Content-type": "application/json" },
+        }
+      );
+      const parseado = await modificado.json();
+      console.log(modificado);
+      if (!modificado) {
+        throw new Error("No se pudo agregar la categoría");
+      }
+      await Swal.fire({
+        title: "👍",
+        text: "La categoría se agregó con éxito",
+        position: "top-end",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      console.log("parseado ", parseado);
+      const categorias = parseado.payload.category;
+      console.log("categorias", categorias);
+      const bannerCategorias = document.getElementById("asignadas");
+      const nuevoHTML = categorias
+        .map(
+          (cadauno) =>
+            "<button class='badge borrarCate' name='" +
+            productID +
+            "' id='" +
+            cadauno +
+            "'>" +
+            cadauno +
+            " ❌</button>"
+        )
+        .join("");
+
+      console.log("html", nuevoHTML);
+      bannerCategorias.innerHTML = nuevoHTML;
+    } catch (e) {
+      Swal.fire({
+        title: "Oops",
+        text: `La categoría no se pudo agregar debido a ${e.message}`,
+        position: "top-end",
+        showConfirmButton: true,
+      });
+    }
   });
 });

@@ -1,20 +1,18 @@
-import categoriesDAO from "./daos/mongo/categories/categories.mongo.dao.js";
+import CategoriesDAO from "./daos/mongo/categories/categories.mongo.dao.js";
 
 export default class CategoryManager {
-  constructor() {}
+  constructor() {
+    this.categoriesDAO = new CategoriesDAO();
+  }
   getCategories = async () => {
-    const categories = await categoriesDAO.findAll();
-    return categories;
+    return await this.categoriesDAO.findAll();
   };
 
   addCategory = async (category) => {
-    let categoriaNueva = await categoriesDAO.create(category);
-
-    return categoriaNueva;
+    return await this.categoriesDAO.create(category);
   };
 
   deleteCategory = async (id) => {
-    let result = await categoriesDAO.deleteOne(id);
-    return result;
+    return await this.categoriesDAO.delete(id);
   };
 }

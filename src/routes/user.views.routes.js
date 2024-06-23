@@ -1,25 +1,45 @@
-/*======================================================
-        RUTAS DESDE /users
-/*======================================================*/
+import CustomRouter from "./custom/custom.router.js";
+import UsersViewsController from "../controllers/users.views.controller.js";
+import pc from "picocolors";
+import { uploader, validateUserFormData, agregarRuta } from "../utils/utils.js";
 
-import { Router } from "express";
+export default class UsersViewsRouter extends CustomRouter {
+  init() {
+    // Todas las req/res van dentro de este init()
 
-const router = Router();
+    // Se instancia el service UserService
+    const usersController = new UsersViewsController();
 
-router.get("/login", (req, res) => {
-  res.render("login", { style: "general.css" });
-});
+    this.get("/", ["ADMIN"], usersController.getAll);
 
-router.get("/register", (req, res) => {
-  res.render("register", { style: "general.css" });
-});
+    this.get(
+      "/currentUser",
+      ["USER", "PREMIUM", "ADMIN"],
+      usersController.getCurrentUser
+    );
+    this.get(
+      "/updateCurrentUser",
+      ["USER", "PREMIUM", "ADMIN"],
+      usersController.updateCurrentUser
+    );
 
-router.get("/", (req, res) => {
-  console.log("info para mostrar en profile ", req.body);
-  res.render("profile", {
-    user: req.user,
-    style: "catalogo.css",
-  });
-});
+    this.get("/premiumUser", ["PREMIUM"], usersController.getPremiumUser);
 
-export default router;
+    this.get("/adminUser", ["ADMIN"], usersController.getAdminUser);
+
+    this.get("/login", ["PUBLIC"], usersController.login);
+
+    this.get("/register", ["PUBLIC"], usersController.register);
+
+    this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
+
+    this.get(
+      "/cart",
+      ["USER", "PREMIUM"],
+
+      usersController.getCart
+    );
+
+    this.get("/tickets", ["USER", "PREMIUM"], usersController.getTickets);
+  }
+}

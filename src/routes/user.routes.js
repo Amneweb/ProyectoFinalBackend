@@ -9,8 +9,8 @@ export default class UsersRouter extends CustomRouter {
 
     // Se instancia el service UserService
     const usersController = new UsersController();
-    //TODO: volver a poner admin, lo cambié sólo para probar
-    this.get("/", ["PUBLIC"], usersController.getAll);
+
+    this.get("/", ["ADMIN"], usersController.getAll);
 
     this.get(
       "/currentUser",

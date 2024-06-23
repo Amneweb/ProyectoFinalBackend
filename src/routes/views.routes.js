@@ -1,24 +1,33 @@
 import CustomRouter from "./custom/custom.router.js";
-import ProductController from "../controllers/products.controller.js";
-import { renderizar as renderOption } from "../utils/utils.js";
+import ProductViewsController from "../controllers/products.views.controller.js";
 
 export default class ViewsRouter extends CustomRouter {
   init() {
-    const productController = new ProductController();
-
-    this.get("/catalogo", ["PUBLIC"], renderOption, productController.getAll);
-    this.get(
-      "/catalogo/:id",
-      ["PUBLIC"],
-      renderOption,
-      productController.getOne
-    );
-    this.get("/", ["PUBLIC"], renderOption, productController.getAll);
-    this.get(
-      "/admin/productos",
-      ["ADMIN"],
-      renderOption,
-      productController.getAll
-    );
+    const productController = new ProductViewsController();
+    /*
+     *  ============================================================
+     *  dominio.../catalogo Vista al público de todos los productos
+     *  ============================================================
+     */
+    this.get("/catalogo", ["PUBLIC"], productController.getAll);
+    /*
+     *  ==============================================================
+     *  dominio.../catalogo/:id Vista al público de un único producto
+     *  ==============================================================
+     */
+    this.get("/catalogo/:id", ["PUBLIC"], productController.getOne);
+    /*
+     *  =========================================
+     *  dominio.../index.html Home page
+     *  =========================================
+     */
+    this.get("/", ["PUBLIC"], productController.getAll);
+    /*
+     *  ===============================================================
+     *  dominio.../admin/catalogo Vista de productos al administrador
+     *  ===============================================================
+     */
+    this.get("/admin/catalogo", ["ADMIN"], productController.getAll);
+    this.get("/admin/producto/:id", ["ADMIN"], productController.getOne);
   }
 }

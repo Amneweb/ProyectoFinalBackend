@@ -1,7 +1,9 @@
 {{> nav}}
 <section class="encabezado">
+
+  {{#if user}}
   <div class="usuario">
-    {{#if user}}
+    
       <h4>Hola,
         <a href="/users">{{user.name}}</a>
         ¡Gracias por visitarnos! 🤩</h4>
@@ -14,8 +16,9 @@
       <p>Aun no estás logueado. Click
         <a href="/users/login">aquí</a>
         si querés loguearte</p>
-    {{/if}}
+    
   </div>
+  {{/if}}
   <h1>Windward Car &amp; Truck - Battery Store</h1>
 
   <h2>Listado de productos en stock</h2>
@@ -48,25 +51,7 @@
 </section>
 <section class="container">
   {{#each productosObtenidos.docs}}
-    <div class="card">
-      <div>{{#if this.thumb}}
-          <a href="catalogo/{{this._id}}">
-            <img
-              src="/uploads/img/products/{{this.thumb}}"
-              alt="{{this.title}}"
-            /></a>{{else}}<a href="/catalogo/{{this._id}}">
-            <img
-              src="/uploads/img/products/sinfoto.jpg"
-              alt="Producto sin foto"
-            /></a>
-        {{/if}}
-      </div>
-      <div><a href="/catalogo/{{this._id}}">{{this.title}}</a></div>
-      <div><span class="small">Precio:</span> {{formatear this.price}}</div>
-      <div><span class="small">SKU:</span> {{this.code}}</div>
-      <div><span class="small">Cantidad en stock:</span> {{this.stock}}</div>
-      <button id="{{this._id}}" class="agregar">Comprar</button>
-    </div>
+   {{> card}}
   {{/each}}
 </section>
 {{#if (comparar productosObtenidos.totalPages ">" 1)}}

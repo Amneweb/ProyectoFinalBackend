@@ -1,0 +1,21 @@
+.navigation {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  list-style-type: none;
+  background-color: #91a3b0;
+}
+nav {
+  background-color: #91a3b0;
+  width: 100%;
+}
+
+.navigation li a {
+  display: block;
+  padding: 10px;
+  background-color: #91a3b0;
+  color: white;
+}
+.navigation li a:hover {
+  color: black;
+}
