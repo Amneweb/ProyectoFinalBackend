@@ -55,19 +55,37 @@ export default class CustomRouter {
       logger.silly("sigue de largo porque es PUBLIC");
       return next();
     }
-    logger.debug("Usuario en handle policies %j", req.user);
+
     if (!req.user || !req.user.role) {
-      return res
-        .status(401)
-        .send({ error: "User not authenticated or missing token." });
+      if (req.baseUrl.split("/").includes("api")) {
+        return res
+          .status(401)
+          .send({ error: "User not authenticated or missing token." });
+      } else {
+        return res.render("errors", {
+          message:
+            "El usuario no se ha autenticado o no se pudo guardar el token",
+          style: "admin.css",
+        });
+      }
     }
 
     const role = req.user.role.toUpperCase();
     if (!policies.includes(role)) {
       logger.warning("El usuario no tiene los privilegios necesarios");
-      return res
-        .status(403)
-        .send({ error: "El usuario no tiene privilegios, revisa tus roles!" });
+      if (req.baseUrl.split("/").includes("api")) {
+        return res
+          .status(403)
+          .send({
+            error: "El usuario no tiene privilegios, revisa tus roles!",
+          });
+      } else {
+        return res.render("errors", {
+          message:
+            "No tenés los permisos para acceder a estas funcionalidades. Utilizá credenciales con los roles apropiados, o contactate con nosotros para solicitar información",
+          style: "admin.css",
+        });
+      }
     }
 
     next();

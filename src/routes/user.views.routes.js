@@ -17,15 +17,6 @@ export default class UsersViewsRouter extends CustomRouter {
       ["USER", "PREMIUM", "ADMIN"],
       usersController.getCurrentUser
     );
-    this.get(
-      "/updateCurrentUser",
-      ["USER", "PREMIUM", "ADMIN"],
-      usersController.updateCurrentUser
-    );
-
-    this.get("/premiumUser", ["PREMIUM"], usersController.getPremiumUser);
-
-    this.get("/adminUser", ["ADMIN"], usersController.getAdminUser);
 
     this.get("/login", ["PUBLIC"], usersController.login);
 

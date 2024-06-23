@@ -53,34 +53,46 @@
       <input type="submit" />
     </form>
     <div class="errores" id="errorModificar"></div>
-    <div><small>Categorías existentes</small><small id="existentes">
-        {{#each categoriasExistentes}}
-          
-          <button
-            class="badge agregarCate"
-            name="{{../result._id}}"
-            id="{{this.category}}"
-          >{{this.category}} ✅</button>
-        {{/each}}
-      </small>
-      <small></small><small>Si querés agregar una nueva opción de categoría,
-        utilizá el
-        <strong>Administrador de Categorías</strong>
-        de más abajo.</small></div>
-     <div><small>Categorías ya asignadas</small><small id="asignadas">{{#each
-          result.category
-        }}
-
-          <button
-            class="badge borrarCate"
-            name="{{../result._id}}"
-            id="{{this}}"
-          >{{this}} ❌</button>
-
-        {{/each}}
-      </small>
-      <small></small>
-      <small>Hacer click en la cruz roja para borrar una categoría asignada</small>
+    {{!-- ------------------------------------------------------- --}}
+    {{!-- Banner con categorías que se pueden agregar al producto --}}
+    {{!-- ------------------------------------------------------- --}}
+    <div><p><small>Categorías existentes</small></p>
+    <div>
+      <small id="existentes">
+          {{#each categoriasExistentes}}
+      
+            <button
+              class="badge agregarCate"
+              name="{{../result._id}}"
+              id="{{this.category}}"
+            >{{this.category}} ✅</button>
+          {{/each}}
+        </small>
+    </div>
+      <p>
+        <small>Si querés agregar una nueva opción de categoría,
+          utilizá el
+          <strong>Administrador de Categorías</strong>
+          de más abajo.</small>
+      </p></div>
+    {{!-- -------------------------------------------------------- --}}
+    {{!-- Banner con categorías ya asignadas, que se pueden borrar --}}
+    {{!-- -------------------------------------------------------- --}}
+     <div><p><small>Categorías ya asignadas</small></p>
+     <div>
+       <small id="asignadas">{{#each
+            result.category
+          }}
+            <button
+              class="badge borrarCate"
+              name="{{../result._id}}"
+              id="{{this}}"
+            >{{this}} ❌</button>
+          {{/each}}
+        </small>
+     </div>
+    
+      <p><small>Hacer click en la cruz roja para borrar una categoría asignada</small></p>
   </div>
   </div>
 

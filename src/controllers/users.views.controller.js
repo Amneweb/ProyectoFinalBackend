@@ -48,9 +48,12 @@ export default class UsersController {
   getCurrentUser = (req, res) => {
     console.log(req.user);
     const user = req.user;
+    if (!user) {
+      res.render("login", { style: "admin.css" });
+    }
     res.render("profile", {
       user,
-      style: "user.css",
+      style: "admin.css",
     });
   };
 }

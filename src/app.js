@@ -94,7 +94,7 @@ app.get("/loggertest", (req, res) => {
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 //FIXME:
 app.get("*", (req, res) => {
-  res.status(400).send("Cannot get that URL!!");
+  res.status(400).render(`404`, { style: "admin.css" });
 });
 const socketServer = new Server(httpServer);
 

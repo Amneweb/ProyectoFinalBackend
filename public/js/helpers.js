@@ -141,8 +141,113 @@ agregarCategoria.addEventListener("submit", async (e) => {
   });
 });
 
-const agregarCategoriaAproducto = document.querySelectorAll(".agregarCate");
+const bannerExistentes = document.querySelector("#existentes");
 
+bannerExistentes.addEventListener("click", async (e) => {
+  const productID = e.target.name;
+  const categoria = e.target.id;
+  try {
+    const modificado = await fetch(
+      `/api/products/${productID}/categoria/${categoria}`,
+      {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+      }
+    );
+    const parseado = await modificado.json();
+    console.log(modificado);
+    if (!modificado) {
+      throw new Error("No se pudo agregar la categoría");
+    }
+    await Swal.fire({
+      title: "👍",
+      text: "La categoría se agregó con éxito",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+
+    const categorias = parseado.payload.category;
+
+    const nuevoHTML = categorias
+      .map(
+        (cadauno) =>
+          "<button class='badge borrarCate' name='" +
+          productID +
+          "' id='" +
+          cadauno +
+          "'>" +
+          cadauno +
+          " ❌</button>"
+      )
+      .join("");
+    const bannerAsignadas = document.querySelector("#asignadas");
+    console.log("html", nuevoHTML);
+    bannerAsignadas.innerHTML = nuevoHTML;
+  } catch (e) {
+    Swal.fire({
+      title: "Oops",
+      text: `La categoría no se pudo agregar debido a ${e.message}`,
+      position: "top-end",
+      showConfirmButton: true,
+    });
+  }
+});
+
+const bannerAsignadas = document.querySelector("#asignadas");
+
+bannerAsignadas.addEventListener("click", async (e) => {
+  const productID = e.target.name;
+  const categoria = e.target.id;
+  try {
+    const modificado = await fetch(
+      `/api/products/${productID}/categoria/${categoria}`,
+      {
+        method: "PUT",
+        headers: { "Content-type": "application/json" },
+      }
+    );
+    const parseado = await modificado.json();
+    console.log(modificado);
+    if (!modificado) {
+      throw new Error("No se pudo agregar la categoría");
+    }
+    await Swal.fire({
+      title: "👍",
+      text: "La categoría se borró con éxito",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+
+    const categorias = parseado.payload.category;
+
+    const nuevoHTML = categorias
+      .map(
+        (cadauno) =>
+          "<button class='badge borrarCate' name='" +
+          productID +
+          "' id='" +
+          cadauno +
+          "'>" +
+          cadauno +
+          " ❌</button>"
+      )
+      .join("");
+    const bannerAsignadas = document.querySelector("#asignadas");
+    console.log("html", nuevoHTML);
+    bannerAsignadas.innerHTML = nuevoHTML;
+  } catch (error) {
+    Swal.fire({
+      title: "Oops",
+      text: `La categoría no se pudo borrar debido a ${error.message}`,
+      position: "top-end",
+      showConfirmButton: true,
+    });
+  }
+});
+
+/*
 agregarCategoriaAproducto.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -197,4 +302,4 @@ agregarCategoriaAproducto.forEach((boton) => {
       });
     }
   });
-});
+});*/
