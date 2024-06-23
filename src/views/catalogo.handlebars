@@ -1,3 +1,4 @@
+{{> nav}}
 <section class="encabezado">
   <div class="usuario">
     {{#if user}}
@@ -50,10 +51,14 @@
     <div class="card">
       <div>{{#if this.thumb}}
           <a href="catalogo/{{this._id}}">
-            <img src="{{this.thumb}}" alt="{{this.title}}" /></a>{{else}}<a
-            href="/catalogo/{{this._id}}"
-          >
-            <img src="/img/sinfoto.jpg" alt="Producto sin foto" /></a>
+            <img
+              src="/uploads/img/products/{{this.thumb}}"
+              alt="{{this.title}}"
+            /></a>{{else}}<a href="/catalogo/{{this._id}}">
+            <img
+              src="/uploads/img/products/sinfoto.jpg"
+              alt="Producto sin foto"
+            /></a>
         {{/if}}
       </div>
       <div><a href="/catalogo/{{this._id}}">{{this.title}}</a></div>
@@ -64,7 +69,7 @@
     </div>
   {{/each}}
 </section>
-{{#if productosObtenidos.paginacion}}
+{{#if (comparar productosObtenidos.totalPages ">" 1)}}
   <div class="paginacion">
     <div class="cursores">
       <div class="atras">{{#if productosObtenidos.hasPrevPage}}

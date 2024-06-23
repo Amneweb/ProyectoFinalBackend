@@ -37,6 +37,16 @@ handlebarsCreate.handlebars.registerHelper("formatear", function (amount) {
   }).format(amount);
   return formateado;
 });
+handlebarsCreate.handlebars.registerHelper(
+  "comparar",
+  function (first, operation, second) {
+    if (eval(first + operation + second)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+);
 
 app.use(express.static(__dirname + "/public"));
 
@@ -55,6 +65,7 @@ app.use(addLogger);
 initializePassport();
 app.use(passport.initialize());
 app.use(passportJWTCall);
+
 const emailRouter = new EmailRouter();
 app.use("/api/email", emailRouter.getRouter());
 const viewsRouter = new ViewsRouter();

@@ -6,6 +6,28 @@ import jwt from "jsonwebtoken";
 import passport from "passport";
 import { transporter } from "../config/mailer.config.js";
 
+export const renderizar = (req, res, next) => {
+  (req.renderOption = "RENDER"), next();
+};
+
+export const consultaExitosa = (res, datos, renderOption, template) => {
+  if (renderOption === "RENDER") {
+    res.render(
+      "catalogo",
+      {
+        datos,
+        style: `catalogo.css`,
+      },
+      (err, html) => {
+        if (err) return console.error(err);
+        console.log(html);
+      }
+    );
+  } else {
+    res.status(200).send({ status: "Success", datos });
+  }
+};
+
 export const agregarRuta = function (req, res, next) {
   let destinationPath;
   console.log("req en agregar Ruta", req.baseUrl);
@@ -54,7 +76,7 @@ export const uploader = multer({
 });
 
 export const validateFormData = (req, res, next) => {
-  const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
+  const thumb = req.file ? `/${req.file.filename}` : "";
   let categoria = [];
   categoria.push(req.body.category);
   const datosConvertidos = {
@@ -75,7 +97,7 @@ export const validateModifiedData = (req, res, next) => {
   let datosConvertidos = { ...req.body };
 
   if (req.file) {
-    const thumb = req.file ? `${req.destinationPath}/${req.file.filename}` : "";
+    const thumb = req.file ? `/${req.file.filename}` : "";
     datosConvertidos["thumb"] = thumb;
   }
 
