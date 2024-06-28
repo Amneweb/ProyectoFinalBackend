@@ -1,9 +1,10 @@
 import CustomRouter from "./custom/custom.router.js";
 import ProductViewsController from "../controllers/products.views.controller.js";
-
+import CartViewsController from "../controllers/carts.views.controller.js";
 export default class ViewsRouter extends CustomRouter {
   init() {
     const productController = new ProductViewsController();
+    const cartController = new CartViewsController();
     /*
      *  ============================================================
      *  dominio.../catalogo Vista al público de todos los productos
@@ -28,6 +29,17 @@ export default class ViewsRouter extends CustomRouter {
      *  ===============================================================
      */
     this.get("/admin/catalogo", ["ADMIN"], productController.getAll);
+    /*
+     *  ===============================================================
+     *  dominio.../admin/catalogo Vista de un producto al administrador
+     *  ===============================================================
+     */
     this.get("/admin/producto/:id", ["ADMIN"], productController.getOne);
+    /*
+     *  ===============================================================
+     *  dominio.../admin/carts Vista de todos los carritos
+     *  ===============================================================
+     */
+    this.get("/admin/carts", ["ADMIN"], cartController.getCarts);
   }
 }

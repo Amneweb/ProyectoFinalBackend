@@ -86,7 +86,7 @@ export default class UsersController {
         "El usuario que se quiere loguear tiene email: %s",
         userEmail
       );
-      //TODO: el login me tiene que devolver el access token
+
       res
         .cookie("token_login", access_token, {
           maxAge: 600000,
@@ -152,11 +152,13 @@ export default class UsersController {
     }
   };
 
-  logout = (req, res) => {
+  logout = async (req, res) => {
     const cookieToken = req.cookies["token_login"];
     console.log("hay cookie token ", cookieToken);
     if (cookieToken)
       try {
+        await this.#userService.updateConnection(req.user);
+
         return res.clearCookie("token_login").status(201).sendSuccess({
           status: "success",
           message:
@@ -210,7 +212,7 @@ export default class UsersController {
     try {
       if (!cookie) {
         throw new Error(
-          "el tiempo ha expirado. Volvé a intentarlo. Acá va el enlace a la página de recupero de contraseña"
+          "el tiempo ha expirado. Volvé a intentarlo a través de la página de recupero de contraseña"
         );
       }
       const modificado = await this.#userService.verify(email, pass);

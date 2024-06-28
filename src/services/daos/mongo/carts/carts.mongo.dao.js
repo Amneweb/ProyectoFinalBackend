@@ -14,6 +14,13 @@ class CartDAO {
     return await this.#model.find().lean();
   };
 
+  findAndPopulateAll = async () => {
+    return await this.#model
+      .find()
+      .populate("cart.product", ["title", "price", "stock"])
+      .lean();
+  };
+
   findByID = async (id) => {
     return await this.#model.findById(id).lean();
   };

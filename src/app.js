@@ -47,6 +47,25 @@ handlebarsCreate.handlebars.registerHelper(
     }
   }
 );
+handlebarsCreate.handlebars.registerHelper(
+  "operacion",
+  function (first, second, operacion) {
+    let resultado;
+    switch (operacion) {
+      case "producto":
+        resultado = first * second;
+        break;
+      case "suma":
+        resultado = first + second;
+        break;
+      case "resta":
+        resultado = first - second;
+
+        break;
+    }
+    return resultado;
+  }
+);
 
 app.use(express.static(__dirname + "/public"));
 

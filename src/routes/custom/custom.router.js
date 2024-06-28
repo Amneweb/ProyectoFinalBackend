@@ -60,7 +60,10 @@ export default class CustomRouter {
       if (req.baseUrl.split("/").includes("api")) {
         return res
           .status(401)
-          .send({ error: "User not authenticated or missing token." });
+          .send({
+            error:
+              "El usuario no se ha autenticado o expiró el plazo de la sesión",
+          });
       } else {
         return res.render("errors", {
           message:
@@ -74,11 +77,9 @@ export default class CustomRouter {
     if (!policies.includes(role)) {
       logger.warning("El usuario no tiene los privilegios necesarios");
       if (req.baseUrl.split("/").includes("api")) {
-        return res
-          .status(403)
-          .send({
-            error: "El usuario no tiene privilegios, revisa tus roles!",
-          });
+        return res.status(403).send({
+          error: "El usuario no tiene privilegios, revisa tus roles!",
+        });
       } else {
         return res.render("errors", {
           message:
@@ -92,31 +93,29 @@ export default class CustomRouter {
   };
 
   generateCustomResponses = (req, res, next) => {
-    // Custom responses
     res.sendSuccess = (payload) =>
       res.status(200).send({ status: "Success", payload });
     res.sendInternalServerError = (error) =>
-      res.status(500).send({ status: "Internal Server Error", error });
+      res.status(500).send({ status: "Error interno del servidor", error });
     res.sendClientError = (error) =>
       res
         .status(400)
-        .send({ status: "Client Error, Bad request from client.", error });
+        .send({ status: "Petición errónea por parte del cliente", error });
     res.sendUnauthorizedError = (error) =>
-      res
-        .status(401)
-        .send({ error: "User not authenticated or missing token." });
+      res.status(401).send({
+        status: "Usuario no autenticado o credenciales no encontradas.",
+        error,
+      });
     res.sendForbiddenError = (error) =>
       res.status(403).send({
-        error:
-          "Token invalid or user with no access, Unauthorized please check your roles!",
+        status: "Usuario no autorizado, por favor revisa tus roles",
+        error,
       });
     res.sendNotFoundError = (error) =>
-      res.status(404).send({ error: "Not found error." });
+      res.status(404).send({ status: "No encontrado", error });
     next();
   };
 
-  // función que procese todas las funciones internas del router (middlewares y el callback principal)
-  // Se explica en el slice 28
   applyCallbacks(callbacks) {
     return callbacks.map((callback) => async (...params) => {
       try {

@@ -25,6 +25,9 @@ class CartManager {
   getCarts = async () => {
     return await cartDAO.findAll();
   };
+  getCartsAndPopulate = async () => {
+    return await cartDAO.findAndPopulateAll();
+  };
   //obtener carrito con id determinado, sólo para ADMIN o usuarios que son dueños del carrito
   getCartByID = async (id, user) => {
     if (!validateId(id)) {

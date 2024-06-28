@@ -1,42 +1,39 @@
+{{> nav}}
 <div class="container">
 
   <h1>Hola, bienvenidos a la administración de tu tienda online</h1>
   <h2>Listado de carritos de compra</h2>
-  <ul class="principal">
 
-    {{#each carritosObtenidos}}
+
+{{!-- --}}
+{{#each carritosObtenidos}}
+  <ul class="principalCarts">
+
+    
       <li>
-        <ul class="interna-carts sub-encabezado">
-          <li>ID carrito</li>
-          <li>{{this._id}}
-            <button class="borrarCarrito" id="{{this._id}}">❌</button>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <ul class="interna-carts encabezado">
-          <li>Cantidad</li><li>Nombre producto</li>
+        <ul class="secundariaCarts titulos">
+          <li>ID carrito</li><li>{{this._id}}</li><li>Dueño</li><li></li><li><button class="borrarCarrito" id="{{this._id}}">❌</button></li>
+          
         </ul></li>
-      {{#each this.cart}}
-
-        <li>
-          <ul class="interna-carts">
+        <li> <ul class="secundariaCarts subtitulos">
+          <li>#</li><li>ID producto</li><li>cantidad</li><li>nombre</li><li>precio</li><li>total renglón</li></ul></li>
+    {{#each this.cart}}
+    <li>
+       
+          <ul class="secundariaCarts">
+            <li>{{@index}} </li>
+       <li> {{this._id}}</li>
             <li> {{this.qty}}</li>
-            <li>{{this.product.title}}
-              <button
-                id="{{this.product._id}}"
-                class="borrar"
-                name="{{../this._id}}"
-              >🗑️</button>
-            </li>
-
-          </ul>
+      <li>{{this.product.title}}</li>
+            <li>{{formatear this.product.price}}</li>
+        <li>{{formatear (operacion this.product.price this.qty "producto")}}</li>
+         </ul>
         </li>
       {{/each}}
 
-    {{/each}}
+   
 
   </ul>
+   {{/each}}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="/js/carts.js"></script>

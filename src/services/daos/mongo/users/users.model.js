@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  userConnection: {
+    login: { type: Date },
+    logout: { type: Date, expires: 600 },
+  },
 });
 const userModel = mongoose.model(USERS_COLLECTION, userSchema);
 export default userModel;
