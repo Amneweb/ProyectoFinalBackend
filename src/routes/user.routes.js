@@ -11,6 +11,7 @@ export default class UsersRouter extends CustomRouter {
     const usersController = new UsersController();
 
     this.get("/", ["ADMIN"], usersController.getAll);
+    this.get("/sinactividad/", ["ADMIN"], usersController.getSinActividad);
 
     this.get(
       "/currentUser",

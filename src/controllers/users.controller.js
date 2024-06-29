@@ -286,4 +286,18 @@ export default class UsersController {
       );
     }
   };
+
+  getSinActividad = async (req, res) => {
+    const tiempolimite = parseInt(req.query.meses);
+    console.log("tiempo limite", tiempolimite);
+    logger.debug("tiempo limite en controlador %s", tiempolimite);
+    try {
+      const result = await this.#userService.getInactivos(tiempolimite);
+
+      logger.method("getSinActividad");
+      res.sendSuccess(result);
+    } catch (e) {
+      res.sendInternalServerError(e);
+    }
+  };
 }

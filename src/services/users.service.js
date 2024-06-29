@@ -20,6 +20,28 @@ export default class UserService {
   getAll = async () => {
     return await userDAO.findAll();
   };
+  getInactivos = async (meses) => {
+    //calculamos la fecha de hoy en milisegundos
+    logger.silly("dentro de getinacttivos");
+    const hoy = new Date();
+
+    logger.debug("hoy en milisegundos %s", hoy.getTime());
+    console.log("hoy en milliseconds", hoy.getTime());
+    //el tiempo limite para borrar los usuarios lo define el administrador y llega por la query "meses". No considero meses exactos, sino días
+    // la formula real será lapso = meses * 30 * 24 * 60 * 60 * 1000 pero como necesito probarlo en minutos en lugar de meses, agrego un 0.0002 al final, y me transforma cada mes en casi 10 minutos
+
+    const lapso = meses * 30 * 24 * 60 * 60 * 1000 * 0.0002;
+    console.log("lapso en milisegundos ", lapso);
+    const limiteinferior = hoy - lapso;
+
+    const result = await userDAO.findByFilter({
+      userConnection: { $lte: limiteinferior },
+    });
+    result.forEach((usuario) => {
+      console.log("logoutt en miliseconds", usuario.userConnection.getTime());
+    });
+    return result;
+  };
   save = async ({
     userName,
     userLastName,

@@ -69,8 +69,8 @@ export const uploader = multer({
   storage,
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
-    console.log(`Error al tratar de subir la imagen ${err}`);
-    throw new Error("error al tratar de subir la imagen" + err);
+    console.log(`Error al tratar de subir el archivo ${err}`);
+    throw new Error("error al tratar de subir el archivo" + err);
     next();
   },
 });

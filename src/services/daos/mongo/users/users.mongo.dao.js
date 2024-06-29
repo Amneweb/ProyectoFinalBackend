@@ -38,6 +38,11 @@ class UserDAO {
   findByID = async (uid) => {
     return await this.#model.findOne({ _id: uid });
   };
+  findByFilter = async (filters) => {
+    console.log("filtro en find by filter");
+    console.log(filters);
+    return await this.#model.find(filters);
+  };
   updateByFilter = async (email, filters) => {
     console.log("en update by filter", email);
     console.log("idem filters");
