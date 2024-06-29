@@ -27,8 +27,7 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   userConnection: {
-    login: { type: Date },
-    logout: { type: Date, expires: 600 },
+    type: Date,
   },
 });
 const userModel = mongoose.model(USERS_COLLECTION, userSchema);

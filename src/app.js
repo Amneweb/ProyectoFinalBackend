@@ -71,7 +71,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser(environmentConfig.SERVER.COOKIES.SECRET));
 const PORT = environmentConfig.SERVER.PORT;
 
 const httpServer = app.listen(PORT, () => {

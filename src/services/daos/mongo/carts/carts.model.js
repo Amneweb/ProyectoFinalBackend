@@ -14,6 +14,7 @@ const cartSchema = new mongoose.Schema({
     ],
     default: [],
   },
+  createdAt: { type: Date, expires: 6000 },
 });
 /*
 cartSchema.pre("find", function () {

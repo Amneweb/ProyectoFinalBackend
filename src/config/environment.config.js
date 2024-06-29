@@ -6,6 +6,7 @@ const {
   PORT,
   JWT_SECRET_KEY,
   COOKIE_AUTH_TOKEN_KEY,
+  COOKIE_SECRET_KEY,
   GITHUB_CLIENT_ID,
   GITHUB_CLIENT_SECRET,
   GITHUB_CALLBACK_URL,
@@ -45,6 +46,7 @@ const environmentConfig = {
     },
     COOKIES: {
       AUTH: COOKIE_AUTH_TOKEN_KEY ?? "token_login",
+      SECRET: COOKIE_SECRET_KEY ?? "87co5ok76ie",
     },
     GITHUB: {
       CLIENT_ID: GITHUB_CLIENT_ID,

@@ -59,6 +59,7 @@ export const recupero = async (req, res) => {
       .cookie("email_recovery_expiration", recovery_token, {
         maxAge: 600000,
         httpOnly: true,
+        signed: true,
       })
       .sendSuccess("Email enviado con éxito");
   } catch (error) {

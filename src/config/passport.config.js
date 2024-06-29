@@ -179,10 +179,11 @@ ESTRATEGIA JWT
 export const cookieExtractor = (req) => {
   let token = null;
 
-  if (req && req.cookies) {
+  if (req && req.signedCookies) {
     //Validamos que exista el request y las cookies.
 
-    if (req.cookies["token_login"]) token = req.cookies["token_login"];
+    if (req.signedCookies["token_login"])
+      token = req.signedCookies["token_login"];
   }
   return token;
 };

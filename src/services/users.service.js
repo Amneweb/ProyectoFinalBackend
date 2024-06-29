@@ -58,10 +58,6 @@ export default class UserService {
     return await userDAO.findOne(userEmail);
   };
   update = async (user, filter, value) => {
-    console.log("Update user with filter and value:");
-    console.log(filter);
-    console.log(value);
-    console.log(user);
     const hayUsuario = await userDAO.findOne(user.email);
     if (!hayUsuario) {
       throw new BadRequestError("No se encontró usuario con ese email");
@@ -126,27 +122,10 @@ export default class UserService {
       role: user.userRole,
     };
     const access_token = generateJWToken(tokenUser); // Genera JWT Token que contiene la info del user
-    await userDAO.updateByFilter(userEmail, {
-      userConnection: { login: Date.now(), logout: null },
-    });
+
     return access_token;
   };
-  updateConnection = async (user) => {
-    console.log("user", user.email);
-    const usuario = await userDAO.findOne(user.email);
-    console.log(usuario);
-    const login_data = usuario.userConnection.login;
-    console.log(login_data);
-    const logout_data = Date.now();
-    console.log("logout");
-    console.log(logout_data);
-    await userDAO.updateByFilter(user.email, {
-      userConnection: {
-        login: login_data,
-        logout: logout_data,
-      },
-    });
-  };
+
   recovery = async (token, cookie) => {
     if (token === cookie) {
       //verifico el contenido del token

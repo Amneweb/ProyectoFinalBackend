@@ -91,6 +91,7 @@ export default class UsersController {
         .cookie("token_login", access_token, {
           maxAge: 600000,
           httpOnly: true,
+          signed: true,
         })
         .send({
           message: "Login successful!",
@@ -153,12 +154,11 @@ export default class UsersController {
   };
 
   logout = async (req, res) => {
-    const cookieToken = req.cookies["token_login"];
+    const cookieToken = req.signedCookies["token_login"];
     console.log("hay cookie token ", cookieToken);
     if (cookieToken)
       try {
-        await this.#userService.updateConnection(req.user);
-
+        await this.#userService.update(req.user, "userConnection", Date.now());
         return res.clearCookie("token_login").status(201).sendSuccess({
           status: "success",
           message:
