@@ -8,13 +8,35 @@ Este readme contiene toda la información de las entregas principales y los desa
 
 > Los párrafos con borde gris a la izquierda representan las consignas de cada desafío
 
-### DESAFIO 14: **DOCUMENTACION DEL USUARIO Y PERMISOS**
+### DESAFIO 14: **DOCUMENTACION DEL USUARIO, PERMISOS Y DATOS DE CONEXIÓN**
 
 > configurar el servidor para que los usuarios puedan cargar documentación y según el tipo y objetivo de los archivos, éstos se carguen en diferentes carpetas. Para eso, modificar el modelo de User para que cuente con una nueva propiedad “documents” el cual será un array que contenga los objetos con propiedades nombre y link. Además, agregar una propiedad al usuario llamada “last_connection”, la cual deberá modificarse cada vez que el usuario realice un proceso de login y logout
 
+**DOCUMENTACION**
+
 Para la parte del redireccionamiento de los archivos agregué un middleware en las rutas de creación y modificación de productos, y en la nueva ruta de carga de documentación. Dicho middleware arma la ruta de destino del archivo en base a las propiedades baseUrl y path que vienen con el req.
 
-Aunque no se pide, para la documentación hice una colección "Documentation", que contiene objetos con las propiedades código, obligatoriedad y nombre del archivo requerido. De esa manera, si en el futuro se requiere incluir otro documento como obligatorio, se puede subir a esa colección. Para verificar que un usuario puede tener permisos de premium, se comparan los códigos de los documentos que subió el usuario con los códigos de la documentación requerida, guardados en la colección "documentation".
+Aunque no se pide, para la documentación hice una colección "Documentation", que contiene objetos con las propiedades código, obligatoriedad y nombre del archivo requerido. De esa manera, si en el futuro se requiere incluir otro documento como obligatorio, se puede subir su nombre y código a esa colección. Para verificar que un usuario puede tener permisos de premium, se comparan los códigos de los documentos que subió el usuario con los códigos de la documentación requerida, guardados en la colección "documentation".
+
+El usuario carga los documentos desde la ruta /api/users/:uid/documents
+
+**CAMBIO DE ROL**
+
+El usuario puede pedir el cambio de rol en cualquier momento, pero esto sólo ocurre cuando tiene cargados los 3 archivos solicitados
+
+La ruta para el cambio de rol es /api/users/premium/:uid/
+
+**DATOS DE CONEXIÓN**
+
+El timestamp se genera al momento de hacer login o logout y se guarda en la propiedad userConnection. En el caso del login, se le asigna el valor de Date.now() + 600000 que es el valor de maxAge que dura la cookie de login. Si el usuario nunca se desloguea, ese valor será el equivalente al deslogueo. Si se desloguea antes, el valor es reemplazado por el de desloguear.
+
+**VER USUARIOS INACTIVOS**
+
+El administrador puede ver todos los usuarios que no se han conectado en un determinado lapso de tiempo en la ruta:
+
+http://localhost:8080/api/users/sinactividad/?meses=3
+
+En un ecommerce real, si el valor ingresado en el parámetro meses es 3, el lapso será un tiempo real de 90 días, sin embargo, a los efectos de probar su funcionamiento, el código está realizado de manera que cada "mes" equivale a poco más de 8 minutos. (El detalle del cálculo está en la descripción de la ruta de postman)
 
 ---
 

@@ -136,6 +136,8 @@ export default class UserService {
       console.warn("Invalid credentials for user: " + userEmail);
       return new BadRequestError("El usuario y la contraseña no coinciden!");
     }
+    user["userConnection"] = Date.now() + 600000;
+    await user.save();
 
     const tokenUser = {
       name: `${user.userName} ${user.userLastName}`,
