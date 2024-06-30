@@ -2,25 +2,34 @@ import UserService from "../services/users.service.js";
 import CartService from "../services/carts.service.js";
 import TicketsService from "../services/tickets.service.js";
 import { userLogger as logger } from "../config/logger.config.js";
-
+import UsersDTO from "../services/dtos/users.dto.js";
 export default class UsersController {
   #userService;
   #cartService;
   #ticketsService;
+  #usersDTO;
   constructor() {
     this.#userService = new UserService();
     this.#cartService = new CartService();
     this.#ticketsService = new TicketsService();
+    this.#usersDTO = new UsersDTO();
   }
 
   getAll = async (req, res) => {
     try {
       const todos = await this.#userService.getAll();
 
+      const todosMoldeados = todos.map((cadauno) =>
+        this.#usersDTO.getUserInputFrom(cadauno)
+      );
       logger.method("getAll");
-      res.sendSuccess(todos);
+      res.sendSuccess(todosMoldeados);
     } catch (e) {
-      res.sendInternalServerError(e);
+      logger.error(
+        "Error interno al tratar de mostrar los usuarios %s",
+        e.message
+      );
+      res.sendInternalServerError(e.message);
     }
   };
 
@@ -235,7 +244,8 @@ export default class UsersController {
     const user = req.user;
     try {
       const datosActuales = await this.#userService.findByUsername(user.email);
-      res.sendSuccess(datosActuales);
+      const datosMoldeados = this.#usersDTO.getUserInputFrom(datosActuales);
+      res.sendSuccess(datosMoldeados);
     } catch (e) {
       logger.error(
         "no pudo cargar la información del usuario. Error: %s",
@@ -254,7 +264,8 @@ export default class UsersController {
     const user = req.user;
     try {
       const modificado = await this.#userService.changerole(uid, torole, user);
-      res.sendSuccess(modificado);
+      const moldeado = this.#usersDTO.getUserInputFrom(modificado);
+      res.sendSuccess(moldeado);
     } catch (e) {
       res.sendClientError(e.message);
     }
@@ -277,8 +288,9 @@ export default class UsersController {
         doc,
         docCode
       );
+      const moldeado = this.#usersDTO.getUserInputFrom(result);
       logger.debug("El documento se cargó correctamente");
-      res.sendSuccess(result);
+      res.sendSuccess(moldeado);
     } catch (e) {
       logger.error("No se pudo subir el documento: %s", e.message);
       res.sendClientError(
@@ -293,11 +305,14 @@ export default class UsersController {
     logger.debug("tiempo limite en controlador %s", tiempolimite);
     try {
       const result = await this.#userService.getInactivos(tiempolimite);
-
+      const moldeados = result.map((cadauno) =>
+        this.#usersDTO.getUserInputFrom(cadauno)
+      );
       logger.method("getSinActividad");
-      res.sendSuccess(result);
+      res.sendSuccess(moldeados);
     } catch (e) {
-      res.sendInternalServerError(e);
+      logger.error("Hubo un error interno: %s", e.message);
+      res.sendInternalServerError(e.message);
     }
   };
 }
