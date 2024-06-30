@@ -18,12 +18,12 @@ switch (environmentConfig.PERSISTENCE) {
   case "mongodb":
     initializeMongoService();
     const { default: ProductDAO } = await import(
-      "../services/daos/mongo/products/products.mongo.dao.js"
+      "./daos/mongo/products/products.mongo.dao.js"
     );
     productDAO = new ProductDAO();
 
     const { default: CartDAO } = await import(
-      "../services/daos/mongo/carts/carts.mongo.dao.js"
+      "./daos/mongo/carts/carts.mongo.dao.js"
     );
     cartDAO = new CartDAO();
 

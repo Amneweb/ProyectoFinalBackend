@@ -1,7 +1,7 @@
 import { userMongoDAO as userDAO } from "./daos/mongo/index.js";
 import fs from "fs";
 import jwt from "jsonwebtoken";
-import { cartDAO } from "../utils/factory.js";
+import { cartDAO } from "./factory.js";
 import { BadRequestError } from "../utils/errors.js";
 import { validateUser } from "../utils/user.validator.js";
 import { userLogger as logger } from "../config/logger.config.js";

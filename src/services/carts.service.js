@@ -1,4 +1,4 @@
-import { cartDAO, productDAO } from "../utils/factory.js";
+import { cartDAO, productDAO } from "./factory.js";
 import TicketDAO from "./daos/mongo/tickets/tickets.mongo.dao.js";
 import { BadRequestError } from "../utils/errors.js";
 import { v4 as uuidv4 } from "uuid";
@@ -276,10 +276,8 @@ class CartManager {
     });
 
     if (carritoRemanente.length > 0) {
-      const carritoActualizado = await cartDAO.update(cid, carritoRemanente);
+      await cartDAO.update(cid, carritoRemanente);
     } else {
-      console.log("lo que mando al user manager", user.email);
-
       await this.userDAO.update(user.email);
       await cartDAO.delete(cid);
     }

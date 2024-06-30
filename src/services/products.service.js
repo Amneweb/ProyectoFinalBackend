@@ -1,5 +1,5 @@
 import { BadRequestError } from "../utils/errors.js";
-import { productDAO } from "../utils/factory.js";
+import { productDAO } from "./factory.js";
 import { validateProduct } from "../utils/product.validator.js";
 import { productsLogger as logger } from "../config/logger.config.js";
 import { validateId, validateOwnership } from "./validators.service.js";

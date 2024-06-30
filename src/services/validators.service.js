@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { BadRequestError } from "../utils/errors.js";
-import { productDAO } from "../utils/factory.js";
+import { productDAO } from "./factory.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 import { productsLogger as logger } from "../config/logger.config.js";
 const userDAO = new UserDAO();

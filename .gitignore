@@ -1,7 +1,7 @@
 node_modules
 authGithub.md
 
-public/logs/
+*.log
 public/uploads/docs/
 public/uploads/img/profile/
 public/uploads/img/products/
