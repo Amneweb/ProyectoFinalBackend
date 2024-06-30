@@ -50,10 +50,11 @@ export default class UsersController {
     const user = req.user;
     if (!user) {
       res.render("login", { style: "admin.css" });
+    } else {
+      res.render("profile", {
+        user,
+        style: "admin.css",
+      });
     }
-    res.render("profile", {
-      user,
-      style: "admin.css",
-    });
   };
 }

@@ -7,6 +7,7 @@ import { productsLogger as logger } from "../config/logger.config.js";
 export default class ProductsViewsController {
   #productManager;
   #categoryManager;
+
   constructor() {
     this.#productManager = new ProductManager();
     this.#categoryManager = new CategoryManager();
@@ -58,6 +59,7 @@ export default class ProductsViewsController {
       productosObtenidos.isValid = !(
         page < 1 || page > productosObtenidos.totalPages
       );
+      const logueado = req.user && req.user;
       if (req.path === "/admin/catalogo") {
         res.render("catalogoAdmin", {
           productosObtenidos,
@@ -66,6 +68,79 @@ export default class ProductsViewsController {
       } else {
         res.render("catalogo", {
           productosObtenidos,
+
+          logueado,
+          style: `catalogo.css`,
+        });
+      }
+    } catch (e) {
+      logger.error(
+        "Error interno al tratar de obtener productos: %s",
+        e.message
+      );
+      res.render("errors", {
+        message:
+          "Error interno al tratar de obtener los productos. Mensaje del sistema: " +
+          e.message,
+      });
+    }
+  };
+
+  getByCate = async (req, res) => {
+    const cate = req.params.cid;
+    let page = parseInt(req.query.page) || 1;
+    if (page <= 0 || page > 1000) {
+      page = 1;
+    }
+    let limit = parseInt(req.query.limit) || 0;
+    if (limit < 0 || limit > 10000) {
+      limit = 0;
+    }
+    let criterio = req.query.criterio || "title";
+    if (criterio != "title" && criterio != "price" && criterio != "stock") {
+      criterio = "title";
+    }
+    let sentido = parseInt(req.query.sentido) || 1;
+    if (sentido != -1 && sentido != 1) sentido = 1;
+    let sort = {};
+    sort[criterio] = sentido;
+    try {
+      const productosObtenidos = await this.#productManager.getByCategory(
+        page,
+        limit,
+        sort,
+        cate
+      );
+      if (!productosObtenidos) {
+        logger.debug("Error interno al tratar de obtener los productos.");
+        throw new InternalServerError(
+          "Error interno al tratar de obtener los productos. Por favor vuelva a intentarlo más tarde."
+        );
+      }
+
+      logger.debug("se obtuvieron todos los productos sin problema");
+
+      productosObtenidos.prevLink = productosObtenidos.hasPrevPage
+        ? `/catalogo/?page=${productosObtenidos.prevPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
+        : "";
+      productosObtenidos.nextLink = productosObtenidos.hasNextPage
+        ? `/catalogo/?page=${productosObtenidos.nextPage}&limit=${limit}&sentido=${sentido}&criterio=${criterio}`
+        : "";
+
+      productosObtenidos.isValid = !(
+        page < 1 || page > productosObtenidos.totalPages
+      );
+      const logueado = req.user && req.user;
+
+      if (req.path === "/admin/catalogo") {
+        res.render("catalogoAdmin", {
+          productosObtenidos,
+          style: `admin.css`,
+        });
+      } else {
+        res.render("catalogo", {
+          productosObtenidos,
+          logueado,
           style: `catalogo.css`,
         });
       }

@@ -18,6 +18,16 @@ export default class ViewsRouter extends CustomRouter {
      */
     this.get("/catalogo/:id", ["PUBLIC"], productController.getOne);
     /*
+     *  ==============================================================
+     *  dominio.../catalogo/category/:cid Vista al público de productos de 1 categoría
+     *  ==============================================================
+     */
+    this.get(
+      "/catalogo/category/:cid",
+      ["PUBLIC"],
+      productController.getByCate
+    );
+    /*
      *  =========================================
      *  dominio.../index.html Home page
      *  =========================================

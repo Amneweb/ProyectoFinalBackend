@@ -13,6 +13,10 @@ export default class ProductManager {
     const options = limit === 0 ? { pagination: false } : { page, limit, sort };
     return await productDAO.findAll(options);
   };
+  getByCategory = async (page, limit, sort, cate) => {
+    const options = limit === 0 ? { pagination: false } : { page, limit, sort };
+    return await productDAO.findByCate(options, cate);
+  };
 
   addProduct = async (product) => {
     logger.debug("Datos que llegan al servicio %s", product.code);

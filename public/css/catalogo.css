@@ -1,5 +1,4 @@
 @import "main.css";
-@import "nav.css";
 @import "error.css";
 @import "usuario.css";
 
@@ -48,13 +47,6 @@
 
 .card-detalle img {
   max-width: 100%;
-}
-.navigation {
-  display: flex;
-  justify-content: space-evenly;
-  row-gap: 20px;
-  list-style-type: none;
-  background-color: #91a3b0;
 }
 
 .small {

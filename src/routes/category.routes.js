@@ -3,17 +3,17 @@ import CustomRouter from "./custom/custom.router.js";
 export default class CategoriesRouter extends CustomRouter {
   init() {
     const categoryManager = new CategoryManager();
-    this.get("/", async (req, res) => {
+    this.get("/", ["PUBLIC"], async (req, res) => {
       try {
         const categorias = await categoryManager.getCategories();
-
+        console.log(categorias);
         return res.send(categorias);
       } catch (e) {
         res.status(500).send(e.message);
       }
     });
 
-    this.post("/", async (req, res) => {
+    this.post("/", ["ADMIN"], async (req, res) => {
       const nuevaCate = req.body.cate;
 
       try {

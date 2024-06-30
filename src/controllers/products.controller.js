@@ -1,7 +1,7 @@
 import ProductManager from "../services/products.service.js";
 import { BadRequestError, InternalServerError } from "../utils/errors.js";
 import { productsLogger as logger } from "../config/logger.config.js";
-import url from "url";
+
 export default class ProductsController {
   #productManager;
 
@@ -33,6 +33,52 @@ export default class ProductsController {
         page,
         limit,
         sort
+      );
+      if (!productosObtenidos) {
+        logger.debug("Error interno al tratar de obtener los productos.");
+        throw new InternalServerError(
+          "Error interno al tratar de obtener los productos. Por favor vuelva a intentarlo más tarde."
+        );
+      }
+      logger.debug("se obtuvieron todos los productos sin problema");
+      return res.sendSuccess(productosObtenidos);
+    } catch (e) {
+      logger.error(
+        "Error interno al tratar de obtener productos: %s",
+        e.message
+      );
+      res.sendInternalServerError(
+        `Error interno al tratar de obtener los productos de la base de datos. Mensaje del sistema: "${e.message}"`
+      );
+    }
+  };
+
+  getByCate = async (req, res) => {
+    var path = req.baseUrl;
+    var cate = req.params.cid;
+    console.log("path:", path);
+    const page = parseInt(req.query.page) || 1;
+    if (page <= 0 || page > 1000) {
+      page = 1;
+    }
+    const limit = parseInt(req.query.limit) || 0;
+    if (limit < 0 || limit > 10000) {
+      limit = 0;
+    }
+    const criterio = req.query.criterio || "title";
+    if (criterio != "title" && criterio != "price" && criterio != "stock") {
+      criterio = "title";
+    }
+    const sentido = parseInt(req.query.sentido) || 1;
+    if (sentido != -1 && sentido != 1) sentido = 1;
+    let sort = {};
+    sort[criterio] = sentido;
+    try {
+      const productosObtenidos = await this.#productManager.getByCategory(
+        page,
+        limit,
+        sort,
+        cate
       );
       if (!productosObtenidos) {
         logger.debug("Error interno al tratar de obtener los productos.");

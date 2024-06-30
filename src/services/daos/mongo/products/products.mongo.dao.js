@@ -18,6 +18,19 @@ class ProductDAO {
     return products;
   };
 
+  findByCate = async (options, cate) => {
+    const products = await this.#model.paginate(
+      {
+        category: { $in: [cate] },
+      },
+      {
+        ...options,
+        lean: true,
+      }
+    );
+    return products;
+  };
+
   create = async ({ ...arg }) => {
     return await this.#model.create({
       ...arg,

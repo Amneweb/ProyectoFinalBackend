@@ -9,6 +9,7 @@ export default class ProductsRouter extends CustomRouter {
     const productController = new ProductController();
 
     this.get("/", ["PUBLIC"], productController.getAll);
+    this.get("/category/:cid", ["PUBLIC"], productController.getByCate);
     this.get("/:id", ["PUBLIC"], productController.getOne);
 
     this.post(

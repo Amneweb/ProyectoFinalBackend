@@ -1,24 +1,13 @@
 {{> nav}}
 <section class="encabezado">
-
-  {{#if user}}
-  <div class="usuario">
-    
-      <h4>Hola,
-        <a href="/users">{{user.name}}</a>
-        ¡Gracias por visitarnos! 🤩</h4>
-      <p>Tenés rol de
-        <strong>{{user.role}}</strong>
-      </p>
-      <p>Para desloguearte, click en el botón
-        <button id="logout">¡¡Chau!!</button></p>
-    {{else}}
+{{#if logueado}}
+{{> user}}
+ {{else}}
       <p>Aun no estás logueado. Click
         <a href="/users/login">aquí</a>
         si querés loguearte</p>
-    
-  </div>
   {{/if}}
+ 
   <h1>Windward Car &amp; Truck - Battery Store</h1>
 
   <h2>Listado de productos en stock</h2>

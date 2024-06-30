@@ -1,9 +1,17 @@
 <nav>
   <ul class="navigation">
     <li><a href="/">Inicio</a></li>
-    <li><a href="/admin/carts">Admin Carritos</a></li>
-    <li><a href="/admin/catalogo">Admin Productos</a></li>
-    <li><a href="/catalogo">Catálogo público</a></li>
+    <li class="dropdown"><a href="" class="dropbtn">Admin panel</a>
+      <div class="dropdown-content">
+        <a href="/admin/carts">Carritos</a>
+        <a href="/admin/catalogo">Productos</a>
+        <a href="/admin/users">Usuarios</a>
+      </div>
+    </li>
+    <li><a href="/catalogo">Todos</a></li>
+    <li class="dropdown"><a href="" class="dropbtn">Categorías</a>
+      <div class="dropdown-content" id="categorias"></div>
+    </li>
     <li class="icono"><a href="/users/currentUser">🧑‍💻</a></li>
     <li class="icono"><a href="/chat">🗯️</a></li>
   </ul>
