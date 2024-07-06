@@ -8,61 +8,57 @@ const botonesAgregar = document.querySelectorAll(".agregar");
 //verifico si el usuario está logueado
 
 botonesAgregar.forEach((boton) => {
-  boton.addEventListener("click", async (e) => {
+  boton.addEventListener("click", (e) => {
     e.preventDefault();
-    if (!storage) {
-      await crearCarrito();
+
+    try {
+      let newCart;
+      if (!storage) {
+        newCart = [];
+        console.log("new cart cuando NO existe el storage ", newCart);
+      } else {
+        newCart = JSON.parse(storage);
+        console.log("new cart cuando existe el storage ", newCart);
+      }
+
+      const productID = e.target.id;
+      console.log("id que llega por el boton " + productID);
+      let newProduct = {};
+
+      const indexExistente = newCart.findIndex(
+        (item) => item.product === productID
+      );
+      if (indexExistente >= 0) {
+        const cantidadExistente = newCart[indexExistente].qty;
+        newCart.splice(indexExistente, 1);
+        newProduct = { product: productID, qty: cantidadExistente + 1 };
+        return newCart;
+      } else {
+        newProduct = { product: productID, qty: 1 };
+      }
+
+      console.log("nueva entrada en carrito", newProduct);
+      newCart.push(newProduct);
+      localStorage.setItem("windwardCart", JSON.stringify(newCart));
+      Swal.fire({
+        title: "👌",
+        text: "El producto se agregó al carrito correctamente",
+        position: "top-end",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+    } catch (e) {
+      console.log("hubo un error al armar el carrito");
+      Swal.fire({
+        title: "OOPS!!",
+        text: "No se ha podido agregar el producto",
+        position: "top-end",
+        timer: 1500,
+        showConfirmButton: false,
+      });
     }
-    const productID = e.target.id;
-    await productoAlCarrito(productID);
   });
 });
-
-const crearCarrito = async () => {
-  try {
-    const crearCarritoVacio = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=1`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-  } catch {}
-};
-
-const productoAlCarrito = async (producto, cid) => {
-  try {
-    const guardarProducto = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=1`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-    const fetchResult = await guardarProducto.json();
-
-    if (!fetchResult) {
-      throw new Error("Error interno de comunicación con la base de datos");
-    }
-    Swal.fire({
-      title: "👌",
-      text: "El producto se agregó con éxito al carrito",
-      position: "top-end",
-      timer: 1500,
-      showConfirmButton: false,
-    });
-  } catch (e) {
-    Swal.fire({
-      title: "👌",
-      text: "El producto se agregó con éxito al carrito",
-      position: "top-end",
-      timer: 1500,
-      showConfirmButton: false,
-    });
-    throw new Error("Error al tratar de guardar el producto ", e.message);
-  }
-};
-
 const visualizacion = document.querySelector("#visualizacion");
 visualizacion.addEventListener("submit", (e) => {
   e.preventDefault();

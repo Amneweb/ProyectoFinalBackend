@@ -1,8 +1,6 @@
 const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 console.log("carrito ", carrito);
 const divProductos = document.querySelector(".contenedorCarrito");
-const botonAgregar =
-  document.querySelector(".agregar") && document.querySelector(".agregar");
 
 const fetches = carrito.forEach((producto) => {
   fetch(`/api/products/${producto.product}`)
@@ -41,7 +39,6 @@ const fetches = carrito.forEach((producto) => {
       divProductos.append(divProducto);
     });
 });
-
 const guardar = document.querySelector("#guardar");
 guardar.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -54,11 +51,14 @@ guardar.addEventListener("click", async (e) => {
 
   const cid = data._id;
 
-  botonAgregar.forEach(async (boton) => {
-    boton.addEventListener("click", (e) => {
-      e.preventDefault();
-      productoAlCarrito(boton.id);
-    });
+  carrito.forEach(async (producto) => {
+    const agregar = await fetch(
+      `/api/carts/${cid}/product/${producto.product}?qty=${producto.qty}`,
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+      }
+    );
   });
 
   const addCartToUser = await fetch(`/api/users/cart/${cid}`, {
@@ -87,52 +87,3 @@ borrarCarrito.addEventListener("click", (e) => {
     location.replace("/catalogo");
   });
 });
-
-const productoAlCarrito = async (producto) => {
-  try {
-    const guardarProducto = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=${producto.qty}`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-    const fetchResult = await guardarProducto.json();
-
-    if (!fetchResult) {
-      throw new Error("Error interno de comunicación con la base de datos");
-    }
-    const productoGuardado = fetchResult.payload;
-    dibujarCard(productoGuardado);
-  } catch (e) {
-    throw new Error("Error al tratar de guardar el producto ", e.message);
-  }
-};
-
-const dibujarCard = (producto) => {
-  const datos = { ...producto, qty: producto.qty };
-  const divProducto = document.createElement("div");
-  divProducto.classList.add("producto");
-  divProducto.innerHTML =
-    datos.thumb != ""
-      ? `<div class="producto_imagen">
-      <img
-        src="${datos.thumb}"
-        alt="${datos.title}"
-      />`
-      : `<div class="producto_imagen">
-      <img
-        src="/uploads/img/sinfoto.jpg"
-        alt="Imagen no disponible"
-      />
-  </div>`;
-  divProducto.innerHTML += `<div class="producto_nombre"><p>${datos.title}</p></div>
-  <div class="producto_cantidad"><p>${datos.qty}</p></div>
-  <div class="producto_borrar"><button
-      id="${datos._id}"
-      class="borrar"
-      name="${datos._id}"
-    >🗑️</button></div></div>
-`;
-  divProductos.append(divProducto);
-};

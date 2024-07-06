@@ -1,3 +1,9 @@
+:root {
+  --verde-agua: #eff8ed;
+  --naranja: #fa7203;
+  --rojo: #e30622;
+  --bermellon: #d10624;
+}
 p,
 body,
 html,
@@ -18,7 +24,7 @@ html {
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
-  background-color: #f5f5f5;
+  background-color: var(--verde-agua);
 }
 a {
   text-decoration: none;
