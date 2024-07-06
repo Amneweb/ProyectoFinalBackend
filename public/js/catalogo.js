@@ -1,6 +1,12 @@
 let storage =
   localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart"); //guarda el ID del carrito
 const CARRITO = document.querySelector("#carritoEnCatalogo");
+if (storage) {
+  let carrito = JSON.parse(storage);
+  CARRITO.innerHTML = `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`;
+} else {
+  let carrito = [];
+}
 CARRITO.innerHTML = storage
   ? `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`
   : "";
@@ -29,7 +35,7 @@ const crearCarrito = async () => {
     );
   } catch {}
 };
-
+const productoAlStorage = (producto = {});
 const productoAlCarrito = async (producto, cid) => {
   try {
     const guardarProducto = await fetch(
