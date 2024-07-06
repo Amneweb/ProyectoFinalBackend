@@ -1,5 +1,5 @@
 let storage =
-  localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart");
+  localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart"); //guarda el ID del carrito
 const CARRITO = document.querySelector("#carritoEnCatalogo");
 CARRITO.innerHTML = storage
   ? `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`
@@ -20,7 +20,7 @@ botonesAgregar.forEach((boton) => {
 
 const crearCarrito = async () => {
   try {
-    const crearCarritoVacio = await fetch(
+    const crearCarritoVacioSinDuenio = await fetch(
       `/api/carts/${cid}/product/${producto.product}?qty=1`,
       {
         method: "POST",
