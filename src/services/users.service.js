@@ -128,13 +128,13 @@ export default class UserService {
     console.log(user);
     if (!user) {
       console.warn("User doesn't exists with username: " + userEmail);
-      return new BadRequestError(
+      throw new BadRequestError(
         "no hay un usuario registrado con email " + userEmail
       );
     }
     if (!isValidPassword(userPassword, user.userPassword)) {
       console.warn("Invalid credentials for user: " + userEmail);
-      return new BadRequestError("El usuario y la contraseña no coinciden!");
+      throw new BadRequestError("El usuario y la contraseña no coinciden!");
     }
     user["userConnection"] = Date.now() + 600000;
     await user.save();

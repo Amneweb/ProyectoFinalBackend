@@ -80,8 +80,8 @@ if (document.querySelector("#logout")) {
       headers: { "Content-type": "application/json" },
     });
     Swal.fire({
-      icon: "success",
-      text: "Te deslogueaste de forma exitosa",
+      title: "👋",
+      text: "Te deslogueaste de forma exitosa. ¡Hasta la próxima!",
     }).then((result) => {
       location.reload(true);
     });

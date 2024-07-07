@@ -58,16 +58,13 @@ export default class CustomRouter {
 
     if (!req.user || !req.user.role) {
       if (req.baseUrl.split("/").includes("api")) {
-        return res
-          .status(401)
-          .send({
-            error:
-              "El usuario no se ha autenticado o expiró el plazo de la sesión",
-          });
+        return res.status(401).send({
+          error:
+            "El usuario no se ha autenticado o expiró el plazo de la sesión",
+        });
       } else {
         return res.render("errors", {
-          message:
-            "El usuario no se ha autenticado o no se pudo guardar el token",
+          message: "Aún no te has logueado o expiró el plazo de tu sesión",
           style: "admin.css",
         });
       }

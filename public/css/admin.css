@@ -1,8 +1,10 @@
+@import "error.css";
+
 body,
 ul {
   padding: 0;
   margin: 0;
-  background-color: #e5e4e2;
+  background-color: var(--verde-agua);
 }
 body,
 html {
@@ -175,7 +177,7 @@ input {
 }
 .producto {
   display: grid;
-  grid-template-columns: 10% 1fr 20% 10%;
+  grid-template-columns: 10% 1fr 10% 10% 20% 10%;
   justify-content: space-between;
   border: #91a3b0 solid 1px;
   border-radius: 5px;
@@ -184,6 +186,9 @@ input {
 }
 .producto img {
   max-width: 100%;
+}
+.producto div {
+  margin: 0 0.7rem 0.7rem 0.7rem;
 }
 section {
   padding: 0 100px;
@@ -305,4 +310,42 @@ section {
   border: #91a3b0 solid 1px;
   border-radius: 5px;
   background-color: white;
+}
+.github {
+  background-color: gray;
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.datos {
+  font-weight: bold;
+  color: var(--naranja);
+}
+
+.compra button {
+  background-color: var(--naranja);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: var(--naranja);
+  color: white;
+  cursor: pointer;
+}
+.compra button:hover {
+  background-color: var(--bermellon);
+  border-color: var(--bermellon);
+}
+div.min {
+  font-size: 0.7rem;
+  margin-top: 0.7rem;
+}
+.grandTotal {
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--naranja);
+}
+.oculta {
+  display: none;
 }

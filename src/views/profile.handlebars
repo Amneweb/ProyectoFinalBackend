@@ -3,11 +3,16 @@
   <h1>Windward Car &amp; Truck Battery Store</h1>
   <h3>Tu perfil</h3>
   <p>Estos son los datos que tenemos sobre vos (sin datos sensibles)</p>
-  <div id="nombre">{{user.name}} </div>
-  <div id="rol">{{user.role}} </div>
-  <div class="email">{{user.email}} </div>
-  <button id="logout">Desloguearme</button>
+  <div id="nombre">Nombre: <span class="datos">{{user.name}}</span> </div>
+  <div id="rol">Rol: <span class="datos">{{user.role}}</span> </div>
+  <div class="email">Email: <span class="
+  datos">{{user.email}}</span> </div>
+  <div class="carrito"></div>
+{{#if cookieCompra}}<div class="compra"><button>FINALIZAR COMPRA</button></div>{{/if}}
+  <div><button id="logout">Desloguearme</button></div>
+
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/profile.js"></script>

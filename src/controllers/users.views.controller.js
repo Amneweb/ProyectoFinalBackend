@@ -46,15 +46,13 @@ export default class UsersController {
     res.render("register", { style: "admin.css" });
   };
   getCurrentUser = (req, res) => {
-    console.log(req.user);
     const user = req.user;
-    if (!user) {
-      res.render("login", { style: "admin.css" });
-    } else {
-      res.render("profile", {
-        user,
-        style: "admin.css",
-      });
-    }
+    const cookieCompra = req.signedCookies["WWcompraIniciada"];
+    console.log("ccokie de inicio de compra", cookieCompra);
+    res.render("profile", {
+      user,
+      cookieCompra,
+      style: "admin.css",
+    });
   };
 }

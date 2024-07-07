@@ -6,7 +6,7 @@ export default class CategoriesRouter extends CustomRouter {
     this.get("/", ["PUBLIC"], async (req, res) => {
       try {
         const categorias = await categoryManager.getCategories();
-        console.log(categorias);
+
         return res.send(categorias);
       } catch (e) {
         res.status(500).send(e.message);

@@ -7,28 +7,35 @@ verPassword.addEventListener("click", (e) => {
 
 const loginForm = document.getElementById("loginForm");
 
-loginForm.addEventListener("submit", (e) => {
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const data = new FormData(loginForm);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
 
-  fetch("/api/users/login", {
+  const result = await fetch("/api/users/login", {
     method: "POST",
     body: JSON.stringify(obj),
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((result) => {
-    if (result.status === 200) {
-      result.json().then((json) => {
-        //FIXME: modificar el alert y transformarlo en sweet alert
-        alert("Login realizado con exito! ");
-        window.location.replace("/users/currentUser");
-      });
-    } else if (result.status === 401) {
-      console.log("resultado de un login invalido", result);
-      alert("Login invalido revisa tus credenciales!");
-    }
   });
+  console.log(result);
+  const parsed = await result.json();
+  console.log(parsed);
+  if (!parsed.error) {
+    await Swal.fire({
+      title: "👍",
+      text: "Te logueaste existosamente",
+    }).then((result) => {
+      window.location.replace("/users/currentUser");
+    });
+  } else {
+    await Swal.fire({
+      icon: "error",
+      text: parsed.error,
+    }).then((result) => {
+      window.location.replace("/users/login");
+    });
+  }
 });

@@ -109,6 +109,18 @@ app.get("/loggertest", (req, res) => {
 
   res.send("Prueba de logger!");
 });
+app.get("/api/comprainiciada", (req, res) => {
+  res
+    .cookie(
+      "WWcompraIniciada",
+      { status: "ok", tiempo: new Date() },
+      {
+        maxAge: 6000,
+        signed: true,
+      }
+    )
+    .send("la cookie fue creada");
+});
 
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 //FIXME:

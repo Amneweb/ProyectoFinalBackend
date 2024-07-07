@@ -9,23 +9,36 @@
 
     <div>
       <label>Nombre</label>
-      <input name="userName" />
+      <input name="userName" required type="text" />
     </div>
     <div>
       <label>Apellido</label>
-      <input name="userLastName" />
+      <input name="userLastName" required type="text" />
     </div>
     <div>
       <label>Email</label>
-      <input name="userEmail" />
+      <input name="userEmail" requird type="email" />
     </div>
     <div>
       <label>Edad</label>
-      <input name="userAge" />
+      <input
+        name="userAge"
+        type="number"
+        min="
+      18"
+        max="120"
+      />
     </div>
     <div>
       <label>Contraseña</label>
-      <input type="password" name="userPassword" id="userPassword" />
+      <input
+        type="password"
+        name="userPassword"
+        id="userPassword"
+        required
+        minlength="3"
+        maxlength="15"
+      />
     </div>
     <button id="verPassword">👀 Ver Password</button>
     <div><input type="submit" value="Enviar" /></div>

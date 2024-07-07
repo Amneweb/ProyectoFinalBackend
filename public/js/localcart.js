@@ -3,23 +3,34 @@ console.log("carrito ", carrito);
 const divProductos = document.querySelector(".contenedorCarrito");
 const botonAgregar =
   document.querySelector(".agregar") && document.querySelector(".agregar");
-
+function formatear(amount) {
+  const formateado = new Intl.NumberFormat("es-AR", {
+    style: "currency",
+    currency: "ARS",
+  }).format(amount);
+  return formateado;
+}
 /*
 ========================================================================
 BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
 ========================================================================
 */
+const dibujar = async () => {
+  let TOTAL = 0;
+  await carrito.forEach(async (producto) => {
+    const datosProducto = await fetch(`/api/products/${producto.product}`);
 
-const fetches = carrito.forEach(async (producto) => {
-  const datosProducto = await fetch(`/api/products/${producto.product}`);
+    if (!datosProducto) throw new Error("No se ha podido cargar el producto");
 
-  if (!datosProducto) throw new Error("No se ha podido cargar el producto");
+    const itemCarrito = await datosProducto.json();
 
-  const itemCarrito = await datosProducto.json();
+    dibujarCard(itemCarrito.payload, producto.qty);
 
-  dibujarCard(itemCarrito.payload, producto.qty);
-});
-
+    TOTAL += itemCarrito.payload.price * producto.qty;
+    document.querySelector(".grandTotal").innerHTML = formatear(TOTAL);
+  });
+};
+dibujar();
 /*
 ========================================================================
 GUARDAMOS EL CARRITO DEL LOCAL EN LA BDD
@@ -29,7 +40,7 @@ GUARDAMOS EL CARRITO DEL LOCAL EN LA BDD
 const guardar = document.querySelector("#guardar");
 guardar.addEventListener("click", async (e) => {
   e.preventDefault();
-  let logueado;
+
   try {
     const fetchUsuario = await fetch("/api/users/currentUser");
     const usuario = await fetchUsuario.json();
@@ -40,23 +51,25 @@ guardar.addEventListener("click", async (e) => {
       title: "👌",
       text: "¿Tenés tu carrito completo? Una vez que inicies el proceso de compra ya no lo podrás modificar.",
       showCancelButton: true,
-      confirmButtonText: "Agregar productos",
-      cancelButtonText: "Terminar compra",
+      confirmButtonText: "Terminar compra",
+      cancelButtonText: "Agregar Productos",
       reverseButtons: true,
     }).then((result) => {
-      if (result.isConfirmed) {
+      if (result.isConfirmed)
+        setearCookie().then((result) => {
+          if (logueado) {
+            location.replace("/users/CurrentUser");
+          } else {
+            Swal.fire({
+              title: "👍",
+              text: "Te vamos a pedir que te registres o loguees para proceder con la compra",
+            }).then((result) => {
+              location.replace("/users/login");
+            });
+          }
+        });
+      else {
         location.replace("/catalogo");
-      } else {
-        const compraIniciada = true;
-        localStorage.setItem(
-          "WWcompraIniciada",
-          JSON.stringify(compraIniciada)
-        );
-        if (logueado) {
-          location.replace("/users/CurrentUser");
-        } else {
-          location.replace("/users/login");
-        }
       }
     });
   } catch (e) {
@@ -66,6 +79,13 @@ guardar.addEventListener("click", async (e) => {
     });
   }
 });
+const setearCookie = async () => {
+  const cookie = await fetch("/api/comprainiciada");
+  const parsed = await cookie.json();
+  console.log("parsed", parsed);
+  if (!parsed)
+    throw new Error("no se pudo generar la cookie de sesión de compra");
+};
 
 const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", (e) => {
@@ -81,8 +101,11 @@ borrarCarrito.addEventListener("click", (e) => {
 
 const dibujarCard = (datos, qty) => {
   const divProducto = document.createElement("div");
+  const total = datos.price * qty;
+
   divProducto.classList.add("producto");
-  divProducto.innerHTML =
+  divProducto.innerHTML = `<div class="min"></div><div class="min"></div><div class="min"></div><div class="min">Precio unitario</div><div class="min">Total producto</div><div class="min"></div>`;
+  divProducto.innerHTML +=
     datos.thumb != ""
       ? `<div class="producto_imagen">
       <img
@@ -99,6 +122,7 @@ const dibujarCard = (datos, qty) => {
   <div class="producto_cantidad"><button class="modificarQTY" id="godown_${datos._id}">&#9660</button><p class="qty${datos._id}">
     ${qty}</p>
   </input><button class="modificarQTY" id="goup_${datos._id}">&#9650</button></div>
+  <div id="unitario_${datos._id}">${datos.price}</div><div class="total" id="total_${datos._id}">${total}</div>
   <div class="producto_borrar"><button
       id="${datos._id}"
       class="borrar"
@@ -116,6 +140,17 @@ divProductos.addEventListener("click", (e) => {
   const id = operacion_id.split("_")[1];
   modificarCarrito(id, operacion);
 });
+const calcularTotal = () => {
+  const todos = document.querySelectorAll(".total");
+  let arrayTodos = [];
+  todos.forEach((item) => {
+    arrayTodos.push(parseInt(item.innerHTML));
+  });
+  console.log(arrayTodos);
+
+  const grandTotal = arrayTodos.reduce((accum, item) => accum + item);
+  return formatear(grandTotal);
+};
 
 const modificarCarrito = (id, operacion) => {
   try {
@@ -126,15 +161,24 @@ const modificarCarrito = (id, operacion) => {
         "error de lectura de datos, no se pudo modificar la cantidad"
       );
     } else {
+      let precioUnitario = parseInt(
+        document.querySelector(`#unitario_${id}`).innerHTML
+      );
+      console.log("precio ", precioUnitario);
       let qty = parseInt(document.querySelector(`.qty${id}`).innerHTML);
       carrito.splice(existe, 1);
+      const newQty = operacion === "goup" ? qty + 1 : qty - 1;
       carrito.push({
         product: id,
-        qty: operacion === "goup" ? qty + 1 : qty - 1,
+        qty: newQty,
       });
-      document.querySelector(`.qty${id}`).innerHTML =
-        operacion === "goup" ? qty + 1 : qty - 1;
+      document.querySelector(`.qty${id}`).innerHTML = newQty;
+      document.querySelector(`#total_${id}`).innerHTML =
+        precioUnitario * newQty;
+
+      document.querySelector(".grandTotal").innerHTML = calcularTotal();
     }
+
     localStorage.setItem("windwardCart", JSON.stringify(carrito));
   } catch (e) {
     console.log("Error al tratar de modificar la cantidad ", e.message);

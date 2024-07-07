@@ -1,16 +1,13 @@
 import UserService from "../services/users.service.js";
-import CartService from "../services/carts.service.js";
 import TicketsService from "../services/tickets.service.js";
 import { userLogger as logger } from "../config/logger.config.js";
 import UsersDTO from "../services/dtos/users.dto.js";
 export default class UsersController {
   #userService;
-  #cartService;
   #ticketsService;
   #usersDTO;
   constructor() {
     this.#userService = new UserService();
-    this.#cartService = new CartService();
     this.#ticketsService = new TicketsService();
     this.#usersDTO = new UsersDTO();
   }
@@ -91,6 +88,8 @@ export default class UsersController {
         userEmail,
         userPassword
       );
+      console.log("access token");
+      console.log(access_token);
       logger.debug(
         "El usuario que se quiere loguear tiene email: %s",
         userEmail
@@ -108,12 +107,8 @@ export default class UsersController {
           //id: user._id,
         });
     } catch (error) {
-      console.error(error);
-      logger.error(
-        "Ha habido un error interno al tratar de loguear al usuario con email %s",
-        userEmail
-      );
-      return res.sendInternalServerError(error);
+      logger.error("Mensaje interno: %s", error.message);
+      return res.sendClientError(error.message);
     }
   };
 

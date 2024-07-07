@@ -7,7 +7,7 @@ verPassword.addEventListener("click", (e) => {
 
 const registerForm = document.getElementById("registerForm");
 
-registerForm.addEventListener("submit", (e) => {
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const data = new FormData(registerForm);
@@ -15,15 +15,27 @@ registerForm.addEventListener("submit", (e) => {
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
 
-  fetch("/api/users/register", {
+  const result = await fetch("/api/users/register", {
     method: "POST",
     body: JSON.stringify(obj),
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((result) => {
-    if (result.status === 201) {
-      window.location.replace("/users/login");
-    }
   });
+  console.log(result);
+  const parsed = await result.json();
+  console.log(parsed);
+  if (!parsed.error) {
+    await Swal.fire({
+      title: "👍",
+      text: "Te registraste existosamente",
+    }).then((result) => {
+      window.location.replace("/users/login");
+    });
+  } else {
+    await Swal.fire({
+      icon: "error",
+      text: parsed.error,
+    });
+  }
 });

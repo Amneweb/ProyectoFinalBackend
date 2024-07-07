@@ -8,12 +8,12 @@
   <form class="session_form" id="loginForm">
     <div>
       <label>Email</label>
-      <input name="userEmail" />
+      <input name="userEmail" type="email" required />
 
     </div>
     <div>
       <label>Contraseña</label>
-      <input type="password" name="userPassword" id="userPassword" />
+      <input type="password" name="userPassword" id="userPassword" required minlength="3" maxlength="15" />
 
     </div>
     <button id="verPassword">👀 Ver Password</button>
@@ -23,9 +23,9 @@
 
   <p class="centered">Si tenés cuenta de Github, te invitamos a loguearte a
     través de la misma</p>
-  <p class="centered"><a href="/api/sessions/github"><img
+  <p class="centered"><a class="github" href="/api/sessions/github"><img
         class="logo"
-        src="/img/invertocat.png"
+        src="/images/invertocat.png"
         alt="logo github"
       />
       GITHUB</a></p>
