@@ -51,5 +51,7 @@ export default class ViewsRouter extends CustomRouter {
      *  ===============================================================
      */
     this.get("/admin/carts", ["ADMIN"], cartController.getCarts);
+
+    this.get("/localstorage", ["PUBLIC"], cartController.localStorage);
   }
 }

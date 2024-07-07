@@ -18,6 +18,7 @@ class CartManager {
   addCart = async () => {
     let newCarrito = {
       products: [],
+      createdAt: new Date(),
     };
     return await cartDAO.create(newCarrito);
   };
@@ -110,16 +111,11 @@ class CartManager {
     const equalsPid = (element) => element === pid.toString();
     const productIndex = mapeado.findIndex(equalsPid);
 
-    console.log("product index", productIndex);
     if (productIndex === -1) {
       carritoBuscado.cart.push({ product: pid, qty: 1 });
     } else {
       carritoBuscado.cart[productIndex].qty++;
     }
-    logger.debug(
-      "carrito buscado luego de la transformacion %j",
-      carritoBuscado
-    );
 
     return await cartDAO.update(cid, carritoBuscado.cart);
   };
@@ -219,18 +215,13 @@ class CartManager {
     }
 
     const inCartQty = carritoBuscado.cart[productIndex].qty;
-    console.log("productIndex ", productIndex);
-    console.log("inCartQty ", inCartQty);
-    console.log("qty ", qty);
+
     if (qty != "" && qty < inCartQty && qty > 0) {
       carritoBuscado.cart[productIndex].qty = inCartQty - qty;
-
-      console.log("newQty ", carritoBuscado.cart[productIndex].qty);
     } else {
       carritoBuscado.cart.splice(productIndex, 1);
     }
-    console.log("nuevo carrito");
-    console.log(carritoBuscado);
+
     return await cartDAO.update(cid, carritoBuscado.cart);
   };
 

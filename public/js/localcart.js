@@ -4,78 +4,69 @@ const divProductos = document.querySelector(".contenedorCarrito");
 const botonAgregar =
   document.querySelector(".agregar") && document.querySelector(".agregar");
 
-const fetches = carrito.forEach((producto) => {
-  fetch(`/api/products/${producto.product}`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+/*
+========================================================================
+BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
+========================================================================
+*/
 
-      return response.json();
-    })
-    .then((result) => {
-      const datos = { ...result, qty: producto.qty };
-      const divProducto = document.createElement("div");
-      divProducto.classList.add("producto");
-      divProducto.innerHTML =
-        datos.thumb != ""
-          ? `<div class="producto_imagen">
-      <img
-        src="${datos.thumb}"
-        alt="${datos.title}"
-      />`
-          : `<div class="producto_imagen">
-      <img
-        src="/img/sinfoto.jpg"
-        alt="Imagen no disponible"
-      />
-  </div>`;
-      divProducto.innerHTML += `<div class="producto_nombre"><p>${datos.title}</p></div>
-  <div class="producto_cantidad"><p>${datos.qty}</p></div>
-  <div class="producto_borrar"><button
-      id="${datos._id}"
-      class="borrar"
-      name="${datos._id}"
-    >🗑️</button></div></div>
-`;
-      divProductos.append(divProducto);
-    });
+const fetches = carrito.forEach(async (producto) => {
+  const datosProducto = await fetch(`/api/products/${producto.product}`);
+
+  if (!datosProducto) throw new Error("No se ha podido cargar el producto");
+
+  const itemCarrito = await datosProducto.json();
+
+  dibujarCard(itemCarrito.payload, producto.qty);
 });
+
+/*
+========================================================================
+GUARDAMOS EL CARRITO DEL LOCAL EN LA BDD
+========================================================================
+*/
 
 const guardar = document.querySelector("#guardar");
 guardar.addEventListener("click", async (e) => {
   e.preventDefault();
+  let logueado;
+  try {
+    const fetchUsuario = await fetch("/api/users/currentUser");
+    const usuario = await fetchUsuario.json();
 
-  const newCart = await fetch("/api/carts", {
-    method: "POST",
-    headers: { "Content-type": "application/json" },
-  });
-  const data = await newCart.json();
+    logueado = usuario.error ? false : true;
 
-  const cid = data._id;
-
-  botonAgregar.forEach(async (boton) => {
-    boton.addEventListener("click", (e) => {
-      e.preventDefault();
-      productoAlCarrito(boton.id);
-    });
-  });
-
-  const addCartToUser = await fetch(`/api/users/cart/${cid}`, {
-    method: "PUT",
-    headers: { "Content-type": "application/json" },
-  });
-  const dataCart = await addCartToUser._id;
-
-  if (dataCart) {
-    Swal.fire({
+    await Swal.fire({
       title: "👌",
-      text: "El carrito se ha guardado correctamente. Podés seguir agregando productos o terminar la compra",
+      text: "¿Tenés tu carrito completo? Una vez que inicies el proceso de compra ya no lo podrás modificar.",
+      showCancelButton: true,
+      confirmButtonText: "Agregar productos",
+      cancelButtonText: "Terminar compra",
+      reverseButtons: true,
     }).then((result) => {
-      location.replace("/catalogo");
+      if (result.isConfirmed) {
+        location.replace("/catalogo");
+      } else {
+        const compraIniciada = true;
+        localStorage.setItem(
+          "WWcompraIniciada",
+          JSON.stringify(compraIniciada)
+        );
+        if (logueado) {
+          location.replace("/users/CurrentUser");
+        } else {
+          location.replace("/users/login");
+        }
+      }
+    });
+  } catch (e) {
+    await Swal.fire({
+      title: "Oops",
+      text: `Lo sentimos, ha ocurrido un error ${e.message}. Volvé a intentarlo más tarde`,
     });
   }
 });
+
 const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", (e) => {
   e.preventDefault();
@@ -88,46 +79,26 @@ borrarCarrito.addEventListener("click", (e) => {
   });
 });
 
-const productoAlCarrito = async (producto) => {
-  try {
-    const guardarProducto = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=${producto.qty}`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-    const fetchResult = await guardarProducto.json();
-
-    if (!fetchResult) {
-      throw new Error("Error interno de comunicación con la base de datos");
-    }
-    const productoGuardado = fetchResult.payload;
-    dibujarCard(productoGuardado);
-  } catch (e) {
-    throw new Error("Error al tratar de guardar el producto ", e.message);
-  }
-};
-
-const dibujarCard = (producto) => {
-  const datos = { ...producto, qty: producto.qty };
+const dibujarCard = (datos, qty) => {
   const divProducto = document.createElement("div");
   divProducto.classList.add("producto");
   divProducto.innerHTML =
     datos.thumb != ""
       ? `<div class="producto_imagen">
       <img
-        src="${datos.thumb}"
+        src="/uploads/img/products/${datos.thumb}"
         alt="${datos.title}"
       />`
       : `<div class="producto_imagen">
       <img
-        src="/uploads/img/sinfoto.jpg"
+        src="/uploads/img/products/sinfoto.jpg"
         alt="Imagen no disponible"
       />
   </div>`;
   divProducto.innerHTML += `<div class="producto_nombre"><p>${datos.title}</p></div>
-  <div class="producto_cantidad"><p>${datos.qty}</p></div>
+  <div class="producto_cantidad"><button class="modificarQTY" id="godown_${datos._id}">&#9660</button><p class="qty${datos._id}">
+    ${qty}</p>
+  </input><button class="modificarQTY" id="goup_${datos._id}">&#9650</button></div>
   <div class="producto_borrar"><button
       id="${datos._id}"
       class="borrar"
@@ -135,4 +106,37 @@ const dibujarCard = (producto) => {
     >🗑️</button></div></div>
 `;
   divProductos.append(divProducto);
+};
+
+divProductos.addEventListener("click", (e) => {
+  e.preventDefault();
+  const operacion_id = e.target.id;
+
+  const operacion = operacion_id.split("_")[0];
+  const id = operacion_id.split("_")[1];
+  modificarCarrito(id, operacion);
+});
+
+const modificarCarrito = (id, operacion) => {
+  try {
+    const existe = carrito.findIndex((item) => item.product === id);
+
+    if (existe < 0) {
+      throw new Error(
+        "error de lectura de datos, no se pudo modificar la cantidad"
+      );
+    } else {
+      let qty = parseInt(document.querySelector(`.qty${id}`).innerHTML);
+      carrito.splice(existe, 1);
+      carrito.push({
+        product: id,
+        qty: operacion === "goup" ? qty + 1 : qty - 1,
+      });
+      document.querySelector(`.qty${id}`).innerHTML =
+        operacion === "goup" ? qty + 1 : qty - 1;
+    }
+    localStorage.setItem("windwardCart", JSON.stringify(carrito));
+  } catch (e) {
+    console.log("Error al tratar de modificar la cantidad ", e.message);
+  }
 };

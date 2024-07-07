@@ -1,5 +1,13 @@
-<section>
+{{> nav}}
 
+<section>
+{{#if logueado}}
+{{> user}}
+ {{else}}
+      <p>Aun no estás logueado. Click
+        <a href="/users/login">aquí</a>
+        si querés loguearte</p>
+  {{/if}}
   <h1>Bienvenido a Windward Car &amp; Truck Battery Store</h1>
   <h2>Este es tu carrito de compras SIN GUARDAR</h2>
   <p>Tené en cuenta que este carrito aun no está guardado en nuestros registros

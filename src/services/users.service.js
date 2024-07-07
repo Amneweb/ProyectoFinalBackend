@@ -139,6 +139,28 @@ export default class UserService {
     user["userConnection"] = Date.now() + 600000;
     await user.save();
 
+    /*
+    =========================================================================
+    VERIFICO SI EL USUARIO TIENE ASOCIADO UN CARRITO INEXISTENTE Y LO BORRO
+    =========================================================================
+    */
+    if (user.userCartID.length > 0) {
+      let inexistentes = [];
+      let newCart = [];
+      user.userCartID.forEach(async (carrito) => {
+        const existe = await cartDAO.findByID(carrito);
+        if (!existe) {
+          inexistentes.push(carrito);
+        }
+      });
+      inexistentes.forEach((item) => {
+        const IDinexistente = user.userCartID.findIndex(item);
+        newCart = user.userCartID.splice(IDinexistente, 1);
+      });
+      user["userCartID"] = newCart;
+      await user.save();
+    }
+
     const tokenUser = {
       name: `${user.userName} ${user.userLastName}`,
       email: user.userEmail,

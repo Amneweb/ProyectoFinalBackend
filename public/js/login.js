@@ -23,9 +23,7 @@ loginForm.addEventListener("submit", (e) => {
     if (result.status === 200) {
       result.json().then((json) => {
         //FIXME: modificar el alert y transformarlo en sweet alert
-        alert(
-          "Login realizado con exito! De acá se va a /users, que debería mostrar los datos del usuario en base al token"
-        );
+        alert("Login realizado con exito! ");
         window.location.replace("/users/currentUser");
       });
     } else if (result.status === 401) {

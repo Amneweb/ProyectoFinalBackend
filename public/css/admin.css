@@ -175,7 +175,7 @@ input {
 }
 .producto {
   display: grid;
-  grid-template-columns: 10% 1fr 10% 10%;
+  grid-template-columns: 10% 1fr 20% 10%;
   justify-content: space-between;
   border: #91a3b0 solid 1px;
   border-radius: 5px;
@@ -263,4 +263,46 @@ section {
   margin: 0.5rem;
   background-color: white;
   padding: 0.4rem;
+}
+.producto_cantidad {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.producto_cantidad button {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.session_swal_form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: start;
+}
+.session_swal_form div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.session_swal_form label {
+  width: min-content;
+}
+
+.session_swal_form input {
+  border: #91a3b0 solid 1px;
+}
+.usuario {
+  position: absolute;
+  padding: 20px;
+  top: 50px;
+  right: 10px;
+  border: #91a3b0 solid 1px;
+  border-radius: 5px;
+  background-color: white;
 }

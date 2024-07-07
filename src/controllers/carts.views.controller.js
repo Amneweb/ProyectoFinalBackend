@@ -39,6 +39,13 @@ export default class CartController {
       res.sendInternalServerError(e);
     }
   };
+  localStorage = async (req, res) => {
+    const logueado = req.user && req.user;
+    res.render("localusercart", {
+      logueado,
+      style: "admin.css",
+    });
+  };
   /*getCarts = async (req, res) => {
     try {
       const carritosObtenidos = await this.#cartManager.getCarts();

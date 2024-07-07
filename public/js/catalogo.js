@@ -1,15 +1,20 @@
 let storage =
   localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart"); //guarda el ID del carrito
 const CARRITO = document.querySelector("#carritoEnCatalogo");
+console.log("storage");
+console.log(storage);
+let carrito;
 if (storage) {
-  let carrito = JSON.parse(storage);
+  carrito = JSON.parse(storage);
   CARRITO.innerHTML = `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`;
+  console.log("carrito existente");
+  console.log(carrito);
 } else {
-  let carrito = [];
+  carrito = [];
+  console.log("carrito nuevo");
+  console.log(carrito);
 }
-CARRITO.innerHTML = storage
-  ? `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`
-  : "";
+
 const botonesAgregar = document.querySelectorAll(".agregar");
 //verifico si el usuario está logueado
 
@@ -17,25 +22,60 @@ botonesAgregar.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
     if (!storage) {
-      await crearCarrito();
+      crearCarrito();
     }
     const productID = e.target.id;
-    await productoAlCarrito(productID);
+    //si está logueado, uso esta función
+    //await productoAlCarrito(productID);
+    //si no está logueado uso esta
+    productoAlStorage(productID);
   });
 });
 
-const crearCarrito = async () => {
-  try {
-    const crearCarritoVacioSinDuenio = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=1`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-  } catch {}
+const crearCarrito = () => {
+  console.log("en crear Carrito");
+  localStorage.setItem("windwardCart", JSON.stringify(carrito));
 };
-const productoAlStorage = (producto = {});
+
+const productoAlStorage = (productID) => {
+  try {
+    console.log("en productos al storage");
+    const existe = carrito.findIndex((item) => item.product === productID);
+    console.log("verificación existencia producto");
+    console.log(existe);
+    if (existe < 0) {
+      carrito.push({
+        product: productID,
+        qty: 1,
+      });
+    } else {
+      const qty = carrito[existe].qty;
+      carrito.splice(existe, 1);
+      carrito.push({
+        product: productID,
+        qty: qty + 1,
+      });
+    }
+    localStorage.setItem("windwardCart", JSON.stringify(carrito));
+
+    Swal.fire({
+      title: "👌",
+      text: "El producto se agregó con éxito al carrito",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  } catch (e) {
+    console.log("error ", e.message);
+    Swal.fire({
+      title: "Oops",
+      text: "No pudimos agregar el producto",
+      position: "top-end",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  }
+};
 const productoAlCarrito = async (producto, cid) => {
   try {
     const guardarProducto = await fetch(
@@ -59,7 +99,7 @@ const productoAlCarrito = async (producto, cid) => {
     });
   } catch (e) {
     Swal.fire({
-      title: "👌",
+      title: "Oops",
       text: "El producto se agregó con éxito al carrito",
       position: "top-end",
       timer: 1500,

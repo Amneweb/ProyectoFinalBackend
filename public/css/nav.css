@@ -1,3 +1,9 @@
+:root {
+  --verde-agua: #eff8ed;
+  --naranja: #fa7203;
+  --rojo: #e30622;
+  --bermellon: #d10624;
+}
 ul.navigation {
   list-style-type: none;
   margin: 0;
@@ -20,7 +26,7 @@ li a,
 
 li a:hover,
 .dropdown:hover .dropbtn {
-  background-color: red;
+  color: var(--naranja);
 }
 
 li.dropdown {
@@ -32,7 +38,7 @@ li.dropdown {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-
+  border: 1px solid var(--naranja);
   z-index: 1;
   margin: 0;
 }
