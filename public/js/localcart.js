@@ -52,23 +52,12 @@ guardar.addEventListener("click", async (e) => {
       text: "¿Tenés tu carrito completo? Una vez que inicies el proceso de compra ya no lo podrás modificar.",
       showCancelButton: true,
       confirmButtonText: "Terminar compra",
-      cancelButtonText: "Agregar Productos",
+      cancelButtonText: "Agregar productos",
       reverseButtons: true,
     }).then((result) => {
-      if (result.isConfirmed)
-        setearCookie().then((result) => {
-          if (logueado) {
-            location.replace("/users/CurrentUser");
-          } else {
-            Swal.fire({
-              title: "👍",
-              text: "Te vamos a pedir que te registres o loguees para proceder con la compra",
-            }).then((result) => {
-              location.replace("/users/login");
-            });
-          }
-        });
-      else {
+      if (result.isConfirmed) {
+        setearCookie();
+      } else {
         location.replace("/catalogo");
       }
     });
@@ -85,6 +74,14 @@ const setearCookie = async () => {
   console.log("parsed", parsed);
   if (!parsed)
     throw new Error("no se pudo generar la cookie de sesión de compra");
+  if (logueado) {
+    location.replace("/users/currentUser");
+  } else {
+    Swal.fire({
+      title: "👤",
+      text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
+    }).then((result) => location.replace("/users/login"));
+  }
 };
 
 const borrarCarrito = document.getElementById("borrarCarrito");

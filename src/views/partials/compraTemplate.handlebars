@@ -1,0 +1,22 @@
+
+<div class="producto_imagen">
+  {{#if this.product.thumb}}
+      <img
+        src="/uploads/img/products/"{{this.product.thumb}}
+        alt={{this.product.title}}
+      />
+     {{else}}  
+      <img
+        src="/uploads/img/products/sinfoto.jpg"
+        alt="Imagen no disponible"
+      />
+      {{/if}}
+  </div>
+  <div class="producto_nombre"><p>{{this.product.title}} </p></div>
+  <div class="producto_cantidad">{{this.qty}}</p>
+  </div>
+  <div>{{formatear this.product.price}} </div><div>{{formatear (operacion this.product.price this.qty "producto")}}</div>
+ </div>
+
+
+    

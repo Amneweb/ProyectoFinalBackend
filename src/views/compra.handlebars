@@ -1,0 +1,31 @@
+{{> nav}}
+
+<section>
+{{#if logueado}}
+{{> user}}
+ {{else}}
+      <p>Aun no estás logueado. Click
+        <a href="/users/login">aquí</a>
+        si querés loguearte</p>
+  {{/if}}
+  <h1>Windward Car &amp; Truck Battery Store</h1>
+  <h2>Confirmar compra</h2>
+  
+
+<div class="grandTotal"></div>
+  <div class="contenedorCarrito">
+
+  </div>
+  <div class="grandTotal">
+
+  </div>
+  <div class="centered compra"><button id="pagar">CONFIRMAR</button></div>
+  
+
+</section>
+<script id="contenedorCarrito" type="text/x-handlebars-template">
+{{> compraTemplate}}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/compra.js"></script>

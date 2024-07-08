@@ -46,16 +46,11 @@ export default class CartController {
       style: "admin.css",
     });
   };
-  /*getCarts = async (req, res) => {
-    try {
-      const carritosObtenidos = await this.#cartManager.getCarts();
-
-      res.render("usercartsAdmin", {
-        carritosObtenidos,
-        style: "admin.css",
-      });
-    } catch (e) {
-      res.sendInternalServerError(e);
-    }
-  };*/
+  compra = async (req, res) => {
+    const logueado = req.user && req.user;
+    res.render("compra", {
+      logueado,
+      style: "admin.css",
+    });
+  };
 }

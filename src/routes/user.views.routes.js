@@ -20,8 +20,6 @@ export default class UsersViewsRouter extends CustomRouter {
 
     this.get("/register", ["PUBLIC"], usersController.register);
 
-    this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
-
     this.get(
       "/cart",
       ["USER", "PREMIUM"],

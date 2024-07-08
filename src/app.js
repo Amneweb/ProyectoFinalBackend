@@ -115,7 +115,8 @@ app.get("/api/comprainiciada", (req, res) => {
       "WWcompraIniciada",
       { status: "ok", tiempo: new Date() },
       {
-        maxAge: 6000,
+        maxAge: 600000, //milliseconds
+        httpOnly: true,
         signed: true,
       }
     )

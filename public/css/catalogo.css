@@ -54,7 +54,7 @@
 }
 
 .card a {
-  color: #696969;
+  color: var(--bermellon);
   font-weight: bold;
 }
 .card a:hover {
