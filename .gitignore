@@ -3,6 +3,6 @@ authGithub.md
 .env
 
 *.log
-public/uploads/docs/
-public/uploads/img/profile/
-public/uploads/img/products/
+#public/uploads/docs/
+#public/uploads/img/profile/
+#public/uploads/img/products/
