@@ -1,5 +1,6 @@
 node_modules
 authGithub.md
+.env
 
 *.log
 public/uploads/docs/
