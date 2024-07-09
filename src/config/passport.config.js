@@ -13,7 +13,7 @@ const LocalStrategy = local.Strategy;
 const initializePassport = () => {
   /*==================================
   ESTRATEGIA GITHUB
-  ==================================*/
+  ==================================
   //TODO: ver si funciona estrategia de github como opcional
   passport.use(
     "github",
@@ -57,7 +57,7 @@ const initializePassport = () => {
         }
       }
     )
-  );
+  );*/
   //FIXME: la estrategia local se puede borrar
   /*========================
   ESTRATEGIA LOCAL
