@@ -21,9 +21,16 @@ deslogueo.addEventListener("click", async (e) => {
     });
   }
 });
-
+const botonCompra = document.querySelector(".botonCompra");
+if (botonCompra) {
+  botonCompra.addEventListener("click", (e) => {
+    e.preventDefault();
+    location.replace("/compra");
+  });
+}
 const carritoExistente = JSON.parse(localStorage.getItem("windwardCart"));
-if (carritoExistente) {
+const carrito = document.querySelector(".carrito");
+if (carritoExistente && carrito) {
   const carrito = document.querySelector(".carrito");
   carrito.innerHTML = `<p>Tenés un carrito sin guardar. <a href="/localstorage">Miralo acá 👉</a></p>`;
 }

@@ -10,6 +10,31 @@ function formatear(amount) {
   }).format(amount);
   return formateado;
 }
+const deslogueo = document.querySelector("#logout");
+if (deslogueo) {
+  deslogueo.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    try {
+      await fetch("/api/users/logout", {
+        method: "GET",
+        headers: { "Content-type": "application/json" },
+      });
+
+      await Swal.fire({
+        title: "Chau",
+        text: "Te deslogueaste de forma exitosa",
+      }).then((result) => {
+        window.location.replace("/users/login");
+      });
+    } catch (e) {
+      await Swal.fire({
+        icon: "error",
+        text: `Lo sentimos, hubo un error al desloguearte. Volvé a intentarlo. ${e.message} `,
+      });
+    }
+  });
+}
 /*
 ========================================================================
 BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
@@ -33,7 +58,7 @@ const dibujar = async () => {
 dibujar();
 /*
 ========================================================================
-GUARDAMOS EL CARRITO DEL LOCAL EN LA BDD
+INICIAMOS PROCESO DE COMPRA Y CREAMOS UNA COOKIE
 ========================================================================
 */
 
@@ -43,10 +68,11 @@ guardar.addEventListener("click", async (e) => {
 
   try {
     const fetchUsuario = await fetch("/api/users/currentUser");
+
     const usuario = await fetchUsuario.json();
 
     logueado = usuario.error ? false : true;
-
+    console.log("logueado ", logueado);
     await Swal.fire({
       title: "👌",
       text: "¿Tenés tu carrito completo? Una vez que inicies el proceso de compra ya no lo podrás modificar.",
@@ -54,9 +80,33 @@ guardar.addEventListener("click", async (e) => {
       confirmButtonText: "Terminar compra",
       cancelButtonText: "Agregar productos",
       reverseButtons: true,
+      preConfirm: async () => {
+        try {
+          const response = await fetch("/api/comprainiciada");
+          console.log(response);
+          if (!response.ok) {
+            return Swal.showValidationMessage(`
+              ${JSON.stringify(await response.json())}
+            `);
+          }
+          await response.json();
+          return;
+        } catch (error) {
+          Swal.showValidationMessage(`
+            Request failed: ${error}
+          `);
+        }
+      },
     }).then((result) => {
       if (result.isConfirmed) {
-        setearCookie();
+        if (logueado) {
+          location.replace("/users/currentUser");
+        } else {
+          Swal.fire({
+            title: "👤",
+            text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
+          }).then((result) => location.replace("/users/login"));
+        }
       } else {
         location.replace("/catalogo");
       }
@@ -68,6 +118,7 @@ guardar.addEventListener("click", async (e) => {
     });
   }
 });
+/*
 const setearCookie = async () => {
   const cookie = await fetch("/api/comprainiciada");
   const parsed = await cookie.json();
@@ -82,7 +133,7 @@ const setearCookie = async () => {
       text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
     }).then((result) => location.replace("/users/login"));
   }
-};
+};*/
 
 const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", (e) => {

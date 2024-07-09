@@ -1,4 +1,4 @@
-
+{{#each iterable}}
 <div class="producto_imagen">
   {{#if this.product.thumb}}
       <img
@@ -17,6 +17,7 @@
   </div>
   <div>{{formatear this.product.price}} </div><div>{{formatear (operacion this.product.price this.qty "producto")}}</div>
  </div>
+ {{/each}}
 
 
     

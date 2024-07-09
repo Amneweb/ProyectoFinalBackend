@@ -120,7 +120,7 @@ app.get("/api/comprainiciada", (req, res) => {
         signed: true,
       }
     )
-    .send("la cookie fue creada");
+    .send({ message: "la cookie fue creada" });
 });
 
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));

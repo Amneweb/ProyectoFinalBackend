@@ -69,6 +69,7 @@ export default class UsersController {
   };
 
   getCurrentUser = (req, res) => {
+    console.log("viene por la api");
     console.log(req.user);
     res.sendSuccess(req.user);
   };

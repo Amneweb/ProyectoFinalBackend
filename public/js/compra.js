@@ -1,54 +1,146 @@
 const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 console.log("carrito ", carrito);
 
-async () => {
-  await fetch("/api/carts", {
-    method: "POST",
-    //credentials: "include",
-    headers: { "Content-type": "application/json" },
-  });
-  const data = await fetched.json();
+const deslogueo = document.querySelector("#logout");
+deslogueo.addEventListener("click", async (e) => {
+  e.preventDefault();
 
-  if (data.error) {
-    throw new Error(data.error);
+  try {
+    await fetch("/api/users/logout", {
+      method: "GET",
+      headers: { "Content-type": "application/json" },
+    });
+
+    await Swal.fire({
+      title: "Chau",
+      text: "Te deslogueaste de forma exitosa",
+    }).then((result) => {
+      window.location.replace("/users/login");
+    });
+  } catch (e) {
+    await Swal.fire({
+      icon: "error",
+      text: `Lo sentimos, hubo un error al desloguearte. Volvé a intentarlo. ${e.message} `,
+    });
   }
-  const cid = data.payload.userCartID;
+});
 
-  carrito.forEach(async (item) => {
-    const guardarProducto = await fetch(
-      `/api/carts/${cid}/product/${item.product}?qty=${item.qty}`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
+const compra = async () => {
+  try {
+    const fetched = await fetch("/api/carts", {
+      method: "POST",
+      //credentials: "include",
+      headers: { "Content-type": "application/json" },
+    });
+    const data = await fetched.json();
+    console.log("data", data);
+    if (data.error) {
+      throw new Error(data.error);
+    }
+    const cid = data.payload.userCartID;
+    console.log("cid ", cid);
+    const guardarProductos = async function () {
+      for (let i = 0; i < carrito.length; i++) {
+        const ruta = `/api/carts/${cid[0]}/product/${carrito[i].product}/?qty=${carrito[i].qty}`;
+        const guardarProducto = await fetch(ruta, {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+        });
+        const fetchResult = await guardarProducto.json();
+        console.log("fetch luego de guardar poducto ", fetchResult);
+        if (fetchResult.error) {
+          throw new Error(fetchResult.error);
+        }
       }
-    );
-    const fetchResult = await guardarProducto.json();
-    if (!fetchResult) {
-      throw new Error(
-        "Error interno de comunicación con la base de datos al tratar de cargar el producto"
-      );
+    };
+
+    await guardarProductos();
+
+    const fetchedCart = await fetch(`/api/carts/${cid[0]}/populate`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (fetchedCart.status != 200) {
+      throw new Error("no se pudo  traer la información del carrito elegido");
     }
-  });
-  await fetch(`/api/carts/${cid}`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((result) => {
-    if (result.status === 200) {
-      result.json().then((json) => {
-        // compile the template
-        const usersScriptHTML =
-          document.querySelector("#contenedorCarrito").innerHTML;
-        var template = Handlebars.compile(usersScriptHTML);
-        // execute the compiled template and print the output to the console
-        var compiledData = template(json);
-        console.log(compiledData);
-        document.querySelector(".contenedorCarrito").innerHTML = compiledData;
-      });
-    } else {
-      console.log(result);
-      alert("Error al conectar con el API.");
-    }
-  });
+
+    await dibujarCarrito(fetchedCart);
+
+    const pagar = document.querySelector("#pagar");
+    pagar.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      try {
+        await fetch(`/api/carts/${cid[0]}/purchase`, {
+          method: "GET",
+          headers: { "Content-type": "application/json" },
+        });
+
+        await Swal.fire({
+          title: "Gracias",
+          text: "Realizaste tu compra de forma exitosa. En breve te llegará un correo",
+        }).then((result) => {
+          window.location.replace("/catalogo");
+        });
+      } catch (e) {
+        await Swal.fire({
+          icon: "error",
+          text: `Lo sentimos, hubo un error al tratar de pagar. ${e.message} `,
+        });
+      }
+    });
+  } catch (e) {
+    return new Error("no se pudo guardar el carrito ", e.message);
+  }
 };
+
+const dibujarCarrito = async function (fetchedCart) {
+  const parsedCart = await fetchedCart.json();
+  if (!parsedCart) {
+    throw new Error("no se pudo  traer la información del carrito elegido");
+  }
+
+  const contenedor = document.querySelector(".contenedorCarrito");
+  const iterables = parsedCart.payload.cart;
+
+  let totalGeneral = 0;
+  iterables.forEach((iterable) => {
+    const cardProducto = document.createElement("div"); //contenedor exterior de cada cart
+    cardProducto.classList.add("producto");
+    const imagen = document.createElement("div");
+    imagen.classList.add("producto_imagen");
+
+    imagen.innerHTML =
+      iterable.product.thumb && iterable.product.thumb != ""
+        ? `<img
+src="/uploads/img/products/${iterable.product.thumb}"
+alt=${iterable.product.title}
+/>`
+        : `<img
+src="/uploads/img/products/sinfoto.jpg"
+alt="Imagen no disponible"
+/>`;
+
+    const nombre = document.createElement("div");
+    nombre.classList.add("producto_nombre");
+    nombre.innerHTML = `<p>${iterable.product.title}</p>`;
+
+    const cantidad = document.createElement("div");
+    cantidad.classList.add("producto_cantidad");
+    cantidad.innerHTML = `<p>${iterable.qty}</p>`;
+    const precioUnitario = document.createElement("div");
+    precioUnitario.innerHTML = `<p>${iterable.product.price}</p>`;
+    const totalRenglon = document.createElement("div");
+    const subtotal = iterable.product.price * iterable.qty;
+    totalGeneral += subtotal;
+    console.log(totalGeneral);
+    totalRenglon.innerHTML = `<p>${subtotal}</p>`;
+    cardProducto.append(imagen, nombre, cantidad, precioUnitario, totalRenglon);
+    contenedor.append(cardProducto);
+  });
+  const contenedorTotal = document.querySelector(".grandTotal");
+  contenedorTotal.innerHTML = `<p>${totalGeneral}</p>`;
+};
+compra();

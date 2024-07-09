@@ -7,8 +7,11 @@
   <div id="rol">Rol: <span class="datos">{{user.role}}</span> </div>
   <div class="email">Email: <span class="
   datos">{{user.email}}</span> </div>
-  <div class="carrito"></div>
-{{#if cookieCompra}}<div class="compra"><button>FINALIZAR COMPRA</button></div>{{/if}}
+
+{{#if cookieCompra}}<div class="compra"><button class="botonCompra">FINALIZAR COMPRA</button></div>
+{{else}}
+<div class="carrito"></div>
+{{/if}}
   <div><button id="logout">Desloguearme</button></div>
 
 </div>

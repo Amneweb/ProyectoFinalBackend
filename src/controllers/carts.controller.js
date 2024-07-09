@@ -24,6 +24,33 @@ export default class CartController {
       res.sendClientError(e.message);
     }
   };
+  getOneAndPopulate = async (req, res) => {
+    logger.method("getOneAndPopulate");
+    const user = req.user;
+    try {
+      const result = await this.#cartManager.getByIDAndPopulate(
+        req.params.cid,
+        user
+      );
+
+      res.sendSuccess(result);
+    } catch (e) {
+      logger.error("error enviado al cliente: %s", e.message);
+      res.sendClientError(e.message);
+    }
+  };
+  getUserCarts = async (req, res) => {
+    logger.method("getUserCarts");
+    const user = req.user;
+
+    try {
+      const carritos = await this.#cartManager.userCarts(user);
+      res.sendSuccess(carritos);
+    } catch (e) {
+      logger.error("error enviado al cliente: %s", e.message);
+      res.sendClientError(e.message);
+    }
+  };
   getCarts = async (req, res) => {
     req.logger.path(
       `Probando getCarts en req logger ${(req.method, req.path)}`
@@ -59,17 +86,20 @@ export default class CartController {
   addToCart = async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
+    const qty = req.query?.qty;
     const user = req.user;
     logger.debug(
       "Dentro del controlador de carritos. Id producto: %s; Id carrito: %s",
       pid,
-      cid
+      cid,
+      qty
     );
     try {
       const carritoModificado = await this.#cartManager.addProductToCartID(
         cid,
         pid,
-        user
+        user,
+        qty
       );
       logger.debug(
         "carrito modificado luego de agregado el producto: %j",

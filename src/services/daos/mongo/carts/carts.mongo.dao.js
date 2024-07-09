@@ -27,13 +27,14 @@ class CartDAO {
   findAndPopulate = async (id) => {
     return await this.#model
       .findById(id)
-      .populate("cart.product", ["stock", "price"]);
+      .populate("cart.product", ["stock", "price", "title", "thumb"]);
   };
 
   update = async (id, nuevoCarrito) => {
     return await this.#model.updateOne(
       { _id: id },
-      { $set: { cart: nuevoCarrito } }
+      { $set: { cart: nuevoCarrito } },
+      { new: true }
     );
   };
 

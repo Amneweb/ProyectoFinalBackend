@@ -1,6 +1,6 @@
 import CustomRouter from "./custom/custom.router.js";
 import UsersController from "../controllers/users.controller.js";
-import pc from "picocolors";
+
 import { uploader, validateUserFormData, agregarRuta } from "../utils/utils.js";
 
 export default class UsersRouter extends CustomRouter {

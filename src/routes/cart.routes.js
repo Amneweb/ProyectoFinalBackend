@@ -5,6 +5,12 @@ export default class CartsRouter extends CustomRouter {
   init() {
     const cartController = new CartController();
     this.get("/:cid", ["ADMIN", "USER", "PREMIUM"], cartController.getOne);
+    this.get(
+      "/:cid/populate",
+      ["ADMIN", "USER", "PREMIUM"],
+      cartController.getOneAndPopulate
+    );
+    this.get("/user/carts/", ["USER", "PREMIUM"], cartController.getUserCarts);
     this.get("/", ["ADMIN"], cartController.getCarts);
     this.post("/", ["USER", "PREMIUM"], cartController.postOne);
     this.post(

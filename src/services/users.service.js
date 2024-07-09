@@ -84,8 +84,19 @@ export default class UserService {
     if (!hayUsuario) {
       throw new BadRequestError("No se encontró usuario con ese email");
     }
+    console.log("hay usuario", hayUsuario);
+    console.log("value", value);
 
-    hayUsuario[filter] = value;
+    console.log("filter", filter);
+    if (filter === "userCartID") {
+      const carritos = hayUsuario.userCartID;
+
+      carritos.unshift(value.toString());
+
+      hayUsuario["userCartID"] = carritos;
+    } else {
+      hayUsuario[filter] = value;
+    }
 
     await hayUsuario.save();
 
@@ -138,27 +149,41 @@ export default class UserService {
     }
     user["userConnection"] = Date.now() + 600000;
     await user.save();
-
+    const arrayCarritos = user.userCartID;
+    logger.debug("cuantos carritos tiene el usuario %s", arrayCarritos.length);
     /*
     =========================================================================
     VERIFICO SI EL USUARIO TIENE ASOCIADO UN CARRITO INEXISTENTE Y LO BORRO
     =========================================================================
     */
-    if (user.userCartID.length > 0) {
+    if (arrayCarritos.length > 0) {
       let inexistentes = [];
-      let newCart = [];
-      user.userCartID.forEach(async (carrito) => {
-        const existe = await cartDAO.findByID(carrito);
-        if (!existe) {
-          inexistentes.push(carrito);
+
+      const generarInexistentes = async function () {
+        for (let i = 0; i < arrayCarritos.length; i++) {
+          const existe = await cartDAO.findByID(arrayCarritos[i]);
+          if (existe === null) {
+            inexistentes.push(arrayCarritos[i]);
+          }
         }
-      });
-      inexistentes.forEach((item) => {
-        const IDinexistente = user.userCartID.findIndex(item);
-        newCart = user.userCartID.splice(IDinexistente, 1);
-      });
-      user["userCartID"] = newCart;
-      await user.save();
+        return inexistentes;
+      };
+      const nulos = await generarInexistentes();
+
+      logger.debug("carritos del usuario que no existen");
+      logger.debug(nulos);
+      if (nulos.length > 0) {
+        nulos.forEach((item) => {
+          console.log(item);
+          const IDinexistente = arrayCarritos.indexOf(item);
+          console.log("id inex", IDinexistente);
+          arrayCarritos.splice(IDinexistente, 1);
+          console.log(arrayCarritos);
+        });
+        user["userCartID"] = arrayCarritos;
+        console.log("new cart ", arrayCarritos);
+        await user.save();
+      }
     }
 
     const tokenUser = {
