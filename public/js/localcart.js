@@ -82,7 +82,7 @@ guardar.addEventListener("click", async (e) => {
       reverseButtons: true,
       preConfirm: async () => {
         try {
-          const response = await fetch("/api/comprainiciada");
+          const response = await fetch("/api/purchase/comprainiciada");
           console.log(response);
           if (!response.ok) {
             return Swal.showValidationMessage(`

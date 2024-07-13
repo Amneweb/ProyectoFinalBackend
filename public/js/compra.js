@@ -81,17 +81,25 @@ const compra = async () => {
       e.preventDefault();
 
       try {
-        await fetch(`/api/carts/${cid[0]}/purchase`, {
+        const comprar = await fetch(`/api/carts/${cid[0]}/purchase`, {
           method: "GET",
           headers: { "Content-type": "application/json" },
         });
-
-        await Swal.fire({
-          title: "Gracias",
-          text: "Realizaste tu compra de forma exitosa. En breve te llegará un correo",
-        }).then((result) => {
-          window.location.replace("/catalogo");
-        });
+        const resultadoCompra = await comprar.json();
+        if (resultadoCompra) {
+          const fetchfinSesion = await fetch("/api/purchase/comprafinalizada");
+          const finSesion = await fetchfinSesion.json();
+          if (!finSesion) {
+            throw new Error("Error al finalizar la sesión");
+          }
+          localStorage.removeItem("windwardCart");
+          await Swal.fire({
+            title: "Gracias",
+            text: "Realizaste tu compra de forma exitosa. En breve te llegará un correo",
+          }).then((result) => {
+            window.location.replace("/catalogo");
+          });
+        }
       } catch (e) {
         await Swal.fire({
           icon: "error",

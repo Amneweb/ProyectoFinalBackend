@@ -38,6 +38,19 @@ class CartDAO {
     );
   };
 
+  updateAndChangeDate = async (id, nuevoCarrito) => {
+    return await this.#model.updateOne(
+      { _id: id },
+      {
+        $set: {
+          cart: nuevoCarrito,
+          createdAt: new Date(date.setMonth(date.getMonth() + 1)),
+        },
+      },
+      { new: true }
+    );
+  };
+
   delete = async (id) => {
     return await this.#model.deleteOne({ _id: id });
   };

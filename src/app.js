@@ -20,6 +20,7 @@ import EmailRouter from "./routes/email.routes.js";
 import UsersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
 import { operacion, formatear, comparar } from "./utils/hb-helpers.js";
+import purchaseRouter from "./routes/purchase.routes.js";
 import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
 const app = express();
 
@@ -69,6 +70,7 @@ app.use("/api/categories", categoriesRouter.getRouter());
 const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
 app.use("/api/mockproducts/", mockRouter);
+app.use("/api/purchase/", purchaseRouter);
 const documentationRouter = new DocumentationRouter();
 app.use("/api/documentation", documentationRouter.getRouter());
 
@@ -78,22 +80,9 @@ app.get("/loggertest", (req, res) => {
 
   res.send("Prueba de logger!");
 });
-app.get("/api/comprainiciada", (req, res) => {
-  res
-    .cookie(
-      "WWcompraIniciada",
-      { status: "ok", tiempo: new Date() },
-      {
-        maxAge: 600000, //milliseconds
-        httpOnly: true,
-        signed: true,
-      }
-    )
-    .send({ message: "la cookie fue creada" });
-});
 
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
-//FIXME:
+
 app.get("*", (req, res) => {
   res.status(400).render(`404`, { style: "admin.css" });
 });

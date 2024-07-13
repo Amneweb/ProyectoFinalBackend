@@ -290,7 +290,7 @@ class CartManager {
     });
 
     if (carritoRemanente.length > 0) {
-      await cartDAO.update(cid, carritoRemanente);
+      await cartDAO.updateAndChangeDate(cid, carritoRemanente);
     } else {
       await this.userDAO.update(user.email);
       await cartDAO.delete(cid);
