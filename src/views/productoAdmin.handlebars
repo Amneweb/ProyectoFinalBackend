@@ -100,18 +100,8 @@
     <h2>Subir imagen de producto</h2>
     <form
       id="subirImagen"
-      action="/api/products/imagenes/"
-      method="POST"
-      enctype="multipart/form-data"
     >
-      <label for="IDproductoImagen">ID del producto a modificar</label>
-      <input
-        type="text"
-        id="IDproducto"
-        name="IDproducto"
-        class="IDproductoModificar"
-        value=""
-      />
+      
       <label for="thumb">Seleccionar archivo</label>
       <input type="file" name="imagen" id="imagen" />
       <input type="submit" value="enviar" />

@@ -246,3 +246,33 @@ bannerAsignadas.addEventListener("click", async (e) => {
     });
   }
 });
+
+const subirImagen = document.querySelector("#subirImagen");
+subirImagen.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const id = document.querySelector("#idproducto").innerHTML;
+
+  const bodyData = new FormData(subirImagen);
+
+  try {
+    const response = await fetch(`/api/products/${id}/imagenes`, {
+      method: "PUT",
+      body: bodyData,
+    });
+    await response.json();
+
+    Swal.fire({
+      title: "👍",
+      text: "La imagen se cargó existosamente",
+      position: "top-end",
+      showConfirmButton: true,
+    });
+  } catch (e) {
+    Swal.fire({
+      title: "Oops",
+      text: "Hubo un error y no se pudo cargar la imagen",
+      position: "top-end",
+      showConfirmButton: true,
+    });
+  }
+});
