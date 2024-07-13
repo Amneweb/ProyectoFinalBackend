@@ -40,6 +40,11 @@ a.admin {
   border-radius: 5px;
   text-decoration: none;
 }
+p,
+h2,
+h1 {
+  margin: 2rem 0;
+}
 
 div {
   margin: 1em;
@@ -273,6 +278,7 @@ section {
   display: flex;
   flex: 1;
   justify-content: center;
+  position: relative;
 }
 
 .producto_cantidad button {
@@ -311,6 +317,19 @@ section {
   border-radius: 5px;
   background-color: white;
 }
+.usuario p {
+  margin: 0;
+}
+.usuario a {
+  color: black;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-style: dashed;
+}
+.usuario a:hover {
+  text-decoration-style: wavy;
+}
+
 .github {
   background-color: gray;
   padding: 0.3rem;
@@ -347,5 +366,45 @@ div.min {
   color: var(--naranja);
 }
 .oculta {
+  display: none;
+}
+
+.producto_cantidad .tooltip {
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+
+  transition: opacity 0.3s;
+  font-size: 0.7rem;
+}
+
+/* Tooltip arrow */
+.producto_cantidad .tooltip::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.visible {
+  display: block;
+}
+.invisible {
   display: none;
 }

@@ -32,3 +32,33 @@ a {
 section {
   padding: 0 100px;
 }
+.spinner {
+  width: 4rem;
+  height: 4rem;
+  border: 0.5rem solid;
+  border-color: var(--naranja) transparent var(--naranja) transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: #000000ae;
+  z-index: 1;
+}

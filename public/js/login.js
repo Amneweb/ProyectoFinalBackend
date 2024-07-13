@@ -39,3 +39,18 @@ loginForm.addEventListener("submit", async (e) => {
     });
   }
 });
+const contarCantidades = () => {
+  let valor;
+  const carrito =
+    localStorage.getItem("windwardCart") &&
+    JSON.parse(localStorage.getItem("windwardCart"));
+  if (carrito) {
+    valor = carrito.map((item) => item.qty).reduce((acum, item) => acum + item);
+  } else {
+    valor = 0;
+  }
+  let cantidad = document.querySelector("#contador");
+
+  cantidad.innerHTML = valor;
+};
+contarCantidades();

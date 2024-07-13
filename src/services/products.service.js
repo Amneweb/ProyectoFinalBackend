@@ -80,7 +80,7 @@ export default class ProductManager {
     if (role.toUpperCase() != "ADMIN") {
       await validateOwnership(id, email);
     }
-    logger.silly("pasó todos los controles");
+    logger.silly("pasó todos los controles para actualizar categoría");
     const existente = await productDAO.findByID(id);
     if (!existente) {
       throw new BadRequestError("no existe ningún producto con ese ID");
@@ -94,6 +94,18 @@ export default class ProductManager {
     return await productDAO.update(id, {
       ...existente,
       category: arrayCategorias,
+    });
+  };
+
+  updateStock = async (id, stock) => {
+    const existente = await productDAO.findByID(id);
+    if (!existente) {
+      throw new BadRequestError("no existe ningún producto con ese ID");
+    }
+
+    return await productDAO.update(id, {
+      ...existente,
+      stock: stock,
     });
   };
 

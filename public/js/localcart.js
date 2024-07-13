@@ -100,7 +100,7 @@ guardar.addEventListener("click", async (e) => {
     }).then((result) => {
       if (result.isConfirmed) {
         if (logueado) {
-          location.replace("/users/currentUser");
+          location.replace("/compra");
         } else {
           Swal.fire({
             title: "👤",
@@ -118,22 +118,6 @@ guardar.addEventListener("click", async (e) => {
     });
   }
 });
-/*
-const setearCookie = async () => {
-  const cookie = await fetch("/api/comprainiciada");
-  const parsed = await cookie.json();
-  console.log("parsed", parsed);
-  if (!parsed)
-    throw new Error("no se pudo generar la cookie de sesión de compra");
-  if (logueado) {
-    location.replace("/users/currentUser");
-  } else {
-    Swal.fire({
-      title: "👤",
-      text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
-    }).then((result) => location.replace("/users/login"));
-  }
-};*/
 
 const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", (e) => {
@@ -167,7 +151,7 @@ const dibujarCard = (datos, qty) => {
       />
   </div>`;
   divProducto.innerHTML += `<div class="producto_nombre"><p>${datos.title}</p></div>
-  <div class="producto_cantidad"><button class="modificarQTY" id="godown_${datos._id}">&#9660</button><p class="qty${datos._id}">
+  <div class="producto_cantidad"><span class="invisible" id="stock_${datos._id}">${datos.stock}</span><span class="tooltip invisible" id="tool_${datos._id}"></span><button class="modificarQTY" id="godown_${datos._id}">&#9660</button><p class="qty${datos._id}">
     ${qty}</p>
   </input><button class="modificarQTY" id="goup_${datos._id}">&#9650</button></div>
   <div id="unitario_${datos._id}">${datos.price}</div><div class="total" id="total_${datos._id}">${total}</div>
@@ -182,6 +166,7 @@ const dibujarCard = (datos, qty) => {
 
 divProductos.addEventListener("click", (e) => {
   e.preventDefault();
+  if (e.target.classList.contains("borrar")) borrarProducto();
   const operacion_id = e.target.id;
 
   const operacion = operacion_id.split("_")[0];
@@ -212,23 +197,45 @@ const modificarCarrito = (id, operacion) => {
       let precioUnitario = parseInt(
         document.querySelector(`#unitario_${id}`).innerHTML
       );
-      console.log("precio ", precioUnitario);
+      let stock = parseInt(document.querySelector(`#stock_${id}`).innerHTML);
       let qty = parseInt(document.querySelector(`.qty${id}`).innerHTML);
-      carrito.splice(existe, 1);
-      const newQty = operacion === "goup" ? qty + 1 : qty - 1;
-      carrito.push({
-        product: id,
-        qty: newQty,
-      });
-      document.querySelector(`.qty${id}`).innerHTML = newQty;
-      document.querySelector(`#total_${id}`).innerHTML =
-        precioUnitario * newQty;
 
-      document.querySelector(".grandTotal").innerHTML = calcularTotal();
+      const newQty = operacion === "goup" ? qty + 1 : qty - 1;
+      console.log("newQty", newQty);
+      if (newQty >= 1 && newQty <= stock) {
+        carrito.splice(existe, 1);
+        carrito.push({
+          product: id,
+          qty: newQty,
+        });
+        document.querySelector(`.qty${id}`).innerHTML = newQty;
+        document.querySelector(`#total_${id}`).innerHTML =
+          precioUnitario * newQty;
+        document.querySelector(".grandTotal").innerHTML = calcularTotal();
+      } else {
+        const tooltip = document.querySelector(`#tool_${id}`);
+        setTimeout(function () {
+          tooltip.classList.remove("visible");
+          tooltip.classList.add("invisible");
+        }, 2000);
+        tooltip.innerHTML = "Llegaste al máximo de stock";
+        tooltip.classList.remove("invisible");
+        tooltip.classList.add("visible");
+      }
     }
 
     localStorage.setItem("windwardCart", JSON.stringify(carrito));
+    contarCantidades();
   } catch (e) {
     console.log("Error al tratar de modificar la cantidad ", e.message);
   }
 };
+const contarCantidades = () => {
+  const valor = carrito
+    .map((item) => item.qty)
+    .reduce((acum, item) => acum + item);
+  let cantidad = document.querySelector("#contador");
+  console.log(valor);
+  cantidad.innerHTML = valor;
+};
+contarCantidades();

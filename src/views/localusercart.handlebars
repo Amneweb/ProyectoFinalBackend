@@ -4,17 +4,16 @@
 {{#if logueado}}
 {{> user}}
  {{else}}
-      <p>Aun no estás logueado. Click
-        <a href="/users/login">aquí</a>
-        si querés loguearte</p>
+
+      <div class="usuario">
+        <p>Aun no estás logueado. Click
+          <a href="/users/login">aquí</a>
+          si querés loguearte</p>
+      </div>
   {{/if}}
   <h1>Bienvenido a Windward Car &amp; Truck Battery Store</h1>
-  <h2>Este es tu carrito de compras SIN GUARDAR</h2>
-  <p>Tené en cuenta que este carrito aun no está guardado en nuestros registros
-    y podría perderse la información para la próxima vez que entres a nuestra
-    página. Si querés asegurarte de guardar el carrito para una compra más
-    adelante, hacé click en el botón GUARDAR. Si no estás logueado, te llevará
-    primero al sistema de login y registro.</p>
+  <h2>Este es tu carrito de compras PROVISORIO</h2>
+  <p>Hacé click en el botón INICIAR COMPRA de más abajo. Si aún no sos usuario registrado, o no estás logueado, te pediremos que completes unos datos para poder enviarte el comprobante de pago.</p>
   <button id="borrarCarrito">Borrar carrito ❌</button>
 <div class="grandTotal"></div>
   <div class="contenedorCarrito">

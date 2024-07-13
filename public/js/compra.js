@@ -2,6 +2,14 @@ const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 console.log("carrito ", carrito);
 
 const deslogueo = document.querySelector("#logout");
+const loaderContainer = document.querySelector(".loader-container");
+const displayLoading = () => {
+  loaderContainer.style.display = "block";
+};
+
+const hideLoading = () => {
+  loaderContainer.style.display = "none";
+};
 deslogueo.addEventListener("click", async (e) => {
   e.preventDefault();
 
@@ -98,6 +106,7 @@ const compra = async () => {
 
 const dibujarCarrito = async function (fetchedCart) {
   const parsedCart = await fetchedCart.json();
+  hideLoading();
   if (!parsedCart) {
     throw new Error("no se pudo  traer la información del carrito elegido");
   }
@@ -144,3 +153,12 @@ alt="Imagen no disponible"
   contenedorTotal.innerHTML = `<p>${totalGeneral}</p>`;
 };
 compra();
+const contarCantidades = () => {
+  const valor = carrito
+    .map((item) => item.qty)
+    .reduce((acum, item) => acum + item);
+  let cantidad = document.querySelector("#contador");
+  console.log(valor);
+  cantidad.innerHTML = valor;
+};
+contarCantidades();

@@ -1,19 +1,22 @@
 {{> nav}}
 
 <section class="encabezado"><h2>Windward Car &amp; Truck Battery Store</h2>
-  <h1>{{result.title}}</h1></section>
+  <h1 class="nombre_producto">{{result.title}}</h1>
+  </section>
 <section>
   <div class="card-detalle">
 
-    <div> {{formatear result.price}}</div>
-    <div>{{result.description}} </div>
-    <div>{{result.code}}</div>
-    <div>{{result.stock}}</div>
-    <div>{{#if result.thumb}} <img src="/uploads/img/products/{{result.thumb}}" />{{else}}
+    <div class="precio item"><p class="small">Precio unitario</p><p class="ppal">{{formatear result.price}}</p></div>
+    <div class="descripcion item"><p class="small">Descripción</p><p class="ppal">{{result.description}}</p> </div>
+    <div class="cantidad item"><p class="small">Cantidad elegida</p><p class="ppal">cantidad</p></div>
+    <div class="stock item"><p class="small">Stock</p><p class="ppal">{{result.stock}}</p></div>
+    <div class="sku item"><p class="small">SKU</p> <p class="ppal">{{result.code}}</p></div>
+    <div class="foto">{{#if result.thumb}} <img src="/uploads/img/products/{{result.thumb}}" />{{else}}
         <img
           src="/uploads/img/products/sinfoto.jpg"
           alt="Producto sin foto"
         />{{/if}} </div>
+        <div class="boton item"><button>Agregar al carrito</button></div>
   </div>
 
 </section>

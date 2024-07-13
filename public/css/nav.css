@@ -7,7 +7,7 @@
 ul.navigation {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   overflow: hidden;
   background-color: #333;
   display: flex;
@@ -57,4 +57,21 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.icono {
+  position: relative;
+}
+.icono.cart span {
+  position: absolute;
+  content: "0";
+  top: -5px;
+  left: 100%;
+  width: 15px;
+  height: 15px;
+  background-color: var(--verde-agua);
+  border-radius: 50%;
+  color: black;
+  font-size: 0.6rem;
+  text-align: center;
 }

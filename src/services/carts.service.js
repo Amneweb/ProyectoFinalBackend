@@ -279,9 +279,12 @@ class CartManager {
           qty: compra - stock,
         });
         order.push({ product: producto._id, qty: stock });
+        productDAO.updateStock(producto.product._id, 0);
+
         amount += stock * precio;
       } else {
         order.push({ product: producto._id, qty: compra });
+        productDAO.updateStock(producto.product._id, stock - compra);
         amount += precio * compra;
       }
     });
