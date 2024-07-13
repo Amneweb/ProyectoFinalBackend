@@ -19,7 +19,7 @@ import UsersRouter from "./routes/user.routes.js";
 import EmailRouter from "./routes/email.routes.js";
 import UsersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
-
+import { operacion, formatear, comparar } from "./utils/hb-helpers.js";
 import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
 const app = express();
 
@@ -30,42 +30,11 @@ app.set("view engine", "handlebars");
 
 const handlebarsCreate = handlebars.create({});
 
-handlebarsCreate.handlebars.registerHelper("formatear", function (amount) {
-  const formateado = new Intl.NumberFormat("es-AR", {
-    style: "currency",
-    currency: "ARS",
-  }).format(amount);
-  return formateado;
+handlebarsCreate.handlebars.registerHelper({
+  formatear: formatear,
+  comparar: comparar,
+  operacion: operacion,
 });
-handlebarsCreate.handlebars.registerHelper(
-  "comparar",
-  function (first, operation, second) {
-    if (eval(first + operation + second)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-);
-handlebarsCreate.handlebars.registerHelper(
-  "operacion",
-  function (first, second, operacion) {
-    let resultado;
-    switch (operacion) {
-      case "producto":
-        resultado = first * second;
-        break;
-      case "suma":
-        resultado = first + second;
-        break;
-      case "resta":
-        resultado = first - second;
-
-        break;
-    }
-    return resultado;
-  }
-);
 
 app.use(express.static(__dirname + "/public"));
 
