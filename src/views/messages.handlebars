@@ -1,17 +1,18 @@
 {{> nav}}
-<div>
-  <h1>Bienvenido al chat de servicio al cliente</h1>
-  <h2>Nombre:
-    <span id="nombreUsuario"></span>
-  </h2>
+<div class="container">
+  <h1>Hola, <span id="nombreUsuario"></span>. Bienvenido/a al chat de servicio al cliente</h1>
+<div><p class="derecha">NOTA: scroll hacia arriba para ver mensajes anteriores</p></div>
+  <div class="contenedorChat">
+    <div class="
+    areadetexto">
+      <p> Mensaje: <input id="chatBox" type="text" rows="6" /></p>
+      <button id="closeChatBox">Cerrar Chat</button>
 
-  <div>
-    <p> Mensaje: <input id="chatBox" type="text" /></p>
-    <button id="closeChatBox">Cerrar Chat</button>
-  </div>
-
-  <div>
-    <p id="messageLogs"></p>
+    </div>
+    <div class="logs">
+      <div id="messageLogs">
+      </div>
+    </div>
   </div>
 
 </div>

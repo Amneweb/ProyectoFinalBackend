@@ -19,7 +19,12 @@ import UsersRouter from "./routes/user.routes.js";
 import EmailRouter from "./routes/email.routes.js";
 import UsersViewsRouter from "./routes/user.views.routes.js";
 import mockRouter from "./routes/mock.routes.js";
-import { operacion, formatear, comparar } from "./utils/hb-helpers.js";
+import {
+  operacion,
+  formatear,
+  comparar,
+  dateFormat,
+} from "./utils/hb-helpers.js";
 import purchaseRouter from "./routes/purchase.routes.js";
 import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
 const app = express();
@@ -35,6 +40,7 @@ handlebarsCreate.handlebars.registerHelper({
   formatear: formatear,
   comparar: comparar,
   operacion: operacion,
+  dateFormat: dateFormat,
 });
 
 app.use(express.static(__dirname + "/public"));

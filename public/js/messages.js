@@ -1,16 +1,17 @@
+const carrito =
+  JSON.parse(localStorage.getItem("windwardCart")) &&
+  JSON.parse(localStorage.getItem("windwardCart"));
 const socket = io();
 let user;
 const chatBox = document.querySelector("#chatBox");
 
 Swal.fire({
-  icon: "info",
-  title: "Bienvenido a nuestro chatbot",
+  title: "👋 ¡Bienvenido!",
   input: "text",
-  text: "Para empezar, por favor ingresá tu nombre",
-  color: "#cc33cc",
+  text: "Gracias por usar nuestro chat. Para empezar, por favor ingresá tu nombre.",
   inputValidator: (value) => {
     if (!value) {
-      return "Necesitas escribir tu username para continuar!!";
+      return "¡Necesitás ingresar tu nombre de usuario para continuar!";
     } else {
       socket.emit("userConnected", { user: value });
     }
@@ -33,8 +34,7 @@ chatBox.addEventListener("keyup", (event) => {
       chatBox.value = "";
     } else {
       Swal.fire({
-        icon: "warning",
-        title: "Alert",
+        title: "Oops",
         text: "El mensaje debe tener algo de texto",
       });
     }
@@ -47,7 +47,7 @@ socket.on("messageLogs", (data) => {
   const messageLogs = document.querySelector("#messageLogs");
   let logs = "";
   data.forEach((log) => {
-    logs += `<b>${log.user}</b> dice: ${log.message}<br/>`;
+    logs += `<p class="messageuser">${log.user}:</p> <p class="messagebox">${log.message}</p>`;
   });
   messageLogs.innerHTML = logs;
 });
@@ -55,20 +55,34 @@ socket.on("messageLogs", (data) => {
 // 2da - parte
 // Aqui escuchamos los nuevos usuarios que se conectan al chat\
 socket.on("userConnected", (data) => {
-  let message = `Nuevo usuario conectado ${data}`;
+  let message = `Nuevo usuario conectado: ${data.toUpperCase()}`;
   Swal.fire({
-    icon: "info",
-    title: "Démosle la bienvenida al nuevo usuario",
-    text: message,
+    title: message,
+    text: "🤩 Démosle la bienvenida",
     toast: true,
-    color: "#cc33cc",
   });
 });
 
 // close chatBox
 const closeChatBox = document.querySelector("#closeChatBox");
 closeChatBox.addEventListener("click", (event) => {
-  alert("Gracias por usar este chat, Adios!!");
+  Swal.fire({
+    title: "Hasta la próxima",
+    text: "Gracias por usar nuestro chat, nos vemos pronto",
+    toast: true,
+  });
   socket.emit("closeChat", { close: "close" });
   messageLogs.innerHTML = "";
 });
+
+const contarCantidades = () => {
+  const valor = carrito
+    .map((item) => item.qty)
+    .reduce((acum, item) => acum + item);
+  let cantidad = document.querySelector("#contador");
+  console.log(valor);
+  cantidad.innerHTML = valor;
+};
+if (carrito) {
+  contarCantidades();
+}

@@ -74,7 +74,7 @@ const compra = async () => {
     const pagar = document.querySelector("#pagar");
     pagar.addEventListener("click", async (e) => {
       e.preventDefault();
-
+      displayLoading();
       try {
         const comprar = await fetch(`/api/carts/${cid[0]}/purchase`, {
           method: "POST",
@@ -83,6 +83,8 @@ const compra = async () => {
           },
         });
         const resultadoCompra = await comprar.json();
+        console.log("resultado de compra");
+        console.log(resultadoCompra);
         if (resultadoCompra) {
           const fetchfinSesion = await fetch("/api/purchase/comprafinalizada");
           const finSesion = await fetchfinSesion.json();
@@ -90,6 +92,7 @@ const compra = async () => {
             throw new Error("Error al finalizar la sesión");
           }
           localStorage.removeItem("windwardCart");
+          hideLoading();
           await Swal.fire({
             title: "Gracias",
             text: "Realizaste tu compra de forma exitosa. En breve te llegará un correo",

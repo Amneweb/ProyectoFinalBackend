@@ -38,7 +38,7 @@ export default class UserService {
       userConnection: { $lte: limiteinferior },
     });
     result.forEach((usuario) => {
-      console.log("logoutt en miliseconds", usuario.userConnection.getTime());
+      console.log("logout en miliseconds", usuario.userConnection.getTime());
     });
     return result;
   };

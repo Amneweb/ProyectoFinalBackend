@@ -1,8 +1,16 @@
 const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 console.log("carrito ", carrito);
 const divProductos = document.querySelector(".contenedorCarrito");
-const botonAgregar =
-  document.querySelector(".agregar") && document.querySelector(".agregar");
+const guardar = document.querySelector("#guardar");
+const borrarCarrito = document.getElementById("borrarCarrito");
+if (!carrito) {
+  guardar.style.display = "none";
+  borrarCarrito.style.display = "none";
+}
+if (!carrito)
+  divProductos.innerHTML =
+    "<h2 class='sinproductos'>Aun no agregaste productos a tu carrito. ¿Qué esperás para elegir? 🤭</h2>";
+
 function formatear(amount) {
   const formateado = new Intl.NumberFormat("es-AR", {
     style: "currency",
@@ -62,7 +70,6 @@ INICIAMOS PROCESO DE COMPRA Y CREAMOS UNA COOKIE
 ========================================================================
 */
 
-const guardar = document.querySelector("#guardar");
 guardar.addEventListener("click", async (e) => {
   e.preventDefault();
 
@@ -119,7 +126,6 @@ guardar.addEventListener("click", async (e) => {
   }
 });
 
-const borrarCarrito = document.getElementById("borrarCarrito");
 borrarCarrito.addEventListener("click", (e) => {
   e.preventDefault();
   localStorage.removeItem("windwardCart");

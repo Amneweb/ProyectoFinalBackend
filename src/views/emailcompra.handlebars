@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>Confirmación de compra</h1>
+  <p>
+    Gracias por comprar en Windward. Acá te dejamos los detalles de tu compra.
+  </p>
+  <p><strong>Código:</strong>{{this.ticket.code}} </p>
+  <p><strong>
+      Fecha:
+    </strong>{{this.fecha}}
+  </p>
+  <p><strong>Total:</strong> {{source.ticket.amount}} </p>
+  <h3>Estos son los productos que compraste</h3>
+  <div class="min"></div>
+  <div class="min"></div>
+  <div class="min"></div>
+  <div class="min">Precio unitario</div>
+  <div class="min">Total producto</div>
+  <div class="min"></div>
+  {{#each source.carrito}}
+    {{#if this.product.thumb}}
+      <div class="producto_imagen">
+        <img
+          src="/uploads/img/products/{{this.product.thumb}}"
+          alt="${datos.title}"
+        />
+      </div>
+    {{else}}
+      <div class="producto_imagen">
+        <img
+          src="/uploads/img/products/sinfoto.jpg"
+          alt="Imagen no disponible"
+        />
+      </div>
+
+    {{/if}}
+
+    <div class="producto_nombre">
+      <p>{{this.product.title}} </p>
+    </div>
+    <div class="producto_cantidad">
+      <p>{{this.qty}} </p>
+    </div>
+    <div><p>{{formatear this.product.price}}</p> </div>
+    <div class="total">
+      <p>{{formatear (operacion this.product.price this.qty "producto")}}</p>
+    </div>
+
+  {{/each}}
+</div>

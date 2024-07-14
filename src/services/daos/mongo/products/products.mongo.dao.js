@@ -53,5 +53,17 @@ class ProductDAO {
 
     return result;
   };
+  updateByFilter = async (id, filters) => {
+    console.log("en dao de productto");
+
+    console.log(id);
+    console.log(filters);
+    await this.#model.findOneAndUpdate(
+      {
+        _id: id,
+      },
+      { $set: { ...filters } }
+    );
+  };
 }
 export default ProductDAO;

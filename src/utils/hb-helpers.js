@@ -29,3 +29,6 @@ export function operacion(first, second, operacion) {
   }
   return resultado;
 }
+export function dateFormat(date) {
+  return date.toLocaleDateString("es-AR");
+}

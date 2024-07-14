@@ -1,5 +1,9 @@
 import { cartDAO, productDAO } from "./factory.js";
 import TicketDAO from "./daos/mongo/tickets/tickets.mongo.dao.js";
+import __dirname from "../../dirname.js";
+import fs from "fs";
+import handlebars from "handlebars";
+
 import { BadRequestError } from "../utils/errors.js";
 import { v4 as uuidv4 } from "uuid";
 import { validateId, validateCartOwnership } from "./validators.service.js";
@@ -269,7 +273,7 @@ class CartManager {
 
     console.log("carrito comprado ", carritoComprado.cart);
 
-    carritoComprado.cart.forEach((producto) => {
+    carritoComprado.cart.forEach(async (producto) => {
       const stock = producto.product.stock;
       const precio = producto.product.price;
       const compra = producto.qty;
@@ -278,13 +282,17 @@ class CartManager {
           product: producto._id,
           qty: compra - stock,
         });
-        order.push({ product: producto._id, qty: stock });
-        productDAO.updateStock(producto.product._id, 0);
+        order.push({ product: producto.product._id, qty: stock });
+
+        await productDAO.updateByFilter(producto.product._id, { stock: 0 });
 
         amount += stock * precio;
       } else {
-        order.push({ product: producto._id, qty: compra });
-        productDAO.updateStock(producto.product._id, stock - compra);
+        order.push({ product: producto.product._id, qty: compra });
+
+        await productDAO.updateByFilter(producto.product._id, {
+          stock: stock - compra,
+        });
         amount += precio * compra;
       }
     });
@@ -306,8 +314,26 @@ class CartManager {
     console.log(pc.bgRed("ticket a enviar"));
 
     const ticketCreado = await this.ticketDAO.create(ticket);
+    const template = fs.readFileSync(
+      `${__dirname}/src/views/emailcompra.handlebars`,
+      "utf8"
+    );
+    console.log("template lo que se puede");
+    console.log(template);
+    const compiled = handlebars.compile(template);
+    console.log("compiled");
+    console.log(compiled);
+    const source = {
+      ticket: ticket,
+      carrito: carritoComprado.cart,
+      fecha: new Date(),
+    };
+    console.log("data");
+    console.log(source);
+    const html = compiled(source);
+    console.log(html);
 
-    const html = `<div><h3> Código de tu compra: ${ticketCreado.code} </h3><p>Total de la compra: ${ticketCreado.amount}</p><p>Fecha de compra: ${ticketCreado.purchase_datetime} </p></div>`;
+    /*const html = `<div><h3> Código de tu compra: ${ticketCreado.code} </h3><p>Total de la compra: ${ticketCreado.amount}</p><p>Fecha de compra: ${ticketCreado.purchase_datetime} </p></div>`;*/
     const mailOptions = {
       to: ticketCreado.purchaser,
       subject: "Gracias por comprar en Baterías Windward",

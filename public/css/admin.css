@@ -409,3 +409,57 @@ div.min {
 .invisible {
   display: none;
 }
+.contenedorChat {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+.areadetexto input {
+  width: 90%;
+}
+div.swal2-container {
+  margin: 0;
+}
+.messagebox {
+  width: 90%;
+  background-color: white;
+  border: var(--naranja) solid 1px;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+.messageuser {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+  padding-left: 0.5rem;
+  font-weight: bold;
+  color: var(--naranja);
+}
+
+#messageLogs {
+  width: 100%;
+}
+
+.logs {
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 60vh;
+  width: 100%;
+  border: solid 1px var(--bermellon);
+}
+.derecha {
+  text-align: right;
+  margin-bottom: 0;
+}
+#nombreUsuario {
+  color: var(--violeta);
+}
+.sinproductos {
+  text-align: center;
+  background-color: white;
+  border: 1px solid #91a3b0;
+  padding: 3rem;
+  border-radius: 1rem;
+}

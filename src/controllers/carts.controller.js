@@ -143,12 +143,9 @@ export default class CartController {
     }
   };
   purchase = async (req, res) => {
+    console.log("en controlador purchase iniciado");
     const user = req.user;
     const cid = req.params.cid;
-    console.log("req completo ", req.params);
-    console.log("en controller purchase");
-    console.log(pc.bgGreen("req user " + req.user.email));
-    console.log(pc.bgYellow("req id" + req.params.cid));
     try {
       const ticket = await this.#cartManager.purchase(user, cid);
 
