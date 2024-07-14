@@ -3,12 +3,19 @@
   --naranja: #fa7203;
   --rojo: #e30622;
   --bermellon: #d10624;
+  --violeta: #634267;
+}
+nav {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
 }
 ul.navigation {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: var(--violeta);
   display: flex;
   justify-content: space-evenly;
   align-items: center;

@@ -134,6 +134,7 @@ borrarCarrito.addEventListener("click", (e) => {
 const dibujarCard = (datos, qty) => {
   const divProducto = document.createElement("div");
   const total = datos.price * qty;
+  divProducto.id = `div_${datos._id}`;
 
   divProducto.classList.add("producto");
   divProducto.innerHTML = `<div class="min"></div><div class="min"></div><div class="min"></div><div class="min">Precio unitario</div><div class="min">Total producto</div><div class="min"></div>`;
@@ -166,12 +167,15 @@ const dibujarCard = (datos, qty) => {
 
 divProductos.addEventListener("click", (e) => {
   e.preventDefault();
-  if (e.target.classList.contains("borrar")) borrarProducto();
-  const operacion_id = e.target.id;
+  if (e.target.classList.contains("borrar")) {
+    borrarProducto(e.target.id);
+  } else {
+    const operacion_id = e.target.id;
 
-  const operacion = operacion_id.split("_")[0];
-  const id = operacion_id.split("_")[1];
-  modificarCarrito(id, operacion);
+    const operacion = operacion_id.split("_")[0];
+    const id = operacion_id.split("_")[1];
+    modificarCarrito(id, operacion);
+  }
 });
 const calcularTotal = () => {
   const todos = document.querySelectorAll(".total");
@@ -218,7 +222,11 @@ const modificarCarrito = (id, operacion) => {
           tooltip.classList.remove("visible");
           tooltip.classList.add("invisible");
         }, 2000);
-        tooltip.innerHTML = "Llegaste al máximo de stock";
+
+        tooltip.innerHTML =
+          newQty < 1
+            ? "Para borrar este producto hacé click en el botón de la derecha"
+            : "Llegaste al máximo de stock";
         tooltip.classList.remove("invisible");
         tooltip.classList.add("visible");
       }
@@ -230,6 +238,23 @@ const modificarCarrito = (id, operacion) => {
     console.log("Error al tratar de modificar la cantidad ", e.message);
   }
 };
+const borrarProducto = function (id) {
+  try {
+    const lugar = carrito.findIndex((item) => item.product === id);
+    carrito.splice(lugar, 1);
+    localStorage.setItem("windwardCart", JSON.stringify(carrito));
+    const divSeleccionada = document.querySelector(`#div_${id}`);
+    divProductos.removeChild(divSeleccionada);
+    document.querySelector(".grandTotal").innerHTML = calcularTotal();
+    contarCantidades();
+  } catch (e) {
+    throw new Error(
+      "error de lectura de datos, no se pudo modificar el carrito",
+      e.message
+    );
+  }
+};
+
 const contarCantidades = () => {
   const valor = carrito
     .map((item) => item.qty)

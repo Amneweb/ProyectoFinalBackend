@@ -6,7 +6,7 @@
   left: 50%;
   transform: translateY(-50%) translateX(-50%);
   background-color: white;
-  border: #91a3b0 solid 1px;
+  border: var(--naranja) solid 1px;
   border-radius: 10px;
   padding: 30px;
   display: flex;

@@ -32,7 +32,7 @@ export default class ViewsRouter extends CustomRouter {
      *  dominio.../index.html Home page
      *  =========================================
      */
-    this.get("/", ["PUBLIC"], productController.getAll);
+    this.get("/", ["PUBLIC"], productController.index);
     /*
      *  ===============================================================
      *  dominio.../admin/catalogo Vista de productos al administrador

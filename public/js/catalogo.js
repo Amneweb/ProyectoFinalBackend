@@ -1,22 +1,16 @@
 let storage =
   localStorage.getItem("windwardCart") && localStorage.getItem("windwardCart"); //guarda el ID del carrito
 const CARRITO = document.querySelector("#carritoEnCatalogo");
-console.log("storage");
-console.log(storage);
+
 let carrito;
 if (storage) {
   carrito = JSON.parse(storage);
-  CARRITO.innerHTML = `Hay un carrito borrador abierto <a href="/localstorage">VER 👉</a>`;
-  console.log("carrito existente");
-  console.log(carrito);
+  CARRITO.classList.remove("invisible");
 } else {
   carrito = [];
-  console.log("carrito nuevo");
-  console.log(carrito);
 }
 
 const botonesAgregar = document.querySelectorAll(".agregar");
-//verifico si el usuario está logueado
 
 botonesAgregar.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
@@ -25,21 +19,19 @@ botonesAgregar.forEach((boton) => {
       crearCarrito();
     }
     const productID = e.target.id;
-    //si está logueado, uso esta función
-    //await productoAlCarrito(productID);
-    //si no está logueado uso esta
+
     productoAlStorage(productID);
+    contarCantidades();
+    CARRITO.classList.remove("invisible");
   });
 });
 
 const crearCarrito = () => {
-  console.log("en crear Carrito");
   localStorage.setItem("windwardCart", JSON.stringify(carrito));
 };
 
 const productoAlStorage = (productID) => {
   try {
-    console.log("en productos al storage");
     const existe = carrito.findIndex((item) => item.product === productID);
     console.log("verificación existencia producto");
     console.log(existe);

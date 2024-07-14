@@ -2,12 +2,12 @@
 <div class="container">
 
   <h1>Hola, bienvenidos a la administración de tu tienda online</h1>
-  <h2>Listado de carritos de compra</h2>
-
-
+  
+{{#if carritosObtenidos}}
+<h2>Listado de carritos de compra</h2>
 {{!-- --}}
 {{#each carritosObtenidos}}
-  <ul class="principalCarts">
+  <ul class="principalCarts" id="ul_{{this._id}}">
 
     
       <li>
@@ -34,6 +34,9 @@
    
 
   </ul>
-   {{/each}}
+   {{/each}} {{else}}
+   <h3>No hay carritos de compra para mostrar</h3>
+   {{/if}}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/carts.js"></script>

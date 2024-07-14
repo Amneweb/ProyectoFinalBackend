@@ -12,11 +12,17 @@ export default class ProductsViewsController {
     this.#productManager = new ProductManager();
     this.#categoryManager = new CategoryManager();
   }
+  index = async (req, res) => {
+    res.render("index", {
+      style: "main.css",
+    });
+  };
   /*
    *  ============================================================
    *  vista de todos los productos: admin o visitante
    *  ============================================================
    */
+
   getAll = async (req, res) => {
     let page = parseInt(req.query.page) || 1;
     if (page <= 0 || page > 1000) {
@@ -61,8 +67,11 @@ export default class ProductsViewsController {
       );
       const logueado = req.user && req.user;
       if (req.path === "/admin/catalogo") {
+        const categoriasExistentes =
+          await this.#categoryManager.getCategories();
         res.render("catalogoAdmin", {
           productosObtenidos,
+          categoriasExistentes,
           style: `admin.css`,
         });
       } else {

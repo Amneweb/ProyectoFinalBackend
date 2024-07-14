@@ -132,6 +132,7 @@ form {
 
 .container {
   display: relative;
+  margin-top: 80px;
 }
 
 .editar {

@@ -1,20 +1,11 @@
 {{> nav}}
-<section class="encabezado">
 
-  <h1>Hola, estás en Windward</h1>
-  <div class="usuario">
-    {{#if user}}
-      <h4>Hola,
-        <span class="nombre">{{user.name}}</span>
-        gracias por visitarnos</h4>
-      <p>Tenés rol de
-        <strong>{{#if role}}administrador {{else}} usuario{{/if}}</strong>
-      </p>
-      <button id="logout">Desloguearme</button>
-    {{else}}
-      <p>Aun no estás logueado. Click
-        <a href="/users/login">aquí</a>
-        si querés loguearte</p>
-    {{/if}}
-  </div>
+<section class="bienvenidos">
+
+  <h1>Bienvenidos...</h1>
+  
+    <h2>A mi proyecto final del curso de Back End de Coderhouse</h2>
+    <img src="/images/logoCoderSquare.jpg" alt="logo Coder">
 </section>
+
+{{> footer}}

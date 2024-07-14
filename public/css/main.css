@@ -3,6 +3,7 @@
   --naranja: #fa7203;
   --rojo: #e30622;
   --bermellon: #d10624;
+  --violeta: #634267;
 }
 p,
 body,
@@ -61,4 +62,55 @@ section {
   position: fixed;
   background: #000000ae;
   z-index: 1;
+}
+.main {
+  margin-top: 80px;
+}
+.bienvenidos {
+  background-color: var(--bermellon);
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 4rem;
+  position: relative;
+}
+.bienvenidos h1 {
+  font-size: 8rem;
+  margin-bottom: 4rem;
+}
+.bienvenidos h2 {
+  font-size: 4rem;
+}
+.bienvenidos img {
+  width: 15rem;
+  position: absolute;
+  top: 85%;
+  right: 5%;
+  transform: rotate(-20deg);
+}
+.icono a {
+  font-size: 1.5rem;
+}
+.footer {
+  display: flex;
+  background-color: #333;
+  color: white;
+  padding: 5rem;
+  margin-top: 3rem;
+}
+
+.footercate,
+.admin {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: white;
+}
+.footercate a,
+.admin a {
+  color: white;
+  text-decoration: none;
+}
+.presentacion {
+  flex: 2;
 }

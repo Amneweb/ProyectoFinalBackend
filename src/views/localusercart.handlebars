@@ -1,6 +1,6 @@
 {{> nav}}
 
-<section>
+<section class="main">
 {{#if logueado}}
 {{> user}}
  {{else}}
@@ -25,5 +25,6 @@
   <div class="centered compra"><button id="guardar">INICIAR COMPRA</button></div>
 
 </section>
+{{> footer}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="/js/localcart.js"></script>

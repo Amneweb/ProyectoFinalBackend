@@ -18,12 +18,12 @@ router.get("/comprainiciada", (req, res) => {
 
 router.get("/comprafinalizada", (req, res) => {
   if (!req.signedCookies["WWcompraIniciada"]) {
-    return res.status(201).sendSuccess({
+    return res.status(201).send({
       status: "success",
       message: "La compra finalizó correctamente",
     });
   }
-  return res.clearCookie("WWcompraIniciada").status(201).sendSuccess({
+  return res.clearCookie("WWcompraIniciada").status(201).send({
     status: "success",
     message: "La compra finalizó correctamente",
   });

@@ -1,53 +1,31 @@
 const botonesBorrarCarrito = document.querySelectorAll(".borrarCarrito");
+const contenedorCarritos = document.querySelector(".container");
 botonesBorrarCarrito.forEach((boton) => {
   boton.addEventListener("click", async (e) => {
     e.preventDefault();
     const cartID = e.target.id;
+    try {
+      const fetchBorrar = await fetch(`/api/carts/${cartID}`, {
+        method: "DELETE",
+        headers: { "Content-type": "application/json" },
+      });
+      const borrar = fetchBorrar.json();
 
-    const borrar = await fetch(`/api/carts/${cartID}`, {
-      method: "DELETE",
-      headers: { "Content-type": "application/json" },
-    });
-
-    const storage = localStorage.getItem("windwardCart");
-    if (cartID === storage) {
-      localStorage.removeItem("windwardCart");
+      if (borrar) {
+        Swal.fire({
+          title: "👍",
+          text: "El carrito se borró con éxito",
+        });
+        const ulCarrito = document.querySelector(`#ul_${cartID}`);
+        contenedorCarritos.removeChild(ulCarrito);
+      } else {
+        throw new Error("no se pudo borrar el carrito", error);
+      }
+    } catch (e) {
+      Swal.fire({
+        title: "Oops",
+        text: `Lo sentimos, no se pudo borrar el carrito: ${e.message}`,
+      });
     }
-    Swal.fire({
-      title: "👍",
-      text: "El carrito se borró con éxito",
-    }).then((result) => {
-      location.reload(true);
-    });
-  });
-});
-
-const botonesBorrarProducto = document.querySelectorAll(".borrar");
-botonesBorrarProducto.forEach((boton) => {
-  boton.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const cartID = e.target.name;
-    const productID = e.target.id;
-
-    const borrar = await fetch(`/api/carts/${cartID}/product/${productID}`, {
-      method: "DELETE",
-      headers: { "Content-type": "application/json" },
-    });
-
-    Swal.fire({
-      title: "👍",
-      text: "El producto se borró con éxito",
-    }).then((result) => {
-      location.reload(true);
-    });
-  });
-});
-const botonComprar = document.querySelector(".comprar");
-botonComprar.addEventListener("click", async (e) => {
-  e.preventDefault();
-  const cartID = e.target.id;
-  const compra = await fetch(`/api/carts/${cartID}/purchase`, {
-    method: "POST",
-    headers: { "Content-type": "application/json" },
   });
 });

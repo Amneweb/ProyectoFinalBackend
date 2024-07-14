@@ -3,7 +3,7 @@
 @import "usuario.css";
 
 .encabezado {
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .container {
@@ -139,4 +139,7 @@
   font-weight: normal;
   font-size: 0.8rem;
   padding: 0.6rem;
+}
+.invisible {
+  display: none;
 }

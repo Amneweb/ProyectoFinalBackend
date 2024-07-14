@@ -64,12 +64,7 @@ const compra = async () => {
 
     await guardarProductos();
 
-    const fetchedCart = await fetch(`/api/carts/${cid[0]}/populate`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const fetchedCart = await fetch(`/api/carts/${cid[0]}/populate`);
     if (fetchedCart.status != 200) {
       throw new Error("no se pudo  traer la información del carrito elegido");
     }
@@ -82,8 +77,10 @@ const compra = async () => {
 
       try {
         const comprar = await fetch(`/api/carts/${cid[0]}/purchase`, {
-          method: "GET",
-          headers: { "Content-type": "application/json" },
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
         const resultadoCompra = await comprar.json();
         if (resultadoCompra) {
