@@ -418,6 +418,7 @@ div.min {
 }
 div.swal2-container {
   margin: 0;
+  z-index: 9;
 }
 .messagebox {
   width: 90%;
