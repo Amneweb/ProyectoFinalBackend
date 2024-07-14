@@ -72,9 +72,13 @@ section {
   padding-top: 80px;
   padding-bottom: 4rem;
   position: relative;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .bienvenidos h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   margin-bottom: 4rem;
 }
 .bienvenidos h2 {
@@ -83,9 +87,9 @@ section {
 .bienvenidos img {
   width: 15rem;
   position: absolute;
-  top: 85%;
+  top: 20%;
   right: 5%;
-  transform: rotate(-20deg);
+  transform: rotate(-10deg);
 }
 .icono a {
   font-size: 1.5rem;
