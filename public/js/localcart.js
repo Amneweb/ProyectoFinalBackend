@@ -82,7 +82,7 @@ guardar.addEventListener("click", async (e) => {
     console.log("logueado ", logueado);
     await Swal.fire({
       title: "👌",
-      text: "¿Tenés tu carrito completo? Una vez que inicies el proceso de compra ya no lo podrás modificar.",
+      text: "¿Tenés tu carrito completo?",
       showCancelButton: true,
       confirmButtonText: "Terminar compra",
       cancelButtonText: "Agregar productos",

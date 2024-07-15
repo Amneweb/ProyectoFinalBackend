@@ -4,9 +4,40 @@
 
   <h1>Bienvenidos...</h1>
   
-    <h2>A mi proyecto final del curso de Back End de Coderhouse</h2>
+    <h2>A mi proyecto final del curso de Backend de Coderhouse</h2>
     <img src="/images/logoCoderSquare.jpg" alt="logo Coder">
 </section>
-<section class="contenido"></section>
+<section class="contenido">
+  <h2>SOBRE EL PROYECTO</h2>
+  <p>El proyecto consiste en un ecommerce de venta de baterías para vehículos.</p>
+  <h3>Proceso de compra</h3>
+  <p>Aunque no se pedía en las consignas del proyecto, me pareció interesante poder programar la compra sin obligar al usuario a registrarse antes de elegir los productos. De esta manera, el proceso de compra implica los pasos siguientes en el recorrido del usuario:</p>
+  <ul class="proceso">
+    <li><p class="numero">1</p><p>El usuario elige los productos y los carga en un carrito que se guarda en el localstorage</p></li>
+    <li><p class="numero">2</p><p>Los productos se pueden cargar de a 1 desde la página donde se muestran todos los productos (a futuro también se podrán cargar desde la página de producto, eligiendo también la cantidad)</p></li>
+    <li><p class="numero">3</p><p>El carrito así armado se puede ver haciendo click en el ícono de compra en la barra del menú superior (el ícono muestra también la cantidad de productos ya cargados en el carrito)</p></li>
+    <li><p class="numero">4</p><p>En la página de visualización del carrito se pueden modificar las cantidades de cada producto (hasta un máximo igual al stock del producto). También se pueden borrar los productos, o borrar el carrito completo.</p></li>
+    <li><p class="numero">5</p><p>Desde la misma página del carrito se da inicio a la compra haciendo click en el botón correspondiente. Ese inicio de compra crea una cookie que marca el inicio de una "sesión" de compra.</p></li>
+    <li><p class="numero">6</p><p>Se dispara un sweet alert para confirmar el inicio de compra</p></li>
+    <li><p class="numero">7</p><p>Si el usuario no está logueado, se lo dirige a la página de login</p></li>
+    <li><p class="numero">8</p><p>Una vez logueado, el usuario es dirigido a la página de currentUser para que vea sus datos, y continúe la compra</li>
+    <li><p class="numero">9</p><p>Con el usuario ya logueado, se le pide confirmación de la compra y en ese momento se guarda el carrito en la base de datos y se asocia al usuario (se guarda el id del carrito en el documento del usuario)</p></li>
+    <li><p class="numero">10</p><p>Si el usuario sale de la página de confirmación de compra y modifica el carrito del localstorage, el proceso de compra empieza de nuevo</p></li>
+    <li><p class="numero">11</p><p>Confirmada la compra, se genera el ticket de compra y se envía el email de confirmación de compra.</p></li>
+
+  </ul>
+  <p>NO se incluye la programación de la pasarela de pagos. 😔</p>
+  <h3>Sobre los carritos de compra</h3>
+  <p>Si el usuario inicia el proceso de compra varias veces seguidas, se generan igual cantidad de carritos de compra. Para que la base de datos no se llene de carritos que nunca se van a comprar, los carritos se generan con una propiedad "createdAt" que tiene un ttl de 10 minutos. Pasado ese tiempo el carrito se borra</p>
+  <p>A su vez, y como el id de cada carrito queda guardado en el documento del usuario, cuando el usuario se vuelve a loguear, se verifica que los ids de carritos guardados en el array de la propiedad "cartID" correspondan a carritos que sí existen; de lo contrario se borran. (No se borran todos los id de carritos porque puede haber carritos que hayan sido generados luego de un proceso de compra, con productos faltantes en el stock al momento de la compra. Estos carritos se borran 1 mes después de creados.)</p>
+  <h3>Frontend</h3>
+  <p>La mayoría de las vistas iniciales de cada página se renderizan con Handlebars desde el servidor, pero todos los cambios en las vistas debido a la interacción del usuario se realizan con javascript del lado del cliente, haciendo llamandos a la API a través del método "FETCH".</p>
+  <h3>Categorías en el menú de navegación</h3>
+  <p>
+    El menú desplegable se carga dinámicamente mediante un script del lado del cliente que obtiene las categorías con un fetch cada vez que se carga una nueva página. Originalmente había pensado que se podía utilizar un partial de handlebars renderizado desde el servidor, pero no supe cómo hacerlo.
+  </p>
+  <h3>Panel de administración</h3>
+  <p>Incluí un par de vistas para el administrador, que permiten administrar los productos y borrar carritos. Respecto a los productos, se pueden modificar, borrar y agregar nuevos. NO hay vistas para administrar usuarios. (Por ahora... 😉)</p>
+</section>
 
 {{> footer}}

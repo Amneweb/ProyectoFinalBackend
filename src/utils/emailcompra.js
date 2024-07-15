@@ -38,7 +38,7 @@ const html = (source) => {
   <p><strong>Código:</strong>${source.ticket.code} </p>
   <p><strong>
       Fecha:
-    </strong>${source.fecha}
+    </strong>${source.fecha.toLocaleDateString("es-AR")}
   </p>
   <p><strong>Total:</strong> ${formatear(source.ticket.amount)} </p>
   <h3>Estos son los productos que compraste</h3>

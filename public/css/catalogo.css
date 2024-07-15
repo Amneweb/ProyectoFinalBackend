@@ -23,8 +23,16 @@
   box-shadow: #c0c0c0;
   padding: 10px;
   gap: 10px;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  align-items: center;
+  justify-self: flex-end;
 }
 .card img {
   max-width: 100%;
@@ -80,7 +88,7 @@
 }
 
 .card a {
-  color: var(--bermellon);
+  color: var(--naranja);
   font-weight: bold;
 }
 .card a:hover {
@@ -133,7 +141,7 @@
   gap: 0.5rem;
 }
 .botones a {
-  background-color: black;
+  background-color: var(--naranja);
   border-radius: 0.2rem;
   color: white;
   font-weight: normal;
