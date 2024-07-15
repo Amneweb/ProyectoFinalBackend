@@ -16,7 +16,9 @@ const populateCategories = async () => {
       )
       .join("");
     document.querySelector("#categorias").innerHTML = html;
-    document.querySelector(".footercate").innerHTML = html;
+    if (document.querySelector(".footercate")) {
+      document.querySelector(".footercate").innerHTML = html;
+    }
   } catch (e) {
     console.log(
       "error al tratar de mostrar el listado de categorias ",

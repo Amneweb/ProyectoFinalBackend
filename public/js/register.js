@@ -14,28 +14,48 @@ registerForm.addEventListener("submit", async (e) => {
 
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
-
-  const result = await fetch("/api/users/register", {
-    method: "POST",
-    body: JSON.stringify(obj),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(result);
-  const parsed = await result.json();
-  console.log(parsed);
-  if (!parsed.error) {
-    await Swal.fire({
-      title: "👍",
-      text: "Te registraste existosamente",
-    }).then((result) => {
-      window.location.replace("/users/login");
+  try {
+    const result = await fetch("/api/users/register", {
+      method: "POST",
+      body: JSON.stringify(obj),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-  } else {
+    console.log(result);
+    const parsed = await result.json();
+    console.log(parsed);
+    if (!parsed.error) {
+      await Swal.fire({
+        title: "👍",
+        text: "Te registraste existosamente",
+      }).then((result) => {
+        window.location.replace("/users/login");
+      });
+    } else {
+      throw new Error(
+        `Error al tratar de registrar al usuario: ${parsed.error}`
+      );
+    }
+  } catch (e) {
     await Swal.fire({
       icon: "error",
-      text: parsed.error,
+      text: e.message,
     });
   }
 });
+const contarCantidades = () => {
+  let valor;
+  const carrito =
+    localStorage.getItem("windwardCart") &&
+    JSON.parse(localStorage.getItem("windwardCart"));
+  if (carrito) {
+    valor = carrito.map((item) => item.qty).reduce((acum, item) => acum + item);
+  } else {
+    valor = 0;
+  }
+  let cantidad = document.querySelector("#contador");
+
+  cantidad.innerHTML = valor;
+};
+contarCantidades();

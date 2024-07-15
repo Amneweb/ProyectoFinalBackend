@@ -13,29 +13,31 @@ loginForm.addEventListener("submit", async (e) => {
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
 
-  const result = await fetch("/api/users/login", {
-    method: "POST",
-    body: JSON.stringify(obj),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-  console.log(result);
-  const parsed = await result.json();
-  console.log(parsed);
-  if (!parsed.error) {
-    await Swal.fire({
-      title: "👍",
-      text: "Te logueaste existosamente",
-    }).then((result) => {
-      window.location.replace("/users/currentUser");
+  try {
+    const result = await fetch("/api/users/login", {
+      method: "POST",
+      body: JSON.stringify(obj),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-  } else {
+    console.log(result);
+    const parsed = await result.json();
+    console.log(parsed);
+    if (!parsed.error) {
+      await Swal.fire({
+        title: "👍",
+        text: "Te logueaste existosamente",
+      }).then((result) => {
+        window.location.replace("/users/currentUser");
+      });
+    } else {
+      throw new Error(`Ha habido un error: ${parsed.error}`);
+    }
+  } catch (e) {
     await Swal.fire({
       icon: "error",
-      text: parsed.error,
-    }).then((result) => {
-      window.location.replace("/users/login");
+      text: e.message,
     });
   }
 });
