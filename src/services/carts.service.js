@@ -7,14 +7,16 @@ import { validateId, validateCartOwnership } from "./validators.service.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 import CartRepository from "./repositories/carts.repository.js";
+import ProductRepository from "./repositories/products.repository.js";
 import MailingService from "./emails.service.js";
-import pc from "picocolors";
+
 class CartManager {
   constructor() {
     this.ticketDAO = new TicketDAO();
     this.userDAO = new UserDAO();
     this.mailer = new MailingService();
     this.cartRepository = new CartRepository();
+    this.productRepository = new ProductRepository();
   }
 
   //carrito vacío
@@ -114,7 +116,6 @@ class CartManager {
 
     //para verificar que exista un producto con ese id
     if (!producto) {
-      console.log("adentro de if producto ");
       throw new BadRequestError(`No existe ningún producto con id ${pid}`);
     }
     if (user.role.toUpperCase() === "PREMIUM" && producto.owner) {
@@ -282,13 +283,15 @@ class CartManager {
           order.push({ product: producto.product._id, qty: stock });
         }
 
-        await productDAO.updateByFilter(producto.product._id, { stock: 0 });
+        await this.productRepository.updatePartial(producto.product._id, {
+          stock: 0,
+        });
 
         amount += stock * precio;
       } else {
         order.push({ product: producto.product._id, qty: compra });
 
-        await productDAO.updateByFilter(producto.product._id, {
+        await this.productRepository.updatePartial(producto.product._id, {
           stock: stock - compra,
         });
         amount += precio * compra;
@@ -309,8 +312,6 @@ class CartManager {
       code: uuidv4(),
     };
 
-    console.log(pc.bgRed("ticket a enviar"));
-
     const ticketCreado = await this.ticketDAO.create(ticket);
 
     const source = {
@@ -330,11 +331,8 @@ class CartManager {
     return ticketCreado;
   };
   userCarts = async (user) => {
-    console.log("en usercarts");
-
     const usuario = await this.userDAO.findOne(user.email);
-    console.log("usuario encontrado");
-    console.log(usuario);
+
     if (!usuario) {
       throw new BadRequestError("no se encontró usuario con ese email");
     }
