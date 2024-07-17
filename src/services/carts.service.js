@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { validateId, validateCartOwnership } from "./validators.service.js";
 import { cartsLogger as logger } from "../config/logger.config.js";
 import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
+import CartRepository from "./repositories/carts.repository.js";
 import MailingService from "./emails.service.js";
 import pc from "picocolors";
 class CartManager {
@@ -13,6 +14,7 @@ class CartManager {
     this.ticketDAO = new TicketDAO();
     this.userDAO = new UserDAO();
     this.mailer = new MailingService();
+    this.cartRepository = new CartRepository();
   }
 
   //carrito vacío
@@ -28,7 +30,7 @@ class CartManager {
     return await cartDAO.findAll();
   };
   getCartsAndPopulate = async () => {
-    return await cartDAO.findAndPopulateAll();
+    return await this.cartRepository.findAndPopulateAll();
   };
   //obtener carrito con id determinado, sólo para ADMIN o usuarios que son dueños del carrito
   getCartByID = async (id, user) => {
@@ -59,7 +61,7 @@ class CartManager {
         );
       }
     }
-    return await cartDAO.findAndPopulate(id);
+    return await this.cartRepository.findAndPopulate(id);
   };
   updateCart = async (id, nuevoCarrito) => {
     if (!validateId(id)) {
@@ -70,7 +72,7 @@ class CartManager {
       throw new BadRequestError(`No existe ningún carrito con el id ${id}`);
     }
 
-    return await cartDAO.update(id, nuevoCarrito);
+    return await this.cartRepository.updateFullCart(id, nuevoCarrito);
   };
 
   //agregar producto a un carrito específico
@@ -118,8 +120,7 @@ class CartManager {
     if (user.role.toUpperCase() === "PREMIUM" && producto.owner) {
       const userData = await this.userDAO.findOne(user.email);
       const userID = userData && userData._id;
-      console.log("ID de usuario", userID);
-      console.log("owner de producto ", producto.owner);
+
       if (producto.owner.toString() === userID.toString())
         throw new BadRequestError(
           `El usuario con email ${user.email} es dueño del producto con SKU ${producto.code} y por lo tanto no lo puede comprar`
@@ -138,7 +139,7 @@ class CartManager {
         : carritoBuscado.cart[productIndex].qty++;
     }
 
-    return await cartDAO.update(cid, carritoBuscado.cart);
+    return await this.cartRepository.updateFullCart(cid, carritoBuscado.cart);
   };
 
   //borrar carrito
@@ -199,7 +200,7 @@ class CartManager {
     }
     carritoBuscado.cart.splice(productIndex, 1);
 
-    return await cartDAO.update(id, carritoBuscado);
+    return await this.cartRepository.updateFullCart(id, carritoBuscado);
   };
 
   //borrar producto de un carrito específico (uno por uno)
@@ -243,11 +244,11 @@ class CartManager {
       carritoBuscado.cart.splice(productIndex, 1);
     }
 
-    return await cartDAO.update(cid, carritoBuscado.cart);
+    return await this.cartRepository.updateFullCart(cid, carritoBuscado.cart);
   };
 
   purchase = async (user, cid) => {
-    const carritoComprado = await cartDAO.findAndPopulate(cid);
+    const carritoComprado = await this.cartRepository.findAndPopulate(cid);
     logger.debug("carrito comprado luego del populate %j", carritoComprado);
     if (!carritoComprado) {
       logger.error("no se encontró el carrito buscado");
@@ -267,8 +268,6 @@ class CartManager {
     //verificamos stock, creamos el array "order" y calculamos el total
     let order = [];
     let amount = 0;
-
-    console.log("carrito comprado ", carritoComprado.cart);
 
     carritoComprado.cart.forEach(async (producto) => {
       const stock = producto.product.stock;
@@ -297,7 +296,7 @@ class CartManager {
     });
 
     if (carritoRemanente.length > 0) {
-      await cartDAO.updateAndChangeDate(cid, carritoRemanente);
+      await this.cartRepository.updateAndChangeDate(cid, carritoRemanente);
     } else {
       await this.userDAO.update(user.email);
       await cartDAO.delete(cid);

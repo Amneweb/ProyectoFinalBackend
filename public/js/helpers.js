@@ -5,6 +5,7 @@ function formatear(amount) {
   }).format(amount);
   return formateado;
 }
+
 const deshabilitarVacios = (form) => {
   for (let i = 0; i < form.elements.length; i++) {
     if (form.elements[i].value == "") form.elements[i].disabled = true;
@@ -22,43 +23,30 @@ modificarProducto.addEventListener("submit", async (e) => {
 
   const valores = Object.fromEntries(bodyData.entries());
 
-  await fetch(`/api/products/${id}`, {
-    method: "PUT",
-    headers: { "Content-type": "application/json" },
-    body: JSON.stringify(valores),
-  });
-
-  Swal.fire({
-    title: "👍",
-    text: "El producto se modificó con éxito",
-    position: "top-end",
-    timer: 1500,
-    showConfirmButton: false,
-  }).then((result) => {
-    //location.reload(true);
-  });
-});
-
-const borrarProducto = document.querySelectorAll(".borrarProducto");
-borrarProducto.forEach((boton) => {
-  boton.addEventListener("click", async (e) => {
-    e.preventDefault();
-    const productID = e.target.id;
-    await fetch(`/api/products/${productID}`, {
-      method: "DELETE",
+  try {
+    const fetchModificar = await fetch(`/api/products/${id}`, {
+      method: "PUT",
       headers: { "Content-type": "application/json" },
+      body: JSON.stringify(valores),
     });
-
+    const parsedModificar = await fetchModificar.json();
+    if (parsedModificar.error) throw new Error(parsedModificar.error);
     Swal.fire({
       title: "👍",
-      text: "El producto se borró con éxito",
+      text: "El producto se modificó con éxito",
+      position: "center",
+      timer: 1500,
+      showConfirmButton: false,
+    }).then((result) => location.reload(true));
+  } catch (e) {
+    Swal.fire({
+      title: "Oops",
+      text: `Hubo un error al tratar de modificar el producto: ${e.message}`,
       position: "top-end",
       timer: 1500,
       showConfirmButton: false,
-    }).then((result) => {
-      location.reload(true);
     });
-  });
+  }
 });
 
 const borrarCategoria = document.querySelectorAll(".borrarCate");
@@ -77,19 +65,18 @@ borrarCategoria.forEach((boton) => {
         }
       );
       const parseado = await modificado.json();
-      console.log(modificado);
-      if (!modificado) {
-        throw new Error("No se pudo borrar la categoría");
+
+      if (parseado.error) {
+        throw new Error(parseado.error);
       }
       await Swal.fire({
         title: "👍",
         text: "La categoría se borró con éxito",
-        position: "top-end",
+        position: "center",
         timer: 1500,
         showConfirmButton: false,
       });
 
-      console.log("parseado ", parseado);
       const categorias = parseado.payload.category;
       console.log("categorias", categorias);
       const bannerCategorias = document.getElementById("asignadas");
@@ -106,38 +93,15 @@ borrarCategoria.forEach((boton) => {
         )
         .join("");
 
-      console.log("html", nuevoHTML);
       bannerCategorias.innerHTML = nuevoHTML;
     } catch (e) {
       Swal.fire({
         title: "Oops",
         text: `La categoría no se pudo borrar debido a ${e.message}`,
-        position: "top-end",
+        position: "center",
         showConfirmButton: true,
       });
     }
-  });
-});
-
-const agregarCategoria = document.querySelector("#agregarCategorias");
-agregarCategoria.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const newCate = { cate: agregarCategoria.newcate.value };
-
-  await fetch(`/api/categories/`, {
-    method: "POST",
-    headers: { "Content-type": "application/json" },
-    body: JSON.stringify(newCate),
-  });
-
-  Swal.fire({
-    title: "👍",
-    text: "La categoría se agregó con éxito",
-    position: "top-end",
-    timer: 1500,
-    showConfirmButton: false,
-  }).then((result) => {
-    location.reload(true);
   });
 });
 
@@ -155,14 +119,14 @@ bannerExistentes.addEventListener("click", async (e) => {
       }
     );
     const parseado = await modificado.json();
-    console.log(modificado);
-    if (!modificado) {
-      throw new Error("No se pudo agregar la categoría");
+
+    if (parseado.error) {
+      throw new Error(parseado.error);
     }
     await Swal.fire({
       title: "👍",
       text: "La categoría se agregó con éxito",
-      position: "top-end",
+      position: "center",
       timer: 1500,
       showConfirmButton: false,
     });
@@ -188,7 +152,7 @@ bannerExistentes.addEventListener("click", async (e) => {
     Swal.fire({
       title: "Oops",
       text: `La categoría no se pudo agregar debido a ${e.message}`,
-      position: "top-end",
+      position: "center",
       showConfirmButton: true,
     });
   }

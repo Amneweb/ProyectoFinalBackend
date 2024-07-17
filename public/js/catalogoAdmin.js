@@ -25,20 +25,21 @@ agregarProducto.addEventListener("submit", async (e) => {
       body: JSON.stringify(valores),
     });
     const agregar = await fetchAgregar.json();
-    if (!agregar) {
-      throw new Error("error al tratar de agregar el producto");
+
+    if (agregar.error) {
+      throw new Error(agregar.error);
     }
     dibujarNuevoProducto(agregar.payload);
     Swal.fire({
       title: "👍",
       text: "El producto se agregó con éxito",
-      position: "top-end",
+      position: "center",
     });
   } catch (e) {
     Swal.fire({
       title: "Oops",
       text: `No se pudo agregar el producto: ${e.message}`,
-      position: "top-end",
+      position: "center",
     });
   }
 });
@@ -54,13 +55,14 @@ borrarProducto.forEach((boton) => {
         headers: { "Content-type": "application/json" },
       });
       const borrar = await fetchBorrar.json();
-      if (!borrar) {
-        throw new Error("no se pudo borrar el producto");
+
+      if (borrar.error) {
+        throw new Error(borrar.error);
       }
       Swal.fire({
         title: "👍",
         text: "El producto se borró con éxito",
-        position: "top-end",
+        position: "center",
         timer: 1500,
         showConfirmButton: false,
       });
@@ -70,7 +72,7 @@ borrarProducto.forEach((boton) => {
       Swal.fire({
         title: "Oops",
         text: `No pudimos borrar el producto ${e.message} `,
-        position: "top-end",
+        position: "center",
       });
     }
   });
@@ -82,11 +84,11 @@ const dibujarNuevoProducto = (producto) => {
   const ulinterna = document.createElement("ul");
   ulinterna.classList.add("interna");
   ulinterna.innerHTML = `<li><a
-              href="/admin/producto/${producto._id}
+              href="/admin/producto/${producto._id}"
               id="${producto._id}"
               class="boton-nombre"
               name="${producto.title}"
-            >{{this.title}}</a></li>
+            >${producto.title}</a></li>
           <li> ${producto._id}</li>
           <li> ${producto.price}</li>
           <li>${producto.description} </li>
@@ -102,3 +104,37 @@ const dibujarNuevoProducto = (producto) => {
   nuevaLi.append(ulinterna);
   contenedorProductos.append(nuevaLi);
 };
+
+const agregarCategoria = document.querySelector("#agregarCategorias");
+console.log(agregarCategoria);
+agregarCategoria.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const newCate = { cate: agregarCategoria.newcate.value };
+  console.log("categoria a agregar ", newCate);
+  try {
+    const fetchCate = await fetch(`/api/categories/`, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(newCate),
+    });
+
+    const parsedCate = await fetchCate.json();
+    console.log("cate parseada", parsedCate);
+    if (parsedCate.error) throw new Error(parsedCate.error);
+    Swal.fire({
+      title: "👍",
+      text: "La categoría se agregó con éxito",
+      position: "center",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  } catch (e) {
+    Swal.fire({
+      title: "OOops",
+      text: `No se pudo agregar la categoría: ${e.message}`,
+      position: "center",
+      timer: 1500,
+      showConfirmButton: false,
+    });
+  }
+});

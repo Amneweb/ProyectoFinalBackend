@@ -132,7 +132,7 @@ if (document.querySelector("#logout")) {
 const contarCantidades = () => {
   const valor = carrito
     .map((item) => item.qty)
-    .reduce((acum, item) => acum + item);
+    .reduce((acum, item) => acum + item, 0);
   let cantidad = document.querySelector("#contador");
   console.log(valor);
   cantidad.innerHTML = valor || 0;

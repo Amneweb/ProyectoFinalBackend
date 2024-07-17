@@ -6,28 +6,11 @@ class ProductDAO {
     this.#model = productModel;
   }
 
-  findAll = async (options) => {
-    const products = await this.#model.paginate(
-      {},
-      {
-        ...options,
-        lean: true,
-      }
-    );
-
-    return products;
-  };
-
-  findByCate = async (options, cate) => {
-    const products = await this.#model.paginate(
-      {
-        category: { $in: [cate] },
-      },
-      {
-        ...options,
-        lean: true,
-      }
-    );
+  find = async (options, conditions) => {
+    const products = await this.#model.paginate(conditions, {
+      ...options,
+      lean: true,
+    });
     return products;
   };
 
@@ -42,27 +25,24 @@ class ProductDAO {
   findOne = async (filters) => {
     return await this.#model.findOne(filters).lean();
   };
-  deleteByID = async (id) => {
+  delete = async (id) => {
     const result = await this.#model.deleteOne({ _id: id });
     return result;
   };
-  update = async (id, nuevo) => {
-    const result = await this.#model.findOneAndUpdate({ _id: id }, nuevo, {
+  replace = async (id, nuevo) => {
+    const result = await this.#model.replaceOne({ _id: id }, nuevo, {
       new: true,
     });
 
     return result;
   };
-  updateByFilter = async (id, filters) => {
-    console.log("en dao de productto");
-
-    console.log(id);
-    console.log(filters);
-    await this.#model.findOneAndUpdate(
+  update = async (id, filters) => {
+    return await this.#model.findOneAndUpdate(
       {
         _id: id,
       },
-      { $set: { ...filters } }
+      { $set: { ...filters } },
+      { new: true }
     );
   };
 }

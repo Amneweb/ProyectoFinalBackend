@@ -1,5 +1,6 @@
 import { BadRequestError } from "../utils/errors.js";
 import { productDAO } from "./factory.js";
+import ProductRepository from "./repositories/products.repository.js";
 import { validateProduct } from "../utils/product.validator.js";
 import { productsLogger as logger } from "../config/logger.config.js";
 import { validateId, validateOwnership } from "./validators.service.js";
@@ -7,15 +8,16 @@ import UserDAO from "./daos/mongo/users/users.mongo.dao.js";
 export default class ProductManager {
   constructor() {
     this.userDAO = new UserDAO();
+    this.productRepository = new ProductRepository();
   }
 
   getProducts = async (page, limit, sort) => {
     const options = limit === 0 ? { pagination: false } : { page, limit, sort };
-    return await productDAO.findAll(options);
+    return await this.productRepository.findAll(options);
   };
   getByCategory = async (page, limit, sort, cate) => {
     const options = limit === 0 ? { pagination: false } : { page, limit, sort };
-    return await productDAO.findByCate(options, cate);
+    return await this.productRepository.findByCate(options, cate);
   };
 
   addProduct = async (product) => {
@@ -63,7 +65,7 @@ export default class ProductManager {
     }
     logger.silly("pasó todos los controles");
 
-    return await productDAO.deleteByID(id);
+    return await productDAO.delete(id);
   };
   updateProduct = async (id, nuevo, user) => {
     const role = user.role;
@@ -72,7 +74,7 @@ export default class ProductManager {
       await validateOwnership(id, email);
     }
     logger.silly("pasó todos los controles");
-    return await productDAO.update(id, nuevo);
+    return await this.productRepository.updateFullProduct(id, nuevo);
   };
   updateCategory = async (id, cate, user) => {
     const role = user.role;
@@ -91,8 +93,7 @@ export default class ProductManager {
     } else {
       arrayCategorias.splice(arrayCategorias.indexOf(cate), 1);
     }
-    return await productDAO.update(id, {
-      ...existente,
+    return await this.productRepository.updatePartial(id, {
       category: arrayCategorias,
     });
   };
@@ -103,8 +104,7 @@ export default class ProductManager {
       throw new BadRequestError("no existe ningún producto con ese ID");
     }
 
-    return await productDAO.update(id, {
-      ...existente,
+    return await this.productRepository.updatePartial(id, {
       stock: stock,
     });
   };
@@ -115,7 +115,7 @@ export default class ProductManager {
     if (role.toUpperCase() != "ADMIN") {
       await validateOwnership(id, email);
     }
-    logger.silly("pasó todos los controles");
+
     const existente = await productDAO.findByID(id);
     if (!existente) {
       throw new BadRequestError("no existe ningún producto con ese ID");
@@ -126,8 +126,7 @@ export default class ProductManager {
     } else {
       arrayThumb.splice(arrayThumb.indexOf(thumb), 1);
     }
-    return await productDAO.update(id, {
-      ...existente,
+    return await this.productRepository.updatePartial(id, {
       thumb: arrayThumb,
     });
   };
