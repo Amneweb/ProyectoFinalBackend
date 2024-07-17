@@ -1,5 +1,5 @@
 const carrito = JSON.parse(localStorage.getItem("windwardCart"));
-console.log("carrito ", carrito);
+
 const divProductos = document.querySelector(".contenedorCarrito");
 const guardar = document.querySelector("#guardar");
 const borrarCarrito = document.getElementById("borrarCarrito");
@@ -50,18 +50,21 @@ BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
 */
 const dibujar = async () => {
   let TOTAL = 0;
-  await carrito.forEach(async (producto) => {
-    const datosProducto = await fetch(`/api/products/${producto.product}`);
-
-    if (!datosProducto) throw new Error("No se ha podido cargar el producto");
-
-    const itemCarrito = await datosProducto.json();
-
-    dibujarCard(itemCarrito.payload, producto.qty);
-
-    TOTAL += itemCarrito.payload.price * producto.qty;
-    document.querySelector(".grandTotal").innerHTML = formatear(TOTAL);
-  });
+  try {
+    await carrito.forEach(async (producto) => {
+      const datosProducto = await fetch(`/api/products/${producto.product}`);
+      const itemCarrito = await datosProducto.json();
+      if (itemCarrito.error) throw new Error(itemCarrito.error);
+      dibujarCard(itemCarrito.payload, producto.qty);
+      TOTAL += itemCarrito.payload.price * producto.qty;
+      document.querySelector(".grandTotal").innerHTML = formatear(TOTAL);
+    });
+  } catch (e) {
+    Swal.fire({
+      title: "Oops",
+      text: `No pudimos obtener la información de los productos para dibujar el carrito: ${e.message}. Volvé a intentarlo más tarde`,
+    });
+  }
 };
 dibujar();
 /*
@@ -79,7 +82,7 @@ guardar.addEventListener("click", async (e) => {
     const usuario = await fetchUsuario.json();
 
     logueado = usuario.error ? false : true;
-    console.log("logueado ", logueado);
+
     await Swal.fire({
       title: "👌",
       text: "¿Tenés tu carrito completo?",
@@ -90,7 +93,6 @@ guardar.addEventListener("click", async (e) => {
       preConfirm: async () => {
         try {
           const response = await fetch("/api/purchase/comprainiciada");
-          console.log(response);
           if (!response.ok) {
             return Swal.showValidationMessage(`
               ${JSON.stringify(await response.json())}
@@ -189,7 +191,6 @@ const calcularTotal = () => {
   todos.forEach((item) => {
     arrayTodos.push(parseInt(item.innerHTML));
   });
-  console.log(arrayTodos);
 
   const grandTotal = arrayTodos.reduce((accum, item) => accum + item);
   return formatear(grandTotal);
@@ -211,7 +212,7 @@ const modificarCarrito = (id, operacion) => {
       let qty = parseInt(document.querySelector(`.qty${id}`).innerHTML);
 
       const newQty = operacion === "goup" ? qty + 1 : qty - 1;
-      console.log("newQty", newQty);
+
       if (newQty >= 1 && newQty <= stock) {
         carrito.splice(existe, 1);
         carrito.push({
@@ -241,12 +242,20 @@ const modificarCarrito = (id, operacion) => {
     localStorage.setItem("windwardCart", JSON.stringify(carrito));
     contarCantidades();
   } catch (e) {
-    console.log("Error al tratar de modificar la cantidad ", e.message);
+    Swal.fire({
+      title: "Oops",
+      text: e.message,
+    });
   }
 };
 const borrarProducto = function (id) {
   try {
     const lugar = carrito.findIndex((item) => item.product === id);
+    if (lugar < 0) {
+      throw new Error(
+        "error de lectura de datos, no se pudo borrar el producto la cantidad"
+      );
+    }
     carrito.splice(lugar, 1);
     localStorage.setItem("windwardCart", JSON.stringify(carrito));
     const divSeleccionada = document.querySelector(`#div_${id}`);
@@ -254,10 +263,10 @@ const borrarProducto = function (id) {
     document.querySelector(".grandTotal").innerHTML = calcularTotal();
     contarCantidades();
   } catch (e) {
-    throw new Error(
-      "error de lectura de datos, no se pudo modificar el carrito",
-      e.message
-    );
+    Swal.fire({
+      title: "Oops",
+      text: e.message,
+    });
   }
 };
 
@@ -266,7 +275,7 @@ const contarCantidades = () => {
     .map((item) => item.qty)
     .reduce((acum, item) => acum + item);
   let cantidad = document.querySelector("#contador");
-  console.log(valor);
+
   cantidad.innerHTML = valor;
 };
 contarCantidades();

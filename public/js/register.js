@@ -22,9 +22,9 @@ registerForm.addEventListener("submit", async (e) => {
         "Content-Type": "application/json",
       },
     });
-    console.log(result);
+
     const parsed = await result.json();
-    console.log(parsed);
+
     if (!parsed.error) {
       await Swal.fire({
         title: "👍",

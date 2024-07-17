@@ -11,7 +11,7 @@ botonesBorrarCarrito.forEach((boton) => {
       });
       const borrar = fetchBorrar.json();
 
-      if (borrar) {
+      if (!borrar.error) {
         Swal.fire({
           title: "👍",
           text: "El carrito se borró con éxito",
@@ -19,7 +19,7 @@ botonesBorrarCarrito.forEach((boton) => {
         const ulCarrito = document.querySelector(`#ul_${cartID}`);
         contenedorCarritos.removeChild(ulCarrito);
       } else {
-        throw new Error("no se pudo borrar el carrito", error);
+        throw new Error(borrar.error);
       }
     } catch (e) {
       Swal.fire({

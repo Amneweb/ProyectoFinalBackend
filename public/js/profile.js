@@ -14,10 +14,10 @@ deslogueo.addEventListener("click", async (e) => {
     }).then((result) => {
       window.location.replace("/users/login");
     });
-  } catch (e) {
+  } catch (error) {
     await Swal.fire({
       icon: "error",
-      text: `Lo sentimos, hubo un error al desloguearte. Volvé a intentarlo. ${e.message} `,
+      text: `Lo sentimos, hubo un error al desloguearte. Volvé a intentarlo. ${error.message} `,
     });
   }
 });

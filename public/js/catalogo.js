@@ -68,38 +68,6 @@ const productoAlStorage = (productID) => {
     });
   }
 };
-const productoAlCarrito = async (producto, cid) => {
-  try {
-    const guardarProducto = await fetch(
-      `/api/carts/${cid}/product/${producto.product}?qty=1`,
-      {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-      }
-    );
-    const fetchResult = await guardarProducto.json();
-
-    if (!fetchResult) {
-      throw new Error("Error interno de comunicación con la base de datos");
-    }
-    Swal.fire({
-      title: "👌",
-      text: "El producto se agregó con éxito al carrito",
-      position: "top-end",
-      timer: 1500,
-      showConfirmButton: false,
-    });
-  } catch (e) {
-    Swal.fire({
-      title: "Oops",
-      text: "El producto se agregó con éxito al carrito",
-      position: "top-end",
-      timer: 1500,
-      showConfirmButton: false,
-    });
-    throw new Error("Error al tratar de guardar el producto ", e.message);
-  }
-};
 
 const visualizacion = document.querySelector("#visualizacion");
 visualizacion.addEventListener("submit", (e) => {

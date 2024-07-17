@@ -78,7 +78,7 @@ borrarCategoria.forEach((boton) => {
       });
 
       const categorias = parseado.payload.category;
-      console.log("categorias", categorias);
+
       const bannerCategorias = document.getElementById("asignadas");
       const nuevoHTML = categorias
         .map(
@@ -146,7 +146,7 @@ bannerExistentes.addEventListener("click", async (e) => {
       )
       .join("");
     const bannerAsignadas = document.querySelector("#asignadas");
-    console.log("html", nuevoHTML);
+
     bannerAsignadas.innerHTML = nuevoHTML;
   } catch (e) {
     Swal.fire({
@@ -172,14 +172,14 @@ bannerAsignadas.addEventListener("click", async (e) => {
       }
     );
     const parseado = await modificado.json();
-    console.log(modificado);
-    if (!modificado) {
-      throw new Error("No se pudo agregar la categoría");
+
+    if (parseado.error) {
+      throw new Error(parseado.error);
     }
     await Swal.fire({
       title: "👍",
       text: "La categoría se borró con éxito",
-      position: "top-end",
+      position: "center",
       timer: 1500,
       showConfirmButton: false,
     });
@@ -199,13 +199,13 @@ bannerAsignadas.addEventListener("click", async (e) => {
       )
       .join("");
     const bannerAsignadas = document.querySelector("#asignadas");
-    console.log("html", nuevoHTML);
+
     bannerAsignadas.innerHTML = nuevoHTML;
   } catch (error) {
     Swal.fire({
       title: "Oops",
       text: `La categoría no se pudo borrar debido a ${error.message}`,
-      position: "top-end",
+      position: "center",
       showConfirmButton: true,
     });
   }
@@ -223,19 +223,20 @@ subirImagen.addEventListener("submit", async (e) => {
       method: "PUT",
       body: bodyData,
     });
-    await response.json();
+    const parsed = await response.json();
+    if (parsed.error) throw new Error(parsed.error);
 
     Swal.fire({
       title: "👍",
       text: "La imagen se cargó existosamente",
-      position: "top-end",
+      position: "center",
       showConfirmButton: true,
     });
   } catch (e) {
     Swal.fire({
       title: "Oops",
       text: "Hubo un error y no se pudo cargar la imagen",
-      position: "top-end",
+      position: "center",
       showConfirmButton: true,
     });
   }

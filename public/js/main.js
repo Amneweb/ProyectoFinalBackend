@@ -6,8 +6,8 @@ const populateCategories = async () => {
     });
     const listaCategorias = await categorias.json();
 
-    if (!listaCategorias) {
-      throw new Error("problema interno, no se puede mostrar las categorías");
+    if (!listaCategorias.error) {
+      throw new Error("Problema interno, no se pudieron cargar las categorías");
     }
     const html = listaCategorias
       .map(
@@ -20,10 +20,10 @@ const populateCategories = async () => {
       document.querySelector(".footercate").innerHTML = html;
     }
   } catch (e) {
-    console.log(
-      "error al tratar de mostrar el listado de categorias ",
-      e.message
-    );
+    document.querySelector("#categorias").innerHTML = e.message;
+    if (document.querySelector(".footercate")) {
+      document.querySelector(".footercate").innerHTML = e.message;
+    }
   }
 };
 populateCategories();
