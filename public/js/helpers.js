@@ -37,12 +37,12 @@ modificarProducto.addEventListener("submit", async (e) => {
       position: "center",
       timer: 1500,
       showConfirmButton: false,
-    }).then((result) => location.reload(true));
+    }).then((result) => window.location.replace("/admin/catalogo"));
   } catch (e) {
     Swal.fire({
       title: "Oops",
       text: `Hubo un error al tratar de modificar el producto: ${e.message}`,
-      position: "top-end",
+      position: "center",
       timer: 1500,
       showConfirmButton: false,
     });
@@ -231,7 +231,7 @@ subirImagen.addEventListener("submit", async (e) => {
       text: "La imagen se cargó existosamente",
       position: "center",
       showConfirmButton: true,
-    });
+    }).then((result) => window.location.replace("/admin/catalogo"));
   } catch (e) {
     Swal.fire({
       title: "Oops",

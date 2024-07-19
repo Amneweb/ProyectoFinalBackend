@@ -6,7 +6,7 @@ const populateCategories = async () => {
     });
     const listaCategorias = await categorias.json();
 
-    if (!listaCategorias.error) {
+    if (listaCategorias.error) {
       throw new Error("Problema interno, no se pudieron cargar las categorías");
     }
     const html = listaCategorias

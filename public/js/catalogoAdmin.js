@@ -127,7 +127,7 @@ agregarCategoria.addEventListener("submit", async (e) => {
       position: "center",
       timer: 1500,
       showConfirmButton: false,
-    });
+    }).then((result) => window.location.reload(true));
   } catch (e) {
     Swal.fire({
       title: "OOops",
