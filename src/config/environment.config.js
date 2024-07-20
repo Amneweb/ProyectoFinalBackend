@@ -50,9 +50,8 @@ const environmentConfig = {
       SECRET: COOKIE_SECRET_KEY ?? "87co5ok76ie",
     },
     GITHUB: {
-      CLIENT_ID: GITHUB_CLIENT_ID ?? "Iv1.a8444bf7419c2a38",
-      CLIENT_SECRET:
-        GITHUB_CLIENT_SECRET ?? "2a14000731a7aa95b996ccd8317603f628600465",
+      CLIENT_ID: GITHUB_CLIENT_ID,
+      CLIENT_SECRET: GITHUB_CLIENT_SECRET,
       CALLBACK_URL:
         GITHUB_CALLBACK_URL ??
         "http://localhost:8080/api/sessions/githubcallback",
