@@ -4,7 +4,7 @@ import { passportJWTCall } from "./utils/utils.js";
 import cookieParser from "cookie-parser";
 import { environmentConfig } from "./config/environment.config.js";
 import handlebars from "express-handlebars";
-import { Server } from "socket.io";
+
 import swaggerUi from "swagger-ui-express";
 import swaggerSpecs from "../src/config/swagger.config.js";
 import passport from "passport";
@@ -26,7 +26,7 @@ import {
   dateFormat,
 } from "./utils/hb-helpers.js";
 import purchaseRouter from "./routes/purchase.routes.js";
-import messageModel from "./services/daos/mongo/mensajes/messages.model.js";
+
 const app = express();
 
 app.engine("handlebars", handlebars.engine());
@@ -54,6 +54,7 @@ const httpServer = app.listen(PORT, () => {
   console.log("listening on port ", PORT);
 });
 import { addLogger } from "./config/logger.config.js";
+import messagehandler from "./utils/chat.js";
 
 app.use(addLogger);
 //Middlewares Passport
@@ -92,29 +93,4 @@ app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 app.get("*", (req, res) => {
   res.status(400).render(`404`, { style: "admin.css" });
 });
-const socketServer = new Server(httpServer);
-
-socketServer.on("connection", async (socket) => {
-  let messages = await messageModel.find();
-
-  socketServer.emit("messageLogs", messages);
-
-  socket.on("message", async (data) => {
-    try {
-      const newMessage = await messageModel.create(data);
-      messages = await messageModel.find();
-
-      socketServer.emit("messageLogs", messages);
-    } catch (error) {
-      console.error("Error guardando en la base de datos:", error);
-    }
-  });
-
-  socket.on("userConnected", (data) => {
-    socket.broadcast.emit("userConnected", data.user);
-  });
-
-  socket.on("closeChat", (data) => {
-    if (data.close === "close") socket.disconnect();
-  });
-});
+messagehandler(httpServer);

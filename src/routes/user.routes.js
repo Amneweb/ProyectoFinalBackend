@@ -24,10 +24,6 @@ export default class UsersRouter extends CustomRouter {
       usersController.updateCurrentUser
     );
 
-    this.get("/premiumUser", ["PREMIUM"], usersController.getPremiumUser);
-
-    this.get("/adminUser", ["ADMIN"], usersController.getAdminUser);
-
     this.post("/login", ["PUBLIC"], usersController.login);
 
     this.post(
@@ -36,7 +32,8 @@ export default class UsersRouter extends CustomRouter {
       validateUserFormData,
       usersController.register
     );
-
+    this.get("/github", ["PUBLIC"], usersController.github);
+    this.post("/githubcallback", ["PUBLIC"], usersController.githubcallback);
     this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
 
     this.put(

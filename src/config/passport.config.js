@@ -1,5 +1,4 @@
 import passport from "passport";
-import local from "passport-local";
 import jwtStrategy from "passport-jwt";
 import githubStrategy from "passport-github2";
 import { environmentConfig } from "./environment.config.js";
@@ -8,12 +7,12 @@ import { createHash, isValidPassword } from "../utils/utils.js";
 const JwtStrategy = jwtStrategy.Strategy;
 const ExtractJWT = jwtStrategy.ExtractJwt;
 
-const LocalStrategy = local.Strategy;
-
 const initializePassport = () => {
-  /*==================================
+  /*
+  ==================================
   ESTRATEGIA GITHUB
   ==================================
+  */
   //TODO: ver si funciona estrategia de github como opcional
   passport.use(
     "github",
@@ -40,10 +39,9 @@ const initializePassport = () => {
             let newUser = {
               userName: profile._json.name,
               userLastName: "",
-              userAge: 25,
+              userAge: 20,
               userEmail: profile.emails[0].value,
               userPassword: "",
-              userLoggedBy: "GitHub",
             };
             const result = await userModel.create(newUser);
             return done(null, result);
@@ -57,88 +55,13 @@ const initializePassport = () => {
         }
       }
     )
-  );*/
-  //FIXME: la estrategia local se puede borrar
-  /*========================
-  ESTRATEGIA LOCAL
-  =========================*/
-  // REGISTRO----------------
-  passport.use(
-    "register",
-    new LocalStrategy(
-      {
-        passReqToCallback: true,
-        usernameField: "userEmail",
-        passwordField: "userPassword",
-      },
-      async (req, userEmail, userPassword, done) => {
-        const { userName, userLastName, userAge } = req.body;
-        try {
-          const exists = await userModel.findOne({ userEmail });
-          if (exists) {
-            console.log("El usuario ya existe!!");
-            return done(null, false);
-          }
-
-          const user = {
-            userName,
-            userLastName,
-            userEmail,
-            userAge,
-            userPassword: createHash(userPassword),
-          };
-
-          const result = await userModel.create(user);
-
-          // TODO OK
-          return done(null, result);
-        } catch (error) {
-          return done("Error registrando el usuario: " + error);
-        }
-      }
-    )
   );
 
-  // LOGIN ---------------------
-  passport.use(
-    "login",
-    new LocalStrategy(
-      {
-        passReqToCallback: true,
-        usernameField: "userEmail",
-        passwordField: "userPassword",
-      },
-      async (req, userEmail, userPassword, done) => {
-        try {
-          const user = await userModel.findOne({ userEmail: userEmail });
-          console.log("Usuario encontrado para login:");
-          console.log(user);
-
-          if (!user) {
-            console.warn(
-              "No hay un usuario con esa dirección de correo: " + userEmail
-            );
-            return done(null, false);
-          }
-
-          //user.userPassword es el password hasheado que viene de la bdd
-          //userPassword es el que viene desde el formulario de login
-          if (!isValidPassword(userPassword, user.userPassword)) {
-            console.warn("Una de las credenciales es inválida: " + userEmail);
-            return done(null, false);
-          }
-
-          return done(null, user);
-        } catch (error) {
-          return done(error);
-        }
-      }
-    )
-  );
-  //FIXME: verificar si la estoy usando y dónde.... 🤦‍♀️
-  /*=============================
+  /*
+=============================
 ESTRATEGIA JWT
-==============================*/
+==============================
+*/
   passport.use(
     "jwt",
     new JwtStrategy(

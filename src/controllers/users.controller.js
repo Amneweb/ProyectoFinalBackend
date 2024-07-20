@@ -74,14 +74,6 @@ export default class UsersController {
     res.sendSuccess(req.user);
   };
 
-  getPremiumUser = (req, res) => {
-    res.sendSuccess(req.user);
-  };
-
-  getAdminUser = (req, res) => {
-    res.sendSuccess(req.user);
-  };
-
   login = async (req, res) => {
     const { userEmail, userPassword } = req.body;
     try {
@@ -172,6 +164,10 @@ export default class UsersController {
       } catch (e) {
         res.sendInternalServerError(e);
       }
+  };
+
+  github = async (req, res) => {
+    passport.authenticate("github");
   };
 
   deleteUser = async (req, res) => {
