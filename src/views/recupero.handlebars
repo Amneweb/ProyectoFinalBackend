@@ -1,0 +1,26 @@
+<div class="loader-container">
+  <div class="spinner"></div>
+</div>
+{{> nav}}
+<div class="container">
+  <h1 class="centered">Windward Car &amp; Truck - Battery Store</h1>
+  <h3 class="centered">Formulario de restablecimiento de contraseña</h3>
+  <p class="centered">Si no tenés una cuenta con nosotros, create una haciendo
+    click
+    <a href="/users/register">ACÁ</a></p>
+  <form class="session_form" id="recuperacion">
+
+     <div>
+      <label>Email</label>
+      <input name="userEmail" type="email" id="inputRecuperar" required />
+
+    </div>
+    
+    <div><input type="submit" value="Restablecer contraseña" /></div>
+   
+
+  </form>
+</div>
+{{> footer}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/recupero.js"></script>

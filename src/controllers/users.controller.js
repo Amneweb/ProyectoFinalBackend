@@ -195,15 +195,21 @@ export default class UsersController {
   };
   recoverPassword = async (req, res) => {
     const token = req.params.tid;
-    const cookie = req.cookies["email_recovery_expiration"];
+    const cookie = req.signedCookies["email_recovery_expiration"];
+
+    console.log("token ", token);
+    console.log("cookie ", cookie);
     if (!cookie) {
       throw new Error("el tiempo ha expirado. Volvé a intentarlo");
     }
     try {
       const emailRecibido = await this.#userService.recovery(token, cookie);
-      res.sendSuccess(
-        `Token y cookie son iguales, ahora renderizo el formulario para cargar el password nuevo para el email ${emailRecibido}. En postman, ir a Ingreso nuevo password`
-      );
+      console.log("email recibido", emailRecibido);
+      if (!emailRecibido.error)
+        res.render("restablecer", {
+          emailRecibido: emailRecibido,
+          style: "admin.css",
+        });
     } catch (e) {
       res.sendBadClientError(e.message);
     }
@@ -212,7 +218,7 @@ export default class UsersController {
   newpassword = async (req, res) => {
     const email = req.body.email;
     const pass = req.body.pass;
-    const cookie = req.cookies["email_recovery_expiration"];
+    const cookie = req.signedCookies["email_recovery_expiration"];
 
     try {
       if (!cookie) {
@@ -240,6 +246,8 @@ export default class UsersController {
     const user = req.user;
     try {
       const datosActuales = await this.#userService.findByUsername(user.email);
+      console.log("datos Acutales");
+      console.log(datosActuales);
       const datosMoldeados = this.#usersDTO.getUserInputFrom(datosActuales);
       res.sendSuccess(datosMoldeados);
     } catch (e) {

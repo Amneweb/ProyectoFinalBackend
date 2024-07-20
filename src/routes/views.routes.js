@@ -55,7 +55,12 @@ export default class ViewsRouter extends CustomRouter {
     this.get("/localstorage", ["PUBLIC"], cartController.localStorage);
 
     this.get("/compra", ["USER", "PREMIUM"], cartController.compra);
-
+    this.get("/recupero", ["PUBLIC"], (req, res) =>
+      res.render("recupero", { style: "admin.css" })
+    );
+    this.get("/restablecer", ["PUBLIC"], (req, res) =>
+      res.render("restablecer", { style: "admin.css" })
+    );
     this.get("/chat", ["PUBLIC"], (req, res) => {
       res.render("messages", { style: "admin.css" });
     });

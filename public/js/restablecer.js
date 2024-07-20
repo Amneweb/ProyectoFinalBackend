@@ -1,20 +1,16 @@
-const verPassword = document.querySelector("#verPassword");
-const userPassword = document.querySelector("#userPassword");
-verPassword.addEventListener("click", (e) => {
-  e.preventDefault();
-  userPassword.type = userPassword.type === "password" ? "text" : "password";
-});
+const formRestablecer = document.getElementById("restablecer");
 
-const loginForm = document.getElementById("loginForm");
-
-loginForm.addEventListener("submit", async (e) => {
+formRestablecer.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const data = new FormData(loginForm);
+
+  const data = new FormData(formRestablecer);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
   console.log(obj);
+
+  console.log(JSON.stringify(obj));
   try {
-    const result = await fetch("/api/users/login", {
+    const result = await fetch("/api/users/newpassword", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -23,13 +19,13 @@ loginForm.addEventListener("submit", async (e) => {
     });
 
     const parsed = await result.json();
-
+    console.log(parsed);
     if (!parsed.error) {
       await Swal.fire({
         title: "👍",
-        text: "Te logueaste existosamente",
+        text: "Ya restableciste tu contraseña, podés loguearte nuevamente",
       }).then((result) => {
-        window.location.replace("/users/currentUser");
+        window.location.replace("/users/login");
       });
     } else {
       throw new Error(`Ha habido un error: ${parsed.error}`);

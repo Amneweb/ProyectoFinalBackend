@@ -1,20 +1,26 @@
-const verPassword = document.querySelector("#verPassword");
-const userPassword = document.querySelector("#userPassword");
-verPassword.addEventListener("click", (e) => {
-  e.preventDefault();
-  userPassword.type = userPassword.type === "password" ? "text" : "password";
-});
+const loaderContainer = document.querySelector(".loader-container");
+const displayLoading = () => {
+  loaderContainer.style.display = "block";
+};
 
-const loginForm = document.getElementById("loginForm");
+const hideLoading = () => {
+  loaderContainer.style.display = "none";
+};
 
-loginForm.addEventListener("submit", async (e) => {
+hideLoading();
+const formRecuperacion = document.getElementById("recuperacion");
+
+formRecuperacion.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const data = new FormData(loginForm);
+  displayLoading();
+  const data = new FormData(formRecuperacion);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
   console.log(obj);
+
+  console.log(JSON.stringify(obj));
   try {
-    const result = await fetch("/api/users/login", {
+    const result = await fetch("/api/email/recupero", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -25,11 +31,10 @@ loginForm.addEventListener("submit", async (e) => {
     const parsed = await result.json();
 
     if (!parsed.error) {
+      hideLoading();
       await Swal.fire({
         title: "👍",
-        text: "Te logueaste existosamente",
-      }).then((result) => {
-        window.location.replace("/users/currentUser");
+        text: "Te va a llegar un email",
       });
     } else {
       throw new Error(`Ha habido un error: ${parsed.error}`);

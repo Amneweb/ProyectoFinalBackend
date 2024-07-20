@@ -280,7 +280,11 @@ export default class UserService {
     };
 
     const arrayDocs = usuarioEncontrado.userDocs;
+
+    console.log("arrayDocs");
+    console.log(arrayDocs);
     const mapped = arrayDocs.map((item) => item.docCode);
+    console.log(mapped);
     console.log(
       "indice del archivo con el mismo codigo",
       mapped.indexOf(docObject.docCode)
@@ -307,13 +311,16 @@ export default class UserService {
     });
 
     const docs = await this.documentationDAO.findAll();
+
     const obligatorios = docs.map((doc) => {
       if (doc.obligatorio === true) return doc.codigo;
     });
-
+    console.log("obligatorios");
+    console.log(obligatorios);
     let faltantes = [];
     const soloCodigos = modificado.userDocs.map((item) => item.docCode);
-
+    console.log("sologodicos");
+    console.log(soloCodigos);
     obligatorios.forEach((item) => {
       if (soloCodigos.indexOf(item) < 0) {
         faltantes.push(item);
@@ -324,10 +331,7 @@ export default class UserService {
     if (faltantes.length === 0) {
       return await userDAO.updateByFilter(user.email, { userStatus: true });
     } else {
-      return {
-        message: "aun falta la siguiente documentacion",
-        faltantes: faltantes,
-      };
+      return modificado;
     }
   };
 }

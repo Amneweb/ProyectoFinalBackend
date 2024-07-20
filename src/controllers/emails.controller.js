@@ -34,8 +34,10 @@ export const sendEmail = async (req, res) => {
   }
 };
 export const recupero = async (req, res) => {
-  const destEmail = req.body.email;
-
+  const destEmail = req.body.userEmail;
+  console.log(destEmail);
+  const baseurl = req.headers.origin;
+  console.log("baseurl ", baseurl);
   try {
     const emailVerificado = await userService.findByUsername(destEmail);
     if (!emailVerificado) {
@@ -46,10 +48,10 @@ export const recupero = async (req, res) => {
     };
     const recovery_token = generateJWToken(tokenRecovery);
     const html = `<h3>Hola, ${destEmail}</h3><p>Haciendo click en este enlace podrás ir a setear una nueva contraseña. Este enlace tiene una validez de 1 hora desde el momento en que nuestro servidor envió este correo</p>
-  <p><a href="localhost:8080/api/users/recupero/${recovery_token}">Recuperar contraseña</a></p>`;
+  <p><a href="${baseurl}/api/users/recupero/${recovery_token}">Recuperar contraseña</a></p><p>Si el enlace no funciona, copiar y pegar la siguiente ruta en el navegador:</p><p>${baseurl}/api/users/recupero/${recovery_token}</p>`;
     const mailOptions = {
       to: destEmail,
-      subject: "Windward - Recuperación de contraseña",
+      subject: "Windward - Restablecimiento de contraseña",
       html: html,
       attachments: [],
     };
