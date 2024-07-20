@@ -352,7 +352,7 @@ describe("Test de toda la App", () => {
       IDproductoMulter = result._body.payload._id;
       // Assert
       expect(result.statusCode).to.eql(200);
-      // console.log(result._body);
+
       expect(result._body.payload.thumb).to.be.ok;
     });
     /*
@@ -369,7 +369,7 @@ describe("Test de toda la App", () => {
         .attach("imagen", "./test/imagenes/estanterias.jpeg");
       // Assert
       expect(result.statusCode).to.eql(200);
-      // console.log(result._body);
+
       expect(result._body.payload.thumb).to.be.ok;
     });
     /*

@@ -16,9 +16,7 @@ formRecuperacion.addEventListener("submit", async (e) => {
   const data = new FormData(formRecuperacion);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
-  console.log(obj);
 
-  console.log(JSON.stringify(obj));
   try {
     const result = await fetch("/api/email/recupero", {
       method: "POST",

@@ -143,7 +143,6 @@ export default class CartController {
     }
   };
   purchase = async (req, res) => {
-    console.log("en controlador purchase iniciado");
     const user = req.user;
     const cid = req.params.cid;
     try {

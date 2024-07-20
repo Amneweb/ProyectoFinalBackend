@@ -1,6 +1,6 @@
 import fs from "fs";
 import { v4 as uuidv4 } from "uuid";
-import pc from "picocolors";
+
 class Producto {
   constructor(title, price, code, stock, description, status, category, thumb) {
     this.title = title;
@@ -39,7 +39,6 @@ class ProductManagerFS {
         await this.#fs.promises.writeFile(this.#productosRutaArchivo, "[]");
       }
     } catch (error) {
-      console.log("error creando directorio y archivo", error);
       throw ("error creando directorio y archivo", error);
     }
   };
@@ -47,8 +46,6 @@ class ProductManagerFS {
 =     Crear un producto (con imagen)          =
 =============================================*/
   addProduct = async (product) => {
-    console.log(pc.bgBlue("lo que llega a add product"));
-    console.log(product);
     const { title, price, code, stock, description, status, category, thumb } =
       product;
     let productoNuevo = new Producto(
@@ -61,8 +58,7 @@ class ProductManagerFS {
       category,
       thumb
     );
-    console.log(pc.bgYellow("producto nuevo dentro de add product"));
-    console.log(productoNuevo);
+
     try {
       const existentes = await this.getProducts();
 
@@ -76,7 +72,7 @@ class ProductManagerFS {
         );
       } else {
         const newID = uuidv4();
-        console.log(pc.bgGreen("id generado con uuid " + newID));
+
         this.#productos.push({
           ...productoNuevo,
           id: newID,
@@ -185,10 +181,7 @@ class ProductManagerFS {
   uploadThumbByID = async (id, file) => {
     try {
       const productoAmodificar = await this.getProductByID(id);
-      console.log(
-        "producto cuya imagen se está agregando ",
-        productoAmodificar
-      );
+
       if (productoAmodificar) {
         const indice = this.#productos.indexOf(productoAmodificar);
         this.#productos[indice].thumb.push(file.replaceAll(" ", "%20"));

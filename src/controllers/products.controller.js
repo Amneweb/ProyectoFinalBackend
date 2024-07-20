@@ -11,7 +11,7 @@ export default class ProductsController {
 
   getAll = async (req, res) => {
     var path = req.baseUrl;
-    console.log("path:", path);
+
     const page = parseInt(req.query.page) || 1;
     if (page <= 0 || page > 1000) {
       page = 1;
@@ -56,7 +56,7 @@ export default class ProductsController {
   getByCate = async (req, res) => {
     var path = req.baseUrl;
     var cate = req.params.cid;
-    console.log("path:", path);
+
     const page = parseInt(req.query.page) || 1;
     if (page <= 0 || page > 1000) {
       page = 1;
@@ -129,7 +129,7 @@ export default class ProductsController {
   postOne = async (req, res) => {
     const nuevo = req.validatedData;
     logger.debug("usuario en controlador de productos %s", req.user.email);
-    console.log("req user role", req.user.role.toUpperCase());
+
     if (req.user.role.toUpperCase() === "PREMIUM") {
       const owner = req.user.email;
     }
@@ -189,7 +189,7 @@ export default class ProductsController {
     const modified = req.validatedData;
     const id = req.params.id;
     const user = req.user;
-    console.log("en modify controller ", modified);
+
     if (modified.error) {
       logger.error(
         "Error de validación de datos al tratar de modificar el producto: %s",

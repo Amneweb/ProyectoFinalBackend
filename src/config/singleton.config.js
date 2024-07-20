@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import pc from "picocolors";
+
 import { environmentConfig } from "./environment.config.js";
 const url = environmentConfig.DATABASE.MONGO.URL;
 const db =
   environmentConfig.TESTING === "test"
     ? "test"
     : environmentConfig.DATABASE.MONGO.DB_NAME;
-console.log(pc.bgCyan("base de datos usada " + db));
+
 export default class MongoSingleton {
   static #instance;
 

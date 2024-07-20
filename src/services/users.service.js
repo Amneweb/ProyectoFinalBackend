@@ -26,20 +26,18 @@ export default class UserService {
     const hoy = new Date();
 
     logger.debug("hoy en milisegundos %s", hoy.getTime());
-    console.log("hoy en milliseconds", hoy.getTime());
+
     //el tiempo limite para borrar los usuarios lo define el administrador y llega por la query "meses". No considero meses exactos, sino días
     // la formula real será lapso = meses * 30 * 24 * 60 * 60 * 1000 pero como necesito probarlo en minutos en lugar de meses, agrego un 0.0002 al final, y me transforma cada mes en casi 10 minutos
 
     const lapso = meses * 30 * 24 * 60 * 60 * 1000 * 0.0002;
-    console.log("lapso en milisegundos ", lapso);
+
     const limiteinferior = hoy - lapso;
 
     const result = await userDAO.findByFilter({
       userConnection: { $lte: limiteinferior },
     });
-    result.forEach((usuario) => {
-      console.log("logout en miliseconds", usuario.userConnection.getTime());
-    });
+
     return result;
   };
   save = async ({
@@ -84,10 +82,7 @@ export default class UserService {
     if (!hayUsuario) {
       throw new BadRequestError("No se encontró usuario con ese email");
     }
-    console.log("hay usuario", hayUsuario);
-    console.log("value", value);
 
-    console.log("filter", filter);
     if (filter === "userCartID") {
       const carritos = hayUsuario.userCartID;
 
@@ -135,8 +130,7 @@ export default class UserService {
 
   login = async (userEmail, userPassword) => {
     const user = await userDAO.findOne(userEmail);
-    console.log("Usuario encontrado para login:");
-    console.log(user);
+
     if (!user) {
       console.warn("User doesn't exists with username: " + userEmail);
       throw new BadRequestError(
@@ -174,14 +168,12 @@ export default class UserService {
       logger.debug(nulos);
       if (nulos.length > 0) {
         nulos.forEach((item) => {
-          console.log(item);
           const IDinexistente = arrayCarritos.indexOf(item);
-          console.log("id inex", IDinexistente);
+
           arrayCarritos.splice(IDinexistente, 1);
-          console.log(arrayCarritos);
         });
         user["userCartID"] = arrayCarritos;
-        console.log("new cart ", arrayCarritos);
+
         await user.save();
       }
     }
@@ -201,7 +193,7 @@ export default class UserService {
     if (token === cookie) {
       //verifico el contenido del token
       const jwtInfo = jwt.verify(token, environmentConfig.SERVER.JWT.SECRET);
-      console.log("email extraido de jwt", jwtInfo);
+
       return jwtInfo.user.email;
     } else {
       return new BadRequestError("el email no es el que hizo la petición");
@@ -244,8 +236,6 @@ export default class UserService {
     }
 
     if (torole === "premium") {
-      console.log("dentro del if");
-      console.log(usuarioEncontrado.userStatus);
       if (usuarioEncontrado.userStatus === false) {
         logger.error(
           "el usuario todavía no tiene el permiso para cambiar de rol"
@@ -281,22 +271,13 @@ export default class UserService {
 
     const arrayDocs = usuarioEncontrado.userDocs;
 
-    console.log("arrayDocs");
-    console.log(arrayDocs);
     const mapped = arrayDocs.map((item) => item.docCode);
-    console.log(mapped);
-    console.log(
-      "indice del archivo con el mismo codigo",
-      mapped.indexOf(docObject.docCode)
-    );
+
     if (mapped.indexOf(docObject.docCode) === -1) {
       arrayDocs.push(docObject);
     } else {
       arrayDocs.splice(mapped.indexOf(docObject.docCode), 1);
-      console.log(
-        "direccion archivo a borrar ",
-        __dirname + docObject.docAddress
-      );
+
       fs.unlink(__dirname + docObject.docAddress, (error) => {
         if (error) console.log(error);
         else {
@@ -315,19 +296,16 @@ export default class UserService {
     const obligatorios = docs.map((doc) => {
       if (doc.obligatorio === true) return doc.codigo;
     });
-    console.log("obligatorios");
-    console.log(obligatorios);
+
     let faltantes = [];
     const soloCodigos = modificado.userDocs.map((item) => item.docCode);
-    console.log("sologodicos");
-    console.log(soloCodigos);
+
     obligatorios.forEach((item) => {
       if (soloCodigos.indexOf(item) < 0) {
         faltantes.push(item);
       }
     });
-    console.log("faltantes");
-    console.log(faltantes);
+
     if (faltantes.length === 0) {
       return await userDAO.updateByFilter(user.email, { userStatus: true });
     } else {

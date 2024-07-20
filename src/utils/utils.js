@@ -20,7 +20,6 @@ export const consultaExitosa = (res, datos, renderOption, template) => {
       },
       (err, html) => {
         if (err) return console.error(err);
-        console.log(html);
       }
     );
   } else {
@@ -30,7 +29,6 @@ export const consultaExitosa = (res, datos, renderOption, template) => {
 
 export const agregarRuta = function (req, res, next) {
   let destinationPath;
-  console.log("req en agregar Ruta", req.baseUrl);
 
   switch (req.baseUrl) {
     case "/api/products":
@@ -69,7 +67,6 @@ export const uploader = multer({
   storage,
   // si se genera algun error, lo capturamos
   onError: function (err, next) {
-    console.log(`Error al tratar de subir el archivo ${err}`);
     throw new Error("error al tratar de subir el archivo" + err);
     next();
   },
@@ -150,38 +147,6 @@ export const generateJWToken = (user) => {
   });
 };
 
-export const authToken = (req, res, next) => {
-  //El JWT token se guarda en los headers de autorización o en la cookie.
-  console.log("en auth token");
-  let token;
-  //Si se guarda en los headers de autorización.
-  const authHeader = req.headers.authorization;
-  console.log("el token en el header", authHeader);
-
-  //Si se guarda en la cookie.
-  const authCookie = req.signedCookies["token_login"];
-  console.log("el token en la cookie", authCookie);
-
-  if (authHeader || authCookie) {
-    token = authHeader ? authHeader.split(" ")[1] : authCookie;
-  }
-  console.log("token", token);
-  //Validar token
-  jwt.verify(
-    token,
-    environmentConfig.SERVER.JWT.SECRET,
-    (error, credentials) => {
-      if (error)
-        return res.status(403).send({ error: "Token invalid, Unauthorized!" });
-      //Token OK
-      req.user = credentials.user;
-      console.log("user en utils ", credentials.user);
-
-      next();
-    }
-  );
-};
-
 export const passportJWTCall = async (req, res, next) => {
   req.logger.method("Entrando a llamar strategy");
 
@@ -209,7 +174,7 @@ export const authorization = (role) => {
 export const sendEmail = (content) => {
   let destEmail;
   let html;
-  console.log("dentro de send email en utils");
+
   const { purchase_datetime, code, purchaser, amount } = content;
   destEmail = purchaser;
   html = `<div><h3> Código de tu compra: ${code} </h3><p>Total de la compra: ${amount}</p><p>Fecha de compra: ${purchase_datetime} </p></div>`;

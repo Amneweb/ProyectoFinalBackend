@@ -35,9 +35,9 @@ export const sendEmail = async (req, res) => {
 };
 export const recupero = async (req, res) => {
   const destEmail = req.body.userEmail;
-  console.log(destEmail);
+
   const baseurl = req.headers.origin;
-  console.log("baseurl ", baseurl);
+
   try {
     const emailVerificado = await userService.findByUsername(destEmail);
     if (!emailVerificado) {

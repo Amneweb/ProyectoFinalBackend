@@ -6,8 +6,7 @@ const userDAO = new UserDAO();
 
 const githubService = async (userEmail) => {
   const user = await userDAO.findOne(userEmail);
-  console.log("Usuario encontrado para login en callback de strategy:");
-  console.log(user);
+
   if (!user) {
     console.warn("No existe usuario con email: " + userEmail);
     throw new Error("no hay un usuario registrado con email " + userEmail);
@@ -37,14 +36,12 @@ const githubService = async (userEmail) => {
 
     if (nulos.length > 0) {
       nulos.forEach((item) => {
-        console.log(item);
         const IDinexistente = arrayCarritos.indexOf(item);
-        console.log("id inex", IDinexistente);
+
         arrayCarritos.splice(IDinexistente, 1);
-        console.log(arrayCarritos);
       });
       user["userCartID"] = arrayCarritos;
-      console.log("new cart ", arrayCarritos);
+
       await user.save();
     }
   }

@@ -4,7 +4,7 @@ const contarCantidades = () => {
     .map((item) => item.qty)
     .reduce((acum, item) => acum + item);
   let cantidad = document.querySelector("#contador");
-  console.log(valor);
+
   cantidad.innerHTML = valor;
 };
 contarCantidades();

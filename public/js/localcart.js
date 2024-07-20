@@ -48,7 +48,6 @@ BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
 ========================================================================
 */
 const dibujar = async () => {
-  console.log("dentro de dibujar");
   let TOTAL = 0;
   try {
     await carrito.forEach(async (producto) => {
@@ -73,7 +72,6 @@ INICIAMOS PROCESO DE COMPRA Y CREAMOS UNA COOKIE
 ========================================================================
 */
 if (carrito) {
-  console.log("dentro de add event listener boton guardar");
   guardar.addEventListener("click", async (e) => {
     e.preventDefault();
 
@@ -131,7 +129,6 @@ if (carrito) {
 }
 
 if (carrito) {
-  console.log("event listener borrar carrito");
   borrarCarrito.addEventListener("click", (e) => {
     e.preventDefault();
     localStorage.removeItem("windwardCart");
@@ -145,7 +142,6 @@ if (carrito) {
 }
 
 const dibujarCard = (datos, qty) => {
-  console.log("dentron de dibujarCard");
   const divProducto = document.createElement("div");
   const total = datos.price * qty;
   divProducto.id = `div_${datos._id}`;

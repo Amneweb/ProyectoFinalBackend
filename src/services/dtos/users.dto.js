@@ -1,7 +1,5 @@
 export default class UsersDTO {
   getUserInputFrom = (user) => {
-    console.log("en dto");
-    console.log(user.userDocs);
     return {
       name: user.userName,
       lastName: user.userLastName,

@@ -19,14 +19,11 @@ router.get(
   }),
 
   async (req, res) => {
-    console.log("dentro del callback");
-
     const userEmail = req.user.userEmail;
 
     try {
       const user = await userService.findByUsername(userEmail);
-      console.log("Usuario encontrado para login en callback de strategy:");
-      console.log(user);
+
       if (!user) {
         console.warn("User doesn't exists with username: " + userEmail);
         throw new Error("no hay un usuario registrado con email " + userEmail);
@@ -59,14 +56,12 @@ router.get(
 
         if (nulos.length > 0) {
           nulos.forEach((item) => {
-            console.log(item);
             const IDinexistente = arrayCarritos.indexOf(item);
-            console.log("id inex", IDinexistente);
+
             arrayCarritos.splice(IDinexistente, 1);
-            console.log(arrayCarritos);
           });
           user["userCartID"] = arrayCarritos;
-          console.log("new cart ", arrayCarritos);
+
           await user.save();
         }
       }

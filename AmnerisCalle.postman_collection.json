@@ -1,0 +1,1267 @@
+{
+	"info": {
+		"_postman_id": "22dbdcc7-72dd-4dd6-bb83-0043770efad3",
+		"name": "Proyecto Backend",
+		"description": "API de ecommerce ficticio para el proyecto del curso de backend de Coderhouse.\n\n- **ESTUDIANTE**: Amneris Calle\n    \n- **COMISIÓN**: 60220\n    \n- **PROFESOR**: Alejandro Huertas\n    \n- **TUTOR**: Alan Sinicco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32699092"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Todos los productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/?limit=4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "4"
+								}
+							]
+						},
+						"description": "Endpoint que muestra todos los productos, o sólo la cantidad especificada por los parámetros de la query de la url, si es que se quiere paginar la información. (Una vez obtenido el primer set de productos, si se quiere ver el siguiente hay que agregar más queries en la url (por ejemplo la página), pero en este ejemplo no se muestran), por lo que no se podrá ver nada más que el primer set.\n\n_**limit**_ = cantidad máxima de productos por página"
+					},
+					"response": []
+				},
+				{
+					"name": "Productos ordenados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/?limit=10&criterio=price&sentido=-1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "criterio",
+									"value": "price"
+								},
+								{
+									"key": "sentido",
+									"value": "-1"
+								}
+							]
+						},
+						"description": "Igual que la anterior, pero con criterio y sentido de ordenación"
+					},
+					"response": []
+				},
+				{
+					"name": "Producto inexistente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/45543",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"45543"
+							]
+						},
+						"description": "Request que evalúa el mensaje recibido en caso de que el id del producto no tenga un formato o un valor válido"
+					},
+					"response": []
+				},
+				{
+					"name": "Un solo producto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65ec8fb290323f58a06c2361"
+								}
+							]
+						},
+						"description": "Endpoint que devuelve el objeto con el producto seleccionado por parámetro"
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar por categoría",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar producto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/:pid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":pid"
+							],
+							"variable": [
+								{
+									"key": "pid",
+									"value": "666390e3a31113561480c91f"
+								}
+							]
+						},
+						"description": "Endpoint que borra el producto seleccionado por parámetro"
+					},
+					"response": []
+				},
+				{
+					"name": "Nuevo producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "OD29 amplus Amneweb",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "254000",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "OD29",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "12x200 Amp/h",
+									"type": "text"
+								},
+								{
+									"key": "st",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "EDNA, tractores",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "thumb",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "Enpoint que crea un producto nuevo en base a la información brindada por formulario (o por un json) En este caso se brinda en el formulario de postman"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar producto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Clorex 325 AR",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "120000",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Autos y camiones",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Prof. de Descarga: Mayor al 85%  Separadores: De polipropileno tipo sobre  ",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "thumb",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "CL325",
+									"type": "text"
+								},
+								{
+									"key": "st",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/6653b397352c0035d214087a",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"6653b397352c0035d214087a"
+							]
+						},
+						"description": "Idem anterior, pero sólo se envían algunos datos"
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar categoría",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/:id/categoria/:cate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								":id",
+								"categoria",
+								":cate"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								},
+								{
+									"key": "cate",
+									"value": ""
+								}
+							]
+						},
+						"description": "Para modificar un producto, agregando o borrando categorías (las categorías están definidas en una colección categorías, no se pueden agregar categorías nuevas directamente al producto: primero se crean las categorías y se guardan en la colección, y luego se agregan)"
+					},
+					"response": []
+				},
+				{
+					"name": "Subir imagen",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/Users/amneriscalle/Documents/McBook PRO/CarreraFullStack/Curso4-Backend/ProyectoFinalBackend/public/uploads/img/products/1710696623250-FW95-ALTA2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/products/:id/imagenes",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":id",
+								"imagenes"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65ec8fb290323f58a06c2361"
+								}
+							]
+						},
+						"description": "Enpoint para modificar un producto agregando nuevas imágenes"
+					},
+					"response": []
+				}
+			],
+			"description": "Requests relacionadas a la obtención del catálogo de productos, de un producto unitario, modificación, y borrado de productos"
+		},
+		{
+			"name": "Carritos",
+			"item": [
+				{
+					"name": "Todos los carritos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/carts",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Un solo carrito",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/carts/:cid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								":cid"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "6637a7d70d36d061bcd24bc7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra carrito",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/carts/:cid/purchase",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								":cid",
+								"purchase"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "666448f2d6c4029a9856ab11"
+								}
+							]
+						},
+						"description": "Se inicia el proceso de compra, al que sólo pueden acceder los usuarios \"user\" y \"premium\" que no sean dueños del producto a comprar.\n\n_**cid**_ \\= id del carrito a comprar"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear carrito vacío",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/carts/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								""
+							]
+						},
+						"description": "Cuando un usuario demuestra intención de compra cliqueando en el botón correspondiente, el primer paso es crear un carrito vacío, al que se le van agregando los productos elegidos.\n\nLos escenarios que yo interpreto pueden ocurrir son:\n\n1. Un **usuario cualquiera** llega al shop online, busca productos y se va armando un carrito sin loguearse. Ese carrito se guarda en el localstorage. En el momento en que decide comprar, se le pide al usuario que se loguee, se le toman los datos y se le permite eventualmente seguir cargando el carrito, cuya información ya no está más en el localstorage sino en la bdd.\n    \n2. Un **usuario registrado y logueado** arma su carrito, cuyos datos quedan guardados directamente en la bdd y al momento de compra ya no es necesario loguearse nuevamente.\n    \n3. Un **usuario cualquiera** que había elegido productos pero nunca se registró o logueó vuelve a visitar el shop y, si no pasó mucho tiempo, es probable que el localstorage siga teniendo la info del carrito armado. El usuario sigue armando su carrito y se repite la lógica de la opción 1.\n    \n4. **Carritos abandonados o generados por el sistema luego de una compra por falta de stock**: Se le preguntará al usuario si quiere seguir guardando su carrito, de lo contrario se borran. También se borrarán automáticamente los carritos con más de cierto tiempo transcurrido desde su creación."
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar productos al carrito",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/carts/:cid/product/:pid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								":cid",
+								"product",
+								":pid"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "6672358a9a180ffbcfedb004"
+								},
+								{
+									"key": "pid",
+									"value": "6664d21d707e1efa3f5cf7be"
+								}
+							]
+						},
+						"description": "La descripcióon de esta request se corresponde y está incluida en la anterior"
+					},
+					"response": []
+				},
+				{
+					"name": "ID carrito usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/filtro/?filtro=userCartID",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"filtro",
+								""
+							],
+							"query": [
+								{
+									"key": "filtro",
+									"value": "userCartID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar producto de carrito",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/carts/:cid/product/:pid/?qty=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								":cid",
+								"product",
+								":pid",
+								""
+							],
+							"query": [
+								{
+									"key": "qty",
+									"value": "3"
+								}
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "666448f2d6c4029a9856ab11"
+								},
+								{
+									"key": "pid",
+									"value": "66650630707e1efa3f5cf7c9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar carrito completo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/carts/:cid",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"carts",
+								":cid"
+							],
+							"variable": [
+								{
+									"key": "cid",
+									"value": "66720c95c1593747190cd33f"
+								}
+							]
+						},
+						"description": "El admin o el usuario pueden borrar el carrito a través de esta request"
+					},
+					"response": []
+				}
+			],
+			"description": "Requests relacionadas a la creación, modificación, vista y borrado de carritos de compra."
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Registro nuevo usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userName",
+									"value": "Amneris",
+									"type": "text"
+								},
+								{
+									"key": "userLastName",
+									"value": "Calle",
+									"type": "text"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "userEmail",
+									"value": "amne@amneweb.com.ar",
+									"type": "text"
+								},
+								{
+									"key": "userAge",
+									"value": "54",
+									"type": "text"
+								},
+								{
+									"key": "userRole",
+									"value": "premium",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Rol User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userEmail",
+									"value": "amne@amneweb.com.ar",
+									"type": "text"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Rol Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userEmail",
+									"value": "adminCoder@coder.com",
+									"type": "text"
+								},
+								{
+									"key": "userPassword",
+									"value": "adminCod3r123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Rol Premium",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userEmail",
+									"value": "rainxfc@amneweb.com",
+									"type": "text"
+								},
+								{
+									"key": "userPassword",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/currentUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"currentUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tickets de usuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/tickets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Todos los usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/updateCurrentUser",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"updateCurrentUser"
+							]
+						},
+						"description": "Para ver la info del usuario luego de una actualización. El resultado de la query está moldeado por el dto, por lo que las propiedades del objeto resultado pueden no coincidir con las del objeto de la base de datos."
+					},
+					"response": []
+				},
+				{
+					"name": "Carrito de usuario logueado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/cart",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Usuarios sin actividad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/sinactividad/?meses=3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"sinactividad",
+								""
+							],
+							"query": [
+								{
+									"key": "meses",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Endpoint cuya request **trae todos los usuarios que no se han conectado a la bdd en un lapso determinado**. El lapso lo elije el administrador al momento de pedir la información y viaja en la ruta como un req.query llamado \"meses\".\n\nEl valor de la query sólo podrá ser un entero igual a la cantidad de meses que elija el administrador, pero el verdadero tiempo transcurrido será el equivalente a meses de 30 días (x ej si el admin elige 1 mes, serán 30 días; si elige 3 meses serán 90 días - no se tienen en cuenta los meses reales -)\n\nPara las pruebas del proyecto, en lugar de meses se consideran aprox 10 minutos de lapso trancurrido por cada \"mes\" que se elija. Es decir, si en la query se ponen meses=1, el tiempo transcurrido para que se considere que el usuario estuvo inactivo es de casi 10 minutos, que son aproximadamente 518400 milisegundos = 0.0002 \\* 24 horas \\* 60 minutos \\* 60 segundos x 1000 milisegundos, donde 0.0002 es lo que convierte el mes en 10 minutos (lo hice así para que la única diferencia entre la fórmula real y la ficticia sea el valor 0.0002).\n\nUna vez que el admin tiene el listado de usuarios inactivos, la idea es que pueda elegir entre borrar todos juntos o ir uno por uno, dejando algunos sin borrar. El endpoint que realizará esta tarea será el de _Borrar usuario_, al que llegará por parámetro el id de cada uno de los usuarios seleccionados."
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/665b18b5b48cbdc6efe4d738",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"665b18b5b48cbdc6efe4d738"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cambio de rol",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "torole",
+									"value": "premium",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/premium/:uid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"premium",
+								":uid"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": "6648183be5e204d17a499205"
+								}
+							]
+						},
+						"description": "Ruta a través de la cual el usuario pide el cambio de rol, normalmente de \"user\" a \"premium\". El cambio se realiza sólo si la documentación del usuario cumple con los requisitos (debe haber 3 documentos cargados)."
+					},
+					"response": []
+				},
+				{
+					"name": "Subir documentos",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/:uid/documents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								":uid",
+								"documents"
+							],
+							"variable": [
+								{
+									"key": "uid",
+									"value": ""
+								}
+							]
+						},
+						"description": "En esta ruta el usuario carga los documentos solicitados por el sistema. Además del id del usuario, que se envía en la petición como parámetro, en el body deben incluirse el archivo y el código del documento cargado (en la vista real, el código será un dropdown con las opciones ya definidas por el sistema, basadas en la colección \"documentation\"). Una vez cargado el documento se recibe un mensaje indicando cuáles son los documentos faltantes. Si están cargados todos, se muestra la info completa del usuario.\n\nLos códigos de la documentación requerida son AFIP, DOMICILIO y PAGO"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recupero contraseña",
+			"item": [
+				{
+					"name": "Recupero contraseña",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "info@amneweb.com.ar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/email/recupero",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"email",
+								"recupero"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recibir email recuperación",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/users/recupero/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiaW5mb0BhbW5ld2ViLmNvbS5hciJ9LCJpYXQiOjE3MTc1NTEzMjgsImV4cCI6MTcxNzU1MTkyOH0.c-R9TxWi0c8NaFOG4v0eSKMk9bD8rwJPFIzmvZgjjvc",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"recupero",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoiaW5mb0BhbW5ld2ViLmNvbS5hciJ9LCJpYXQiOjE3MTc1NTEzMjgsImV4cCI6MTcxNzU1MTkyOH0.c-R9TxWi0c8NaFOG4v0eSKMk9bD8rwJPFIzmvZgjjvc"
+							]
+						},
+						"description": "La ruta contiene el token que el usuario recibe como parte de la ruta a la que lleva el botón \"Reestablecer contraseña\" incluido en el email."
+					},
+					"response": []
+				},
+				{
+					"name": "Ingreso nuevo password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "pass",
+									"value": "amne31",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "info@amneweb.com.ar",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/users/newpassword",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"newpassword"
+							]
+						},
+						"description": "En la vista real, el email aparecerá ya cargado y sin posibilidades de modificación, para asegurarnos de que sea el que está cargado en la base de datos."
+					},
+					"response": []
+				}
+			],
+			"description": "Conjunto de requests para el manejo del reestablecimiento de contraseña. La prueba se debe hacer en el siguiente orden\n\n1. POST - Recupero de contraseña: Hacer el post de recupero de contraseña enviando la casilla de correo del usuario (debe ser la casilla cargada en el sistema)\n    \n2. GET - Este endpoint es el que el usuario visita una vez que hace click en el email recibido luego del paso 1: Para que funcione, pegar la ruta del enlace enviado x email\n    \n3. POST - Ingreso nuevo password: Cargar nuevo password"
+		},
+		{
+			"name": "Documentacion",
+			"item": [
+				{
+					"name": "Toda la doc requerida",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/documentation/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"documentation",
+								""
+							]
+						},
+						"description": "Endpoint para obtener el listado de documentos que el sistema exige a los usuarios premium"
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar documentación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "codigo",
+									"value": "PAGO",
+									"type": "text"
+								},
+								{
+									"key": "nombre",
+									"value": "Datos para la forma de pago",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/documentation",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"documentation"
+							]
+						},
+						"description": "Endpoint para cargar información sobre otros documentos que se solicitarán. Sólo accesible para los administradores.\n\nEventualmente haré la programación para poder modificar la obligatoriedad de los documentos, pero por el momento se suponen que todos los docs en esta colección son obligatorios"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar documentacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/documentation/:dcode",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"documentation",
+								":dcode"
+							],
+							"variable": [
+								{
+									"key": "dcode",
+									"value": ""
+								}
+							]
+						},
+						"description": "El administrador podrá dar de baja documentación que ya no es más requerida."
+					},
+					"response": []
+				}
+			],
+			"description": "Requests relacionadas a la administración de la documentación solicitada a los usuarios para que puedan cambiar al rol premium. Para no tener que reprogramar la API en caso que se cambien los requerimientos (x ej en lugar de pedir 3 documentos se pidan 4 o que sea diferente la info necesaria), con estas requests y la colección \"documentation\" el administrador del sitio podrá modificar los requerimientos sin que haya que acceder al código. (En la consigna del desafío pareciera que se dan los nombres de los documentos como algo ya establecido e inmutable, pero me pareció que se podía mejorar el planteo)"
+		},
+		{
+			"name": "Email prueba",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/email/?email=amneris.calle@gmail.com",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"email",
+						""
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "amneris.calle@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mocking de productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/mockproducts/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"mockproducts",
+						""
+					]
+				},
+				"description": "Endpoint que obtiene los productos generados por faker js, en el mismo formato que obtenemos nuestros productos en la ruta principal api/products."
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba Logger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/loggertest",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"loggertest"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}

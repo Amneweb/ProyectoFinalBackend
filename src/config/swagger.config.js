@@ -13,7 +13,6 @@ const options = {
 
   apis: [`${__dirname}/public/docs/**/*.yaml`],
 };
-console.log("ruta de swagger ", options.apis);
 
 const swaggerSpecs = swaggerJsdoc(options);
 export default swaggerSpecs;

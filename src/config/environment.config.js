@@ -28,7 +28,6 @@ program
   .option("--test <test>", "Modo test");
 program.parse();
 
-//console.log("Options: ", program.opts());
 console.log("Environment Mode Option: ", program.opts().mode);
 console.log("Persistence Mode Option: ", program.opts().persist);
 

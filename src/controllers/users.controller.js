@@ -71,8 +71,6 @@ export default class UsersController {
   };
 
   getCurrentUser = (req, res) => {
-    console.log("viene por la api");
-    console.log(req.user);
     res.sendSuccess(req.user);
   };
 
@@ -83,8 +81,7 @@ export default class UsersController {
         userEmail,
         userPassword
       );
-      console.log("access token");
-      console.log(access_token);
+
       logger.debug(
         "El usuario que se quiere loguear tiene email: %s",
         userEmail
@@ -154,7 +151,7 @@ export default class UsersController {
 
   logout = async (req, res) => {
     const cookieToken = req.signedCookies["token_login"];
-    console.log("hay cookie token ", cookieToken);
+
     if (cookieToken)
       try {
         await this.#userService.update(req.user, "userConnection", Date.now());
@@ -191,14 +188,12 @@ export default class UsersController {
     const token = req.params.tid;
     const cookie = req.signedCookies["email_recovery_expiration"];
 
-    console.log("token ", token);
-    console.log("cookie ", cookie);
     if (!cookie) {
       throw new Error("el tiempo ha expirado. Volvé a intentarlo");
     }
     try {
       const emailRecibido = await this.#userService.recovery(token, cookie);
-      console.log("email recibido", emailRecibido);
+
       if (!emailRecibido.error)
         res.render("restablecer", {
           emailRecibido: emailRecibido,
@@ -240,8 +235,7 @@ export default class UsersController {
     const user = req.user;
     try {
       const datosActuales = await this.#userService.findByUsername(user.email);
-      console.log("datos Acutales");
-      console.log(datosActuales);
+
       const datosMoldeados = this.#usersDTO.getUserInputFrom(datosActuales);
       res.sendSuccess(datosMoldeados);
     } catch (e) {
@@ -299,7 +293,7 @@ export default class UsersController {
 
   getSinActividad = async (req, res) => {
     const tiempolimite = parseInt(req.query.meses);
-    console.log("tiempo limite", tiempolimite);
+
     logger.debug("tiempo limite en controlador %s", tiempolimite);
     try {
       const result = await this.#userService.getInactivos(tiempolimite);

@@ -15,11 +15,10 @@ export default class CategoriesRouter extends CustomRouter {
 
     this.post("/", ["ADMIN"], async (req, res) => {
       const nuevaCate = req.body.cate;
-      console.log("en ruta de agregar categoria");
+
       try {
         const agregada = await categoryManager.addCategory(nuevaCate);
-        console.log("en try de agregar cate");
-        console.log(agregada);
+
         if (agregada) {
           res.sendSuccess(agregada);
         } else {

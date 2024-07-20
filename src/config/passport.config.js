@@ -25,8 +25,6 @@ const initializePassport = () => {
           "https://proyectofinalbackend-production-efdb.up.railway.app/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
-        console.log("Profile obtenido del usuario:");
-        console.log(profile);
         try {
           const user = await userModel.findOne({
             userEmail: profile.emails[0].value,
@@ -45,17 +43,12 @@ const initializePassport = () => {
               userPassword: "",
             };
             const result = await userModel.create(newUser);
-            console.log("luego de creado el user con github");
-            console.log(result);
+
             return done(null, result);
           } else {
-            console.log("Usuario encontrado para login:");
-            console.log(user);
             return done(null, user);
           }
         } catch (error) {
-          console.log("error en passport config");
-          console.log(error.message);
           return done(error);
         }
       }
@@ -79,8 +72,6 @@ ESTRATEGIA JWT
       },
       async (jwt_payload, done) => {
         try {
-          console.log("JWT obtenido del payload");
-          console.log(jwt_payload);
           return done(null, jwt_payload.user);
         } catch (error) {
           console.error(error);

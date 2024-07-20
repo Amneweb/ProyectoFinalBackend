@@ -12,7 +12,7 @@ loginForm.addEventListener("submit", async (e) => {
   const data = new FormData(loginForm);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
-  console.log(obj);
+
   try {
     const result = await fetch("/api/users/login", {
       method: "POST",

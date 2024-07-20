@@ -27,10 +27,7 @@ export default class CartController {
   getCarts = async (req, res) => {
     try {
       const result = await this.#cartManager.getCartsAndPopulate();
-      console.log("result");
-      console.log(result);
-      //result.forEach((each) => console.log(each.cart));
-      //const carritosObtenidos = result.map((each) => each.cart);
+
       res.render("usercartsAdmin", {
         carritosObtenidos: result,
         style: "admin.css",

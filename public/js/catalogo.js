@@ -33,8 +33,7 @@ const crearCarrito = () => {
 const productoAlStorage = (productID) => {
   try {
     const existe = carrito.findIndex((item) => item.product === productID);
-    console.log("verificación existencia producto");
-    console.log(existe);
+
     if (existe < 0) {
       carrito.push({
         product: productID,
@@ -58,7 +57,6 @@ const productoAlStorage = (productID) => {
       showConfirmButton: false,
     });
   } catch (e) {
-    console.log("error ", e.message);
     Swal.fire({
       title: "Oops",
       text: "No pudimos agregar el producto",

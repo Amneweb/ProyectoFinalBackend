@@ -89,8 +89,7 @@ app.get("/loggertest", (req, res) => {
 
   res.send("Prueba de logger!");
 });
-console.log("config de callback");
-console.log(environmentConfig.SERVER.GITHUB.CALLBACK_URL);
+
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 app.get("*", (req, res) => {

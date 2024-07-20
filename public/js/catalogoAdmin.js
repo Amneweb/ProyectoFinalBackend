@@ -15,9 +15,6 @@ agregarProducto.addEventListener("submit", async (e) => {
     const bodyData = new FormData(agregarProducto);
 
     const valores = Object.fromEntries(bodyData.entries());
-    console.log("valores");
-
-    console.log(valores);
 
     const fetchAgregar = await fetch(`/api/products/`, {
       method: "POST",
@@ -106,11 +103,11 @@ const dibujarNuevoProducto = (producto) => {
 };
 
 const agregarCategoria = document.querySelector("#agregarCategorias");
-console.log(agregarCategoria);
+
 agregarCategoria.addEventListener("submit", async (e) => {
   e.preventDefault();
   const newCate = { cate: agregarCategoria.newcate.value };
-  console.log("categoria a agregar ", newCate);
+
   try {
     const fetchCate = await fetch(`/api/categories/`, {
       method: "POST",
@@ -119,7 +116,7 @@ agregarCategoria.addEventListener("submit", async (e) => {
     });
 
     const parsedCate = await fetchCate.json();
-    console.log("cate parseada", parsedCate);
+
     if (parsedCate.error) throw new Error(parsedCate.error);
     Swal.fire({
       title: "👍",

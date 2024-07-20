@@ -2,7 +2,6 @@ import { ticketModel } from "./daos/mongo/tickets/tickets.model.js";
 
 class TicketManager {
   createTicket = async (ticket) => {
-    console.log("entrando a la funcion de crear tickets");
     let ticketNuevo = await ticketModel.create(ticket);
     return ticketNuevo;
   };
@@ -15,9 +14,7 @@ class TicketManager {
   };
   //obtener carrito con id determinado
   getTicketByUser = async (email) => {
-    console.log(email);
     const tickets = await ticketModel.find({ purchaser: email });
-    console.log("tickets encontrados", tickets);
 
     return tickets;
   };

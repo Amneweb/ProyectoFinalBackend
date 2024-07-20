@@ -29,8 +29,7 @@ chatBox.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     if (chatBox.value.trim().length > 0) {
       socket.emit("message", { user: user, message: chatBox.value });
-      console.log("mensaje emitido por el usuario");
-      console.log({ user: user, message: chatBox.value });
+
       chatBox.value = "";
     } else {
       Swal.fire({
@@ -42,8 +41,6 @@ chatBox.addEventListener("keyup", (event) => {
 });
 
 socket.on("messageLogs", (data) => {
-  console.log("conjunto de mensajes emitidos por el servidor");
-  console.log(data);
   const messageLogs = document.querySelector("#messageLogs");
   let logs = "";
   data.forEach((log) => {
@@ -80,7 +77,7 @@ const contarCantidades = () => {
     .map((item) => item.qty)
     .reduce((acum, item) => acum + item);
   let cantidad = document.querySelector("#contador");
-  console.log(valor);
+
   cantidad.innerHTML = valor;
 };
 if (carrito) {

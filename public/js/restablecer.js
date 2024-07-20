@@ -6,9 +6,7 @@ formRestablecer.addEventListener("submit", async (e) => {
   const data = new FormData(formRestablecer);
   const obj = {};
   data.forEach((value, key) => (obj[key] = value));
-  console.log(obj);
 
-  console.log(JSON.stringify(obj));
   try {
     const result = await fetch("/api/users/newpassword", {
       method: "POST",
@@ -19,7 +17,7 @@ formRestablecer.addEventListener("submit", async (e) => {
     });
 
     const parsed = await result.json();
-    console.log(parsed);
+
     if (!parsed.error) {
       await Swal.fire({
         title: "👍",

@@ -33,10 +33,8 @@ export const validateOwnership = async (pid, uemail) => {
   }
 };
 export const validateCartOwnership = async (cid, uemail) => {
-  console.log("email en validator ", uemail);
   const datosUser = await userDAO.findOne(uemail);
   if (!datosUser.userCartID.includes(cid)) {
-    console.log("no son iguales los id");
     return false;
   }
   return true;
