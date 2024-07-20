@@ -21,7 +21,8 @@ const initializePassport = () => {
         clientID: environmentConfig.SERVER.GITHUB.CLIENT_ID,
         clientSecret: environmentConfig.SERVER.GITHUB.CLIENT_SECRET,
         scope: ["user:email"],
-        callbackUrl: "http://localhost:8080/api/sessions/githubcallback",
+        callbackUrl:
+          "https://proyectofinalbackend-test.up.railway.app/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log("Profile obtenido del usuario:");
