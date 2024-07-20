@@ -11,7 +11,7 @@
   <h2>SOBRE EL PROYECTO</h2>
   <p>El proyecto consiste en un ecommerce de venta de baterías para vehículos.</p>
   <h3>Proceso de compra</h3>
-  <p>Aunque no se pedía en las consignas del proyecto, me pareció interesante poder programar la compra sin obligar al usuario a registrarse antes de elegir los productos. De esta manera, el proceso de compra implica los pasos siguientes en el recorrido del usuario:</p>
+  <p>Aunque no se pedía en las consignas del proyecto, me pareció interesante poder programar la compra sin obligar al usuario a registrarse antes de elegir los productos. Para finalizar la compra sí se exige registro y autenticación, pero por lo menos no es necesario para elegir los productos y armar el carrito. </p><p>De esta manera, el proceso de compra implica los pasos siguientes en el recorrido del usuario:</p>
   <ul class="proceso">
     <li><p class="numero">1</p><p>El usuario elige los productos y los carga en un carrito que se guarda en el localstorage</p></li>
     <li><p class="numero">2</p><p>Los productos se pueden cargar de a 1 desde la página donde se muestran todos los productos (a futuro también se podrán cargar desde la página de producto, eligiendo también la cantidad)</p></li>
@@ -36,8 +36,14 @@
   <p>
     El menú desplegable se carga dinámicamente mediante un script del lado del cliente que obtiene las categorías con un fetch cada vez que se carga una nueva página. Originalmente había pensado que se podía utilizar un partial de handlebars renderizado desde el servidor, pero no supe cómo hacerlo.
   </p>
+  <h2>Extras</h2>
+  <p>Además de lo que se pedía en la consigna del trabajo final (el recorrido completo de una compra, desde la elección de los productos y el registro del usuario hasta el envío del email de confirmación de compra), el frontend contiene:</p>
   <h3>Panel de administración</h3>
   <p>Incluí un par de vistas para el administrador, que permiten administrar los productos y borrar carritos. Respecto a los productos, se pueden modificar, borrar y agregar nuevos. NO hay vistas para administrar usuarios. (Por ahora... 😉)</p>
+  <h3>Restablecimiento de contraseña</h3>
+  <p>El usuario puede reestablecer su contraseña olvidada mediante un formulario de recupero de contraseña al que se accede desde la página de login. El email que recibe contiene un enlace que lo dirige a una página donde puede cargar su nueva contraseña y loguearse nuevamente.</p>
+  <h3>Login con github</h3>
+  <p>Se permite el registro y login con credenciales de github</p>
 </section>
 
 {{> footer}}
