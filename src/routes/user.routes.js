@@ -32,8 +32,7 @@ export default class UsersRouter extends CustomRouter {
       validateUserFormData,
       usersController.register
     );
-    this.get("/github", ["PUBLIC"], usersController.github);
-    this.post("/githubcallback", ["PUBLIC"], usersController.githubcallback);
+
     this.get("/logout", ["USER", "ADMIN", "PREMIUM"], usersController.logout);
 
     this.put(

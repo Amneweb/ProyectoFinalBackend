@@ -5,6 +5,7 @@ dotenv.config();
 const {
   PORT,
   JWT_SECRET_KEY,
+  SESSION_SECRET_KEY,
   COOKIE_AUTH_TOKEN_KEY,
   COOKIE_SECRET_KEY,
   GITHUB_CLIENT_ID,
@@ -18,7 +19,7 @@ const {
 
 const program = new Command(); //Crea la instancia de comandos de commander.
 
-//TODO: FACTORY ES SOLO PARA CAMBIAR LA PERSISTENCIA. EL MODO DE TRABAJO LO USO PARA WINSTON.
+//FACTORY ES SOLO PARA CAMBIAR LA PERSISTENCIA. EL MODO DE TRABAJO LO USO PARA WINSTON.
 
 program
   .option("-d", "Variable para debug", false)
@@ -49,9 +50,15 @@ const environmentConfig = {
       SECRET: COOKIE_SECRET_KEY ?? "87co5ok76ie",
     },
     GITHUB: {
-      CLIENT_ID: GITHUB_CLIENT_ID,
-      CLIENT_SECRET: GITHUB_CLIENT_SECRET,
-      CALLBACK_URL: GITHUB_CALLBACK_URL,
+      CLIENT_ID: GITHUB_CLIENT_ID ?? "Iv1.a8444bf7419c2a38",
+      CLIENT_SECRET:
+        GITHUB_CLIENT_SECRET ?? "2a14000731a7aa95b996ccd8317603f628600465",
+      CALLBACK_URL:
+        GITHUB_CALLBACK_URL ??
+        "http://localhost:8080/api/sessions/githubcallback",
+    },
+    SESSION: {
+      SECRET_KEY: SESSION_SECRET_KEY,
     },
   },
   DATABASE: {

@@ -1,5 +1,7 @@
 import UserService from "../services/users.service.js";
 import TicketsService from "../services/tickets.service.js";
+import passport from "passport";
+
 import { userLogger as logger } from "../config/logger.config.js";
 import UsersDTO from "../services/dtos/users.dto.js";
 export default class UsersController {
@@ -164,45 +166,6 @@ export default class UsersController {
       } catch (e) {
         res.sendInternalServerError(e);
       }
-  };
-
-  github = async (req, res) => {
-    passport.authenticate("github", { scope: ["user:userEmail"] }),
-      async (req, res) => {};
-  };
-  githubcallback = async (req, res) => {
-    passport.authenticate("github", { failureRedirect: "/login" }),
-      async (req, res) => {
-        const userEmail = req.user.userEmail;
-        const userPassword = req.user.userPassword;
-        try {
-          const access_token = await this.#userService.login(
-            userEmail,
-            userPassword
-          );
-          console.log("access token");
-          console.log(access_token);
-          logger.debug(
-            "El usuario que se quiere loguear tiene email: %s",
-            userEmail
-          );
-
-          res
-            .cookie("token_login", access_token, {
-              maxAge: 600000,
-              httpOnly: true,
-              signed: true,
-            })
-            .send({
-              message: "Login successful!",
-              access_token: access_token,
-              //id: user._id,
-            });
-        } catch (error) {
-          logger.error("Mensaje interno: %s", error.message);
-          return res.sendClientError(error.message);
-        }
-      };
   };
 
   deleteUser = async (req, res) => {

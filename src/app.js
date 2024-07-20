@@ -26,7 +26,7 @@ import {
   dateFormat,
 } from "./utils/hb-helpers.js";
 import purchaseRouter from "./routes/purchase.routes.js";
-
+import githubRouter from "./routes/github.routes.js";
 const app = express();
 
 app.engine("handlebars", handlebars.engine());
@@ -59,6 +59,7 @@ import messagehandler from "./utils/chat.js";
 app.use(addLogger);
 //Middlewares Passport
 initializePassport();
+
 app.use(passport.initialize());
 app.use(passportJWTCall);
 
@@ -78,6 +79,7 @@ const usersRouter = new UsersRouter();
 app.use("/api/users", usersRouter.getRouter());
 app.use("/api/mockproducts/", mockRouter);
 app.use("/api/purchase/", purchaseRouter);
+app.use("/api/sessions/", githubRouter);
 const documentationRouter = new DocumentationRouter();
 app.use("/api/documentation", documentationRouter.getRouter());
 
@@ -87,7 +89,8 @@ app.get("/loggertest", (req, res) => {
 
   res.send("Prueba de logger!");
 });
-
+console.log("config de callback");
+console.log(environmentConfig.SERVER.GITHUB.CALLBACK_URL);
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 app.get("*", (req, res) => {

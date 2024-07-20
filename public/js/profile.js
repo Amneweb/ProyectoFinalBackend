@@ -33,4 +33,13 @@ const carrito = document.querySelector(".carrito");
 if (carritoExistente && carrito) {
   const carrito = document.querySelector(".carrito");
   carrito.innerHTML = `<p>Tenés un carrito sin guardar. <a href="/localstorage">Miralo acá 👉</a></p>`;
+  const contarCantidades = () => {
+    const valor = carritoExistente
+      .map((item) => item.qty)
+      .reduce((acum, item) => acum + item, 0);
+    let cantidad = document.querySelector("#contador");
+
+    cantidad.innerHTML = valor || 0;
+  };
+  contarCantidades();
 }

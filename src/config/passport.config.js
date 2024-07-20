@@ -1,9 +1,9 @@
 import passport from "passport";
 import jwtStrategy from "passport-jwt";
-import githubStrategy from "passport-github2";
+import GithubStrategy from "passport-github2";
 import { environmentConfig } from "./environment.config.js";
 import userModel from "../services/daos/mongo/users/users.model.js";
-import { createHash, isValidPassword } from "../utils/utils.js";
+
 const JwtStrategy = jwtStrategy.Strategy;
 const ExtractJWT = jwtStrategy.ExtractJwt;
 
@@ -13,15 +13,15 @@ const initializePassport = () => {
   ESTRATEGIA GITHUB
   ==================================
   */
-  //TODO: ver si funciona estrategia de github como opcional
+
   passport.use(
     "github",
-    new githubStrategy(
+    new GithubStrategy(
       {
         clientID: environmentConfig.SERVER.GITHUB.CLIENT_ID,
         clientSecret: environmentConfig.SERVER.GITHUB.CLIENT_SECRET,
         scope: ["user:email"],
-        callbackUrl: environmentConfig.SERVER.GITHUB.CALLBACK_URL,
+        callbackUrl: "http://localhost:8080/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
         console.log("Profile obtenido del usuario:");
@@ -44,6 +44,8 @@ const initializePassport = () => {
               userPassword: "",
             };
             const result = await userModel.create(newUser);
+            console.log("luego de creado el user con github");
+            console.log(result);
             return done(null, result);
           } else {
             console.log("Usuario encontrado para login:");
@@ -51,6 +53,8 @@ const initializePassport = () => {
             return done(null, user);
           }
         } catch (error) {
+          console.log("error en passport config");
+          console.log(error.message);
           return done(error);
         }
       }
