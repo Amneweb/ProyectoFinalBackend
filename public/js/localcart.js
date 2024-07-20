@@ -66,7 +66,7 @@ const dibujar = async () => {
     });
   }
 };
-dibujar();
+if (carrito) dibujar();
 /*
 ========================================================================
 INICIAMOS PROCESO DE COMPRA Y CREAMOS UNA COOKIE
