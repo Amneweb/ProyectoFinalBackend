@@ -465,3 +465,16 @@ div.swal2-container {
   padding: 3rem;
   border-radius: 1rem;
 }
+
+.ver {
+  background-color: var(--naranja);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border-color: var(--naranja);
+  color: white;
+  cursor: pointer;
+}
+.ver:hover {
+  background-color: var(--bermellon);
+  border-color: var(--bermellon);
+}

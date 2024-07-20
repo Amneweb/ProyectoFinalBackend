@@ -2,14 +2,13 @@ const carrito = JSON.parse(localStorage.getItem("windwardCart"));
 
 const divProductos = document.querySelector(".contenedorCarrito");
 const guardar = document.querySelector("#guardar");
-const borrarCarrito = document.getElementById("borrarCarrito");
+const intro = document.querySelector(".introLocalCart");
 if (!carrito) {
   guardar.style.display = "none";
-  borrarCarrito.style.display = "none";
-}
-if (!carrito)
+  intro.style.display = "none";
   divProductos.innerHTML =
-    "<h2 class='sinproductos'>Aun no agregaste productos a tu carrito. ¿Qué esperás para elegir? 🤭</h2>";
+    "<h2 class='sinproductos'>Aun no agregaste productos a tu carrito. ¿Qué esperás para elegir? 🤭</h2><div class='centered compra'><a class='ver' href='/catalogo'>VER PRODUCTOS</a></div>";
+}
 
 function formatear(amount) {
   const formateado = new Intl.NumberFormat("es-AR", {
@@ -49,6 +48,7 @@ BUSCAMOS INFO DE PRODUCTOS PARA DIBUJAR EL CARRITO DEL LOCALSTORAGE
 ========================================================================
 */
 const dibujar = async () => {
+  console.log("dentro de dibujar");
   let TOTAL = 0;
   try {
     await carrito.forEach(async (producto) => {
@@ -72,74 +72,80 @@ if (carrito) dibujar();
 INICIAMOS PROCESO DE COMPRA Y CREAMOS UNA COOKIE
 ========================================================================
 */
+if (carrito) {
+  console.log("dentro de add event listener boton guardar");
+  guardar.addEventListener("click", async (e) => {
+    e.preventDefault();
 
-guardar.addEventListener("click", async (e) => {
-  e.preventDefault();
+    try {
+      const fetchUsuario = await fetch("/api/users/currentUser");
 
-  try {
-    const fetchUsuario = await fetch("/api/users/currentUser");
+      const usuario = await fetchUsuario.json();
 
-    const usuario = await fetchUsuario.json();
+      logueado = usuario.error ? false : true;
 
-    logueado = usuario.error ? false : true;
-
-    await Swal.fire({
-      title: "👌",
-      text: "¿Tenés tu carrito completo?",
-      showCancelButton: true,
-      confirmButtonText: "Terminar compra",
-      cancelButtonText: "Agregar productos",
-      reverseButtons: true,
-      preConfirm: async () => {
-        try {
-          const response = await fetch("/api/purchase/comprainiciada");
-          if (!response.ok) {
-            return Swal.showValidationMessage(`
+      await Swal.fire({
+        title: "👌",
+        text: "¿Tenés tu carrito completo?",
+        showCancelButton: true,
+        confirmButtonText: "Terminar compra",
+        cancelButtonText: "Agregar productos",
+        reverseButtons: true,
+        preConfirm: async () => {
+          try {
+            const response = await fetch("/api/purchase/comprainiciada");
+            if (!response.ok) {
+              return Swal.showValidationMessage(`
               ${JSON.stringify(await response.json())}
             `);
-          }
-          await response.json();
-          return;
-        } catch (error) {
-          Swal.showValidationMessage(`
+            }
+            await response.json();
+            return;
+          } catch (error) {
+            Swal.showValidationMessage(`
             Request failed: ${error}
           `);
-        }
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        if (logueado) {
-          location.replace("/compra");
+          }
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          if (logueado) {
+            location.replace("/compra");
+          } else {
+            Swal.fire({
+              title: "👤",
+              text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
+            }).then((result) => location.replace("/users/login"));
+          }
         } else {
-          Swal.fire({
-            title: "👤",
-            text: "Vamos a pedirte que te loguees o registres antes de proceder con la compra",
-          }).then((result) => location.replace("/users/login"));
+          location.replace("/catalogo");
         }
-      } else {
-        location.replace("/catalogo");
-      }
-    });
-  } catch (e) {
-    await Swal.fire({
-      title: "Oops",
-      text: `Lo sentimos, ha ocurrido un error ${e.message}. Volvé a intentarlo más tarde`,
-    });
-  }
-});
-
-borrarCarrito.addEventListener("click", (e) => {
-  e.preventDefault();
-  localStorage.removeItem("windwardCart");
-  Swal.fire({
-    title: "👍",
-    text: "El carrito se borró con éxito",
-  }).then((result) => {
-    location.replace("/catalogo");
+      });
+    } catch (e) {
+      await Swal.fire({
+        title: "Oops",
+        text: `Lo sentimos, ha ocurrido un error ${e.message}. Volvé a intentarlo más tarde`,
+      });
+    }
   });
-});
+}
+
+if (carrito) {
+  console.log("event listener borrar carrito");
+  borrarCarrito.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("windwardCart");
+    Swal.fire({
+      title: "👍",
+      text: "El carrito se borró con éxito",
+    }).then((result) => {
+      location.replace("/catalogo");
+    });
+  });
+}
 
 const dibujarCard = (datos, qty) => {
+  console.log("dentron de dibujarCard");
   const divProducto = document.createElement("div");
   const total = datos.price * qty;
   divProducto.id = `div_${datos._id}`;
@@ -173,18 +179,20 @@ const dibujarCard = (datos, qty) => {
   divProductos.append(divProducto);
 };
 
-divProductos.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (e.target.classList.contains("borrar")) {
-    borrarProducto(e.target.id);
-  } else {
-    const operacion_id = e.target.id;
+if (carrito) {
+  divProductos.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.classList.contains("borrar")) {
+      borrarProducto(e.target.id);
+    } else {
+      const operacion_id = e.target.id;
 
-    const operacion = operacion_id.split("_")[0];
-    const id = operacion_id.split("_")[1];
-    modificarCarrito(id, operacion);
-  }
-});
+      const operacion = operacion_id.split("_")[0];
+      const id = operacion_id.split("_")[1];
+      modificarCarrito(id, operacion);
+    }
+  });
+}
 const calcularTotal = () => {
   const todos = document.querySelectorAll(".total");
   let arrayTodos = [];
@@ -276,6 +284,6 @@ const contarCantidades = () => {
     .reduce((acum, item) => acum + item);
   let cantidad = document.querySelector("#contador");
 
-  cantidad.innerHTML = valor;
+  cantidad.innerHTML = valor || 0;
 };
-contarCantidades();
+if (carrito) contarCantidades();
