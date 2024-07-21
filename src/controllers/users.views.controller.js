@@ -65,12 +65,10 @@ export default class UsersController {
       const compra = compras[0];
 
       res.render("pagos", {
-        compra,
-        allowedProtoMethods: {
-          code: true,
-          purchaser: true,
-          amount: true,
-        },
+        amount: compra.amount,
+        purchaser: compra.purchaser,
+        code: compra.code,
+
         cookieCompra,
         style: "admin.css",
       });
