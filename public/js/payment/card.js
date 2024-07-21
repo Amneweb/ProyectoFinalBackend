@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       localStorage.removeItem("windwardCart");
     await Swal.fire({
       title: "Gracias",
-      text: `Tu pago ha sido recibido con éxito. El código del mismo es ${paymentIntent.id}`,
+      text: `Tu pago ha sido recibido con éxito. El código del mismo es ${paymentIntent.id}. En breve te llegará un correo con la confirmación de tu compra.`,
     }).then((result) => {
       form.innerHTML = "<p>Gracias x tu compra</p>";
     });
