@@ -53,9 +53,6 @@ const environmentConfig = {
     GITHUB: {
       CLIENT_ID: GITHUB_CLIENT_ID,
       CLIENT_SECRET: GITHUB_CLIENT_SECRET,
-      CALLBACK_URL:
-        GITHUB_CALLBACK_URL ??
-        "http://localhost:8080/api/sessions/githubcallback",
     },
     SESSION: {
       SECRET_KEY: SESSION_SECRET_KEY,
