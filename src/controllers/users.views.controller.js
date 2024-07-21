@@ -63,10 +63,14 @@ export default class UsersController {
     try {
       const compras = await this.#ticketService.getTicketByCode(ticket);
       const compra = compras[0];
-      console.log(compra);
-      console.log(compra.amount);
+
       res.render("pagos", {
         compra,
+        allowedProtoMethods: {
+          code: true,
+          purchaser: true,
+          amount: true,
+        },
         cookieCompra,
         style: "admin.css",
       });
