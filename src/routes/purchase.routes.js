@@ -11,7 +11,7 @@ router.get("/comprainiciada", (req, res) => {
       "WWcompraIniciada",
       { status: "ok", tiempo: new Date() },
       {
-        maxAge: 600000, //milliseconds
+        maxAge: 120000, //milliseconds
         httpOnly: true,
         signed: true,
       }
