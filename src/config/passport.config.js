@@ -91,7 +91,7 @@ ESTRATEGIA JWT
       let user = await userModel.findById(id);
       done(null, user);
     } catch (error) {
-      console.error("Error deserializando el usuario: " + error);
+      console.error("Error tratando de deserializar el usuario: " + error);
     }
   });
 };
