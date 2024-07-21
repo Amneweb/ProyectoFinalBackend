@@ -1,3 +1,8 @@
+> [!WARNING]
+> En la rama test está el código con la pasarela de pagos. Y el link para verlo es el que aparece a continuación. En esta rama está el proyecto completo pero sin pasarela de pagos.
+
+https://proyectofinalbackend-test.up.railway.app/
+
 # ProyectoFinalBackend
 
 El curso de BackEnd de Coderhouse está estructurado en tres módulos, cada uno con diferentes objetivos, pero todos unidos por un hilo conductor que es el proyecto de una api completa para un ecommerce. Para poder avanzar en el curso es necesario ir realizando entregas con las mejoras aprendidas a medida que se desarrollan las clases.
