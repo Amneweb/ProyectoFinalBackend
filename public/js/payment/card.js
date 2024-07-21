@@ -94,6 +94,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     addMessage(`Payment ${paymentIntent.status}: ${paymentIntent.id}`);
     if (localStorage.getItem("windwardCart"))
       localStorage.removeItem("windwardCart");
+    const fetchfinSesion = await fetch("/api/purchase/comprafinalizada");
+    const finSesion = await fetchfinSesion.json();
+    if (!finSesion) {
+      console.log("no se cerró la sesión de compra");
+    }
     await Swal.fire({
       title: "Gracias",
       text: `Tu pago ha sido recibido con éxito. El código del mismo es ${paymentIntent.id}. En breve te llegará un correo con la confirmación de tu compra.`,
