@@ -2,7 +2,6 @@ import CartManager from "../services/carts.service.js";
 
 import { cartsLogger as logger } from "../config/logger.config.js";
 
-import pc from "picocolors";
 export default class CartController {
   #cartManager;
 

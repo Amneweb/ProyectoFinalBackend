@@ -1,0 +1,57 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/js/payment/utils.js" defer ></script>
+<script src="/js/payment/card.js" defer ></script>
+{{> nav}}
+
+<section class="main">
+
+      <h1>Pagos con tarjeta de crédito</h1>
+
+    
+  
+ 
+        <p><strong>Código:</strong> {{code}} </p>
+  
+         <p><strong>Email comprador:</strong> {{purchaser}} </p>
+ 
+       <p><strong>Total a pagar:</strong> {{amount}} </p>
+ 
+
+      <div class="payment">
+          <form id="payment-form">
+            <label for="name">
+              Nombre
+            </label>
+            <input id="name" placeholder="Nombre como aparece en la tarjeta" value="" required />
+            <label for="card-element">
+              Tarjeta
+            </label>
+            <div id="card-element">
+              <!-- Elements will create input elements here -->
+            </div>
+            <!-- We'll put the error messages in this element -->
+            <div id="card-errors" role="alert"></div>
+            <button id="submit">Pagar</button>
+          </form>
+          <div id="messages" role="alert" style="display: none;"></div>
+      </div>
+      <div class="notas">
+          <h4>NOTAS</h4>
+            <p>Probar con las tarjetas de prueba que siguen, o visitar <a href="https://stripe.com/docs/testing#cards" target="_blank">TODAS LAS TARJETAS DE PRUEBA</a>:</p>
+            <div>
+              <code>4242424242424242</code> (Visa)
+            </div>
+            <div>
+              <code>5555555555554444</code> (Mastercard)
+            </div>
+            <div>
+              <code>4000000000000069</code> (Error por tarjeta vencida)
+            </div>
+          
+          <p>
+            Para pagos exitosos, usar cualquier fecha en el futuro, cualquier combinación de 3 dígitos para el CVC y cualquier código postal.
+          </p>
+      </div>
+</section>
+{{> footer}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

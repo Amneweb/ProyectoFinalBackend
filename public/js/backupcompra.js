@@ -91,17 +91,26 @@ const compra = async () => {
           },
         });
         const resultadoCompra = await comprar.json();
-        console.log(resultadoCompra);
+
         if (!resultadoCompra.error) {
+          const fetchfinSesion = await fetch("/api/purchase/comprafinalizada");
+          const finSesion = await fetchfinSesion.json();
+          if (!finSesion) {
+            throw new Error("Error al finalizar la sesión");
+          }
+
           hideLoading();
-          window.location.replace(
-            `/users/tickets/?ticket_code=${resultadoCompra.payload.code} `
-          );
+          await Swal.fire({
+            title: "Gracias",
+            text: "Realizaste tu compra de forma exitosa. En breve te llegará un correo",
+          }).then((result) => {
+            window.location.replace("/catalogo");
+          });
         }
       } catch (e) {
         await Swal.fire({
           icon: "error",
-          text: `Lo sentimos, hubo un error al tratar de procesar la compra. ${e.message} `,
+          text: `Lo sentimos, hubo un error al tratar de pagar. ${e.message} `,
         });
       }
     });

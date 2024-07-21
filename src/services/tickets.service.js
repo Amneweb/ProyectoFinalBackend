@@ -12,6 +12,10 @@ class TicketManager {
 
     return tickets;
   };
+  getTicketByCode = async (code) => {
+    const ticket = await ticketModel.find({ code: code });
+    return ticket;
+  };
   //obtener carrito con id determinado
   getTicketByUser = async (email) => {
     const tickets = await ticketModel.find({ purchaser: email });

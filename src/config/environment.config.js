@@ -15,6 +15,8 @@ const {
   MONGO_DB_NAME,
   MAILER_AUTH_PASS,
   MAILER_EMAIL,
+  PAYMENT_PUBLISHABLE_KEY,
+  PAYMENT_SECRET_KEY,
 } = process.env;
 
 const program = new Command(); //Crea la instancia de comandos de commander.
@@ -57,6 +59,10 @@ const environmentConfig = {
     },
     SESSION: {
       SECRET_KEY: SESSION_SECRET_KEY,
+    },
+    STRIPE: {
+      SECRET_KEY: PAYMENT_SECRET_KEY,
+      PUBLIC_KEY: PAYMENT_PUBLISHABLE_KEY,
     },
   },
   DATABASE: {

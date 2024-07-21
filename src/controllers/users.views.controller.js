@@ -1,12 +1,14 @@
 import UserService from "../services/users.service.js";
-
+import TicketManager from "../services/tickets.service.js";
 import { userLogger as logger } from "../config/logger.config.js";
 
 export default class UsersController {
   #userService;
+  #ticketService;
 
   constructor() {
     this.#userService = new UserService();
+    this.#ticketService = new TicketManager();
   }
 
   getAll = async (req, res) => {
@@ -32,7 +34,7 @@ export default class UsersController {
     logger.debug("Buscando carrito de usuario con email %s", email);
     try {
       const carrito = await this.#userService.findCart(email);
-      req.render("usercart", { carrito, style: "carrito.css" });
+      res.render("usercart", { carrito, style: "carrito.css" });
     } catch (e) {
       logger.error("Error: %s", e.message);
       res.sendClientError("error en get cart", e);
@@ -54,5 +56,23 @@ export default class UsersController {
       cookieCompra,
       style: "admin.css",
     });
+  };
+  getTickets = async (req, res) => {
+    const ticket = req.query.ticket_code;
+    const cookieCompra = req.signedCookies["WWcompraIniciada"];
+    try {
+      const compras = await this.#ticketService.getTicketByCode(ticket);
+      const compra = compras[0];
+      console.log(compra);
+      console.log(compra.amount);
+      res.render("pagos", {
+        compra,
+        cookieCompra,
+        style: "admin.css",
+      });
+    } catch (e) {
+      logger.error("Error: %s", e.message);
+      res.sendClientError("error al buscar el ticket de compra", e.message);
+    }
   };
 }
