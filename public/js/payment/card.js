@@ -101,9 +101,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     await Swal.fire({
       title: "Gracias",
-      text: `Tu pago ha sido recibido con éxito. El código del mismo es ${paymentIntent.id}. En breve te llegará un correo con la confirmación de tu compra.`,
+      text: `Tu pago ha sido recibido con éxito. El código del mismo es ${paymentIntent.id}.`,
     }).then((result) => {
-      form.innerHTML = "<p>Gracias x tu compra</p>";
+      form.innerHTML =
+        "<p>Gracias por tu compra. En breve te llegará un correo con la confirmación.</p>";
     });
   });
 });
