@@ -4,7 +4,7 @@
   <h3 class="centered">Formulario de Registro</h3>
   <p class="centered">Si ya tenés una cuenta con nosotros, logueate haciendo
     click
-    <a href="/users/login">ACÁ</a></p>
+    <a class="ver" href="/users/login">ACÁ</a></p>
 
   <form class="session_form" id="registerForm">
 
@@ -45,7 +45,15 @@
     <div><input type="submit" value="Enviar" /></div>
   </form>
   <p class="centered">¿Ya tenés una cuenta?
-    <a href="/users/login">LOGUEATE ACÁ</a></p>
+    <a class="ver" href="/users/login">LOGUEATE ACÁ</a></p>
+    <p class="centered">Si tenés cuenta de Github, te invitamos a loguearte a
+    través de la misma</p>
+  <p class="centered"><a class="github" href="/api/sessions/"><img
+        class="logo"
+        src="/images/invertocat.png"
+        alt="logo github"
+      />
+      GITHUB</a></p>
 </div>
 {{> footer}}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

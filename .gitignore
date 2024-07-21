@@ -6,3 +6,6 @@ authGithub.md
 #public/uploads/docs/
 #public/uploads/img/profile/
 #public/uploads/img/products/
+src/routes/backup.github.routes.js
+src/routes/views.backup.routes.js
+public/js/backupcompra.js

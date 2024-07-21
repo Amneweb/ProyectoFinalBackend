@@ -27,6 +27,6 @@ export default class UsersViewsRouter extends CustomRouter {
       usersController.getCart
     );
 
-    this.get("/tickets", ["USER", "PREMIUM"], usersController.getTickets);
+    this.get("/tickets/", ["USER", "PREMIUM"], usersController.getTickets);
   }
 }

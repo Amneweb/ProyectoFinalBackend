@@ -24,9 +24,9 @@
     <li><p class="numero">9</p><p>Con el usuario ya logueado, se le pide confirmación de la compra y en ese momento se guarda el carrito en la base de datos y se asocia al usuario (se guarda el id del carrito en el documento del usuario)</p></li>
     <li><p class="numero">10</p><p>Si el usuario sale de la página de confirmación de compra y modifica el carrito del localstorage, el proceso de compra empieza de nuevo</p></li>
     <li><p class="numero">11</p><p>Confirmada la compra, se genera el ticket de compra y se envía el email de confirmación de compra.</p></li>
-
+<li><p class="numero">12</p><p>Confirmada la compra, el sistema lleva a una pasarela de pagos muy básica, conectada con Stripe.</p></li>
   </ul>
-  <p>NO se incluye la programación de la pasarela de pagos. 😔</p>
+
   <h3>Sobre los carritos de compra</h3>
   <p>Si el usuario inicia el proceso de compra varias veces seguidas, se generan igual cantidad de carritos de compra. Para que la base de datos no se llene de carritos que nunca se van a comprar, los carritos se generan con una propiedad "createdAt" que tiene un ttl de 10 minutos. Pasado ese tiempo el carrito se borra</p>
   <p>A su vez, y como el id de cada carrito queda guardado en el documento del usuario, cuando el usuario se vuelve a loguear, se verifica que los ids de carritos guardados en el array de la propiedad "cartID" correspondan a carritos que sí existen; de lo contrario se borran. (No se borran todos los id de carritos porque puede haber carritos que hayan sido generados luego de un proceso de compra, con productos faltantes en el stock al momento de la compra. Estos carritos se borran 1 mes después de creados.)</p>

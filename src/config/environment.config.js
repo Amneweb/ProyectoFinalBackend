@@ -15,6 +15,8 @@ const {
   MONGO_DB_NAME,
   MAILER_AUTH_PASS,
   MAILER_EMAIL,
+  PAYMENT_PUBLISHABLE_KEY,
+  PAYMENT_SECRET_KEY,
 } = process.env;
 
 const program = new Command(); //Crea la instancia de comandos de commander.
@@ -51,12 +53,13 @@ const environmentConfig = {
     GITHUB: {
       CLIENT_ID: GITHUB_CLIENT_ID,
       CLIENT_SECRET: GITHUB_CLIENT_SECRET,
-      CALLBACK_URL:
-        GITHUB_CALLBACK_URL ??
-        "http://localhost:8080/api/sessions/githubcallback",
     },
     SESSION: {
       SECRET_KEY: SESSION_SECRET_KEY,
+    },
+    STRIPE: {
+      SECRET_KEY: PAYMENT_SECRET_KEY,
+      PUBLIC_KEY: PAYMENT_PUBLISHABLE_KEY,
     },
   },
   DATABASE: {

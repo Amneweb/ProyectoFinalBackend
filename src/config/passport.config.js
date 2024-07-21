@@ -22,7 +22,7 @@ const initializePassport = () => {
         clientSecret: environmentConfig.SERVER.GITHUB.CLIENT_SECRET,
         scope: ["user:email"],
         callbackUrl:
-          "https://proyectofinalbackend-production-efdb.up.railway.app/api/sessions/githubcallback",
+          "https://proyectofinalbackend-test.up.railway.app/api/sessions/githubcallback",
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
@@ -91,7 +91,7 @@ ESTRATEGIA JWT
       let user = await userModel.findById(id);
       done(null, user);
     } catch (error) {
-      console.error("Error deserializando el usuario: " + error);
+      console.error("Error tratando de deserializar el usuario: " + error);
     }
   });
 };
