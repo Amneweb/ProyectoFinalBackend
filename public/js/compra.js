@@ -97,7 +97,7 @@ const compra = async () => {
           window.location.replace(
             `/users/tickets/?ticket_code=${resultadoCompra.payload.code} `
           );
-        }
+        } else throw new Error(resultadoCompra.error);
       } catch (e) {
         await Swal.fire({
           icon: "error",

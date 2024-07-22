@@ -11,7 +11,7 @@ router.get("/comprainiciada", (req, res) => {
       "WWcompraIniciada",
       { status: "ok", tiempo: new Date() },
       {
-        maxAge: 600000, //milliseconds
+        maxAge: 120000, //milliseconds
         httpOnly: true,
         signed: true,
       }
@@ -23,7 +23,7 @@ router.get("/comprafinalizada", (req, res) => {
   if (!req.signedCookies["WWcompraIniciada"]) {
     return res.status(500).send({
       error: "Error interno",
-      message: "La compra no se pudo concretar",
+      message: "La compra no se pudo concretar. Volvé a iniciar el proceso.",
     });
   }
   return res.clearCookie("WWcompraIniciada").status(201).send({
