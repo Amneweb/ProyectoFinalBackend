@@ -91,7 +91,7 @@ const compra = async () => {
           },
         });
         const resultadoCompra = await comprar.json();
-        console.log(resultadoCompra);
+
         if (!resultadoCompra.error) {
           hideLoading();
           window.location.replace(
