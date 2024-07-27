@@ -2,7 +2,7 @@
 
 El proyecto trata de un ecommerce de venta de baterías para vehículos y se puede visitar siguiendo el enlace en la sección "About" de este repositorio.
 
-**Si bien la página de inicio del sitio contiene una breve descripción con las características más importantes del proyecto, quiero aclarar en esta introduccióon que, aunque no se pedía en las consignas, la compra se puede iniciar sin que el usuario esté logueado. Es decir, cualquier usuario puede armar su carrito (que se guarda en el localstorage) y recién cuando confirma la compra el sistema le pide el registro/login.**
+**Si bien la página de inicio del sitio contiene una breve descripción con las características más importantes del proyecto, quiero aclarar en esta introducción que, aunque no se pedía en las consignas, la compra se puede iniciar sin que el usuario esté logueado. Es decir, cualquier usuario puede armar su carrito (que se guarda en el localstorage) y recién cuando confirma la compra el sistema le pide el registro/login.**
 
 ## Paso a paso del curso y del proyecto
 
